@@ -1,13 +1,19 @@
 <script lang="ts">
 	import type { WeatherDay } from '$lib/types';
+	import type { AemetDay, WeatherDiscrepancy } from '$lib/weather/aemet';
 
 	let {
 		day,
-		loading = false
+		loading = false,
+		aemet = null,
+		discrepancies = []
 	}: {
 		/** null = sin conexión o sin pronóstico para esa fecha. */
 		day: WeatherDay | null;
 		loading?: boolean;
+		/** Verificación AEMET para la misma fecha, si está configurada. */
+		aemet?: AemetDay | null;
+		discrepancies?: WeatherDiscrepancy[];
 	} = $props();
 
 	function hourOf(isoLocal: string): string {
@@ -52,6 +58,22 @@
 			</div>
 		</dl>
 		<p class="source">Fuente: Open-Meteo · consultado {consultedAt}</p>
+		{#if aemet}
+			<p class="aemet">
+				Verificación AEMET: {aemet.temperature_2m_min}° / {aemet.temperature_2m_max}° · prob. lluvia {aemet.precipitation_probability_max}%{#if aemet.uv_index_max !== null}
+					· UV {aemet.uv_index_max}{/if}
+			</p>
+			{#if discrepancies.length > 0}
+				<div class="discrepancy" role="alert">
+					<strong>Las fuentes discrepan</strong> — se muestran ambas, nunca se promedian:
+					<ul>
+						{#each discrepancies as d (d.label)}
+							<li>{d.label}: Open-Meteo {d.openMeteo} / AEMET {d.aemet}</li>
+						{/each}
+					</ul>
+				</div>
+			{/if}
+		{/if}
 	{:else}
 		<p class="empty">
 			Sin conexión o sin pronóstico para esta fecha. La recomendación de mochila queda en
@@ -95,5 +117,22 @@
 	.empty {
 		margin: 0;
 		color: #555;
+	}
+	.aemet {
+		margin: 0.4rem 0 0;
+		font-size: 0.85rem;
+		color: #333;
+	}
+	.discrepancy {
+		margin-top: 0.5rem;
+		border: 1px solid #b3261e;
+		background: #fdecea;
+		border-radius: 6px;
+		padding: 0.5rem 0.75rem;
+		font-size: 0.85rem;
+	}
+	.discrepancy ul {
+		margin: 0.3rem 0 0;
+		padding-left: 1.2rem;
 	}
 </style>

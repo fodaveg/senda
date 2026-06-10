@@ -5,9 +5,11 @@
 	import { isTauri } from '@tauri-apps/api/core';
 	import { gearItems, gearRules } from '$lib/data/gear';
 	import { routeById } from '$lib/data/routes';
+	import { wildlifeForZone } from '$lib/data/wildlife';
 	import { evaluateGear } from '$lib/engine';
 	import { buildReportModel, type ReportModel } from '$lib/report/model';
 	import { renderMarkdown, reportFilename } from '$lib/report/markdown';
+	import { loadSettings } from '$lib/settings';
 	import { forecastDates, seasonForDate } from '$lib/weather/dates';
 	import { fetchOpenMeteoForecast } from '$lib/weather/openmeteo';
 	import type { WeatherDay } from '$lib/types';
@@ -28,8 +30,14 @@
 			.map((id) => routeById(id))
 			.filter((r) => r !== undefined)
 			.map((r) => ({ id: r.id, name: r.name }));
-		// Ficha de fauna por zona: llega en M7 (data/wildlife/zones.json).
-		return buildReportModel({ route, date, weather, decisions, wildlife: null, alternatives });
+		return buildReportModel({
+			route,
+			date,
+			weather,
+			decisions,
+			wildlife: wildlifeForZone(route.zone),
+			alternatives
+		});
 	});
 
 	let markdown = $derived(model ? renderMarkdown(model) : '');
@@ -61,8 +69,10 @@
 	async function saveInTauri() {
 		const { save } = await import('@tauri-apps/plugin-dialog');
 		const { writeTextFile } = await import('@tauri-apps/plugin-fs');
+		// Carpeta del vault configurada en /ajustes, si existe.
+		const { vaultDir } = loadSettings();
 		const path = await save({
-			defaultPath: filename,
+			defaultPath: vaultDir ? `${vaultDir}/${filename}` : filename,
 			filters: [{ name: 'Markdown', extensions: ['md'] }]
 		});
 		if (!path) return;

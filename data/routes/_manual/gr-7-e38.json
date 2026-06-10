@@ -1,16 +1,29 @@
 {
 	"name": "GR 7 E38 Benagéber - Chera",
 	"type": "GR",
+	"zone": "serranos",
 	"circular": false,
 	"distance_km": 26.6,
 	"ascent_m": 605,
 	"descent_m": 745,
 	"est_duration_min": 480,
-	"difficulty_mide": { "medio": 2, "itinerario": 2, "desplazamiento": 2, "esfuerzo": 4 },
-	"start": { "name": "Benagéber" },
-	"links": { "femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e38" },
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"start": {
+		"name": "Benagéber"
+	},
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e38"
+	},
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e38 (consulta 2026-06-10): nombre, distancia, desniveles, tiempo, MIDE, tipo lineal, municipios Benagéber, Chelva, Chera, Domeño y Loriguilla, control de calidad positivo",
-		"Pendiente de verificar: zone, water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain"
-	]
+		"zone: comarca del municipio de inicio (Benagéber, Los Serranos) → ficha 'serranos' de data/wildlife/zones.json",
+		"aemet_municipio: código INE 46050 (Benagéber), relación de municipios INE vía Idescat (consulta 2026-06-10)",
+		"Pendiente de verificar: water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain"
+	],
+	"aemet_municipio": "46050"
 }

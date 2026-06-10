@@ -1,0 +1,32 @@
+/**
+ * Ajustes locales del usuario (localStorage): api key de AEMET (opcional)
+ * y carpeta del vault para guardar informes en Tauri.
+ */
+
+export interface Settings {
+	aemetApiKey: string;
+	vaultDir: string;
+}
+
+const STORAGE_KEY = 'senderos-cv:settings';
+
+export const DEFAULT_SETTINGS: Settings = { aemetApiKey: '', vaultDir: '' };
+
+export function loadSettings(): Settings {
+	if (typeof localStorage === 'undefined') return { ...DEFAULT_SETTINGS };
+	try {
+		const raw = localStorage.getItem(STORAGE_KEY);
+		if (!raw) return { ...DEFAULT_SETTINGS };
+		const parsed = JSON.parse(raw) as Partial<Settings>;
+		return {
+			aemetApiKey: typeof parsed.aemetApiKey === 'string' ? parsed.aemetApiKey : '',
+			vaultDir: typeof parsed.vaultDir === 'string' ? parsed.vaultDir : ''
+		};
+	} catch {
+		return { ...DEFAULT_SETTINGS };
+	}
+}
+
+export function saveSettings(settings: Settings): void {
+	localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+}

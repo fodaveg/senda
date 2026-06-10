@@ -6,11 +6,22 @@
 	"ascent_m": 1055,
 	"descent_m": 1055,
 	"est_duration_min": 360,
-	"difficulty_mide": { "medio": 2, "itinerario": 2, "desplazamiento": 2, "esfuerzo": 4 },
-	"start": { "name": "La Vall de Laguar" },
-	"links": { "femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-147" },
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"start": {
+		"name": "La Vall de Laguar"
+	},
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-147"
+	},
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-147 (consulta 2026-06-10): nombre, distancia, desniveles, tiempo, MIDE, tipo circular con tramos comunes, municipio la Vall de Laguar, control de calidad positivo",
+		"aemet_municipio: código INE 03137 (la Vall de Laguar), relación de municipios INE vía Idescat (consulta 2026-06-10)",
 		"Pendiente de verificar: zone, water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain"
-	]
+	],
+	"aemet_municipio": "03137"
 }

@@ -238,7 +238,7 @@ export function buildReportModel(input: ReportInput): ReportModel {
 		);
 	}
 	if (wildlife) {
-		sourceItems.push('Fauna: ficha de zona del proyecto (data/wildlife/zones.json)');
+		sourceItems.push(...wildlife.sources.map((s) => `Fauna (${wildlife.name}): ${s}`));
 	}
 	sourceItems.push(
 		'Recomendación de mochila: reglas declarativas del proyecto (data/gear/rules.json)'

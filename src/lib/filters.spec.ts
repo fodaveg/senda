@@ -9,6 +9,7 @@ function route(overrides: Partial<Route>): Route {
 		type: 'PR',
 		status: 'homologado',
 		zone: null,
+		aemet_municipio: null,
 		start: { lat: 39, lon: -0.5, name: null },
 		distance_km: 10,
 		ascent_m: 400,

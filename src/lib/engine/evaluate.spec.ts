@@ -14,6 +14,7 @@ function makeRoute(overrides: Partial<Route> = {}): Route {
 		type: 'PR',
 		status: 'homologado',
 		zone: null,
+		aemet_municipio: null,
 		start: { lat: 39.654, lon: -0.889, name: null },
 		distance_km: 11.2,
 		ascent_m: 420,

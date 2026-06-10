@@ -34,6 +34,10 @@ export const routeSchema = z.strictObject({
 	type: z.enum(['GR', 'PR', 'SL']),
 	status: z.string().min(1),
 	zone: z.string().min(1).nullable(),
+	aemet_municipio: z
+		.string()
+		.regex(/^\d{5}$/, 'código INE de 5 dígitos')
+		.nullable(),
 	start: z.strictObject({
 		lat: z.number().min(-90).max(90),
 		lon: z.number().min(-180).max(180),
@@ -74,6 +78,10 @@ export const manualSchema = z.strictObject({
 	sources: z.array(z.string().min(1)).min(1),
 	status: z.string().min(1).optional(),
 	zone: z.string().min(1).nullable().optional(),
+	aemet_municipio: z
+		.string()
+		.regex(/^\d{5}$/, 'código INE de 5 dígitos')
+		.optional(),
 	start: z
 		.strictObject({
 			lat: z.number().min(-90).max(90).optional(),

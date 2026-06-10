@@ -38,6 +38,8 @@ export interface Route {
 	status: string;
 	/** Clave de data/wildlife/zones.json. */
 	zone: string | null;
+	/** Código INE de 5 dígitos del municipio (para AEMET OpenData). */
+	aemet_municipio: string | null;
 	start: RouteStart;
 	distance_km: number;
 	ascent_m: number | null;
@@ -105,6 +107,8 @@ export interface WildlifeZone {
 	name: string;
 	wildlife: WildlifeSpecies[];
 	other_risks: string[];
+	/** Origen de los datos de la ficha (obligatorio: nada sin fuente). */
+	sources: string[];
 }
 
 // ─── Mochila (SPEC §5) ──────────────────────────────────────────────────────

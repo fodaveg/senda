@@ -10,6 +10,7 @@ const route: Route = {
 	type: 'PR',
 	status: 'homologado',
 	zone: null,
+	aemet_municipio: null,
 	start: { lat: 39.65, lon: -0.89, name: 'Chulilla' },
 	distance_km: 5.5,
 	ascent_m: 415,
@@ -121,6 +122,7 @@ describe('buildReportModel + renderMarkdown', () => {
 	it('las fuentes de la ruta aparecen en la sección Fuentes', () => {
 		expect(md).toContain('- Ficha FEMECV (consulta 2026-06-10)');
 		expect(md).toContain('data/gear/rules.json');
+		expect(md).not.toContain('Fauna (');
 	});
 });
 
@@ -149,13 +151,15 @@ describe('informe con fauna', () => {
 			{ species: 'jabalí', risk: 'bajo', advice: 'No acercarse a crías.' },
 			{ species: 'víbora hocicuda', risk: 'bajo', advice: 'Mirar dónde se ponen manos y pies.' }
 		],
-		other_risks: ['crecidas súbitas en el cañón del Turia']
+		other_risks: ['crecidas súbitas en el cañón del Turia'],
+		sources: ['SPEC.md §7']
 	};
 
-	it('lista especies con riesgo y consejo', () => {
+	it('lista especies con riesgo y consejo, y cita la fuente de la ficha', () => {
 		const md = renderMarkdown(buildReportModel(inputWith({ wildlife: zone })));
 		expect(md).toContain('jabalí (riesgo bajo): No acercarse a crías.');
 		expect(md).toContain('crecidas súbitas en el cañón del Turia');
+		expect(md).toContain('Fauna (Los Serranos / Alto Turia): SPEC.md §7');
 	});
 });
 

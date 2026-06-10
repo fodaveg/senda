@@ -3,7 +3,8 @@
 	"name": "GR 7 E38 Benagéber - Chera",
 	"type": "GR",
 	"status": "homologado",
-	"zone": null,
+	"zone": "serranos",
+	"aemet_municipio": "46050",
 	"start": {
 		"lat": 39.70718597061932,
 		"lon": -1.09924703836441,
@@ -41,7 +42,9 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e38 (consulta 2026-06-10): nombre, distancia, desniveles, tiempo, MIDE, tipo lineal, municipios Benagéber, Chelva, Chera, Domeño y Loriguilla, control de calidad positivo",
-		"Pendiente de verificar: zone, water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain",
+		"zone: comarca del municipio de inicio (Benagéber, Los Serranos) → ficha 'serranos' de data/wildlife/zones.json",
+		"aemet_municipio: código INE 46050 (Benagéber), relación de municipios INE vía Idescat (consulta 2026-06-10)",
+		"Pendiente de verificar: water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain",
 		"GPX gr-7-e38.gpx (derivados: inicio, bbox)"
 	]
 }

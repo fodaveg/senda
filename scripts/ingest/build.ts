@@ -50,6 +50,7 @@ export function buildRoute(id: string, summary: GpxSummary, manual: ManualData):
 		type: manual.type,
 		status: manual.status ?? 'homologado',
 		zone: manual.zone ?? null,
+		aemet_municipio: manual.aemet_municipio ?? null,
 		start: {
 			lat: manual.start?.lat ?? summary.start.lat,
 			lon: manual.start?.lon ?? summary.start.lon,

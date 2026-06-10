@@ -1,0 +1,15 @@
+{
+	"name": "Senderos CV",
+	"short_name": "Senderos CV",
+	"description": "Rutas oficiales de senderismo de la Comunitat Valenciana, con recomendación de mochila e informes.",
+	"lang": "es",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"background_color": "#fbfaf7",
+	"theme_color": "#1d3a2a",
+	"icons": [
+		{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+		{ "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+	]
+}

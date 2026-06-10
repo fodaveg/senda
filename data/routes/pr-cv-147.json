@@ -4,6 +4,7 @@
 	"type": "PR",
 	"status": "homologado",
 	"zone": null,
+	"aemet_municipio": "03137",
 	"start": {
 		"lat": 38.778342017903924,
 		"lon": -0.110053969547153,
@@ -41,6 +42,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-147 (consulta 2026-06-10): nombre, distancia, desniveles, tiempo, MIDE, tipo circular con tramos comunes, municipio la Vall de Laguar, control de calidad positivo",
+		"aemet_municipio: código INE 03137 (la Vall de Laguar), relación de municipios INE vía Idescat (consulta 2026-06-10)",
 		"Pendiente de verificar: zone, water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain",
 		"GPX pr-cv-147.gpx (derivados: inicio, bbox)"
 	]

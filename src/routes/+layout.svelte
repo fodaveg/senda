@@ -18,6 +18,7 @@
 <header>
 	<a href={resolve('/')} class="brand">Senderos CV</a>
 	<span class="tagline">Senderos homologados FEMECV de la Comunitat Valenciana</span>
+	<a href={resolve('/ajustes')} class="nav-link">Ajustes</a>
 </header>
 
 <main>
@@ -54,6 +55,11 @@
 	.tagline {
 		font-size: 0.85rem;
 		color: #cfe3d6;
+		flex: 1;
+	}
+	.nav-link {
+		color: #cfe3d6;
+		font-size: 0.9rem;
 	}
 	main {
 		max-width: 64rem;

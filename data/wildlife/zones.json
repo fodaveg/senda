@@ -1,0 +1,24 @@
+{
+	"serranos": {
+		"name": "Los Serranos / Alto Turia",
+		"wildlife": [
+			{
+				"species": "jabalí",
+				"risk": "bajo",
+				"advice": "No acercarse a crías; ruido moderado al caminar al amanecer/atardecer."
+			},
+			{
+				"species": "víbora hocicuda",
+				"risk": "bajo",
+				"advice": "Mirar dónde se ponen manos y pies en roquedos; en caso de mordedura, inmovilizar y 112."
+			},
+			{
+				"species": "perro de ganado (mastín)",
+				"risk": "medio",
+				"advice": "No correr, no mirar fijamente, rodear el rebaño con distancia."
+			}
+		],
+		"other_risks": ["golpe de calor en verano", "crecidas súbitas en el cañón del Turia"],
+		"sources": ["SPEC.md §7 (ficha de zona redactada por el autor del proyecto)"]
+	}
+}

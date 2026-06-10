@@ -7,10 +7,13 @@
 	import WeatherCard from '$lib/components/WeatherCard.svelte';
 	import { gearItems, gearRules } from '$lib/data/gear';
 	import { loadTrackXml } from '$lib/data/tracks';
+	import { wildlifeForZone } from '$lib/data/wildlife';
 	import { evaluateGear } from '$lib/engine';
 	import { gpxToGeoJSON, trackPositions } from '$lib/geo/gpx';
 	import { elevationProfile, type ProfilePoint } from '$lib/geo/profile';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
+	import { loadSettings } from '$lib/settings';
+	import { compareForecasts, fetchAemetForecast, type AemetDay } from '$lib/weather/aemet';
 	import { dateLabel, forecastDates, seasonForDate } from '$lib/weather/dates';
 	import { fetchOpenMeteoForecast } from '$lib/weather/openmeteo';
 	import type { FeatureCollection } from 'geojson';
@@ -18,6 +21,7 @@
 
 	let { data } = $props();
 	let route = $derived(data.route);
+	let wildlife = $derived(wildlifeForZone(route.zone));
 
 	let geojson = $state<FeatureCollection | null>(null);
 	let profile = $state<ProfilePoint[]>([]);
@@ -27,9 +31,14 @@
 	let dates = $state<string[]>([]);
 	let selectedDate = $state('');
 	let forecast = $state<WeatherDay[] | null>(null);
+	let aemetForecast = $state<AemetDay[] | null>(null);
 	let weatherLoading = $state(true);
 
 	let selectedDay = $derived(forecast?.find((d) => d.date === selectedDate) ?? null);
+	let selectedAemet = $derived(aemetForecast?.find((d) => d.date === selectedDate) ?? null);
+	let discrepancies = $derived(
+		selectedDay && selectedAemet ? compareForecasts(selectedDay, selectedAemet) : []
+	);
 	let decisions = $derived(
 		selectedDate
 			? evaluateGear(route, selectedDay, seasonForDate(selectedDate), gearItems, gearRules)
@@ -54,6 +63,15 @@
 			forecast = null;
 		} finally {
 			weatherLoading = false;
+		}
+		// AEMET solo como verificación, si hay api key en ajustes y código de municipio.
+		const { aemetApiKey } = loadSettings();
+		if (aemetApiKey && route.aemet_municipio) {
+			try {
+				aemetForecast = await fetchAemetForecast(route.aemet_municipio, aemetApiKey);
+			} catch {
+				aemetForecast = null;
+			}
 		}
 	});
 
@@ -107,7 +125,7 @@
 			</div>
 			<p class="date-note">Pronóstico disponible solo hasta 7 días vista.</p>
 		{/if}
-		<WeatherCard day={selectedDay} loading={weatherLoading} />
+		<WeatherCard day={selectedDay} loading={weatherLoading} aemet={selectedAemet} {discrepancies} />
 
 		<h2>Mochila recomendada</h2>
 		<BackpackPanel {decisions} />
@@ -171,6 +189,18 @@
 		{#if route.notes_rain}
 			<h3>Si llueve</h3>
 			<p>{route.notes_rain}</p>
+		{/if}
+
+		{#if wildlife}
+			<h3>Fauna y seguridad ({wildlife.name})</h3>
+			<ul>
+				{#each wildlife.wildlife as w (w.species)}
+					<li><strong>{w.species}</strong> (riesgo {w.risk}): {w.advice}</li>
+				{/each}
+			</ul>
+			{#if wildlife.other_risks.length > 0}
+				<p class="other-risks">Otros riesgos: {wildlife.other_risks.join('; ')}.</p>
+			{/if}
 		{/if}
 
 		{#if route.links.femecv || route.links.wikiloc}
@@ -255,6 +285,10 @@
 	}
 	.sources {
 		font-size: 0.8rem;
+		color: #555;
+	}
+	.other-risks {
+		font-size: 0.9rem;
 		color: #555;
 	}
 	.report-btn {

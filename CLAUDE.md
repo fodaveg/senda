@@ -15,6 +15,7 @@ La especificación de referencia del proyecto es **[SPEC.md](SPEC.md)**. Léela 
 ## Comandos
 
 - `npm run dev` — servidor de desarrollo
+- `npm run ingest [-- <id>]` — ingesta GPX+manual → data/routes/\*.json (validación zod)
 - `npm run build` — build web estático (`build/`)
 - `npm run lint` — prettier --check + eslint
 - `npm run check` — svelte-check (TypeScript)

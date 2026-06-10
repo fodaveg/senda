@@ -5,11 +5,22 @@
 	"ascent_m": 470,
 	"descent_m": 470,
 	"est_duration_min": 370,
-	"difficulty_mide": { "medio": 1, "itinerario": 2, "desplazamiento": 2, "esfuerzo": 4 },
-	"start": { "name": "Elda" },
-	"links": { "femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-25" },
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"start": {
+		"name": "Elda"
+	},
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-25"
+	},
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-25 (consulta 2026-06-10): nombre, distancia, desniveles, tiempo, MIDE, municipios Elda y Salinas",
+		"aemet_municipio: código INE 03066 (Elda), relación de municipios INE vía Idescat (consulta 2026-06-10)",
 		"Pendiente de verificar: zone, water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain"
-	]
+	],
+	"aemet_municipio": "03066"
 }
