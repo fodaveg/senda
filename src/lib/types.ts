@@ -90,6 +90,23 @@ export interface WeatherDay {
 
 export type Season = 'invierno' | 'primavera' | 'verano' | 'otoño';
 
+// ─── Fauna y seguridad (SPEC §7) ────────────────────────────────────────────
+
+export type WildlifeRisk = 'bajo' | 'medio' | 'alto';
+
+export interface WildlifeSpecies {
+	species: string;
+	risk: WildlifeRisk;
+	advice: string;
+}
+
+/** Ficha de fauna/riesgos por zona (data/wildlife/zones.json). */
+export interface WildlifeZone {
+	name: string;
+	wildlife: WildlifeSpecies[];
+	other_risks: string[];
+}
+
 // ─── Mochila (SPEC §5) ──────────────────────────────────────────────────────
 
 export interface GearItem {

@@ -185,7 +185,16 @@
 			</ul>
 		{/if}
 
-		<button class="report-btn" disabled title="Disponible próximamente">Generar informe</button>
+		{#if selectedDate}
+			<!-- eslint-disable svelte/no-navigation-without-resolve -- base construida con resolve(); la regla no contempla añadir query string -->
+			<a
+				class="report-btn"
+				href={resolve('/ruta/[id]/informe', { id: route.id }) + `?fecha=${selectedDate}`}
+			>
+				Generar informe
+			</a>
+			<!-- eslint-enable svelte/no-navigation-without-resolve -->
+		{/if}
 
 		<h3>Fuentes</h3>
 		<ul class="sources">
@@ -249,12 +258,17 @@
 		color: #555;
 	}
 	.report-btn {
+		display: inline-block;
 		margin-top: 1rem;
 		padding: 0.5rem 1rem;
 		border-radius: 6px;
 		border: 1px solid #1d3a2a;
-		background: #e7efe9;
-		color: #555;
+		background: #1d3a2a;
+		color: #fff;
+		text-decoration: none;
+	}
+	.report-btn:hover {
+		background: #2a5440;
 	}
 	.loading,
 	.error {
