@@ -1,11 +1,12 @@
 /**
  * Parseo de GPX FEMECV: extrae del track los datos derivables
  * (distancia, desniveles acumulados, bounding box, punto de inicio,
- * circularidad). SPEC.md §3.
+ * circularidad). SPEC.md §3. Reutiliza los módulos geo de src/lib.
  */
 
-import { gpx } from '@tmcw/togeojson';
 import { DOMParser } from '@xmldom/xmldom';
+import { haversineMeters } from '../../src/lib/geo/distance';
+import { gpxToGeoJSON, trackPositions } from '../../src/lib/geo/gpx';
 
 export interface GpxSummary {
 	/** Nombre declarado en el GPX, si existe. */
@@ -26,55 +27,26 @@ const ELEVATION_NOISE_M = 3;
 /** Distancia máxima inicio-fin para considerar la ruta circular. */
 const CIRCULAR_MAX_GAP_M = 200;
 
-const EARTH_RADIUS_M = 6371000;
-
-function haversineMeters(a: [number, number], b: [number, number]): number {
-	const toRad = (deg: number) => (deg * Math.PI) / 180;
-	const dLat = toRad(b[1] - a[1]);
-	const dLon = toRad(b[0] - a[0]);
-	const sinLat = Math.sin(dLat / 2);
-	const sinLon = Math.sin(dLon / 2);
-	const h = sinLat * sinLat + Math.cos(toRad(a[1])) * Math.cos(toRad(b[1])) * sinLon * sinLon;
-	return 2 * EARTH_RADIUS_M * Math.asin(Math.sqrt(h));
-}
-
-/** [lon, lat, ele?] según GeoJSON. */
-type Position = number[];
-
-function trackCoordinates(xml: string, label: string): { coords: Position[]; name: string | null } {
-	let collection: ReturnType<typeof gpx>;
+export function parseGpx(xml: string, label = 'gpx'): GpxSummary {
+	let collection: ReturnType<typeof gpxToGeoJSON>;
 	try {
-		// Algunos GPX de FEMECV (CompeGPS) llevan BOM, que rompe el parser XML.
-		const doc = new DOMParser().parseFromString(xml.replace(/^\uFEFF/, ''), 'text/xml');
-		collection = gpx(doc as unknown as Parameters<typeof gpx>[0]);
+		collection = gpxToGeoJSON(xml, new DOMParser());
 	} catch (error) {
 		throw new Error(`GPX corrupto (${label}): ${error instanceof Error ? error.message : error}`, {
 			cause: error
 		});
 	}
 
-	const coords: Position[] = [];
-	let name: string | null = null;
-	for (const feature of collection.features) {
-		const geometry = feature.geometry;
-		if (geometry.type === 'LineString') {
-			coords.push(...geometry.coordinates);
-		} else if (geometry.type === 'MultiLineString') {
-			for (const line of geometry.coordinates) coords.push(...line);
-		} else {
-			continue;
-		}
-		if (name === null && typeof feature.properties?.name === 'string') {
-			name = feature.properties.name;
-		}
-	}
-	return { coords, name };
-}
-
-export function parseGpx(xml: string, label = 'gpx'): GpxSummary {
-	const { coords, name } = trackCoordinates(xml, label);
+	const coords = trackPositions(collection);
 	if (coords.length < 2) {
 		throw new Error(`GPX sin track utilizable (${label}): se esperaban ≥2 puntos de track`);
+	}
+	let name: string | null = null;
+	for (const feature of collection.features) {
+		if (typeof feature.properties?.name === 'string') {
+			name = feature.properties.name;
+			break;
+		}
 	}
 
 	let distanceM = 0;

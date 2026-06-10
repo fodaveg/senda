@@ -7,3 +7,12 @@ export function formatKm(km: number): string {
 export function formatMeters(m: number): string {
 	return `${m.toLocaleString('es-ES', { maximumFractionDigits: 0 })} m`;
 }
+
+/** Formatea una duración en minutos como "3 h 30 min". */
+export function formatDuration(minutes: number): string {
+	const h = Math.floor(minutes / 60);
+	const min = Math.round(minutes % 60);
+	if (h === 0) return `${min} min`;
+	if (min === 0) return `${h} h`;
+	return `${h} h ${min} min`;
+}

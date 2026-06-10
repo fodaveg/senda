@@ -10,5 +10,5 @@
 		"noEmit": true,
 		"types": ["node"]
 	},
-	"include": ["./**/*.ts", "../src/lib/types.ts"]
+	"include": ["./**/*.ts", "../src/lib/types.ts", "../src/lib/geo/**/*.ts"]
 }
