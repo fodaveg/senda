@@ -1,13 +1,20 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
+	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
 	import ElevationProfile from '$lib/components/ElevationProfile.svelte';
 	import Map from '$lib/components/Map.svelte';
+	import WeatherCard from '$lib/components/WeatherCard.svelte';
+	import { gearItems, gearRules } from '$lib/data/gear';
 	import { loadTrackXml } from '$lib/data/tracks';
+	import { evaluateGear } from '$lib/engine';
 	import { gpxToGeoJSON, trackPositions } from '$lib/geo/gpx';
 	import { elevationProfile, type ProfilePoint } from '$lib/geo/profile';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
+	import { dateLabel, forecastDates, seasonForDate } from '$lib/weather/dates';
+	import { fetchOpenMeteoForecast } from '$lib/weather/openmeteo';
 	import type { FeatureCollection } from 'geojson';
+	import type { WeatherDay } from '$lib/types';
 
 	let { data } = $props();
 	let route = $derived(data.route);
@@ -16,7 +23,22 @@
 	let profile = $state<ProfilePoint[]>([]);
 	let trackError = $state<string | null>(null);
 
+	// Meteo: hoy + 7 días; sin red la app sigue funcionando (SPEC §4).
+	let dates = $state<string[]>([]);
+	let selectedDate = $state('');
+	let forecast = $state<WeatherDay[] | null>(null);
+	let weatherLoading = $state(true);
+
+	let selectedDay = $derived(forecast?.find((d) => d.date === selectedDate) ?? null);
+	let decisions = $derived(
+		selectedDate
+			? evaluateGear(route, selectedDay, seasonForDate(selectedDate), gearItems, gearRules)
+			: []
+	);
+
 	onMount(async () => {
+		dates = forecastDates();
+		selectedDate = dates[0];
 		try {
 			const xml = await loadTrackXml(route.gpx);
 			const collection = gpxToGeoJSON(xml);
@@ -24,6 +46,14 @@
 			profile = elevationProfile(trackPositions(collection));
 		} catch (e) {
 			trackError = e instanceof Error ? e.message : String(e);
+		}
+		try {
+			forecast = await fetchOpenMeteoForecast(route.start.lat, route.start.lon);
+		} catch {
+			// Offline o API caída: panel meteo en estado vacío, nada se rompe.
+			forecast = null;
+		} finally {
+			weatherLoading = false;
 		}
 	});
 
@@ -61,6 +91,26 @@
 		{:else}
 			<p class="loading">Cargando perfil…</p>
 		{/if}
+
+		<h2>Meteorología prevista</h2>
+		{#if dates.length > 0}
+			<div class="date-picker" role="group" aria-label="Fecha de la salida">
+				{#each dates as date (date)}
+					<button
+						class="date-chip"
+						class:selected={date === selectedDate}
+						onclick={() => (selectedDate = date)}
+					>
+						{dateLabel(date)}
+					</button>
+				{/each}
+			</div>
+			<p class="date-note">Pronóstico disponible solo hasta 7 días vista.</p>
+		{/if}
+		<WeatherCard day={selectedDay} loading={weatherLoading} />
+
+		<h2>Mochila recomendada</h2>
+		<BackpackPanel {decisions} />
 	</section>
 
 	<section class="data-col">
@@ -212,5 +262,29 @@
 	}
 	.error {
 		color: #b3261e;
+	}
+	.date-picker {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+	.date-chip {
+		border: 1px solid #d8d4c8;
+		border-radius: 999px;
+		background: #fff;
+		padding: 0.3rem 0.75rem;
+		cursor: pointer;
+		font: inherit;
+		font-size: 0.85rem;
+	}
+	.date-chip.selected {
+		background: #1d3a2a;
+		color: #fff;
+		border-color: #1d3a2a;
+	}
+	.date-note {
+		font-size: 0.78rem;
+		color: #555;
+		margin: 0.3rem 0 0.6rem;
 	}
 </style>
