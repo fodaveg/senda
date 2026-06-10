@@ -1,0 +1,47 @@
+{
+	"id": "pr-cv-147",
+	"name": "PR-CV 147 La Catedral del Senderismo",
+	"type": "PR",
+	"status": "homologado",
+	"zone": null,
+	"start": {
+		"lat": 38.778342017903924,
+		"lon": -0.110053969547153,
+		"name": "La Vall de Laguar"
+	},
+	"distance_km": 13.7,
+	"ascent_m": 1055,
+	"descent_m": 1055,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 360,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-147.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-147",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.140658980235457,
+		38.7713769916445,
+		-0.110011976212263,
+		38.791581988334656
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-147 (consulta 2026-06-10): nombre, distancia, desniveles, tiempo, MIDE, tipo circular con tramos comunes, municipio la Vall de Laguar, control de calidad positivo",
+		"Pendiente de verificar: zone, water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain",
+		"GPX pr-cv-147.gpx (derivados: inicio, bbox)"
+	]
+}

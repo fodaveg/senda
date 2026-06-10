@@ -11,3 +11,6 @@ bun.lockb
 # Tauri
 /src-tauri/target/
 /src-tauri/gen/
+
+# Salida generada por la ingesta (no se edita a mano)
+/data/routes/*.json

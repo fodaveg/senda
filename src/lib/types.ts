@@ -59,6 +59,8 @@ export interface Route {
 	/** Ids de rutas alternativas cercanas. */
 	alternatives: string[];
 	notes_rain: string | null;
+	/** [minLon, minLat, maxLon, maxLat] derivado del GPX en la ingesta. */
+	bbox: [number, number, number, number] | null;
 	sources: string[];
 }
 

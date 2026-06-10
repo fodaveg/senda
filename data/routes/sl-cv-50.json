@@ -1,0 +1,47 @@
+{
+	"id": "sl-cv-50",
+	"name": "SL-CV 50 Barranco de la Viuda - Cala Llebeig - Cala Moraig",
+	"type": "SL",
+	"status": "homologado",
+	"zone": null,
+	"start": {
+		"lat": 38.70340998284519,
+		"lon": 0.144620016217232,
+		"name": null
+	},
+	"distance_km": 3.4,
+	"ascent_m": 345,
+	"descent_m": 330,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 105,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-50.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-50",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.144620016217232,
+		38.69844697415829,
+		0.166150024160743,
+		38.71144998818636
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-50 (consulta 2026-06-10): nombre, distancia, desniveles, tiempo, MIDE, tipo lineal, municipios Teulada y el Poble Nou de Benitatxell, control de calidad positivo",
+		"Pendiente de verificar: zone, start.name, water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain",
+		"GPX sl-cv-50.gpx (derivados: inicio, bbox)"
+	]
+}

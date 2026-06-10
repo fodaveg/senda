@@ -31,6 +31,7 @@ function makeRoute(overrides: Partial<Route> = {}): Route {
 		links: { femecv: null, wikiloc: null },
 		alternatives: [],
 		notes_rain: null,
+		bbox: null,
 		sources: ['test'],
 		...overrides
 	};
