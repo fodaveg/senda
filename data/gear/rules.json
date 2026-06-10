@@ -1,0 +1,40 @@
+[
+	{
+		"item": "poncho",
+		"when": { "precipitation_probability_max": { "gte": 20 } },
+		"action": "enable",
+		"reason": "Probabilidad de lluvia {precipitation_probability_max}%"
+	},
+	{
+		"item": "poncho",
+		"when": {
+			"precipitation_probability_max": { "lt": 5 },
+			"precipitation_sum": { "eq": 0 }
+		},
+		"action": "disable",
+		"reason": "0% de lluvia previsto"
+	},
+	{
+		"item": "gorro_ala",
+		"when": { "uv_index_max": { "gte": 7 }, "route.shade_ratio": { "lt": 0.4 } },
+		"action": "enable",
+		"reason": "UV {uv_index_max} y poca sombra: gorro de ala mejor que gorra",
+		"replaces": "gorra"
+	},
+	{
+		"item": "crema_solar",
+		"when": { "uv_index_max": { "gte": 6 } },
+		"action": "enable",
+		"priority": "alta",
+		"reason": "UV {uv_index_max}: reaplicar cada 2 h"
+	},
+	{
+		"item": "agua_extra_1l",
+		"when": {
+			"temperature_2m_max": { "gte": 28 },
+			"route.water_points.length": { "eq": 0 }
+		},
+		"action": "enable",
+		"reason": "Calor y sin fuentes en ruta"
+	}
+]

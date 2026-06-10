@@ -1,0 +1,49 @@
+[
+	{ "id": "botiquin", "name": "Botiquín", "category": "seguridad", "weight_g": 300, "base": true },
+	{
+		"id": "agua",
+		"name": "Agua (1,5 l)",
+		"category": "hidratación",
+		"weight_g": 1500,
+		"base": true
+	},
+	{
+		"id": "movil",
+		"name": "Móvil cargado",
+		"category": "seguridad",
+		"weight_g": 200,
+		"base": true
+	},
+	{ "id": "frontal", "name": "Frontal", "category": "seguridad", "weight_g": 90, "base": true },
+	{
+		"id": "manta_termica",
+		"name": "Manta térmica",
+		"category": "seguridad",
+		"weight_g": 60,
+		"base": true
+	},
+	{ "id": "silbato", "name": "Silbato", "category": "seguridad", "weight_g": 15, "base": true },
+	{
+		"id": "poncho",
+		"name": "Poncho / chubasquero",
+		"category": "ropa",
+		"weight_g": 230,
+		"base": false
+	},
+	{ "id": "gorra", "name": "Gorra", "category": "ropa", "weight_g": 60, "base": false },
+	{ "id": "gorro_ala", "name": "Gorro de ala", "category": "ropa", "weight_g": 80, "base": false },
+	{
+		"id": "crema_solar",
+		"name": "Crema solar",
+		"category": "protección",
+		"weight_g": 80,
+		"base": false
+	},
+	{
+		"id": "agua_extra_1l",
+		"name": "Agua extra (1 l)",
+		"category": "hidratación",
+		"weight_g": 1000,
+		"base": false
+	}
+]
