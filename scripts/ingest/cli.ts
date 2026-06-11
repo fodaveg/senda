@@ -17,13 +17,14 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { buildRoute, IngestError, parseCrawled, parseManual } from './build';
+import { buildRoute, IngestError, parseCrawled, parseEnriched, parseManual } from './build';
 import { parseGpx } from './gpx';
 
 const ROOT = path.resolve(import.meta.dirname, '../..');
 const GPX_DIR = path.join(ROOT, 'data/gpx');
 const MANUAL_DIR = path.join(ROOT, 'data/routes/_manual');
 const CRAWLED_DIR = path.join(ROOT, 'data/routes/_crawled');
+const ENRICHED_DIR = path.join(ROOT, 'data/routes/_enriched');
 const OUT_DIR = path.join(ROOT, 'data/routes');
 
 function readJson(id: string, filePath: string, kind: string): unknown {
@@ -41,6 +42,7 @@ function ingestOne(id: string): string {
 	const gpxPath = path.join(GPX_DIR, `${id}.gpx`);
 	const manualPath = path.join(MANUAL_DIR, `${id}.json`);
 	const crawledPath = path.join(CRAWLED_DIR, `${id}.json`);
+	const enrichedPath = path.join(ENRICHED_DIR, `${id}.json`);
 
 	if (!fs.existsSync(gpxPath)) {
 		throw new IngestError(id, `no existe ${path.relative(ROOT, gpxPath)}`);
@@ -59,8 +61,12 @@ function ingestOne(id: string): string {
 		);
 	}
 
+	const enriched = fs.existsSync(enrichedPath)
+		? parseEnriched(id, readJson(id, enrichedPath, 'enriquecido'))
+		: null;
+
 	const summary = parseGpx(fs.readFileSync(gpxPath, 'utf8'), `${id}.gpx`);
-	const route = buildRoute(id, summary, manual, crawled);
+	const route = buildRoute(id, summary, manual, crawled, enriched);
 
 	const outPath = path.join(OUT_DIR, `${id}.json`);
 	fs.writeFileSync(outPath, JSON.stringify(route, null, '\t') + '\n');

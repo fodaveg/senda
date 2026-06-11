@@ -87,3 +87,18 @@ export const crawledSchema = z.strictObject({
 });
 
 export type CrawledData = z.infer<typeof crawledSchema>;
+
+/**
+ * Capa enriquecida de data/routes/_enriched/<id>.json (SPECS_V2 §12):
+ * derivados de OSM, siempre citados como "no verificado en campo".
+ * La escribe `npm run ingest:enrich`; no se edita a mano.
+ */
+export const enrichedSchema = z.strictObject({
+	water_points: z.array(z.string().min(1)),
+	shade_ratio: z.number().min(0).max(1).nullable(),
+	alternatives: z.array(z.string()),
+	enriched_at: z.string().min(1),
+	method: z.string().min(1)
+});
+
+export type EnrichedData = z.infer<typeof enrichedSchema>;

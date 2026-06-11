@@ -8,7 +8,7 @@
  */
 
 import { z } from 'zod';
-import type { WeatherDay } from '$lib/types';
+import type { WeatherDay } from '../types';
 
 /** Subconjunto comparable del pronóstico municipal de AEMET. */
 export interface AemetDay {

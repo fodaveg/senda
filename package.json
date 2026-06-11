@@ -20,7 +20,8 @@
 		"predev": "node scripts/sync-gpx.mjs",
 		"prebuild": "node scripts/sync-gpx.mjs",
 		"ingest:crawl": "tsx scripts/ingest/crawl-cli.ts",
-		"catalog:publish": "node scripts/publish/build-catalog.mjs"
+		"catalog:publish": "node scripts/publish/build-catalog.mjs",
+		"ingest:enrich": "tsx scripts/ingest/enrich/enrich-cli.ts"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

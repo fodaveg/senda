@@ -11,9 +11,11 @@ import type { Route } from '../../src/lib/types';
 import type { GpxSummary } from './gpx';
 import {
 	crawledSchema,
+	enrichedSchema,
 	manualSchema,
 	routeSchema,
 	type CrawledData,
+	type EnrichedData,
 	type ManualData
 } from './schema';
 
@@ -33,6 +35,17 @@ export function parseManual(id: string, raw: unknown): ManualData {
 		throw new IngestError(
 			id,
 			`metadatos manuales inválidos en _manual/${id}.json:\n${z.prettifyError(result.error)}`
+		);
+	}
+	return result.data;
+}
+
+export function parseEnriched(id: string, raw: unknown): EnrichedData {
+	const result = enrichedSchema.safeParse(raw);
+	if (!result.success) {
+		throw new IngestError(
+			id,
+			`datos enriquecidos inválidos en _enriched/${id}.json:\n${z.prettifyError(result.error)}`
 		);
 	}
 	return result.data;
@@ -75,7 +88,8 @@ export function buildRoute(
 	id: string,
 	summary: GpxSummary,
 	manual: ManualData | null,
-	crawled: CrawledData | null = null
+	crawled: CrawledData | null = null,
+	enriched: EnrichedData | null = null
 ): Route {
 	if (!manual && !crawled) {
 		throw new IngestError(id, 'sin metadatos: hace falta _manual/<id>.json o _crawled/<id>.json');
@@ -112,6 +126,12 @@ export function buildRoute(
 				`${crawled.comarca ? ', comarca' : ''}`
 		);
 	}
+	if (enriched) {
+		sources.push(
+			`OSM Overpass (enrich ${enriched.enriched_at.slice(0, 10)}): fuentes de agua, sombra estimada ` +
+				'y alternativas por proximidad — no verificado en campo'
+		);
+	}
 	sources.push(`GPX ${id}.gpx (derivados: ${derived.join(', ')})`);
 
 	const route: Route = {
@@ -134,18 +154,18 @@ export function buildRoute(
 		circular: m.circular ?? c.circular ?? summary.circular,
 		difficulty_mide: m.difficulty_mide ?? c.difficulty_mide ?? null,
 		est_duration_min: m.est_duration_min ?? c.est_duration_min ?? null,
-		water_points: m.water_points ?? [],
+		water_points: m.water_points ?? enriched?.water_points ?? [],
 		escape_routes: m.escape_routes ?? [],
 		highlights: m.highlights ?? [],
 		best_season: m.best_season ?? [],
 		best_start_time: m.best_start_time ?? null,
-		shade_ratio: m.shade_ratio ?? null,
+		shade_ratio: m.shade_ratio ?? enriched?.shade_ratio ?? null,
 		gpx: `${id}.gpx`,
 		links: {
 			femecv: m.links?.femecv ?? c.femecv_url ?? null,
 			wikiloc: m.links?.wikiloc ?? null
 		},
-		alternatives: m.alternatives ?? [],
+		alternatives: m.alternatives ?? enriched?.alternatives ?? [],
 		notes_rain: m.notes_rain ?? null,
 		bbox: summary.bbox,
 		sources

@@ -6,7 +6,7 @@
  */
 
 import { z } from 'zod';
-import type { KeyValueStorage } from '$lib/weather/aemet';
+import type { KeyValueStorage } from '../weather/aemet';
 
 export interface LatLon {
 	lat: number;

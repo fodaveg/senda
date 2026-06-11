@@ -20,5 +20,295 @@
 		],
 		"other_risks": ["golpe de calor en verano", "crecidas súbitas en el cañón del Turia"],
 		"sources": ["SPEC.md §7 (ficha de zona redactada por el autor del proyecto)"]
+	},
+	"ports": {
+		"name": "Els Ports",
+		"wildlife": [
+			{
+				"species": "jabalí",
+				"risk": "bajo",
+				"advice": "No acercarse a crías; ruido moderado al caminar al amanecer/atardecer. Hozaduras recientes junto a la senda indican presencia."
+			},
+			{
+				"species": "víbora hocicuda",
+				"risk": "bajo",
+				"advice": "Mirar dónde se ponen manos y pies en roquedos y herbazales; en caso de mordedura, inmovilizar, no succionar y llamar al 112."
+			},
+			{
+				"species": "perro de ganado (mastín)",
+				"risk": "medio",
+				"advice": "No correr, no mirar fijamente, rodear el rebaño con distancia."
+			}
+		],
+		"other_risks": [
+			"frío, nieve y niebla en otoño-invierno (comarca de montaña alta)",
+			"tormentas de verano con bajada brusca de temperatura"
+		],
+		"sources": [
+			"Fauna de la Comunidad Valenciana (Wikipedia, consulta 2026-06-11): jabalí extendido por todo el territorio",
+			"Vipera latastei — Les Veus de la Vall (app.lesveusdelavall.org, consulta 2026-06-11): víbora hocicuda presente en la CV",
+			"Club Senderismo de Valencia, 'Pequeños y peligrosos' (consulta 2026-06-11): consejos ante fauna en sendas",
+			"Generalitat Valenciana, mediambient.gva.es (fichas de fauna de espacios naturales, consulta 2026-06-11)"
+		]
+	},
+	"marina-alta": {
+		"name": "La Marina Alta",
+		"wildlife": [
+			{
+				"species": "jabalí",
+				"risk": "bajo",
+				"advice": "No acercarse a crías; ruido moderado al caminar al amanecer/atardecer. Hozaduras recientes junto a la senda indican presencia."
+			},
+			{
+				"species": "víbora hocicuda",
+				"risk": "bajo",
+				"advice": "Mirar dónde se ponen manos y pies en roquedos y herbazales; en caso de mordedura, inmovilizar, no succionar y llamar al 112."
+			},
+			{
+				"species": "avispas y abejas",
+				"risk": "bajo",
+				"advice": "No molestar nidos en oquedades; alérgicos: llevar autoinyector y avisar a los acompañantes."
+			}
+		],
+		"other_risks": [
+			"golpe de calor y deshidratación en verano",
+			"terreno cortado: acantilados y barrancos con destrepes",
+			"crecidas súbitas en barrancos tras lluvias fuertes"
+		],
+		"sources": [
+			"Fauna de la Comunidad Valenciana (Wikipedia, consulta 2026-06-11): jabalí extendido por todo el territorio",
+			"Vipera latastei — Les Veus de la Vall (app.lesveusdelavall.org, consulta 2026-06-11): víbora hocicuda presente en la CV",
+			"Club Senderismo de Valencia, 'Pequeños y peligrosos' (consulta 2026-06-11): consejos ante fauna en sendas",
+			"Generalitat Valenciana, mediambient.gva.es (fichas de fauna de espacios naturales, consulta 2026-06-11)"
+		]
+	},
+	"alto-mijares": {
+		"name": "El Alto Mijares",
+		"wildlife": [
+			{
+				"species": "jabalí",
+				"risk": "bajo",
+				"advice": "No acercarse a crías; ruido moderado al caminar al amanecer/atardecer. Hozaduras recientes junto a la senda indican presencia."
+			},
+			{
+				"species": "víbora hocicuda",
+				"risk": "bajo",
+				"advice": "Mirar dónde se ponen manos y pies en roquedos y herbazales; en caso de mordedura, inmovilizar, no succionar y llamar al 112."
+			},
+			{
+				"species": "perro de ganado (mastín)",
+				"risk": "medio",
+				"advice": "No correr, no mirar fijamente, rodear el rebaño con distancia."
+			}
+		],
+		"other_risks": [
+			"crecidas súbitas en barrancos y el cauce del Mijares",
+			"golpe de calor en verano"
+		],
+		"sources": [
+			"Fauna de la Comunidad Valenciana (Wikipedia, consulta 2026-06-11): jabalí extendido por todo el territorio",
+			"Vipera latastei — Les Veus de la Vall (app.lesveusdelavall.org, consulta 2026-06-11): víbora hocicuda presente en la CV",
+			"Club Senderismo de Valencia, 'Pequeños y peligrosos' (consulta 2026-06-11): consejos ante fauna en sendas",
+			"Generalitat Valenciana, mediambient.gva.es (fichas de fauna de espacios naturales, consulta 2026-06-11)"
+		]
+	},
+	"vinalopo-mitja": {
+		"name": "El Vinalopó Mitjà",
+		"wildlife": [
+			{
+				"species": "jabalí",
+				"risk": "bajo",
+				"advice": "No acercarse a crías; ruido moderado al caminar al amanecer/atardecer. Hozaduras recientes junto a la senda indican presencia."
+			},
+			{
+				"species": "víbora hocicuda",
+				"risk": "bajo",
+				"advice": "Mirar dónde se ponen manos y pies en roquedos y herbazales; en caso de mordedura, inmovilizar, no succionar y llamar al 112."
+			}
+		],
+		"other_risks": [
+			"calor extremo en verano con poca sombra y pocas fuentes",
+			"alta exposición solar (UV)"
+		],
+		"sources": [
+			"Fauna de la Comunidad Valenciana (Wikipedia, consulta 2026-06-11): jabalí extendido por todo el territorio",
+			"Vipera latastei — Les Veus de la Vall (app.lesveusdelavall.org, consulta 2026-06-11): víbora hocicuda presente en la CV",
+			"Club Senderismo de Valencia, 'Pequeños y peligrosos' (consulta 2026-06-11): consejos ante fauna en sendas",
+			"Generalitat Valenciana, mediambient.gva.es (fichas de fauna de espacios naturales, consulta 2026-06-11)"
+		]
+	},
+	"requena-utiel": {
+		"name": "Requena-Utiel",
+		"wildlife": [
+			{
+				"species": "jabalí",
+				"risk": "bajo",
+				"advice": "No acercarse a crías; ruido moderado al caminar al amanecer/atardecer. Hozaduras recientes junto a la senda indican presencia."
+			},
+			{
+				"species": "víbora hocicuda",
+				"risk": "bajo",
+				"advice": "Mirar dónde se ponen manos y pies en roquedos y herbazales; en caso de mordedura, inmovilizar, no succionar y llamar al 112."
+			},
+			{
+				"species": "perro de ganado (mastín)",
+				"risk": "medio",
+				"advice": "No correr, no mirar fijamente, rodear el rebaño con distancia."
+			}
+		],
+		"other_risks": ["frío intenso en invierno (meseta interior)", "tormentas de verano"],
+		"sources": [
+			"Fauna de la Comunidad Valenciana (Wikipedia, consulta 2026-06-11): jabalí extendido por todo el territorio",
+			"Vipera latastei — Les Veus de la Vall (app.lesveusdelavall.org, consulta 2026-06-11): víbora hocicuda presente en la CV",
+			"Club Senderismo de Valencia, 'Pequeños y peligrosos' (consulta 2026-06-11): consejos ante fauna en sendas",
+			"Generalitat Valenciana, mediambient.gva.es (fichas de fauna de espacios naturales, consulta 2026-06-11)"
+		]
+	},
+	"plana-baixa": {
+		"name": "La Plana Baixa",
+		"wildlife": [
+			{
+				"species": "jabalí",
+				"risk": "bajo",
+				"advice": "No acercarse a crías; ruido moderado al caminar al amanecer/atardecer. Hozaduras recientes junto a la senda indican presencia."
+			},
+			{
+				"species": "víbora hocicuda",
+				"risk": "bajo",
+				"advice": "Mirar dónde se ponen manos y pies en roquedos y herbazales; en caso de mordedura, inmovilizar, no succionar y llamar al 112."
+			},
+			{
+				"species": "avispas y abejas",
+				"risk": "bajo",
+				"advice": "No molestar nidos en oquedades; alérgicos: llevar autoinyector y avisar a los acompañantes."
+			}
+		],
+		"other_risks": [
+			"golpe de calor y humedad en verano",
+			"crecidas súbitas en barrancos tras lluvias fuertes (episodios de levante)"
+		],
+		"sources": [
+			"Fauna de la Comunidad Valenciana (Wikipedia, consulta 2026-06-11): jabalí extendido por todo el territorio",
+			"Vipera latastei — Les Veus de la Vall (app.lesveusdelavall.org, consulta 2026-06-11): víbora hocicuda presente en la CV",
+			"Club Senderismo de Valencia, 'Pequeños y peligrosos' (consulta 2026-06-11): consejos ante fauna en sendas",
+			"Generalitat Valenciana, mediambient.gva.es (fichas de fauna de espacios naturales, consulta 2026-06-11)"
+		]
+	},
+	"vall-d-albaida": {
+		"name": "La Vall d'Albaida",
+		"wildlife": [
+			{
+				"species": "jabalí",
+				"risk": "bajo",
+				"advice": "No acercarse a crías; ruido moderado al caminar al amanecer/atardecer. Hozaduras recientes junto a la senda indican presencia."
+			},
+			{
+				"species": "víbora hocicuda",
+				"risk": "bajo",
+				"advice": "Mirar dónde se ponen manos y pies en roquedos y herbazales; en caso de mordedura, inmovilizar, no succionar y llamar al 112."
+			},
+			{
+				"species": "avispas y abejas",
+				"risk": "bajo",
+				"advice": "No molestar nidos en oquedades; alérgicos: llevar autoinyector y avisar a los acompañantes."
+			}
+		],
+		"other_risks": ["golpe de calor en verano", "crecidas en barrancos tras lluvias fuertes"],
+		"sources": [
+			"Fauna de la Comunidad Valenciana (Wikipedia, consulta 2026-06-11): jabalí extendido por todo el territorio",
+			"Vipera latastei — Les Veus de la Vall (app.lesveusdelavall.org, consulta 2026-06-11): víbora hocicuda presente en la CV",
+			"Club Senderismo de Valencia, 'Pequeños y peligrosos' (consulta 2026-06-11): consejos ante fauna en sendas",
+			"Generalitat Valenciana, mediambient.gva.es (fichas de fauna de espacios naturales, consulta 2026-06-11)"
+		]
+	},
+	"alto-palancia": {
+		"name": "El Alto Palancia",
+		"wildlife": [
+			{
+				"species": "jabalí",
+				"risk": "bajo",
+				"advice": "No acercarse a crías; ruido moderado al caminar al amanecer/atardecer. Hozaduras recientes junto a la senda indican presencia."
+			},
+			{
+				"species": "víbora hocicuda",
+				"risk": "bajo",
+				"advice": "Mirar dónde se ponen manos y pies en roquedos y herbazales; en caso de mordedura, inmovilizar, no succionar y llamar al 112."
+			},
+			{
+				"species": "perro de ganado (mastín)",
+				"risk": "medio",
+				"advice": "No correr, no mirar fijamente, rodear el rebaño con distancia."
+			}
+		],
+		"other_risks": [
+			"frío y nieve ocasional en cotas altas (Espadán/Calderona interior) en invierno",
+			"crecidas en barrancos"
+		],
+		"sources": [
+			"Fauna de la Comunidad Valenciana (Wikipedia, consulta 2026-06-11): jabalí extendido por todo el territorio",
+			"Vipera latastei — Les Veus de la Vall (app.lesveusdelavall.org, consulta 2026-06-11): víbora hocicuda presente en la CV",
+			"Club Senderismo de Valencia, 'Pequeños y peligrosos' (consulta 2026-06-11): consejos ante fauna en sendas",
+			"Generalitat Valenciana, mediambient.gva.es (fichas de fauna de espacios naturales, consulta 2026-06-11)"
+		]
+	},
+	"ribera-alta": {
+		"name": "La Ribera Alta",
+		"wildlife": [
+			{
+				"species": "jabalí",
+				"risk": "bajo",
+				"advice": "No acercarse a crías; ruido moderado al caminar al amanecer/atardecer. Hozaduras recientes junto a la senda indican presencia."
+			},
+			{
+				"species": "víbora hocicuda",
+				"risk": "bajo",
+				"advice": "Mirar dónde se ponen manos y pies en roquedos y herbazales; en caso de mordedura, inmovilizar, no succionar y llamar al 112."
+			},
+			{
+				"species": "avispas y abejas",
+				"risk": "bajo",
+				"advice": "No molestar nidos en oquedades; alérgicos: llevar autoinyector y avisar a los acompañantes."
+			}
+		],
+		"other_risks": [
+			"golpe de calor en verano",
+			"crecidas súbitas en barrancos (zona de episodios de lluvia intensa)"
+		],
+		"sources": [
+			"Fauna de la Comunidad Valenciana (Wikipedia, consulta 2026-06-11): jabalí extendido por todo el territorio",
+			"Vipera latastei — Les Veus de la Vall (app.lesveusdelavall.org, consulta 2026-06-11): víbora hocicuda presente en la CV",
+			"Club Senderismo de Valencia, 'Pequeños y peligrosos' (consulta 2026-06-11): consejos ante fauna en sendas",
+			"Generalitat Valenciana, mediambient.gva.es (fichas de fauna de espacios naturales, consulta 2026-06-11)"
+		]
+	},
+	"alacanti": {
+		"name": "L'Alacantí",
+		"wildlife": [
+			{
+				"species": "jabalí",
+				"risk": "bajo",
+				"advice": "No acercarse a crías; ruido moderado al caminar al amanecer/atardecer. Hozaduras recientes junto a la senda indican presencia."
+			},
+			{
+				"species": "víbora hocicuda",
+				"risk": "bajo",
+				"advice": "Mirar dónde se ponen manos y pies en roquedos y herbazales; en caso de mordedura, inmovilizar, no succionar y llamar al 112."
+			},
+			{
+				"species": "avispas y abejas",
+				"risk": "bajo",
+				"advice": "No molestar nidos en oquedades; alérgicos: llevar autoinyector y avisar a los acompañantes."
+			}
+		],
+		"other_risks": [
+			"calor extremo y alta exposición solar gran parte del año",
+			"pocas fuentes en ruta"
+		],
+		"sources": [
+			"Fauna de la Comunidad Valenciana (Wikipedia, consulta 2026-06-11): jabalí extendido por todo el territorio",
+			"Vipera latastei — Les Veus de la Vall (app.lesveusdelavall.org, consulta 2026-06-11): víbora hocicuda presente en la CV",
+			"Club Senderismo de Valencia, 'Pequeños y peligrosos' (consulta 2026-06-11): consejos ante fauna en sendas",
+			"Generalitat Valenciana, mediambient.gva.es (fichas de fauna de espacios naturales, consulta 2026-06-11)"
+		]
 	}
 }
