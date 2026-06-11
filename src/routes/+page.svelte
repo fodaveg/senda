@@ -1,8 +1,16 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import Map from '$lib/components/Map.svelte';
 	import StatusBadge from '$lib/components/StatusBadge.svelte';
+	import {
+		emptyUserData,
+		isDone,
+		loadUserData,
+		type ToggleMark,
+		type UserData
+	} from '$lib/user/marks';
 	import { applyFilters, EMPTY_FILTERS, type RouteFilters } from '$lib/filters';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
 	import { searchRoutes } from '$lib/search';
@@ -17,7 +25,20 @@
 	let filters = $state<RouteFilters>({ ...EMPTY_FILTERS, types: [] });
 	let query = $state('');
 
-	let filtered = $derived(applyFilters(searchRoutes(routes, query), filters));
+	// Marcas de usuario como filtro (SPECS_V2 §6/§8).
+	let userData = $state<UserData>(emptyUserData());
+	onMount(() => {
+		userData = loadUserData();
+	});
+	let markFilter = $state<ToggleMark | 'hecha' | null>(null);
+
+	let filtered = $derived(
+		applyFilters(searchRoutes(routes, query), filters).filter((route) => {
+			if (markFilter === null) return true;
+			const marks = userData.marks[route.id];
+			return markFilter === 'hecha' ? isDone(marks) : Boolean(marks?.[markFilter]);
+		})
+	);
 
 	/** Botón dado (SPECS_V2 §6): una ruta al azar del resultado actual. */
 	function openRandom() {
@@ -113,6 +134,16 @@
 			<option value={null}>—</option>
 			<option value={true}>Circular</option>
 			<option value={false}>Lineal</option>
+		</select>
+	</label>
+	<label>
+		Marcas
+		<select bind:value={markFilter}>
+			<option value={null}>—</option>
+			<option value="favorita">Favoritas</option>
+			<option value="me_gusta">Me gustan</option>
+			<option value="quiero_hacer">Quiero hacer</option>
+			<option value="hecha">Hechas</option>
 		</select>
 	</label>
 	<label>

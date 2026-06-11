@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
+	import RouteMarks from '$lib/components/RouteMarks.svelte';
 	import StatusBadge from '$lib/components/StatusBadge.svelte';
 	import ElevationProfile from '$lib/components/ElevationProfile.svelte';
 	import Map from '$lib/components/Map.svelte';
@@ -158,6 +159,8 @@
 			: 'Sin control de calidad reciente: la señalización y el mantenimiento pueden haber variado desde la homologación.'}
 	</p>
 {/if}
+
+<RouteMarks routeId={route.id} />
 
 <div class="detail-grid">
 	<section class="map-col">

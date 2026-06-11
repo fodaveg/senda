@@ -36,7 +36,5 @@ test('la ficha muestra el estado oficial y la nota de reservas', async ({ page }
 	await page.goto('/ruta/pr-cv-77');
 	await expect(page.locator('h1').getByText('Con reservas')).toBeVisible();
 	await expect(page.getByText(/Sin control de calidad reciente/)).toBeVisible();
-	await expect(
-		page.getByText('Sin controles de calidad', { exact: true }).first()
-	).toBeVisible();
+	await expect(page.getByText('Sin controles de calidad', { exact: true }).first()).toBeVisible();
 });
