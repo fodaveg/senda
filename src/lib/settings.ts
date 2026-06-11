@@ -10,6 +10,19 @@ export interface OriginSetting {
 	label: string;
 }
 
+/** Datos opcionales para la ficha de emergencia (SPECS_V2 §9). Solo
+ * localStorage; únicamente se incluyen en el documento que el usuario
+ * genera y comparte. */
+export interface EmergencySettings {
+	name: string;
+	phone: string;
+	medical: string;
+	vehicle: string;
+	clothing: string;
+	/** Margen tras el fin estimado para la hora límite de alarma (min). */
+	alarmMarginMin: number;
+}
+
 export interface Settings {
 	aemetApiKey: string;
 	vaultDir: string;
@@ -17,15 +30,26 @@ export interface Settings {
 	debugMode: boolean;
 	/** Origen habitual para el tiempo de viaje (SPECS_V2 §6). */
 	origin: OriginSetting | null;
+	emergency: EmergencySettings;
 }
 
 const STORAGE_KEY = 'senderos-cv:settings';
+
+export const DEFAULT_EMERGENCY: EmergencySettings = {
+	name: '',
+	phone: '',
+	medical: '',
+	vehicle: '',
+	clothing: '',
+	alarmMarginMin: 120
+};
 
 export const DEFAULT_SETTINGS: Settings = {
 	aemetApiKey: '',
 	vaultDir: '',
 	debugMode: false,
-	origin: null
+	origin: null,
+	emergency: { ...DEFAULT_EMERGENCY }
 };
 
 export function loadSettings(): Settings {
@@ -47,11 +71,22 @@ export function loadSettings(): Settings {
 			typeof origin.label === 'string'
 				? { lat: origin.lat, lon: origin.lon, label: origin.label }
 				: null;
+		const e = (parsed.emergency ?? {}) as Partial<EmergencySettings>;
+		const str = (v: unknown) => (typeof v === 'string' ? v : '');
 		return {
 			aemetApiKey: typeof parsed.aemetApiKey === 'string' ? parsed.aemetApiKey : '',
 			vaultDir: typeof parsed.vaultDir === 'string' ? parsed.vaultDir : '',
 			debugMode: parsed.debugMode === true,
-			origin: validOrigin
+			origin: validOrigin,
+			emergency: {
+				name: str(e.name),
+				phone: str(e.phone),
+				medical: str(e.medical),
+				vehicle: str(e.vehicle),
+				clothing: str(e.clothing),
+				alarmMarginMin:
+					typeof e.alarmMarginMin === 'number' && e.alarmMarginMin > 0 ? e.alarmMarginMin : 120
+			}
 		};
 	} catch {
 		return { ...DEFAULT_SETTINGS };

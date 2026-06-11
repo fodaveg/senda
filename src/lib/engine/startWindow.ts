@@ -89,7 +89,7 @@ export function startWindow(
 		};
 	}
 
-	let start = sunrise;
+	const start = sunrise;
 	let end = lightLimit;
 	reasons.push(
 		`Saliendo como muy tarde a las ${minutesToHhMm(lightLimit)} terminas antes del anochecer ` +

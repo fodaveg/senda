@@ -41,3 +41,13 @@ test('la copia de seguridad exporta JSON válido del esquema', async ({ page }) 
 	const download = await downloadPromise;
 	expect(download.suggestedFilename()).toMatch(/senderos-cv-datos-.*\.json/);
 });
+
+test('el checklist de mochila persiste por ruta y fecha', async ({ page }) => {
+	await page.route('https://api.open-meteo.com/**', (route) => route.abort());
+	await page.goto('/ruta/pr-cv-77');
+	await page.locator('body[data-hydrated]').waitFor();
+	const box = page.getByRole('checkbox', { name: /Botiquín en la mochila/ });
+	await box.check();
+	await page.reload();
+	await expect(page.getByRole('checkbox', { name: /Botiquín en la mochila/ })).toBeChecked();
+});

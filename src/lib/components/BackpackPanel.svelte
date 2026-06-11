@@ -1,7 +1,16 @@
 <script lang="ts">
 	import type { GearDecision } from '$lib/types';
 
-	let { decisions }: { decisions: GearDecision[] } = $props();
+	let {
+		decisions,
+		checked = null,
+		onToggle = null
+	}: {
+		decisions: GearDecision[];
+		/** Checklist de preparación (SPECS_V2 §7); null = sin checklist. */
+		checked?: ReadonlySet<string> | null;
+		onToggle?: ((itemId: string) => void) | null;
+	} = $props();
 
 	let enabled = $derived(
 		decisions
@@ -20,6 +29,16 @@
 		<ul>
 			{#each enabled as decision (decision.item.id)}
 				<li class="item enabled" class:alta={decision.priority === 'alta'}>
+					{#if checked && onToggle}
+						<input
+							type="checkbox"
+							class="check"
+							title="En la mochila"
+							aria-label={`${decision.item.name} en la mochila`}
+							checked={checked.has(decision.item.id)}
+							onchange={() => onToggle?.(decision.item.id)}
+						/>
+					{/if}
 					<span class="name">
 						{decision.item.name}
 						{#if decision.priority === 'alta'}<span class="prio">prioridad alta</span>{/if}
@@ -37,6 +56,16 @@
 			<ul>
 				{#each indeterminate as decision (decision.item.id)}
 					<li class="item indeterminate">
+						{#if checked && onToggle}
+							<input
+								type="checkbox"
+								class="check"
+								title="En la mochila"
+								aria-label={`${decision.item.name} en la mochila`}
+								checked={checked.has(decision.item.id)}
+								onchange={() => onToggle?.(decision.item.id)}
+							/>
+						{/if}
 						<span class="name">? {decision.item.name}</span>
 						{#if decision.reason}<span class="reason">{decision.reason}</span>{/if}
 					</li>
@@ -50,8 +79,22 @@
 			<h3>Puedes dejarlo <span class="count">({disabled.length})</span></h3>
 			<ul>
 				{#each disabled as decision (decision.item.id)}
-					<li class="item disabled">
+					<li class="item disabled" class:still-checked={checked?.has(decision.item.id)}>
+						{#if checked && onToggle}
+							<input
+								type="checkbox"
+								class="check"
+								title="En la mochila"
+								aria-label={`${decision.item.name} en la mochila`}
+								checked={checked.has(decision.item.id)}
+								onchange={() => onToggle?.(decision.item.id)}
+							/>
+						{/if}
 						<span class="name">{decision.item.name}</span>
+						{#if checked?.has(decision.item.id)}
+							<span class="still-warn">Sigue marcado en tu mochila aunque ya no se recomienda.</span
+							>
+						{/if}
 						{#if decision.reason}<span class="reason">{decision.reason}</span>{/if}
 					</li>
 				{/each}
@@ -116,6 +159,26 @@
 	.reason {
 		font-size: 0.82rem;
 		color: #555;
+	}
+	.check {
+		margin: 0 0 0.2rem;
+		align-self: start;
+	}
+	.item {
+		position: relative;
+	}
+	.item :global(input.check) {
+		position: absolute;
+		right: 0.6rem;
+		top: 0.55rem;
+	}
+	.still-warn {
+		color: #8a5a00;
+		font-size: 0.78rem;
+	}
+	.item.disabled.still-checked {
+		opacity: 0.9;
+		border-left: 4px solid #b8860b;
 	}
 	.weight {
 		font-size: 0.82rem;

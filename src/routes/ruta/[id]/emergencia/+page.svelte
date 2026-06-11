@@ -3,18 +3,17 @@
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import { isTauri } from '@tauri-apps/api/core';
-	import { gearItems, gearRules } from '$lib/data/gear';
-	import { routeById } from '$lib/data/routes';
-	import { wildlifeForZone } from '$lib/data/wildlife';
-	import { evaluateGear } from '$lib/engine';
-	import { startWindow } from '$lib/engine/startWindow';
-	import { buildReportModel, type ReportModel } from '$lib/report/model';
-	import { renderMarkdown, reportFilename } from '$lib/report/markdown';
-	import { loadSettings } from '$lib/settings';
-	import { loadChecklist } from '$lib/user/checklist';
-	import { forecastDates, seasonForDate } from '$lib/weather/dates';
+	import { startWindow, minutesToHhMm } from '$lib/engine/startWindow';
+	import {
+		buildEmergencyModel,
+		emergencyFilename,
+		emergencyPlainText,
+		type EmergencyInput
+	} from '$lib/report/emergency';
+	import { renderMarkdown } from '$lib/report/markdown';
+	import { DEFAULT_EMERGENCY, loadSettings, type EmergencySettings } from '$lib/settings';
+	import { forecastDates } from '$lib/weather/dates';
 	import { avisosForRoute, fetchAvisosCapCached, type Aviso } from '$lib/weather/avisos';
-	import { fetchOpenMeteoHourly, type HourlyPoint } from '$lib/weather/hourly';
 	import { fetchOpenMeteoForecast } from '$lib/weather/openmeteo';
 	import type { WeatherDay } from '$lib/types';
 
@@ -22,55 +21,49 @@
 	let route = $derived(data.route);
 
 	let date = $state('');
+	let startHhMm = $state('08:00');
+	let companions = $state('');
+	let person = $state<EmergencySettings>({ ...DEFAULT_EMERGENCY });
 	let forecast = $state<WeatherDay[] | null>(null);
-	let hourly = $state<HourlyPoint[] | null>(null);
 	let avisos = $state<Aviso[] | null>(null);
 	let ready = $state(false);
+	let shareMessage = $state<string | null>(null);
 	let savedTo = $state<string | null>(null);
 
-	let model = $derived.by((): ReportModel | null => {
+	let weather = $derived(forecast?.find((d) => d.date === date) ?? null);
+
+	let input = $derived.by((): EmergencyInput | null => {
 		if (!ready || !date) return null;
-		const weather = forecast?.find((d) => d.date === date) ?? null;
-		const decisions = evaluateGear(route, weather, seasonForDate(date), gearItems, gearRules);
-		const alternatives = route.alternatives
-			.map((id) => routeById(id))
-			.filter((r) => r !== undefined)
-			.map((r) => ({ id: r.id, name: r.name }));
-		return buildReportModel({
+		return {
 			route,
 			date,
+			startHhMm,
+			companions,
+			person,
 			weather,
-			decisions,
-			wildlife: wildlifeForZone(route.zone),
-			alternatives,
-			startWindow: startWindow(route, weather, hourly),
-			avisos: avisos ? avisosForRoute(avisos, route.zone, date) : null,
-			checkedItems: [...loadChecklist(route.id, date)]
-		});
+			avisos: avisos ? avisosForRoute(avisos, route.zone, date) : null
+		};
 	});
 
-	let markdown = $derived(model ? renderMarkdown(model) : '');
-	let filename = $derived(reportFilename(route.id, date));
+	let model = $derived(input ? buildEmergencyModel(input) : null);
+	let markdown = $derived(model && input ? renderMarkdown(model) : '');
+	let plainText = $derived(input ? emergencyPlainText(input) : '');
+	let filename = $derived(emergencyFilename(route.id, date));
 
 	onMount(async () => {
 		const dates = forecastDates();
 		const requested = page.url.searchParams.get('fecha');
 		date = requested && dates.includes(requested) ? requested : dates[0];
+		person = loadSettings().emergency;
 		try {
 			forecast = await fetchOpenMeteoForecast(route.start.lat, route.start.lon);
 		} catch (e) {
 			console.error('Open-Meteo:', e);
-			forecast = null;
-		} finally {
-			ready = true;
 		}
-		// Horario para la ventana de inicio y avisos oficiales: solo afinan,
-		// su fallo no bloquea el informe.
-		try {
-			hourly = await fetchOpenMeteoHourly(route.start.lat, route.start.lon, date);
-		} catch (e) {
-			console.error('Open-Meteo horario:', e);
-		}
+		// Hora de salida por defecto: el inicio de la ventana ideal si se puede.
+		const day = forecast?.find((d) => d.date === date) ?? null;
+		const window = startWindow(route, day, null);
+		if (window && !window.lightAlert) startHhMm = minutesToHhMm(window.startMin);
 		const { aemetApiKey } = loadSettings();
 		if (aemetApiKey) {
 			try {
@@ -79,6 +72,7 @@
 				console.error('AEMET avisos:', e);
 			}
 		}
+		ready = true;
 	});
 
 	function downloadMarkdown() {
@@ -91,10 +85,28 @@
 		URL.revokeObjectURL(url);
 	}
 
+	async function shareText() {
+		shareMessage = null;
+		try {
+			if (navigator.share) {
+				await navigator.share({ text: plainText });
+				return;
+			}
+			await navigator.clipboard.writeText(plainText);
+			shareMessage = 'Texto copiado al portapapeles: pégalo en WhatsApp o SMS.';
+		} catch {
+			try {
+				await navigator.clipboard.writeText(plainText);
+				shareMessage = 'Texto copiado al portapapeles: pégalo en WhatsApp o SMS.';
+			} catch {
+				shareMessage = 'No se pudo compartir; selecciona y copia el texto de la vista previa.';
+			}
+		}
+	}
+
 	async function saveInTauri() {
 		const { save } = await import('@tauri-apps/plugin-dialog');
 		const { writeTextFile } = await import('@tauri-apps/plugin-fs');
-		// Carpeta del vault configurada en /ajustes, si existe.
 		const { vaultDir } = loadSettings();
 		const path = await save({
 			defaultPath: vaultDir ? `${vaultDir}/${filename}` : filename,
@@ -107,7 +119,7 @@
 </script>
 
 <svelte:head>
-	<title>Informe — {route.name}</title>
+	<title>Ficha de emergencia — {route.name}</title>
 </svelte:head>
 
 <nav class="no-print breadcrumb">
@@ -115,20 +127,35 @@
 </nav>
 
 {#if model}
+	<div class="no-print plan-form">
+		<label>
+			Hora de salida
+			<input type="time" bind:value={startHhMm} />
+		</label>
+		<label class="grow">
+			Acompañantes (vacío = vas solo/a)
+			<input type="text" bind:value={companions} placeholder="Marta y Joan" />
+		</label>
+		<p class="hint">
+			Tus datos (nombre, teléfono, vehículo…) se rellenan desde
+			<a href={resolve('/ajustes')}>Ajustes → Datos de emergencia</a> y solo viven en este dispositivo.
+		</p>
+	</div>
+
 	<div class="no-print actions">
+		<button onclick={shareText}>Compartir texto</button>
 		<button onclick={downloadMarkdown}>Descargar .md</button>
 		<button onclick={() => window.print()}>Imprimir</button>
 		{#if isTauri()}
 			<button onclick={saveInTauri}>Guardar como…</button>
 		{/if}
-		{#if savedTo}
-			<span class="saved">Guardado en {savedTo}</span>
-		{/if}
+		{#if savedTo}<span class="saved">Guardado en {savedTo}</span>{/if}
 	</div>
+	{#if shareMessage}<p class="no-print hint" role="status">{shareMessage}</p>{/if}
 
 	<article class="report">
 		<header class="report-head">
-			<p class="kicker">Informe de ruta · {date}</p>
+			<p class="kicker">Ficha de emergencia · {date}</p>
 			<h1>{model.title}</h1>
 		</header>
 		{#each model.sections as section (section.title)}
@@ -153,13 +180,50 @@
 			</section>
 		{/each}
 	</article>
+
+	<details class="no-print preview-text">
+		<summary>Texto compacto para mensajería</summary>
+		<pre>{plainText}</pre>
+	</details>
 {:else}
-	<p class="loading">Generando informe…</p>
+	<p class="loading">Generando ficha…</p>
 {/if}
 
 <style>
 	.breadcrumb {
 		margin: 0.5rem 0;
+	}
+	.plan-form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		align-items: end;
+		border: 1px solid #d8d4c8;
+		border-radius: 6px;
+		padding: 0.6rem 0.85rem;
+		margin-bottom: 0.75rem;
+	}
+	.plan-form label {
+		display: grid;
+		gap: 0.2rem;
+		font-size: 0.85rem;
+		font-weight: 600;
+	}
+	.plan-form .grow {
+		flex: 1;
+		min-width: 14rem;
+	}
+	.plan-form input {
+		font: inherit;
+		padding: 0.35rem 0.5rem;
+		border: 1px solid #d8d4c8;
+		border-radius: 6px;
+	}
+	.hint {
+		font-size: 0.8rem;
+		color: #555;
+		margin: 0;
+		flex-basis: 100%;
 	}
 	.actions {
 		display: flex;
@@ -177,9 +241,6 @@
 		color: #fff;
 		cursor: pointer;
 	}
-	.actions button:hover {
-		background: #2a5440;
-	}
 	.saved {
 		font-size: 0.85rem;
 		color: #2a6f4e;
@@ -188,54 +249,55 @@
 		background: #fff;
 		border: 1px solid #d8d4c8;
 		border-radius: 6px;
-		padding: 1.5rem 2rem;
+		padding: 1.25rem 1.5rem;
 		max-width: 48rem;
 	}
-	.kicker {
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		font-size: 0.78rem;
-		color: #555;
+	.report-head .kicker {
 		margin: 0;
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		letter-spacing: 0.05em;
+		color: #555;
 	}
 	.report h1 {
 		margin: 0.2rem 0 1rem;
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 	}
 	.report h2 {
 		font-size: 1.05rem;
-		border-bottom: 1px solid #e2ded2;
+		border-bottom: 1px solid #eee9dd;
 		padding-bottom: 0.2rem;
-		margin: 1.2rem 0 0.5rem;
 	}
 	.report dl {
 		display: grid;
 		grid-template-columns: auto 1fr;
-		gap: 0.2rem 1rem;
-		margin: 0;
+		gap: 0.25rem 1rem;
 	}
 	.report dt {
 		font-weight: 600;
 	}
 	.report dd {
 		margin: 0;
+		overflow-wrap: anywhere;
 	}
-	.report ul {
-		margin: 0.3rem 0;
-		padding-left: 1.2rem;
+	.preview-text {
+		margin-top: 1rem;
+	}
+	.preview-text pre {
+		white-space: pre-wrap;
+		background: #f4f2ec;
+		border: 1px solid #d8d4c8;
+		border-radius: 6px;
+		padding: 0.75rem;
+		font-size: 0.85rem;
 	}
 	.loading {
 		padding: 1rem;
 	}
-
 	@media print {
 		:global(header),
 		.no-print {
 			display: none !important;
-		}
-		:global(main) {
-			max-width: none;
-			padding: 0;
 		}
 		.report {
 			border: none;

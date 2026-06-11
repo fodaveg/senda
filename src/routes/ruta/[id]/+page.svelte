@@ -18,6 +18,8 @@
 	import { fetchDrivingEstimateCached, type DrivingEstimate } from '$lib/geo/routing';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
 	import { loadSettings } from '$lib/settings';
+	import { SvelteSet } from 'svelte/reactivity';
+	import { loadChecklist, saveChecklist } from '$lib/user/checklist';
 	import {
 		AemetAuthError,
 		AemetRateLimitError,
@@ -52,6 +54,7 @@
 	let hourlyByDate = $state<Record<string, HourlyPoint[]>>({});
 	let avisos = $state<Aviso[] | null>(null);
 	let travel = $state<{ estimate: DrivingEstimate; from: string } | null>(null);
+	let checkedItems = $state<SvelteSet<string>>(new SvelteSet());
 	let travelStatus = $state<string | null>(null);
 
 	let selectedDay = $derived(forecast?.find((d) => d.date === selectedDate) ?? null);
@@ -76,6 +79,17 @@
 	let avisosForDate = $derived(
 		avisos && selectedDate ? avisosForRoute(avisos, route.zone, selectedDate) : []
 	);
+
+	// Checklist de preparación por (ruta, fecha) (SPECS_V2 §7).
+	$effect(() => {
+		if (selectedDate) checkedItems = new SvelteSet(loadChecklist(route.id, selectedDate));
+	});
+
+	function toggleChecklistItem(itemId: string) {
+		if (checkedItems.has(itemId)) checkedItems.delete(itemId);
+		else checkedItems.add(itemId);
+		saveChecklist(route.id, selectedDate, new Set(checkedItems));
+	}
 
 	// Pronóstico horario por fecha seleccionada, con caché en memoria.
 	$effect(() => {
@@ -287,7 +301,7 @@
 		<StartWindowCard {window} manualHint={route.best_start_time} />
 
 		<h2>Mochila recomendada</h2>
-		<BackpackPanel {decisions} />
+		<BackpackPanel {decisions} checked={checkedItems} onToggle={toggleChecklistItem} />
 	</section>
 
 	<section class="data-col">
@@ -407,6 +421,12 @@
 			>
 				Generar informe
 			</a>
+			<a
+				class="report-btn emergency-btn"
+				href={resolve('/ruta/[id]/emergencia', { id: route.id }) + `?fecha=${selectedDate}`}
+			>
+				Ficha de emergencia
+			</a>
 			<!-- eslint-enable svelte/no-navigation-without-resolve -->
 		{/if}
 
@@ -515,6 +535,11 @@
 		background: #1d3a2a;
 		color: #fff;
 		text-decoration: none;
+	}
+	.emergency-btn {
+		background: #fff;
+		color: #1d3a2a;
+		margin-left: 0.5rem;
 	}
 	.report-btn:hover {
 		background: #2a5440;

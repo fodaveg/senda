@@ -236,6 +236,44 @@
 	</fieldset>
 
 	<fieldset>
+		<legend>Datos de emergencia (opcionales)</legend>
+		<p class="help">
+			Se incluyen solo en la ficha de emergencia que generes para tus contactos (ficha de cada ruta
+			→ "Ficha de emergencia"). Viven únicamente en este dispositivo.
+		</p>
+		<div class="origin-row">
+			<label>
+				Nombre
+				<input type="text" bind:value={settings.emergency.name} />
+			</label>
+			<label>
+				Teléfono
+				<input type="text" inputmode="tel" bind:value={settings.emergency.phone} />
+			</label>
+		</div>
+		<label>
+			Datos médicos relevantes (alergias, medicación…)
+			<input type="text" bind:value={settings.emergency.medical} />
+		</label>
+		<label>
+			Vehículo y dónde quedará aparcado
+			<input
+				type="text"
+				bind:value={settings.emergency.vehicle}
+				placeholder="Dacia Duster gris, 1234-ABC, parking del inicio"
+			/>
+		</label>
+		<label>
+			Equipación visible (colores de ropa y mochila)
+			<input type="text" bind:value={settings.emergency.clothing} />
+		</label>
+		<label>
+			Margen de la hora límite de alarma (minutos tras el fin estimado)
+			<input type="number" min="30" step="15" bind:value={settings.emergency.alarmMarginMin} />
+		</label>
+	</fieldset>
+
+	<fieldset>
 		<legend>Diagnóstico</legend>
 		<p class="help">
 			Con el modo debug activado, los fallos de meteo muestran el error técnico en crudo (útil para

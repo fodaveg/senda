@@ -25,6 +25,8 @@ export interface ReportInput {
 	startWindow?: StartWindow | null;
 	/** Avisos meteorológicos oficiales vigentes para la fecha, si se consultaron. */
 	avisos?: Aviso[] | null;
+	/** Ítems ya marcados en el checklist de preparación (SPECS_V2 §7). */
+	checkedItems?: string[] | null;
 }
 
 export type ReportBlock =
@@ -55,14 +57,18 @@ function mideText(route: Route): string {
 	return `medio ${m.medio} · itinerario ${m.itinerario} · desplazamiento ${m.desplazamiento} · esfuerzo ${m.esfuerzo}`;
 }
 
-function gearLine(decision: GearDecision): string {
-	return decision.reason ? `${decision.item.name} — ${decision.reason}` : decision.item.name;
+function gearLine(decision: GearDecision, checked: string[] | null): string {
+	// El informe imprimible lleva casillas; ☑ refleja el checklist (SPECS_V2 §7).
+	const box = checked?.includes(decision.item.id) ? '☑' : '☐';
+	const text = decision.reason ? `${decision.item.name} — ${decision.reason}` : decision.item.name;
+	return `${box} ${text}`;
 }
 
 export function buildReportModel(input: ReportInput): ReportModel {
 	const { route, date, weather, decisions, wildlife, alternatives } = input;
 	const window = input.startWindow ?? null;
 	const avisos = input.avisos ?? null;
+	const checked = input.checkedItems ?? null;
 
 	const sections: ReportSection[] = [];
 
@@ -180,18 +186,18 @@ export function buildReportModel(input: ReportInput): ReportModel {
 	const gearBlocks: ReportBlock[] = [];
 	if (enabled.length > 0) {
 		gearBlocks.push({ kind: 'paragraph', text: 'Llevar:' });
-		gearBlocks.push({ kind: 'list', items: enabled.map(gearLine) });
+		gearBlocks.push({ kind: 'list', items: enabled.map((d) => gearLine(d, checked)) });
 	}
 	if (indeterminate.length > 0) {
 		gearBlocks.push({
 			kind: 'paragraph',
 			text: 'A tu criterio (sin datos suficientes o sin regla):'
 		});
-		gearBlocks.push({ kind: 'list', items: indeterminate.map(gearLine) });
+		gearBlocks.push({ kind: 'list', items: indeterminate.map((d) => gearLine(d, checked)) });
 	}
 	if (disabled.length > 0) {
 		gearBlocks.push({ kind: 'paragraph', text: 'Puedes dejarlo:' });
-		gearBlocks.push({ kind: 'list', items: disabled.map(gearLine) });
+		gearBlocks.push({ kind: 'list', items: disabled.map((d) => gearLine(d, checked)) });
 	}
 	sections.push({ title: 'Mochila recomendada', blocks: gearBlocks });
 
