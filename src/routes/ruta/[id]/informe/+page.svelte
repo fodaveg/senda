@@ -49,7 +49,8 @@
 		date = requested && dates.includes(requested) ? requested : dates[0];
 		try {
 			forecast = await fetchOpenMeteoForecast(route.start.lat, route.start.lon);
-		} catch {
+		} catch (e) {
+			console.error('Open-Meteo:', e);
 			forecast = null;
 		} finally {
 			ready = true;

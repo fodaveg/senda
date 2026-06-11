@@ -7,7 +7,8 @@
 		loading = false,
 		aemet = null,
 		discrepancies = [],
-		aemetNote = null
+		aemetNote = null,
+		error = null
 	}: {
 		/** null = sin conexión o sin pronóstico para esa fecha. */
 		day: WeatherDay | null;
@@ -17,6 +18,8 @@
 		discrepancies?: WeatherDiscrepancy[];
 		/** Motivo por el que no hay verificación AEMET (key rechazada…). */
 		aemetNote?: string | null;
+		/** Error en crudo del módulo meteo, mostrado para diagnóstico. */
+		error?: string | null;
 	} = $props();
 
 	function hourOf(isoLocal: string): string {
@@ -84,6 +87,9 @@
 			Sin conexión o sin pronóstico para esta fecha. La recomendación de mochila queda en
 			"indeterminado" para lo que dependa de la meteo.
 		</p>
+		{#if error}
+			<p class="raw-error">Detalle técnico: <code>{error}</code></p>
+		{/if}
 	{/if}
 </div>
 
@@ -132,6 +138,12 @@
 		margin: 0.4rem 0 0;
 		font-size: 0.8rem;
 		color: #8a5a00;
+	}
+	.raw-error {
+		margin: 0.5rem 0 0;
+		font-size: 0.78rem;
+		color: #b3261e;
+		overflow-wrap: anywhere;
 	}
 	.discrepancy {
 		margin-top: 0.5rem;
