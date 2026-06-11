@@ -23,18 +23,24 @@
 		"esfuerzo": 2
 	},
 	"est_duration_min": 100,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Font Amarga\" (km 5.9, a 6 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.04,
 	"gpx": "sl-cv-120.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-120",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-454",
+		"gr-239-e03",
+		"pr-cv-78"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.522110005840659,
@@ -44,6 +50,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-120 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-120.gpx (derivados: inicio, bbox)"
 	]
 }

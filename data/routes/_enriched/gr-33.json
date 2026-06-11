@@ -1,0 +1,25 @@
+{
+	"water_points": [
+		"Fuente (km 7.4, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.0, a 73 m del track; OSM, no verificado en campo)",
+		"Manantial \"Pou de la Pererola\" (km 10.0, a 27 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Canal\" (km 15.5, a 22 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font d'en Plenes\" (km 20.0, a 35 m del track; OSM, no verificado en campo)",
+		"Fuente (km 31.5, a 67 m del track; OSM, no verificado en campo)",
+		"Fuente (km 31.7, a 76 m del track; OSM, no verificado en campo)",
+		"Manantial (km 31.8, a 76 m del track; OSM, no verificado en campo)",
+		"Fuente (km 31.8, a 34 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Baix\" (km 32.0, a 88 m del track; OSM, no verificado en campo)",
+		"Manantial \"Pou del Mas de la Vall\" (km 38.9, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente \"la Font\" (km 50.3, a 30 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font dels Posos\" (km 51.6, a 8 m del track; OSM, no verificado en campo)",
+		"Fuente (km 56.9, a 7 m del track; OSM, no verificado en campo)",
+		"Manantial (km 57.1, a 2 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font Coberta\" (km 57.1, a 81 m del track; OSM, no verificado en campo)",
+		"Fuente (km 57.1, a 1 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.1,
+	"alternatives": ["pr-cv-448", "pr-cv-378", "gr-33-e02"],
+	"enriched_at": "2026-06-11T17:41:26.849Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

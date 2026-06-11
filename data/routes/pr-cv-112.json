@@ -23,18 +23,28 @@
 		"esfuerzo": 4
 	},
 	"est_duration_min": 400,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 0.1, a 83 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.8, a 29 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Cotelles\" (km 1.9, a 11 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Roset\" (km 4.5, a 10 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.8, a 60 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "pr-cv-112.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-112",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-270",
+		"sl-cv-151",
+		"pr-cv-212"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.551347006112337,
@@ -44,6 +54,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-112 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-112.gpx (derivados: inicio, bbox)"
 	]
 }

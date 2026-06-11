@@ -23,18 +23,26 @@
 		"esfuerzo": 2
 	},
 	"est_duration_min": 115,
-	"water_points": [],
+	"water_points": [
+		"Manantial (km 0.7, a 2 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del molino la luz\" (km 1.8, a 35 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.4, a 21 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "sl-cv-167.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-167",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-192",
+		"pr-cv-191",
+		"sl-cv-164"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.78455301001668,
@@ -44,6 +52,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-167 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-167.gpx (derivados: inicio, bbox)"
 	]
 }

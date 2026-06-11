@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial \"La Rinconá\" (km 5.3, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente \"Pelma\" (km 15.3, a 12 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.12,
+	"alternatives": ["pr-cv-77", "sl-cv-74", "sl-cv-72"],
+	"enriched_at": "2026-06-11T18:09:16.086Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

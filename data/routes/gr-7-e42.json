@@ -23,18 +23,27 @@
 		"esfuerzo": 4
 	},
 	"est_duration_min": 565,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Fuente del Chapole\" (km 0.1, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.4, a 42 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de las Huertecillas\" (km 11.4, a 2 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Collado\" (km 30.9, a 16 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.01,
 	"gpx": "gr-7-e42.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e42",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-381",
+		"pr-cv-380",
+		"pr-cv-379"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-1.004469003528357,
@@ -44,6 +53,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e42 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e42.gpx (derivados: inicio, bbox)"
 	]
 }

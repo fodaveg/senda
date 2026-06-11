@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial \"Font de Ferri\" (km 2.1, a 82 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Micairent\" (km 3.3, a 1 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.1,
+	"alternatives": ["sl-cv-83", "sl-cv-43", "pr-cv-390"],
+	"enriched_at": "2026-06-11T18:48:46.231Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

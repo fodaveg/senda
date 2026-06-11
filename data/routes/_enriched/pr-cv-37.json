@@ -1,0 +1,20 @@
+{
+	"water_points": [
+		"Manantial \"Font de Borras\" (km 1.0, a 7 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Penya Banyada\" (km 1.1, a 6 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font Huit Piletes\" (km 2.0, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font l'Esquerola\" (km 2.8, a 7 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Sancho\" (km 3.4, a 7 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Llopis\" (km 3.9, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Gralla\" (km 4.2, a 32 m del track; OSM, no verificado en campo)",
+		"Manantial (km 5.4, a 16 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Pouet\" (km 5.4, a 7 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Carrascalet\" (km 6.5, a 14 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Julià\" (km 8.3, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Els Bassiets\" (km 8.7, a 6 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.47,
+	"alternatives": ["pr-cv-56", "pr-cv-277", "gr-7-e48"],
+	"enriched_at": "2026-06-11T18:14:25.884Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

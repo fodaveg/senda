@@ -1,0 +1,28 @@
+{
+	"water_points": [
+		"Fuente (km 2.3, a 83 m del track; OSM, no verificado en campo)",
+		"Fuente (km 3.4, a 27 m del track; OSM, no verificado en campo)",
+		"Fuente (km 3.6, a 3 m del track; OSM, no verificado en campo)",
+		"Fuente (km 3.8, a 14 m del track; OSM, no verificado en campo)",
+		"Fuente (km 17.5, a 15 m del track; OSM, no verificado en campo)",
+		"Fuente (km 17.6, a 27 m del track; OSM, no verificado en campo)",
+		"Fuente (km 18.0, a 68 m del track; OSM, no verificado en campo)",
+		"Fuente (km 18.1, a 9 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente la Carrera\" (km 21.7, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente Bajo Castillo\" (km 25.3, a 7 m del track; OSM, no verificado en campo)",
+		"Manantial \"Agua\" (km 25.3, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente La Tejería\" (km 26.4, a 22 m del track; OSM, no verificado en campo)",
+		"Fuente (km 45.1, a 52 m del track; OSM, no verificado en campo)",
+		"Fuente (km 45.1, a 19 m del track; OSM, no verificado en campo)",
+		"Fuente (km 45.2, a 12 m del track; OSM, no verificado en campo)",
+		"Fuente (km 45.3, a 86 m del track; OSM, no verificado en campo)",
+		"Fuente (km 51.2, a 84 m del track; OSM, no verificado en campo)",
+		"Fuente (km 53.0, a 29 m del track; OSM, no verificado en campo)",
+		"Fuente (km 62.3, a 15 m del track; OSM, no verificado en campo)",
+		"Fuente (km 62.3, a 84 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.21,
+	"alternatives": ["gr-160-e01", "sl-cv-57", "gr-160-e02"],
+	"enriched_at": "2026-06-11T18:51:48.735Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -23,13 +23,17 @@
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.41,
 	"gpx": "sl-cv-110.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-110",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"sl-cv-324",
+		"pr-cv-171",
+		"pr-cv-52"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.837568966671824,
@@ -39,6 +43,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-110 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-110.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

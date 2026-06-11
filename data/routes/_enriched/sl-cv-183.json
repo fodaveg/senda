@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Fuente \"Font d'Orbeta\" (km 0.1, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Dalt\" (km 0.4, a 45 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-368", "sl-cv-92", "pr-cv-445"],
+	"enriched_at": "2026-06-11T18:39:32.309Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

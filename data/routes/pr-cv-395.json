@@ -23,18 +23,30 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 300,
-	"water_points": [],
+	"water_points": [
+		"Manantial (km 2.7, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"els Xorros\" (km 3.8, a 6 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Ombria\" (km 7.2, a 8 m del track; OSM, no verificado en campo)",
+		"Manantial (km 7.3, a 9 m del track; OSM, no verificado en campo)",
+		"Manantial (km 11.7, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial (km 14.7, a 36 m del track; OSM, no verificado en campo)",
+		"Fuente (km 14.8, a 26 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "pr-cv-395.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-395",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"sl-cv-102",
+		"pr-cv-294",
+		"pr-cv-297"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.145123014226556,
@@ -44,6 +56,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-395 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-395.gpx (derivados: inicio, bbox)"
 	]
 }

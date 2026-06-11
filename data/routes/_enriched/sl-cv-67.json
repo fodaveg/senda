@@ -1,0 +1,9 @@
+{
+	"water_points": [
+		"Manantial \"Fuente Ladrón\" (km 3.2, a 3 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-393", "pr-cv-367", "pr-cv-424"],
+	"enriched_at": "2026-06-11T19:57:17.198Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

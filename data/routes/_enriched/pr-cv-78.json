@@ -1,0 +1,15 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 21 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font Arcadetes\" (km 4.2, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente Romero\" (km 5.3, a 9 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Quintana\" (km 9.9, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 15.0, a 39 m del track; OSM, no verificado en campo)",
+		"Fuente (km 15.0, a 92 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font dels vint-i-cinc dolls\" (km 15.8, a 4 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.18,
+	"alternatives": ["gr-239-e03", "pr-cv-193-4", "pr-cv-193-3"],
+	"enriched_at": "2026-06-11T18:29:18.083Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

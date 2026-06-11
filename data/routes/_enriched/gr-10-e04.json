@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Fuente \"Fuente de los 15 Caños\" (km 0.1, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.1, a 24 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de la Fonf\" (km 1.6, a 9 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Hontanar\" (km 17.5, a 9 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.14,
+	"alternatives": ["sl-cv-129", "pr-cv-8", "gr-160-e05"],
+	"enriched_at": "2026-06-11T17:34:37.458Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -1,0 +1,15 @@
+{
+	"water_points": [
+		"Manantial \"Fuente de Los Masetes\" (km 9.4, a 15 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Rebollo\" (km 12.6, a 11 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del rebollo\" (km 12.6, a 15 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de Los Antolines\" (km 21.6, a 30 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de la Araña\" (km 26.7, a 15 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Prado\" (km 36.1, a 63 m del track; OSM, no verificado en campo)",
+		"Fuente (km 36.9, a 74 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.05,
+	"alternatives": ["gr-37-e01", "sl-cv-22", "pr-cv-187"],
+	"enriched_at": "2026-06-11T18:07:53.873Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

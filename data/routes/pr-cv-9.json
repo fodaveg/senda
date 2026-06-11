@@ -23,18 +23,25 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 280,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Font del Pí\" (km 12.8, a 19 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Molí\" (km 14.5, a 96 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.1,
 	"gpx": "pr-cv-9.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-9",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"sl-cv-112",
+		"pr-cv-198",
+		"pr-cv-353"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.270572025328875,
@@ -44,6 +51,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-9 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-9.gpx (derivados: inicio, bbox)"
 	]
 }

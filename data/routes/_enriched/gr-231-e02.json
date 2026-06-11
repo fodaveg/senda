@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial \"Fuente de los Arcos\" (km 0.0, a 79 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente Los Cloticos\" (km 3.2, a 31 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.2,
+	"alternatives": ["sl-cv-52", "gr-7-e35", "sl-cv-54"],
+	"enriched_at": "2026-06-11T17:36:19.675Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

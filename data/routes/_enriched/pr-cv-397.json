@@ -1,0 +1,14 @@
+{
+	"water_points": [
+		"Fuente \"Font del Senyor\" (km 0.0, a 12 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.1, a 31 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.2, a 73 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fonteta de Marina\" (km 4.3, a 12 m del track; OSM, no verificado en campo)",
+		"Fuente (km 10.0, a 43 m del track; OSM, no verificado en campo)",
+		"Fuente (km 10.0, a 72 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.06,
+	"alternatives": ["pr-cv-451", "sl-cv-170", "pr-cv-378"],
+	"enriched_at": "2026-06-11T18:18:10.904Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

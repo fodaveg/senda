@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Manantial \"Font Nova\" (km 11.7, a 44 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Tormos\" (km 12.9, a 34 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Barber\" (km 17.0, a 58 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Teula\" (km 20.4, a 6 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Garrofer\" (km 20.9, a 6 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.01,
+	"alternatives": ["gr-239-e02", "sl-cv-82", "pr-cv-335"],
+	"enriched_at": "2026-06-11T18:07:12.223Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

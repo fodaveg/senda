@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial \"Fuente Los Charcos\" (km 0.7, a 85 m del track; OSM, no verificado en campo)",
+		"Fuente (km 1.8, a 41 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.01,
+	"alternatives": ["pr-cv-204", "pr-cv-235", "gr-332-e03"],
+	"enriched_at": "2026-06-11T17:59:28.660Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

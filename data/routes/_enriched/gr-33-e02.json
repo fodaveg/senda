@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 98 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.5, a 73 m del track; OSM, no verificado en campo)",
+		"Manantial \"Pou de la Pererola\" (km 2.5, a 27 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.1,
+	"alternatives": ["pr-cv-460", "gr-33-e03", "pr-cv-378"],
+	"enriched_at": "2026-06-11T17:41:06.660Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

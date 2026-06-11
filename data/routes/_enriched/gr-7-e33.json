@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Manantial \"Fuente de la Pechina\" (km 0.0, a 3 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.1, a 78 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.2, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.3, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente La Tejería\" (km 10.8, a 20 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.26,
+	"alternatives": ["gr-160-e03", "sl-cv-105", "sl-cv-104"],
+	"enriched_at": "2026-06-11T19:03:17.317Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

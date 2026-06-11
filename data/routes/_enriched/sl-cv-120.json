@@ -1,0 +1,9 @@
+{
+	"water_points": [
+		"Manantial \"Font Amarga\" (km 5.9, a 6 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.04,
+	"alternatives": ["pr-cv-454", "gr-239-e03", "pr-cv-78"],
+	"enriched_at": "2026-06-11T19:44:02.710Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

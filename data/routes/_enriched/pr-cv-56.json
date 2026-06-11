@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Fuente \"Font de la Crebantada\" (km 3.8, a 46 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Xop\" (km 6.5, a 47 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Boronada\" (km 7.5, a 34 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.57,
+	"alternatives": ["pr-cv-277", "pr-cv-37", "pr-cv-27"],
+	"enriched_at": "2026-06-11T18:27:33.271Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

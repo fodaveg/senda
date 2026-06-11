@@ -23,18 +23,27 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 335,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Font de la Carrerassa\" (km 15.5, a 10 m del track; OSM, no verificado en campo)",
+		"Fuente (km 15.8, a 46 m del track; OSM, no verificado en campo)",
+		"Fuente (km 15.9, a 10 m del track; OSM, no verificado en campo)",
+		"Fuente (km 15.9, a 74 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "pr-cv-341.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-341",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-326",
+		"pr-cv-120",
+		"pr-cv-357"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.246769,
@@ -44,6 +53,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-341 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-341.gpx (derivados: inicio, bbox)"
 	]
 }

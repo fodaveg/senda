@@ -1,0 +1,14 @@
+{
+	"water_points": [
+		"Fuente (km 0.3, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de Mosen Lucas\" (km 0.5, a 1 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente Fetge\" (km 3.5, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente La Palomera\" (km 10.8, a 90 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del ramal\" (km 11.8, a 84 m del track; OSM, no verificado en campo)",
+		"Fuente (km 12.4, a 18 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.15,
+	"alternatives": ["pr-cv-223", "pr-cv-77", "sl-cv-72"],
+	"enriched_at": "2026-06-11T18:20:04.469Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

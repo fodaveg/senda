@@ -23,18 +23,26 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 330,
-	"water_points": [],
+	"water_points": [
+		"Manantial (km 7.0, a 14 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fonteta del Patge\" (km 11.1, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de la Covalta\" (km 16.0, a 12 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.11,
 	"gpx": "pr-cv-121.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-121",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-122",
+		"gr-7-e46",
+		"pr-cv-135"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.6027249712497,
@@ -44,6 +52,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-121 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-121.gpx (derivados: inicio, bbox)"
 	]
 }

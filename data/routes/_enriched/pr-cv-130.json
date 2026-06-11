@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Fuente (km 13.8, a 8 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de Santa Catalina\" (km 19.3, a 46 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.01,
+	"alternatives": ["pr-cv-187", "sl-cv-22", "gr-37-e01"],
+	"enriched_at": "2026-06-11T19:06:47.657Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

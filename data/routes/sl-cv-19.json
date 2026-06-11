@@ -23,18 +23,24 @@
 		"esfuerzo": 2
 	},
 	"est_duration_min": 150,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Font de la Duenya\" (km 7.2, a 7 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.21,
 	"gpx": "sl-cv-19.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-19",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"sl-cv-324",
+		"sl-cv-117",
+		"pr-cv-52"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.754150003194809,
@@ -44,6 +50,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-19 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-19.gpx (derivados: inicio, bbox)"
 	]
 }

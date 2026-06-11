@@ -18,18 +18,50 @@
 	"circular": false,
 	"difficulty_mide": null,
 	"est_duration_min": 1160,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Fonteta d'Oliver\" (km 0.9, a 6 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Cabres\" (km 4.2, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Castro\" (km 14.4, a 25 m del track; OSM, no verificado en campo)",
+		"Fuente (km 16.2, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Figuera\" (km 18.1, a 8 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font dels Noguerals\" (km 20.4, a 13 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Caritat\" (km 21.7, a 11 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l' Arquet (seca)\" (km 22.4, a 20 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Avellaner\" (km 22.7, a 37 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de los Dos Caños\" (km 23.1, a 99 m del track; OSM, no verificado en campo)",
+		"Fuente (km 23.2, a 7 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Pistola\" (km 26.0, a 11 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de San Pedro\" (km 28.9, a 7 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Molina\" (km 31.3, a 90 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fonteta de Maria Teresa\" (km 32.5, a 17 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Felipo\" (km 32.6, a 10 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Tio Agustín\" (km 33.1, a 64 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font dels Castillos\" (km 33.1, a 98 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Avellaner\" (km 33.3, a 58 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente El Prau\" (km 37.8, a 32 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Cerezo\" (km 43.3, a 13 m del track; OSM, no verificado en campo)",
+		"Fuente (km 43.7, a 38 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente Vieja\" (km 43.7, a 99 m del track; OSM, no verificado en campo)",
+		"Fuente (km 43.8, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de Santa Bárbara\" (km 44.0, a 22 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de Juan Roya\" (km 56.0, a 9 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de Leonor\" (km 57.3, a 12 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.06,
 	"gpx": "gr-36.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-36",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-164",
+		"pr-cv-241",
+		"pr-cv-428"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.529217021539807,
@@ -39,6 +71,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-36 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-36.gpx (derivados: inicio, bbox)"
 	]
 }

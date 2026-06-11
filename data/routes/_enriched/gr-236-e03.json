@@ -1,0 +1,16 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 12 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Gamelló\" (km 5.7, a 68 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de la Betina\" (km 6.0, a 22 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font del Teular\" (km 6.0, a 89 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.5, a 20 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.5, a 38 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.5, a 57 m del track; OSM, no verificado en campo)",
+		"Fuente (km 21.9, a 34 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.08,
+	"alternatives": ["sl-cv-39", "pr-cv-60", "pr-cv-434"],
+	"enriched_at": "2026-06-11T18:53:19.494Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

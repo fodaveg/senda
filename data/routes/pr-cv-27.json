@@ -23,18 +23,32 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 215,
-	"water_points": [],
+	"water_points": [
+		"Fuente \"Font del Convent\" (km 0.0, a 14 m del track; OSM, no verificado en campo)",
+		"Fuente \"Cova del Convent\" (km 0.0, a 35 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Gralla\" (km 4.5, a 30 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Llopis\" (km 4.8, a 2 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Sancho\" (km 5.3, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font l'Esquerola\" (km 5.9, a 9 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font Huit Piletes\" (km 6.7, a 54 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Penya Banyada\" (km 7.6, a 6 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Borras\" (km 7.7, a 6 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.64,
 	"gpx": "pr-cv-27.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-27",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"sl-cv-168",
+		"pr-cv-104",
+		"pr-cv-389"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.515618976205587,
@@ -44,6 +58,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-27 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-27.gpx (derivados: inicio, bbox)"
 	]
 }

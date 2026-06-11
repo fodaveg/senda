@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Fuente \"Fuente de San Vicente\" (km 0.1, a 23 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.3, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de la Báscula\" (km 8.0, a 10 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente las Parras\" (km 8.1, a 59 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente la Bomba\" (km 8.4, a 69 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.04,
+	"alternatives": ["sl-cv-165", "pr-cv-148", "pr-cv-115"],
+	"enriched_at": "2026-06-11T19:47:08.792Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

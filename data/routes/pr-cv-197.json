@@ -23,13 +23,17 @@
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.12,
 	"gpx": "pr-cv-197.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-197",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-165",
+		"pr-cv-371",
+		"pr-cv-218"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.953360013663769,
@@ -39,6 +43,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-197 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-197.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

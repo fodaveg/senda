@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 63 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.7, a 57 m del track; OSM, no verificado en campo)",
+		"Fuente (km 17.4, a 12 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.09,
+	"alternatives": ["pr-cv-400", "pr-cv-343", "pr-cv-100"],
+	"enriched_at": "2026-06-11T17:36:52.960Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

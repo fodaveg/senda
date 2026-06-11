@@ -23,18 +23,28 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 310,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 0.0, a 14 m del track; OSM, no verificado en campo)",
+		"Manantial \"Naixement dels Pardos\" (km 9.2, a 33 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Les Santes\" (km 10.4, a 6 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Tord\" (km 10.8, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font dels Capellans\" (km 11.0, a 12 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.04,
 	"gpx": "pr-cv-422.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-422",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-451",
+		"gr-33-e03",
+		"pr-cv-397"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.003491984680295,
@@ -44,6 +54,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-422 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-422.gpx (derivados: inicio, bbox)"
 	]
 }

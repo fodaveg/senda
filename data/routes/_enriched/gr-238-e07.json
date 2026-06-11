@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial (km 4.5, a 38 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Pocillo\" (km 15.7, a 19 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.03,
+	"alternatives": ["pr-cv-177-2", "pr-cv-177-1", "pr-cv-177-3"],
+	"enriched_at": "2026-06-11T17:38:31.223Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

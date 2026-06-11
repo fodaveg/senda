@@ -1,0 +1,18 @@
+{
+	"water_points": [
+		"Manantial \"Fuente de la Iglesia\" (km 3.9, a 61 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de la Herrería\" (km 3.9, a 83 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.6, a 96 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.6, a 77 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.0, a 8 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.0, a 39 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.1, a 69 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.2, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente (km 10.6, a 27 m del track; OSM, no verificado en campo)",
+		"Fuente (km 10.7, a 88 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-131-4", "pr-cv-131-1", "pr-cv-131-5"],
+	"enriched_at": "2026-06-11T17:54:24.963Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

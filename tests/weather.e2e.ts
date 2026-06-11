@@ -16,7 +16,9 @@ test('con pronóstico de lluvia, el poncho se habilita con su razón', async ({ 
 	await expect(llevar.getByText('Probabilidad de lluvia 80%')).toBeVisible();
 	await expect(llevar.getByText('Crema solar')).toBeVisible();
 	await expect(llevar.getByText('UV 8: reaplicar cada 2 h')).toBeVisible();
-	await expect(llevar.getByText('Calor y sin fuentes en ruta')).toBeVisible();
+	// Tras el enriquecimiento OSM pr-cv-77 tiene fuentes (no hay "agua extra")
+	// y sombra 0.11 → con UV 8 entra el gorro de ala sustituyendo a la gorra.
+	await expect(llevar.getByText(/gorro de ala mejor que gorra/)).toBeVisible();
 });
 
 test('sin conexión: panel meteo vacío y reglas meteo en indeterminado', async ({ page }) => {

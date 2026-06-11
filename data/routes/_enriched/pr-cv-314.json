@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Manantial \"Fuente de la Piqueta\" (km 1.4, a 10 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Castillo\" (km 7.5, a 18 m del track; OSM, no verificado en campo)",
+		"Manantial (km 7.6, a 3 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.6, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.8, a 36 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": null,
+	"alternatives": ["pr-cv-386", "gr-333-e09", "sl-cv-70"],
+	"enriched_at": "2026-06-11T18:08:27.139Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

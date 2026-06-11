@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 1 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente del Hontanar\" (km 6.3, a 23 m del track; OSM, no verificado en campo)",
+		"Fuente (km 10.3, a 19 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.04,
+	"alternatives": ["pr-cv-177-2", "gr-238-e07", "pr-cv-177-3"],
+	"enriched_at": "2026-06-11T17:57:21.898Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -23,18 +23,26 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 235,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Fuente el Picayo\" (km 5.7, a 12 m del track; OSM, no verificado en campo)",
+		"Manantial (km 6.0, a 12 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.1, a 8 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "gr-7-e31.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e31",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"gr-7-e32",
+		"pr-cv-328",
+		"pr-cv-111-1"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.498866988345981,
@@ -44,6 +52,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e31 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e31.gpx (derivados: inicio, bbox)"
 	]
 }

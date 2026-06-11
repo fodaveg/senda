@@ -31,9 +31,9 @@ const ROUTES_DIR = path.join(ROOT, 'data/routes');
 const GPX_DIR = path.join(ROOT, 'data/gpx');
 const ENRICHED_DIR = path.join(ROOT, 'data/routes/_enriched');
 
-const OVERPASS_URL = 'https://overpass-api.de/api/interpreter';
+const OVERPASS_URL = process.env.OVERPASS_URL ?? 'https://overpass-api.de/api/interpreter';
 const USER_AGENT = 'senderos-cv-enrich/0.2 (proyecto personal; contacto: fodaveg@fodaveg.net)';
-const RATE_LIMIT_MS = 2000;
+const RATE_LIMIT_MS = Number(process.env.OVERPASS_DELAY_MS ?? 2000);
 /** Margen del bbox en grados (~1 km) para captar fuentes junto al track. */
 const BBOX_PAD = 0.01;
 
@@ -69,11 +69,20 @@ async function enrichOne(route: RouteLite, all: RouteLite[]): Promise<string> {
 		route.bbox[2] + BBOX_PAD,
 		route.bbox[3] + BBOX_PAD
 	];
-	const response = await fetch(OVERPASS_URL, {
+	let response = await fetch(OVERPASS_URL, {
 		method: 'POST',
 		headers: { 'User-Agent': USER_AGENT, 'Content-Type': 'text/plain' },
 		body: overpassQuery(bbox)
 	});
+	if (response.status === 429) {
+		// Throttling: una espera larga y un único reintento.
+		await sleep(30000);
+		response = await fetch(OVERPASS_URL, {
+			method: 'POST',
+			headers: { 'User-Agent': USER_AGENT, 'Content-Type': 'text/plain' },
+			body: overpassQuery(bbox)
+		});
+	}
 	if (!response.ok) throw new Error(`Overpass respondió ${response.status}`);
 	const { water, woods } = parseOverpass(await response.json());
 

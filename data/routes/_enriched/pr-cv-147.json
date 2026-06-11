@@ -1,0 +1,16 @@
+{
+	"water_points": [
+		"Manantial \"Font Grossa\" (km 0.3, a 13 m del track; OSM, no verificado en campo)",
+		"Manantial \"Pou de la Juvea\" (km 3.5, a 7 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Reinós\" (km 5.2, a 12 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font dels Olbis\" (km 10.2, a 12 m del track; OSM, no verificado en campo)",
+		"Fuente (km 10.9, a 68 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Benimaurell\" (km 11.3, a 11 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Can Torres\" (km 12.0, a 51 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font dels Esmeradors\" (km 12.2, a 29 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.06,
+	"alternatives": ["pr-cv-181", "sl-cv-185", "pr-cv-426"],
+	"enriched_at": "2026-06-11T17:55:28.327Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

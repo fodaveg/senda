@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Manantial \"Fuente del Enebro\" (km 0.9, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.9, a 11 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente la Cueva\" (km 9.3, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente (km 19.7, a 83 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.07,
+	"alternatives": ["pr-cv-131-8", "sl-cv-169", "pr-cv-323"],
+	"enriched_at": "2026-06-11T17:55:00.510Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

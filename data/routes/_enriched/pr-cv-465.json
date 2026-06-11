@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Manantial \"Font de Baix\" (km 0.1, a 6 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Dalt\" (km 0.6, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Penya Blanca\" (km 9.7, a 17 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.2,
+	"alternatives": ["pr-cv-426", "pr-cv-158", "pr-cv-147"],
+	"enriched_at": "2026-06-11T18:25:54.929Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial \"Font de l'Orpinell\" (km 1.7, a 2 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.9, a 15 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.23,
+	"alternatives": ["pr-cv-373", "pr-cv-375", "pr-cv-374"],
+	"enriched_at": "2026-06-11T18:14:35.184Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Fuente \"Hondo de las fuentes\" (km 1.5, a 18 m del track; OSM, no verificado en campo)",
+		"Manantial (km 2.8, a 13 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-315", "pr-cv-169", "pr-cv-242"],
+	"enriched_at": "2026-06-11T18:22:24.587Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

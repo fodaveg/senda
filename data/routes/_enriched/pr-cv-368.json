@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Manantial \"Font Centella\" (km 5.4, a 12 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Regall\" (km 9.0, a 81 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Baix\" (km 12.8, a 32 m del track; OSM, no verificado en campo)",
+		"Fuente (km 12.9, a 44 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.03,
+	"alternatives": ["sl-cv-92", "sl-cv-183", "pr-cv-426"],
+	"enriched_at": "2026-06-11T18:14:20.485Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

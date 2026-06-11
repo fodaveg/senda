@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Fuente (km 0.1, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.1, a 17 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente San Miguel\" (km 8.2, a 13 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.7, a 24 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.9, a 3 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.22,
+	"alternatives": ["gr-160-e02", "gr-160-e01", "gr-160"],
+	"enriched_at": "2026-06-11T18:45:21.609Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Fuente \"Fuente de la Era Concejo\" (km 6.3, a 17 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente El Prau\" (km 7.2, a 38 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Tajuelo\" (km 10.7, a 9 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de la Penya\" (km 13.3, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente Larga\" (km 16.2, a 13 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.05,
+	"alternatives": ["pr-cv-398", "gr-333-e08", "pr-cv-314"],
+	"enriched_at": "2026-06-11T19:15:54.159Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

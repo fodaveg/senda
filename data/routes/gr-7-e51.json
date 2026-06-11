@@ -23,18 +23,27 @@
 		"esfuerzo": 4
 	},
 	"est_duration_min": 460,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 19.3, a 71 m del track; OSM, no verificado en campo)",
+		"Fuente (km 19.3, a 78 m del track; OSM, no verificado en campo)",
+		"Fuente (km 19.5, a 58 m del track; OSM, no verificado en campo)",
+		"Fuente (km 23.7, a 62 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "gr-7-e51.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e51",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-196",
+		"pr-cv-195",
+		"pr-cv-221"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-1.087383041158319,
@@ -44,6 +53,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e51 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e51.gpx (derivados: inicio, bbox)"
 	]
 }

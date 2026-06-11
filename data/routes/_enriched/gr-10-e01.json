@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Manantial \"Font del Campaner\" (km 11.2, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente (km 12.4, a 85 m del track; OSM, no verificado en campo)",
+		"Fuente (km 12.5, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Sant Josep\" (km 12.6, a 65 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.09,
+	"alternatives": ["gr-10", "sl-cv-42", "pr-cv-319"],
+	"enriched_at": "2026-06-11T17:34:11.686Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

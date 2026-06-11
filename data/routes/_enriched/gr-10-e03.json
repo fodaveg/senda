@@ -1,0 +1,18 @@
+{
+	"water_points": [
+		"Manantial \"Font de la Salut\" (km 0.3, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 1.3, a 52 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Sant Antoni\" (km 1.4, a 29 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Marianet\" (km 1.5, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Prunera\" (km 4.3, a 1 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Mugró\" (km 5.6, a 19 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Llentiscle\" (km 6.8, a 8 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Poll\" (km 8.4, a 9 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de Tristán\" (km 12.3, a 25 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de los 15 Caños\" (km 20.7, a 91 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-329", "gr-10-e02", "sl-cv-23"],
+	"enriched_at": "2026-06-11T17:34:18.041Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

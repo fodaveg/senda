@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Manantial \"Font Nova\" (km 0.0, a 97 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font Vella\" (km 0.2, a 76 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Camí\" (km 6.9, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font del Parc\" (km 8.4, a 7 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-349", "pr-cv-350", "pr-cv-348"],
+	"enriched_at": "2026-06-11T19:28:40.796Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

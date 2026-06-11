@@ -23,18 +23,24 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 245,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 1.1, a 91 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "pr-cv-471.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-471",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-264",
+		"gr-239-e04",
+		"sl-cv-178"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.751823019236326,
@@ -44,6 +50,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-471 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-471.gpx (derivados: inicio, bbox)"
 	]
 }

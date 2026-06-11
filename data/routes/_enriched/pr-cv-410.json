@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Manantial \"Font de Sant Vicent\" (km 0.5, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de l'Avellà\" (km 4.8, a 74 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Almassà\" (km 14.4, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial (km 15.6, a 16 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font Vella\" (km 17.9, a 7 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.28,
+	"alternatives": ["pr-cv-409", "gr-331-e14", "gr-331-e13"],
+	"enriched_at": "2026-06-11T18:19:55.632Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

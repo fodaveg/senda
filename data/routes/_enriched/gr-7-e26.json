@@ -1,0 +1,15 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 36 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.0, a 44 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de les Roques\" (km 4.9, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Fenàs\" (km 5.0, a 93 m del track; OSM, no verificado en campo)",
+		"Fuente (km 17.7, a 14 m del track; OSM, no verificado en campo)",
+		"Fuente (km 17.7, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente (km 18.0, a 77 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.32,
+	"alternatives": ["gr-331-e12", "gr-331-e11", "gr-331-e13"],
+	"enriched_at": "2026-06-11T17:47:58.546Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

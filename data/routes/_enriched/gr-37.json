@@ -1,0 +1,17 @@
+{
+	"water_points": [
+		"Fuente (km 0.3, a 12 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de la Torre\" (km 15.1, a 27 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Prado\" (km 31.2, a 89 m del track; OSM, no verificado en campo)",
+		"Fuente (km 31.6, a 34 m del track; OSM, no verificado en campo)",
+		"Fuente (km 31.8, a 62 m del track; OSM, no verificado en campo)",
+		"Fuente (km 45.1, a 8 m del track; OSM, no verificado en campo)",
+		"Fuente (km 45.4, a 40 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de la Hoya del Hacha\" (km 49.8, a 89 m del track; OSM, no verificado en campo)",
+		"Fuente (km 63.5, a 22 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.02,
+	"alternatives": ["gr-37-e04", "gr-37-e03", "pr-cv-331"],
+	"enriched_at": "2026-06-11T17:47:29.800Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -1,0 +1,9 @@
+{
+	"water_points": [
+		"Manantial \"Font de la Teula\" (km 14.6, a 13 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.01,
+	"alternatives": ["sl-cv-49", "sl-cv-123", "pr-cv-272"],
+	"enriched_at": "2026-06-11T17:56:12.394Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

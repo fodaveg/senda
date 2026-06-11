@@ -1,0 +1,15 @@
+{
+	"water_points": [
+		"Manantial \"Fuente Negra\" (km 0.0, a 15 m del track; OSM, no verificado en campo)",
+		"Fuente (km 2.3, a 15 m del track; OSM, no verificado en campo)",
+		"Fuente (km 2.7, a 8 m del track; OSM, no verificado en campo)",
+		"Fuente (km 3.0, a 58 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente Los Chopos\" (km 3.3, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente (km 4.5, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Abrullador\" (km 6.5, a 13 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.25,
+	"alternatives": ["gr-332-e01", "gr-332", "sl-cv-6"],
+	"enriched_at": "2026-06-11T17:52:33.280Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

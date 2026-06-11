@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Fuente (km 0.1, a 87 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font Roser\" (km 12.6, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial \"Pozico Valentín\" (km 22.3, a 15 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.02,
+	"alternatives": ["pr-cv-462", "gr-238-e10", "pr-cv-300"],
+	"enriched_at": "2026-06-11T17:49:51.620Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

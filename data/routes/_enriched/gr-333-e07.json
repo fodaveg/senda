@@ -1,0 +1,17 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 99 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.2, a 31 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.0, a 10 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.3, a 21 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente El Turio\" (km 6.4, a 16 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente Rita\" (km 6.4, a 17 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.4, a 35 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.4, a 50 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.4, a 52 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": null,
+	"alternatives": ["gr-333-e10", "gr-333-e06", "sl-cv-103"],
+	"enriched_at": "2026-06-11T17:44:41.672Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

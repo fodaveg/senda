@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Manantial \"Font de la Solera\" (km 0.1, a 51 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font d'en Cabrit\" (km 0.9, a 34 m del track; OSM, no verificado en campo)",
+		"Manantial (km 1.0, a 44 m del track; OSM, no verificado en campo)",
+		"Manantial \"font de la Solana\" (km 3.7, a 8 m del track; OSM, no verificado en campo)",
+		"Manantial (km 8.0, a 9 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.06,
+	"alternatives": ["pr-cv-225", "pr-cv-1", "gr-7-e29"],
+	"enriched_at": "2026-06-11T19:57:10.555Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

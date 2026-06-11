@@ -23,18 +23,25 @@
 		"esfuerzo": 2
 	},
 	"est_duration_min": 100,
-	"water_points": [],
+	"water_points": [
+		"Fuente \"Hondo de las fuentes\" (km 1.5, a 18 m del track; OSM, no verificado en campo)",
+		"Manantial (km 2.8, a 13 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "pr-cv-433.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-433",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-315",
+		"pr-cv-169",
+		"pr-cv-242"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.788844041526318,
@@ -44,6 +51,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-433 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-433.gpx (derivados: distancia, inicio, bbox)"
 	]
 }

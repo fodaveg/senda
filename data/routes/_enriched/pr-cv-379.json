@@ -1,0 +1,9 @@
+{
+	"water_points": [
+		"Manantial \"Fuente de Santa Ana\" (km 0.4, a 5 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.1,
+	"alternatives": ["pr-cv-382", "pr-cv-380", "pr-cv-381"],
+	"enriched_at": "2026-06-11T18:15:27.240Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

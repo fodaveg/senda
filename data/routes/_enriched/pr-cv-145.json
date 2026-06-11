@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Manantial \"Fuente Beniplá\" (km 0.6, a 9 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font des Olbis\" (km 6.8, a 23 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Benissalim\" (km 12.1, a 3 m del track; OSM, no verificado en campo)",
+		"Fuente \"Sa Font d'Enmig\" (km 13.0, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 13.6, a 15 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.07,
+	"alternatives": ["pr-cv-146", "pr-cv-48", "pr-cv-465"],
+	"enriched_at": "2026-06-11T17:55:17.771Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

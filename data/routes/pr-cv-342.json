@@ -18,18 +18,26 @@
 	"circular": true,
 	"difficulty_mide": null,
 	"est_duration_min": 770,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Fuente Santa o de San Pascual\" (km 26.4, a 25 m del track; OSM, no verificado en campo)",
+		"Fuente (km 26.4, a 12 m del track; OSM, no verificado en campo)",
+		"Fuente (km 26.8, a 48 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "pr-cv-342.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-342",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"sl-cv-126",
+		"pr-cv-311",
+		"pr-cv-325"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.734544983133674,
@@ -39,6 +47,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-342 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-342.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

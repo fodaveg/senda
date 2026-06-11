@@ -1,0 +1,16 @@
+{
+	"water_points": [
+		"Fuente \"Fuente del Tío Manzano\" (km 4.6, a 3 m del track; OSM, no verificado en campo)",
+		"Fuente \"Nueva Fuente de Juan Manzano\" (km 5.1, a 18 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente Vieja\" (km 5.3, a 22 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.4, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.7, a 39 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.8, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.2, a 54 m del track; OSM, no verificado en campo)",
+		"Manantial (km 6.2, a 33 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.28,
+	"alternatives": ["sl-cv-169", "pr-cv-131-8", "pr-cv-131-1"],
+	"enriched_at": "2026-06-11T17:54:54.059Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

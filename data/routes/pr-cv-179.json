@@ -23,7 +23,11 @@
 		"esfuerzo": 2
 	},
 	"est_duration_min": 122,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Fuente Santa o de San Pascual\" (km 0.2, a 22 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.2, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.2, a 7 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -34,7 +38,11 @@
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-179",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-342",
+		"sl-cv-126",
+		"pr-cv-311"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.688388021662831,
@@ -44,6 +52,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-179 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-179.gpx (derivados: inicio, bbox)"
 	]
 }

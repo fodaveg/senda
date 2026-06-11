@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial (km 0.3, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font d'Al-Azraq\" (km 9.5, a 6 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.03,
+	"alternatives": ["pr-cv-167", "pr-cv-168", "pr-cv-182"],
+	"enriched_at": "2026-06-11T19:48:49.851Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -23,7 +23,13 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 200,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Fuente de la Piqueta\" (km 1.4, a 10 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Castillo\" (km 7.5, a 18 m del track; OSM, no verificado en campo)",
+		"Manantial (km 7.6, a 3 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.6, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.8, a 36 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -34,7 +40,11 @@
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-314",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-386",
+		"gr-333-e09",
+		"sl-cv-70"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.373619981110096,
@@ -44,6 +54,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-314 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-314.gpx (derivados: inicio, bbox)"
 	]
 }

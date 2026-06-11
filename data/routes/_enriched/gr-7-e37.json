@@ -1,0 +1,16 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.0, a 17 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de La Teja\" (km 0.1, a 81 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.3, a 10 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.3, a 57 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.6, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente Bercuta\" (km 9.1, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 16.7, a 29 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.2,
+	"alternatives": ["pr-cv-456", "gr-7-e38", "pr-cv-114"],
+	"enriched_at": "2026-06-11T22:07:05.508Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

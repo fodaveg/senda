@@ -23,18 +23,37 @@
 		"esfuerzo": 4
 	},
 	"est_duration_min": 440,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Font del Llavador\" (km 0.1, a 35 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente Tía Rulla\" (km 0.8, a 25 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Tío Marcelino\" (km 1.1, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de Santa Maria\" (km 4.7, a 2 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de Abajo\" (km 5.1, a 2 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de Arriba\" (km 5.2, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente (km 10.2, a 17 m del track; OSM, no verificado en campo)",
+		"Fuente (km 10.4, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 10.5, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 10.9, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.2, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.7, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente (km 15.2, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 21.1, a 34 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.08,
 	"gpx": "gr-332-e01.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-332-e01",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"gr-332",
+		"pr-cv-113",
+		"sl-cv-6"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.701042013242841,
@@ -44,6 +63,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-332-e01 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-332-e01.gpx (derivados: inicio, bbox)"
 	]
 }

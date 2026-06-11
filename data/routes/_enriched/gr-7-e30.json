@@ -1,0 +1,25 @@
+{
+	"water_points": [
+		"Manantial \"Font de Dalt\" (km 0.4, a 97 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.6, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.6, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Sant Antoni\" (km 0.8, a 33 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.2, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.3, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.3, a 13 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.3, a 12 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.1, a 12 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.3, a 13 m del track; OSM, no verificado en campo)",
+		"Manantial (km 8.3, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font Coberta\" (km 8.3, a 38 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente Higuera\" (km 14.3, a 13 m del track; OSM, no verificado en campo)",
+		"Fuente (km 16.4, a 2 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Cura\" (km 17.8, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial (km 18.7, a 31 m del track; OSM, no verificado en campo)",
+		"Fuente (km 19.0, a 23 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.21,
+	"alternatives": ["gr-33-e07", "sl-cv-65-2", "pr-cv-225"],
+	"enriched_at": "2026-06-11T17:48:23.475Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

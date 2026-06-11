@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 76 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.3, a 18 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Carcau\" (km 1.1, a 13 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-164", "pr-cv-241", "pr-cv-364"],
+	"enriched_at": "2026-06-11T19:46:08.455Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

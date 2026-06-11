@@ -23,18 +23,25 @@
 		"esfuerzo": 4
 	},
 	"est_duration_min": 385,
-	"water_points": [],
+	"water_points": [
+		"Manantial (km 2.1, a 17 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Collado\" (km 17.7, a 20 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "gr-332-e03.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-332-e03",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-235",
+		"pr-cv-173",
+		"pr-cv-204"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.921913459897041,
@@ -44,6 +51,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-332-e03 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-332-e03.gpx (derivados: inicio, bbox)"
 	]
 }

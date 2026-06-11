@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Manantial (km 7.0, a 14 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fonteta del Patge\" (km 11.1, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de la Covalta\" (km 16.0, a 12 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.11,
+	"alternatives": ["pr-cv-122", "gr-7-e46", "pr-cv-135"],
+	"enriched_at": "2026-06-11T17:53:31.695Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

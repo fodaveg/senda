@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Fuente (km 0.3, a 6 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Bota\" (km 0.3, a 8 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Contreres\" (km 0.5, a 28 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Barranquet de Dalt\" (km 12.6, a 22 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-149", "pr-cv-151", "pr-cv-464"],
+	"enriched_at": "2026-06-11T19:31:09.374Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

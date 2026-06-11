@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Manantial \"Font de la Carrerassa\" (km 15.5, a 10 m del track; OSM, no verificado en campo)",
+		"Fuente (km 15.8, a 46 m del track; OSM, no verificado en campo)",
+		"Fuente (km 15.9, a 10 m del track; OSM, no verificado en campo)",
+		"Fuente (km 15.9, a 74 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-326", "pr-cv-120", "pr-cv-357"],
+	"enriched_at": "2026-06-11T19:21:50.982Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial \"fuente Magraile\" (km 1.5, a 31 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.8, a 1 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["sl-cv-95", "gr-7-e33", "gr-160-e03"],
+	"enriched_at": "2026-06-11T18:50:09.803Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

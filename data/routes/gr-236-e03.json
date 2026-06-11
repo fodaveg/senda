@@ -23,18 +23,31 @@
 		"esfuerzo": 4
 	},
 	"est_duration_min": 400,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 0.0, a 12 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Gamelló\" (km 5.7, a 68 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de la Betina\" (km 6.0, a 22 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font del Teular\" (km 6.0, a 89 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.5, a 20 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.5, a 38 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.5, a 57 m del track; OSM, no verificado en campo)",
+		"Fuente (km 21.9, a 34 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.08,
 	"gpx": "gr-236-e03.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-236-e03",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"sl-cv-39",
+		"pr-cv-60",
+		"pr-cv-434"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.368964,
@@ -44,6 +57,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-236-e03 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-236-e03.gpx (derivados: inicio, bbox)"
 	]
 }

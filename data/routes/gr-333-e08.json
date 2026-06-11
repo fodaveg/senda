@@ -23,7 +23,19 @@
 		"esfuerzo": 2
 	},
 	"est_duration_min": 145,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 0.0, a 87 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente Rita\" (km 0.0, a 43 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente El Turio\" (km 0.0, a 44 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.0, a 55 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.0, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.1, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Castillo\" (km 4.9, a 20 m del track; OSM, no verificado en campo)",
+		"Manantial (km 5.0, a 19 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.8, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.1, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de San Juan Bautista\" (km 6.2, a 31 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -34,7 +46,11 @@
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e08",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-276",
+		"pr-cv-398",
+		"pr-cv-314"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.374561017379165,
@@ -44,6 +60,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e08 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-333-e08.gpx (derivados: inicio, bbox)"
 	]
 }

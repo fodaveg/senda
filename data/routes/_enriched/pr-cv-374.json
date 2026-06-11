@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Manantial \"Font d'Arnau\" (km 3.4, a 17 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Barranc\" (km 8.2, a 79 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Bassi\" (km 8.4, a 4 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.49,
+	"alternatives": ["pr-cv-373", "pr-cv-375", "pr-cv-372"],
+	"enriched_at": "2026-06-11T18:14:51.033Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

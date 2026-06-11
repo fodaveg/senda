@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Fuente \"Fuente de San Vicente\" (km 0.0, a 23 m del track; OSM, no verificado en campo)",
+		"Manantial \"Pozico Valentín\" (km 23.3, a 11 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["sl-cv-165", "pr-cv-115", "sl-cv-164"],
+	"enriched_at": "2026-06-11T19:07:50.327Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

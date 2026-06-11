@@ -1,0 +1,9 @@
+{
+	"water_points": [
+		"Manantial \"Font dels Olbis\" (km 3.6, a 4 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.23,
+	"alternatives": ["pr-cv-167", "sl-cv-43", "pr-cv-390"],
+	"enriched_at": "2026-06-11T17:59:34.782Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

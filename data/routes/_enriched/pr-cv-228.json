@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Fuente (km 0.2, a 9 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Xorret\" (km 0.4, a 32 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Maset\" (km 0.9, a 19 m del track; OSM, no verificado en campo)",
+		"Manantial (km 2.5, a 24 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-244", "gr-331-e06", "pr-cv-117"],
+	"enriched_at": "2026-06-11T19:11:14.058Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

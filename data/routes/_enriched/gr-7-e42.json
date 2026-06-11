@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Manantial \"Fuente del Chapole\" (km 0.1, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.4, a 42 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de las Huertecillas\" (km 11.4, a 2 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Collado\" (km 30.9, a 16 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.01,
+	"alternatives": ["pr-cv-381", "pr-cv-380", "pr-cv-379"],
+	"enriched_at": "2026-06-11T19:04:28.333Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

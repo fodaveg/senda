@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial \"Aljub de Maravilla\" (km 5.0, a 57 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.4, a 5 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.04,
+	"alternatives": ["gr-33", "gr-33-e02", "pr-cv-451"],
+	"enriched_at": "2026-06-11T18:15:15.451Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

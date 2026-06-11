@@ -23,18 +23,51 @@
 		"esfuerzo": 5
 	},
 	"est_duration_min": 620,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 0.0, a 81 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.3, a 83 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.3, a 66 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.3, a 3 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.4, a 30 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font \"l'ajuntament\"\" (km 0.6, a 95 m del track; OSM, no verificado en campo)",
+		"Fuente (km 1.0, a 86 m del track; OSM, no verificado en campo)",
+		"Fuente (km 1.7, a 2 m del track; OSM, no verificado en campo)",
+		"Fuente (km 2.0, a 36 m del track; OSM, no verificado en campo)",
+		"Fuente (km 3.0, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 3.4, a 31 m del track; OSM, no verificado en campo)",
+		"Fuente (km 3.7, a 68 m del track; OSM, no verificado en campo)",
+		"Fuente (km 4.6, a 60 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.3, a 19 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.5, a 15 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.4, a 99 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.3, a 75 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.3, a 71 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.5, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.4, a 89 m del track; OSM, no verificado en campo)",
+		"Fuente (km 16.2, a 45 m del track; OSM, no verificado en campo)",
+		"Fuente (km 16.6, a 24 m del track; OSM, no verificado en campo)",
+		"Fuente (km 16.7, a 52 m del track; OSM, no verificado en campo)",
+		"Fuente (km 28.0, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial (km 28.2, a 41 m del track; OSM, no verificado en campo)",
+		"Manantial (km 28.2, a 51 m del track; OSM, no verificado en campo)",
+		"Fuente (km 29.0, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente (km 29.1, a 33 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "gr-239-e01.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-239-e01",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"gr-239",
+		"sl-cv-123",
+		"sl-cv-49"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.440399022772908,
@@ -44,6 +77,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-239-e01 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-239-e01.gpx (derivados: inicio, bbox)"
 	]
 }

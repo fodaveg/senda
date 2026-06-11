@@ -23,18 +23,29 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 210,
-	"water_points": [],
+	"water_points": [
+		"Fuente \"Font de l'Assut\" (km 0.0, a 86 m del track; OSM, no verificado en campo)",
+		"Fuente \"Cova del Convent\" (km 0.2, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font del Convent\" (km 0.2, a 1 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Cava\" (km 2.8, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.7, a 16 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font del Molí\" (km 9.6, a 96 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.63,
 	"gpx": "sl-cv-168.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-168",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-27",
+		"pr-cv-104",
+		"pr-cv-389"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.533003881573677,
@@ -44,6 +55,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-168 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-168.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Fuente (km 0.3, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.4, a 55 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de la Teja\" (km 6.4, a 9 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.3,
+	"alternatives": ["pr-cv-380", "pr-cv-379", "pr-cv-382"],
+	"enriched_at": "2026-06-11T19:26:38.617Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

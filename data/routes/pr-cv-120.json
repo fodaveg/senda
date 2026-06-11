@@ -23,18 +23,28 @@
 		"esfuerzo": 4
 	},
 	"est_duration_min": 610,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 0.2, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.6, a 92 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.7, a 13 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.9, a 53 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Sant Vicent de Baix\" (km 19.6, a 8 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.05,
 	"gpx": "pr-cv-120.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-120",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-357",
+		"sl-cv-90",
+		"pr-cv-341"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.279209995642304,
@@ -44,6 +54,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-120 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-120.gpx (derivados: inicio, bbox)"
 	]
 }

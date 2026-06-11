@@ -18,18 +18,25 @@
 	"circular": false,
 	"difficulty_mide": null,
 	"est_duration_min": 335,
-	"water_points": [],
+	"water_points": [
+		"Manantial (km 4.5, a 38 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Pocillo\" (km 15.7, a 19 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.03,
 	"gpx": "gr-238-e07.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-238-e07",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-177-2",
+		"pr-cv-177-1",
+		"pr-cv-177-3"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-1.141029987484217,
@@ -39,6 +46,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-238-e07 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-238-e07.gpx (derivados: inicio, bbox)"
 	]
 }

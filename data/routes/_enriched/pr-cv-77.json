@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Manantial \"Fte. Del Cerro Negro\" (km 3.7, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.5, a 66 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de Mosen Lucas\" (km 5.5, a 14 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.11,
+	"alternatives": ["sl-cv-74", "sl-cv-72", "sl-cv-71"],
+	"enriched_at": "2026-06-11T19:38:49.977Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

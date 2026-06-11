@@ -23,18 +23,32 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 205,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 0.0, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.1, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.1, a 87 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.2, a 10 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Castro\" (km 2.1, a 24 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.4, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.5, a 86 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de la Pica del Pozo\" (km 9.5, a 51 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.6, a 31 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.26,
 	"gpx": "pr-cv-138.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-138",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-352",
+		"sl-cv-101",
+		"gr-36-e02"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.321365017443895,
@@ -44,6 +58,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-138 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-138.gpx (derivados: inicio, bbox)"
 	]
 }

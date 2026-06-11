@@ -1,0 +1,20 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 49 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.3, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.3, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.4, a 1 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.5, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"el Bassó de la Muntanyeta\" (km 0.7, a 56 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente Los Silverios\" (km 3.5, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de Benitandús\" (km 3.8, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.6, a 6 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Pistola\" (km 6.1, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de los Dos Caños\" (km 9.0, a 3 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.2, a 9 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.15,
+	"alternatives": ["gr-333-e01", "gr-333", "sl-cv-142"],
+	"enriched_at": "2026-06-11T17:44:10.699Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

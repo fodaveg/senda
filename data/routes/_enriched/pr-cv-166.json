@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 24 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.0, a 19 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.2, a 49 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Almorquí\" (km 1.9, a 14 m del track; OSM, no verificado en campo)",
+		"Fuente (km 12.9, a 22 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.39,
+	"alternatives": ["pr-cv-3", "pr-cv-399", "pr-cv-339"],
+	"enriched_at": "2026-06-11T17:56:25.667Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

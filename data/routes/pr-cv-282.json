@@ -18,18 +18,24 @@
 	"circular": false,
 	"difficulty_mide": null,
 	"est_duration_min": 240,
-	"water_points": [],
+	"water_points": [
+		"Manantial (km 1.4, a 8 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.06,
 	"gpx": "pr-cv-282.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-282",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"sl-cv-153",
+		"sl-cv-152",
+		"sl-cv-155"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.565389962866902,
@@ -39,6 +45,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-282 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-282.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

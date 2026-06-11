@@ -23,18 +23,33 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": null,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Fuente de la Iglesia\" (km 3.9, a 61 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de la Herrería\" (km 3.9, a 83 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.6, a 96 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.6, a 77 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.0, a 8 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.0, a 39 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.1, a 69 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.2, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente (km 10.6, a 27 m del track; OSM, no verificado en campo)",
+		"Fuente (km 10.7, a 88 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "pr-cv-131-3.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-131-3",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-131-4",
+		"pr-cv-131-1",
+		"pr-cv-131-5"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-1.323513993993402,
@@ -44,6 +59,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-131-3 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-131-3.gpx (derivados: inicio, bbox)"
 	]
 }

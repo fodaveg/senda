@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial \"Font de Sant Miquel\" (km 0.0, a 28 m del track; OSM, no verificado en campo)",
+		"Fuente (km 16.6, a 57 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.12,
+	"alternatives": ["sl-cv-18-1", "sl-cv-130", "gr-331"],
+	"enriched_at": "2026-06-11T18:18:44.011Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

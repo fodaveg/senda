@@ -1,0 +1,14 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 36 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de San Pedro\" (km 0.4, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de Jinquer\" (km 4.0, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de la Solana\" (km 5.8, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Baladre\" (km 6.2, a 64 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente de la Era Concejo\" (km 13.3, a 6 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.16,
+	"alternatives": ["gr-36-e04", "gr-333-e03", "sl-cv-29"],
+	"enriched_at": "2026-06-11T17:44:17.735Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

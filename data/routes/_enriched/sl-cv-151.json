@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 99 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Bernat\" (km 4.7, a 55 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-212", "pr-cv-112", "pr-cv-270"],
+	"enriched_at": "2026-06-11T18:35:36.862Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

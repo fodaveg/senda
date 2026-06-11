@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Manantial \"Aljub de la Cova dels Corrals\" (km 6.6, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.4, a 27 m del track; OSM, no verificado en campo)",
+		"Fuente (km 12.1, a 85 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["sl-cv-151", "pr-cv-270", "pr-cv-112"],
+	"enriched_at": "2026-06-11T17:59:40.204Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

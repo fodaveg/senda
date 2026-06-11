@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Fuente (km 0.2, a 95 m del track; OSM, no verificado en campo)",
+		"Manantial \"La fonteta\" (km 11.8, a 2 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font Nova\" (km 14.5, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 15.2, a 34 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.09,
+	"alternatives": ["sl-cv-90", "pr-cv-120", "pr-cv-341"],
+	"enriched_at": "2026-06-11T18:13:30.257Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

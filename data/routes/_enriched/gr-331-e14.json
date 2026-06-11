@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Manantial (km 9.6, a 19 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font dels Regatxols\" (km 9.6, a 26 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de la Vila\" (km 10.9, a 10 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.07,
+	"alternatives": ["pr-cv-410", "pr-cv-409", "sl-cv-45"],
+	"enriched_at": "2026-06-11T17:42:54.883Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

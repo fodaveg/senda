@@ -18,18 +18,24 @@
 	"circular": true,
 	"difficulty_mide": null,
 	"est_duration_min": 230,
-	"water_points": [],
+	"water_points": [
+		"Fuente \"Font de Català\" (km 4.8, a 1 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.28,
 	"gpx": "pr-cv-415.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-415",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"sl-cv-158",
+		"sl-cv-161",
+		"sl-cv-109"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.036185011267662,
@@ -39,6 +45,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-415 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-415.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

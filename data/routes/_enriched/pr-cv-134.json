@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial \"Font Jordana\" (km 0.1, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de Barxeta\" (km 7.5, a 67 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.09,
+	"alternatives": ["pr-cv-135", "pr-cv-222", "sl-cv-118"],
+	"enriched_at": "2026-06-11T17:55:03.756Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -1,0 +1,15 @@
+{
+	"water_points": [
+		"Fuente (km 5.4, a 46 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.6, a 38 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.9, a 94 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.6, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 21.7, a 85 m del track; OSM, no verificado en campo)",
+		"Fuente \"Pozo Virgen de la Misericordia\" (km 21.9, a 38 m del track; OSM, no verificado en campo)",
+		"Fuente (km 22.1, a 12 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-303", "pr-cv-335", "sl-cv-82"],
+	"enriched_at": "2026-06-11T18:57:14.066Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

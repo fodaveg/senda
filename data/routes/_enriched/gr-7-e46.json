@@ -1,0 +1,17 @@
+{
+	"water_points": [
+		"Fuente (km 8.7, a 26 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de Darrere l'Església\" (km 8.9, a 53 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de Sant Jaume\" (km 8.9, a 3 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de l'Empedrat\" (km 8.9, a 94 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.0, a 10 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de l'Escaleta\" (km 9.0, a 52 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font del Ravalet\" (km 9.1, a 64 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.7, a 39 m del track; OSM, no verificado en campo)",
+		"Fuente (km 20.0, a 13 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.17,
+	"alternatives": ["pr-cv-121", "pr-cv-122", "pr-cv-135"],
+	"enriched_at": "2026-06-11T19:05:08.428Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

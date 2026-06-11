@@ -23,7 +23,9 @@
 		"esfuerzo": 2
 	},
 	"est_duration_min": 80,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 1.4, a 11 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -34,7 +36,11 @@
 		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-58",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-296",
+		"pr-cv-295",
+		"pr-cv-469"
+	],
 	"notes_rain": null,
 	"bbox": [
 		0.217592027038336,
@@ -44,6 +50,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-58 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-58.gpx (derivados: inicio, bbox)"
 	]
 }

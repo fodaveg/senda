@@ -18,7 +18,9 @@
 	"circular": false,
 	"difficulty_mide": null,
 	"est_duration_min": 275,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 0.0, a 63 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -29,7 +31,11 @@
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-325",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-311",
+		"sl-cv-174",
+		"sl-cv-127"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.780359962955117,
@@ -39,6 +45,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-325 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-325.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

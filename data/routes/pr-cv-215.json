@@ -23,18 +23,26 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 220,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 0.3, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.3, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 12.2, a 98 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.13,
 	"gpx": "pr-cv-215.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-215",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"gr-331-e09",
+		"sl-cv-89",
+		"gr-7-e27"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.100469011813402,
@@ -44,6 +52,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-215 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-215.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -36,7 +36,7 @@ interface OverpassElement {
 export function overpassQuery(bbox: [number, number, number, number]): string {
 	const [minLon, minLat, maxLon, maxLat] = bbox;
 	const bb = `${minLat},${minLon},${maxLat},${maxLon}`;
-	return `[out:json][timeout:60];
+	return `[out:json][timeout:120];
 (
 	node["amenity"="drinking_water"](${bb});
 	node["natural"="spring"](${bb});

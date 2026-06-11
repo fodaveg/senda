@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Fuente \"Font de la Drova\" (km 1.8, a 20 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Mongeta\" (km 2.2, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de la Betina\" (km 9.8, a 8 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font del Teular\" (km 9.9, a 21 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.28,
+	"alternatives": ["sl-cv-79", "pr-cv-50", "pr-cv-183"],
+	"enriched_at": "2026-06-11T18:28:32.063Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

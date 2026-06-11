@@ -1,0 +1,15 @@
+{
+	"water_points": [
+		"Manantial (km 2.7, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"els Xorros\" (km 3.8, a 6 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Ombria\" (km 7.2, a 8 m del track; OSM, no verificado en campo)",
+		"Manantial (km 7.3, a 9 m del track; OSM, no verificado en campo)",
+		"Manantial (km 11.7, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial (km 14.7, a 36 m del track; OSM, no verificado en campo)",
+		"Fuente (km 14.8, a 26 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["sl-cv-102", "pr-cv-294", "pr-cv-297"],
+	"enriched_at": "2026-06-11T22:38:23.265Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

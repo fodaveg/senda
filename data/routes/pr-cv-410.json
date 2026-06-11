@@ -23,18 +23,28 @@
 		"esfuerzo": 4
 	},
 	"est_duration_min": 365,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Font de Sant Vicent\" (km 0.5, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de l'Avellà\" (km 4.8, a 74 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Almassà\" (km 14.4, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial (km 15.6, a 16 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font Vella\" (km 17.9, a 7 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.28,
 	"gpx": "pr-cv-410.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-410",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-409",
+		"gr-331-e14",
+		"gr-331-e13"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.030005034059286,
@@ -44,6 +54,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-410 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-410.gpx (derivados: inicio, bbox)"
 	]
 }

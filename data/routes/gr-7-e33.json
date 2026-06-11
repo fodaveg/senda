@@ -23,18 +23,28 @@
 		"esfuerzo": 4
 	},
 	"est_duration_min": 430,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Fuente de la Pechina\" (km 0.0, a 3 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.1, a 78 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.2, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.3, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente La Tejería\" (km 10.8, a 20 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.26,
 	"gpx": "gr-7-e33.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e33",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"gr-160-e03",
+		"sl-cv-105",
+		"sl-cv-104"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.606247968971729,
@@ -44,6 +54,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e33 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e33.gpx (derivados: inicio, bbox)"
 	]
 }

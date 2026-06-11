@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Manantial \"Font dels Posos\" (km 1.0, a 8 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.3, a 7 m del track; OSM, no verificado en campo)",
+		"Manantial (km 6.5, a 2 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font Coberta\" (km 6.5, a 81 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.5, a 1 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.45,
+	"alternatives": ["gr-7-e30", "pr-cv-328", "sl-cv-65-1"],
+	"enriched_at": "2026-06-11T17:41:20.593Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

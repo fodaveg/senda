@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Manantial \"la Font\" (km 4.3, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente (km 4.5, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente (km 4.6, a 4 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Pont\" (km 12.9, a 11 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font dels Llavadors\" (km 14.9, a 50 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.05,
+	"alternatives": ["pr-cv-322", "pr-cv-117", "gr-331-e06"],
+	"enriched_at": "2026-06-11T17:42:29.477Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

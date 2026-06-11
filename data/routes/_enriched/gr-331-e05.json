@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 33 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Mas de la Mola\" (km 5.7, a 9 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Xorret\" (km 11.0, a 35 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.2, a 8 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.07,
+	"alternatives": ["pr-cv-229", "pr-cv-247", "gr-331-e04"],
+	"enriched_at": "2026-06-11T18:59:05.445Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

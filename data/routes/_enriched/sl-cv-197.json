@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Manantial \"Fuente la Higuera\" (km 3.8, a 3 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.4, a 77 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.9, a 91 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.7,
+	"alternatives": ["sl-cv-91", "gr-333-e12", "gr-333-e10"],
+	"enriched_at": "2026-06-11T19:51:40.065Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

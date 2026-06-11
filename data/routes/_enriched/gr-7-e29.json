@@ -1,0 +1,15 @@
+{
+	"water_points": [
+		"Fuente (km 0.1, a 31 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.1, a 74 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Santa Maria\" (km 2.0, a 33 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Molinàs\" (km 5.2, a 13 m del track; OSM, no verificado en campo)",
+		"Manantial \"el Baciolet\" (km 13.4, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Randera\" (km 17.2, a 17 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fonteta d'Anton\" (km 17.6, a 4 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.11,
+	"alternatives": ["pr-cv-1", "pr-cv-225", "pr-cv-297"],
+	"enriched_at": "2026-06-11T17:48:18.706Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 14 m del track; OSM, no verificado en campo)",
+		"Manantial \"Naixement dels Pardos\" (km 9.2, a 33 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Les Santes\" (km 10.4, a 6 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Tord\" (km 10.8, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font dels Capellans\" (km 11.0, a 12 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.04,
+	"alternatives": ["pr-cv-451", "gr-33-e03", "pr-cv-397"],
+	"enriched_at": "2026-06-11T19:30:09.389Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

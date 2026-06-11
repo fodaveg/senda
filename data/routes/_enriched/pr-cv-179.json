@@ -1,0 +1,11 @@
+{
+	"water_points": [
+		"Manantial \"Fuente Santa o de San Pascual\" (km 0.2, a 22 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.2, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.2, a 7 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": null,
+	"alternatives": ["pr-cv-342", "sl-cv-126", "pr-cv-311"],
+	"enriched_at": "2026-06-11T17:57:34.437Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

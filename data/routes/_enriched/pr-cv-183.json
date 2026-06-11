@@ -1,0 +1,14 @@
+{
+	"water_points": [
+		"Manantial \"Font de l'Ull\" (km 0.6, a 18 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Bancal\" (km 2.6, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Escudella\" (km 3.3, a 2 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Orxana\" (km 9.4, a 19 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Xopet\" (km 9.7, a 17 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Olivera\" (km 11.3, a 3 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.04,
+	"alternatives": ["sl-cv-79", "pr-cv-153", "pr-cv-60"],
+	"enriched_at": "2026-06-11T17:58:00.354Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

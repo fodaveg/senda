@@ -23,18 +23,25 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 245,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"Font de la Solsida\" (km 5.4, a 8 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Molí\" (km 11.0, a 54 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.12,
 	"gpx": "pr-cv-289.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-289",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-13",
+		"pr-cv-12",
+		"pr-cv-353"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.212268009781837,
@@ -44,6 +51,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-289 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-289.gpx (derivados: inicio, bbox)"
 	]
 }

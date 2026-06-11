@@ -23,7 +23,21 @@
 		"esfuerzo": 2
 	},
 	"est_duration_min": 130,
-	"water_points": [],
+	"water_points": [
+		"Fuente (km 4.9, a 33 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.2, a 30 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.3, a 13 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.3, a 95 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.4, a 19 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.4, a 19 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.5, a 8 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.7, a 96 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.1, a 20 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.3, a 12 m del track; OSM, no verificado en campo)",
+		"Fuente (km 6.8, a 71 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.6, a 28 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.7, a 50 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -34,7 +48,11 @@
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-439",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-450",
+		"pr-cv-242",
+		"pr-cv-169"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.700902286916971,
@@ -44,6 +62,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-439 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-439.gpx (derivados: inicio, bbox)"
 	]
 }

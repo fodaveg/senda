@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial \"Font Nova\" (km 2.8, a 25 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Gauet\" (km 3.6, a 19 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0,
+	"alternatives": ["pr-cv-100", "gr-236-e02", "pr-cv-400"],
+	"enriched_at": "2026-06-11T18:11:37.032Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

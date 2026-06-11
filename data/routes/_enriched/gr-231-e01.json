@@ -1,0 +1,12 @@
+{
+	"water_points": [
+		"Manantial \"Fuente de Chorra\" (km 0.2, a 72 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.5, a 79 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.8, a 89 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de los Arcos\" (km 19.0, a 51 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.11,
+	"alternatives": ["gr-231", "gr-160-e04", "pr-cv-417"],
+	"enriched_at": "2026-06-11T17:36:15.939Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

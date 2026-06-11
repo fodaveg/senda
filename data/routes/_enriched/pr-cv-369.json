@@ -1,0 +1,13 @@
+{
+	"water_points": [
+		"Fuente (km 0.2, a 64 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Omet\" (km 3.5, a 1 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Catxorro\" (km 6.7, a 8 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font de Barraix\" (km 7.7, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente (km 21.2, a 87 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.06,
+	"alternatives": ["sl-cv-24", "sl-cv-23", "pr-cv-318"],
+	"enriched_at": "2026-06-11T18:14:23.158Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

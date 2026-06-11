@@ -1,0 +1,14 @@
+{
+	"water_points": [
+		"Fuente \"Font de l'Assut\" (km 0.0, a 86 m del track; OSM, no verificado en campo)",
+		"Fuente \"Cova del Convent\" (km 0.2, a 6 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font del Convent\" (km 0.2, a 1 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Cava\" (km 2.8, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 8.7, a 16 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font del Molí\" (km 9.6, a 96 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.63,
+	"alternatives": ["pr-cv-27", "pr-cv-104", "pr-cv-389"],
+	"enriched_at": "2026-06-11T18:37:01.954Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

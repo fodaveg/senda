@@ -1,0 +1,9 @@
+{
+	"water_points": [
+		"Manantial \"Font del Frare\" (km 13.5, a 2 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.01,
+	"alternatives": ["gr-236-e02", "pr-cv-343", "pr-cv-100"],
+	"enriched_at": "2026-06-11T18:18:35.324Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

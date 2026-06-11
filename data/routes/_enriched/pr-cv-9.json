@@ -1,0 +1,10 @@
+{
+	"water_points": [
+		"Manantial \"Font del Pí\" (km 12.8, a 19 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Molí\" (km 14.5, a 96 m del track; OSM, no verificado en campo)"
+	],
+	"shade_ratio": 0.1,
+	"alternatives": ["sl-cv-112", "pr-cv-198", "pr-cv-353"],
+	"enriched_at": "2026-06-11T19:39:49.369Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

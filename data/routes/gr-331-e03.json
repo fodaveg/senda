@@ -23,18 +23,28 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 250,
-	"water_points": [],
+	"water_points": [
+		"Manantial (km 8.1, a 7 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Saranyana\" (km 9.1, a 72 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de la Vila\" (km 12.5, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente (km 12.8, a 3 m del track; OSM, no verificado en campo)",
+		"Fuente (km 13.4, a 93 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.26,
 	"gpx": "gr-331-e03.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-331-e03",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"sl-cv-33",
+		"pr-cv-118",
+		"sl-cv-36"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.279723973944783,
@@ -44,6 +54,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e03 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-331-e03.gpx (derivados: inicio, bbox)"
 	]
 }

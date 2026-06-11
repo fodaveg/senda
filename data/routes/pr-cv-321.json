@@ -23,18 +23,25 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 300,
-	"water_points": [],
+	"water_points": [
+		"Manantial \"La Rinconá\" (km 5.3, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente \"Pelma\" (km 15.3, a 12 m del track; OSM, no verificado en campo)"
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.12,
 	"gpx": "pr-cv-321.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-321",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-77",
+		"sl-cv-74",
+		"sl-cv-72"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.883690975606442,
@@ -44,6 +51,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-321 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-321.gpx (derivados: inicio, bbox)"
 	]
 }
