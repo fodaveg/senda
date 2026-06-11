@@ -1,15 +1,44 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { isTauri } from '@tauri-apps/api/core';
 	import { DEFAULT_SETTINGS, loadSettings, saveSettings, type Settings } from '$lib/settings';
 
 	let settings = $state<Settings>({ ...DEFAULT_SETTINGS });
 	let saved = $state(false);
+	let pasteError = $state('');
 
 	onMount(() => {
 		settings = loadSettings();
 	});
 
+	/** La key de AEMET es un JWT sin espacios; al copiarla del email suele venir
+	 * partida en líneas, y WebKit descarta saltos de línea al pegar en un input. */
+	function cleanKey(text: string): string {
+		return text.replace(/\s+/g, '');
+	}
+
+	function onPasteKey(e: ClipboardEvent) {
+		const text = e.clipboardData?.getData('text') ?? '';
+		if (!text.trim()) return;
+		e.preventDefault();
+		settings.aemetApiKey = cleanKey(text);
+	}
+
+	async function pasteFromClipboard() {
+		pasteError = '';
+		try {
+			const text = isTauri()
+				? await (await import('@tauri-apps/plugin-clipboard-manager')).readText()
+				: await navigator.clipboard.readText();
+			if (text.trim()) settings.aemetApiKey = cleanKey(text);
+		} catch {
+			pasteError = 'No se pudo leer el portapapeles. Prueba con clic derecho → Pegar.';
+		}
+	}
+
 	function persist() {
+		settings.aemetApiKey = cleanKey(settings.aemetApiKey);
+		settings.vaultDir = settings.vaultDir.trim();
 		saveSettings(settings);
 		saved = true;
 		setTimeout(() => (saved = false), 2500);
@@ -38,8 +67,17 @@
 		</p>
 		<label>
 			API key
-			<input type="password" bind:value={settings.aemetApiKey} autocomplete="off" />
+			<div class="key-row">
+				<input
+					type="password"
+					bind:value={settings.aemetApiKey}
+					autocomplete="off"
+					onpaste={onPasteKey}
+				/>
+				<button type="button" class="secondary" onclick={pasteFromClipboard}>Pegar</button>
+			</div>
 		</label>
+		{#if pasteError}<p class="paste-error" role="alert">{pasteError}</p>{/if}
 	</fieldset>
 
 	<fieldset>
@@ -85,6 +123,27 @@
 		padding: 0.45rem 0.6rem;
 		border: 1px solid #d8d4c8;
 		border-radius: 6px;
+	}
+	.key-row {
+		display: flex;
+		gap: 0.5rem;
+	}
+	.key-row input {
+		flex: 1;
+	}
+	.secondary {
+		font: inherit;
+		padding: 0.45rem 0.8rem;
+		border: 1px solid #1d3a2a;
+		border-radius: 6px;
+		background: #fff;
+		color: #1d3a2a;
+		cursor: pointer;
+	}
+	.paste-error {
+		margin: 0.35rem 0 0;
+		font-size: 0.85rem;
+		color: #b3261e;
 	}
 	button {
 		justify-self: start;
