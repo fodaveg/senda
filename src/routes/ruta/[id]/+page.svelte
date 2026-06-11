@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
 	import ElevationProfile from '$lib/components/ElevationProfile.svelte';
@@ -13,7 +12,12 @@
 	import { elevationProfile, type ProfilePoint } from '$lib/geo/profile';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
 	import { loadSettings } from '$lib/settings';
-	import { compareForecasts, fetchAemetForecast, type AemetDay } from '$lib/weather/aemet';
+	import {
+		AemetAuthError,
+		compareForecasts,
+		fetchAemetForecast,
+		type AemetDay
+	} from '$lib/weather/aemet';
 	import { dateLabel, forecastDates, seasonForDate } from '$lib/weather/dates';
 	import { fetchOpenMeteoForecast } from '$lib/weather/openmeteo';
 	import type { FeatureCollection } from 'geojson';
@@ -32,6 +36,7 @@
 	let selectedDate = $state('');
 	let forecast = $state<WeatherDay[] | null>(null);
 	let aemetForecast = $state<AemetDay[] | null>(null);
+	let aemetNote = $state<string | null>(null);
 	let weatherLoading = $state(true);
 
 	let selectedDay = $derived(forecast?.find((d) => d.date === selectedDate) ?? null);
@@ -45,35 +50,63 @@
 			: []
 	);
 
-	onMount(async () => {
-		dates = forecastDates();
-		selectedDate = dates[0];
+	// Carga por ruta como $effect (no onMount): se relanza si cambia la ruta
+	// sin remontar el componente y relee los ajustes (api key AEMET) en cada
+	// visita, de modo que una key recién guardada se usa de inmediato.
+	let loadToken = 0;
+	$effect(() => {
+		void loadRouteData(route, ++loadToken);
+	});
+
+	async function loadRouteData(r: typeof route, token: number) {
+		geojson = null;
+		profile = [];
+		trackError = null;
+		forecast = null;
+		aemetForecast = null;
+		aemetNote = null;
+		weatherLoading = true;
+		const ds = forecastDates();
+		dates = ds;
+		selectedDate = ds[0];
 		try {
-			const xml = await loadTrackXml(route.gpx);
+			const xml = await loadTrackXml(r.gpx);
 			const collection = gpxToGeoJSON(xml);
+			if (token !== loadToken) return;
 			geojson = collection;
 			profile = elevationProfile(trackPositions(collection));
 		} catch (e) {
+			if (token !== loadToken) return;
 			trackError = e instanceof Error ? e.message : String(e);
 		}
 		try {
-			forecast = await fetchOpenMeteoForecast(route.start.lat, route.start.lon);
+			const days = await fetchOpenMeteoForecast(r.start.lat, r.start.lon);
+			if (token !== loadToken) return;
+			forecast = days;
 		} catch {
 			// Offline o API caída: panel meteo en estado vacío, nada se rompe.
+			if (token !== loadToken) return;
 			forecast = null;
 		} finally {
-			weatherLoading = false;
+			if (token === loadToken) weatherLoading = false;
 		}
 		// AEMET solo como verificación, si hay api key en ajustes y código de municipio.
 		const { aemetApiKey } = loadSettings();
-		if (aemetApiKey && route.aemet_municipio) {
+		if (aemetApiKey && r.aemet_municipio) {
 			try {
-				aemetForecast = await fetchAemetForecast(route.aemet_municipio, aemetApiKey);
-			} catch {
+				const days = await fetchAemetForecast(r.aemet_municipio, aemetApiKey);
+				if (token !== loadToken) return;
+				aemetForecast = days;
+			} catch (e) {
+				if (token !== loadToken) return;
 				aemetForecast = null;
+				aemetNote =
+					e instanceof AemetAuthError
+						? 'AEMET rechazó la api key: revísala en Ajustes.'
+						: 'Verificación AEMET no disponible ahora mismo.';
 			}
 		}
-	});
+	}
 
 	const MIDE_LABELS: Record<string, string> = {
 		medio: 'Medio',
@@ -125,7 +158,13 @@
 			</div>
 			<p class="date-note">Pronóstico disponible solo hasta 7 días vista.</p>
 		{/if}
-		<WeatherCard day={selectedDay} loading={weatherLoading} aemet={selectedAemet} {discrepancies} />
+		<WeatherCard
+			day={selectedDay}
+			loading={weatherLoading}
+			aemet={selectedAemet}
+			{discrepancies}
+			{aemetNote}
+		/>
 
 		<h2>Mochila recomendada</h2>
 		<BackpackPanel {decisions} />

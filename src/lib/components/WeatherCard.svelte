@@ -6,7 +6,8 @@
 		day,
 		loading = false,
 		aemet = null,
-		discrepancies = []
+		discrepancies = [],
+		aemetNote = null
 	}: {
 		/** null = sin conexión o sin pronóstico para esa fecha. */
 		day: WeatherDay | null;
@@ -14,6 +15,8 @@
 		/** Verificación AEMET para la misma fecha, si está configurada. */
 		aemet?: AemetDay | null;
 		discrepancies?: WeatherDiscrepancy[];
+		/** Motivo por el que no hay verificación AEMET (key rechazada…). */
+		aemetNote?: string | null;
 	} = $props();
 
 	function hourOf(isoLocal: string): string {
@@ -73,6 +76,8 @@
 					</ul>
 				</div>
 			{/if}
+		{:else if aemetNote}
+			<p class="aemet-note">{aemetNote}</p>
 		{/if}
 	{:else}
 		<p class="empty">
@@ -122,6 +127,11 @@
 		margin: 0.4rem 0 0;
 		font-size: 0.85rem;
 		color: #333;
+	}
+	.aemet-note {
+		margin: 0.4rem 0 0;
+		font-size: 0.8rem;
+		color: #8a5a00;
 	}
 	.discrepancy {
 		margin-top: 0.5rem;

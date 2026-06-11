@@ -51,6 +51,13 @@ export function aemetUrl(municipio: string): string {
 	return `https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/${municipio}`;
 }
 
+/** AEMET rechazó la api key (401/403): distinta de un fallo de red. */
+export class AemetAuthError extends Error {}
+
+function isAuthStatus(estado: number): boolean {
+	return estado === 401 || estado === 403;
+}
+
 /** Normaliza el JSON de datos de AEMET; días incompletos se descartan. */
 export function normalizeAemet(payload: unknown, fetchedAt: string): AemetDay[] {
 	const result = dataSchema.safeParse(payload);
@@ -84,8 +91,14 @@ export async function fetchAemetForecast(
 	fetchFn: typeof fetch = fetch
 ): Promise<AemetDay[]> {
 	const envelopeResponse = await fetchFn(`${aemetUrl(municipio)}?api_key=${apiKey}`);
+	if (isAuthStatus(envelopeResponse.status)) {
+		throw new AemetAuthError(`AEMET rechazó la api key (${envelopeResponse.status})`);
+	}
 	if (!envelopeResponse.ok) throw new Error(`AEMET respondió ${envelopeResponse.status}`);
 	const envelope = envelopeSchema.safeParse(await envelopeResponse.json());
+	if (envelope.success && isAuthStatus(envelope.data.estado)) {
+		throw new AemetAuthError(`AEMET rechazó la api key (${envelope.data.estado})`);
+	}
 	if (!envelope.success || !envelope.data.datos) {
 		throw new Error(
 			`AEMET no devolvió URL de datos${envelope.success && envelope.data.descripcion ? `: ${envelope.data.descripcion}` : ''}`
@@ -94,6 +107,35 @@ export async function fetchAemetForecast(
 	const dataResponse = await fetchFn(envelope.data.datos);
 	if (!dataResponse.ok) throw new Error(`AEMET (datos) respondió ${dataResponse.status}`);
 	return normalizeAemet(await dataResponse.json(), new Date().toISOString());
+}
+
+// ─── Validación de api key ──────────────────────────────────────────────────
+
+export type AemetKeyCheck = 'valid' | 'invalid' | 'unreachable';
+
+/** Municipio usado solo para la petición de prueba (València). */
+const VALIDATION_MUNICIPIO = '46250';
+
+/**
+ * Comprueba la api key con una petición real al sobre de AEMET.
+ * 'unreachable' = no se pudo confirmar (sin red, API caída…), no implica
+ * que la key sea mala.
+ */
+export async function validateAemetKey(
+	apiKey: string,
+	fetchFn: typeof fetch = fetch
+): Promise<AemetKeyCheck> {
+	try {
+		const response = await fetchFn(`${aemetUrl(VALIDATION_MUNICIPIO)}?api_key=${apiKey}`);
+		if (isAuthStatus(response.status)) return 'invalid';
+		if (!response.ok) return 'unreachable';
+		const envelope = envelopeSchema.safeParse(await response.json());
+		if (!envelope.success) return 'unreachable';
+		if (isAuthStatus(envelope.data.estado)) return 'invalid';
+		return envelope.data.estado === 200 && envelope.data.datos ? 'valid' : 'unreachable';
+	} catch {
+		return 'unreachable';
+	}
 }
 
 // ─── Comparación de fuentes ─────────────────────────────────────────────────

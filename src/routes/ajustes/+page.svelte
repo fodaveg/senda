@@ -2,10 +2,19 @@
 	import { onMount } from 'svelte';
 	import { isTauri } from '@tauri-apps/api/core';
 	import { DEFAULT_SETTINGS, loadSettings, saveSettings, type Settings } from '$lib/settings';
+	import { validateAemetKey, type AemetKeyCheck } from '$lib/weather/aemet';
 
 	let settings = $state<Settings>({ ...DEFAULT_SETTINGS });
 	let saved = $state(false);
 	let pasteError = $state('');
+	let keyCheck = $state<AemetKeyCheck | 'checking' | null>(null);
+
+	const KEY_CHECK_MESSAGES: Record<AemetKeyCheck | 'checking', string> = {
+		checking: 'Comprobando la api key con AEMET…',
+		valid: '✓ API key válida: las rutas mostrarán la verificación AEMET.',
+		invalid: '✗ AEMET rechazó la api key. Revisa que esté completa (es un texto largo).',
+		unreachable: 'Guardada, pero no se pudo comprobar (sin conexión o AEMET caída).'
+	};
 
 	onMount(() => {
 		settings = loadSettings();
@@ -36,12 +45,21 @@
 		}
 	}
 
-	function persist() {
+	async function persist() {
 		settings.aemetApiKey = cleanKey(settings.aemetApiKey);
 		settings.vaultDir = settings.vaultDir.trim();
 		saveSettings(settings);
 		saved = true;
 		setTimeout(() => (saved = false), 2500);
+		if (settings.aemetApiKey) {
+			const key = settings.aemetApiKey;
+			keyCheck = 'checking';
+			const result = await validateAemetKey(key);
+			// Ignora el resultado si la key cambió mientras se comprobaba.
+			if (settings.aemetApiKey === key) keyCheck = result;
+		} else {
+			keyCheck = null;
+		}
 	}
 </script>
 
@@ -78,6 +96,16 @@
 			</div>
 		</label>
 		{#if pasteError}<p class="paste-error" role="alert">{pasteError}</p>{/if}
+		{#if keyCheck}
+			<p
+				class="key-check"
+				class:ok={keyCheck === 'valid'}
+				class:bad={keyCheck === 'invalid'}
+				role="status"
+			>
+				{KEY_CHECK_MESSAGES[keyCheck]}
+			</p>
+		{/if}
 	</fieldset>
 
 	<fieldset>
@@ -143,6 +171,17 @@
 	.paste-error {
 		margin: 0.35rem 0 0;
 		font-size: 0.85rem;
+		color: #b3261e;
+	}
+	.key-check {
+		margin: 0.5rem 0 0;
+		font-size: 0.85rem;
+		color: #555;
+	}
+	.key-check.ok {
+		color: #2a6f4e;
+	}
+	.key-check.bad {
 		color: #b3261e;
 	}
 	button {

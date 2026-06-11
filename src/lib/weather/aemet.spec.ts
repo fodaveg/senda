@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { compareForecasts, fetchAemetForecast, normalizeAemet, type AemetDay } from './aemet';
+import {
+	AemetAuthError,
+	compareForecasts,
+	fetchAemetForecast,
+	normalizeAemet,
+	validateAemetKey,
+	type AemetDay
+} from './aemet';
 import type { WeatherDay } from '$lib/types';
 
 const AEMET_DATA = [
@@ -67,11 +74,59 @@ describe('fetchAemetForecast (dos pasos)', () => {
 	it('falla con descripción clara si AEMET no da URL de datos', async () => {
 		const fakeFetch = (async () =>
 			new Response(
+				JSON.stringify({ estado: 404, descripcion: 'No hay datos que satisfagan esos criterios' })
+			)) as unknown as typeof fetch;
+		await expect(fetchAemetForecast('46112', 'KEY', fakeFetch)).rejects.toThrow(/No hay datos/);
+	});
+
+	it('key rechazada (401 en el sobre) → AemetAuthError, distinguible de un fallo de red', async () => {
+		const fakeFetch = (async () =>
+			new Response(
 				JSON.stringify({ estado: 401, descripcion: 'api key invalida' })
 			)) as unknown as typeof fetch;
-		await expect(fetchAemetForecast('46112', 'MALA', fakeFetch)).rejects.toThrow(
-			/api key invalida/
+		await expect(fetchAemetForecast('46112', 'MALA', fakeFetch)).rejects.toBeInstanceOf(
+			AemetAuthError
 		);
+	});
+
+	it('key rechazada (HTTP 401) → AemetAuthError', async () => {
+		const fakeFetch = (async () =>
+			new Response('denegado', { status: 401 })) as unknown as typeof fetch;
+		await expect(fetchAemetForecast('46112', 'MALA', fakeFetch)).rejects.toBeInstanceOf(
+			AemetAuthError
+		);
+	});
+});
+
+describe('validateAemetKey', () => {
+	it('sobre con estado 200 y URL de datos → valid', async () => {
+		const fakeFetch = (async () =>
+			new Response(
+				JSON.stringify({ estado: 200, datos: 'https://datos.example/x' })
+			)) as unknown as typeof fetch;
+		expect(await validateAemetKey('KEY', fakeFetch)).toBe('valid');
+	});
+
+	it('HTTP 401 o estado 401 en el cuerpo → invalid', async () => {
+		const http401 = (async () =>
+			new Response('denegado', { status: 401 })) as unknown as typeof fetch;
+		expect(await validateAemetKey('MALA', http401)).toBe('invalid');
+
+		const body401 = (async () =>
+			new Response(
+				JSON.stringify({ estado: 401, descripcion: 'api key invalida' })
+			)) as unknown as typeof fetch;
+		expect(await validateAemetKey('MALA', body401)).toBe('invalid');
+	});
+
+	it('sin red o API caída → unreachable, nunca invalid', async () => {
+		const offline = (async () => {
+			throw new TypeError('fetch failed');
+		}) as unknown as typeof fetch;
+		expect(await validateAemetKey('KEY', offline)).toBe('unreachable');
+
+		const error500 = (async () => new Response('boom', { status: 500 })) as unknown as typeof fetch;
+		expect(await validateAemetKey('KEY', error500)).toBe('unreachable');
 	});
 });
 

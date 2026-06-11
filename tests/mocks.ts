@@ -7,6 +7,21 @@ export function isoDate(date: Date): string {
 	return `${y}-${m}-${d}`;
 }
 
+/** Datos municipales AEMET mockeados, coherentes con mockPayload (sin discrepancias). */
+export function aemetPayload() {
+	const dia = Array.from({ length: 7 }, (_, i) => {
+		const d = new Date();
+		d.setDate(d.getDate() + i);
+		return {
+			fecha: `${isoDate(d)}T00:00:00`,
+			probPrecipitacion: [{ value: 75, periodo: '00-24' }],
+			temperatura: { maxima: 31, minima: 18 },
+			uvMax: 8
+		};
+	});
+	return [{ nombre: 'Chulilla', prediccion: { dia } }];
+}
+
 /** Pronóstico mockeado: 8 días desde hoy con lluvia 80%, UV 8 y 30 °C. */
 export function mockPayload() {
 	const days = Array.from({ length: 8 }, (_, i) => {
