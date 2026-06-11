@@ -54,6 +54,9 @@ export function aemetUrl(municipio: string): string {
 /** AEMET rechazó la api key (401/403): distinta de un fallo de red. */
 export class AemetAuthError extends Error {}
 
+/** AEMET limitó las peticiones (429): transitorio, reintentable. */
+export class AemetRateLimitError extends Error {}
+
 function isAuthStatus(estado: number): boolean {
 	return estado === 401 || estado === 403;
 }
@@ -94,10 +97,16 @@ export async function fetchAemetForecast(
 	if (isAuthStatus(envelopeResponse.status)) {
 		throw new AemetAuthError(`AEMET rechazó la api key (${envelopeResponse.status})`);
 	}
+	if (envelopeResponse.status === 429) {
+		throw new AemetRateLimitError('AEMET respondió 429 (límite de peticiones)');
+	}
 	if (!envelopeResponse.ok) throw new Error(`AEMET respondió ${envelopeResponse.status}`);
 	const envelope = envelopeSchema.safeParse(await envelopeResponse.json());
 	if (envelope.success && isAuthStatus(envelope.data.estado)) {
 		throw new AemetAuthError(`AEMET rechazó la api key (${envelope.data.estado})`);
+	}
+	if (envelope.success && envelope.data.estado === 429) {
+		throw new AemetRateLimitError('AEMET respondió 429 (límite de peticiones)');
 	}
 	if (!envelope.success || !envelope.data.datos) {
 		throw new Error(
@@ -107,6 +116,74 @@ export async function fetchAemetForecast(
 	const dataResponse = await fetchFn(envelope.data.datos);
 	if (!dataResponse.ok) throw new Error(`AEMET (datos) respondió ${dataResponse.status}`);
 	return normalizeAemet(await dataResponse.json(), new Date().toISOString());
+}
+
+// ─── Caché del pronóstico ───────────────────────────────────────────────────
+
+/** Subconjunto de Storage, inyectable en tests. */
+export interface KeyValueStorage {
+	getItem(key: string): string | null;
+	setItem(key: string, value: string): void;
+}
+
+/** El pronóstico municipal no cambia más rápido; evita los 429 de AEMET. */
+const AEMET_CACHE_TTL_MS = 60 * 60 * 1000;
+
+function aemetCacheKey(municipio: string): string {
+	return `senderos-cv:aemet:${municipio}`;
+}
+
+interface AemetCacheEntry {
+	at: number;
+	days: AemetDay[];
+}
+
+/**
+ * Como fetchAemetForecast pero con caché por municipio (TTL 1 h) para no
+ * agotar la cuota de AEMET con cada visita a una ruta. La caché solo guarda
+ * respuestas correctas; los errores siempre se propagan frescos.
+ */
+export async function fetchAemetForecastCached(
+	municipio: string,
+	apiKey: string,
+	opts: {
+		fetchFn?: typeof fetch;
+		storage?: KeyValueStorage | null;
+		now?: () => number;
+	} = {}
+): Promise<AemetDay[]> {
+	const fetchFn = opts.fetchFn ?? fetch;
+	const storage = opts.storage ?? (typeof localStorage === 'undefined' ? null : localStorage);
+	const now = opts.now ?? Date.now;
+
+	if (storage) {
+		try {
+			const raw = storage.getItem(aemetCacheKey(municipio));
+			if (raw) {
+				const cached = JSON.parse(raw) as Partial<AemetCacheEntry>;
+				if (
+					typeof cached.at === 'number' &&
+					Array.isArray(cached.days) &&
+					now() - cached.at < AEMET_CACHE_TTL_MS
+				) {
+					return cached.days;
+				}
+			}
+		} catch {
+			// Caché corrupta: se ignora y se consulta de nuevo.
+		}
+	}
+
+	const days = await fetchAemetForecast(municipio, apiKey, fetchFn);
+	if (storage) {
+		try {
+			const entry: AemetCacheEntry = { at: now(), days };
+			storage.setItem(aemetCacheKey(municipio), JSON.stringify(entry));
+		} catch {
+			// Sin espacio o storage bloqueado: la caché es solo una optimización.
+		}
+	}
+	return days;
 }
 
 // ─── Validación de api key ──────────────────────────────────────────────────

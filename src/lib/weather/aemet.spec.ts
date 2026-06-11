@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import {
 	AemetAuthError,
+	AemetRateLimitError,
 	compareForecasts,
 	fetchAemetForecast,
+	fetchAemetForecastCached,
 	normalizeAemet,
 	validateAemetKey,
 	type AemetDay
@@ -162,5 +164,95 @@ describe('compareForecasts', () => {
 
 	it('fuentes coherentes → sin discrepancias', () => {
 		expect(compareForecasts(openMeteo, aemetWith(25, 31))).toEqual([]);
+	});
+});
+
+describe('fetchAemetForecastCached', () => {
+	function fakeStore(initial: Record<string, string> = {}) {
+		const data = new Map(Object.entries(initial));
+		return {
+			getItem: (k: string) => data.get(k) ?? null,
+			setItem: (k: string, v: string) => void data.set(k, v),
+			dump: () => data
+		};
+	}
+
+	function countingFetch() {
+		const state = { calls: 0 };
+		const fetchFn = (async (url: string | URL) => {
+			state.calls++;
+			if (String(url).includes('opendata.aemet.es')) {
+				return new Response(JSON.stringify({ estado: 200, datos: 'https://datos.example/x' }));
+			}
+			return new Response(JSON.stringify(AEMET_DATA));
+		}) as unknown as typeof fetch;
+		return { fetchFn, state };
+	}
+
+	it('cachea por municipio: la segunda llamada dentro del TTL no toca la red', async () => {
+		const storage = fakeStore();
+		const { fetchFn, state } = countingFetch();
+		const first = await fetchAemetForecastCached('46112', 'KEY', {
+			fetchFn,
+			storage,
+			now: () => 0
+		});
+		expect(state.calls).toBe(2); // sobre + datos
+		const second = await fetchAemetForecastCached('46112', 'KEY', {
+			fetchFn,
+			storage,
+			now: () => 59 * 60 * 1000
+		});
+		expect(state.calls).toBe(2);
+		expect(second).toEqual(first);
+	});
+
+	it('caché caducada (>1 h) → vuelve a consultar', async () => {
+		const storage = fakeStore();
+		const { fetchFn, state } = countingFetch();
+		await fetchAemetForecastCached('46112', 'KEY', { fetchFn, storage, now: () => 0 });
+		await fetchAemetForecastCached('46112', 'KEY', {
+			fetchFn,
+			storage,
+			now: () => 61 * 60 * 1000
+		});
+		expect(state.calls).toBe(4);
+	});
+
+	it('caché corrupta → se ignora y se consulta', async () => {
+		const storage = fakeStore({ 'senderos-cv:aemet:46112': 'no-es-json{' });
+		const { fetchFn, state } = countingFetch();
+		const days = await fetchAemetForecastCached('46112', 'KEY', { fetchFn, storage });
+		expect(state.calls).toBe(2);
+		expect(days).toHaveLength(1);
+	});
+
+	it('los errores no se cachean: se propagan frescos', async () => {
+		const storage = fakeStore();
+		const fail429 = (async () => new Response('limit', { status: 429 })) as unknown as typeof fetch;
+		await expect(
+			fetchAemetForecastCached('46112', 'KEY', { fetchFn: fail429, storage })
+		).rejects.toBeInstanceOf(AemetRateLimitError);
+		expect(storage.dump().size).toBe(0);
+	});
+});
+
+describe('AemetRateLimitError (429)', () => {
+	it('HTTP 429 → AemetRateLimitError', async () => {
+		const fakeFetch = (async () =>
+			new Response('limit', { status: 429 })) as unknown as typeof fetch;
+		await expect(fetchAemetForecast('46112', 'KEY', fakeFetch)).rejects.toBeInstanceOf(
+			AemetRateLimitError
+		);
+	});
+
+	it('estado 429 dentro de un 200 → AemetRateLimitError', async () => {
+		const fakeFetch = (async () =>
+			new Response(
+				JSON.stringify({ estado: 429, descripcion: 'límite alcanzado' })
+			)) as unknown as typeof fetch;
+		await expect(fetchAemetForecast('46112', 'KEY', fakeFetch)).rejects.toBeInstanceOf(
+			AemetRateLimitError
+		);
 	});
 });

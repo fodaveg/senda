@@ -14,8 +14,9 @@
 	import { loadSettings } from '$lib/settings';
 	import {
 		AemetAuthError,
+		AemetRateLimitError,
 		compareForecasts,
-		fetchAemetForecast,
+		fetchAemetForecastCached,
 		type AemetDay
 	} from '$lib/weather/aemet';
 	import { dateLabel, forecastDates, seasonForDate } from '$lib/weather/dates';
@@ -39,6 +40,7 @@
 	let aemetNote = $state<string | null>(null);
 	let weatherError = $state<string | null>(null);
 	let weatherLoading = $state(true);
+	let debugMode = $state(false);
 
 	let selectedDay = $derived(forecast?.find((d) => d.date === selectedDate) ?? null);
 	// Motivo técnico de un panel meteo vacío, para diagnóstico en la UI.
@@ -67,6 +69,8 @@
 	});
 
 	async function loadRouteData(r: typeof route, token: number) {
+		const settings = loadSettings();
+		debugMode = settings.debugMode;
 		geojson = null;
 		profile = [];
 		trackError = null;
@@ -103,20 +107,24 @@
 			if (token === loadToken) weatherLoading = false;
 		}
 		// AEMET solo como verificación, si hay api key en ajustes y código de municipio.
-		const { aemetApiKey } = loadSettings();
-		if (aemetApiKey && r.aemet_municipio) {
+		if (settings.aemetApiKey && r.aemet_municipio) {
 			try {
-				const days = await fetchAemetForecast(r.aemet_municipio, aemetApiKey);
+				const days = await fetchAemetForecastCached(r.aemet_municipio, settings.aemetApiKey);
 				if (token !== loadToken) return;
 				aemetForecast = days;
 			} catch (e) {
 				console.error('AEMET:', e);
 				if (token !== loadToken) return;
 				aemetForecast = null;
-				aemetNote =
-					e instanceof AemetAuthError
-						? 'AEMET rechazó la api key: revísala en Ajustes.'
-						: `Verificación AEMET no disponible: ${e instanceof Error ? e.message : String(e)}`;
+				if (e instanceof AemetAuthError) {
+					aemetNote = 'AEMET rechazó la api key: revísala en Ajustes.';
+				} else if (e instanceof AemetRateLimitError) {
+					aemetNote = 'AEMET ha limitado las peticiones temporalmente; reintenta en unos minutos.';
+				} else if (settings.debugMode) {
+					aemetNote = `Verificación AEMET no disponible: ${e instanceof Error ? e.message : String(e)}`;
+				} else {
+					aemetNote = 'Verificación AEMET no disponible ahora mismo.';
+				}
 			}
 		}
 	}
@@ -177,7 +185,7 @@
 			aemet={selectedAemet}
 			{discrepancies}
 			{aemetNote}
-			error={weatherDetail}
+			error={debugMode ? weatherDetail : null}
 		/>
 
 		<h2>Mochila recomendada</h2>

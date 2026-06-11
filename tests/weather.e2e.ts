@@ -34,3 +34,20 @@ test('sin conexión: panel meteo vacío y reglas meteo en indeterminado', async 
 	await expect(dudosos.getByText('Poncho / chubasquero')).toBeVisible();
 	await expect(dudosos.getByText(/Sin datos suficientes/).first()).toBeVisible();
 });
+
+test('el detalle técnico del fallo solo aparece con el modo debug activado', async ({ page }) => {
+	await page.route('https://api.open-meteo.com/**', (route) => route.abort());
+
+	await page.goto('/ruta/pr-cv-77');
+	await expect(page.getByText('Sin conexión o sin pronóstico')).toBeVisible();
+	await expect(page.getByText('Detalle técnico')).toHaveCount(0);
+
+	await page.goto('/ajustes');
+	await page.locator('body[data-hydrated]').waitFor();
+	await page.getByRole('checkbox', { name: 'Modo debug' }).check();
+	await page.getByRole('button', { name: 'Guardar ajustes' }).click();
+
+	await page.goto('/ruta/pr-cv-77');
+	await expect(page.getByText('Sin conexión o sin pronóstico')).toBeVisible();
+	await expect(page.getByText(/Detalle técnico/)).toBeVisible();
+});

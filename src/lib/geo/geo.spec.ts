@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { DOMParser } from '@xmldom/xmldom';
 import { haversineMeters } from './distance';
 import { gpxToGeoJSON, trackPositions } from './gpx';
-import { elevationProfile } from './profile';
+import { axisTicks, elevationProfile } from './profile';
 
 const GPX = `<?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="test" xmlns="http://www.topografix.com/GPX/1/1">
@@ -64,5 +64,20 @@ describe('elevationProfile', () => {
 				[-0.5, 39.01]
 			])
 		).toEqual([]);
+	});
+});
+
+describe('axisTicks', () => {
+	it('genera pasos redondos (1/2/5×10ⁿ) que cubren el rango', () => {
+		expect(axisTicks(0, 11.2, 5)).toEqual([0, 2, 4, 6, 8, 10]);
+		expect(axisTicks(240, 595, 4)).toEqual([300, 400, 500]);
+	});
+
+	it('incluye el extremo superior cuando cae en un paso exacto', () => {
+		expect(axisTicks(0, 10, 5)).toEqual([0, 2, 4, 6, 8, 10]);
+	});
+
+	it('rango nulo o degenerado → una sola marca', () => {
+		expect(axisTicks(5, 5)).toEqual([5]);
 	});
 });

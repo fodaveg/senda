@@ -13,6 +13,24 @@ export interface ProfilePoint {
 	ele: number;
 }
 
+/**
+ * Marcas "redondas" para un eje (paso 1/2/5×10ⁿ) que cubran [min, max]
+ * con ~targetCount intervalos. Para los ejes del perfil de elevación.
+ */
+export function axisTicks(min: number, max: number, targetCount = 4): number[] {
+	const span = max - min;
+	if (span <= 0 || !Number.isFinite(span)) return [min];
+	const rawStep = span / targetCount;
+	const magnitude = 10 ** Math.floor(Math.log10(rawStep));
+	const ratio = rawStep / magnitude;
+	const step = magnitude * (ratio < 1.5 ? 1 : ratio < 3 ? 2 : ratio < 7 ? 5 : 10);
+	const ticks: number[] = [];
+	for (let v = Math.ceil(min / step) * step; v <= max + step * 1e-6; v += step) {
+		ticks.push(Number(v.toFixed(6)));
+	}
+	return ticks;
+}
+
 export function elevationProfile(positions: Position[]): ProfilePoint[] {
 	const points: ProfilePoint[] = [];
 	let cumulativeM = 0;

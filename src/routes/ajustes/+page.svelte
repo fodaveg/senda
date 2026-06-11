@@ -120,6 +120,18 @@
 		</label>
 	</fieldset>
 
+	<fieldset>
+		<legend>Diagnóstico</legend>
+		<p class="help">
+			Con el modo debug activado, los fallos de meteo muestran el error técnico en crudo (útil para
+			reportar problemas).
+		</p>
+		<label class="check">
+			<input type="checkbox" bind:checked={settings.debugMode} />
+			Modo debug
+		</label>
+	</fieldset>
+
 	<button type="submit">Guardar ajustes</button>
 	{#if saved}<span class="saved">Guardado.</span>{/if}
 </form>
@@ -145,6 +157,11 @@
 		gap: 0.25rem;
 		font-weight: 600;
 		font-size: 0.9rem;
+	}
+	label.check {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 	input {
 		font: inherit;
