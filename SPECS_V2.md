@@ -18,7 +18,7 @@ Especificación de la **versión 2** de Senderos CV. Este documento define los *
 **Restricciones que se mantienen de v1 (innegociables):**
 
 - Sin backend, sin base de datos en runtime. GitLab Pages es hosting estático: la app solo hace GET de ficheros.
-- **Wikiloc NUNCA como fuente de datos** (sin API pública; el scraping viola sus términos). Ver §9.
+- **Wikiloc NUNCA como fuente de datos** (sin API pública; el scraping viola sus términos). Ver §10.
 - Prohibido inventar metadatos de ruta: dato no verificado → `null` + entrada en `sources`.
 - Lógica de negocio pura y sin imports de Svelte; zod en todos los límites de datos externos.
 - La app funciona 100% offline salvo los módulos online declarados, que degradan con elegancia (estado vacío, nunca rotura ni datos inventados).
@@ -31,6 +31,8 @@ Especificación de la **versión 2** de Senderos CV. Este documento define los *
 src/lib/
 ├── catalog/            # manifest, descarga de catálogo, almacén local (IndexedDB/FS Tauri)
 ├── user/               # marcas (favorita/me gusta/quiero hacer/hecha), diario, checklists, export/import
+├── report/
+│   └── emergency.ts    # modelo de la ficha de emergencia (pura, reutiliza el pipeline v1)
 ├── engine/
 │   └── startWindow.ts  # ventana ideal de inicio (pura)
 ├── weather/
@@ -43,7 +45,7 @@ src/lib/
 scripts/
 ├── ingest/
 │   ├── crawl.ts        # listado completo del portal FEMECV + descarga GPX + ficha + estado
-│   └── enrich/         # fuentes semiautomáticas (§11): OSM agua/sombra, alternativas
+│   └── enrich/         # fuentes semiautomáticas (§12): OSM agua/sombra, alternativas
 └── publish/            # genera manifest.json y empaqueta data/ para GitLab Pages (CI)
 ```
 
@@ -64,14 +66,14 @@ scripts/
 	// route.json mezcla fuentes. Las claves son nombres de campo.
 	"field_sources": {
 		"water_points": "OSM Overpass 2026-09 (no verificado en campo)",
-		"shade_ratio": "estimación por cobertura arbórea OSM (método §11)"
+		"shade_ratio": "estimación por cobertura arbórea OSM (método §12)"
 	}
 }
 ```
 
-- `wikiloc_search` **no se almacena**: es un enlace derivado en runtime (§9).
+- `wikiloc_search` **no se almacena**: es un enlace derivado en runtime (§10).
 - Las **marcas de usuario** viven fuera del modelo de ruta, en `src/lib/user/` (localStorage): `favorita`, `me_gusta`, `quiero_hacer`, `hecha`. No excluyentes entre sí. `hecha` admite fecha y notas y alimenta el diario (§8).
-- Regla de calidad v1 intacta: la ficha oficial FEMECV es fuente verificada; los enriquecimientos automáticos (§11) se citan y se etiquetan "no verificado en campo".
+- Regla de calidad v1 intacta: la ficha oficial FEMECV es fuente verificada; los enriquecimientos automáticos (§12) se citan y se etiquetan "no verificado en campo".
 
 ---
 
@@ -171,14 +173,42 @@ Sobre la vista listado/mapa de v1 §8:
 
 ---
 
-## 9. Wikiloc
+## 9. Ficha de emergencia (plan de aviso para contactos)
+
+Documento pensado para **dejar a familiares o contactos antes de salir**: si no reciben tu "OK" a la hora acordada, tienen todo lo necesario para activar ayuda. Se genera desde la ficha de ruta ("Generar ficha de emergencia") reutilizando el pipeline de informes de v1 (`src/lib/report/`): un único modelo, tres salidas.
+
+### Contenido del documento
+
+1. **Quién va**: nombre y teléfono del senderista, acompañantes (o "voy solo/a", destacado). Opcional: datos médicos relevantes (alergias, medicación, condiciones) — solo si el usuario los rellena.
+2. **La ruta**: nombre, tipo y estado, municipio, distancia, desnivel, MIDE, circular/lineal, **coordenadas del punto de inicio** (y de fin si es lineal) con enlaces abiertos a mapas (`geo:`, OpenStreetMap), enlace a la ficha FEMECV, y el **GPX adjuntable** (útil para los equipos de rescate).
+3. **Vehículo** (opcional): modelo, color, matrícula y dónde quedará aparcado.
+4. **Plan horario**: fecha; hora prevista de salida (la elegida o la de la ventana ideal §5); duración estimada (MIDE, etiquetada como estimación); hora estimada de fin; **"hora del OK"** (cuándo avisará de que todo va bien) y **hora límite de alarma** — sugerida automáticamente como fin estimado + margen configurable (por defecto +2 h), siempre editable.
+5. **Cobertura**: aviso genérico de que durante la ruta la cobertura puede ser limitada o nula y el silencio entre salida y "hora del OK" es normal. (Sin datos de cobertura verificados no se afirma nada específico del recorrido.)
+6. **Meteo prevista** del día con fuente y hora de consulta, y avisos CAP activos si los hay (§5).
+7. **Instrucciones para el contacto**, en lenguaje claro: si no llega el OK a la hora límite — (1) intenta contactar; (2) si no responde, llama al **112** (funciona con cualquier cobertura y sin saldo) e indica: nombre, ruta y su identificador, coordenadas del inicio, hora de salida, vehículo y último contacto; (3) conserva este documento y el GPX para dárselos a los servicios de emergencia.
+8. **Equipación visible** (opcional): colores de ropa y mochila — facilita la búsqueda visual.
+
+### Datos personales y privacidad
+
+- Nuevo bloque en ajustes, "Datos de emergencia" (nombre, teléfono, datos médicos, vehículo, margen de alarma): **todo opcional, solo en localStorage**, nunca se envía a ningún sitio; solo se incluye en el documento que el propio usuario genera y comparte.
+- Los campos vacíos se omiten del documento (nada de "sin datos" que reste claridad).
+
+### Salidas
+
+- **Markdown** descargable (frontmatter Obsidian, como los informes v1) y **vista imprimible**.
+- **Texto plano compacto** para mensajería (WhatsApp/SMS): se comparte con `navigator.share` donde exista, con copia al portapapeles como respaldo. En Tauri, "Guardar como…".
+- Honestidad v1: toda hora derivada se marca como estimación; toda afirmación lleva fuente.
+
+---
+
+## 10. Wikiloc
 
 - La restricción v1 se mantiene íntegra: **nunca fuente de datos** (la Partner API exige acuerdo comercial; el scraping viola los términos de uso).
 - Nuevo en v2 — **enlaces inteligentes**: toda ficha muestra un enlace de búsqueda en Wikiloc construido en runtime con el nombre de la ruta (y coordenadas donde la URL de búsqueda lo permita), junto al `links.wikiloc` manual de v1 cuando exista. Es solo un `<a href>` saliente: cero datos de terceros en la app.
 
 ---
 
-## 10. Mapa offline por ruta (condicionado a investigación)
+## 11. Mapa offline por ruta (condicionado a investigación)
 
 **Primera tarea del milestone, con criterio de salida explícito:**
 
@@ -188,7 +218,7 @@ Sobre la vista listado/mapa de v1 §8:
 
 ---
 
-## 11. Fuentes para los datos faltantes
+## 12. Fuentes para los datos faltantes
 
 Cubre _buscar fuentes de datos para los datos faltantes_ (los "Pendiente de verificar" de v1). Todo enriquecimiento automático se cita en `sources`/`field_sources` y se etiqueta **"no verificado en campo"**; lo manual verificado sigue teniendo prioridad.
 
@@ -204,7 +234,7 @@ Cubre _buscar fuentes de datos para los datos faltantes_ (los "Pendiente de veri
 
 ---
 
-## 12. Pulido de oficio
+## 13. Pulido de oficio
 
 - **Modo oscuro** + modo claro forzado para sol directo (pendiente declarado de v1 §8).
 - **Compartir**: URL de ruta con fecha seleccionada (query param, como ya hace el informe).
@@ -213,7 +243,7 @@ Cubre _buscar fuentes de datos para los datos faltantes_ (los "Pendiente de veri
 
 ---
 
-## 13. Milestones v2
+## 14. Milestones v2
 
 Como en v1: cada milestone termina con tests en verde y un commit; no se avanza con tests en rojo.
 
@@ -222,13 +252,13 @@ Como en v1: cada milestone termina con tests en verde y un commit; no se avanza 
 3. **V2-M3 — Marcas y diario**: marcas de usuario, diario, estadísticas, exportación/importación.
 4. **V2-M4 — Meteo avanzada**: pronóstico horario, ventana ideal de inicio, alerta de luz, avisos CAP.
 5. **V2-M5 — Viaje**: geolocalización + origen habitual + OSRM + orden por cercanía.
-6. **V2-M6 — Mochila**: checklist interactivo + informe con casillas.
+6. **V2-M6 — Mochila e informes**: checklist interactivo + informe con casillas + **ficha de emergencia** (§9) con su bloque de ajustes.
 7. **V2-M7 — Datos**: enriquecimiento OSM (agua, sombra), alternativas automáticas, fauna de todas las comarcas (BDB-GVA).
 8. **V2-M8 — Offline y pulido**: investigación de tiles → mapa offline si es viable, modo oscuro, perfil interactivo, enlaces Wikiloc, compartir.
 
 ---
 
-## 14. Buenas prácticas v2
+## 15. Buenas prácticas v2
 
 Las de v1 §10 íntegras, más:
 
