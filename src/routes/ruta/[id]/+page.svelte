@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
+	import StatusBadge from '$lib/components/StatusBadge.svelte';
 	import ElevationProfile from '$lib/components/ElevationProfile.svelte';
 	import Map from '$lib/components/Map.svelte';
 	import WeatherCard from '$lib/components/WeatherCard.svelte';
@@ -143,7 +144,20 @@
 
 <nav class="breadcrumb"><a href={resolve('/')}>← Todas las rutas</a></nav>
 
-<h1>{route.name}</h1>
+<h1>{route.name} <StatusBadge status={route.status} detail={route.status_detail} /></h1>
+
+{#if route.status === 'deshabilitado'}
+	<div class="status-banner" role="alert">
+		<strong>Ruta deshabilitada por FEMECV</strong> — no recorrer.
+		{#if route.status_detail}Estado oficial: "{route.status_detail}".{/if}
+	</div>
+{:else if route.status === 'con_reservas'}
+	<p class="status-note">
+		{route.status_detail === 'Control de calidad negativo'
+			? 'El último control de calidad fue negativo: la señalización puede ser deficiente.'
+			: 'Sin control de calidad reciente: la señalización y el mantenimiento pueden haber variado desde la homologación.'}
+	</p>
+{/if}
 
 <div class="detail-grid">
 	<section class="map-col">
@@ -295,6 +309,19 @@
 </div>
 
 <style>
+	.status-banner {
+		border: 1px solid #b3261e;
+		background: #fdecea;
+		color: #5f1410;
+		border-radius: 6px;
+		padding: 0.6rem 0.9rem;
+		margin: 0.5rem 0 1rem;
+	}
+	.status-note {
+		color: #8a5a00;
+		font-size: 0.9rem;
+		margin: 0.25rem 0 1rem;
+	}
 	.breadcrumb {
 		margin: 0.5rem 0;
 	}

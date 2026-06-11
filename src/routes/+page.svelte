@@ -2,8 +2,11 @@
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import Map from '$lib/components/Map.svelte';
+	import StatusBadge from '$lib/components/StatusBadge.svelte';
 	import { applyFilters, EMPTY_FILTERS, type RouteFilters } from '$lib/filters';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
+	import { searchRoutes } from '$lib/search';
+	import { STATUS_FILTER_OPTIONS, STATUS_LABELS } from '$lib/status';
 	import type { RouteType } from '$lib/types';
 
 	const TYPES: RouteType[] = ['GR', 'PR', 'SL'];
@@ -12,8 +15,16 @@
 	let routes = $derived(data.routes);
 
 	let filters = $state<RouteFilters>({ ...EMPTY_FILTERS, types: [] });
+	let query = $state('');
 
-	let filtered = $derived(applyFilters(routes, filters));
+	let filtered = $derived(applyFilters(searchRoutes(routes, query), filters));
+
+	/** Botón dado (SPECS_V2 §6): una ruta al azar del resultado actual. */
+	function openRandom() {
+		if (filtered.length === 0) return;
+		const route = filtered[Math.floor(Math.random() * filtered.length)];
+		void goto(resolve('/ruta/[id]', { id: route.id }));
+	}
 
 	let markers = $derived(
 		filtered.map((r) => ({ id: r.id, lat: r.start.lat, lon: r.start.lon, name: r.name }))
@@ -42,6 +53,26 @@
 </svelte:head>
 
 <h1>Rutas</h1>
+
+<div class="search-row">
+	<input
+		type="search"
+		class="search"
+		placeholder="Buscar por nombre, municipio o comarca…"
+		aria-label="Buscar rutas"
+		bind:value={query}
+	/>
+	<button
+		type="button"
+		class="dice"
+		title="Abrir una ruta al azar del resultado actual"
+		aria-label="Ruta al azar"
+		disabled={filtered.length === 0}
+		onclick={openRandom}
+	>
+		🎲
+	</button>
+</div>
 
 <fieldset class="filters">
 	<legend>Filtros</legend>
@@ -84,6 +115,16 @@
 			<option value={false}>Lineal</option>
 		</select>
 	</label>
+	<label>
+		Estado
+		<select bind:value={filters.status}>
+			<option value={null}>— (sin deshabilitadas)</option>
+			{#each STATUS_FILTER_OPTIONS as status (status)}
+				<option value={status}>{STATUS_LABELS[status]}</option>
+			{/each}
+			<option value="todas">Todas (incl. deshabilitadas)</option>
+		</select>
+	</label>
 </fieldset>
 
 <div class="map-wrap">
@@ -98,11 +139,13 @@
 			<a href={resolve('/ruta/[id]', { id: route.id })}>
 				<span class="badge badge-{route.type.toLowerCase()}">{route.type}</span>
 				<strong>{route.name}</strong>
+				<StatusBadge status={route.status} detail={route.status_detail} />
 				<span class="meta">
 					{formatKm(route.distance_km)}
 					{#if route.ascent_m !== null}· +{formatMeters(route.ascent_m)}{/if}
 					{#if route.est_duration_min !== null}· {formatDuration(route.est_duration_min)}{/if}
 					{#if route.circular !== null}· {route.circular ? 'circular' : 'lineal'}{/if}
+					{#if route.municipality}· {route.municipality}{/if}
 				</span>
 			</a>
 		</li>
@@ -110,6 +153,33 @@
 </ul>
 
 <style>
+	.search-row {
+		display: flex;
+		gap: 0.5rem;
+		margin-bottom: 0.75rem;
+	}
+	.search {
+		flex: 1;
+		font: inherit;
+		padding: 0.5rem 0.75rem;
+		border: 1px solid #d8d4c8;
+		border-radius: 6px;
+	}
+	.dice {
+		font-size: 1.3rem;
+		padding: 0.2rem 0.7rem;
+		border: 1px solid #d8d4c8;
+		border-radius: 6px;
+		background: #fff;
+		cursor: pointer;
+	}
+	.dice:disabled {
+		opacity: 0.4;
+		cursor: default;
+	}
+	.dice:hover:not(:disabled) {
+		border-color: #1d3a2a;
+	}
 	.filters {
 		display: flex;
 		flex-wrap: wrap;

@@ -76,3 +76,28 @@ describe('applyFilters', () => {
 		expect(result.map((r) => r.id)).toEqual(['sin-datos']);
 	});
 });
+
+describe('filtro de estado (SPECS_V2 §6)', () => {
+	const WITH_STATUS = [
+		...ROUTES,
+		route({ id: 'baja', status: 'deshabilitado', status_detail: 'Baja / Deshomologado' }),
+		route({ id: 'dudosa', status: 'con_reservas', status_detail: 'Sin controles de calidad' })
+	];
+
+	it('por defecto excluye las deshabilitadas y nada más', () => {
+		const ids = applyFilters(WITH_STATUS, EMPTY_FILTERS).map((r) => r.id);
+		expect(ids).not.toContain('baja');
+		expect(ids).toHaveLength(5);
+	});
+
+	it('un estado concreto filtra solo ese estado', () => {
+		const ids = applyFilters(WITH_STATUS, { ...EMPTY_FILTERS, status: 'con_reservas' }).map(
+			(r) => r.id
+		);
+		expect(ids).toEqual(['dudosa']);
+	});
+
+	it("'todas' incluye también las deshabilitadas", () => {
+		expect(applyFilters(WITH_STATUS, { ...EMPTY_FILTERS, status: 'todas' })).toHaveLength(6);
+	});
+});
