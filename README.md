@@ -2,7 +2,7 @@
 
 App autocontenida (Linux, macOS y web) con las rutas oficiales de senderismo de la Comunitat Valenciana (senderos homologados FEMECV), recomendación de equipo de mochila condicionada por ruta y meteorología, y generación de informes Markdown (Obsidian) e imprimibles.
 
-Especificación completa en [SPEC.md](SPEC.md).
+Especificación completa en [SPEC.md](SPEC.md). La v2 está especificada en [SPECS_V2.md](SPECS_V2.md).
 
 ## Stack
 

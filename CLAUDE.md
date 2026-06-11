@@ -1,6 +1,6 @@
 # CLAUDE.md — Senderos CV
 
-La especificación de referencia del proyecto es **[SPEC.md](SPEC.md)**. Léela antes de implementar cualquier cosa; las decisiones de arquitectura del §1 están cerradas.
+La especificación de referencia del proyecto es **[SPEC.md](SPEC.md)**. Léela antes de implementar cualquier cosa; las decisiones de arquitectura del §1 están cerradas. La siguiente versión está especificada en **[SPECS_V2.md](SPECS_V2.md)** (deltas sobre v1; el código actual sigue rigiéndose por SPEC.md).
 
 ## Reglas clave (resumen de SPEC.md)
 
