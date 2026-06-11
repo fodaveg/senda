@@ -13,7 +13,9 @@
 	} from '$lib/user/marks';
 	import { applyFilters, EMPTY_FILTERS, type RouteFilters } from '$lib/filters';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
+	import { haversineMeters } from '$lib/geo/distance';
 	import { searchRoutes } from '$lib/search';
+	import { loadSettings, type OriginSetting } from '$lib/settings';
 	import { STATUS_FILTER_OPTIONS, STATUS_LABELS } from '$lib/status';
 	import type { RouteType } from '$lib/types';
 
@@ -27,18 +29,31 @@
 
 	// Marcas de usuario como filtro (SPECS_V2 §6/§8).
 	let userData = $state<UserData>(emptyUserData());
+	let origin = $state<OriginSetting | null>(null);
 	onMount(() => {
 		userData = loadUserData();
+		origin = loadSettings().origin;
 	});
+	let sortBy = $state<'nombre' | 'cercania'>('nombre');
 	let markFilter = $state<ToggleMark | 'hecha' | null>(null);
 
-	let filtered = $derived(
-		applyFilters(searchRoutes(routes, query), filters).filter((route) => {
+	let filtered = $derived.by(() => {
+		const result = applyFilters(searchRoutes(routes, query), filters).filter((route) => {
 			if (markFilter === null) return true;
 			const marks = userData.marks[route.id];
 			return markFilter === 'hecha' ? isDone(marks) : Boolean(marks?.[markFilter]);
-		})
-	);
+		});
+		// Cercanía en línea recta desde el origen habitual (etiquetada así).
+		if (sortBy === 'cercania' && origin) {
+			const o: [number, number] = [origin.lon, origin.lat];
+			return [...result].sort(
+				(a, b) =>
+					haversineMeters(o, [a.start.lon, a.start.lat]) -
+					haversineMeters(o, [b.start.lon, b.start.lat])
+			);
+		}
+		return result;
+	});
 
 	/** Botón dado (SPECS_V2 §6): una ruta al azar del resultado actual. */
 	function openRandom() {
@@ -134,6 +149,15 @@
 			<option value={null}>—</option>
 			<option value={true}>Circular</option>
 			<option value={false}>Lineal</option>
+		</select>
+	</label>
+	<label>
+		Ordenar
+		<select bind:value={sortBy}>
+			<option value="nombre">por nombre</option>
+			<option value="cercania" disabled={origin === null}>
+				por cercanía{origin === null ? ' (configura origen)' : ' (línea recta)'}
+			</option>
 		</select>
 	</label>
 	<label>

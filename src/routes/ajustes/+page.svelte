@@ -20,14 +20,45 @@
 		unreachable: 'Guardada, pero no se pudo comprobar (sin conexión o AEMET caída).'
 	};
 
+	let originLat = $state('');
+	let originLon = $state('');
+	let originLabel = $state('');
+	let originMessage = $state<string | null>(null);
+
 	let catalogInfo = $state<CatalogInfo | null>(null);
 	let catalogStatus = $state<string | null>(null);
 	let updating = $state(false);
 
 	onMount(async () => {
 		settings = loadSettings();
+		if (settings.origin) {
+			originLat = String(settings.origin.lat);
+			originLon = String(settings.origin.lon);
+			originLabel = settings.origin.label;
+		}
 		catalogInfo = await getCatalogInfo();
 	});
+
+	/** Geolocalización solo bajo gesto del usuario (SPECS_V2 §15). */
+	function useMyPosition() {
+		originMessage = null;
+		if (!('geolocation' in navigator)) {
+			originMessage = 'Este entorno no ofrece geolocalización.';
+			return;
+		}
+		navigator.geolocation.getCurrentPosition(
+			(position) => {
+				originLat = position.coords.latitude.toFixed(5);
+				originLon = position.coords.longitude.toFixed(5);
+				if (!originLabel) originLabel = 'Mi posición';
+				originMessage = 'Posición capturada; guarda los ajustes para aplicarla.';
+			},
+			() => {
+				originMessage = 'No se pudo obtener la posición (permiso denegado o sin señal).';
+			},
+			{ timeout: 10000 }
+		);
+	}
 
 	function catalogLabel(info: CatalogInfo): string {
 		if (!info.manifest) return `integrado en la app · ${info.routes} rutas`;
@@ -89,6 +120,12 @@
 	async function persist() {
 		settings.aemetApiKey = cleanKey(settings.aemetApiKey);
 		settings.vaultDir = settings.vaultDir.trim();
+		const lat = Number(originLat.replace(',', '.'));
+		const lon = Number(originLon.replace(',', '.'));
+		settings.origin =
+			originLat.trim() && originLon.trim() && Number.isFinite(lat) && Number.isFinite(lon)
+				? { lat, lon, label: originLabel.trim() || 'Origen' }
+				: null;
 		saveSettings(settings);
 		saved = true;
 		setTimeout(() => (saved = false), 2500);
@@ -175,6 +212,30 @@
 	</fieldset>
 
 	<fieldset>
+		<legend>Viaje (origen habitual)</legend>
+		<p class="help">
+			Punto de partida para estimar el tiempo de viaje en coche hasta el inicio de cada ruta (OSRM,
+			estimación). Tu posición no se guarda ni se envía salvo al calcular una ruta.
+		</p>
+		<div class="origin-row">
+			<label>
+				Latitud
+				<input type="text" inputmode="decimal" bind:value={originLat} placeholder="39.46975" />
+			</label>
+			<label>
+				Longitud
+				<input type="text" inputmode="decimal" bind:value={originLon} placeholder="-0.37739" />
+			</label>
+			<label>
+				Etiqueta
+				<input type="text" bind:value={originLabel} placeholder="Casa" />
+			</label>
+			<button type="button" class="secondary" onclick={useMyPosition}>Usar mi posición</button>
+		</div>
+		{#if originMessage}<p class="help" role="status">{originMessage}</p>{/if}
+	</fieldset>
+
+	<fieldset>
 		<legend>Diagnóstico</legend>
 		<p class="help">
 			Con el modo debug activado, los fallos de meteo muestran el error técnico en crudo (útil para
@@ -243,6 +304,16 @@
 		margin: 0.35rem 0 0;
 		font-size: 0.85rem;
 		color: #b3261e;
+	}
+	.origin-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		align-items: end;
+	}
+	.origin-row label {
+		flex: 1;
+		min-width: 8rem;
 	}
 	.key-check {
 		margin: 0.5rem 0 0;

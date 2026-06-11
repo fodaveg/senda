@@ -15,6 +15,7 @@
 	import { startWindow } from '$lib/engine/startWindow';
 	import { gpxToGeoJSON, trackPositions } from '$lib/geo/gpx';
 	import { elevationProfile, type ProfilePoint } from '$lib/geo/profile';
+	import { fetchDrivingEstimateCached, type DrivingEstimate } from '$lib/geo/routing';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
 	import { loadSettings } from '$lib/settings';
 	import {
@@ -50,6 +51,8 @@
 	let debugMode = $state(false);
 	let hourlyByDate = $state<Record<string, HourlyPoint[]>>({});
 	let avisos = $state<Aviso[] | null>(null);
+	let travel = $state<{ estimate: DrivingEstimate; from: string } | null>(null);
+	let travelStatus = $state<string | null>(null);
 
 	let selectedDay = $derived(forecast?.find((d) => d.date === selectedDate) ?? null);
 	// Motivo técnico de un panel meteo vacío, para diagnóstico en la UI.
@@ -106,6 +109,8 @@
 		weatherError = null;
 		avisos = null;
 		hourlyByDate = {};
+		travel = null;
+		travelStatus = null;
 		weatherLoading = true;
 		const ds = forecastDates();
 		dates = ds;
@@ -133,6 +138,16 @@
 			weatherError = e instanceof Error ? `${e.name}: ${e.message}` : String(e);
 		} finally {
 			if (token === loadToken) weatherLoading = false;
+		}
+		// Tiempo de viaje desde el origen habitual (SPECS_V2 §6).
+		if (settings.origin) {
+			try {
+				const estimate = await fetchDrivingEstimateCached(settings.origin, r.start);
+				if (token === loadToken) travel = { estimate, from: settings.origin.label };
+			} catch (e) {
+				console.error('OSRM:', e);
+			}
+			if (token !== loadToken) return;
 		}
 		// Avisos meteorológicos oficiales (SPECS_V2 §5), si hay api key.
 		if (settings.aemetApiKey) {
@@ -166,6 +181,31 @@
 				}
 			}
 		}
+	}
+
+	/** GPS solo bajo gesto del usuario (SPECS_V2 §15). */
+	function travelFromHere() {
+		travelStatus = 'Obteniendo tu posición…';
+		if (!('geolocation' in navigator)) {
+			travelStatus = 'Este entorno no ofrece geolocalización.';
+			return;
+		}
+		navigator.geolocation.getCurrentPosition(
+			async (position) => {
+				try {
+					const from = { lat: position.coords.latitude, lon: position.coords.longitude };
+					const estimate = await fetchDrivingEstimateCached(from, route.start);
+					travel = { estimate, from: 'tu posición actual' };
+					travelStatus = null;
+				} catch (e) {
+					console.error('OSRM:', e);
+					travelStatus = 'No se pudo calcular la ruta en coche (sin conexión u OSRM caído).';
+				}
+			},
+			() => {
+				travelStatus = 'No se pudo obtener la posición (permiso denegado o sin señal).';
+			}
+		);
 	}
 
 	const MIDE_LABELS: Record<string, string> = {
@@ -275,6 +315,31 @@
 			{/if}
 		</dl>
 
+		<h3>Cómo llegar</h3>
+		<div class="travel">
+			{#if travel}
+				<p>
+					En coche desde {travel.from}:
+					<strong>{formatDuration(travel.estimate.durationMin)}</strong>
+					({formatKm(travel.estimate.distanceKm)}) — estimación OSRM.
+				</p>
+			{:else}
+				<p class="travel-hint">
+					Configura tu origen habitual en Ajustes o usa tu posición para estimar el viaje.
+				</p>
+			{/if}
+			<button type="button" class="travel-btn" onclick={travelFromHere}>
+				Desde mi posición actual
+			</button>
+			{#if travelStatus}<p class="travel-hint" role="status">{travelStatus}</p>{/if}
+			<p class="travel-hint">
+				<a
+					href={`https://www.openstreetmap.org/directions?to=${route.start.lat}%2C${route.start.lon}`}
+					rel="external">Indicaciones en OpenStreetMap</a
+				>
+			</p>
+		</div>
+
 		{#if route.difficulty_mide}
 			<h3>MIDE</h3>
 			<ul class="mide">
@@ -353,6 +418,24 @@
 </div>
 
 <style>
+	.travel p {
+		margin: 0.25rem 0;
+	}
+	.travel-hint {
+		color: #555;
+		font-size: 0.85rem;
+	}
+	.travel-btn {
+		font: inherit;
+		font-size: 0.85rem;
+		padding: 0.3rem 0.7rem;
+		border-radius: 6px;
+		border: 1px solid #1d3a2a;
+		background: #fff;
+		color: #1d3a2a;
+		cursor: pointer;
+		margin: 0.25rem 0;
+	}
 	.status-banner {
 		border: 1px solid #b3261e;
 		background: #fdecea;

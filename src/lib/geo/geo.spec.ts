@@ -3,6 +3,7 @@ import { DOMParser } from '@xmldom/xmldom';
 import { haversineMeters } from './distance';
 import { gpxToGeoJSON, trackPositions } from './gpx';
 import { axisTicks, elevationProfile } from './profile';
+import { fetchDrivingEstimate, fetchDrivingEstimateCached, RoutingError } from './routing';
 
 const GPX = `<?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="test" xmlns="http://www.topografix.com/GPX/1/1">
@@ -79,5 +80,53 @@ describe('axisTicks', () => {
 
 	it('rango nulo o degenerado → una sola marca', () => {
 		expect(axisTicks(5, 5)).toEqual([5]);
+	});
+});
+
+describe('fetchDrivingEstimate (OSRM)', () => {
+	it('convierte segundos/metros a minutos/km y exige code Ok', async () => {
+		const fakeFetch = (async () =>
+			new Response(
+				JSON.stringify({ code: 'Ok', routes: [{ duration: 3912, distance: 78250 }] })
+			)) as unknown as typeof fetch;
+		const estimate = await fetchDrivingEstimate(
+			{ lat: 39.5, lon: -0.4 },
+			{ lat: 39.7, lon: -0.9 },
+			fakeFetch
+		);
+		expect(estimate).toEqual({ durationMin: 65, distanceKm: 78.3 });
+	});
+
+	it('code != Ok o sin rutas → RoutingError', async () => {
+		const noRoute = (async () =>
+			new Response(JSON.stringify({ code: 'NoRoute', routes: [] }))) as unknown as typeof fetch;
+		await expect(
+			fetchDrivingEstimate({ lat: 0, lon: 0 }, { lat: 1, lon: 1 }, noRoute)
+		).rejects.toBeInstanceOf(RoutingError);
+	});
+
+	it('la caché evita la segunda petición dentro del TTL', async () => {
+		let calls = 0;
+		const fakeFetch = (async () => {
+			calls++;
+			return new Response(
+				JSON.stringify({ code: 'Ok', routes: [{ duration: 600, distance: 10000 }] })
+			);
+		}) as unknown as typeof fetch;
+		const store = new Map<string, string>();
+		const storage = {
+			getItem: (k: string) => store.get(k) ?? null,
+			setItem: (k: string, v: string) => void store.set(k, v)
+		};
+		const from = { lat: 39.5, lon: -0.4 };
+		const to = { lat: 39.7, lon: -0.9 };
+		await fetchDrivingEstimateCached(from, to, { fetchFn: fakeFetch, storage, now: () => 0 });
+		const second = await fetchDrivingEstimateCached(from, to, {
+			fetchFn: fakeFetch,
+			storage,
+			now: () => 1000
+		});
+		expect(calls).toBe(1);
+		expect(second.durationMin).toBe(10);
 	});
 });
