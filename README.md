@@ -8,7 +8,7 @@ Especificación completa en [SPEC.md](SPEC.md). La v2 está especificada en [SPE
 
 - **Frontend**: SvelteKit + TypeScript (`adapter-static`), misma base de código para web/PWA y escritorio.
 - **Escritorio**: Tauri 2 (binarios Linux y macOS).
-- **Mapas**: MapLibre GL JS (tiles OpenTopoMap).
+- **Mapas**: MapLibre GL JS (tiles IGN España, CC-BY 4.0) con mapa offline descargable por ruta.
 - **Meteo**: Open-Meteo (primaria, sin key) + AEMET OpenData (verificación opcional).
 - **Datos**: estáticos en build (`data/`); sin backend ni base de datos.
 - **PWA**: instalable y 100% offline salvo meteo y tiles (service worker con precaché del shell, rutas y tracks).
@@ -65,6 +65,7 @@ El catálogo completo se importa del portal oficial FEMECV:
 
 ```sh
 npm run ingest:crawl          # todas las fichas + GPX (respetuoso: 1 req/s, ~30 min)
+npm run ingest:enrich         # opcional: fuentes de agua/sombra desde OSM (reanudable)
 npm run ingest -- --lenient   # regenera data/routes/*.json validando con zod
 ```
 

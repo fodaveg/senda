@@ -17,6 +17,7 @@ La especificación de referencia del proyecto es **[SPEC.md](SPEC.md)**. Léela 
 - `npm run dev` — servidor de desarrollo
 - `npm run ingest [-- <id>] [-- --lenient]` — ingesta GPX+manual+crawled → data/routes/\*.json (validación zod)
 - `npm run ingest:crawl [-- --limit N]` — crawler del portal FEMECV completo → \_crawled/ + GPX (rate-limit 1 s)
+- `npm run ingest:enrich [-- --limit N]` — enriquecimiento OSM (agua, sombra, alternativas); reanudable
 - `npm run catalog:publish [dest]` — empaqueta data/ + manifest.json para GitLab Pages
 - `npm run build` — build web estático (`build/`)
 - `npm run lint` — prettier --check + eslint
