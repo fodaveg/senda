@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-111",
+	"name": "SL-CV 111 PARQUE NATURAL LA MANGUILA",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Pobla de Vallbona (La)",
+	"zone": "camp-de-turia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.64207073673606,
+		"lon": -0.513873193413019,
+		"name": "Paraje Natural Municipal la Manguilla. La Pobla de Vallbona"
+	},
+	"distance_km": 1,
+	"ascent_m": 10,
+	"descent_m": 10,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 15,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-111.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-111",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.513877216726542,
+		39.63872912339866,
+		-0.51136071793735,
+		39.64207073673606
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-111 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-111.gpx (derivados: inicio, bbox)"
+	]
+}

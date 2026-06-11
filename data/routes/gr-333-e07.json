@@ -1,0 +1,49 @@
+{
+	"id": "gr-333-e07",
+	"name": "GR 333 E07 FUENTES DE AYÓDAR - AYÓDAR",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Fuentes de Ayodar",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.02013899385929,
+		"lon": -0.418014982715249,
+		"name": "Carretera CV-205 frente Hotel Las Viñas Viejas. Fuentes de Ayódar"
+	},
+	"distance_km": 6.5,
+	"ascent_m": 210,
+	"descent_m": 335,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 130,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-333-e07.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e07",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.418014982715249,
+		39.99811897985637,
+		-0.374568980187178,
+		40.02013899385929
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e07 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-333-e07.gpx (derivados: inicio, bbox)"
+	]
+}

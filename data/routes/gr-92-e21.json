@@ -1,0 +1,49 @@
+{
+	"id": "gr-92-e21",
+	"name": "GR 92 E21 GUARDAMAR DEL SEGURA - TORREVIEJA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Guardamar del Segura",
+	"zone": "baix-segura-vega-baja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.128441013395786,
+		"lon": -0.643634023144841,
+		"name": "Camino Playa del Rebollo. Guardamar del Segura"
+	},
+	"distance_km": 27,
+	"ascent_m": 255,
+	"descent_m": 255,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 435,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-92-e21.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-92-e21",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.678185988217592,
+		37.97407502308488,
+		-0.643556993454695,
+		38.128441013395786
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-92-e21 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-92-e21.gpx (derivados: inicio, bbox)"
+	]
+}

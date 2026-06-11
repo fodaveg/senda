@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-293",
+	"name": "PR-CV 293 RUTA ÍBERA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Camporrobles",
+	"zone": "requena-utiel",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.64894004166126,
+		"lon": -1.393270036205649,
+		"name": "Área de acampada de la Balsa. Camporrobles"
+	},
+	"distance_km": 6.8,
+	"ascent_m": 280,
+	"descent_m": 280,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 170,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-293.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-293",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.404750980436802,
+		39.64894004166126,
+		-1.389631032943726,
+		39.66933002695441
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-293 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-293.gpx (derivados: inicio, bbox)"
+	]
+}

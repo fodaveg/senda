@@ -1,0 +1,49 @@
+{
+	"id": "gr-160-e04",
+	"name": "GR 160 E04 CAUDIEL- ALTURA",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Caudiel",
+	"zone": "alto-palancia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.94754299521446,
+		"lon": -0.567888021469116,
+		"name": "Calle Pauli Carabela, 10A. Caudiel"
+	},
+	"distance_km": 18.2,
+	"ascent_m": 100,
+	"descent_m": 305,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 235,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-160-e04.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-160-e04",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.575263006612659,
+		39.84789499081671,
+		-0.510298982262611,
+		39.948236010968685
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-160-e04 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-160-e04.gpx (derivados: inicio, bbox)"
+	]
+}

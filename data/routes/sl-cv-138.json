@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-138",
+	"name": "SL-CV 138 SENDA DEL CASTELL",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Alfauir",
+	"zone": "safor",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.928593,
+		"lon": -0.250298,
+		"name": "Camino Canelles. Alfauir"
+	},
+	"distance_km": 1.6,
+	"ascent_m": 210,
+	"descent_m": 10,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 45,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-138.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-138",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.250368,
+		38.926908,
+		-0.239208,
+		38.929705
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-138 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-138.gpx (derivados: inicio, bbox)"
+	]
+}

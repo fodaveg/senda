@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-60",
+	"name": "PR-CV 60 BARX - LA DROVA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Barx",
+	"zone": "safor",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.01222796179354,
+		"lon": -0.301657989621162,
+		"name": "C/ Ausias March, 45. Barx"
+	},
+	"distance_km": 10.6,
+	"ascent_m": 400,
+	"descent_m": 400,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 210,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-60.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-60",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.319272978231311,
+		38.9931879658252,
+		-0.283230040222406,
+		39.01222796179354
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-60 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-60.gpx (derivados: inicio, bbox)"
+	]
+}

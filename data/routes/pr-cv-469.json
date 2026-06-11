@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-469",
+	"name": "PR-CV 469 VUELTA A SANT PERE",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Traiguera",
+	"zone": "baix-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.526341,
+		"lon": 0.289371,
+		"name": "Font de Sant Vicent. Traiguera"
+	},
+	"distance_km": 15.3,
+	"ascent_m": 655,
+	"descent_m": 655,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 310,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-469.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-469",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.249511,
+		40.523275,
+		0.290583,
+		40.551446
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-469 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-469.gpx (derivados: inicio, bbox)"
+	]
+}

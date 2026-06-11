@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-349",
+	"name": "PR-CV 349 CIRCULAR SIERRA ENGARCERÁN - LA SERRATELLA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Sierra Engarcerán",
+	"zone": "plana-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.26984100230038,
+		"lon": -0.016562975943089,
+		"name": "C. Nevera con la carretera CV-155. Sierra Engarcerán"
+	},
+	"distance_km": 17.4,
+	"ascent_m": 665,
+	"descent_m": 665,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 345,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-349.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-349",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.016637993976474,
+		40.26980102062225,
+		0.034192968159914,
+		40.31306999735534
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-349 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-349.gpx (derivados: inicio, bbox)"
+	]
+}

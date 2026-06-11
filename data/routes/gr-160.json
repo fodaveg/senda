@@ -1,0 +1,44 @@
+{
+	"id": "gr-160",
+	"name": "GR 160 CAMINO DEL CID. COMUNITAT VALENCIANA",
+	"type": "GR",
+	"status": "desconocido",
+	"status_detail": "Ver Etapas",
+	"municipality": "Puebla de Arenoso",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.12077698484063,
+		"lon": -0.612828014418483,
+		"name": "Límite provincial Teruel. La Monzona (Puebla de Arenoso)"
+	},
+	"distance_km": 78.4,
+	"ascent_m": 2315,
+	"descent_m": 2590,
+	"circular": false,
+	"difficulty_mide": null,
+	"est_duration_min": 1320,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-160.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-160",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.612828014418483,
+		39.78560496121645,
+		-0.39111795835197,
+		40.12077698484063
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-160 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
+		"GPX gr-160.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-289",
+	"name": "PR-CV 289 VOLTA AL PUIG CAMPANA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Finestrat",
+	"zone": "marina-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.577736001461744,
+		"lon": -0.208688015118241,
+		"name": "Área recreativa de la Font del Molí. Finestrat"
+	},
+	"distance_km": 11.2,
+	"ascent_m": 600,
+	"descent_m": 600,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 245,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-289.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-289",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.212268009781837,
+		38.577631982043386,
+		-0.182434972375631,
+		38.60547197051346
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-289 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-289.gpx (derivados: inicio, bbox)"
+	]
+}

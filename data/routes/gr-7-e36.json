@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e36",
+	"name": "GR 7 E36 ANDILLA - CHELVA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Andilla",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.835650036111474,
+		"lon": -0.81287101842463,
+		"name": "Andilla"
+	},
+	"distance_km": 25.9,
+	"ascent_m": 625,
+	"descent_m": 1115,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 490,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e36.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e36",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.996027002111077,
+		39.74946697242558,
+		-0.81287101842463,
+		39.83929800800979
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e36 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e36.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-105",
+	"name": "PR-CV 105 CERRO DE LOS MOLINOS - ALCUBLAS - CUEVA SABUQUERA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Alcublas",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.797040056437254,
+		"lon": -0.691813956946135,
+		"name": "Cerro de los Molinos. Alcublas"
+	},
+	"distance_km": 8.4,
+	"ascent_m": 340,
+	"descent_m": 260,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 165,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-105.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-105",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.707471016794443,
+		39.7967235557735,
+		-0.691813956946135,
+		39.84110891819
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-105 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-105.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -2,6 +2,7 @@ stages:
   - quality
   - test
   - build
+  - deploy
 
 workflow:
   rules:
@@ -52,6 +53,23 @@ build:web:
     paths:
       - build
     expire_in: 1 week
+
+# Publica en GitLab Pages la web (con base path del proyecto) y el catálogo
+# de datos versionado que la app consume en "Buscar actualizaciones de
+# rutas" (SPECS_V2 §4).
+pages:
+  extends: .node
+  stage: deploy
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+  script:
+    - BASE_PATH=/$CI_PROJECT_NAME npm run build
+    - mkdir -p public
+    - cp -r build/. public/
+    - node scripts/publish/build-catalog.mjs public/catalog
+  artifacts:
+    paths:
+      - public
 
 # Los runners compartidos de gitlab.com son Linux; el binario de macOS se
 # genera en local con `npm run tauri build` (ver README).

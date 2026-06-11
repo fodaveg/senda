@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e41",
+	"name": "GR 7 E41 CAMPAMENTO TABARLA - CORTES DE PALLÁS",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Yátova",
+	"zone": "hoya-de-bunol",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.36133297160268,
+		"lon": -0.966334026306868,
+		"name": "Campamento de Tabarla. Yátova"
+	},
+	"distance_km": 26.4,
+	"ascent_m": 1035,
+	"descent_m": 1090,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 530,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e41.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e41",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.978822978213429,
+		39.24093497917056,
+		-0.926730958744884,
+		39.36133297160268
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e41 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e41.gpx (derivados: inicio, bbox)"
+	]
+}

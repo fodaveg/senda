@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e46",
+	"name": "GR 7 E46 ONTINYENT - PARATGE FONT DE MARIOLA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Ontinyent",
+	"zone": "vall-d-albaida",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.813535030931234,
+		"lon": -0.610505975782871,
+		"name": "Polideportivo Municipal. C/ Vicent Lluís Montés Penadés. Ontinyent"
+	},
+	"distance_km": 20.8,
+	"ascent_m": 890,
+	"descent_m": 375,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 395,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e46.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e46",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.614374978467822,
+		38.742939960211515,
+		-0.545556033030152,
+		38.81369202397764
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e46 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e46.gpx (derivados: inicio, bbox)"
+	]
+}

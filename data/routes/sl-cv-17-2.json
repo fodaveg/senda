@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-17-2",
+	"name": "SL-CV 17.2 SENDA PUNTAL DEL MORICO Y MURTERAL",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Sumacàrcer",
+	"zone": "ribera-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.09910303540528,
+		"lon": -0.632348963990808,
+		"name": "C/ de Portitxol. Sumacàrcer"
+	},
+	"distance_km": 10.1,
+	"ascent_m": 300,
+	"descent_m": 300,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 190,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-17-2.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-17-2",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.661265021190047,
+		39.098128974437714,
+		-0.632347958162427,
+		39.11715203896165
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-17-2 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-17-2.gpx (derivados: inicio, bbox)"
+	]
+}

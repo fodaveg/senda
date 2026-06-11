@@ -1,0 +1,49 @@
+{
+	"id": "gr-236-e04",
+	"name": "GR 236 E04 LA BARRACA D'AIGÜES VIVES - ALZIRA",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Gandia",
+	"zone": null,
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.100786,
+		"lon": -0.368753,
+		"name": null
+	},
+	"distance_km": 18.7,
+	"ascent_m": 640,
+	"descent_m": 695,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 365,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-236-e04.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-236-e04",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.450402,
+		39.100786,
+		-0.342855,
+		39.155015
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-236-e04 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio",
+		"GPX gr-236-e04.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-278",
+	"name": "PR-CV 278 L'ALT PELAT",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Fondó de les Neus (El)/Hondón de las Nieves",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.30835001543164,
+		"lon": -0.852269986644387,
+		"name": "Plaza de la Villa. Hondón de las Nieves"
+	},
+	"distance_km": 19.1,
+	"ascent_m": 785,
+	"descent_m": 785,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 385,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-278.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-278",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.895796036347747,
+		38.26386901549995,
+		-0.851640002802014,
+		38.30862997099757
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-278 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-278.gpx (derivados: inicio, bbox)"
+	]
+}

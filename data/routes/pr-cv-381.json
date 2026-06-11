@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-381",
+	"name": "PR-CV 381 ALTO DE ALCOLA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Cofrentes",
+	"zone": "valle-de-ayora",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.230394987389445,
+		"lon": -1.062425002455711,
+		"name": "Oficina de turismo"
+	},
+	"distance_km": 10.3,
+	"ascent_m": 565,
+	"descent_m": 420,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 220,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-381.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-381",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.064508995041251,
+		39.220757726579905,
+		-1.0021579451859,
+		39.24030700698495
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-381 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-381.gpx (derivados: inicio, bbox)"
+	]
+}

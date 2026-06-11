@@ -1,0 +1,49 @@
+{
+	"id": "gr-37-e03",
+	"name": "GR 37 E03 ALPUENTE - LA YESA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Alpuente",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.8746950365603,
+		"lon": -1.014697020873427,
+		"name": "Calle de la Raga, 23. Alpuente"
+	},
+	"distance_km": 8.7,
+	"ascent_m": 275,
+	"descent_m": 200,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 150,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-37-e03.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-37-e03",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.018715975806117,
+		39.86511896364391,
+		-0.964116007089615,
+		39.89311896264553
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-37-e03 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-37-e03.gpx (derivados: inicio, bbox)"
+	]
+}

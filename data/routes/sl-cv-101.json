@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-101",
+	"name": "SL-CV 101 FONT DELS LLOPS - COLL ROIG",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Eslida",
+	"zone": "plana-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.880834,
+		"lon": -0.305878,
+		"name": "Av. País Valencia, 19. Eslida"
+	},
+	"distance_km": 6.4,
+	"ascent_m": 465,
+	"descent_m": 255,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 145,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-101.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-101",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.307462,
+		39.868517,
+		-0.285294,
+		39.882061
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-101 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-101.gpx (derivados: inicio, bbox)"
+	]
+}

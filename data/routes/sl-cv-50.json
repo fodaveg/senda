@@ -3,12 +3,14 @@
 	"name": "SL-CV 50 Barranco de la Viuda - Cala Llebeig - Cala Moraig",
 	"type": "SL",
 	"status": "homologado",
-	"zone": null,
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Teulada",
+	"zone": "marina-alta",
 	"aemet_municipio": "03042",
 	"start": {
 		"lat": 38.70340998284519,
 		"lon": 0.144620016217232,
-		"name": null
+		"name": "Calle Canario 2. Teulada"
 	},
 	"distance_km": 3.4,
 	"ascent_m": 345,
@@ -44,6 +46,7 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-50 (consulta 2026-06-10): nombre, distancia, desniveles, tiempo, MIDE, tipo lineal, municipios Teulada y el Poble Nou de Benitatxell, control de calidad positivo",
 		"aemet_municipio: código INE 03042 (el Poble Nou de Benitatxell), relación de municipios INE vía Idescat (consulta 2026-06-10)",
 		"Pendiente de verificar: zone, start.name, water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain",
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-50 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"GPX sl-cv-50.gpx (derivados: inicio, bbox)"
 	]
 }

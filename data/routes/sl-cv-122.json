@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-122",
+	"name": "SL-CV 122 SENDA DELS NEVATERS",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Salem",
+	"zone": "vall-d-albaida",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.85329098440707,
+		"lon": -0.381851010024548,
+		"name": "Plaza Jaume I. Salem"
+	},
+	"distance_km": 9.7,
+	"ascent_m": 460,
+	"descent_m": 460,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 210,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-122.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-122",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.381851010024548,
+		38.84779798798263,
+		-0.351613964885473,
+		38.85926501825452
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-122 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-122.gpx (derivados: inicio, bbox)"
+	]
+}

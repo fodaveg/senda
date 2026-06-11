@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-39",
+	"name": "SL-CV 39 SENDA DE L'ESCALÓ",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Quatretonda",
+	"zone": "vall-d-albaida",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.99022303521633,
+		"lon": -0.37824796512723,
+		"name": "Camí de Quatretonda al Pla de Corrals en l'encreuament del camí de Pinet"
+	},
+	"distance_km": 5.7,
+	"ascent_m": 235,
+	"descent_m": 235,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 115,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-39.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-39",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.393375037238002,
+		38.99002203717828,
+		-0.373420994728804,
+		39.00043001398444
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-39 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-39.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-54",
+	"name": "SL-CV 54 LOS MIRADORES",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Bejís",
+	"zone": "alto-palancia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.909802973270416,
+		"lon": -0.711540011689067,
+		"name": "Acueducto de Los Arcos. Bejís"
+	},
+	"distance_km": 9.2,
+	"ascent_m": 300,
+	"descent_m": 300,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 175,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-54.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-54",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.745312040671706,
+		39.906359016895294,
+		-0.711540011689067,
+		39.91529596969485
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-54 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-54.gpx (derivados: inicio, bbox)"
+	]
+}

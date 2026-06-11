@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-370",
+	"name": "PR-CV 370 ALFAFARA - CAVA DON MIGUEL (POR LA SERRELLA)",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Alfafara",
+	"zone": "comtat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.77060200087726,
+		"lon": -0.555966021493077,
+		"name": "Plaza de la Constitución. Alfafara"
+	},
+	"distance_km": 12.5,
+	"ascent_m": 740,
+	"descent_m": 740,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 280,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-370.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-370",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.559267988428473,
+		38.75267302617431,
+		-0.524166002869606,
+		38.774776021018624
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-370 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-370.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-314",
+	"name": "PR-CV 314 PEÑA SAGANTA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Espadilla",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.02640798687935,
+		"lon": -0.357910031452775,
+		"name": "C/ Montico, 12. Espadilla"
+	},
+	"distance_km": 9,
+	"ascent_m": 520,
+	"descent_m": 520,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 200,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-314.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-314",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.373619981110096,
+		40.005707032978535,
+		-0.352549972012639,
+		40.02672800794244
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-314 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-314.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-180",
+	"name": "PR-CV 180 LA ALGÜEDA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Albatera",
+	"zone": "baix-segura-vega-baja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.235366018489,
+		"lon": -0.883174985647202,
+		"name": "Parque de Montaña Virgen del Rosario. Albatera"
+	},
+	"distance_km": 20.8,
+	"ascent_m": 910,
+	"descent_m": 910,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 425,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-180.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-180",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.937333982437849,
+		38.22689903900027,
+		-0.87837902829051,
+		38.26010403223336
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-180 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-180.gpx (derivados: inicio, bbox)"
+	]
+}

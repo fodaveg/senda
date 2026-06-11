@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-386",
+	"name": "PR-CV 386 CAMINO A LA CUEVA NEGRA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Espadilla",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.026530027389526,
+		"lon": -0.357839958742261,
+		"name": "Espadilla"
+	},
+	"distance_km": 11.9,
+	"ascent_m": 595,
+	"descent_m": 595,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 255,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-386.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-386",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.39277003146708,
+		40.015979977324605,
+		-0.357542987912893,
+		40.03024999983609
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-386 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-386.gpx (derivados: inicio, bbox)"
+	]
+}

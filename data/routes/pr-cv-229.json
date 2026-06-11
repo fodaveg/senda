@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-229",
+	"name": "PR-CV 229 LA MATA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Mata de Morella (La)",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.61546299606562,
+		"lon": -0.279681980609894,
+		"name": "C/ de la Carretera, 6. La Mata"
+	},
+	"distance_km": 8.4,
+	"ascent_m": 340,
+	"descent_m": 340,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 145,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-229.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-229",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.281100030988455,
+		40.595391020178795,
+		-0.259313033893704,
+		40.6174289714545
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-229 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-229.gpx (derivados: inicio, bbox)"
+	]
+}

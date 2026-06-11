@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-348",
+	"name": "PR-CV 348 CIRCULAR SIERRA ENGARCERÁN - ELS IBARSOS",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Sierra Engarcerán",
+	"zone": "plana-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.26895000599325,
+		"lon": -0.019269995391369,
+		"name": "Av. Castelló s/n. Els Ivarsos"
+	},
+	"distance_km": 22.9,
+	"ascent_m": 970,
+	"descent_m": 970,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 465,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-348.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-348",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.078640021383762,
+		40.22720997221768,
+		-0.012477803975344,
+		40.27598996646702
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-348 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-348.gpx (derivados: inicio, bbox)"
+	]
+}

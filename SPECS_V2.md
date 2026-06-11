@@ -56,9 +56,16 @@ scripts/
 ```jsonc
 // data/routes/pr-cv-77.json — solo campos nuevos o modificados
 {
-	// v1: string libre → v2: enum cerrado, extraído de la ficha del portal FEMECV
-	// en cada ingesta/crawl, siempre con fuente y fecha en sources.
-	"status": "homologado", // homologado | en_revision | deshabilitado | desconocido
+	// v1: string libre → v2: enum cerrado, mapeado desde la taxonomía real del
+	// portal FEMECV (9 literales en su buscador) en cada crawl, siempre con
+	// fuente y fecha en sources. El literal exacto se conserva en status_detail.
+	// - homologado: "En vigor", "Control de calidad positivo"
+	// - con_reservas: "Sin controles de calidad", "Control de calidad
+	//   condicionado", "Control de calidad negativo"
+	// - en_proceso: "En proceso de homologación", "En proceso de revisión"
+	// - deshabilitado: "Cancelación temporal", "Baja / Deshomologado"
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
 
 	"municipality": "Chulilla", // de la ficha FEMECV; alimenta el buscador
 

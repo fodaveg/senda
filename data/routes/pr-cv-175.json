@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-175",
+	"name": "PR-CV 175 LES RODANES",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Vilamarxant",
+	"zone": "camp-de-turia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.56071296706796,
+		"lon": -0.623426008969545,
+		"name": "Cementerio de Vilamarxant"
+	},
+	"distance_km": 13.4,
+	"ascent_m": 550,
+	"descent_m": 550,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 270,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-175.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-175",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.627964977174997,
+		39.531828006729484,
+		-0.606989013031125,
+		39.56072201952338
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-175 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-175.gpx (derivados: inicio, bbox)"
+	]
+}

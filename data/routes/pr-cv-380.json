@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-380",
+	"name": "PR-CV 380 RIO CABRIEL",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Cofrentes",
+	"zone": "valle-de-ayora",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.23051099292934,
+		"lon": -1.062573026865721,
+		"name": "Plaza de España. Cofrentes"
+	},
+	"distance_km": 10.6,
+	"ascent_m": 115,
+	"descent_m": 115,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 140,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-380.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-380",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.097340993583202,
+		39.22821200452745,
+		-1.058523980900645,
+		39.24954696558416
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-380 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-380.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "gr-331-e04",
+	"name": "GR 331 E04 LA MATA DE MORELLA - OLOCAU DEL REY",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Mata de Morella (La)",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.6153120379895,
+		"lon": -0.279755992814898,
+		"name": "Calle de la carretera, 4. La Mata de Morella"
+	},
+	"distance_km": 8.2,
+	"ascent_m": 295,
+	"descent_m": 65,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 150,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-331-e04.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-331-e04",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.340572986751795,
+		40.61015699990094,
+		-0.279735960066319,
+		40.637694988399744
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e04 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-331-e04.gpx (derivados: inicio, bbox)"
+	]
+}

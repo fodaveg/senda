@@ -1,0 +1,49 @@
+{
+	"id": "gr-333-e11",
+	"name": "GR 333 E11 TOGA - ARGELITA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Toga",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.041954992339015,
+		"lon": -0.367762036621571,
+		"name": "Calle San Roque, esquina calle Aragón. Toga"
+	},
+	"distance_km": 3.2,
+	"ascent_m": 145,
+	"descent_m": 145,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 65,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-333-e11.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e11",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.367762036621571,
+		40.041892966255546,
+		-0.348693039268255,
+		40.054974015802145
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e11 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-333-e11.gpx (derivados: inicio, bbox)"
+	]
+}

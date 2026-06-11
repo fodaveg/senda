@@ -1,0 +1,49 @@
+{
+	"id": "gr-37-e05",
+	"name": "GR 37 E05 LA TORRE - ARAS DE LOS OLMOS",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Alpuente",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.96352896094322,
+		"lon": -1.023166012018919,
+		"name": "La Torre. Alpuente"
+	},
+	"distance_km": 16.6,
+	"ascent_m": 400,
+	"descent_m": 665,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 310,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-37-e05.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-37-e05",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.13542802631855,
+		39.92283398285508,
+		-1.019892962649465,
+		39.98060398735106
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-37-e05 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-37-e05.gpx (derivados: inicio, bbox)"
+	]
+}

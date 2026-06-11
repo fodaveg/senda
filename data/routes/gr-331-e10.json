@@ -1,0 +1,49 @@
+{
+	"id": "gr-331-e10",
+	"name": "GR 331 E10 HERBESET - CASTELL DE CABRES",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Morella",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.661693969741464,
+		"lon": -0.019106967374682,
+		"name": "Calle San Miguel. Herbeset"
+	},
+	"distance_km": 8.8,
+	"ascent_m": 300,
+	"descent_m": 300,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 3,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 180,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-331-e10.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-331-e10",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.019218027591705,
+		40.65332296304405,
+		0.043395962566137,
+		40.66868104040623
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e10 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-331-e10.gpx (derivados: inicio, bbox)"
+	]
+}

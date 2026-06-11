@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-379",
+	"name": "PR-CV 379 RUTA VOLCÁNICA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Cofrentes",
+	"zone": "valle-de-ayora",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.230536,
+		"lon": -1.062616,
+		"name": "Calle del Castillo. Cofrentes"
+	},
+	"distance_km": 4,
+	"ascent_m": 190,
+	"descent_m": 90,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 75,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-379.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-379",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.074301,
+		39.229937,
+		-1.057857,
+		39.24313
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-379 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-379.gpx (derivados: inicio, bbox)"
+	]
+}

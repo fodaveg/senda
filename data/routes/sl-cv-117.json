@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-117",
+	"name": "SL-CV 117 CAMÍ VELL DE BOCAIRENT",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Beneixama",
+	"zone": "alt-vinalopo",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.70646401308477,
+		"lon": -0.738448016345501,
+		"name": "El Salze. Beneixama"
+	},
+	"distance_km": 6.3,
+	"ascent_m": 80,
+	"descent_m": 5,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 100,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-117.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-117",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.738466959446669,
+		38.70646401308477,
+		-0.679697999730706,
+		38.73137301765382
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-117 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-117.gpx (derivados: inicio, bbox)"
+	]
+}

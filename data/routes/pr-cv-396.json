@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-396",
+	"name": "PR-CV 396 LA BARSELLA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Barxeta",
+	"zone": "costera",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.02251289226115,
+		"lon": -0.417375443503261,
+		"name": "Av. Jaume I, 8. Barxeta"
+	},
+	"distance_km": 10.8,
+	"ascent_m": 310,
+	"descent_m": 310,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 200,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-396.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-396",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.421183425933123,
+		39.022503420710564,
+		-0.382075980305672,
+		39.03830992989242
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-396 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-396.gpx (derivados: inicio, bbox)"
+	]
+}

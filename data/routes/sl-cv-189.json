@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-189",
+	"name": "SL-CV 189 SUBIDA AL CASTILLO DE VILLAMALUR",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Villamalur",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.960825964808464,
+		"lon": -0.390418991446495,
+		"name": "Camino de la Buitrera, enlace con GR 33 E04. Villamalur"
+	},
+	"distance_km": 0.3,
+	"ascent_m": 65,
+	"descent_m": 0,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 10,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-189.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-189",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.390831967815757,
+		39.960825964808464,
+		-0.390251018106937,
+		39.96236303821206
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-189 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-189.gpx (derivados: inicio, bbox)"
+	]
+}

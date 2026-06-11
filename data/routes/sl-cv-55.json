@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-55",
+	"name": "SL-CV 55 FUENTES DE ARTEAS",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Bejís",
+	"zone": "alto-palancia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.89910498261452,
+		"lon": -0.752934962511063,
+		"name": "Arteas de Arriba. Bejís"
+	},
+	"distance_km": 5.5,
+	"ascent_m": 190,
+	"descent_m": 190,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 105,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-55.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-55",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.755907017737627,
+		39.893752969801426,
+		-0.743218995630741,
+		39.9066679738462
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-55 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-55.gpx (derivados: inicio, bbox)"
+	]
+}

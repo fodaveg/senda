@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-55",
+	"name": "PR-CV 55 SIERRA DE LA FONTANELLA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Biar",
+	"zone": "alt-vinalopo",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.629363998770714,
+		"lon": -0.750912996008992,
+		"name": "Santuario Nuestra Señora de Gracia"
+	},
+	"distance_km": 21.7,
+	"ascent_m": 725,
+	"descent_m": 725,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 415,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-55.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-55",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.752994976937771,
+		38.629363998770714,
+		-0.680600982159376,
+		38.6733359657228
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-55 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-55.gpx (derivados: inicio, bbox)"
+	]
+}

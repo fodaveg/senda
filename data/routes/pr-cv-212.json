@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-212",
+	"name": "PR-CV 212 JIJONA - PEÑA MIGJORN - JIJONA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Xixona/Jijona",
+	"zone": "alacanti",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.53659896180034,
+		"lon": -0.507620964199305,
+		"name": "Barranco de la Font. Jijona"
+	},
+	"distance_km": 12.4,
+	"ascent_m": 800,
+	"descent_m": 800,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 290,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-212.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-212",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.544496979564428,
+		38.534616976976395,
+		-0.507620964199305,
+		38.55151900090277
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-212 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-212.gpx (derivados: inicio, bbox)"
+	]
+}

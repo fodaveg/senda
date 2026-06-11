@@ -1,58 +1,76 @@
 /**
- * CLI de ingesta (SPEC.md §3): data/gpx/*.gpx + data/routes/_manual/<id>.json
- * → data/routes/<id>.json validado.
+ * CLI de ingesta (SPEC.md §3, SPECS_V2 §4): data/gpx/*.gpx +
+ * _manual/<id>.json (opcional) + _crawled/<id>.json (opcional)
+ * → data/routes/<id>.json validado. Hace falta al menos una de las dos
+ * capas de metadatos.
  *
  * Uso:
- *   npm run ingest             # procesa todos los GPX
- *   npm run ingest -- pr-cv-77 # solo los ids indicados
+ *   npm run ingest                # procesa todos los GPX
+ *   npm run ingest -- pr-cv-77    # solo los ids indicados
+ *   npm run ingest -- --lenient   # no falla por rutas individuales con error
+ *                                   (catálogo masivo tras ingest:crawl)
  *
- * Falla (exit 1) con error claro si falta el fichero manual, el GPX está
- * corrupto o la validación zod no pasa. No escribe salidas parciales.
+ * En modo estricto (por defecto) falla (exit 1) con error claro si faltan
+ * metadatos, el GPX está corrupto o la validación zod no pasa. No escribe
+ * salidas parciales.
  */
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { buildRoute, IngestError, parseManual } from './build';
+import { buildRoute, IngestError, parseCrawled, parseManual } from './build';
 import { parseGpx } from './gpx';
 
 const ROOT = path.resolve(import.meta.dirname, '../..');
 const GPX_DIR = path.join(ROOT, 'data/gpx');
 const MANUAL_DIR = path.join(ROOT, 'data/routes/_manual');
+const CRAWLED_DIR = path.join(ROOT, 'data/routes/_crawled');
 const OUT_DIR = path.join(ROOT, 'data/routes');
+
+function readJson(id: string, filePath: string, kind: string): unknown {
+	try {
+		return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+	} catch (error) {
+		throw new IngestError(
+			id,
+			`JSON ${kind} ilegible: ${error instanceof Error ? error.message : error}`
+		);
+	}
+}
 
 function ingestOne(id: string): string {
 	const gpxPath = path.join(GPX_DIR, `${id}.gpx`);
 	const manualPath = path.join(MANUAL_DIR, `${id}.json`);
+	const crawledPath = path.join(CRAWLED_DIR, `${id}.json`);
 
 	if (!fs.existsSync(gpxPath)) {
 		throw new IngestError(id, `no existe ${path.relative(ROOT, gpxPath)}`);
 	}
-	if (!fs.existsSync(manualPath)) {
+	const manual = fs.existsSync(manualPath)
+		? parseManual(id, readJson(id, manualPath, 'manual'))
+		: null;
+	const crawled = fs.existsSync(crawledPath)
+		? parseCrawled(id, readJson(id, crawledPath, 'crawleado'))
+		: null;
+	if (!manual && !crawled) {
 		throw new IngestError(
 			id,
-			`falta ${path.relative(ROOT, manualPath)} con los metadatos no derivables ` +
-				`(obligatorios: name, type, sources)`
+			`faltan metadatos: ni _manual/${id}.json ni _crawled/${id}.json ` +
+				`(el manual exige name, type y sources)`
 		);
 	}
 
 	const summary = parseGpx(fs.readFileSync(gpxPath, 'utf8'), `${id}.gpx`);
-	let rawManual: unknown;
-	try {
-		rawManual = JSON.parse(fs.readFileSync(manualPath, 'utf8'));
-	} catch (error) {
-		throw new IngestError(
-			id,
-			`JSON manual ilegible: ${error instanceof Error ? error.message : error}`
-		);
-	}
-	const route = buildRoute(id, summary, parseManual(id, rawManual));
+	const route = buildRoute(id, summary, manual, crawled);
 
 	const outPath = path.join(OUT_DIR, `${id}.json`);
 	fs.writeFileSync(outPath, JSON.stringify(route, null, '\t') + '\n');
-	return `✓ ${id}: ${route.distance_km} km, +${route.ascent_m ?? '?'} m / −${route.descent_m ?? '?'} m, ${summary.points} puntos → ${path.relative(ROOT, outPath)}`;
+	return `✓ ${id}: ${route.distance_km} km, +${route.ascent_m ?? '?'} m / −${route.descent_m ?? '?'} m, ${summary.points} puntos`;
 }
 
-const requested = process.argv.slice(2);
+const args = process.argv.slice(2);
+const lenient = args.includes('--lenient');
+const requested = args.filter((a) => !a.startsWith('--'));
+
 const ids =
 	requested.length > 0
 		? requested
@@ -68,17 +86,22 @@ if (ids.length === 0) {
 }
 
 const failures: string[] = [];
+let ok = 0;
 for (const id of ids) {
 	try {
-		console.log(ingestOne(id));
+		const line = ingestOne(id);
+		ok++;
+		if (ids.length <= 20) console.log(line);
+		else if (ok % 100 === 0) console.log(`  …${ok} rutas ingeridas`);
 	} catch (error) {
 		failures.push(error instanceof Error ? error.message : String(error));
 	}
 }
 
+console.log(`\n${ok}/${ids.length} ruta(s) ingeridas.`);
 if (failures.length > 0) {
 	console.error(`\n${failures.length} ruta(s) con errores:\n`);
 	for (const failure of failures) console.error(`✗ ${failure}\n`);
-	process.exit(1);
+	if (!lenient) process.exit(1);
+	console.error('(modo --lenient: los errores anteriores no bloquean el catálogo)');
 }
-console.log(`\n${ids.length} ruta(s) ingeridas sin errores.`);

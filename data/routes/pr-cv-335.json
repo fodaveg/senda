@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-335",
+	"name": "PR-CV 335 CAVALL BERNAT. ITINERARIO PANORÁMICO",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Alzira",
+	"zone": "ribera-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.13204953074455,
+		"lon": -0.37162072956562,
+		"name": "Punto de Información Paraje Natural de la Murta y la Casella."
+	},
+	"distance_km": 5.3,
+	"ascent_m": 440,
+	"descent_m": 65,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 115,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-335.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-335",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.371639505028725,
+		39.12729263305664,
+		-0.34529191441834,
+		39.13937380537391
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-335 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-335.gpx (derivados: inicio, bbox)"
+	]
+}

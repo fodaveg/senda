@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-73",
+	"name": "SL-CV 73 SENDA BARRANCO DE XURRA",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Teulada",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.727188017219305,
+		"lon": 0.10252702049911,
+		"name": "Avda. del Mediterráneo, esquina con calle Médico José Pitarch. Teulada"
+	},
+	"distance_km": 1.9,
+	"ascent_m": 10,
+	"descent_m": 75,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 35,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-73.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-73",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.101314997300506,
+		38.71426203288138,
+		0.107903005555272,
+		38.727188017219305
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-73 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-73.gpx (derivados: inicio, bbox)"
+	]
+}

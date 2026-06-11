@@ -1,0 +1,49 @@
+{
+	"id": "gr-332-e02",
+	"name": "GR 332 E02 GR 332 E02 NAVARRÉS - BICORP",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Navarrés",
+	"zone": "canal-de-navarres",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.099714,
+		"lon": -0.69602,
+		"name": "C/ de la Iglesia, 35. Navarres"
+	},
+	"distance_km": 19,
+	"ascent_m": 520,
+	"descent_m": 490,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 350,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-332-e02.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-332-e02",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.790196,
+		39.099608,
+		-0.693374,
+		39.144229
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-332-e02 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-332-e02.gpx (derivados: inicio, bbox)"
+	]
+}

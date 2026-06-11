@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-62",
+	"name": "SL-CV 62 SENDA DE LAS ÁREAS RECREATIVAS",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Aras de los Olmos",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.922647988423705,
+		"lon": -1.161181004717946,
+		"name": "Corral del Barbero. Aras de los Olmos"
+	},
+	"distance_km": 10.5,
+	"ascent_m": 185,
+	"descent_m": 515,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 170,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-62.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-62",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.209678025916219,
+		39.922647988423705,
+		-1.161181004717946,
+		39.9446000251919
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-62 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-62.gpx (derivados: inicio, bbox)"
+	]
+}

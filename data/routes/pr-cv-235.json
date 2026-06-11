@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-235",
+	"name": "PR-CV 235 RUTA DE BENEDRIZ",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Bicorp",
+	"zone": "canal-de-navarres",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.12958902306855,
+		"lon": -0.786627028137445,
+		"name": "C/ Calvario, 3"
+	},
+	"distance_km": 9.9,
+	"ascent_m": 425,
+	"descent_m": 425,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 200,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-235.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-235",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.802304036915302,
+		39.10675596445799,
+		-0.774635039269924,
+		39.12959296256304
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-235 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-235.gpx (derivados: inicio, bbox)"
+	]
+}

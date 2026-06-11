@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-234",
+	"name": "PR-CV 234 CAZUMA - GOLA DE LUCINO",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Bicorp",
+	"zone": "canal-de-navarres",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.109602961689234,
+		"lon": -0.845155008137226,
+		"name": "Cazuma - Cruce con Camino de la Cueva de la Araña. Bicorp"
+	},
+	"distance_km": 9,
+	"ascent_m": 360,
+	"descent_m": 360,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 195,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-234.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-234",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.868932036682963,
+		39.10834198817611,
+		-0.845154002308846,
+		39.11630102433264
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-234 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-234.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-138",
+	"name": "PR-CV 138 ESLIDA - CHOVAR",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Eslida",
+	"zone": "plana-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.880879959091544,
+		"lon": -0.305896969512105,
+		"name": "Eslida, Panel inicial, se encuentra en la Av/ del País Valenciá, junto a la CV- 223"
+	},
+	"distance_km": 9.6,
+	"ascent_m": 490,
+	"descent_m": 440,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 205,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-138.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-138",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.321365017443895,
+		39.84933198429644,
+		-0.285533973947167,
+		39.88093796186149
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-138 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-138.gpx (derivados: inicio, bbox)"
+	]
+}

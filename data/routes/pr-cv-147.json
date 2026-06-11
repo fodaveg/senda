@@ -3,7 +3,9 @@
 	"name": "PR-CV 147 La Catedral del Senderismo",
 	"type": "PR",
 	"status": "homologado",
-	"zone": null,
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Vall de Laguar (La)",
+	"zone": "marina-alta",
 	"aemet_municipio": "03137",
 	"start": {
 		"lat": 38.778342017903924,
@@ -44,6 +46,7 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-147 (consulta 2026-06-10): nombre, distancia, desniveles, tiempo, MIDE, tipo circular con tramos comunes, municipio la Vall de Laguar, control de calidad positivo",
 		"aemet_municipio: código INE 03137 (la Vall de Laguar), relación de municipios INE vía Idescat (consulta 2026-06-10)",
 		"Pendiente de verificar: zone, water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain",
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-147 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"GPX pr-cv-147.gpx (derivados: inicio, bbox)"
 	]
 }

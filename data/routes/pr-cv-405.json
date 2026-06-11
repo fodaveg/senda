@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-405",
+	"name": "PR-CV 405 CAMINOS DEL SEÑORÍO DE VILAR DE CANES",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Vilar de Canes",
+	"zone": "alt-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.357849979773164,
+		"lon": -0.065959962084889,
+		"name": "Plaza de la Setena. Villar de Canes"
+	},
+	"distance_km": 10,
+	"ascent_m": 280,
+	"descent_m": 280,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 185,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-405.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-405",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.074819969013333,
+		40.34114995971322,
+		-0.046840002760291,
+		40.3721999656409
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-405 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-405.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-420",
+	"name": "PR-CV 420 LA CEJA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Navarrés",
+	"zone": "canal-de-navarres",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.099589018151164,
+		"lon": -0.695910025388002,
+		"name": "Calle de la Iglesia, 26. Navarrés"
+	},
+	"distance_km": 15.9,
+	"ascent_m": 245,
+	"descent_m": 245,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 220,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-420.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-420",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.746304960921407,
+		39.07723699696362,
+		-0.689930040389299,
+		39.10243802703917
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-420 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-420.gpx (derivados: inicio, bbox)"
+	]
+}

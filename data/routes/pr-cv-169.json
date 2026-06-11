@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-169",
+	"name": "PR-CV 169 SENDERO DE UPANEL",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Aspe",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.339081006124616,
+		"lon": -0.768830990418792,
+		"name": "Parque de Vista Hermosa. Aspe"
+	},
+	"distance_km": 10,
+	"ascent_m": 300,
+	"descent_m": 305,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 160,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-169.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-169",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.771744037047029,
+		38.322796979919076,
+		-0.728989960625768,
+		38.33980101160705
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-169 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-169.gpx (derivados: inicio, bbox)"
+	]
+}

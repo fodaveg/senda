@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-9",
+	"name": "PR-CV 9 SELLA - BENIMANTELL",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Sella",
+	"zone": "marina-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.60832198522985,
+		"lon": -0.270568002015352,
+		"name": "CV-770. Zona de parking a la entrada del pueblo.  Sella"
+	},
+	"distance_km": 16.3,
+	"ascent_m": 760,
+	"descent_m": 585,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 280,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-9.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-9",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.270572025328875,
+		38.60832198522985,
+		-0.184763967990875,
+		38.67426099255681
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-9 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-9.gpx (derivados: inicio, bbox)"
+	]
+}

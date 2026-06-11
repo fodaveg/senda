@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-179",
+	"name": "PR-CV 179 RUTA DE SAN PASCUAL",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Monforte del Cid",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.37784797884524,
+		"lon": -0.68827997893095,
+		"name": "Plaza nuestra señora de Orito. Orito. Monforte del Cid"
+	},
+	"distance_km": 7.3,
+	"ascent_m": 265,
+	"descent_m": 265,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 122,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-179.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-179",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.688388021662831,
+		38.37630503810942,
+		-0.658938959240913,
+		38.383960984647274
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-179 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-179.gpx (derivados: inicio, bbox)"
+	]
+}

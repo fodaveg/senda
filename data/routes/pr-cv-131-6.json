@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-131-6",
+	"name": "PR-CV 131.6 RUTA DEL BOHILGUES Y DEL VAL",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Vallanca",
+	"zone": "rincon-de-ademuz",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.06270196288824,
+		"lon": -1.335449991747737,
+		"name": "Calle Molino - CV-478. Vallanca"
+	},
+	"distance_km": 13.4,
+	"ascent_m": 260,
+	"descent_m": 510,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 225,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-131-6.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-131-6",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.335449991747737,
+		40.039954986423254,
+		-1.24756196513772,
+		40.066704992204905
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-131-6 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-131-6.gpx (derivados: inicio, bbox)"
+	]
+}

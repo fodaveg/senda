@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-304",
+	"name": "PR-CV 304 PICO DE LA RATLLA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Alzira",
+	"zone": "ribera-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.110056003555655,
+		"lon": -0.342777008190751,
+		"name": "Font Nova. Alzira"
+	},
+	"distance_km": 6.8,
+	"ascent_m": 600,
+	"descent_m": 220,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 165,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-304.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-304",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.342777008190751,
+		39.10113195888698,
+		-0.308100990951061,
+		39.11265003494918
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-304 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-304.gpx (derivados: inicio, bbox)"
+	]
+}

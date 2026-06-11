@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-150",
+	"name": "SL-CV 150 UN PASSEIG PER L'ARROSSAR. DE SUECA A LA MUNTANYETA DELS SANTS I A L'ULLAL DE BALDOVÍ",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Sueca",
+	"zone": "ribera-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.20589501969516,
+		"lon": -0.308689987286925,
+		"name": "Passeig de l'Estació s/n"
+	},
+	"distance_km": 6.8,
+	"ascent_m": 10,
+	"descent_m": 15,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 85,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-150.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-150",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.322583997622132,
+		39.20589501969516,
+		-0.305587006732821,
+		39.248697962611914
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-150 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-150.gpx (derivados: inicio, bbox)"
+	]
+}

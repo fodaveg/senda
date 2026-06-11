@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-153",
+	"name": "SL-CV 153 AZUD DE MUTXAMEL - LOMA DE RAMOS",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Mutxamel",
+	"zone": "alacanti",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.43867796473205,
+		"lon": -0.461413040757179,
+		"name": "Área recreativa La Sabateta. Mutxamel"
+	},
+	"distance_km": 3.1,
+	"ascent_m": 90,
+	"descent_m": 35,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 55,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-153.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-153",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.477548958733678,
+		38.43867796473205,
+		-0.461218999698758,
+		38.45895596779883
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-153 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-153.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-53",
+	"name": "SL-CV 53 LA HOZ - LOS PÉREZ",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Bejís",
+	"zone": "alto-palancia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.90482403896749,
+		"lon": -0.721916975453496,
+		"name": "Puente barranco La Hoz. Carretera de Arteas, km 1. Bejís"
+	},
+	"distance_km": 3.6,
+	"ascent_m": 185,
+	"descent_m": 55,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 60,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-53.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-53",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.722564980387688,
+		39.88422500900924,
+		-0.71227703243494,
+		39.90486200898886
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-53 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-53.gpx (derivados: inicio, bbox)"
+	]
+}

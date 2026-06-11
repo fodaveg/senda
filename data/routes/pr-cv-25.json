@@ -2,8 +2,10 @@
 	"id": "pr-cv-25",
 	"name": "PR-CV 25 Elda - Salinas - Elda",
 	"type": "PR",
-	"status": "homologado",
-	"zone": null,
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Elda",
+	"zone": "vinalopo-mitja",
 	"aemet_municipio": "03066",
 	"start": {
 		"lat": 38.47795003093779,
@@ -13,7 +15,7 @@
 	"distance_km": 25.9,
 	"ascent_m": 470,
 	"descent_m": 470,
-	"circular": false,
+	"circular": true,
 	"difficulty_mide": {
 		"medio": 1,
 		"itinerario": 2,
@@ -44,6 +46,7 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-25 (consulta 2026-06-10): nombre, distancia, desniveles, tiempo, MIDE, municipios Elda y Salinas",
 		"aemet_municipio: código INE 03066 (Elda), relación de municipios INE vía Idescat (consulta 2026-06-10)",
 		"Pendiente de verificar: zone, water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain",
-		"GPX pr-cv-25.gpx (derivados: inicio, circularidad, bbox)"
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-25 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-25.gpx (derivados: inicio, bbox)"
 	]
 }

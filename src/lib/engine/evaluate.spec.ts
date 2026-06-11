@@ -13,6 +13,8 @@ function makeRoute(overrides: Partial<Route> = {}): Route {
 		name: 'PR-CV Test',
 		type: 'PR',
 		status: 'homologado',
+		status_detail: null,
+		municipality: null,
 		zone: null,
 		aemet_municipio: null,
 		start: { lat: 39.654, lon: -0.889, name: null },

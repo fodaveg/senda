@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-433",
+	"name": "PR-CV 433 CAMINO DE SAN PASCUAL",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Aspe",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.32778697833419,
+		"lon": -0.788844041526318,
+		"name": "Cruce del Camino Ainach y Camino Carrasca"
+	},
+	"distance_km": 7.4,
+	"ascent_m": 75,
+	"descent_m": 75,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 100,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-433.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-433",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.788844041526318,
+		38.32778697833419,
+		-0.73438698425889,
+		38.360393000766635
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-433 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-433.gpx (derivados: distancia, inicio, bbox)"
+	]
+}

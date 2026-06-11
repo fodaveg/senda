@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-125",
+	"name": "SL-CV 125 MIRADOR TOS PELAT",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Pobla de Vallbona (La)",
+	"zone": "camp-de-turia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.614611035212874,
+		"lon": -0.530597856268287,
+		"name": "Calle Virgen de la Lloma Pou, 10. La Pobla de Vallbona"
+	},
+	"distance_km": 0.5,
+	"ascent_m": 40,
+	"descent_m": 0,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 10,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-125.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-125",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.532141048461199,
+		39.614611035212874,
+		-0.530597856268287,
+		39.6190288849175
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-125 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-125.gpx (derivados: inicio, bbox)"
+	]
+}

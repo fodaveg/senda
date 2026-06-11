@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-273",
+	"name": "PR-CV 273 RESINERO - PEÑAS DEL DIABLO",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Bejís",
+	"zone": "alto-palancia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.91665903478861,
+		"lon": -0.720916008576751,
+		"name": "Camino de Peñaescabia. Bejís"
+	},
+	"distance_km": 20.4,
+	"ascent_m": 790,
+	"descent_m": 630,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 335,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-273.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-273",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.796696962788701,
+		39.87997102551162,
+		-0.720916008576751,
+		39.93019999936223
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-273 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-273.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-270",
+	"name": "PR-CV 270 POU DEL SURDO",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Xixona/Jijona",
+	"zone": "alacanti",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.53660499677062,
+		"lon": -0.507642002776265,
+		"name": "Parque del barranco de la Font. Jijona"
+	},
+	"distance_km": 11.7,
+	"ascent_m": 770,
+	"descent_m": 35,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 200,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-270.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-270",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.508277015760541,
+		38.53647298179567,
+		-0.459554018452764,
+		38.6146189738065
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-270 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-270.gpx (derivados: inicio, bbox)"
+	]
+}

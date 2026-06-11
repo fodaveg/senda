@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-165",
+	"name": "SL-CV 165 SENDERO DE LOS CUCOS",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Yátova",
+	"zone": "hoya-de-bunol",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.38595070503652,
+		"lon": -0.814138781279325,
+		"name": "Parque de San Vicente"
+	},
+	"distance_km": 8.8,
+	"ascent_m": 290,
+	"descent_m": 290,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 170,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-165.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-165",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.839350875467062,
+		39.38461094163358,
+		-0.814123526215553,
+		39.39545352011919
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-165 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-165.gpx (derivados: inicio, bbox)"
+	]
+}

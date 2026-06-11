@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-57",
+	"name": "SL-CV 57 SENDERO DE LA UMBRÍA",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Puebla de Arenoso",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.103814443573356,
+		"lon": -0.591279901564121,
+		"name": "Av. San Miguel s/n. Puebla de Arenoso"
+	},
+	"distance_km": 10.1,
+	"ascent_m": 585,
+	"descent_m": 585,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 225,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-57.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-57",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.614275485277176,
+		40.089490693062544,
+		-0.590865164995193,
+		40.107247084379196
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-57 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-57.gpx (derivados: inicio, bbox)"
+	]
+}

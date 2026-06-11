@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-70",
+	"name": "SL-CV 70 BARRANCO DE VASALL",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Toga",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.040966011583805,
+		"lon": -0.366525035351515,
+		"name": "Carretera CV-20 frente al bar Hostal Toga"
+	},
+	"distance_km": 4.6,
+	"ascent_m": 460,
+	"descent_m": 30,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 130,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-70.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-70",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.398941962048411,
+		40.02679799683392,
+		-0.366525035351515,
+		40.040966011583805
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-70 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-70.gpx (derivados: inicio, bbox)"
+	]
+}

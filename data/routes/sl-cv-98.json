@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-98",
+	"name": "SL-CV 98 CAP PRIM",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Xàbia/Jávea",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.756473,
+		"lon": 0.21893,
+		"name": "La Creu del Portitxol"
+	},
+	"distance_km": 1,
+	"ascent_m": 20,
+	"descent_m": 60,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 20,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-98.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-98",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.21893,
+		38.756267,
+		0.222958,
+		38.762781
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-98 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-98.gpx (derivados: inicio, bbox)"
+	]
+}

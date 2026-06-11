@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-195",
+	"name": "PR-CV 195 LAS CAÑADAS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Elda",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.47516296431422,
+		"lon": -0.801610015332699,
+		"name": "Jardines del Vinalopó. Elda"
+	},
+	"distance_km": 11.9,
+	"ascent_m": 190,
+	"descent_m": 190,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 205,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-195.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-195",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.849450984969735,
+		38.46381202340126,
+		-0.801537008956075,
+		38.48935696296394
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-195 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-195.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-49",
+	"name": "SL-CV 49 SENDA DEL VEDAT",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Torrent",
+	"zone": "horta-sud",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.41938301548362,
+		"lon": -0.491654025390744,
+		"name": "Centro Ambiental el Vedat (Urb. El Vedat). Torrent"
+	},
+	"distance_km": 4.6,
+	"ascent_m": 110,
+	"descent_m": 110,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 85,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-49.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-49",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.499001014977694,
+		39.41704496741295,
+		-0.489404993131757,
+		39.42602097988129
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-49 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-49.gpx (derivados: inicio, bbox)"
+	]
+}

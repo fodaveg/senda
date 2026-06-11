@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-120",
+	"name": "PR-CV 120 RUTA DE LAS ERMITAS DE L'ALCORA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Alcora (l')",
+	"zone": "alcalaten",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.07505697198212,
+		"lon": -0.211689993739128,
+		"name": "Glorieta Santa María Rosa Molas. L'Alcora"
+	},
+	"distance_km": 31.1,
+	"ascent_m": 1160,
+	"descent_m": 1160,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 4,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 610,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-120.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-120",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.279209995642304,
+		40.0665619969368,
+		-0.189553974196315,
+		40.1031060051173
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-120 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-120.gpx (derivados: inicio, bbox)"
+	]
+}

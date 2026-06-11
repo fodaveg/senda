@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-255",
+	"name": "PR-CV 255 SENDERO DE JAIME EL BARBUDO",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Hondón de los Frailes",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.27330502681434,
+		"lon": -0.927924960851669,
+		"name": "Plaza del Ayuntamiento. Hondón de los Frailes"
+	},
+	"distance_km": 10.9,
+	"ascent_m": 255,
+	"descent_m": 255,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 160,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-255.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-255",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.931291971355677,
+		38.25588500127196,
+		-0.890706041827798,
+		38.286719005554914
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-255 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-255.gpx (derivados: inicio, bbox)"
+	]
+}

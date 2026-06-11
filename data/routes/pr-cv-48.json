@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-48",
+	"name": "PR-CV 48 CAMÍ DEL FORT",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Callosa d'en Sarrià",
+	"zone": "marina-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.65741797722876,
+		"lon": -0.094517022371292,
+		"name": "CamÍ de Segarra. Partida Algar. Callosa d'en Sarrià."
+	},
+	"distance_km": 5.4,
+	"ascent_m": 660,
+	"descent_m": 10,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 140,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-48.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-48",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.094517022371292,
+		38.65232597105205,
+		-0.063243974000216,
+		38.66126602515578
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-48 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-48.gpx (derivados: inicio, bbox)"
+	]
+}

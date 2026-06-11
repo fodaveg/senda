@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e43",
+	"name": "GR 7 E43 COLLADO CAROCHE - CASAS DE BENALI",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Teresa de Cofrentes",
+	"zone": "valle-de-ayora",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.09335003234446,
+		"lon": -0.920655000954866,
+		"name": "Collado del Caroche. Teresa de Cofrentes"
+	},
+	"distance_km": 26.5,
+	"ascent_m": 680,
+	"descent_m": 970,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 495,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e43.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e43",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.935034994035959,
+		39.0002700034529,
+		-0.830736039206386,
+		39.093532003462315
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e43 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e43.gpx (derivados: inicio, bbox)"
+	]
+}

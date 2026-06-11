@@ -1,0 +1,49 @@
+{
+	"id": "gr-331-e01",
+	"name": "GR 331 E01 VILAFRANCA - PORTELL DE MORELLA",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Villafranca del Cid/Vilafranca",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.430897,
+		"lon": -0.253348,
+		"name": "Carrer Portell. Villafranca del Cid"
+	},
+	"distance_km": 14.8,
+	"ascent_m": 390,
+	"descent_m": 440,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 225,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-331-e01.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-331-e01",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.264562,
+		40.430897,
+		-0.239256,
+		40.5341
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e01 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-331-e01.gpx (derivados: inicio, bbox)"
+	]
+}

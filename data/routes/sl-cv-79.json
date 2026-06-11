@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-79",
+	"name": "SL-CV 79 COVA DEL PARPALLÓ",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Gandia",
+	"zone": "safor",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.001900032162666,
+		"lon": -0.274663986638188,
+		"name": "Centro de interpretación de la Cova Parpalló. CV-675 Carretera Gandia a Barx"
+	},
+	"distance_km": 5.6,
+	"ascent_m": 225,
+	"descent_m": 225,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 110,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-79.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-79",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.274663986638188,
+		38.9948579762131,
+		-0.257146982476115,
+		39.00485901162028
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-79 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-79.gpx (derivados: inicio, bbox)"
+	]
+}

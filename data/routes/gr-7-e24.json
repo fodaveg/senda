@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e24",
+	"name": "GR 7 E24 FRONTERA CV - FREDES",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Pobla de Benifassà (La)",
+	"zone": "baix-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.72861097753048,
+		"lon": 0.194279020652175,
+		"name": "Collado de Manado. Frontera CV.  La Pobla de Benifassà"
+	},
+	"distance_km": 4.5,
+	"ascent_m": 140,
+	"descent_m": 300,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 95,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e24.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e24",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.170617997646332,
+		40.70527601055801,
+		0.194279020652175,
+		40.7286289986223
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e24 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e24.gpx (derivados: inicio, bbox)"
+	]
+}

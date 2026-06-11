@@ -1,0 +1,44 @@
+{
+	"id": "pr-cv-374",
+	"name": "PR-CV 374 PEROLES - HERBERS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Herbers",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.6893099937588,
+		"lon": -0.047650029882789,
+		"name": "Enlace PR-CV 373"
+	},
+	"distance_km": 8.46,
+	"ascent_m": 330,
+	"descent_m": 640,
+	"circular": false,
+	"difficulty_mide": null,
+	"est_duration_min": 160,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-374.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-374",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.047780033200979,
+		40.6893099937588,
+		-0.003510005772114,
+		40.720759984105825
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-374 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
+		"GPX pr-cv-374.gpx (derivados: inicio, bbox)"
+	]
+}

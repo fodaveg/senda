@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-6",
+	"name": "SL-CV 6 SENDA DE LA MOTA - CASTILLO - FUENTE LUCENA",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Enguera",
+	"zone": "canal-de-navarres",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.974418034777045,
+		"lon": -0.685372967272997,
+		"name": "Calle San Antonio de Padua. Enguera"
+	},
+	"distance_km": 5.8,
+	"ascent_m": 330,
+	"descent_m": 330,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 130,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-6.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-6",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.685372967272997,
+		38.9736139588058,
+		-0.665560998022556,
+		38.982453010976315
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-6 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-6.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "gr-239-e02",
+	"name": "GR 239 E02 ALGEMESÍ - XÀTIVA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Algemesí",
+	"zone": "ribera-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.18477798812091,
+		"lon": -0.436380989849567,
+		"name": "Parque de Salvador Castells. Algemesí"
+	},
+	"distance_km": 30.1,
+	"ascent_m": 190,
+	"descent_m": 85,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 380,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-239-e02.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-239-e02",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.511767994612455,
+		38.99150496348739,
+		-0.436380989849567,
+		39.18477798812091
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-239-e02 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-239-e02.gpx (derivados: inicio, bbox)"
+	]
+}

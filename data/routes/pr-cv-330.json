@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-330",
+	"name": "PR-CV 330 SENDERO DE LA ESCARIGÜELA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Alpuente",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.859461011365056,
+		"lon": -1.027137022465468,
+		"name": "Alameda. Campo de Abajo. Alpuente"
+	},
+	"distance_km": 13.1,
+	"ascent_m": 375,
+	"descent_m": 375,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 245,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-330.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-330",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.037824032828212,
+		39.818187011405826,
+		-1.00963301025331,
+		39.859461011365056
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-330 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-330.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-221",
+	"name": "PR-CV 221 VUELTA A CAMARA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Elda",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.47639703191817,
+		"lon": -0.801619989797473,
+		"name": "Parque Jardines del Vinalopó. Elda"
+	},
+	"distance_km": 14.3,
+	"ascent_m": 490,
+	"descent_m": 490,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 275,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-221.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-221",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.846329983323812,
+		38.47478804178536,
+		-0.801510019227862,
+		38.50336697883904
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-221 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-221.gpx (derivados: inicio, bbox)"
+	]
+}

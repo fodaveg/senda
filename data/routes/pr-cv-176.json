@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-176",
+	"name": "PR-CV 176 ANDILLA - OSET - ALCUBLAS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Andilla",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.83544702641666,
+		"lon": -0.812779990956187,
+		"name": "Calle Llano Fuente, 2. Andilla"
+	},
+	"distance_km": 16.1,
+	"ascent_m": 660,
+	"descent_m": 780,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 180,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-176.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-176",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.813281983137131,
+		39.79842399246991,
+		-0.707590039819479,
+		39.83889198862016
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-176 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-176.gpx (derivados: inicio, bbox)"
+	]
+}

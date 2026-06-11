@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-146",
+	"name": "PR-CV 146 CAMÍ DE SES ROQUES A PICASSÀRIES",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Tàrbena",
+	"zone": "marina-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.69658996351063,
+		"lon": -0.102270031347871,
+		"name": "C/ Sant Miquel. CV-715. Tàberna"
+	},
+	"distance_km": 10.2,
+	"ascent_m": 450,
+	"descent_m": 450,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 210,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-146.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-146",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.104156546294689,
+		38.69658015668392,
+		-0.072779981419444,
+		38.71340003795922
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-146 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-146.gpx (derivados: inicio, bbox)"
+	]
+}

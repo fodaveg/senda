@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-213",
+	"name": "PR-CV 213 OMBRIA DEL BENICADELL",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Beniatjar",
+	"zone": "vall-d-albaida",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.84060597978532,
+		"lon": -0.408360958099365,
+		"name": "Casa forestal de les Planisses. Beniatjar"
+	},
+	"distance_km": 8.1,
+	"ascent_m": 275,
+	"descent_m": 275,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 155,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-213.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-213",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.418271971866488,
+		38.83409399539232,
+		-0.402118032798171,
+		38.85045597329736
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-213 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-213.gpx (derivados: inicio, bbox)"
+	]
+}

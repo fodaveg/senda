@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-196",
+	"name": "PR-CV 196 VUELTA A BOLÓN",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Elda",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.475219793617725,
+		"lon": -0.801611356437206,
+		"name": "Jardines del Vinalopó. Elda"
+	},
+	"distance_km": 7.2,
+	"ascent_m": 245,
+	"descent_m": 245,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 140,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-196.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-196",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.826486917212605,
+		38.46791957505047,
+		-0.80158662982285,
+		38.479467574507
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-196 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-196.gpx (derivados: inicio, bbox)"
+	]
+}

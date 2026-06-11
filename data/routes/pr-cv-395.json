@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-395",
+	"name": "PR-CV 395 FONT DE L'OMBRIA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Benassal",
+	"zone": "alt-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.37648999132216,
+		"lon": -0.139920031651855,
+		"name": "Av. Font d'en Segures, 14. Benasal"
+	},
+	"distance_km": 15.2,
+	"ascent_m": 595,
+	"descent_m": 595,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 300,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-395.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-395",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.145123014226556,
+		40.355079006403685,
+		-0.107740983366966,
+		40.37861798889935
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-395 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-395.gpx (derivados: inicio, bbox)"
+	]
+}

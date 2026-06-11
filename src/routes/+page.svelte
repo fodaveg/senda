@@ -2,12 +2,14 @@
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import Map from '$lib/components/Map.svelte';
-	import { routes } from '$lib/data/routes';
 	import { applyFilters, EMPTY_FILTERS, type RouteFilters } from '$lib/filters';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
 	import type { RouteType } from '$lib/types';
 
 	const TYPES: RouteType[] = ['GR', 'PR', 'SL'];
+
+	let { data } = $props();
+	let routes = $derived(data.routes);
 
 	let filters = $state<RouteFilters>({ ...EMPTY_FILTERS, types: [] });
 

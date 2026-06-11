@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-42",
+	"name": "SL-CV 42 SENDA DELS LLADRES",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Sagunt/Sagunto",
+	"zone": "camp-de-morvedre",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.677245980128646,
+		"lon": -0.27799503877759,
+		"name": "C. Castillo. Sagunto"
+	},
+	"distance_km": 2.4,
+	"ascent_m": 120,
+	"descent_m": 120,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 50,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-42.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-42",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.284312982112169,
+		39.674942968413234,
+		-0.274127963930368,
+		39.67800496146083
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-42 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-42.gpx (derivados: inicio, bbox)"
+	]
+}

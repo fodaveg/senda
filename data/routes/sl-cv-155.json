@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-155",
+	"name": "SL-CV 155 BARRANCO DE COCONS - MINAS DE L'OCRE",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Mutxamel",
+	"zone": "alacanti",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.459398029372096,
+		"lon": -0.514631001278758,
+		"name": "Urbanización la Vall del Sol. Alicante"
+	},
+	"distance_km": 6.3,
+	"ascent_m": 145,
+	"descent_m": 145,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 145,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-155.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-155",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.537068014964461,
+		38.45096097327769,
+		-0.514625972136855,
+		38.46220202744007
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-155 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-155.gpx (derivados: inicio, bbox)"
+	]
+}

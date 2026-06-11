@@ -1,0 +1,49 @@
+{
+	"id": "gr-239-e03",
+	"name": "GR 239 E03 XÀTIVA - MOIXENT",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Xàtiva",
+	"zone": "costera",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.991504,
+		"lon": -0.511752,
+		"name": "Plaza de toros. Ctra. Simat, 1. Xàtiva"
+	},
+	"distance_km": 28.5,
+	"ascent_m": 490,
+	"descent_m": 255,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 390,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-239-e03.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-239-e03",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.744943,
+		38.875347,
+		-0.511752,
+		38.991504
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-239-e03 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-239-e03.gpx (derivados: inicio, bbox)"
+	]
+}

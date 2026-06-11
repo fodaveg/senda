@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-135",
+	"name": "SL-CV 135 PASEAR POR BENIJÓFAR",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Benijófar",
+	"zone": "baix-segura-vega-baja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.081343015655875,
+		"lon": -0.738227991387248,
+		"name": "Plaza Constitución"
+	},
+	"distance_km": 4.6,
+	"ascent_m": 25,
+	"descent_m": 25,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 70,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-135.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-135",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.757491029798985,
+		38.078590985387564,
+		-0.737080005928874,
+		38.085809983313084
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-135 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-135.gpx (derivados: inicio, bbox)"
+	]
+}

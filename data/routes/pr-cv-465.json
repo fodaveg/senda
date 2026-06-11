@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-465",
+	"name": "PR-CV 465 SENDER DEL BADALL I LES FONTS DE LES PENYES BLANQUES",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Benigembla",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.74106300063431,
+		"lon": -0.112011982128024,
+		"name": "Camí de Benigembla a Penya Blanca"
+	},
+	"distance_km": 13.3,
+	"ascent_m": 790,
+	"descent_m": 790,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 4,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 300,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-465.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-465",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.139177981764078,
+		38.72595101594925,
+		-0.107987998053432,
+		38.74138503335416
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-465 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-465.gpx (derivados: inicio, bbox)"
+	]
+}

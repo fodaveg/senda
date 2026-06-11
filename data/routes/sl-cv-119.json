@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-119",
+	"name": "SL-CV 119 XALÓ - CAMINO DE TÀRBENA",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Xaló",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.74372199177742,
+		"lon": -0.016457028687,
+		"name": "Tourist Info Vall de Pop. Xaló."
+	},
+	"distance_km": 5,
+	"ascent_m": 420,
+	"descent_m": 5,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 105,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-119.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-119",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.058007966727018,
+		38.724934961646795,
+		-0.016457028687,
+		38.743729032576084
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-119 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-119.gpx (derivados: inicio, bbox)"
+	]
+}

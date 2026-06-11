@@ -87,7 +87,7 @@ export function buildReportModel(input: ReportInput): ReportModel {
 						label: 'Inicio',
 						value: `${route.start.name ? `${route.start.name} · ` : ''}${route.start.lat.toFixed(5)}, ${route.start.lon.toFixed(5)}`
 					},
-					{ label: 'Estado', value: route.status }
+					{ label: 'Estado', value: route.status_detail ?? route.status }
 				]
 			}
 		]

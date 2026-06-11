@@ -1,0 +1,49 @@
+{
+	"id": "gr-333-e09",
+	"name": "GR 333 E09 ESPADILLA - TORRECHIVA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Espadilla",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.026828004047275,
+		"lon": -0.356685016304255,
+		"name": "Calle Piqueta, esquina calle Montico Torres. Espadilla"
+	},
+	"distance_km": 9.9,
+	"ascent_m": 620,
+	"descent_m": 600,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 225,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-333-e09.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e09",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.401961961761117,
+		40.0202489644289,
+		-0.356685016304255,
+		40.04911598749459
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e09 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-333-e09.gpx (derivados: inicio, bbox)"
+	]
+}

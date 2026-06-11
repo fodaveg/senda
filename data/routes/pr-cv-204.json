@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-204",
+	"name": "PR-CV 204 SENDERO DE LOS CHARCOS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Quesa",
+	"zone": "canal-de-navarres",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.11811503581703,
+		"lon": -0.741643030196428,
+		"name": "CV-580. Rotonda de salida de Quesa. Quesa"
+	},
+	"distance_km": 8.4,
+	"ascent_m": 435,
+	"descent_m": 360,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 4,
+		"itinerario": 3,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 150,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-204.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-204",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.777065958827734,
+		39.09225602634251,
+		-0.741146989166737,
+		39.11870302632451
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-204 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-204.gpx (derivados: inicio, bbox)"
+	]
+}

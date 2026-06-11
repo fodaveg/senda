@@ -22,11 +22,12 @@ describe('zones.json', () => {
 		}
 	});
 
-	it('toda zona referenciada por una ruta existe en zones.json', () => {
-		for (const route of routes) {
-			if (route.zone !== null) {
-				expect(wildlifeForZone(route.zone), `zona desconocida: ${route.zone}`).not.toBeNull();
-			}
+	// SPECS_V2 §3: zone es la comarca de la ficha FEMECV; puede no tener ficha
+	// de fauna todavía (la UI la omite). El invariante inverso sí se exige:
+	it('toda ficha de fauna corresponde a una comarca real del catálogo', () => {
+		const referenced = new Set(routes.map((r) => r.zone).filter((z) => z !== null));
+		for (const key of Object.keys(wildlifeZones)) {
+			expect(referenced.has(key), `zona ${key} sin ninguna ruta que la use`).toBe(true);
 		}
 	});
 

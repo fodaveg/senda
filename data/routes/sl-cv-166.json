@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-166",
+	"name": "SL-CV 166 RUTA DEL AGUA",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Buñol",
+	"zone": "hoya-de-bunol",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.41822798922658,
+		"lon": -0.798297990113497,
+		"name": "Parque de San Luis"
+	},
+	"distance_km": 7.1,
+	"ascent_m": 230,
+	"descent_m": 230,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 135,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-166.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-166",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.798305030912161,
+		39.40181496553123,
+		-0.784813016653061,
+		39.41822798922658
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-166 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-166.gpx (derivados: inicio, bbox)"
+	]
+}

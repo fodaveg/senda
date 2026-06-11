@@ -8,6 +8,8 @@ function route(overrides: Partial<Route>): Route {
 		name: 'R',
 		type: 'PR',
 		status: 'homologado',
+		status_detail: null,
+		municipality: null,
 		zone: null,
 		aemet_municipio: null,
 		start: { lat: 39, lon: -0.5, name: null },

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-162",
+	"name": "PR-CV 162 LA SERRA PERENXISA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Torrent",
+	"zone": "horta-sud",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.427888,
+		"lon": -0.551143,
+		"name": "Cl.Dr.Bartual,39, Urbanización Santo Domingo. Torrent"
+	},
+	"distance_km": 20,
+	"ascent_m": 555,
+	"descent_m": 555,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 370,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-162.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-162",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.619687,
+		39.408853,
+		-0.55114,
+		39.443729
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-162 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-162.gpx (derivados: inicio, bbox)"
+	]
+}

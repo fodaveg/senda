@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-236",
+	"name": "PR-CV 236 PICO DEL FRAILE",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Bicorp",
+	"zone": "canal-de-navarres",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.08583498559892,
+		"lon": -0.865697963163257,
+		"name": "Camping los Botijos. Bicorp"
+	},
+	"distance_km": 5.8,
+	"ascent_m": 300,
+	"descent_m": 300,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 125,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-236.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-236",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.868918038904667,
+		39.07609404064715,
+		-0.848226975649595,
+		39.0868030115962
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-236 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-236.gpx (derivados: inicio, bbox)"
+	]
+}

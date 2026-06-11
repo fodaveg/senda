@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-149",
+	"name": "PR-CV 149 EL CASTELLET",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Castell de Castells",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.717217994853854,
+		"lon": -0.196712035685778,
+		"name": "Área Recreativa el Castellet. Castell de Castells"
+	},
+	"distance_km": 9.5,
+	"ascent_m": 465,
+	"descent_m": 465,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 200,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-149.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-149",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.218120003119111,
+		38.70448999106884,
+		-0.195260038599372,
+		38.717217994853854
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-149 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-149.gpx (derivados: inicio, bbox)"
+	]
+}

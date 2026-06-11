@@ -1,0 +1,49 @@
+{
+	"id": "gr-331-e15",
+	"name": "GR 331 E15 ARES DEL MAESTRAT - VILLAFRANCA DE CID",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Ares del Maestrat",
+	"zone": "alt-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.45663196593523,
+		"lon": -0.131900981068611,
+		"name": "Plaza Mayor. Ares del Maestrat"
+	},
+	"distance_km": 14.2,
+	"ascent_m": 250,
+	"descent_m": 320,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 255,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-331-e15.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-331-e15",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.253659021109343,
+		40.429248958826065,
+		-0.131900981068611,
+		40.468691010028124
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e15 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-331-e15.gpx (derivados: inicio, bbox)"
+	]
+}

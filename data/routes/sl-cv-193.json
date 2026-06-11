@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-193",
+	"name": "SL-CV 193 SENDERO DEL SEGUILI DE PARCENT",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Parcent",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.74911700375378,
+		"lon": -0.056368969380856,
+		"name": "Cruce del camino del Fondo con el camino del Molí. Parcent"
+	},
+	"distance_km": 6.6,
+	"ascent_m": 370,
+	"descent_m": 370,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 130,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-193.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-193",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.060247024521232,
+		38.74896696768701,
+		-0.050421003252268,
+		38.759800996631384
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-193 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-193.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-116",
+	"name": "SL-CV 116 SOT DE FERRER - NAVAJO LEÓN",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Sot de Ferrer",
+	"zone": "alto-palancia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.806800028309226,
+		"lon": -0.409350022673607,
+		"name": "C. Nueva, 2. Sot de Ferrer"
+	},
+	"distance_km": 4.6,
+	"ascent_m": 165,
+	"descent_m": 165,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 90,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-116.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-116",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.410489961504936,
+		39.80369998142123,
+		-0.396980009973049,
+		39.81294999830425
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-116 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-116.gpx (derivados: inicio, bbox)"
+	]
+}

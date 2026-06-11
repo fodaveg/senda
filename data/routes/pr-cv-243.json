@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-243",
+	"name": "PR-CV 243 CAMINO DE LA BACORERA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Aigües",
+	"zone": "alacanti",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.5014399792999,
+		"lon": -0.364437019452453,
+		"name": "C. Bonavista, s/n. Aigües"
+	},
+	"distance_km": 8.9,
+	"ascent_m": 425,
+	"descent_m": 425,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 185,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-243.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-243",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.389653975144029,
+		38.50077101960778,
+		-0.364422015845776,
+		38.51919402368367
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-243 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-243.gpx (derivados: inicio, bbox)"
+	]
+}

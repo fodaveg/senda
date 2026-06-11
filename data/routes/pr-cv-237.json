@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-237",
+	"name": "PR-CV 237 RUTA DEL BARRANCO SALADO",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Bicorp",
+	"zone": "canal-de-navarres",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.096458964049816,
+		"lon": -0.854353979229927,
+		"name": "Carril del Benefetal. Partida del Burriquet Alto. Bicorp"
+	},
+	"distance_km": 7.2,
+	"ascent_m": 310,
+	"descent_m": 310,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 4,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 125,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-237.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-237",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.854353979229927,
+		39.09291702322662,
+		-0.828207973390818,
+		39.10360001027584
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-237 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-237.gpx (derivados: inicio, bbox)"
+	]
+}

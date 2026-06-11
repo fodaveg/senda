@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e40",
+	"name": "GR 7 E40 SIETE AGUAS - CAMPAMENTO TABARLA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Siete Aguas",
+	"zone": "hoya-de-bunol",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.47303499095142,
+		"lon": -0.914938962087035,
+		"name": "Ctra. Venta Quemada. Siete Aguas"
+	},
+	"distance_km": 24.6,
+	"ascent_m": 570,
+	"descent_m": 805,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 450,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e40.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e40",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.966370990499854,
+		39.360893005505204,
+		-0.905315028503537,
+		39.47303499095142
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e40 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e40.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-122",
+	"name": "PR-CV 122 SENDA DEL BARRANC DELS TARONGERS",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Ontinyent",
+	"zone": "vall-d-albaida",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.79646201618016,
+		"lon": -0.608594985678792,
+		"name": "Carretera CV-81 (Ontinyent - Bocairent)"
+	},
+	"distance_km": 10.6,
+	"ascent_m": 475,
+	"descent_m": 475,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 220,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-122.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-122",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.610706973820925,
+		38.76695201732218,
+		-0.59685898013413,
+		38.79647299647331
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-122 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-122.gpx (derivados: inicio, bbox)"
+	]
+}

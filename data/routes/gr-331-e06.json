@@ -1,0 +1,49 @@
+{
+	"id": "gr-331-e06",
+	"name": "GR 331 E06 TODOLELLA - FORCALL",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Todolella",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.64495396800339,
+		"lon": -0.245917998254299,
+		"name": "CV-122. Entrada sur de la población. Todolella"
+	},
+	"distance_km": 8.5,
+	"ascent_m": 265,
+	"descent_m": 350,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 165,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-331-e06.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-331-e06",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.247048968449235,
+		40.64495204016566,
+		-0.197235988453031,
+		40.66580403596163
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e06 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-331-e06.gpx (derivados: inicio, bbox)"
+	]
+}

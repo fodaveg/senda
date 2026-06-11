@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-51",
+	"name": "SL-CV 51 TORRE VIGÍA CAP D´OR",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Teulada",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.68811602704227,
+		"lon": 0.146091040223837,
+		"name": "Avda. del Portet. Moraira"
+	},
+	"distance_km": 1.7,
+	"ascent_m": 205,
+	"descent_m": 45,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 50,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-51.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-51",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.146091040223837,
+		38.68310599587858,
+		0.152178984135389,
+		38.68811602704227
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-51 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-51.gpx (derivados: inicio, bbox)"
+	]
+}

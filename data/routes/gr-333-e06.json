@@ -1,0 +1,49 @@
+{
+	"id": "gr-333-e06",
+	"name": "GR 333 E06 TORRALBA DEL PINAR - FUENTES DE AYÓDAR",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Torralba del Pinar",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.98820997774601,
+		"lon": -0.438594985753298,
+		"name": "Calle Iglesia, esquina calle Barrio San Gil. Torralba del Pinar"
+	},
+	"distance_km": 6,
+	"ascent_m": 90,
+	"descent_m": 315,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 115,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-333-e06.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e06",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.438594985753298,
+		39.98820997774601,
+		-0.418030992150307,
+		40.02146802842617
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e06 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-333-e06.gpx (derivados: inicio, bbox)"
+	]
+}

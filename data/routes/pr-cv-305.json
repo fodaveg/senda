@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-305",
+	"name": "PR-CV 305 BARRANC ELS MOLARS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Vallada",
+	"zone": "costera",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.916430016979575,
+		"lon": -0.685219997540116,
+		"name": "Camino servicio La Pedrera"
+	},
+	"distance_km": 8.2,
+	"ascent_m": 350,
+	"descent_m": 260,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 160,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-305.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-305",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.718130031600595,
+		38.91029002144933,
+		-0.684720017015934,
+		38.935660030692816
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-305 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-305.gpx (derivados: inicio, bbox)"
+	]
+}

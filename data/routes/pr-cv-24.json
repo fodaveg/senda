@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-24",
+	"name": "PR-CV 24 QUATRETONDETA - PLA DE LA CASA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Quatretondeta",
+	"zone": "comtat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.723656721413136,
+		"lon": -0.3137700073421,
+		"name": "Avda. del País Valencià. Quatretondeta"
+	},
+	"distance_km": 5.6,
+	"ascent_m": 765,
+	"descent_m": 35,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 160,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-24.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-24",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.3137700073421,
+		38.71209011413157,
+		-0.274432897567749,
+		38.723656721413136
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-24 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-24.gpx (derivados: inicio, bbox)"
+	]
+}

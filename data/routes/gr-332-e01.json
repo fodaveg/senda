@@ -1,0 +1,49 @@
+{
+	"id": "gr-332-e01",
+	"name": "GR 332 E01 GR 332 E01 ESTUBENY - NAVARRÉS",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Estubeny",
+	"zone": "costera",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.01772397570312,
+		"lon": -0.62302895821631,
+		"name": "Cruce C/ San Antonio con C/ Diputacion. Estubeny"
+	},
+	"distance_km": 24.4,
+	"ascent_m": 575,
+	"descent_m": 485,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 440,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-332-e01.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-332-e01",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.701042013242841,
+		39.01426803320646,
+		-0.620369967073202,
+		39.09967300482094
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-332-e01 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-332-e01.gpx (derivados: inicio, bbox)"
+	]
+}

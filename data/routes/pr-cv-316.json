@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-316",
+	"name": "PR-CV 316 SENDER DEL PILÓ DE LA CREU",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Useres (les)/Useras",
+	"zone": "alcalaten",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.158568,
+		"lon": -0.168208,
+		"name": "Calle Figueroles d'Alcalaten, 17. Useras"
+	},
+	"distance_km": 12.2,
+	"ascent_m": 560,
+	"descent_m": 560,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 255,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-316.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-316",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.188661,
+		40.157754,
+		-0.156658,
+		40.183459
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-316 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-316.gpx (derivados: inicio, bbox)"
+	]
+}

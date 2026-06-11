@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-6-3",
+	"name": "PR-CV 6.3 RABOSA - LA FORADA - RABOSA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Petrer",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.49840103648603,
+		"lon": -0.701043019071221,
+		"name": "Parque de montaña 'Daniel Esteve' (Rabosa)"
+	},
+	"distance_km": 8,
+	"ascent_m": 320,
+	"descent_m": 320,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 160,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-6-3.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-6-3",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.701102027669549,
+		38.495426969602704,
+		-0.672310022637248,
+		38.51067801006138
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-6-3 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-6-3.gpx (derivados: inicio, bbox)"
+	]
+}

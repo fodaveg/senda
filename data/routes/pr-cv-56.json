@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-56",
+	"name": "PR-CV 56 MURO D'ALCOI - RACÓ LLOBET",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Muro d'Alcoi",
+	"zone": "comtat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.77459002658725,
+		"lon": -0.447560017928481,
+		"name": "Centro de Protección Civil. Muro del Alcoy"
+	},
+	"distance_km": 13.6,
+	"ascent_m": 715,
+	"descent_m": 715,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 295,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-56.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-56",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.493759978562593,
+		38.75953000970185,
+		-0.447439989075065,
+		38.77834998071194
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-56 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-56.gpx (derivados: inicio, bbox)"
+	]
+}

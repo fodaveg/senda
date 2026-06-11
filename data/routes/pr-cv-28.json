@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-28",
+	"name": "PR-CV 28 XORRET DE CATÍ - DESPEÑADOR",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Castalla",
+	"zone": "alcoia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.51909997873008,
+		"lon": -0.676880003884435,
+		"name": "Xorret de Catí"
+	},
+	"distance_km": 3.4,
+	"ascent_m": 375,
+	"descent_m": 25,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 85,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-28.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-28",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.678918985649943,
+		38.51909997873008,
+		-0.668860031291842,
+		38.533003963530064
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-28 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-28.gpx (derivados: inicio, bbox)"
+	]
+}

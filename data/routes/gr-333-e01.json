@@ -1,0 +1,49 @@
+{
+	"id": "gr-333-e01",
+	"name": "GR 333 E01 TALES - SUERAS",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Tales",
+	"zone": "plana-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.94936002418399,
+		"lon": -0.306211961433291,
+		"name": "Av. Castellón, frente piscina municipal. Tales"
+	},
+	"distance_km": 3.5,
+	"ascent_m": 215,
+	"descent_m": 130,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 75,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-333-e01.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e01",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.333852041512728,
+		39.94453196413815,
+		-0.306211961433291,
+		39.95106398127973
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e01 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-333-e01.gpx (derivados: inicio, bbox)"
+	]
+}

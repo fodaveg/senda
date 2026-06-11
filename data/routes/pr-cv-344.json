@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-344",
+	"name": "PR-CV 344 SENDERO DE FUENTE LA OLIVA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Venta del Moro",
+	"zone": "requena-utiel",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.46949020028114,
+		"lon": -1.465820437297225,
+		"name": "Área recreativa Fuente la Oliva. Venta del Moro"
+	},
+	"distance_km": 12.5,
+	"ascent_m": 285,
+	"descent_m": 285,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 185,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-344.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-344",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.503741340711713,
+		39.469014108181,
+		-1.465820437297225,
+		39.49123000726104
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-344 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-344.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-181",
+	"name": "SL-CV 181 RUTA DE LOS NEVEROS",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Vall d'Alcalà (La)",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.794350028038025,
+		"lon": -0.25478663854301,
+		"name": "CV-712. Alcalá de la Jovada"
+	},
+	"distance_km": 9.7,
+	"ascent_m": 310,
+	"descent_m": 310,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 155,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-181.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-181",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.25478663854301,
+		38.7817573081702,
+		-0.224897274747491,
+		38.79988552071154
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-181 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-181.gpx (derivados: inicio, bbox)"
+	]
+}

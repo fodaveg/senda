@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-412",
+	"name": "PR-CV 412 GATA DE GORGOS - ALTO DE SERRELLARS - GATA DE GORGOS",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Gata de Gorgos",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.772907024249434,
+		"lon": 0.083087962120771,
+		"name": "Parque del Raval. Gata de Gorgos"
+	},
+	"distance_km": 11.9,
+	"ascent_m": 695,
+	"descent_m": 695,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 265,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-412.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-412",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.06249999627471,
+		38.745389990508556,
+		0.09502999484539,
+		38.77319997176528
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-412 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-412.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-188",
+	"name": "SL-CV 188 RUTA DE SANT BARTOMEU",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Campo de Mirra/Camp de Mirra (El)",
+	"zone": "alt-vinalopo",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.68699503131211,
+		"lon": -0.779093038290739,
+		"name": "Plaza de España. Campo de Mirra"
+	},
+	"distance_km": 5.5,
+	"ascent_m": 160,
+	"descent_m": 160,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 85,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-188.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-188",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.796143002808094,
+		38.67705996148288,
+		-0.776329021900892,
+		38.687030989676714
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-188 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-188.gpx (derivados: inicio, bbox)"
+	]
+}

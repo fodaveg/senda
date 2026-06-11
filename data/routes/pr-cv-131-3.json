@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-131-3",
+	"name": "PR-CV 131.3 RUTA DEL EBRÓN",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Castielfabib",
+	"zone": "rincon-de-ademuz",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.14962296932936,
+		"lon": -1.323513993993402,
+		"name": "Lavadero Municipal. El Cuervo (Teruel)"
+	},
+	"distance_km": 10.8,
+	"ascent_m": 220,
+	"descent_m": 360,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": null,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-131-3.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-131-3",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.323513993993402,
+		40.09462402202189,
+		-1.261466033756733,
+		40.14962296932936
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-131-3 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-131-3.gpx (derivados: inicio, bbox)"
+	]
+}

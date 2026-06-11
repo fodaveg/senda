@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-299",
+	"name": "PR-CV 299 SENDERO SIERRA DEL RUBIAL",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Villargordo del Cabriel",
+	"zone": "requena-utiel",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.53609900549054,
+		"lon": -1.43946697935462,
+		"name": "Parque. Cruce C/ Carretera con C/ Madrid. Villargordo del Cabriel"
+	},
+	"distance_km": 16.7,
+	"ascent_m": 315,
+	"descent_m": 315,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 285,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-299.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-299",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.475471025332809,
+		39.49813401326537,
+		-1.439458010718226,
+		39.53617997467518
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-299 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-299.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-462",
+	"name": "PR-CV 462 SENDERO DE ARRAVACAS",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Siete Aguas",
+	"zone": "hoya-de-bunol",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.473026,
+		"lon": -0.914918,
+		"name": "Parque de la Glorieta. Siete Aguas"
+	},
+	"distance_km": 10.8,
+	"ascent_m": 320,
+	"descent_m": 320,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 200,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-462.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-462",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.914918,
+		39.460297,
+		-0.88404,
+		39.488378
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-462 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-462.gpx (derivados: inicio, bbox)"
+	]
+}

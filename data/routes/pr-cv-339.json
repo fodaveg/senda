@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-339",
+	"name": "PR-CV 339 RUTA AL ALGAYAT",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Algueña",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.338609440252185,
+		"lon": -1.003430066630244,
+		"name": "Plaza Juan Carlos I. Algueña"
+	},
+	"distance_km": 4,
+	"ascent_m": 605,
+	"descent_m": 65,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 125,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-339.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-339",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.003489075228572,
+		38.32863329909742,
+		-0.971759129315615,
+		38.338609440252185
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-339 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-339.gpx (derivados: inicio, bbox)"
+	]
+}

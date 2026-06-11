@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-131-1",
+	"name": "PR-CV 131.1 RUTA DE LA CRUZ DE LOS REINOS",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Castielfabib",
+	"zone": "rincon-de-ademuz",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.131031991913915,
+		"lon": -1.305089984089136,
+		"name": "C/ Calicio, 25. Castielfabib"
+	},
+	"distance_km": 25.3,
+	"ascent_m": 90,
+	"descent_m": 500,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 470,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-131-1.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-131-1",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.451396020129323,
+		40.12077899649739,
+		-1.305089984089136,
+		40.151592968031764
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-131-1 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-131-1.gpx (derivados: inicio, bbox)"
+	]
+}

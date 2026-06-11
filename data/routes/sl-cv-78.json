@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-78",
+	"name": "SL-CV 78 SENDERO DE LA MANGA",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Cheste",
+	"zone": "hoya-de-bunol",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.529791958630085,
+		"lon": -0.746413003653288,
+		"name": "Albergue de la Cárcama. Cheste"
+	},
+	"distance_km": 7.5,
+	"ascent_m": 260,
+	"descent_m": 260,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 145,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-78.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-78",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.770062962546945,
+		39.52898696064949,
+		-0.746403029188514,
+		39.547300999984145
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-78 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-78.gpx (derivados: inicio, bbox)"
+	]
+}

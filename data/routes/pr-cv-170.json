@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-170",
+	"name": "PR-CV 170 LES FOIES BLANQUES",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Ibi",
+	"zone": "alcoia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.623070027679205,
+		"lon": -0.562020018696785,
+		"name": "Cementerio de Ibi"
+	},
+	"distance_km": 6,
+	"ascent_m": 90,
+	"descent_m": 90,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 90,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-170.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-170",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.562035692855716,
+		38.619679966941476,
+		-0.532759968191385,
+		38.62617996521294
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-170 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-170.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-464",
+	"name": "PR-CV 464 SENDERO DE LA SIERRA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Benimantell",
+	"zone": "marina-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.6760731600225,
+		"lon": -0.211182469502091,
+		"name": "Carretera d'Alcoi, 24"
+	},
+	"distance_km": 13.9,
+	"ascent_m": 640,
+	"descent_m": 640,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 290,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-464.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-464",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.241807261481881,
+		38.65335895679891,
+		-0.205791648477316,
+		38.676146836951375
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-464 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-464.gpx (derivados: inicio, bbox)"
+	]
+}

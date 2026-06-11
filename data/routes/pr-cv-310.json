@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-310",
+	"name": "PR-CV 310 RUTA A CERRO CARDETE",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Camporrobles",
+	"zone": "requena-utiel",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.644884038716555,
+		"lon": -1.398582989349961,
+		"name": "Calle Requena núm. 60. Camporrobles"
+	},
+	"distance_km": 12.2,
+	"ascent_m": 240,
+	"descent_m": 240,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 260,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-310.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-310",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.398594975471497,
+		39.63774198666215,
+		-1.348489969968796,
+		39.65490502305329
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-310 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-310.gpx (derivados: inicio, bbox)"
+	]
+}

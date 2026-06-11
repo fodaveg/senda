@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-260",
+	"name": "PR-CV 260 RUTA DELS FORNILLERS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Llíria",
+	"zone": "camp-de-turia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.728185990825295,
+		"lon": -0.631475988775492,
+		"name": "Camino de la rambla de les Vint-i-quatre a la costa de la Sardina. Cerca del Mas del Frare. Llíria"
+	},
+	"distance_km": 9.7,
+	"ascent_m": 275,
+	"descent_m": 275,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 180,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-260.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-260",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.643710969015956,
+		39.72818196751177,
+		-0.62298403121531,
+		39.754138039425015
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-260 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-260.gpx (derivados: inicio, bbox)"
+	]
+}

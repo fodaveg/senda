@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-182",
+	"name": "PR-CV 182 FAGECA - PLA DE LA CASA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Fageca",
+	"zone": "comtat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.73416502960026,
+		"lon": -0.272729024291039,
+		"name": "Piscina municipal. Fageca"
+	},
+	"distance_km": 9.6,
+	"ascent_m": 750,
+	"descent_m": 750,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 285,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-182.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-182",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.287080015987158,
+		38.712106039747596,
+		-0.263098971918225,
+		38.73492702841759
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-182 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-182.gpx (derivados: inicio, bbox)"
+	]
+}

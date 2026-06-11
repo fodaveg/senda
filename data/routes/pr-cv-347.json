@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-347",
+	"name": "PR-CV 347 RUTA DELS ASSAGADORS I CIM DE COVATELLES",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Font d'En Carròs (La)",
+	"zone": "safor",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.91444400884211,
+		"lon": -0.16767980530858,
+		"name": "C. Miguel Hernández, 39. La Font d'en Carrós"
+	},
+	"distance_km": 6.5,
+	"ascent_m": 335,
+	"descent_m": 335,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 135,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-347.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-347",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.169289465993643,
+		38.89731600880623,
+		-0.150561025366187,
+		38.91444400884211
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-347 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-347.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-461",
+	"name": "PR-CV 461 VISTAS DE ALGIMIA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Algimia d'Alfara",
+	"zone": "camp-de-morvedre",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.75378641858697,
+		"lon": -0.364491920918226,
+		"name": "Carrer Font de la Murta, 3. Algímia d'Alfara"
+	},
+	"distance_km": 13.2,
+	"ascent_m": 505,
+	"descent_m": 505,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 260,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-461.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-461",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.398593107238412,
+		39.73857007920742,
+		-0.364456214010715,
+		39.7596787288785
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-461 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-461.gpx (derivados: inicio, bbox)"
+	]
+}

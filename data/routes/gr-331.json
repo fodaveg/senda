@@ -1,0 +1,49 @@
+{
+	"id": "gr-331",
+	"name": "GR 331 CAMÍ DE CONQUESTA",
+	"type": "GR",
+	"status": "desconocido",
+	"status_detail": "Ver Etapas",
+	"municipality": "Villafranca del Cid/Vilafranca",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.431393971666694,
+		"lon": -0.253692967817187,
+		"name": "Carrer Portell, 4. Villafranca del Cid"
+	},
+	"distance_km": 166.7,
+	"ascent_m": 4870,
+	"descent_m": 4870,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 5
+	},
+	"est_duration_min": 3175,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-331.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-331",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.340600982308388,
+		40.429266979917884,
+		0.075494963675737,
+		40.691473027691245
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-331.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-108",
+	"name": "PR-CV 108 SIERRA DE CREVILLENT",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Crevillent",
+	"zone": "baix-vinalopo",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.26466403901577,
+		"lon": -0.825392995029688,
+		"name": "Els Pontets. Crevillent"
+	},
+	"distance_km": 18.5,
+	"ascent_m": 810,
+	"descent_m": 810,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 380,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-108.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-108",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.870811007916927,
+		38.26280904002488,
+		-0.805281959474087,
+		38.28976096585393
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-108 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-108.gpx (derivados: inicio, bbox)"
+	]
+}

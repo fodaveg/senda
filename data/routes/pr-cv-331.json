@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-331",
+	"name": "PR-CV 331 SENDERO DE LAS TRAVINAS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Alpuente",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.93792903609574,
+		"lon": -0.995214963331819,
+		"name": "Alameda de la Almeza. La Almeza. Alpuente"
+	},
+	"distance_km": 11.55,
+	"ascent_m": 310,
+	"descent_m": 310,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 210,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-331.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-331",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.025151014328003,
+		39.93774597533047,
+		-0.988308023661375,
+		39.96888801455498
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-331 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-331.gpx (derivados: inicio, bbox)"
+	]
+}

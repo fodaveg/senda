@@ -1,0 +1,49 @@
+{
+	"id": "gr-333-e15",
+	"name": "GR 333 E15 RIBESALBES - TALES",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Ribesalbes",
+	"zone": "plana-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.02132696099579,
+		"lon": -0.279505038633943,
+		"name": "Avda. de Onda, junto al parque en la margen derecha del río Mijares. Ribesalbes"
+	},
+	"distance_km": 16.2,
+	"ascent_m": 355,
+	"descent_m": 290,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 285,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-333-e15.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e15",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.315214963629842,
+		39.94935700669885,
+		-0.275922026485205,
+		40.02132696099579
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e15 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-333-e15.gpx (derivados: inicio, bbox)"
+	]
+}

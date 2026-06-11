@@ -1,0 +1,49 @@
+{
+	"id": "gr-333-e02",
+	"name": "GR 333 E02 SUERAS - AÍN",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Suera/Sueras",
+	"zone": "plana-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.95103699155152,
+		"lon": -0.333794038742781,
+		"name": "Av. Jaume I, aparcamiento público Fontseca. Sueras"
+	},
+	"distance_km": 9.3,
+	"ascent_m": 555,
+	"descent_m": 375,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 200,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-333-e02.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e02",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.342375012114644,
+		39.900412978604436,
+		-0.33207600004971,
+		39.95251698419452
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e02 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-333-e02.gpx (derivados: inicio, bbox)"
+	]
+}

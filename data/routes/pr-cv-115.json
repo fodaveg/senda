@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-115",
+	"name": "PR-CV 115 VEREDA PASO DE CUERNAS DOS AGUAS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Yátova",
+	"zone": "hoya-de-bunol",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.385965038090944,
+		"lon": -0.814118999987841,
+		"name": "Parque de San Vicente. Av. Diputación, 70. Yátova"
+	},
+	"distance_km": 27.3,
+	"ascent_m": 955,
+	"descent_m": 505,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 505,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-115.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-115",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.959372017532587,
+		39.32781600393355,
+		-0.809237966313958,
+		39.386034021154046
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-115 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-115.gpx (derivados: inicio, bbox)"
+	]
+}

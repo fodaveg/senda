@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-258",
+	"name": "PR-CV 258 RUTA CAVALLÓ DE L'OLIVERA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Llíria",
+	"zone": "camp-de-turia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.720769012346864,
+		"lon": -0.699196988716722,
+		"name": "Camino de la Yesa. Llíria"
+	},
+	"distance_km": 21.8,
+	"ascent_m": 485,
+	"descent_m": 485,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 320,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-258.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-258",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.699210986495018,
+		39.720769012346864,
+		-0.642864983528852,
+		39.75887096486986
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-258 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-258.gpx (derivados: inicio, bbox)"
+	]
+}

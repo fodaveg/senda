@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-177",
+	"name": "SL-CV 177 CAMINO ANTIGUO DE SEGORBE",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Arañuel",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.07107104174793,
+		"lon": -0.481561040505767,
+		"name": "iglesia de San Miguel Arcángel (carretera CV-20). Arañuel"
+	},
+	"distance_km": 2.3,
+	"ascent_m": 250,
+	"descent_m": 10,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 55,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-177.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-177",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.482564019039273,
+		40.05614002235234,
+		-0.478100990876555,
+		40.07107104174793
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-177 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-177.gpx (derivados: inicio, bbox)"
+	]
+}

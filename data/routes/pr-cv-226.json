@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-226",
+	"name": "PR-CV 226 AIGÜES PEL BARRANC DEL BARBER",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Aigües",
+	"zone": "alacanti",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.48430996760726,
+		"lon": -0.416380008682609,
+		"name": "Casa de Cultura. Carrer del Pal, 1. Busot"
+	},
+	"distance_km": 10,
+	"ascent_m": 320,
+	"descent_m": 320,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 190,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-226.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-226",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.417000018060207,
+		38.48430996760726,
+		-0.366659983992577,
+		38.51042998954654
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-226 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-226.gpx (derivados: inicio, bbox)"
+	]
+}

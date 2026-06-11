@@ -1,0 +1,49 @@
+{
+	"id": "gr-331-e13",
+	"name": "GR 331 E13 VALLIVANA - LA LLÀCUA",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Morella",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.5397820379585,
+		"lon": 0.054146004840732,
+		"name": "Santuario de la Mare de Déu de Vallivana"
+	},
+	"distance_km": 15.3,
+	"ascent_m": 555,
+	"descent_m": 150,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 275,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-331-e13.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-331-e13",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.055345958098769,
+		40.50050301477313,
+		0.060617001727223,
+		40.53979502990842
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e13 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-331-e13.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-295",
+	"name": "PR-CV 295 RUTA DEL RÍO CÉRVOL Y SUS MOLINOS",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Canet lo Roig",
+	"zone": "baix-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.55372198112309,
+		"lon": 0.240911990404129,
+		"name": "Font del Prigó de la Capelleta - Camí de Rossell, s/n. Canet lo Roig"
+	},
+	"distance_km": 14.6,
+	"ascent_m": 245,
+	"descent_m": 245,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 250,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-295.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-295",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.204048966988921,
+		40.55372198112309,
+		0.2502800244838,
+		40.59191999025643
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-295 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-295.gpx (derivados: inicio, bbox)"
+	]
+}

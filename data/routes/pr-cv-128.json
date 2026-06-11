@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-128",
+	"name": "PR-CV 128 CAMÍ DEL CARRASCAL",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Ibi",
+	"zone": "alcoia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.62011800520122,
+		"lon": -0.572223979979753,
+		"name": "Avda. Miguel hernandez. Ibi"
+	},
+	"distance_km": 7.6,
+	"ascent_m": 455,
+	"descent_m": 20,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 150,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-128.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-128",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.572351971641183,
+		38.603241965174675,
+		-0.508008040487766,
+		38.62011800520122
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-128 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-128.gpx (derivados: inicio, bbox)"
+	]
+}

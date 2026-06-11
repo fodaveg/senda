@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-158",
+	"name": "PR-CV 158 SIERRA DEL CARRASCAL DE PARCENT",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Parcent",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.74466001056135,
+		"lon": -0.066709974780679,
+		"name": "Cooperativa, Calle de la Era. Parcent"
+	},
+	"distance_km": 14.7,
+	"ascent_m": 765,
+	"descent_m": 765,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 315,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-158.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-158",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.098560033366084,
+		38.72138002887368,
+		-0.055600013583899,
+		38.744699992239475
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-158 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-158.gpx (derivados: inicio, bbox)"
+	]
+}

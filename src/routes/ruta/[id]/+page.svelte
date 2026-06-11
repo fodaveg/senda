@@ -210,7 +210,7 @@
 			<dt>Recorrido</dt>
 			<dd>{route.circular === null ? 'sin dato' : route.circular ? 'Circular' : 'Lineal'}</dd>
 			<dt>Estado</dt>
-			<dd>{route.status}</dd>
+			<dd>{route.status_detail ?? route.status}</dd>
 			{#if route.best_start_time}
 				<dt>Mejor hora de inicio</dt>
 				<dd>{route.best_start_time}</dd>

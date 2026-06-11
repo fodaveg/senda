@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-459",
+	"name": "PR-CV 459 CAMINO DE LA SIERRA DE OROPESA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Oropesa del Mar/Orpesa",
+	"zone": "plana-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.091454992070794,
+		"lon": 0.130861038342118,
+		"name": "Cruce Calle Moncofar con Avenida Benicàssim"
+	},
+	"distance_km": 18.4,
+	"ascent_m": 450,
+	"descent_m": 450,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 365,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-459.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-459",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.084850005805492,
+		40.07459596730769,
+		0.130914011970162,
+		40.1242839731276
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-459 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-459.gpx (derivados: inicio, bbox)"
+	]
+}

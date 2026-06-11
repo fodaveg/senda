@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e42",
+	"name": "GR 7 E42 CORTES DE PALLÁS - COLLADO CAROCHE",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Cortes de Pallás",
+	"zone": "valle-de-ayora",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.24093497917056,
+		"lon": -0.941744958981872,
+		"name": "Ctra. la Muela, 38. Cortes de Pallás"
+	},
+	"distance_km": 31,
+	"ascent_m": 1030,
+	"descent_m": 440,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 565,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e42.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e42",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.004469003528357,
+		39.09335003234446,
+		-0.920655000954866,
+		39.24354996532202
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e42 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e42.gpx (derivados: inicio, bbox)"
+	]
+}

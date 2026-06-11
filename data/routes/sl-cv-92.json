@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-92",
+	"name": "SL-CV 92 EL CASTELLET D' ORBA",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Orba",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.780320985242724,
+		"lon": -0.063932966440916,
+		"name": "Plaça d'Espanya. Orba"
+	},
+	"distance_km": 4.9,
+	"ascent_m": 320,
+	"descent_m": 320,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 115,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-92.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-92",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.074386959895492,
+		38.76918696798384,
+		-0.062732007354498,
+		38.780320985242724
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-92 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-92.gpx (derivados: inicio, bbox)"
+	]
+}

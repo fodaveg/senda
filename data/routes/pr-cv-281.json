@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-281",
+	"name": "PR-CV 281 LA PEÑA LA MINA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Fondó de les Neus (El)/Hondón de las Nieves",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.304745964705944,
+		"lon": -0.934833995997906,
+		"name": "Avda. El Salvador, 9, La Canalosa. Hondón de las Nieves"
+	},
+	"distance_km": 6.3,
+	"ascent_m": 615,
+	"descent_m": 55,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 4,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 175,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-281.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-281",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.938565032556653,
+		38.304745964705944,
+		-0.920756002888083,
+		38.329817997291684
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-281 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-281.gpx (derivados: inicio, bbox)"
+	]
+}

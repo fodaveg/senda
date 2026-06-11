@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-116",
+	"name": "PR-CV 116 MOLA DE LA GARUMBA (MORELLA - FORCALL)",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Morella",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.60022201389074,
+		"lon": -0.110257985070348,
+		"name": "GR 7. Azagador del Tossal Gros. Morella"
+	},
+	"distance_km": 13,
+	"ascent_m": 255,
+	"descent_m": 540,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 190,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-116.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-116",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.197245040908456,
+		40.59996200725436,
+		-0.110257985070348,
+		40.64870503731072
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-116 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-116.gpx (derivados: inicio, bbox)"
+	]
+}

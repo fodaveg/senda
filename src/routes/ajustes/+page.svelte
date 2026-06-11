@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { invalidateAll } from '$app/navigation';
 	import { isTauri } from '@tauri-apps/api/core';
+	import { getCatalogInfo, resetCatalogCache, type CatalogInfo } from '$lib/catalog';
+	import { applyCatalogUpdate } from '$lib/catalog/store';
+	import { CatalogError, checkForCatalogUpdate, DEFAULT_CATALOG_URL } from '$lib/catalog/update';
 	import { DEFAULT_SETTINGS, loadSettings, saveSettings, type Settings } from '$lib/settings';
 	import { validateAemetKey, type AemetKeyCheck } from '$lib/weather/aemet';
 
@@ -16,9 +20,46 @@
 		unreachable: 'Guardada, pero no se pudo comprobar (sin conexión o AEMET caída).'
 	};
 
-	onMount(() => {
+	let catalogInfo = $state<CatalogInfo | null>(null);
+	let catalogStatus = $state<string | null>(null);
+	let updating = $state(false);
+
+	onMount(async () => {
 		settings = loadSettings();
+		catalogInfo = await getCatalogInfo();
 	});
+
+	function catalogLabel(info: CatalogInfo): string {
+		if (!info.manifest) return `integrado en la app · ${info.routes} rutas`;
+		const date = new Date(info.manifest.published_at).toLocaleDateString('es-ES');
+		return `v${info.manifest.version} (${date}) · ${info.routes} rutas`;
+	}
+
+	async function updateCatalog() {
+		updating = true;
+		catalogStatus = 'Comprobando si hay catálogo nuevo…';
+		try {
+			const current = catalogInfo?.manifest ?? null;
+			const update = await checkForCatalogUpdate(DEFAULT_CATALOG_URL, current);
+			if (!update) {
+				catalogStatus = 'Ya tienes la última versión del catálogo.';
+				return;
+			}
+			catalogStatus = `Descargado: validando y aplicando ${update.routes.length} rutas…`;
+			await applyCatalogUpdate(update.manifest, update.entries, JSON.stringify(update.routes));
+			resetCatalogCache();
+			catalogInfo = await getCatalogInfo();
+			catalogStatus = `Catálogo actualizado: ${update.routes.length} rutas.`;
+			await invalidateAll();
+		} catch (e) {
+			catalogStatus =
+				e instanceof CatalogError
+					? `No se pudo actualizar: ${e.message}`
+					: 'No se pudo actualizar: sin conexión o el catálogo aún no está publicado.';
+		} finally {
+			updating = false;
+		}
+	}
 
 	/** La key de AEMET es un JWT sin espacios; al copiarla del email suele venir
 	 * partida en líneas, y WebKit descarta saltos de línea al pegar en un input. */
@@ -118,6 +159,19 @@
 			Carpeta del vault
 			<input type="text" bind:value={settings.vaultDir} placeholder="/Users/tu-usuario/vault" />
 		</label>
+	</fieldset>
+
+	<fieldset>
+		<legend>Catálogo de rutas</legend>
+		<p class="help">
+			Catálogo activo: <strong>{catalogInfo ? catalogLabel(catalogInfo) : '…'}</strong>. Las
+			actualizaciones se descargan del catálogo publicado por este proyecto y se validan antes de
+			aplicarse; nunca se aplica un catálogo a medias.
+		</p>
+		<button type="button" class="secondary" disabled={updating} onclick={updateCatalog}>
+			Buscar actualizaciones de rutas
+		</button>
+		{#if catalogStatus}<p class="help" role="status">{catalogStatus}</p>{/if}
 	</fieldset>
 
 	<fieldset>

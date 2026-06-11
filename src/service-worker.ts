@@ -4,21 +4,25 @@
 /// <reference lib="webworker" />
 
 /**
- * Service worker PWA (SPEC §1 y M7): la app funciona 100% offline salvo el
- * módulo meteo. Precachea el shell (build + prerendered + static, incluidos
- * los GPX y JSON de rutas que Vite empaqueta en build) y sirve:
+ * Service worker PWA (SPEC §1, SPECS_V2 §4): con el catálogo completo
+ * (~850 rutas) precachearlo todo es inviable, así que se precachea el
+ * shell (JS/CSS del build + estáticos pequeños + portada) y el resto se
+ * cachea en runtime al visitarse:
  * - assets precacheados: cache-first;
- * - navegaciones: network-first con caída a caché;
+ * - GPX y navegaciones: network-first con caída a caché (las rutas
+ *   visitadas funcionan offline; los datos de ruta van en el bundle JS);
+ * - navegación offline a página no cacheada: cae a '/' y el router de
+ *   la SPA renderiza la página en cliente;
  * - peticiones cross-origin (Open-Meteo, AEMET, tiles): nunca se
  *   interceptan — su fallo lo gestiona la propia app con estados vacíos.
  */
 
-import { build, files, prerendered, version } from '$service-worker';
+import { base, build, files, version } from '$service-worker';
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
 
 const CACHE = `senderos-cv-${version}`;
-const PRECACHE = [...build, ...files, ...prerendered];
+const PRECACHE = [...build, ...files.filter((f) => !f.startsWith(`${base}/gpx/`)), `${base}/`];
 
 sw.addEventListener('install', (event) => {
 	event.waitUntil(
@@ -64,7 +68,7 @@ sw.addEventListener('fetch', (event) => {
 				if (response.ok) cache.put(request, response.clone());
 				return response;
 			} catch (error) {
-				const cached = (await cache.match(request)) ?? (await cache.match('/'));
+				const cached = (await cache.match(request)) ?? (await cache.match(`${base}/`));
 				if (cached) return cached;
 				throw error;
 			}

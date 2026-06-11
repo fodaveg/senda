@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-140",
+	"name": "PR-CV 140 AIN - SUERAS POR BENITANDÚS",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Ain",
+	"zone": "plana-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.90088898688555,
+		"lon": -0.340810026973486,
+		"name": "Plaza José Sorribes Fuster"
+	},
+	"distance_km": 8.5,
+	"ascent_m": 305,
+	"descent_m": 500,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 175,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-140.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-140",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.340824024751782,
+		39.90078396163881,
+		-0.325205018743873,
+		39.95247599668801
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-140 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-140.gpx (derivados: inicio, bbox)"
+	]
+}

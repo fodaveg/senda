@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { parseGpx } from './gpx';
-import { buildRoute, IngestError, parseManual } from './build';
+import { buildRoute, IngestError, parseCrawled, parseManual, zoneFromComarca } from './build';
 
 function gpxOf(points: Array<[number, number, number?]>, name = 'Test'): string {
 	const trkpts = points
@@ -114,7 +114,8 @@ describe('buildRoute', () => {
 		expect(route.difficulty_mide).toBeNull();
 		expect(route.shade_ratio).toBeNull();
 		expect(route.water_points).toEqual([]);
-		expect(route.status).toBe('homologado');
+		// Sin estado declarado en ninguna capa no se inventa 'homologado'.
+		expect(route.status).toBe('desconocido');
 	});
 
 	it('lo manual tiene prioridad sobre lo derivado y las fuentes citan el GPX', () => {
@@ -150,5 +151,68 @@ describe('buildRoute', () => {
 		expect(() => buildRoute('PR CV 999', summary, parseManual('x', MANUAL_OK))).toThrow(
 			/kebab-case/
 		);
+	});
+});
+
+describe('capa crawleada (SPECS_V2 §4)', () => {
+	const summary = parseGpx(LINEAR);
+
+	const CRAWLED_OK = {
+		name: 'PR-CV 999 RUTA DE PRUEBA',
+		type: 'PR',
+		status: 'con_reservas',
+		status_detail: 'Sin controles de calidad',
+		municipality: 'Chulilla',
+		comarca: 'Los Serranos',
+		distance_km: 7.2,
+		ascent_m: 300,
+		descent_m: 280,
+		circular: false,
+		difficulty_mide: { medio: 2, itinerario: 2, desplazamiento: 2, esfuerzo: 3 },
+		est_duration_min: 150,
+		start_name: 'Plaza Mayor',
+		femecv_url: 'https://senders.femecv.com/es/sendero/ver/pr-cv-999',
+		gpx_url: 'https://femecv.blob.core.windows.net/publico/gpx/X.gpx',
+		crawled_at: '2026-06-11T12:00:00Z'
+	};
+
+	it('sin manual: la ficha crawleada construye la ruta y cita la fuente', () => {
+		const route = buildRoute('pr-cv-999', summary, null, parseCrawled('pr-cv-999', CRAWLED_OK));
+		expect(route.name).toBe('PR-CV 999 RUTA DE PRUEBA');
+		expect(route.status).toBe('con_reservas');
+		expect(route.status_detail).toBe('Sin controles de calidad');
+		expect(route.municipality).toBe('Chulilla');
+		expect(route.zone).toBe('serranos');
+		expect(route.distance_km).toBe(7.2);
+		expect(route.links.femecv).toContain('/pr-cv-999');
+		expect(route.sources.some((s) => s.includes('Ficha FEMECV') && s.includes('crawl'))).toBe(true);
+	});
+
+	it('lo manual (verificado) gana a lo crawleado', () => {
+		const manual = parseManual('pr-cv-999', {
+			...MANUAL_OK,
+			distance_km: 9.9,
+			zone: 'otra-zona',
+			status: 'homologado'
+		});
+		const route = buildRoute('pr-cv-999', summary, manual, parseCrawled('pr-cv-999', CRAWLED_OK));
+		expect(route.distance_km).toBe(9.9);
+		expect(route.zone).toBe('otra-zona');
+		expect(route.status).toBe('homologado');
+	});
+
+	it('sin manual ni crawleado → error claro', () => {
+		expect(() => buildRoute('pr-cv-999', summary, null, null)).toThrow(/sin metadatos/);
+	});
+});
+
+describe('zoneFromComarca', () => {
+	it('quita artículo inicial y acentos: clave estable de zona', () => {
+		expect(zoneFromComarca('Los Serranos')).toBe('serranos');
+		expect(zoneFromComarca('La Marina Alta')).toBe('marina-alta');
+		expect(zoneFromComarca("L'Alcoià")).toBe('alcoia');
+		expect(zoneFromComarca('El Comtat')).toBe('comtat');
+		expect(zoneFromComarca('Baix Segura/Vega Baja')).toBe('baix-segura-vega-baja');
+		expect(zoneFromComarca(null)).toBeNull();
 	});
 });

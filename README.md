@@ -59,11 +59,20 @@ npm run test:unit -- --run # tests unitarios
 npm run test:e2e           # e2e Playwright (instala navegadores la 1.ª vez)
 ```
 
-## Añadir una ruta (ingesta)
+## Catálogo de rutas (ingesta)
 
-1. Descarga el GPX oficial de [senders.femecv.com](https://senders.femecv.com) en `data/gpx/<id>.gpx` (id en kebab-case, p. ej. `pr-cv-77`).
-2. Crea `data/routes/_manual/<id>.json` con los metadatos no derivables del track. Obligatorios: `name`, `type` (`GR|PR|SL`) y `sources` (toda afirmación con origen). Lo manual tiene prioridad sobre lo derivado del GPX.
-3. Ejecuta `npm run ingest` (o `npm run ingest -- <id>`). Valida con zod y escribe `data/routes/<id>.json`; falla con error claro si falta algo.
+El catálogo completo se importa del portal oficial FEMECV:
+
+```sh
+npm run ingest:crawl          # todas las fichas + GPX (respetuoso: 1 req/s, ~30 min)
+npm run ingest -- --lenient   # regenera data/routes/*.json validando con zod
+```
+
+El crawler escribe `data/routes/_crawled/<id>.json` (ficha oficial: nombre, estado de homologación, MIDE, municipio, comarca…) y descarga el GPX si falta. Reejecutarlo refresca estados sin tocar nada manual.
+
+Para corregir o ampliar una ruta a mano, crea `data/routes/_manual/<id>.json` (obligatorios: `name`, `type`, `sources`; toda afirmación con origen). Prioridad del merge: **manual > crawleado > derivado del GPX**.
+
+La CI publica el dataset versionado en GitLab Pages (`manifest.json` + datos); la app lo consume desde Ajustes → "Buscar actualizaciones de rutas" sin necesidad de reinstalar.
 
 ## Ajustes (en la app)
 

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-52",
+	"name": "PR-CV 52 SERRA DE LA SOLANA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Beneixama",
+	"zone": "alt-vinalopo",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.6987710185349,
+		"lon": -0.767908981069922,
+		"name": "Plaza el Mesón. Beneixama"
+	},
+	"distance_km": 19.4,
+	"ascent_m": 680,
+	"descent_m": 680,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 375,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-52.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-52",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.782128963619471,
+		38.69874503463507,
+		-0.735319973900914,
+		38.75536101870239
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-52 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-52.gpx (derivados: inicio, bbox)"
+	]
+}

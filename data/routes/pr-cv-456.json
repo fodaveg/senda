@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-456",
+	"name": "PR-CV 456 RUTA DEL AZUD",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Tuéjar",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.770190976560116,
+		"lon": -1.041985983029008,
+		"name": "Parque ermita de la Inmaculada. Tuéjar"
+	},
+	"distance_km": 13.8,
+	"ascent_m": 425,
+	"descent_m": 425,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 260,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-456.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-456",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.049370020627976,
+		39.770190976560116,
+		-1.021318221464753,
+		39.80468586087227
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-456 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-456.gpx (derivados: inicio, bbox)"
+	]
+}

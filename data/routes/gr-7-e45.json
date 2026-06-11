@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e45",
+	"name": "GR 7 E45 VALLADA - ONTINYENT",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Vallada",
+	"zone": "costera",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.89583903364837,
+		"lon": -0.696518970653415,
+		"name": "C/ Santa Teresa, 55. Vallada"
+	},
+	"distance_km": 18,
+	"ascent_m": 705,
+	"descent_m": 615,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 355,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e45.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e45",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.702067036181688,
+		38.8122639991343,
+		-0.610505975782871,
+		38.89583903364837
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e45 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e45.gpx (derivados: inicio, bbox)"
+	]
+}

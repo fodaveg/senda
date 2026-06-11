@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e32",
+	"name": "GR 7 E32 SAN VICENTE DE PIEDRAHITA - MONTANEJOS",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Cortes de Arenoso",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.138230035081506,
+		"lon": -0.501561015844345,
+		"name": "San Vicente de Piedrahita. Cortes de Arenoso"
+	},
+	"distance_km": 14.5,
+	"ascent_m": 540,
+	"descent_m": 925,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 305,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e32.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e32",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.533056017011404,
+		40.07107003591955,
+		-0.498030977323651,
+		40.13825501315296
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e32 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e32.gpx (derivados: inicio, bbox)"
+	]
+}

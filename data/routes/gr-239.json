@@ -1,0 +1,44 @@
+{
+	"id": "gr-239",
+	"name": "GR 239 CAMINO DE SANTIAGO DE LEVANTE",
+	"type": "GR",
+	"status": "desconocido",
+	"status_detail": "Ver Etapas",
+	"municipality": "València",
+	"zone": "valencia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.476079968735576,
+		"lon": -0.375240035355091,
+		"name": "Valencia"
+	},
+	"distance_km": 125.5,
+	"ascent_m": 1275,
+	"descent_m": 610,
+	"circular": false,
+	"difficulty_mide": null,
+	"est_duration_min": 2005,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-239.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-239",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.929270004853606,
+		38.78359998576343,
+		-0.375240035355091,
+		39.476079968735576
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-239 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
+		"GPX gr-239.gpx (derivados: inicio, bbox)"
+	]
+}

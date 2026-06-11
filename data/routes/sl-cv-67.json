@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-67",
+	"name": "SL-CV 67 SENDERO DEL PINO REBOLLÓN Y ANTIGUO YESAR",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Higueruelas",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.789826003834605,
+		"lon": -0.859815962612629,
+		"name": "Puente barranco de la Tejería. Higueruelas"
+	},
+	"distance_km": 5,
+	"ascent_m": 100,
+	"descent_m": 100,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 90,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-67.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-67",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.879474962130189,
+		39.78582004085183,
+		-0.859815962612629,
+		39.79550700634718
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-67 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-67.gpx (derivados: inicio, bbox)"
+	]
+}

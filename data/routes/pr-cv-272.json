@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-272",
+	"name": "PR-CV 272 SENDER A LA FONT DE LA CARÈNCIA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Montserrat",
+	"zone": "ribera-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.36421198770404,
+		"lon": -0.609738025814295,
+		"name": "Área Recreativa El Pantanet"
+	},
+	"distance_km": 13,
+	"ascent_m": 175,
+	"descent_m": 175,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 180,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-272.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-272",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.643889000639319,
+		39.35756295919418,
+		-0.608579982072115,
+		39.38577703200281
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-272 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-272.gpx (derivados: inicio, bbox)"
+	]
+}

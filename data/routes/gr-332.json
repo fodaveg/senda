@@ -1,0 +1,49 @@
+{
+	"id": "gr-332",
+	"name": "GR 332 LA CANAL",
+	"type": "GR",
+	"status": "desconocido",
+	"status_detail": "Ver Etapas",
+	"municipality": "Navarrés",
+	"zone": "canal-de-navarres",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.01772397570312,
+		"lon": -0.62302895821631,
+		"name": "Cruce C/ San Antonio con C/ Diputacion. Estubeny"
+	},
+	"distance_km": 62.6,
+	"ascent_m": 2210,
+	"descent_m": 1330,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 5
+	},
+	"est_duration_min": 1175,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-332.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-332",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.921913459897041,
+		39.01426803320646,
+		-0.620369967073202,
+		39.14422902278602
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-332 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-332.gpx (derivados: inicio, bbox)"
+	]
+}

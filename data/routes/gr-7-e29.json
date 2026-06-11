@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e29",
+	"name": "GR 7 E29 CULLA - VISTABELLA DEL MAESTRAT",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Culla",
+	"zone": "alt-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.33726100809872,
+		"lon": -0.164355961605906,
+		"name": "Av. Martirs. Culla"
+	},
+	"distance_km": 18.9,
+	"ascent_m": 879,
+	"descent_m": 680,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 385,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e29.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e29",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.291507001966238,
+		40.29398096725345,
+		-0.164330983534455,
+		40.346805984154344
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e29 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e29.gpx (derivados: inicio, bbox)"
+	]
+}

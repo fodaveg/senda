@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e26",
+	"name": "GR 7 E26 VALLIBONA - MORELLA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Vallibona",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.603236,
+		"lon": 0.045824,
+		"name": "Plaça de Sant Antoni. Vallibona"
+	},
+	"distance_km": 18.9,
+	"ascent_m": 790,
+	"descent_m": 535,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 360,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e26.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e26",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.100462,
+		40.587137,
+		0.045824,
+		40.629385
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e26 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e26.gpx (derivados: inicio, bbox)"
+	]
+}

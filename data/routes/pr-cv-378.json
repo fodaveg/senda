@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-378",
+	"name": "PR-CV 378 MAGDALENA - FONT SALUT - SAN VICENT DE BORRIOL - BARRANC D'OLARIA - VÍA PECUARIA - MAGDALENA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Castelló de la Plana/Castellón de la Plana",
+	"zone": "plana-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.03343001008034,
+		"lon": -0.007059993222356,
+		"name": "Ermita de la Magdalena"
+	},
+	"distance_km": 15.6,
+	"ascent_m": 490,
+	"descent_m": 490,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 295,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-378.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-378",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.055679976940155,
+		40.02896999940276,
+		-0.000169984996319,
+		40.054890029132366
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-378 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-378.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "gr-331-e11",
+	"name": "GR 331 E11 CASTELL DE CABRES - VALLIBONA",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Castell de Cabres",
+	"zone": "baix-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.660532992333174,
+		"lon": 0.043211979791522,
+		"name": "Plaza de la Iglesia. Castell de Cabres"
+	},
+	"distance_km": 11.2,
+	"ascent_m": 70,
+	"descent_m": 515,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 200,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-331-e11.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-331-e11",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.043211979791522,
+		40.60322700999677,
+		0.06492898799479,
+		40.66138098947704
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e11 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-331-e11.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "gr-239-e01",
+	"name": "GR 239 E01 VALÈNCIA - ALGEMESÍ",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "València",
+	"zone": "valencia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.47604401037097,
+		"lon": -0.375145990401506,
+		"name": "Plaza de la Virgen. València"
+	},
+	"distance_km": 40.4,
+	"ascent_m": 90,
+	"descent_m": 85,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 3,
+		"desplazamiento": 1,
+		"esfuerzo": 5
+	},
+	"est_duration_min": 620,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-239-e01.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-239-e01",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.440399022772908,
+		39.18932198546827,
+		-0.375145990401506,
+		39.47604401037097
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-239-e01 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-239-e01.gpx (derivados: inicio, bbox)"
+	]
+}

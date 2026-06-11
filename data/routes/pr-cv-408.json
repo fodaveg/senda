@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-408",
+	"name": "PR-CV 408 SENDER DE LA RAMBLA SELLUMBRES",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Portell de Morella",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.531213972717524,
+		"lon": -0.264349970966578,
+		"name": "Portell de Morella"
+	},
+	"distance_km": 16.6,
+	"ascent_m": 565,
+	"descent_m": 565,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 320,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-408.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-408",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.264557003974915,
+		40.518970023840666,
+		-0.227750977501273,
+		40.55361703969538
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-408 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-408.gpx (derivados: inicio, bbox)"
+	]
+}

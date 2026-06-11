@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-58",
+	"name": "SL-CV 58 RUTA DE LOS OLIVOS MILENARIOS",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Canet lo Roig",
+	"zone": "baix-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.55002204142511,
+		"lon": 0.240216040983796,
+		"name": "Font de la Canal. Canet lo Roig"
+	},
+	"distance_km": 5.9,
+	"ascent_m": 60,
+	"descent_m": 60,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 80,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-58.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-58",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.217592027038336,
+		40.53956503048539,
+		0.240216040983796,
+		40.55380403995514
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-58 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-58.gpx (derivados: inicio, bbox)"
+	]
+}

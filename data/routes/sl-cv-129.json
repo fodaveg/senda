@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-129",
+	"name": "SL-CV 129 RUTA DE MARMALÉ",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Gátova",
+	"zone": "camp-de-turia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.76953827776015,
+		"lon": -0.520750544965267,
+		"name": "Plaza País Valenciano. Gátova"
+	},
+	"distance_km": 10,
+	"ascent_m": 265,
+	"descent_m": 265,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 185,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-129.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-129",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.560030238702893,
+		39.766597570851445,
+		-0.520705031231046,
+		39.786086082458496
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-129 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-129.gpx (derivados: inicio, bbox)"
+	]
+}

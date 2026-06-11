@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-228",
+	"name": "PR-CV 228 MOLA DE LA TODOLELLA.",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Todolella",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.645024962723255,
+		"lon": -0.245968960225582,
+		"name": "C/ Carretera, 2. Todolella"
+	},
+	"distance_km": 13.2,
+	"ascent_m": 530,
+	"descent_m": 530,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 255,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-228.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-228",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.288215009495616,
+		40.64499001018703,
+		-0.245766034349799,
+		40.68276699632406
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-228 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-228.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e31",
+	"name": "GR 7 E31 VILLAHERMOSA DEL RÍO - SAN VICENTE DE PIEDRAHITA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Villahermosa del Río",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.20134400576353,
+		"lon": -0.419431021437049,
+		"name": "C. Hospital. Villahermosa del Río"
+	},
+	"distance_km": 12.1,
+	"ascent_m": 480,
+	"descent_m": 325,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 235,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e31.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e31",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.498866988345981,
+		40.141842970624566,
+		-0.419431021437049,
+		40.201350040733814
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e31 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e31.gpx (derivados: inicio, bbox)"
+	]
+}

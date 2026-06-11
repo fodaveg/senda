@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-195",
+	"name": "SL-CV 195 LA DEVESA - BARRANCO NEGRE",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Xaló",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.73787997290492,
+		"lon": -0.012657009065151,
+		"name": "Carretera CV-749. Camino de Bernia. Xaló"
+	},
+	"distance_km": 9.7,
+	"ascent_m": 360,
+	"descent_m": 360,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 160,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-195.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-195",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.043668039143085,
+		38.72151103802025,
+		-0.012317039072514,
+		38.74213697388768
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-195 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-195.gpx (derivados: inicio, bbox)"
+	]
+}

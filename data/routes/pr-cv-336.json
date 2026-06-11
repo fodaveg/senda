@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-336",
+	"name": "PR-CV 336 SENDA DE LA LLOMA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Cullera",
+	"zone": "ribera-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.17867302894592,
+		"lon": -0.258671985939145,
+		"name": "Cementerio Municipal. Cullera"
+	},
+	"distance_km": 14,
+	"ascent_m": 420,
+	"descent_m": 420,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 235,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-336.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-336",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.258740969002247,
+		39.1654169652611,
+		-0.217421036213636,
+		39.195869006216526
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-336 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-336.gpx (derivados: inicio, bbox)"
+	]
+}

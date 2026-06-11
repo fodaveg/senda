@@ -9,6 +9,8 @@ const route: Route = {
 	name: 'PR-CV 77 Chulilla - Sot de Chera',
 	type: 'PR',
 	status: 'homologado',
+	status_detail: null,
+	municipality: null,
 	zone: null,
 	aemet_municipio: null,
 	start: { lat: 39.65, lon: -0.89, name: 'Chulilla' },

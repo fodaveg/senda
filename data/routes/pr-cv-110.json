@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-110",
+	"name": "PR-CV 110 ELS ANOUERS",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Crevillent",
+	"zone": "baix-vinalopo",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.26359702274203,
+		"lon": -0.88226898573339,
+		"name": "Parque de Montaña San Cayetano. Crevillent"
+	},
+	"distance_km": 6.4,
+	"ascent_m": 390,
+	"descent_m": 390,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 175,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-110.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-110",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.893536023795605,
+		38.26316895894706,
+		-0.865816986188293,
+		38.274000976234674
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-110 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-110.gpx (derivados: inicio, bbox)"
+	]
+}

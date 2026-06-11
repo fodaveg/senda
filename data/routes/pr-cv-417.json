@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-417",
+	"name": "PR-CV 417 PARAJE DE LA VILLA DE GAIBIEL",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Gaibiel",
+	"zone": "alto-palancia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.92430903017521,
+		"lon": -0.497537031769753,
+		"name": "Avda. Valencia. Gaibiel"
+	},
+	"distance_km": 14.2,
+	"ascent_m": 615,
+	"descent_m": 615,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 290,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-417.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-417",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.501260021701455,
+		39.91441201418638,
+		-0.480135027319193,
+		39.94892701506615
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-417 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-417.gpx (derivados: inicio, bbox)"
+	]
+}

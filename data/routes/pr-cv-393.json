@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-393",
+	"name": "PR-CV 393 LA PEÑA DEL RODENO",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Higueruelas",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.789851,
+		"lon": -0.8599,
+		"name": "Carretera del Villar, 5. Higueruelas"
+	},
+	"distance_km": 10.9,
+	"ascent_m": 335,
+	"descent_m": 335,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 205,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-393.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-393",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.88925,
+		39.774469,
+		-0.859794,
+		39.789956
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-393 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-393.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-7",
+	"name": "PR-CV 7 BÈRNIA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Altea",
+	"zone": "marina-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.63551120273769,
+		"lon": -0.041023632511497,
+		"name": "Font del Garroferet. Altea la Vella"
+	},
+	"distance_km": 18.1,
+	"ascent_m": 1085,
+	"descent_m": 1085,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 4,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 465,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-7.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-7",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.064256507903337,
+		38.63551120273769,
+		-0.031898338347673,
+		38.67156612686813
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-7 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-7.gpx (derivados: inicio, bbox)"
+	]
+}

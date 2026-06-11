@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-275",
+	"name": "PR-CV 275 FUENTES DEL PALANCIA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Bejís",
+	"zone": "alto-palancia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.915684973821044,
+		"lon": -0.717331990599632,
+		"name": "Carretera de los Cloticos. Desvío a la masía del Puente. Bejís"
+	},
+	"distance_km": 6.2,
+	"ascent_m": 305,
+	"descent_m": 135,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 120,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-275.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-275",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.760515974834561,
+		39.915579026564956,
+		-0.717326961457729,
+		39.93761597201228
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-275 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-275.gpx (derivados: inicio, bbox)"
+	]
+}

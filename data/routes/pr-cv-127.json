@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-127",
+	"name": "PR-CV 127 CAMI DELS GELADORS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Ibi",
+	"zone": "alcoia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.62859730608761,
+		"lon": -0.576092563569546,
+		"name": "Carrer Sant Joan, 30. Ibi"
+	},
+	"distance_km": 15.3,
+	"ascent_m": 605,
+	"descent_m": 605,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 305,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-127.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-127",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.582010019570589,
+		38.62852002494037,
+		-0.535449972376227,
+		38.65163002163172
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-127 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-127.gpx (derivados: inicio, bbox)"
+	]
+}

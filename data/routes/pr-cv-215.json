@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-215",
+	"name": "PR-CV 215 MORELLA - HERBESET",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Morella",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.622144965454936,
+		"lon": -0.09997196495533,
+		"name": "Plaça de Sant Miquel. Morella"
+	},
+	"distance_km": 12.3,
+	"ascent_m": 460,
+	"descent_m": 290,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 220,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-215.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-215",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.100469011813402,
+		40.622121999040246,
+		-0.016971006989479,
+		40.66114797256887
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-215 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-215.gpx (derivados: inicio, bbox)"
+	]
+}

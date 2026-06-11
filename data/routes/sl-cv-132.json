@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-132",
+	"name": "SL-CV 132 SENDERO DEL PUENTE DE LA VÍA",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Venta del Moro",
+	"zone": "requena-utiel",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.4856439717114,
+		"lon": -1.355929998680949,
+		"name": "Calle Tamayo con Avda. del Deporte"
+	},
+	"distance_km": 5.8,
+	"ascent_m": 115,
+	"descent_m": 115,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 100,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-132.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-132",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.361933033913374,
+		39.47100003249943,
+		-1.347796032205224,
+		39.4856439717114
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-132 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-132.gpx (derivados: inicio, bbox)"
+	]
+}

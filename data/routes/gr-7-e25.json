@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e25",
+	"name": "GR 7 E25 FREDES - VALLIBONA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Pobla de Benifassà (La)",
+	"zone": "baix-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.70533996447921,
+		"lon": 0.170624032616615,
+		"name": "Fredes. La Pobla de Benifassà"
+	},
+	"distance_km": 20.4,
+	"ascent_m": 570,
+	"descent_m": 985,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 400,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e25.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e25",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.045666033402085,
+		40.60329297557473,
+		0.171403968706727,
+		40.70533996447921
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e25 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e25.gpx (derivados: inicio, bbox)"
+	]
+}

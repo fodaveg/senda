@@ -7,6 +7,23 @@
 
 export type RouteType = 'GR' | 'PR' | 'SL';
 
+/**
+ * Clasificación de la app a partir del estado de homologación que publica
+ * el portal FEMECV (SPECS_V2 §3). El literal exacto del portal se conserva
+ * en `status_detail`.
+ * - homologado: "En vigor", "Control de calidad positivo"
+ * - con_reservas: "Sin controles de calidad", "Control de calidad
+ *   condicionado", "Control de calidad negativo"
+ * - en_proceso: "En proceso de homologación", "En proceso de revisión"
+ * - deshabilitado: "Cancelación temporal", "Baja / Deshomologado"
+ */
+export type RouteStatus =
+	| 'homologado'
+	| 'con_reservas'
+	| 'en_proceso'
+	| 'deshabilitado'
+	| 'desconocido';
+
 export interface RouteStart {
 	lat: number;
 	lon: number;
@@ -35,7 +52,11 @@ export interface Route {
 	id: string;
 	name: string;
 	type: RouteType;
-	status: string;
+	status: RouteStatus;
+	/** Literal del estado de homologación publicado por el portal FEMECV. */
+	status_detail: string | null;
+	/** Municipio de referencia según la ficha FEMECV. */
+	municipality: string | null;
 	/** Clave de data/wildlife/zones.json. */
 	zone: string | null;
 	/** Código INE de 5 dígitos del municipio (para AEMET OpenData). */

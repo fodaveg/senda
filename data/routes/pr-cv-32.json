@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-32",
+	"name": "PR-CV 32 XORRET DE CATÍ - CRESTERÍA DEL FRAILE",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Castalla",
+	"zone": "alcoia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.51928,
+		"lon": -0.676701,
+		"name": "Aparcamiento Hotel Xorret de Catí. Castalla"
+	},
+	"distance_km": 5.1,
+	"ascent_m": 240,
+	"descent_m": 450,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 150,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-32.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-32",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.715465,
+		38.511837,
+		-0.676666,
+		38.526135
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-32 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-32.gpx (derivados: inicio, bbox)"
+	]
+}

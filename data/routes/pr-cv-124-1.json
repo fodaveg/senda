@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-124-1",
+	"name": "PR-CV 124.1 SINARCAS - LOS CERROS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Sinarcas",
+	"zone": "requena-utiel",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.732827972620726,
+		"lon": -1.222782963886857,
+		"name": "Centro de Turismo Rural"
+	},
+	"distance_km": 12.8,
+	"ascent_m": 310,
+	"descent_m": 310,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 210,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-124-1.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-124-1",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.224300004541874,
+		39.701132979243994,
+		-1.196365971118212,
+		39.732952024787664
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-124-1 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-124-1.gpx (derivados: inicio, bbox)"
+	]
+}

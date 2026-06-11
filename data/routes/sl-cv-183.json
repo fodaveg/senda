@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-183",
+	"name": "SL-CV 183 SENDERO DEL SEGUILI",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Orba",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.779717991128564,
+		"lon": -0.058756973594427,
+		"name": "C/ d'Enmig, 35. Ermita del Santíssim Crist de l'Agonia d'Orbeta"
+	},
+	"distance_km": 9.9,
+	"ascent_m": 430,
+	"descent_m": 430,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 200,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-183.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-183",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.059661967679858,
+		38.76454196870327,
+		-0.039713038131595,
+		38.7816640175879
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-183 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-183.gpx (derivados: inicio, bbox)"
+	]
+}

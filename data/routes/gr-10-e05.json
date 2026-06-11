@@ -1,0 +1,49 @@
+{
+	"id": "gr-10-e05",
+	"name": "GR 10 E05 CUEVA SANTA - SACAÑET",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Altura",
+	"zone": "alto-palancia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.84261900186539,
+		"lon": -0.6137889996171,
+		"name": "Cueva Santa. Altura"
+	},
+	"distance_km": 13.9,
+	"ascent_m": 485,
+	"descent_m": 310,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 260,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-10-e05.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-10-e05",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.714298998937011,
+		39.825063021853566,
+		-0.611403007060289,
+		39.851508010178804
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-10-e05 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-10-e05.gpx (derivados: inicio, bbox)"
+	]
+}

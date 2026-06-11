@@ -1,0 +1,49 @@
+{
+	"id": "gr-333-e13",
+	"name": "GR 333 E13 VALLAT - FANZARA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Vallat",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.0322800129652,
+		"lon": -0.336766010150313,
+		"name": "Fuente de la Salud. Vallat"
+	},
+	"distance_km": 7.1,
+	"ascent_m": 310,
+	"descent_m": 375,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 150,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-333-e13.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e13",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.336766010150313,
+		40.01841600984335,
+		-0.312559995800257,
+		40.0419229734689
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e13 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-333-e13.gpx (derivados: inicio, bbox)"
+	]
+}

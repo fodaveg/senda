@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-161",
+	"name": "SL-CV 161 POR LA PENYAROJA DE SEGARIA",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Verger (El)",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.84249098598957,
+		"lon": 0.001387959346175,
+		"name": "Parc Public Ombria de Segaria"
+	},
+	"distance_km": 3,
+	"ascent_m": 90,
+	"descent_m": 90,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 55,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-161.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-161",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.007520997896791,
+		38.841897966340184,
+		0.00146197155118,
+		38.85012002661824
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-161 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-161.gpx (derivados: inicio, bbox)"
+	]
+}

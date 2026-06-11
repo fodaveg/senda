@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-410",
+	"name": "PR-CV 410 CATÍ - NEVERAS - BALNEARIO DEL AVELLÀ",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Cati",
+	"zone": "alt-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.46916299499571,
+		"lon": 0.019968040287495,
+		"name": "Raval del Hospital. Lavaderos públicos. Catí"
+	},
+	"distance_km": 18.2,
+	"ascent_m": 750,
+	"descent_m": 750,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 365,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-410.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-410",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.030005034059286,
+		40.467770006507635,
+		0.023920023813844,
+		40.500967958942056
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-410 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-410.gpx (derivados: inicio, bbox)"
+	]
+}

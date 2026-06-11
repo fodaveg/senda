@@ -1,0 +1,49 @@
+{
+	"id": "gr-333-e08",
+	"name": "GR 333 E08 AYÓDAR - ESPADILLA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Ayódar",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.99895901419222,
+		"lon": -0.374561017379165,
+		"name": "Esquina calle Hornos y Carretera Fuentes. Ayódar"
+	},
+	"distance_km": 6.6,
+	"ascent_m": 320,
+	"descent_m": 380,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 145,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-333-e08.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e08",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.374561017379165,
+		39.99895901419222,
+		-0.352547960355878,
+		40.027385987341404
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e08 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-333-e08.gpx (derivados: inicio, bbox)"
+	]
+}

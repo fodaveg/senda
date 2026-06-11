@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-80",
+	"name": "SL-CV 80 SENDA DEL PORTALET",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Gandia",
+	"zone": "safor",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.983216,
+		"lon": -0.265957,
+		"name": "Urbanización Montesol. Gandia"
+	},
+	"distance_km": 2.1,
+	"ascent_m": 125,
+	"descent_m": 20,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 40,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-80.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-80",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.28569,
+		38.982249,
+		-0.265957,
+		38.98601
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-80 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-80.gpx (derivados: inicio, bbox)"
+	]
+}

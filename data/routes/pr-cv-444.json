@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-444",
+	"name": "PR-CV 444 SENDERO DEL TARAFA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Aspe",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.35047997534275,
+		"lon": -0.856460016220808,
+		"name": "Camino Rollo (límite de término). Aspe"
+	},
+	"distance_km": 14.6,
+	"ascent_m": 45,
+	"descent_m": 215,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 235,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-444.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-444",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.857039960101247,
+		38.32607002928853,
+		-0.734129995107651,
+		38.36038998328149
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-444 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-444.gpx (derivados: inicio, bbox)"
+	]
+}

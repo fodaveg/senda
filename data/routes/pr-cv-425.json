@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-425",
+	"name": "PR-CV 425 CAMINO DEL MIRADOR DEL COLL DE RATES",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Alcalalí",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.74969501979649,
+		"lon": -0.041741039603949,
+		"name": "Plaça del Ajuntament, 1, Alcalalí"
+	},
+	"distance_km": 5,
+	"ascent_m": 385,
+	"descent_m": 65,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 105,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-425.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-425",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.057934960350394,
+		38.72496102936566,
+		-0.041557978838682,
+		38.749748999252915
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-425 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-425.gpx (derivados: inicio, bbox)"
+	]
+}

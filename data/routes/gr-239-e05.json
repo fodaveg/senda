@@ -1,0 +1,49 @@
+{
+	"id": "gr-239-e05",
+	"name": "GR 239 E05 LA FONT DE LA FIGUERA - LÍMITE PROVINCIAL ALBACETE",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Font de la Figuera (La)",
+	"zone": "costera",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.808334143832326,
+		"lon": -0.876963157206774,
+		"name": "Camino del cementerio, frente campo de fútbol. La Font de la Figuera"
+	},
+	"distance_km": 6.7,
+	"ascent_m": 220,
+	"descent_m": 15,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 100,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-239-e05.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-239-e05",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.929341921582818,
+		38.78361155278981,
+		-0.876963157206774,
+		38.808447467163205
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-239-e05 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-239-e05.gpx (derivados: inicio, bbox)"
+	]
+}

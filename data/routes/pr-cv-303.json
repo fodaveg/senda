@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-303",
+	"name": "PR-CV 303 DE ALZIRA A LA CASELLA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Alzira",
+	"zone": "ribera-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.153090035542846,
+		"lon": -0.446264008060098,
+		"name": "Avda. Luis Suñer, 57. Alzira"
+	},
+	"distance_km": 24,
+	"ascent_m": 750,
+	"descent_m": 585,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 445,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-303.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-303",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.446430975571275,
+		39.09444898366928,
+		-0.307035986334085,
+		39.153090035542846
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-303 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-303.gpx (derivados: inicio, bbox)"
+	]
+}

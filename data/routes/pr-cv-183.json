@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-183",
+	"name": "PR-CV 183 XERACO - PLA ESMOLADORS",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Xeraco",
+	"zone": "safor",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.02092066593468,
+		"lon": -0.25355969555676,
+		"name": "Fuente de l'Ull"
+	},
+	"distance_km": 13,
+	"ascent_m": 645,
+	"descent_m": 645,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 270,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-183.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-183",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.262369997799397,
+		39.02048413641751,
+		-0.234270002692938,
+		39.03929002583027
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-183 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-183.gpx (derivados: inicio, bbox)"
+	]
+}

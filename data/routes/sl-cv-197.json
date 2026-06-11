@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-197",
+	"name": "SL-CV 197 SENDERO DEL BUEY NEGRO",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Ludiente",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.08723202161491,
+		"lon": -0.369958011433482,
+		"name": "Carretera de Argelita CV-194 km 17,05. Ludiente"
+	},
+	"distance_km": 6.2,
+	"ascent_m": 370,
+	"descent_m": 370,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 140,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-197.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-197",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.374838961288333,
+		40.07531303912401,
+		-0.354491975158453,
+		40.087247025221586
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-197 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-197.gpx (derivados: inicio, bbox)"
+	]
+}

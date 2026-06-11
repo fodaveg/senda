@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-153",
+	"name": "PR-CV 153 LA FONT DEL MONDÚVER",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Xeresa",
+	"zone": "safor",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.00879297405481,
+		"lon": -0.220640022307634,
+		"name": "Parque Ermita de la Santísima Trinidad. C/ Mondúver. Xeresa"
+	},
+	"distance_km": 16,
+	"ascent_m": 1010,
+	"descent_m": 1010,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 375,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-153.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-153",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.273091038689017,
+		39.00197496637702,
+		-0.220640022307634,
+		39.0159170050174
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-153 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-153.gpx (derivados: inicio, bbox)"
+	]
+}

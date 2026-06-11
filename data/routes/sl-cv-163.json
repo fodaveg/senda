@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-163",
+	"name": "SL-CV 163 CUEVA DE LAS PALOMAS",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Yátova",
+	"zone": "hoya-de-bunol",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.38547997735441,
+		"lon": -0.814640019088984,
+		"name": "Parque de San Vicente"
+	},
+	"distance_km": 8.5,
+	"ascent_m": 200,
+	"descent_m": 200,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 155,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-163.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-163",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.815019970759749,
+		39.38533002510667,
+		-0.796239981427789,
+		39.406229965388775
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-163 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-163.gpx (derivados: inicio, bbox)"
+	]
+}

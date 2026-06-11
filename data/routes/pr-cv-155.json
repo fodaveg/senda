@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-155",
+	"name": "PR-CV 155 SERRA DEL FRARE",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Biar",
+	"zone": "alt-vinalopo",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.62931001931429,
+		"lon": -0.750927999615669,
+		"name": "Santuario Nuestra Señora de Gracia. Biar"
+	},
+	"distance_km": 13.8,
+	"ascent_m": 630,
+	"descent_m": 630,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 285,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-155.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-155",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.791438994929194,
+		38.60035096295178,
+		-0.750927999615669,
+		38.62933499738574
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-155 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-155.gpx (derivados: inicio, bbox)"
+	]
+}

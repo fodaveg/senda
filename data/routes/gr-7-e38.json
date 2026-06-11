@@ -3,6 +3,8 @@
 	"name": "GR 7 E38 Benagéber - Chera",
 	"type": "GR",
 	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Benagéber",
 	"zone": "serranos",
 	"aemet_municipio": "46050",
 	"start": {
@@ -45,6 +47,7 @@
 		"zone: comarca del municipio de inicio (Benagéber, Los Serranos) → ficha 'serranos' de data/wildlife/zones.json",
 		"aemet_municipio: código INE 46050 (Benagéber), relación de municipios INE vía Idescat (consulta 2026-06-10)",
 		"Pendiente de verificar: water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain",
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e38 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"GPX gr-7-e38.gpx (derivados: inicio, bbox)"
 	]
 }

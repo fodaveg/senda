@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-318",
+	"name": "PR-CV 318 SENDER D'ALBALAT DELS TARONGERS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Albalat dels Tarongers",
+	"zone": "camp-de-morvedre",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.70201903022826,
+		"lon": -0.337335979565978,
+		"name": "Plaça Pla del Molí. Albalat dels Tarongers"
+	},
+	"distance_km": 12.8,
+	"ascent_m": 480,
+	"descent_m": 480,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 250,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-318.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-318",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.361935021355748,
+		39.67882999219,
+		-0.33415898680687,
+		39.7020669747144
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-318 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-318.gpx (derivados: inicio, bbox)"
+	]
+}

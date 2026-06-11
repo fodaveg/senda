@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-389",
+	"name": "PR-CV 389 COVA DE LES FINESTRES",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Alfafara",
+	"zone": "comtat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.77394596114755,
+		"lon": -0.555313993245363,
+		"name": "Avda. de la Generalitat Valenciana. Alfafara"
+	},
+	"distance_km": 7.8,
+	"ascent_m": 270,
+	"descent_m": 270,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 140,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-389.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-389",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.575716970488429,
+		38.77326702699065,
+		-0.553812040016055,
+		38.79397200420499
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-389 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-389.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-131-9",
+	"name": "PR-CV 131.9 RUTA DE LOS BARRANCOS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Ademuz",
+	"zone": "rincon-de-ademuz",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.027367966249585,
+		"lon": -1.195242963731289,
+		"name": "Sesga. Ademuz"
+	},
+	"distance_km": 19.7,
+	"ascent_m": 310,
+	"descent_m": 720,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 355,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-131-9.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-131-9",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.256931005045772,
+		40.027367966249585,
+		-1.174097014591098,
+		40.12284102849662
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-131-9 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-131-9.gpx (derivados: inicio, bbox)"
+	]
+}

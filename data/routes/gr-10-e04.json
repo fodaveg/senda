@@ -1,0 +1,49 @@
+{
+	"id": "gr-10-e04",
+	"name": "GR 10 E04 GÁTOVA - CUEVA SANTA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Gátova",
+	"zone": "camp-de-turia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.771114997565746,
+		"lon": -0.521009964868426,
+		"name": "Ctra. Monte Rodeno, 11. Gátova"
+	},
+	"distance_km": 19.7,
+	"ascent_m": 795,
+	"descent_m": 540,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 380,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-10-e04.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-10-e04",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.619287025183439,
+		39.76658600382507,
+		-0.521009964868426,
+		39.84267096966505
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-10-e04 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-10-e04.gpx (derivados: inicio, bbox)"
+	]
+}

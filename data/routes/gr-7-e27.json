@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e27",
+	"name": "GR 7 E27 MORELLA - ARES DEL MAESTRAT",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Morella",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.6172719784081,
+		"lon": -0.099237039685249,
+		"name": "Portal de Sant Mateu. Morella"
+	},
+	"distance_km": 24.2,
+	"ascent_m": 780,
+	"descent_m": 530,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 445,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e27.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e27",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.133948009461164,
+		40.456251008436084,
+		-0.096716014668345,
+		40.6172719784081
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e27 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e27.gpx (derivados: inicio, bbox)"
+	]
+}

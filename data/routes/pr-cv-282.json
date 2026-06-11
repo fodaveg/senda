@@ -1,0 +1,44 @@
+{
+	"id": "pr-cv-282",
+	"name": "PR-CV 282 CAMÍ DE LA SENDERA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Sant Vicent del Raspeig/San Vicente del Raspeig",
+	"zone": "alacanti",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.3945800177753,
+		"lon": -0.511440010741353,
+		"name": "Parque Hort lo Torrent"
+	},
+	"distance_km": 19.39,
+	"ascent_m": 405,
+	"descent_m": 47,
+	"circular": false,
+	"difficulty_mide": null,
+	"est_duration_min": 240,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-282.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-282",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.565389962866902,
+		38.3945800177753,
+		-0.511440010741353,
+		38.47826996818185
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-282 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
+		"GPX pr-cv-282.gpx (derivados: desniveles, inicio, bbox)"
+	]
+}

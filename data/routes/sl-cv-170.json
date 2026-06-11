@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-170",
+	"name": "SL-CV 170 SENDERO DEL PORT",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Oropesa del Mar/Orpesa",
+	"zone": "plana-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.07365099154413,
+		"lon": 0.129623031243682,
+		"name": "Mirador de Orpesa"
+	},
+	"distance_km": 4.7,
+	"ascent_m": 250,
+	"descent_m": 250,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 110,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-170.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-170",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.123327970504761,
+		40.070251962170005,
+		0.132889961823821,
+		40.07982300594449
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-170 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-170.gpx (derivados: inicio, bbox)"
+	]
+}

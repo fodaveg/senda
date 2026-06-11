@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e39",
+	"name": "GR 7 E39 CHERA - SIETE AGUAS",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Chera",
+	"zone": "requena-utiel",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.5934019703418,
+		"lon": -0.973015995696187,
+		"name": "Plaza de España. Chera"
+	},
+	"distance_km": 21,
+	"ascent_m": 650,
+	"descent_m": 595,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 395,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e39.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e39",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.97433497197926,
+		39.47303499095142,
+		-0.901261959224939,
+		39.5934019703418
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e39 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e39.gpx (derivados: inicio, bbox)"
+	]
+}

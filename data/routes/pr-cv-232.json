@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-232",
+	"name": "PR-CV 232 EL RENTONAR - MONTAÑA DE NIEVE",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Torremanzanas/Torre de les Maçanes (La)",
+	"zone": "alacanti",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.609299985691905,
+		"lon": -0.420450009405613,
+		"name": "Avenida de Alacant (junto parque municipal). Torremanzanas"
+	},
+	"distance_km": 13.7,
+	"ascent_m": 680,
+	"descent_m": 680,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 3,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 290,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-232.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-232",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.459549995139241,
+		38.60696696676314,
+		-0.413582967594266,
+		38.63593298010528
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-232 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-232.gpx (derivados: inicio, bbox)"
+	]
+}

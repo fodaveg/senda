@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-111-2",
+	"name": "PR-CV 111.2 CORTES DE ARENOSO - SAN VICENTE DE PIEDRAHITA (POR EL REBOLLAR)",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Cortes de Arenoso",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.186409,
+		"lon": -0.542195,
+		"name": "Plaza de las Fuentes. Cortes de Arenoso"
+	},
+	"distance_km": 8.4,
+	"ascent_m": 240,
+	"descent_m": 380,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 165,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-111-2.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-111-2",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.544034,
+		40.13722,
+		-0.50579,
+		40.186409
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-111-2 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-111-2.gpx (derivados: inicio, bbox)"
+	]
+}

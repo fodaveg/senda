@@ -1,17 +1,24 @@
 import { expect, test } from '@playwright/test';
 
-test('la página de inicio lista las rutas reales', async ({ page }) => {
+test('la página de inicio lista el catálogo completo FEMECV', async ({ page }) => {
 	await page.goto('/');
 	await expect(page.locator('h1')).toHaveText('Rutas');
-	await expect(page.locator('.route-list li')).toHaveCount(5);
-	await expect(page.getByText('5 de 5 rutas')).toBeVisible();
+	// El catálogo crawleado es grande y cambia con cada re-crawl: se exige
+	// orden de magnitud, no número exacto.
+	const total = await page.locator('.route-list li').count();
+	expect(total).toBeGreaterThan(400);
+	await expect(page.getByText(`${total} de ${total} rutas`)).toBeVisible();
 });
 
 test('los filtros reducen el listado', async ({ page }) => {
 	await page.goto('/');
 	await page.locator('body[data-hydrated]').waitFor();
+	const total = await page.locator('.route-list li').count();
 	await page.getByLabel('Distancia máx.').selectOption('10');
-	await expect(page.locator('.route-list li')).toHaveCount(2);
+	await expect(page.getByText(/de \d+ rutas/)).toBeVisible();
+	const filtered = await page.locator('.route-list li').count();
+	expect(filtered).toBeGreaterThan(0);
+	expect(filtered).toBeLessThan(total);
 });
 
 test('el detalle de una ruta muestra los datos técnicos y el perfil', async ({ page }) => {

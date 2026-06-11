@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-148",
+	"name": "PR-CV 148 YATOVA - CASA DE TABARLA - POCICO VALENTÍN",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Yátova",
+	"zone": "hoya-de-bunol",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.38598196953535,
+		"lon": -0.814161999151111,
+		"name": "Parque de San Vicente. Av. Diputación, 70. Yátova"
+	},
+	"distance_km": 23.3,
+	"ascent_m": 710,
+	"descent_m": 845,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 375,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-148.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-148",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.963426008820534,
+		39.36227803118527,
+		-0.814040964469314,
+		39.39182600006461
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-148 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-148.gpx (derivados: inicio, bbox)"
+	]
+}

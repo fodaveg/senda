@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-409",
+	"name": "PR-CV 409 CATÍ - ERMITA DEL PILAR",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Cati",
+	"zone": "alt-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.46915696002543,
+		"lon": 0.020025037229061,
+		"name": "Raval del Hospital. Lavaderos públicos. Catí"
+	},
+	"distance_km": 10.9,
+	"ascent_m": 150,
+	"descent_m": 200,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 150,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-409.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-409",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.027633039280772,
+		40.413434989750385,
+		0.026631988584995,
+		40.47043897211552
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-409 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-409.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-157",
+	"name": "SL-CV 157 RUTA DEL PATRIMONIO - MARJAL DE LA LLOSA",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Llosa (La)",
+	"zone": "plana-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.76935597136617,
+		"lon": -0.20795401185751,
+		"name": "Av.de la Comunitat Valenciana, 2A"
+	},
+	"distance_km": 5.8,
+	"ascent_m": 45,
+	"descent_m": 55,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 95,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-157.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-157",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.20795401185751,
+		39.74654898047447,
+		-0.172258000820875,
+		39.77194396778941
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-157 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-157.gpx (derivados: distancia, inicio, bbox)"
+	]
+}

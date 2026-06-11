@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-247",
+	"name": "PR-CV 247 CARRASCA DE GUAITA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Mata de Morella (La)",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.61542402021587,
+		"lon": -0.279700001701713,
+		"name": "C/ de la Carretera, 6. La Mata de Morella"
+	},
+	"distance_km": 5.7,
+	"ascent_m": 315,
+	"descent_m": 315,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 130,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-247.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-247",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.287984004244208,
+		40.60192798264325,
+		-0.266837971284986,
+		40.61697400175035
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-247 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-247.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-173",
+	"name": "PR-CV 173 RUTA DEL BARRANCO MORENO",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Bicorp",
+	"zone": "canal-de-navarres",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.13164367899299,
+		"lon": -0.790639529004693,
+		"name": "Salida de Bicorp dirección Millares. Bicorp"
+	},
+	"distance_km": 10.7,
+	"ascent_m": 350,
+	"descent_m": 350,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 205,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-173.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-173",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.836994471028447,
+		39.12947377189994,
+		-0.79062226228416,
+		39.13903433829546
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-173 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-173.gpx (derivados: inicio, bbox)"
+	]
+}

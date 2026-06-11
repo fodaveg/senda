@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-177-1",
+	"name": "PR-CV 177.1 EL HONTANAR",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Utiel",
+	"zone": "requena-utiel",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.628127021715045,
+		"lon": -1.138033960014582,
+		"name": "Santuario de Nuestra Señora del Remedio. Utiel"
+	},
+	"distance_km": 10.6,
+	"ascent_m": 315,
+	"descent_m": 315,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 200,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-177-1.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-177-1",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.160825025290251,
+		39.62390002794564,
+		-1.130833989009261,
+		39.64714698493481
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-177-1 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-177-1.gpx (derivados: inicio, bbox)"
+	]
+}

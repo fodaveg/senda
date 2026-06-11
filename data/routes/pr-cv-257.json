@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-257",
+	"name": "PR-CV 257 RUTA DE LES BODEGUES",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Llíria",
+	"zone": "camp-de-turia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.720748979598284,
+		"lon": -0.699276030063629,
+		"name": "Camino de la Yesa. Llíria"
+	},
+	"distance_km": 26.3,
+	"ascent_m": 560,
+	"descent_m": 560,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 465,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-257.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-257",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.769917033612728,
+		39.720748979598284,
+		-0.699262032285333,
+		39.77153996005654
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-257 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-257.gpx (derivados: inicio, bbox)"
+	]
+}

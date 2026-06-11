@@ -1,0 +1,44 @@
+{
+	"id": "gr-36",
+	"name": "GR 36 SIERRA DE ESPADÁN",
+	"type": "GR",
+	"status": "desconocido",
+	"status_detail": "Ver Etapas",
+	"municipality": "Vilavella (La)",
+	"zone": "plana-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.860468013212085,
+		"lon": -0.187837444245815,
+		"name": "La Vilavella"
+	},
+	"distance_km": 60.1,
+	"ascent_m": 2815,
+	"descent_m": 2200,
+	"circular": false,
+	"difficulty_mide": null,
+	"est_duration_min": 1160,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-36.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-36",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.529217021539807,
+		39.860468013212085,
+		-0.187837444245815,
+		40.06694898940623
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-36 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
+		"GPX gr-36.gpx (derivados: inicio, bbox)"
+	]
+}

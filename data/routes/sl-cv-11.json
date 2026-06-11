@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-11",
+	"name": "SL-CV 11 SENDA DE L'OMBRÍA",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Aielo de Malferit",
+	"zone": "vall-d-albaida",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.87687003239989,
+		"lon": -0.592530984431505,
+		"name": "Plaza del Palau. Aielo de Malferit"
+	},
+	"distance_km": 6.8,
+	"ascent_m": 285,
+	"descent_m": 285,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 140,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-11.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-11",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.602799989283085,
+		38.86381999589503,
+		-0.591531023383141,
+		38.87821700423956
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-11 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-11.gpx (derivados: inicio, bbox)"
+	]
+}

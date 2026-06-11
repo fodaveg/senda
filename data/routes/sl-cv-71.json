@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-71",
+	"name": "SL-CV 71 SENDERO FUENTE LEBRILLICO - LA MUELA",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Chulilla",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.656423991546035,
+		"lon": -0.891996016725898,
+		"name": "Plaza de la Baronía"
+	},
+	"distance_km": 3.3,
+	"ascent_m": 210,
+	"descent_m": 210,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 80,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-71.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-71",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.891996016725898,
+		39.653374990448356,
+		-0.884934011846781,
+		39.660934964194894
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-71 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-71.gpx (derivados: inicio, bbox)"
+	]
+}

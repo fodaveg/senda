@@ -1,0 +1,49 @@
+{
+	"id": "gr-331-e14",
+	"name": "GR 331 E14 LA LLÁCUA - ARES DEL MAESTRAT",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Morella",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.50115303136408,
+		"lon": -0.05545400083065,
+		"name": "La Llàcua. Morella"
+	},
+	"distance_km": 11,
+	"ascent_m": 300,
+	"descent_m": 170,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 181,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-331-e14.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-331-e14",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.131870973855257,
+		40.45655703172088,
+		-0.05545400083065,
+		40.504444018006325
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e14 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-331-e14.gpx (derivados: inicio, bbox)"
+	]
+}

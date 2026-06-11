@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-109",
+	"name": "PR-CV 109 SENDA DOLÇA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Crevillent",
+	"zone": "baix-vinalopo",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.26454401016235,
+		"lon": -0.825201971456409,
+		"name": "Partida Els Pontets. Crevillent"
+	},
+	"distance_km": 12.2,
+	"ascent_m": 630,
+	"descent_m": 630,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 230,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-109.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-109",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.854121968150139,
+		38.26451199129224,
+		-0.823772018775344,
+		38.28968100249767
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-109 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-109.gpx (derivados: inicio, bbox)"
+	]
+}

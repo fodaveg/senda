@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-294",
+	"name": "PR-CV 294 CAMI VELL DE BENASSAL A VISTABELLA (PEL MOLI DEL PAS)",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Benassal",
+	"zone": "alt-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.380602991208434,
+		"lon": -0.146476021036506,
+		"name": "Ermita Nuestra Señora de Loreto. Benassal"
+	},
+	"distance_km": 9.2,
+	"ascent_m": 270,
+	"descent_m": 470,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 180,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-294.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-294",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.216047996655107,
+		40.36361496895552,
+		-0.146476021036506,
+		40.38257298991084
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-294 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-294.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-468",
+	"name": "PR-CV 468 CUEVAS Y CIMAS DE BUGARRA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Bugarra",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.60512297227979,
+		"lon": -0.779844978824258,
+		"name": "Playa fluvial de Bugarra"
+	},
+	"distance_km": 15,
+	"ascent_m": 775,
+	"descent_m": 775,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 325,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-468.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-468",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.783847002312541,
+		39.57633901387453,
+		-0.753955962136388,
+		39.60841102525592
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-468 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-468.gpx (derivados: inicio, bbox)"
+	]
+}

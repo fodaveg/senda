@@ -1,0 +1,49 @@
+{
+	"id": "gr-332-e03",
+	"name": "GR 332 E03 GR 332 E03 BICORP - PICO DEL CAROCHE",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Bicorp",
+	"zone": "canal-de-navarres",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.13025848567486,
+		"lon": -0.786905642598867,
+		"name": "Avda. de la Carretera 31. Bicorp"
+	},
+	"distance_km": 19.2,
+	"ascent_m": 1115,
+	"descent_m": 290,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 385,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-332-e03.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-332-e03",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.921913459897041,
+		39.089643554762006,
+		-0.786905642598867,
+		39.13073491305113
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-332-e03 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-332-e03.gpx (derivados: inicio, bbox)"
+	]
+}

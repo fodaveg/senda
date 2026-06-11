@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-193-1",
+	"name": "PR-CV 193.1 SENDA AMPLA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Genovés",
+	"zone": "costera",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.98772799409926,
+		"lon": -0.453419974073768,
+		"name": "Área recreativa El Empalme"
+	},
+	"distance_km": 3.2,
+	"ascent_m": 245,
+	"descent_m": 190,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 80,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-193-1.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-193-1",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.453419974073768,
+		38.98285802453756,
+		-0.440119989216328,
+		38.9901780243963
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-193-1 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-193-1.gpx (derivados: inicio, bbox)"
+	]
+}

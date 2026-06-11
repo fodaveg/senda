@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e48",
+	"name": "GR 7 E48 BARRANC DEL CINC - SANTUARIO DE LA FONT ROJA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Alcoy/Alcoi",
+	"zone": "alcoia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.70799597352743,
+		"lon": -0.486637037247419,
+		"name": "Carretera CV-796. Mas del Teular. Alcoi"
+	},
+	"distance_km": 10.7,
+	"ascent_m": 725,
+	"descent_m": 340,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 230,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e48.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e48",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.539949964731932,
+		38.6650160048157,
+		-0.486628990620375,
+		38.70799597352743
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e48 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e48.gpx (derivados: inicio, bbox)"
+	]
+}

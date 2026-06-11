@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-148",
+	"name": "SL-CV 148 HUERTA HISTÓRICA DE ROJALES",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Rojales",
+	"zone": "baix-segura-vega-baja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.08889452368021,
+		"lon": -0.71928882971406,
+		"name": "Parking Recinto Ferial"
+	},
+	"distance_km": 8,
+	"ascent_m": 25,
+	"descent_m": 25,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 1,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 100,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-148.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-148",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.722726080566645,
+		38.08888086117804,
+		-0.702770361676812,
+		38.10714586637914
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-148 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-148.gpx (derivados: inicio, bbox)"
+	]
+}

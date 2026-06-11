@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-85",
+	"name": "PR-CV 85 CASTALLA - PLANISES - CASTALLA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Castalla",
+	"zone": "alcoia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.5943800304085,
+		"lon": -0.671682972460985,
+		"name": "Parque municipal. Av. República Argentina, 13. Castalla"
+	},
+	"distance_km": 20.4,
+	"ascent_m": 710,
+	"descent_m": 710,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 395,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-85.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-85",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.684297988191247,
+		38.525527976453304,
+		-0.651733037084341,
+		38.59441800042987
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-85 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-85.gpx (derivados: inicio, bbox)"
+	]
+}

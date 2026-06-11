@@ -1,0 +1,49 @@
+{
+	"id": "gr-33-e02",
+	"name": "GR 33 E02 CAMÍ VELL DE BORRIOL - POU DEL MOLLET",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Borriol",
+	"zone": "plana-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.04567597061396,
+		"lon": -0.060572996735573,
+		"name": "Camí vell de Borriol. Borriol"
+	},
+	"distance_km": 6.4,
+	"ascent_m": 390,
+	"descent_m": 65,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 130,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-33-e02.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-33-e02",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.079345023259521,
+		40.04567597061396,
+		-0.05584099330008,
+		40.07814201526344
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-33-e02 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-33-e02.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-169",
+	"name": "SL-CV 169 SENDERO DE LA CELADILLA",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Ademuz",
+	"zone": "rincon-de-ademuz",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.055919,
+		"lon": -1.27512,
+		"name": "Área recreativa de los Arenales. Ademuz"
+	},
+	"distance_km": 5.8,
+	"ascent_m": 260,
+	"descent_m": 260,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 120,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-169.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-169",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.27832,
+		40.052277,
+		-1.266362,
+		40.061453
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-169 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-169.gpx (derivados: inicio, bbox)"
+	]
+}

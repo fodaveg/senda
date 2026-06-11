@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-172",
+	"name": "PR-CV 172 SENDA DEL MOLLÓ",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Quatretonda",
+	"zone": "vall-d-albaida",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.94739603623748,
+		"lon": -0.400662012398243,
+		"name": "Avinguda del País Valencia. Quatretonda"
+	},
+	"distance_km": 19.3,
+	"ascent_m": 560,
+	"descent_m": 560,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 360,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-172.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-172",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.400857981294394,
+		38.947392012923956,
+		-0.351822003722191,
+		38.99108201265335
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-172 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-172.gpx (derivados: inicio, bbox)"
+	]
+}

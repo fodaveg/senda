@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e37",
+	"name": "GR 7 E37 CHELVA - BENAGÉBER",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Chelva",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.74944098852575,
+		"lon": -0.995575971901417,
+		"name": "Avda. de Valencia. Chelva"
+	},
+	"distance_km": 16.8,
+	"ascent_m": 800,
+	"descent_m": 520,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 340,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e37.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e37",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.099251983687282,
+		39.703132985159755,
+		-0.995575971901417,
+		39.75022201426327
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e37 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e37.gpx (derivados: inicio, bbox)"
+	]
+}

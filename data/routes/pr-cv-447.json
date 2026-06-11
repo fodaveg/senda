@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-447",
+	"name": "PR-CV 447 LA HUERTA DE LA VEGA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Granja de Rocamora",
+	"zone": "baix-segura-vega-baja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.151038037613034,
+		"lon": -0.892330035567284,
+		"name": "Ermita de la Santísima Cruz. Granja de Rocamora"
+	},
+	"distance_km": 13.7,
+	"ascent_m": 25,
+	"descent_m": 25,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 220,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-447.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-447",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.892460038885474,
+		38.137937961146235,
+		-0.857468023896217,
+		38.159659998491406
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-447 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-447.gpx (derivados: inicio, bbox)"
+	]
+}

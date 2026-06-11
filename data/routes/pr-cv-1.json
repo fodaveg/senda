@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-1",
+	"name": "PR-CV 1 CULLA - VILAFRANCA DEL CID - LA POBLA DEL BELLESTAR - LA IGLESUELA DEL CID",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Culla",
+	"zone": "alt-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.336861023679376,
+		"lon": -0.164380017668009,
+		"name": "Culla"
+	},
+	"distance_km": 31.8,
+	"ascent_m": 1270,
+	"descent_m": 1090,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 5
+	},
+	"est_duration_min": 625,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-1.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-1",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.320339994505048,
+		40.335830971598625,
+		-0.164365014061332,
+		40.48178102821112
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-1 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-1.gpx (derivados: inicio, bbox)"
+	]
+}

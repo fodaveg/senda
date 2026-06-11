@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-22",
+	"name": "SL-CV 22 BARRANCO DEL REGAJO",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Aras de los Olmos",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.922840017825365,
+		"lon": -1.132082976400852,
+		"name": "Avenida de Valencia, 35. Aras de los Olmos"
+	},
+	"distance_km": 5.5,
+	"ascent_m": 10,
+	"descent_m": 130,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 175,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-22.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-22",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.132082976400852,
+		39.89614801481366,
+		-1.111584026366472,
+		39.922840017825365
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-22 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-22.gpx (derivados: inicio, bbox)"
+	]
+}

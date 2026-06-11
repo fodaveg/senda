@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e51",
+	"name": "GR 7 E51 ELDA - PINOSO (LÍMITE MURCIA)",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Elda",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.47520302981138,
+		"lon": -0.801620995625854,
+		"name": "Paseo Ronda río Vinalopó. Elda"
+	},
+	"distance_km": 34.1,
+	"ascent_m": 510,
+	"descent_m": 260,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 460,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e51.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e51",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.087383041158319,
+		38.38583601638675,
+		-0.801613032817841,
+		38.47521401010454
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e51 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e51.gpx (derivados: inicio, bbox)"
+	]
+}

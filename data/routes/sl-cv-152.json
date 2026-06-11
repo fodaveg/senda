@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-152",
+	"name": "SL-CV 152 EL CANYAR DE LES PORTELLES - CALVARI",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Mutxamel",
+	"zone": "alacanti",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.416918041184545,
+		"lon": -0.441573997959495,
+		"name": "Parque Municipal El Canyar de les Portelles. Mutxamel"
+	},
+	"distance_km": 6.3,
+	"ascent_m": 80,
+	"descent_m": 80,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 105,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-152.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-152",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.454208040609956,
+		38.40333097614348,
+		-0.43567799963057,
+		38.418899020180106
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-152 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-152.gpx (derivados: inicio, bbox)"
+	]
+}

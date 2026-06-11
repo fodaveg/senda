@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-93",
+	"name": "SL-CV 93 LES PUNTES DE GOSÀLVEZ",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Campello (El)",
+	"zone": "alacanti",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.437934,
+		"lon": -0.409032,
+		"name": "Colegio de la Colonia Bonny. Partida del Ramellat. El Campello"
+	},
+	"distance_km": 5.7,
+	"ascent_m": 115,
+	"descent_m": 115,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 100,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-93.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-93",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.410174,
+		38.437934,
+		-0.396595,
+		38.451882
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-93 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-93.gpx (derivados: inicio, bbox)"
+	]
+}

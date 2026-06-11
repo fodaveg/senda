@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-111-1",
+	"name": "PR-CV 111.1 CORTES DE ARENOSO - SAN VICENTE DE PIEDRAHITA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Cortes de Arenoso",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.18641600385308,
+		"lon": -0.542155997827649,
+		"name": "C/ D. Vicente Alegre Tomás. Cortes de Arenoso"
+	},
+	"distance_km": 13.1,
+	"ascent_m": 325,
+	"descent_m": 455,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 205,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-111-1.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-111-1",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.542155997827649,
+		40.13821201398969,
+		-0.501274019479752,
+		40.19500401802361
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-111-1 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-111-1.gpx (derivados: inicio, bbox)"
+	]
+}

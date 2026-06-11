@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e47",
+	"name": "GR 7 E47 PARAJE FONT DE MARIOLA - ALCOY",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Bocairent",
+	"zone": "vall-d-albaida",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.74706796370447,
+		"lon": -0.545556033030152,
+		"name": "Carretera CV-794, junto camping Mariola. Bocairent"
+	},
+	"distance_km": 15,
+	"ascent_m": 500,
+	"descent_m": 715,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 255,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e47.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e47",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.545556033030152,
+		38.70798801071942,
+		-0.482294959947467,
+		38.763457015156746
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e47 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e47.gpx (derivados: inicio, bbox)"
+	]
+}

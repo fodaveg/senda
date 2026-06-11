@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-175",
+	"name": "SL-CV 175 LADERAS DE LA SIERRA",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Callosa de Segura",
+	"zone": "baix-segura-vega-baja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.124936036765575,
+		"lon": -0.879814010113478,
+		"name": "Plaza del Pino de la Rambla. Callosa de Segura"
+	},
+	"distance_km": 3.6,
+	"ascent_m": 160,
+	"descent_m": 160,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 90,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-175.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-175",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.888937041163445,
+		38.1208729930222,
+		-0.879226019605994,
+		38.12900201417506
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-175 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-175.gpx (derivados: inicio, bbox)"
+	]
+}

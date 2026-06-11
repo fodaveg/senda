@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-103",
+	"name": "SL-CV 103 SENDERO PINAR",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Torralba del Pinar",
+	"zone": "alto-mijares",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.98816194944084,
+		"lon": -0.438722809776664,
+		"name": "Plaza de la Iglesia"
+	},
+	"distance_km": 7.2,
+	"ascent_m": 460,
+	"descent_m": 460,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 170,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-103.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-103",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.461187232285738,
+		39.97586435638368,
+		-0.436272025108337,
+		39.98863259330392
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-103 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-103.gpx (derivados: inicio, bbox)"
+	]
+}

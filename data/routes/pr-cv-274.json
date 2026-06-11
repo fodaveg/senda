@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-274",
+	"name": "PR-CV 274 LA CREUETA DELS CASTELLANS",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Agost",
+	"zone": "alacanti",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.43973618000746,
+		"lon": -0.635819071903825,
+		"name": "Parque Concepción Vicedo. Agost"
+	},
+	"distance_km": 6.5,
+	"ascent_m": 275,
+	"descent_m": 275,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 130,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-274.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-274",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.636772848665714,
+		38.43327574431896,
+		-0.618772879242897,
+		38.449148470535874
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-274 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-274.gpx (derivados: inicio, bbox)"
+	]
+}

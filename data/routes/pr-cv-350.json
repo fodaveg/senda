@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-350",
+	"name": "PR-CV 350 CIRCULAR DEL TOSSAL DE L´OM",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Sierra Engarcerán",
+	"zone": "plana-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.26950094848871,
+		"lon": -0.018032742664218,
+		"name": "C. Nevera, s/n. Sierra Engarcerán"
+	},
+	"distance_km": 9.6,
+	"ascent_m": 300,
+	"descent_m": 300,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 180,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-350.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-350",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.033613024279475,
+		40.26950094848871,
+		-0.000499980524182,
+		40.28410599566996
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-350 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-350.gpx (derivados: inicio, bbox)"
+	]
+}

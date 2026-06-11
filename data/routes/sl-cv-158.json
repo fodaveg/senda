@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-158",
+	"name": "SL-CV 158 RACONS",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Beniarbeig",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.82220803759992,
+		"lon": -0.002194968983531,
+		"name": "Plaza 9 de Octubre"
+	},
+	"distance_km": 10.5,
+	"ascent_m": 325,
+	"descent_m": 325,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 215,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-158.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-158",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.034729996696115,
+		38.81883096881211,
+		-0.002194968983531,
+		38.834360959008336
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-158 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-158.gpx (derivados: inicio, bbox)"
+	]
+}

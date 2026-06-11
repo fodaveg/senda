@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-311",
+	"name": "PR-CV 311 NOVELDA - LA MOLA - NOVELDA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Novelda",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.38896028697491,
+		"lon": -0.766948750242591,
+		"name": "Plaza Santa María Magdalena. Novelda"
+	},
+	"distance_km": 13.1,
+	"ascent_m": 425,
+	"descent_m": 425,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 250,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-311.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-311",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.803351020440459,
+		38.38895559310913,
+		-0.766948750242591,
+		38.411383386701345
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-311 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-311.gpx (derivados: inicio, bbox)"
+	]
+}

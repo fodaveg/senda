@@ -1,0 +1,49 @@
+{
+	"id": "gr-37-e04",
+	"name": "GR 37 E04 LA YESA - LA TORRE",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Yesa (La)",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.89190802909434,
+		"lon": -0.964121036231518,
+		"name": "Fuente de la Virgen del Carmen. La Yesa"
+	},
+	"distance_km": 14.9,
+	"ascent_m": 415,
+	"descent_m": 235,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 265,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-37-e04.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-37-e04",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.020665019750595,
+		39.89054102450609,
+		-0.948041025549173,
+		39.96415299363434
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-37-e04 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-37-e04.gpx (derivados: inicio, bbox)"
+	]
+}

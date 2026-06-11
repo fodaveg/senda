@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-2",
+	"name": "PR-CV 2 CABEÇÓ D'OR",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Busot",
+	"zone": "alacanti",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.51614804007113,
+		"lon": -0.413710037246346,
+		"name": "Pla de la Gralla - Cuevas de Canelobre"
+	},
+	"distance_km": 10.4,
+	"ascent_m": 855,
+	"descent_m": 855,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 4,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 295,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-2.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-2",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.414322922006249,
+		38.50688620470464,
+		-0.395200029015541,
+		38.531345184892416
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-2 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-2.gpx (derivados: inicio, bbox)"
+	]
+}

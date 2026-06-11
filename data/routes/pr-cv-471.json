@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-471",
+	"name": "PR-CV 471 SENDA DEL VÉRTIGO",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Moixent/Mogente",
+	"zone": "costera",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.8779419939965,
+		"lon": -0.745905982330441,
+		"name": "Polideportivo. C/ Cronista Lluís Jorques, 12. Mogente"
+	},
+	"distance_km": 12,
+	"ascent_m": 515,
+	"descent_m": 515,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 245,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-471.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-471",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.751823019236326,
+		38.865810027346015,
+		-0.7145119830966,
+		38.87794400565326
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-471 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-471.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "gr-37-e01",
+	"name": "GR 37 E01 ARAS DE LOS OLMOS - TITAGUAS",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Aras de los Olmos",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.92282995954156,
+		"lon": -1.132060009986162,
+		"name": "Avda. de Valencia, 33. Aras de los Olmos"
+	},
+	"distance_km": 13.1,
+	"ascent_m": 525,
+	"descent_m": 620,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 265,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-37-e01.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-37-e01",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.142576029524207,
+		39.86733597703278,
+		-1.082959994673729,
+		39.923659013584256
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-37-e01 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-37-e01.gpx (derivados: inicio, bbox)"
+	]
+}

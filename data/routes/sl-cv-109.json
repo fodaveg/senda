@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-109",
+	"name": "SL-CV 109 LA SEGARIA DE BENIMELI",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Benimeli",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.822861993685365,
+		"lon": -0.041980007663369,
+		"name": "Plaza Mayor"
+	},
+	"distance_km": 4.8,
+	"ascent_m": 335,
+	"descent_m": 335,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 120,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-109.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-109",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.046874033287168,
+		38.82285897620022,
+		-0.03474198281765,
+		38.83450202643871
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-109 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-109.gpx (derivados: inicio, bbox)"
+	]
+}

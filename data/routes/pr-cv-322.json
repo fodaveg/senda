@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-322",
+	"name": "PR-CV 322 MOLA DE LA VILA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Forcall",
+	"zone": "ports",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.64659799449146,
+		"lon": -0.197175974026322,
+		"name": "Esquina de la calle III Centenari y la calle Petra Palos. Forcall"
+	},
+	"distance_km": 6.1,
+	"ascent_m": 270,
+	"descent_m": 270,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 120,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-322.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-322",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.214330041781068,
+		40.64659799449146,
+		-0.193751966580749,
+		40.66028798930347
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-322 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-322.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "gr-333-e03",
+	"name": "GR 333 E03 AÍN - ALCÚDIA DE VEO",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Ain",
+	"zone": "plana-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.901314033195376,
+		"lon": -0.342392027378082,
+		"name": "En la rotanda de la CV-223 a la entrada de la población. Aín"
+	},
+	"distance_km": 3.6,
+	"ascent_m": 160,
+	"descent_m": 190,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 75,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-333-e03.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e03",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.354693979024887,
+		39.90120297297835,
+		-0.342317009344697,
+		39.91580198518932
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e03 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-333-e03.gpx (derivados: inicio, bbox)"
+	]
+}

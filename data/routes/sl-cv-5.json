@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-5",
+	"name": "SL-CV 5 BARRANCO DEL GATILLO",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Sin controles de calidad",
+	"municipality": "Enguera",
+	"zone": "canal-de-navarres",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.99537103250623,
+		"lon": -0.808568000793457,
+		"name": "Km 15,2 de la carretera CV-584, de Enguera a Casas de Benalí"
+	},
+	"distance_km": 9.2,
+	"ascent_m": 305,
+	"descent_m": 305,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 175,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-5.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-5",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.815563034266233,
+		38.99283902719617,
+		-0.78618798404932,
+		39.00483403354883
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-5 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-5.gpx (derivados: inicio, bbox)"
+	]
+}

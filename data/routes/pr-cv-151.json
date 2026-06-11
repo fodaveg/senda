@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-151",
+	"name": "PR-CV 151 ELS ARCS",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Castell de Castells",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.71549601666629,
+		"lon": -0.160864982753992,
+		"name": "Carretera a Tarbena. Castell de Castells"
+	},
+	"distance_km": 6.9,
+	"ascent_m": 205,
+	"descent_m": 205,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 180,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-151.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-151",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.174013003706932,
+		38.70444397442043,
+		-0.155410040169954,
+		38.71589499525726
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-151 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-151.gpx (derivados: inicio, bbox)"
+	]
+}

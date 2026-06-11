@@ -16,7 +16,11 @@
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run && npm run test:e2e",
 		"test:e2e": "playwright install && playwright test",
-		"tauri": "tauri"
+		"tauri": "tauri",
+		"predev": "node scripts/sync-gpx.mjs",
+		"prebuild": "node scripts/sync-gpx.mjs",
+		"ingest:crawl": "tsx scripts/ingest/crawl-cli.ts",
+		"catalog:publish": "node scripts/publish/build-catalog.mjs"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

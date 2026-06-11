@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-222",
+	"name": "PR-CV 222 SENDA ALT DE BENICADELL Y NEVERA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Atzeneta d'Albaida",
+	"zone": "vall-d-albaida",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.830899987369776,
+		"lon": -0.496817026287317,
+		"name": "C/ els Pastors. Atzeneta d'Albaida"
+	},
+	"distance_km": 11,
+	"ascent_m": 745,
+	"descent_m": 165,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 230,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-222.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-222",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.496817026287317,
+		38.8220139965415,
+		-0.407444983720779,
+		38.83251300081611
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-222 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-222.gpx (derivados: inicio, bbox)"
+	]
+}

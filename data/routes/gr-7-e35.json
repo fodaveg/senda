@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e35",
+	"name": "GR 7 E35 BEJÍS - ANDILLA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Bejís",
+	"zone": "alto-palancia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.90987698547542,
+		"lon": -0.711617963388562,
+		"name": "Los Arcos. C. Cloticos, s/n. Bejís"
+	},
+	"distance_km": 21.9,
+	"ascent_m": 740,
+	"descent_m": 665,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 415,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e35.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e35",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.814627027139068,
+		39.83565799891949,
+		-0.711617963388562,
+		39.91108004003763
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e35 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e35.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-4",
+	"name": "PR-CV 4 BANYERES - MOLI L'OMBRIA - BANYERES",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Banyeres de Mariola",
+	"zone": "alcoia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.706949995830655,
+		"lon": -0.663435012102127,
+		"name": "Molí de l'Ombria. Banyeres de Mariola"
+	},
+	"distance_km": 20.3,
+	"ascent_m": 455,
+	"descent_m": 455,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 330,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-4.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-4",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.664909975603223,
+		38.69448199868202,
+		-0.609767027199268,
+		38.742596972733736
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-4 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-4.gpx (derivados: inicio, bbox)"
+	]
+}

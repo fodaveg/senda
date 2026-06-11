@@ -1,0 +1,49 @@
+{
+	"id": "gr-7-e28",
+	"name": "GR 7 E28 ARES DEL MAESTRAT - CULLA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Ares del Maestrat",
+	"zone": "alt-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.45663096010685,
+		"lon": -0.133963013067842,
+		"name": "Plaça Major. Ares del Maestrat"
+	},
+	"distance_km": 18,
+	"ascent_m": 550,
+	"descent_m": 670,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 345,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-7-e28.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e28",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.164345987141132,
+		40.337139973416924,
+		-0.133963013067842,
+		40.45767601579428
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e28 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-7-e28.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-168",
+	"name": "SL-CV 168 AGRES - CAVES DE MARIOLA - AGRES",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Agres",
+	"zone": "comtat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.777181040495634,
+		"lon": -0.516322469338775,
+		"name": "Carrer Puríssima, 33. Agres"
+	},
+	"distance_km": 9.6,
+	"ascent_m": 650,
+	"descent_m": 650,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 210,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-168.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-168",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.533003881573677,
+		38.765923054888844,
+		-0.500753419473767,
+		38.77731724642217
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-168 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-168.gpx (derivados: inicio, bbox)"
+	]
+}

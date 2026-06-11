@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-201",
+	"name": "PR-CV 201 RUTA DEL MOLÍ VELL",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Sant Mateu",
+	"zone": "baix-maestrat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 40.46692502684891,
+		"lon": 0.18281701952219,
+		"name": "Plaça de la Pietat. Sant Mateu"
+	},
+	"distance_km": 11.1,
+	"ascent_m": 230,
+	"descent_m": 230,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 160,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-201.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-201",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		0.18281701952219,
+		40.459195990115404,
+		0.222800960764289,
+		40.480211013928056
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-201 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-201.gpx (derivados: inicio, bbox)"
+	]
+}

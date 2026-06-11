@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-146",
+	"name": "SL-CV 146 LOS COLORAOS",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Redován",
+	"zone": "baix-segura-vega-baja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.11642203480005,
+		"lon": -0.905331959947944,
+		"name": "Piscina Municipal. C/ Primero de Mayo. Redován"
+	},
+	"distance_km": 2,
+	"ascent_m": 545,
+	"descent_m": 25,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 4,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 105,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-146.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-146",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.905331959947944,
+		38.116170996800065,
+		-0.898911003023386,
+		38.121438017115
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-146 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-146.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "gr-37-e02",
+	"name": "GR 37 E02 TITAGUAS - ALPUENTE",
+	"type": "GR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Titaguas",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.867422226816416,
+		"lon": -1.083016656339169,
+		"name": "Fuente Vieja. Avda. Rojas Clemente, 76. Titaguas"
+	},
+	"distance_km": 15.1,
+	"ascent_m": 540,
+	"descent_m": 410,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 285,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-37-e02.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-37-e02",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.083016656339169,
+		39.865747103467584,
+		-1.002734284847975,
+		39.897843170911074
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-37-e02 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-37-e02.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-163",
+	"name": "PR-CV 163 SENDA DEL PORTALET",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Canals",
+	"zone": "costera",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.92830197699368,
+		"lon": -0.577578004449606,
+		"name": "Área recreativa “El Túnel”. Canals"
+	},
+	"distance_km": 8.9,
+	"ascent_m": 330,
+	"descent_m": 330,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 175,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-163.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-163",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.597240021452308,
+		38.91659597866237,
+		-0.575313968583941,
+		38.93669603392482
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-163 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-163.gpx (derivados: inicio, bbox)"
+	]
+}

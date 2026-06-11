@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-194",
+	"name": "SL-CV 194 SENDERO DEL TARAYAL DEL PANTANO",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": "En vigor",
+	"municipality": "Elda",
+	"zone": "vinalopo-mitja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.49199499934912,
+		"lon": -0.797111028805375,
+		"name": "Casa Colorá. Avda. Condes de Elda. Elda"
+	},
+	"distance_km": 6.1,
+	"ascent_m": 205,
+	"descent_m": 205,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 115,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-194.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-194",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.806601019576192,
+		38.48914900794625,
+		-0.785002028569579,
+		38.501313999295235
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-194 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-194.gpx (derivados: inicio, bbox)"
+	]
+}

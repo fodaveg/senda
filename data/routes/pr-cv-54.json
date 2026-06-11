@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-54",
+	"name": "PR-CV 54 SIERRA DE CALLOSA DE SEGURA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Callosa de Segura",
+	"zone": "baix-segura-vega-baja",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.12281499616802,
+		"lon": -0.888845007866621,
+		"name": "Ermita de Nuestra Señora del Pilar. Callosa de Segura"
+	},
+	"distance_km": 16,
+	"ascent_m": 975,
+	"descent_m": 975,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 440,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-54.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-54",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.93080498278141,
+		38.11897398903966,
+		-0.880544995889068,
+		38.142471984028816
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-54 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-54.gpx (derivados: inicio, bbox)"
+	]
+}

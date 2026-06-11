@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-187",
+	"name": "PR-CV 187 LOS RUBIALES - RÍO TURIA",
+	"type": "PR",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Aras de los Olmos",
+	"zone": "serranos",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.923635041341186,
+		"lon": -1.133788023144007,
+		"name": "Avda. de Valencia, 18. Aras de los Olmos"
+	},
+	"distance_km": 18.2,
+	"ascent_m": 850,
+	"descent_m": 850,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 4
+	},
+	"est_duration_min": 380,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-187.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-187",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.196120968088508,
+		39.89584400318563,
+		-1.133751980960369,
+		39.92715300992131
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-187 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-187.gpx (derivados: inicio, bbox)"
+	]
+}

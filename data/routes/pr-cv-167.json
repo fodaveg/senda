@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-167",
+	"name": "PR-CV 167 VALL DE GALLINERA - ALPATRÓ - BENIALÍ",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Vall de Gallinera",
+	"zone": "marina-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.82009303197265,
+		"lon": -0.261153029277921,
+		"name": "Carrer la Purissima. CV-700. Alpatró"
+	},
+	"distance_km": 5.7,
+	"ascent_m": 110,
+	"descent_m": 240,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 105,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-167.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-167",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.261960038915277,
+		38.81855595856905,
+		-0.22121200338006,
+		38.82447903044522
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-167 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-167.gpx (derivados: inicio, bbox)"
+	]
+}

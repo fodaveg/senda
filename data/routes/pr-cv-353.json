@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-353",
+	"name": "PR-CV 353 SIERRA DE ORXETA",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Orxeta",
+	"zone": "marina-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.56525903567672,
+		"lon": -0.262236976996064,
+		"name": "C/ Barranquet, s/n. Orxeta"
+	},
+	"distance_km": 6.7,
+	"ascent_m": 590,
+	"descent_m": 420,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 180,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-353.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-353",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.262242006137967,
+		38.54711003601551,
+		-0.243492024019361,
+		38.57155300676823
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-353 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-353.gpx (derivados: inicio, bbox)"
+	]
+}

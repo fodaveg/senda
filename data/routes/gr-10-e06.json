@@ -1,0 +1,49 @@
+{
+	"id": "gr-10-e06",
+	"name": "GR 10 E06 SACAÑET - ANDILLA",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Sacañet",
+	"zone": "alto-palancia",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.85132201574743,
+		"lon": -0.714286006987095,
+		"name": "Sacañet"
+	},
+	"distance_km": 15,
+	"ascent_m": 490,
+	"descent_m": 615,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 295,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "gr-10-e06.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-10-e06",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.812912005931139,
+		39.83564601279795,
+		-0.714286006987095,
+		39.869925985112786
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-10-e06 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX gr-10-e06.gpx (derivados: inicio, bbox)"
+	]
+}

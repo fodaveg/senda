@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-104",
+	"name": "PR-CV 104 AGRES - CAVA DON MIGUEL",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Agres",
+	"zone": "comtat",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.78048996441066,
+		"lon": -0.516765033826232,
+		"name": "Calle San Antonio,2. Agres"
+	},
+	"distance_km": 3.9,
+	"ascent_m": 360,
+	"descent_m": 15,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 85,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-104.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-104",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.533282998949289,
+		38.766381964087486,
+		-0.516285002231598,
+		38.78048996441066
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-104 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-104.gpx (derivados: inicio, bbox)"
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-13",
+	"name": "PR-CV 13 FINESTRAT - POLOP",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Finestrat",
+	"zone": "marina-baixa",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.57777698896825,
+		"lon": -0.20861903205514,
+		"name": "Área Recreativa de la Font del Molí. Finestrat"
+	},
+	"distance_km": 13.6,
+	"ascent_m": 725,
+	"descent_m": 835,
+	"circular": false,
+	"difficulty_mide": {
+		"medio": 3,
+		"itinerario": 2,
+		"desplazamiento": 3,
+		"esfuerzo": 3
+	},
+	"est_duration_min": 300,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-13.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-13",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.212129959836602,
+		38.57777698896825,
+		-0.135717010125518,
+		38.627731036394835
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-13 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-13.gpx (derivados: inicio, bbox)"
+	]
+}

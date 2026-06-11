@@ -1,0 +1,49 @@
+{
+	"id": "pr-cv-334",
+	"name": "PR-CV 334 CREU DEL CARDENAL",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": "Control de calidad positivo",
+	"municipality": "Alzira",
+	"zone": "ribera-alta",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 39.13190997205675,
+		"lon": -0.371514027938247,
+		"name": "Casa de los Guardas. La Murta. Alzira"
+	},
+	"distance_km": 6.8,
+	"ascent_m": 525,
+	"descent_m": 525,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 2,
+		"itinerario": 2,
+		"desplazamiento": 4,
+		"esfuerzo": 2
+	},
+	"est_duration_min": 170,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "pr-cv-334.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-334",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.37158502265811,
+		39.12274201400578,
+		-0.34601703286171,
+		39.1319399792701
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-334 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX pr-cv-334.gpx (derivados: inicio, bbox)"
+	]
+}

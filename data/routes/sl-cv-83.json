@@ -1,0 +1,49 @@
+{
+	"id": "sl-cv-83",
+	"name": "SL-CV 83 MIRADOR DE LA CREUETA",
+	"type": "SL",
+	"status": "con_reservas",
+	"status_detail": "Control de calidad condicionado",
+	"municipality": "Montitxelvo/Montichelvo",
+	"zone": "vall-d-albaida",
+	"aemet_municipio": null,
+	"start": {
+		"lat": 38.89151003211737,
+		"lon": -0.340208038687706,
+		"name": "Cooperativa agrícola Montitxelvo. C/ Lepanto, esquina con C/ de les Escoles. Montitxelvo"
+	},
+	"distance_km": 2.3,
+	"ascent_m": 110,
+	"descent_m": 110,
+	"circular": true,
+	"difficulty_mide": {
+		"medio": 1,
+		"itinerario": 2,
+		"desplazamiento": 2,
+		"esfuerzo": 1
+	},
+	"est_duration_min": 50,
+	"water_points": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "sl-cv-83.gpx",
+	"links": {
+		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-83",
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.349165024235845,
+		38.888087030500174,
+		-0.340208038687706,
+		38.89280796982348
+	],
+	"sources": [
+		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-83 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"GPX sl-cv-83.gpx (derivados: inicio, bbox)"
+	]
+}
