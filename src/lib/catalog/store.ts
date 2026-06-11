@@ -73,6 +73,58 @@ export async function getStoredTrack(gpxFile: string): Promise<string | null> {
 	return getStoredFile(`gpx/${gpxFile}`);
 }
 
+/** Lectura binaria (tiles del mapa offline). */
+export async function getStoredBinary(path: string): Promise<ArrayBuffer | null> {
+	return readKey<ArrayBuffer>(FILES, path);
+}
+
+/** Guarda un binario (tile); los errores de cuota no rompen nada. */
+export async function storeBinary(path: string, content: ArrayBuffer): Promise<void> {
+	const dbPromise = openDb();
+	if (!dbPromise) return;
+	try {
+		const db = await dbPromise;
+		try {
+			const tx = db.transaction(FILES, 'readwrite');
+			tx.objectStore(FILES).put(content, path);
+			await new Promise<void>((resolve, reject) => {
+				tx.oncomplete = () => resolve();
+				tx.onerror = () => reject(tx.error ?? new Error('Error de IndexedDB'));
+			});
+		} finally {
+			db.close();
+		}
+	} catch {
+		// Solo una optimización.
+	}
+}
+
+/** Borra todas las claves con un prefijo (p. ej. tiles de una ruta). */
+export async function deleteByPrefix(prefix: string): Promise<number> {
+	const dbPromise = openDb();
+	if (!dbPromise) return 0;
+	const db = await dbPromise;
+	try {
+		const tx = db.transaction(FILES, 'readwrite');
+		const store = tx.objectStore(FILES);
+		const keys = await requestToPromise(store.getAllKeys());
+		let deleted = 0;
+		for (const key of keys) {
+			if (typeof key === 'string' && key.startsWith(prefix)) {
+				store.delete(key);
+				deleted++;
+			}
+		}
+		await new Promise<void>((resolve, reject) => {
+			tx.oncomplete = () => resolve();
+			tx.onerror = () => reject(tx.error ?? new Error('Error de IndexedDB'));
+		});
+		return deleted;
+	} finally {
+		db.close();
+	}
+}
+
 /** Guarda un fichero suelto (p. ej. un GPX cacheado bajo demanda). */
 export async function storeFile(path: string, content: string): Promise<void> {
 	const dbPromise = openDb();
@@ -113,7 +165,10 @@ export async function applyCatalogUpdate(
 		const files = tx.objectStore(FILES);
 		const previousKeys = await requestToPromise(files.getAllKeys());
 		for (const key of previousKeys) {
-			if (typeof key === 'string' && !(key in manifest.files)) files.delete(key);
+			// Los tiles del mapa offline no forman parte del catálogo publicado.
+			if (typeof key === 'string' && !key.startsWith('tiles/') && !(key in manifest.files)) {
+				files.delete(key);
+			}
 		}
 		for (const [path, content] of Object.entries(entries)) files.put(content, path);
 		const meta = tx.objectStore(META);

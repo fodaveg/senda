@@ -1,6 +1,12 @@
+<script lang="ts" module>
+	let registeredProtocol = false;
+</script>
+
 <script lang="ts">
 	import maplibregl from 'maplibre-gl';
 	import 'maplibre-gl/dist/maplibre-gl.css';
+	import { getStoredBinary } from '$lib/catalog/store';
+	import { IGN_ATTRIBUTION, ignTileUrl } from '$lib/map/tiles';
 	import { onMount } from 'svelte';
 	import type { FeatureCollection } from 'geojson';
 	import type { StyleSpecification } from 'maplibre-gl';
@@ -52,23 +58,35 @@
 		}
 	});
 
-	// Tiles raster OpenTopoMap (SPEC §1). Sin API key.
+	// Base cartográfica: IGN España mapa raster (SPEC v1 §1, SPECS_V2 §11).
+	// El protocolo ign:// resuelve primero el almacén local (mapa offline
+	// descargado por ruta) y cae a la red del IGN.
+	if (!registeredProtocol) {
+		maplibregl.addProtocol('ign', async (params) => {
+			const match = params.url.match(/^ign:\/\/(\d+)\/(\d+)\/(\d+)$/);
+			if (!match) throw new Error(`URL de tile no válida: ${params.url}`);
+			const [, z, x, y] = match;
+			const stored = await getStoredBinary(`tiles/${z}/${x}/${y}`);
+			if (stored) return { data: stored };
+			const response = await fetch(ignTileUrl(Number(z), Number(x), Number(y)));
+			if (!response.ok) throw new Error(`IGN respondió ${response.status}`);
+			return { data: await response.arrayBuffer() };
+		});
+		registeredProtocol = true;
+	}
+
 	const style: StyleSpecification = {
 		version: 8,
 		sources: {
-			opentopo: {
+			ign: {
 				type: 'raster',
-				tiles: [
-					'https://a.tile.opentopomap.org/{z}/{x}/{y}.png',
-					'https://b.tile.opentopomap.org/{z}/{x}/{y}.png',
-					'https://c.tile.opentopomap.org/{z}/{x}/{y}.png'
-				],
+				tiles: ['ign://{z}/{x}/{y}'],
 				tileSize: 256,
-				attribution:
-					'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'
+				maxzoom: 17,
+				attribution: IGN_ATTRIBUTION
 			}
 		},
-		layers: [{ id: 'opentopo', type: 'raster', source: 'opentopo' }]
+		layers: [{ id: 'ign', type: 'raster', source: 'ign' }]
 	};
 
 	onMount(() => {

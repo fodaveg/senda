@@ -22,6 +22,8 @@
 	import { SvelteSet } from 'svelte/reactivity';
 	import { loadChecklist, saveChecklist } from '$lib/user/checklist';
 	import { wikilocSearchUrl } from '$lib/wikiloc';
+	import { deleteByPrefix, getStoredBinary, storeBinary } from '$lib/catalog/store';
+	import { ignTileUrl, tileListForBbox, tileStoreKey } from '$lib/map/tiles';
 	import {
 		AemetAuthError,
 		AemetRateLimitError,
@@ -56,8 +58,10 @@
 	let hourlyByDate = $state<Record<string, HourlyPoint[]>>({});
 	let avisos = $state<Aviso[] | null>(null);
 	let travel = $state<{ estimate: DrivingEstimate; from: string } | null>(null);
-	let checkedItems = $state<SvelteSet<string>>(new SvelteSet());
+	let checkedItems = new SvelteSet<string>();
 	let profileHover = $state<[number, number] | null>(null);
+	let offlineTiles = $state<number | null>(null);
+	let downloadProgress = $state<string | null>(null);
 	let travelStatus = $state<string | null>(null);
 
 	let selectedDay = $derived(forecast?.find((d) => d.date === selectedDate) ?? null);
@@ -83,9 +87,56 @@
 		avisos && selectedDate ? avisosForRoute(avisos, route.zone, selectedDate) : []
 	);
 
+	// Mapa offline (SPECS_V2 §11): ¿hay tiles descargados para esta ruta?
+	$effect(() => {
+		const r = route;
+		void (async () => {
+			if (!r.bbox) {
+				offlineTiles = null;
+				return;
+			}
+			const first = tileListForBbox(r.bbox)[0];
+			offlineTiles = first && (await getStoredBinary(tileStoreKey(first))) ? 1 : 0;
+		})();
+	});
+
+	async function downloadOfflineMap() {
+		if (!route.bbox) return;
+		const tiles = tileListForBbox(route.bbox);
+		downloadProgress = `Descargando 0/${tiles.length} tiles…`;
+		let done = 0;
+		try {
+			for (const tile of tiles) {
+				if ((await getStoredBinary(tileStoreKey(tile))) === null) {
+					const response = await fetch(ignTileUrl(tile.z, tile.x, tile.y));
+					if (!response.ok) throw new Error(`IGN respondió ${response.status}`);
+					await storeBinary(tileStoreKey(tile), await response.arrayBuffer());
+				}
+				done++;
+				if (done % 20 === 0) downloadProgress = `Descargando ${done}/${tiles.length} tiles…`;
+			}
+			offlineTiles = 1;
+			downloadProgress = `Mapa offline listo (${tiles.length} tiles, IGN CC-BY).`;
+		} catch (e) {
+			console.error('Mapa offline:', e);
+			downloadProgress =
+				'Descarga interrumpida (sin conexión o IGN caído); reintenta para continuar.';
+		}
+	}
+
+	async function deleteOfflineMap() {
+		const deleted = await deleteByPrefix('tiles/');
+		offlineTiles = 0;
+		downloadProgress = `Borrados ${deleted} tiles descargados.`;
+	}
+
 	// Checklist de preparación por (ruta, fecha) (SPECS_V2 §7).
 	$effect(() => {
-		if (selectedDate) checkedItems = new SvelteSet(loadChecklist(route.id, selectedDate));
+		if (selectedDate) {
+			const stored = loadChecklist(route.id, selectedDate);
+			checkedItems.clear();
+			for (const id of stored) checkedItems.add(id);
+		}
 	});
 
 	function toggleChecklistItem(itemId: string) {
@@ -287,6 +338,20 @@
 			{/if}
 		</div>
 
+		{#if route.bbox}
+			<div class="offline-map no-print">
+				<button type="button" class="travel-btn" onclick={downloadOfflineMap}>
+					{offlineTiles ? 'Actualizar mapa offline' : 'Descargar mapa de esta ruta (IGN)'}
+				</button>
+				{#if offlineTiles}
+					<button type="button" class="travel-btn" onclick={deleteOfflineMap}>
+						Borrar tiles descargados
+					</button>
+				{/if}
+				{#if downloadProgress}<span class="travel-hint" role="status">{downloadProgress}</span>{/if}
+			</div>
+		{/if}
+
 		<h2>Perfil de elevación</h2>
 		{#if profile.length > 0 || trackError}
 			<ElevationProfile
@@ -468,6 +533,13 @@
 </div>
 
 <style>
+	.offline-map {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		align-items: center;
+		margin-top: 0.4rem;
+	}
 	.travel p {
 		margin: 0.25rem 0;
 	}

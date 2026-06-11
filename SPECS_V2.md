@@ -217,11 +217,11 @@ Documento pensado para **dejar a familiares o contactos antes de salir**: si no 
 
 ## 11. Mapa offline por ruta (condicionado a investigación)
 
-**Primera tarea del milestone, con criterio de salida explícito:**
+**Resolución de la investigación (2026-06-11): VIABLE con IGN España.**
 
-1. Investigar proveedores de tiles cuya licencia/política permita descarga por área: la política de OpenTopoMap (proveedor actual) **prohíbe la descarga masiva** — no usar para esto. Evaluar WMTS del IGN español y del Institut Cartogràfic Valencià (licencias tipo CC-BY, verificar términos exactos de uso masivo) u otros.
-2. **Si hay proveedor viable**: botón "Descargar mapa de esta ruta" en la ficha — tiles del bbox ampliado a niveles de zoom acotados (p. ej. 12–15), guardados en el mismo almacén local del catálogo, con indicador de tamaño y botón de borrado. MapLibre resuelve tile local → red.
-3. **Si no lo hay**: la funcionalidad se descarta documentando el porqué en este documento (sección actualizada con la evidencia). No se viola ningún término de uso "porque es cómodo".
+- OpenTopoMap prohíbe la descarga masiva → descartado para offline (se abandonó también como base online).
+- **WMTS del IGN (mapa raster MTN)**: licencia CC-BY 4.0, CORS abierto, tiles GoogleMapsCompatible verificados — pasa a ser la **base cartográfica única de la app** (ya contemplada en SPEC v1 §1), de modo que online y offline se ven idénticos.
+- Implementado: protocolo MapLibre `ign://` que resuelve almacén local → red IGN; botón "Descargar mapa de esta ruta" en la ficha (tiles del bbox, zooms 11–15 con tope de 600 tiles — con bbox grande se recorta el zoom antes que superar el tope), reanudable, con borrado. Atribución IGN visible en el mapa.
 
 ---
 
