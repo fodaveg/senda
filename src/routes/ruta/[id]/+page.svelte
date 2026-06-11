@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
+	import AvisosBanner from '$lib/components/AvisosBanner.svelte';
 	import RouteMarks from '$lib/components/RouteMarks.svelte';
+	import StartWindowCard from '$lib/components/StartWindowCard.svelte';
 	import StatusBadge from '$lib/components/StatusBadge.svelte';
 	import ElevationProfile from '$lib/components/ElevationProfile.svelte';
 	import Map from '$lib/components/Map.svelte';
@@ -10,6 +12,7 @@
 	import { loadTrackXml } from '$lib/data/tracks';
 	import { wildlifeForZone } from '$lib/data/wildlife';
 	import { evaluateGear } from '$lib/engine';
+	import { startWindow } from '$lib/engine/startWindow';
 	import { gpxToGeoJSON, trackPositions } from '$lib/geo/gpx';
 	import { elevationProfile, type ProfilePoint } from '$lib/geo/profile';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
@@ -22,6 +25,8 @@
 		type AemetDay
 	} from '$lib/weather/aemet';
 	import { dateLabel, forecastDates, seasonForDate } from '$lib/weather/dates';
+	import { avisosForRoute, fetchAvisosCapCached, type Aviso } from '$lib/weather/avisos';
+	import { fetchOpenMeteoHourly, type HourlyPoint } from '$lib/weather/hourly';
 	import { fetchOpenMeteoForecast } from '$lib/weather/openmeteo';
 	import type { FeatureCollection } from 'geojson';
 	import type { WeatherDay } from '$lib/types';
@@ -43,6 +48,8 @@
 	let weatherError = $state<string | null>(null);
 	let weatherLoading = $state(true);
 	let debugMode = $state(false);
+	let hourlyByDate = $state<Record<string, HourlyPoint[]>>({});
+	let avisos = $state<Aviso[] | null>(null);
 
 	let selectedDay = $derived(forecast?.find((d) => d.date === selectedDate) ?? null);
 	// Motivo técnico de un panel meteo vacío, para diagnóstico en la UI.
@@ -61,6 +68,23 @@
 			? evaluateGear(route, selectedDay, seasonForDate(selectedDate), gearItems, gearRules)
 			: []
 	);
+	// Ventana ideal de inicio (SPECS_V2 §5): el horario solo afina.
+	let window = $derived(startWindow(route, selectedDay, hourlyByDate[selectedDate] ?? null));
+	let avisosForDate = $derived(
+		avisos && selectedDate ? avisosForRoute(avisos, route.zone, selectedDate) : []
+	);
+
+	// Pronóstico horario por fecha seleccionada, con caché en memoria.
+	$effect(() => {
+		const date = selectedDate;
+		const r = route;
+		if (!date || date in hourlyByDate) return;
+		void fetchOpenMeteoHourly(r.start.lat, r.start.lon, date)
+			.then((points) => {
+				hourlyByDate = { ...hourlyByDate, [date]: points };
+			})
+			.catch((e: unknown) => console.error('Open-Meteo horario:', e));
+	});
 
 	// Carga por ruta como $effect (no onMount): se relanza si cambia la ruta
 	// sin remontar el componente y relee los ajustes (api key AEMET) en cada
@@ -80,6 +104,8 @@
 		aemetForecast = null;
 		aemetNote = null;
 		weatherError = null;
+		avisos = null;
+		hourlyByDate = {};
 		weatherLoading = true;
 		const ds = forecastDates();
 		dates = ds;
@@ -108,6 +134,17 @@
 		} finally {
 			if (token === loadToken) weatherLoading = false;
 		}
+		// Avisos meteorológicos oficiales (SPECS_V2 §5), si hay api key.
+		if (settings.aemetApiKey) {
+			try {
+				const result = await fetchAvisosCapCached(settings.aemetApiKey);
+				if (token === loadToken) avisos = result;
+			} catch (e) {
+				// Sin avisos confirmados no se afirma nada; el detalle queda en consola.
+				console.error('AEMET avisos:', e);
+			}
+		}
+		if (token !== loadToken) return;
 		// AEMET solo como verificación, si hay api key en ajustes y código de municipio.
 		if (settings.aemetApiKey && r.aemet_municipio) {
 			try {
@@ -196,6 +233,7 @@
 			</div>
 			<p class="date-note">Pronóstico disponible solo hasta 7 días vista.</p>
 		{/if}
+		<AvisosBanner avisos={avisosForDate} />
 		<WeatherCard
 			day={selectedDay}
 			loading={weatherLoading}
@@ -204,6 +242,9 @@
 			{aemetNote}
 			error={debugMode ? weatherDetail : null}
 		/>
+
+		<h2>Mejor momento para empezar</h2>
+		<StartWindowCard {window} manualHint={route.best_start_time} />
 
 		<h2>Mochila recomendada</h2>
 		<BackpackPanel {decisions} />

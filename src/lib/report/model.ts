@@ -6,6 +6,8 @@
  */
 
 import type { GearDecision, Route, WeatherDay, WildlifeZone } from '$lib/types';
+import { minutesToHhMm, type StartWindow } from '$lib/engine/startWindow';
+import type { Aviso } from '$lib/weather/avisos';
 import { formatDuration, formatKm, formatMeters } from '$lib/format';
 
 export interface ReportInput {
@@ -19,6 +21,10 @@ export interface ReportInput {
 	wildlife: WildlifeZone | null;
 	/** Rutas alternativas resueltas (id → nombre). */
 	alternatives: Array<{ id: string; name: string }>;
+	/** Ventana ideal de inicio calculada (SPECS_V2 §5), si fue posible. */
+	startWindow?: StartWindow | null;
+	/** Avisos meteorológicos oficiales vigentes para la fecha, si se consultaron. */
+	avisos?: Aviso[] | null;
 }
 
 export type ReportBlock =
@@ -55,6 +61,8 @@ function gearLine(decision: GearDecision): string {
 
 export function buildReportModel(input: ReportInput): ReportModel {
 	const { route, date, weather, decisions, wildlife, alternatives } = input;
+	const window = input.startWindow ?? null;
+	const avisos = input.avisos ?? null;
 
 	const sections: ReportSection[] = [];
 
@@ -115,7 +123,18 @@ export function buildReportModel(input: ReportInput): ReportModel {
 					{
 						kind: 'paragraph',
 						text: `Fuente: Open-Meteo, consultado ${weather.fetched_at}.`
-					}
+					},
+					...(avisos && avisos.length > 0
+						? [
+								{
+									kind: 'list' as const,
+									items: avisos.map(
+										(a) =>
+											`AVISO ${a.level.toUpperCase()} — ${a.event} (${a.areaDesc}), de ${hourOf(a.onset)} a ${hourOf(a.expires)}. Fuente: AEMET avisos.`
+									)
+								}
+							]
+						: [])
 				]
 			: [
 					{
@@ -125,9 +144,24 @@ export function buildReportModel(input: ReportInput): ReportModel {
 				]
 	});
 
-	// Mejor momento para empezar
+	// Mejor momento para empezar: la ventana calculada (SPECS_V2 §5) tiene
+	// prioridad de presentación; la recomendación manual se conserva.
 	const startBlocks: ReportBlock[] = [];
-	if (route.best_start_time) {
+	if (window && window.lightAlert) {
+		startBlocks.push({ kind: 'paragraph', text: `⚠ ${window.reasons[0]}` });
+	} else if (window) {
+		startBlocks.push({
+			kind: 'paragraph',
+			text: `Sal entre las ${minutesToHhMm(window.startMin)} y las ${minutesToHhMm(window.endMin)}.`
+		});
+		startBlocks.push({ kind: 'list', items: window.reasons });
+	}
+	if (window && route.best_start_time) {
+		startBlocks.push({
+			kind: 'paragraph',
+			text: `Recomendación de la ficha: ${route.best_start_time}.`
+		});
+	} else if (route.best_start_time) {
 		startBlocks.push({ kind: 'paragraph', text: `${route.best_start_time} (ficha de la ruta).` });
 	} else if (weather) {
 		startBlocks.push({

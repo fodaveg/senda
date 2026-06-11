@@ -7,10 +7,13 @@
 	import { routeById } from '$lib/data/routes';
 	import { wildlifeForZone } from '$lib/data/wildlife';
 	import { evaluateGear } from '$lib/engine';
+	import { startWindow } from '$lib/engine/startWindow';
 	import { buildReportModel, type ReportModel } from '$lib/report/model';
 	import { renderMarkdown, reportFilename } from '$lib/report/markdown';
 	import { loadSettings } from '$lib/settings';
 	import { forecastDates, seasonForDate } from '$lib/weather/dates';
+	import { avisosForRoute, fetchAvisosCapCached, type Aviso } from '$lib/weather/avisos';
+	import { fetchOpenMeteoHourly, type HourlyPoint } from '$lib/weather/hourly';
 	import { fetchOpenMeteoForecast } from '$lib/weather/openmeteo';
 	import type { WeatherDay } from '$lib/types';
 
@@ -19,6 +22,8 @@
 
 	let date = $state('');
 	let forecast = $state<WeatherDay[] | null>(null);
+	let hourly = $state<HourlyPoint[] | null>(null);
+	let avisos = $state<Aviso[] | null>(null);
 	let ready = $state(false);
 	let savedTo = $state<string | null>(null);
 
@@ -36,7 +41,9 @@
 			weather,
 			decisions,
 			wildlife: wildlifeForZone(route.zone),
-			alternatives
+			alternatives,
+			startWindow: startWindow(route, weather, hourly),
+			avisos: avisos ? avisosForRoute(avisos, route.zone, date) : null
 		});
 	});
 
@@ -54,6 +61,21 @@
 			forecast = null;
 		} finally {
 			ready = true;
+		}
+		// Horario para la ventana de inicio y avisos oficiales: solo afinan,
+		// su fallo no bloquea el informe.
+		try {
+			hourly = await fetchOpenMeteoHourly(route.start.lat, route.start.lon, date);
+		} catch (e) {
+			console.error('Open-Meteo horario:', e);
+		}
+		const { aemetApiKey } = loadSettings();
+		if (aemetApiKey) {
+			try {
+				avisos = await fetchAvisosCapCached(aemetApiKey);
+			} catch (e) {
+				console.error('AEMET avisos:', e);
+			}
 		}
 	});
 
