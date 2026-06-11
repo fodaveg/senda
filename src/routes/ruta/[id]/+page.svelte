@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
 	import AvisosBanner from '$lib/components/AvisosBanner.svelte';
@@ -20,6 +21,7 @@
 	import { loadSettings } from '$lib/settings';
 	import { SvelteSet } from 'svelte/reactivity';
 	import { loadChecklist, saveChecklist } from '$lib/user/checklist';
+	import { wikilocSearchUrl } from '$lib/wikiloc';
 	import {
 		AemetAuthError,
 		AemetRateLimitError,
@@ -55,6 +57,7 @@
 	let avisos = $state<Aviso[] | null>(null);
 	let travel = $state<{ estimate: DrivingEstimate; from: string } | null>(null);
 	let checkedItems = $state<SvelteSet<string>>(new SvelteSet());
+	let profileHover = $state<[number, number] | null>(null);
 	let travelStatus = $state<string | null>(null);
 
 	let selectedDay = $derived(forecast?.find((d) => d.date === selectedDate) ?? null);
@@ -128,7 +131,8 @@
 		weatherLoading = true;
 		const ds = forecastDates();
 		dates = ds;
-		selectedDate = ds[0];
+		const requested = page.url.searchParams.get('fecha');
+		selectedDate = requested && ds.includes(requested) ? requested : ds[0];
 		try {
 			const xml = await loadTrackXml(r.gpx);
 			const collection = gpxToGeoJSON(xml);
@@ -197,6 +201,24 @@
 		}
 	}
 
+	let shareMessage = $state<string | null>(null);
+
+	/** Compartir la ruta con la fecha seleccionada (SPECS_V2 §13). */
+	async function shareRoute() {
+		shareMessage = null;
+		const url = `${location.origin}${location.pathname}?fecha=${selectedDate}`;
+		try {
+			if (navigator.share) {
+				await navigator.share({ title: route.name, url });
+				return;
+			}
+			await navigator.clipboard.writeText(url);
+			shareMessage = 'Enlace copiado al portapapeles.';
+		} catch {
+			shareMessage = url;
+		}
+	}
+
 	/** GPS solo bajo gesto del usuario (SPECS_V2 §15). */
 	function travelFromHere() {
 		travelStatus = 'Obteniendo tu posición…';
@@ -257,7 +279,7 @@
 	<section class="map-col">
 		<div class="map-wrap">
 			{#if geojson}
-				<Map track={geojson} bbox={route.bbox} />
+				<Map track={geojson} bbox={route.bbox} highlight={profileHover} />
 			{:else if trackError}
 				<p class="error">No se pudo cargar el track: {trackError}</p>
 			{:else}
@@ -267,7 +289,12 @@
 
 		<h2>Perfil de elevación</h2>
 		{#if profile.length > 0 || trackError}
-			<ElevationProfile points={profile} />
+			<ElevationProfile
+				points={profile}
+				onHover={(index) => {
+					profileHover = index === null ? null : [profile[index].lon, profile[index].lat];
+				}}
+			/>
 		{:else}
 			<p class="loading">Cargando perfil…</p>
 		{/if}
@@ -401,17 +428,16 @@
 			{/if}
 		{/if}
 
-		{#if route.links.femecv || route.links.wikiloc}
-			<h3>Enlaces</h3>
-			<ul>
-				{#if route.links.femecv}
-					<li><a href={route.links.femecv} rel="external">Ficha FEMECV</a></li>
-				{/if}
-				{#if route.links.wikiloc}
-					<li><a href={route.links.wikiloc} rel="external">Wikiloc</a></li>
-				{/if}
-			</ul>
-		{/if}
+		<h3>Enlaces</h3>
+		<ul>
+			{#if route.links.femecv}
+				<li><a href={route.links.femecv} rel="external">Ficha FEMECV</a></li>
+			{/if}
+			{#if route.links.wikiloc}
+				<li><a href={route.links.wikiloc} rel="external">Wikiloc (enlace de la ficha)</a></li>
+			{/if}
+			<li><a href={wikilocSearchUrl(route)} rel="external">Buscar esta ruta en Wikiloc</a></li>
+		</ul>
 
 		{#if selectedDate}
 			<!-- eslint-disable svelte/no-navigation-without-resolve -- base construida con resolve(); la regla no contempla añadir query string -->
@@ -427,6 +453,10 @@
 			>
 				Ficha de emergencia
 			</a>
+			<button type="button" class="report-btn emergency-btn share-btn" onclick={shareRoute}>
+				Compartir
+			</button>
+			{#if shareMessage}<p class="travel-hint" role="status">{shareMessage}</p>{/if}
 			<!-- eslint-enable svelte/no-navigation-without-resolve -->
 		{/if}
 
@@ -442,7 +472,7 @@
 		margin: 0.25rem 0;
 	}
 	.travel-hint {
-		color: #555;
+		color: var(--muted);
 		font-size: 0.85rem;
 	}
 	.travel-btn {
@@ -451,7 +481,7 @@
 		padding: 0.3rem 0.7rem;
 		border-radius: 6px;
 		border: 1px solid #1d3a2a;
-		background: #fff;
+		background: var(--surface);
 		color: #1d3a2a;
 		cursor: pointer;
 		margin: 0.25rem 0;
@@ -484,7 +514,7 @@
 	}
 	.map-wrap {
 		height: 420px;
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		overflow: hidden;
 	}
@@ -510,7 +540,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		padding: 0.4rem 0.7rem;
 		font-size: 0.8rem;
@@ -520,11 +550,11 @@
 	}
 	.sources {
 		font-size: 0.8rem;
-		color: #555;
+		color: var(--muted);
 	}
 	.other-risks {
 		font-size: 0.9rem;
-		color: #555;
+		color: var(--muted);
 	}
 	.report-btn {
 		display: inline-block;
@@ -536,8 +566,12 @@
 		color: #fff;
 		text-decoration: none;
 	}
+	.share-btn {
+		cursor: pointer;
+		font: inherit;
+	}
 	.emergency-btn {
-		background: #fff;
+		background: var(--surface);
 		color: #1d3a2a;
 		margin-left: 0.5rem;
 	}
@@ -557,9 +591,9 @@
 		gap: 0.4rem;
 	}
 	.date-chip {
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 999px;
-		background: #fff;
+		background: var(--surface);
 		padding: 0.3rem 0.75rem;
 		cursor: pointer;
 		font: inherit;
@@ -572,7 +606,7 @@
 	}
 	.date-note {
 		font-size: 0.78rem;
-		color: #555;
+		color: var(--muted);
 		margin: 0.3rem 0 0.6rem;
 	}
 </style>

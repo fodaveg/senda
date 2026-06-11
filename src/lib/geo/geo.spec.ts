@@ -43,7 +43,7 @@ describe('elevationProfile', () => {
 	it('acumula distancia y conserva elevaciones', () => {
 		const profile = elevationProfile(trackPositions(gpxToGeoJSON(GPX, xmlParser)));
 		expect(profile).toHaveLength(3);
-		expect(profile[0]).toEqual({ km: 0, ele: 100 });
+		expect(profile[0]).toMatchObject({ km: 0, ele: 100, lon: -0.5, lat: 39 });
 		expect(profile[2].km).toBeCloseTo(2.22, 1);
 		expect(profile[2].ele).toBe(120);
 	});

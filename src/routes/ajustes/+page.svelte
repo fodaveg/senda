@@ -5,7 +5,13 @@
 	import { getCatalogInfo, resetCatalogCache, type CatalogInfo } from '$lib/catalog';
 	import { applyCatalogUpdate } from '$lib/catalog/store';
 	import { CatalogError, checkForCatalogUpdate, DEFAULT_CATALOG_URL } from '$lib/catalog/update';
-	import { DEFAULT_SETTINGS, loadSettings, saveSettings, type Settings } from '$lib/settings';
+	import {
+		applyTheme,
+		DEFAULT_SETTINGS,
+		loadSettings,
+		saveSettings,
+		type Settings
+	} from '$lib/settings';
 	import { validateAemetKey, type AemetKeyCheck } from '$lib/weather/aemet';
 
 	let settings = $state<Settings>({ ...DEFAULT_SETTINGS });
@@ -236,6 +242,18 @@
 	</fieldset>
 
 	<fieldset>
+		<legend>Apariencia</legend>
+		<label>
+			Tema
+			<select bind:value={settings.theme} onchange={() => applyTheme(settings.theme)}>
+				<option value="auto">Automático (según el sistema)</option>
+				<option value="claro">Claro forzado (sol directo)</option>
+				<option value="oscuro">Oscuro</option>
+			</select>
+		</label>
+	</fieldset>
+
+	<fieldset>
 		<legend>Datos de emergencia (opcionales)</legend>
 		<p class="help">
 			Se incluyen solo en la ficha de emergencia que generes para tus contactos (ficha de cada ruta
@@ -296,13 +314,13 @@
 		gap: 1rem;
 	}
 	fieldset {
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		padding: 0.75rem 1rem;
 	}
 	.help {
 		font-size: 0.85rem;
-		color: #555;
+		color: var(--muted);
 		margin: 0.25rem 0 0.75rem;
 	}
 	label {
@@ -319,7 +337,7 @@
 	input {
 		font: inherit;
 		padding: 0.45rem 0.6rem;
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 	}
 	.key-row {
@@ -334,7 +352,7 @@
 		padding: 0.45rem 0.8rem;
 		border: 1px solid #1d3a2a;
 		border-radius: 6px;
-		background: #fff;
+		background: var(--surface);
 		color: #1d3a2a;
 		cursor: pointer;
 	}
@@ -356,7 +374,7 @@
 	.key-check {
 		margin: 0.5rem 0 0;
 		font-size: 0.85rem;
-		color: #555;
+		color: var(--muted);
 	}
 	.key-check.ok {
 		color: #2a6f4e;

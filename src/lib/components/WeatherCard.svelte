@@ -95,10 +95,10 @@
 
 <style>
 	.weather {
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		padding: 0.75rem 1rem;
-		background: #fff;
+		background: var(--surface);
 	}
 	dl {
 		display: flex;
@@ -114,7 +114,7 @@
 		font-size: 0.75rem;
 		text-transform: uppercase;
 		letter-spacing: 0.03em;
-		color: #555;
+		color: var(--muted);
 	}
 	dd {
 		margin: 0;
@@ -123,16 +123,16 @@
 	.source {
 		margin: 0.6rem 0 0;
 		font-size: 0.78rem;
-		color: #555;
+		color: var(--muted);
 	}
 	.empty {
 		margin: 0;
-		color: #555;
+		color: var(--muted);
 	}
 	.aemet {
 		margin: 0.4rem 0 0;
 		font-size: 0.85rem;
-		color: #333;
+		color: var(--muted-strong);
 	}
 	.aemet-note {
 		margin: 0.4rem 0 0;

@@ -2,12 +2,14 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import favicon from '$lib/assets/favicon.svg';
+	import { applyTheme, loadSettings } from '$lib/settings';
 
 	let { children } = $props();
 
 	// Marcador para que los tests e2e esperen a la hidratación.
 	onMount(() => {
 		document.body.dataset.hydrated = 'true';
+		applyTheme(loadSettings().theme);
 	});
 </script>
 
@@ -27,6 +29,39 @@
 </main>
 
 <style>
+	:global(:root) {
+		/* Tema claro (por defecto y "claro forzado" para sol directo). */
+		--bg: #fbfaf7;
+		--surface: #ffffff;
+		--surface-alt: #f4f2ec;
+		--border: #d8d4c8;
+		--ink: #1a1a1a;
+		--muted: #555;
+		--muted-strong: #444;
+		color-scheme: light;
+	}
+	:global(:root[data-theme='oscuro']) {
+		--bg: #141815;
+		--surface: #1e2420;
+		--surface-alt: #262d28;
+		--border: #3a423b;
+		--ink: #e8e6df;
+		--muted: #a9aea5;
+		--muted-strong: #c3c8be;
+		color-scheme: dark;
+	}
+	@media (prefers-color-scheme: dark) {
+		:global(:root[data-theme='auto']) {
+			--bg: #141815;
+			--surface: #1e2420;
+			--surface-alt: #262d28;
+			--border: #3a423b;
+			--ink: #e8e6df;
+			--muted: #a9aea5;
+			--muted-strong: #c3c8be;
+			color-scheme: dark;
+		}
+	}
 	:global(body) {
 		margin: 0;
 		font-family:
@@ -35,8 +70,8 @@
 			'Segoe UI',
 			Roboto,
 			sans-serif;
-		color: #1a1a1a;
-		background: #fbfaf7;
+		color: var(--ink);
+		background: var(--bg);
 	}
 	header {
 		display: flex;

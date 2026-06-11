@@ -73,3 +73,22 @@ test('con origen habitual, la ficha estima el viaje y el listado ordena por cerc
 			.getByText(/PR-CV 77/)
 	).toBeVisible();
 });
+
+test('tema oscuro y claro forzado se aplican desde ajustes', async ({ page }) => {
+	await page.goto('/ajustes');
+	await page.locator('body[data-hydrated]').waitFor();
+	await page.getByLabel('Tema').selectOption('oscuro');
+	await expect(page.locator('html')).toHaveAttribute('data-theme', 'oscuro');
+	await page.getByRole('button', { name: 'Guardar ajustes' }).click();
+	// Persiste tras recargar.
+	await page.goto('/');
+	await page.locator('body[data-hydrated]').waitFor();
+	await expect(page.locator('html')).toHaveAttribute('data-theme', 'oscuro');
+});
+
+test('el enlace de búsqueda en Wikiloc aparece en toda ficha', async ({ page }) => {
+	await page.goto('/ruta/pr-cv-77');
+	const link = page.getByRole('link', { name: 'Buscar esta ruta en Wikiloc' });
+	await expect(link).toBeVisible();
+	await expect(link).toHaveAttribute('href', /es\.wikiloc\.com\/wikiloc\/find\.do\?q=/);
+});

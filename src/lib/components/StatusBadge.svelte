@@ -33,7 +33,7 @@
 	}
 	.neutral {
 		background: #efede6;
-		color: #555;
+		color: var(--muted);
 		border-color: #dcd8cc;
 	}
 	.danger {

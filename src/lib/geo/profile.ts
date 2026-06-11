@@ -11,6 +11,8 @@ export interface ProfilePoint {
 	km: number;
 	/** Elevación, m. */
 	ele: number;
+	lon: number;
+	lat: number;
 }
 
 /**
@@ -41,7 +43,7 @@ export function elevationProfile(positions: Position[]): ProfilePoint[] {
 			cumulativeM += haversineMeters([prevLon, prevLat], [lon, lat]);
 		}
 		if (typeof ele === 'number') {
-			points.push({ km: cumulativeM / 1000, ele });
+			points.push({ km: cumulativeM / 1000, ele, lon, lat });
 		}
 	}
 	return points;

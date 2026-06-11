@@ -23,7 +23,10 @@ export interface EmergencySettings {
 	alarmMarginMin: number;
 }
 
+export type Theme = 'auto' | 'claro' | 'oscuro';
+
 export interface Settings {
+	theme: Theme;
 	aemetApiKey: string;
 	vaultDir: string;
 	/** Muestra los detalles técnicos en crudo cuando algo falla. */
@@ -45,6 +48,7 @@ export const DEFAULT_EMERGENCY: EmergencySettings = {
 };
 
 export const DEFAULT_SETTINGS: Settings = {
+	theme: 'auto',
 	aemetApiKey: '',
 	vaultDir: '',
 	debugMode: false,
@@ -74,6 +78,10 @@ export function loadSettings(): Settings {
 		const e = (parsed.emergency ?? {}) as Partial<EmergencySettings>;
 		const str = (v: unknown) => (typeof v === 'string' ? v : '');
 		return {
+			theme:
+				parsed.theme === 'claro' || parsed.theme === 'oscuro' || parsed.theme === 'auto'
+					? parsed.theme
+					: 'auto',
 			aemetApiKey: typeof parsed.aemetApiKey === 'string' ? parsed.aemetApiKey : '',
 			vaultDir: typeof parsed.vaultDir === 'string' ? parsed.vaultDir : '',
 			debugMode: parsed.debugMode === true,
@@ -95,4 +103,10 @@ export function loadSettings(): Settings {
 
 export function saveSettings(settings: Settings): void {
 	localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+}
+
+/** Aplica el tema al documento ("claro" fuerza modo claro para sol directo). */
+export function applyTheme(theme: Theme): void {
+	if (typeof document === 'undefined') return;
+	document.documentElement.dataset.theme = theme === 'claro' ? 'claro' : theme;
 }

@@ -217,15 +217,15 @@
 		flex: 1;
 		font: inherit;
 		padding: 0.5rem 0.75rem;
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 	}
 	.dice {
 		font-size: 1.3rem;
 		padding: 0.2rem 0.7rem;
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
-		background: #fff;
+		background: var(--surface);
 		cursor: pointer;
 	}
 	.dice:disabled {
@@ -240,7 +240,7 @@
 		flex-wrap: wrap;
 		gap: 1rem;
 		align-items: center;
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		padding: 0.5rem 1rem;
 		margin-bottom: 1rem;
@@ -251,12 +251,12 @@
 	}
 	.map-wrap {
 		height: 380px;
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		overflow: hidden;
 	}
 	.count {
-		color: #555;
+		color: var(--muted);
 		font-size: 0.9rem;
 	}
 	.route-list {
@@ -271,17 +271,17 @@
 		align-items: baseline;
 		gap: 0.5rem;
 		padding: 0.65rem 0.85rem;
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		text-decoration: none;
 		color: inherit;
-		background: #fff;
+		background: var(--surface);
 	}
 	.route-list a:hover {
 		border-color: #1d3a2a;
 	}
 	.meta {
-		color: #555;
+		color: var(--muted);
 		font-size: 0.9rem;
 	}
 	.badge {

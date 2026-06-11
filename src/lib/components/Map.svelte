@@ -16,16 +16,41 @@
 		track = null,
 		markers = [],
 		bbox = null,
-		onMarkerClick
+		onMarkerClick,
+		highlight = null
 	}: {
 		track?: FeatureCollection | null;
 		markers?: MapMarker[];
 		bbox?: [number, number, number, number] | null;
 		onMarkerClick?: (id: string) => void;
+		/** Punto resaltado [lon, lat] (hover del perfil de elevación). */
+		highlight?: [number, number] | null;
 	} = $props();
 
 	let container: HTMLDivElement;
 	let mapFailed = $state(false);
+	let highlightMarker: maplibregl.Marker | null = null;
+	let mapInstance: maplibregl.Map | null = null;
+
+	// Marcador efímero sincronizado con el hover del perfil (SPECS_V2 §13).
+	$effect(() => {
+		const point = highlight;
+		if (!mapInstance) return;
+		if (!point) {
+			highlightMarker?.remove();
+			highlightMarker = null;
+			return;
+		}
+		if (!highlightMarker) {
+			const el = document.createElement('div');
+			el.className = 'profile-dot';
+			el.style.cssText =
+				'width:14px;height:14px;border-radius:50%;background:#1d3a2a;border:3px solid #fff;box-shadow:0 0 4px rgba(0,0,0,.5)';
+			highlightMarker = new maplibregl.Marker({ element: el }).setLngLat(point).addTo(mapInstance);
+		} else {
+			highlightMarker.setLngLat(point);
+		}
+	});
 
 	// Tiles raster OpenTopoMap (SPEC §1). Sin API key.
 	const style: StyleSpecification = {
@@ -62,6 +87,7 @@
 			return;
 		}
 		map.addControl(new maplibregl.NavigationControl(), 'top-right');
+		mapInstance = map;
 
 		map.on('load', () => {
 			if (track) {
@@ -94,7 +120,10 @@
 			map.fitBounds(bbox, { padding: 48, animate: false });
 		}
 
-		return () => map.remove();
+		return () => {
+			mapInstance = null;
+			map.remove();
+		};
 	});
 </script>
 
@@ -109,11 +138,11 @@
 		width: 100%;
 		height: 100%;
 		min-height: 320px;
-		background: #e8e4da;
+		background: var(--surface-alt);
 	}
 	.map-error {
 		padding: 1rem;
 		margin: 0;
-		color: #333;
+		color: var(--muted-strong);
 	}
 </style>

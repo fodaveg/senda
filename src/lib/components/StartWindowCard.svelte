@@ -42,10 +42,10 @@
 
 <style>
 	.start-window {
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		padding: 0.75rem 1rem;
-		background: #fff;
+		background: var(--surface);
 	}
 	.window {
 		margin: 0;
@@ -55,12 +55,12 @@
 		margin: 0.4rem 0 0;
 		padding-left: 1.2rem;
 		font-size: 0.85rem;
-		color: #444;
+		color: var(--muted-strong);
 	}
 	.manual {
 		margin: 0.5rem 0 0;
 		font-size: 0.85rem;
-		color: #555;
+		color: var(--muted);
 	}
 	.light-alert {
 		border: 1px solid #b3261e;
@@ -71,7 +71,7 @@
 	}
 	.empty {
 		margin: 0;
-		color: #555;
+		color: var(--muted);
 		font-size: 0.9rem;
 	}
 </style>

@@ -112,7 +112,7 @@
 	}
 	.count {
 		font-weight: 400;
-		color: #555;
+		color: var(--muted);
 		font-size: 0.85rem;
 	}
 	ul {
@@ -123,10 +123,10 @@
 		gap: 0.35rem;
 	}
 	.item {
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		padding: 0.45rem 0.7rem;
-		background: #fff;
+		background: var(--surface);
 		display: flex;
 		flex-direction: column;
 	}
@@ -158,7 +158,7 @@
 	}
 	.reason {
 		font-size: 0.82rem;
-		color: #555;
+		color: var(--muted);
 	}
 	.check {
 		margin: 0 0 0.2rem;
@@ -182,7 +182,7 @@
 	}
 	.weight {
 		font-size: 0.82rem;
-		color: #555;
+		color: var(--muted);
 		margin: 0.4rem 0 0;
 	}
 </style>

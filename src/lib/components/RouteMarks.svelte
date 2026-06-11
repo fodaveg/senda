@@ -120,8 +120,8 @@
 		font-size: 0.85rem;
 		padding: 0.3rem 0.7rem;
 		border-radius: 999px;
-		border: 1px solid #d8d4c8;
-		background: #fff;
+		border: 1px solid var(--border);
+		background: var(--surface);
 		cursor: pointer;
 	}
 	.marks button.active {
@@ -135,7 +135,7 @@
 		flex-wrap: wrap;
 		gap: 0.75rem;
 		align-items: end;
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		padding: 0.6rem 0.85rem;
 		margin-bottom: 0.75rem;
@@ -153,7 +153,7 @@
 	.outing-form input {
 		font: inherit;
 		padding: 0.35rem 0.5rem;
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 	}
 	.outing-form button {
@@ -170,7 +170,7 @@
 		padding: 0;
 		margin: 0 0 1rem;
 		font-size: 0.9rem;
-		color: #444;
+		color: var(--muted-strong);
 		display: grid;
 		gap: 0.25rem;
 	}

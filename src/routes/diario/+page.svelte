@@ -139,7 +139,7 @@
 
 <style>
 	.empty {
-		color: #555;
+		color: var(--muted);
 	}
 	.totals {
 		list-style: none;
@@ -160,7 +160,7 @@
 	.breakdowns ul {
 		list-style: none;
 		padding: 0;
-		color: #444;
+		color: var(--muted-strong);
 		font-size: 0.9rem;
 	}
 	.outings {
@@ -171,7 +171,7 @@
 	}
 	.notes {
 		display: block;
-		color: #555;
+		color: var(--muted);
 		font-size: 0.9rem;
 	}
 	.actions {
@@ -195,7 +195,7 @@
 	}
 	button.secondary,
 	.import {
-		background: #fff;
+		background: var(--surface);
 		color: #1d3a2a;
 		border: 1px solid #1d3a2a;
 		border-radius: 6px;

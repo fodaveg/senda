@@ -198,7 +198,7 @@
 		flex-wrap: wrap;
 		gap: 0.75rem;
 		align-items: end;
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		padding: 0.6rem 0.85rem;
 		margin-bottom: 0.75rem;
@@ -216,12 +216,12 @@
 	.plan-form input {
 		font: inherit;
 		padding: 0.35rem 0.5rem;
-		border: 1px solid #d8d4c8;
+		border: 1px solid var(--border);
 		border-radius: 6px;
 	}
 	.hint {
 		font-size: 0.8rem;
-		color: #555;
+		color: var(--muted);
 		margin: 0;
 		flex-basis: 100%;
 	}
@@ -246,8 +246,8 @@
 		color: #2a6f4e;
 	}
 	.report {
-		background: #fff;
-		border: 1px solid #d8d4c8;
+		background: var(--surface);
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		padding: 1.25rem 1.5rem;
 		max-width: 48rem;
@@ -257,7 +257,7 @@
 		text-transform: uppercase;
 		font-size: 0.75rem;
 		letter-spacing: 0.05em;
-		color: #555;
+		color: var(--muted);
 	}
 	.report h1 {
 		margin: 0.2rem 0 1rem;
@@ -265,7 +265,7 @@
 	}
 	.report h2 {
 		font-size: 1.05rem;
-		border-bottom: 1px solid #eee9dd;
+		border-bottom: 1px solid var(--border);
 		padding-bottom: 0.2rem;
 	}
 	.report dl {
@@ -285,8 +285,8 @@
 	}
 	.preview-text pre {
 		white-space: pre-wrap;
-		background: #f4f2ec;
-		border: 1px solid #d8d4c8;
+		background: var(--surface-alt);
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		padding: 0.75rem;
 		font-size: 0.85rem;

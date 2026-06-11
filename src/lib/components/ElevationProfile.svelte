@@ -2,7 +2,44 @@
 	import { axisTicks, type ProfilePoint } from '$lib/geo/profile';
 	import { formatKm, formatMeters } from '$lib/format';
 
-	let { points }: { points: ProfilePoint[] } = $props();
+	let {
+		points,
+		onHover = null
+	}: {
+		points: ProfilePoint[];
+		/** Índice del punto bajo el cursor, o null al salir (SPECS_V2 §13). */
+		onHover?: ((index: number | null) => void) | null;
+	} = $props();
+
+	let hoverIndex = $state<number | null>(null);
+
+	function indexAtClientX(svg: SVGSVGElement, clientX: number): number | null {
+		if (!stats || points.length === 0) return null;
+		const rect = svg.getBoundingClientRect();
+		const km = (((clientX - rect.left) / rect.width) * W - PAD_LEFT) / (W - PAD_LEFT - PAD_RIGHT);
+		const targetKm = km * (stats.maxKm || 1);
+		let best = 0;
+		let bestDelta = Infinity;
+		for (let i = 0; i < points.length; i++) {
+			const delta = Math.abs(points[i].km - targetKm);
+			if (delta < bestDelta) {
+				bestDelta = delta;
+				best = i;
+			}
+		}
+		return best;
+	}
+
+	function handleMove(event: MouseEvent) {
+		const index = indexAtClientX(event.currentTarget as SVGSVGElement, event.clientX);
+		hoverIndex = index;
+		onHover?.(index);
+	}
+
+	function handleLeave() {
+		hoverIndex = null;
+		onHover?.(null);
+	}
 
 	const W = 600;
 	const H = 200;
@@ -31,14 +68,21 @@
 
 {#if stats}
 	<figure class="profile">
-		<svg viewBox="0 0 {W} {H}" role="img" aria-label="Perfil de elevación">
+		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+		<svg
+			viewBox="0 0 {W} {H}"
+			role="img"
+			aria-label="Perfil de elevación"
+			onmousemove={handleMove}
+			onmouseleave={handleLeave}
+		>
 			{#each stats.eleTicks as tick (tick.ele)}
 				<line
 					x1={PAD_LEFT}
 					y1={tick.y}
 					x2={W - PAD_RIGHT}
 					y2={tick.y}
-					stroke="#ddd9cd"
+					stroke="var(--border)"
 					stroke-dasharray="3 4"
 				/>
 				<text x={PAD_LEFT - 6} y={tick.y + 3} text-anchor="end" class="tick">
@@ -51,7 +95,7 @@
 					y1={PAD_TOP}
 					x2={tick.x}
 					y2={H - PAD_BOTTOM}
-					stroke="#ddd9cd"
+					stroke="var(--border)"
 					stroke-dasharray="3 4"
 				/>
 				<text x={tick.x} y={H - PAD_BOTTOM + 14} text-anchor="middle" class="tick">
@@ -59,6 +103,25 @@
 				</text>
 			{/each}
 			<polyline points={stats.polyline} fill="none" stroke="#2a6f4e" stroke-width="2.5" />
+			{#if hoverIndex !== null && points[hoverIndex]}
+				{@const hp = points[hoverIndex]}
+				{@const hx = PAD_LEFT + (hp.km / (stats.maxKm || 1)) * (W - PAD_LEFT - PAD_RIGHT)}
+				{@const hy =
+					H -
+					PAD_BOTTOM -
+					((hp.ele - stats.minEle) / (stats.maxEle - stats.minEle || 1)) *
+						(H - PAD_TOP - PAD_BOTTOM)}
+				<line x1={hx} y1={PAD_TOP} x2={hx} y2={H - PAD_BOTTOM} stroke="#1d3a2a" stroke-width="1" />
+				<circle cx={hx} cy={hy} r="4" fill="#1d3a2a" stroke="#fff" stroke-width="1.5" />
+				<text
+					x={hx + (hx > W - 130 ? -8 : 8)}
+					y={PAD_TOP + 12}
+					text-anchor={hx > W - 130 ? 'end' : 'start'}
+					class="hover-label"
+				>
+					km {hp.km.toFixed(1)} · {Math.round(hp.ele)} m
+				</text>
+			{/if}
 		</svg>
 		<figcaption>
 			{formatKm(stats.maxKm)} · elevación {formatMeters(stats.minEle)} – {formatMeters(
@@ -77,20 +140,25 @@
 	svg {
 		width: 100%;
 		height: auto;
-		background: #f4f2ec;
-		border: 1px solid #d8d4c8;
+		background: var(--surface-alt);
+		border: 1px solid var(--border);
 		border-radius: 4px;
+	}
+	.hover-label {
+		font-size: 11px;
+		fill: #1d3a2a;
+		font-weight: 600;
 	}
 	.tick {
 		font-size: 10px;
-		fill: #666;
+		fill: var(--muted);
 	}
 	figcaption {
 		font-size: 0.85rem;
-		color: #444;
+		color: var(--muted-strong);
 		margin-top: 0.25rem;
 	}
 	.no-data {
-		color: #555;
+		color: var(--muted);
 	}
 </style>

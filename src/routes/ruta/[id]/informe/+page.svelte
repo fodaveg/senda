@@ -185,8 +185,8 @@
 		color: #2a6f4e;
 	}
 	.report {
-		background: #fff;
-		border: 1px solid #d8d4c8;
+		background: var(--surface);
+		border: 1px solid var(--border);
 		border-radius: 6px;
 		padding: 1.5rem 2rem;
 		max-width: 48rem;
@@ -195,7 +195,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		font-size: 0.78rem;
-		color: #555;
+		color: var(--muted);
 		margin: 0;
 	}
 	.report h1 {
