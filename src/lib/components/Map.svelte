@@ -37,6 +37,34 @@
 	let mapFailed = $state(false);
 	let highlightMarker: maplibregl.Marker | null = null;
 	let mapInstance: maplibregl.Map | null = null;
+	let mapReady = $state(false);
+	let markerHandles: maplibregl.Marker[] = [];
+
+	// Marcadores reactivos: el listado filtrado cambia y el mapa le sigue.
+	$effect(() => {
+		const list = markers;
+		if (!mapReady || !mapInstance) return;
+		for (const handle of markerHandles) handle.remove();
+		markerHandles = list.map((marker) => {
+			const m = new maplibregl.Marker({ color: '#c1121f' })
+				.setLngLat([marker.lon, marker.lat])
+				.addTo(mapInstance!);
+			m.getElement().setAttribute('title', marker.name);
+			m.getElement().style.cursor = 'pointer';
+			m.getElement().addEventListener('click', (e) => {
+				e.stopPropagation();
+				onMarkerClick?.(marker.id);
+			});
+			return m;
+		});
+	});
+
+	// Reencuadre al cambiar el bbox del resultado filtrado.
+	$effect(() => {
+		const box = bbox;
+		if (!mapReady || !mapInstance || !box) return;
+		mapInstance.fitBounds(box, { padding: 48, animate: true, duration: 400 });
+	});
 
 	// Marcador efímero sincronizado con el hover del perfil (SPECS_V2 §13).
 	$effect(() => {
@@ -125,20 +153,13 @@
 			}
 		});
 
-		for (const marker of markers) {
-			const m = new maplibregl.Marker({ color: '#c1121f' })
-				.setLngLat([marker.lon, marker.lat])
-				.addTo(map);
-			m.getElement().setAttribute('title', marker.name);
-			m.getElement().style.cursor = 'pointer';
-			m.getElement().addEventListener('click', () => onMarkerClick?.(marker.id));
-		}
-
 		if (bbox) {
 			map.fitBounds(bbox, { padding: 48, animate: false });
 		}
+		mapReady = true;
 
 		return () => {
+			mapReady = false;
 			mapInstance = null;
 			map.remove();
 		};

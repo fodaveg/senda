@@ -35,6 +35,14 @@
 		origin = loadSettings().origin;
 	});
 	let sortBy = $state<'nombre' | 'cercania'>('nombre');
+
+	// Mini-ficha flotante al pulsar un pin del mapa (previsualización).
+	let preview = $state<(typeof routes)[number] | null>(null);
+
+	// Si el filtro deja fuera la ruta previsualizada, la mini-ficha se cierra.
+	$effect(() => {
+		if (preview && !filtered.some((r) => r.id === preview!.id)) preview = null;
+	});
 	let markFilter = $state<ToggleMark | 'hecha' | null>(null);
 
 	let filtered = $derived.by(() => {
@@ -183,7 +191,42 @@
 </fieldset>
 
 <div class="map-wrap">
-	<Map {markers} bbox={unionBbox} onMarkerClick={(id) => goto(resolve('/ruta/[id]', { id }))} />
+	<Map
+		{markers}
+		bbox={unionBbox}
+		onMarkerClick={(id) => (preview = filtered.find((r) => r.id === id) ?? null)}
+	/>
+	{#if preview}
+		<aside class="preview-card" aria-label="Previsualización de ruta">
+			<button
+				type="button"
+				class="preview-close"
+				aria-label="Cerrar previsualización"
+				onclick={() => (preview = null)}
+			>
+				×
+			</button>
+			<p class="preview-head">
+				<span class="badge badge-{preview.type.toLowerCase()}">{preview.type}</span>
+				<StatusBadge status={preview.status} detail={preview.status_detail} />
+			</p>
+			<strong class="preview-name">{preview.name}</strong>
+			<p class="preview-meta">
+				{formatKm(preview.distance_km)}
+				{#if preview.ascent_m !== null}· +{formatMeters(preview.ascent_m)}{/if}
+				{#if preview.est_duration_min !== null}· {formatDuration(preview.est_duration_min)}{/if}
+				{#if preview.circular !== null}· {preview.circular ? 'circular' : 'lineal'}{/if}
+			</p>
+			{#if preview.municipality}<p class="preview-meta">
+					{preview.municipality}{#if preview.zone}
+						· {preview.zone}{/if}
+				</p>{/if}
+			{#if preview.water_points.length > 0}
+				<p class="preview-meta">💧 {preview.water_points.length} fuente(s) en ruta</p>
+			{/if}
+			<a class="preview-link" href={resolve('/ruta/[id]', { id: preview.id })}>Ver ficha →</a>
+		</aside>
+	{/if}
 </div>
 
 <p class="count">{filtered.length} de {routes.length} rutas</p>
@@ -250,10 +293,59 @@
 		gap: 0.75rem;
 	}
 	.map-wrap {
+		position: relative;
 		height: 380px;
 		border: 1px solid var(--border);
 		border-radius: 6px;
 		overflow: hidden;
+	}
+	.preview-card {
+		position: absolute;
+		left: 0.75rem;
+		bottom: 0.75rem;
+		z-index: 5;
+		max-width: 20rem;
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+		padding: 0.65rem 0.85rem;
+	}
+	.preview-close {
+		position: absolute;
+		top: 0.3rem;
+		right: 0.45rem;
+		border: none;
+		background: none;
+		font-size: 1.25rem;
+		line-height: 1;
+		color: var(--muted);
+		cursor: pointer;
+		padding: 0.1rem 0.3rem;
+	}
+	.preview-close:hover {
+		color: var(--ink);
+	}
+	.preview-head {
+		margin: 0 1.2rem 0.3rem 0;
+		display: flex;
+		gap: 0.4rem;
+		align-items: center;
+	}
+	.preview-name {
+		display: block;
+		margin-right: 1rem;
+	}
+	.preview-meta {
+		margin: 0.25rem 0 0;
+		font-size: 0.85rem;
+		color: var(--muted);
+	}
+	.preview-link {
+		display: inline-block;
+		margin-top: 0.5rem;
+		font-weight: 600;
+		color: var(--brand);
 	}
 	.count {
 		color: var(--muted);

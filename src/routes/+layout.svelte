@@ -38,6 +38,7 @@
 		--ink: #1a1a1a;
 		--muted: #555;
 		--muted-strong: #444;
+		--brand: #1d3a2a;
 		color-scheme: light;
 	}
 	:global(:root[data-theme='oscuro']) {
@@ -48,6 +49,7 @@
 		--ink: #e8e6df;
 		--muted: #a9aea5;
 		--muted-strong: #c3c8be;
+		--brand: #8fd3ae;
 		color-scheme: dark;
 	}
 	@media (prefers-color-scheme: dark) {
@@ -59,6 +61,7 @@
 			--ink: #e8e6df;
 			--muted: #a9aea5;
 			--muted-strong: #c3c8be;
+			--brand: #8fd3ae;
 			color-scheme: dark;
 		}
 	}

@@ -92,3 +92,25 @@ test('el enlace de búsqueda en Wikiloc aparece en toda ficha', async ({ page })
 	await expect(link).toBeVisible();
 	await expect(link).toHaveAttribute('href', /es\.wikiloc\.com\/wikiloc\/find\.do\?q=/);
 });
+
+test('un pin del mapa abre la mini-ficha y la X la cierra', async ({ page }) => {
+	await page.goto('/');
+	await page.locator('body[data-hydrated]').waitFor();
+	await page.getByLabel('Buscar rutas').fill('pr-cv 77 chulilla');
+	// El mapa reactivo deja un único marcador del resultado filtrado.
+	await expect(page.locator('.maplibregl-marker')).toHaveCount(1, { timeout: 10000 });
+	await page.locator('.maplibregl-marker').click();
+	const card = page.getByLabel('Previsualización de ruta');
+	await expect(card).toBeVisible();
+	await expect(card.getByText(/PR-CV 77/)).toBeVisible();
+	await expect(card.getByText(/fuente\(s\) en ruta/)).toBeVisible();
+	await card.getByRole('link', { name: 'Ver ficha →' }).click();
+	await expect(page).toHaveURL(/\/ruta\/pr-cv-77/);
+
+	await page.goto('/');
+	await page.locator('body[data-hydrated]').waitFor();
+	await page.getByLabel('Buscar rutas').fill('pr-cv 77 chulilla');
+	await page.locator('.maplibregl-marker').click();
+	await page.getByRole('button', { name: 'Cerrar previsualización' }).click();
+	await expect(page.getByLabel('Previsualización de ruta')).toHaveCount(0);
+});
