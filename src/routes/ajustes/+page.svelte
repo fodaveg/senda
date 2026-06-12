@@ -60,7 +60,12 @@
 				originMessage = 'Posición capturada; guarda los ajustes para aplicarla.';
 			},
 			() => {
-				originMessage = 'No se pudo obtener la posición (permiso denegado o sin señal).';
+				originMessage = isTauri()
+					? 'La app de escritorio no puede acceder a la ubicación del sistema. Escribe las ' +
+						'coordenadas a mano (en OpenStreetMap o Google Maps: clic derecho sobre tu casa ' +
+						'→ copiar coordenadas).'
+					: 'No se pudo obtener la posición (permiso denegado o sin señal). Puedes escribir ' +
+						'las coordenadas a mano.';
 			},
 			{ timeout: 10000 }
 		);

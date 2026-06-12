@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
+	import { isTauri } from '@tauri-apps/api/core';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
 	import AvisosBanner from '$lib/components/AvisosBanner.svelte';
 	import RouteMarks from '$lib/components/RouteMarks.svelte';
@@ -290,7 +291,11 @@
 				}
 			},
 			() => {
-				travelStatus = 'No se pudo obtener la posición (permiso denegado o sin señal).';
+				travelStatus = isTauri()
+					? 'La app de escritorio no puede acceder a la ubicación del sistema: configura tu ' +
+						'"origen habitual" en Ajustes y la estimación aparecerá aquí automáticamente.'
+					: 'No se pudo obtener la posición (permiso denegado o sin señal). Alternativa: ' +
+						'configura tu "origen habitual" en Ajustes.';
 			}
 		);
 	}
