@@ -189,3 +189,46 @@ export interface GearDecision {
 	replacedBy: string | null;
 	source: GearDecisionSource;
 }
+
+/**
+ * Material custom de mochila (SPECS_V3 §4). Lo define el usuario y vive en sus
+ * datos locales, no en el catálogo de rutas. `attributes` es un vocabulario
+ * cerrado para que las anti-reglas puedan razonar sobre él sin texto libre.
+ */
+export type GearAttribute =
+	| 'impermeable'
+	| 'abrigo'
+	| 'ventilado'
+	| 'aislante'
+	| 'sol'
+	| 'lluvia'
+	| 'calzado'
+	| 'tecnico';
+
+export interface CustomGearItem {
+	id: string;
+	name: string;
+	category: string;
+	weight_g: number | null;
+	attributes: GearAttribute[];
+}
+
+/**
+ * Anti-regla de material custom: si un ítem tiene `attribute` y `when` se
+ * cumple en el contexto (ruta + meteo), el ítem se desaconseja con `reason`.
+ * Mismo lenguaje de condiciones que GearRule.when.
+ */
+export interface AttributeWarningRule {
+	attribute: GearAttribute;
+	when: Record<string, GearCondition>;
+	reason: string;
+}
+
+export type CustomGearStatus = 'keep' | 'warn';
+
+export interface CustomGearDecision {
+	item: CustomGearItem;
+	status: CustomGearStatus;
+	/** Motivos del aviso (anti-reglas que saltaron); null si no se desaconseja. */
+	reason: string | null;
+}

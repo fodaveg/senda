@@ -13,7 +13,18 @@
  * - Ítems `base: true`: siempre enabled; las reglas no pueden deshabilitarlos.
  */
 
-import type { GearDecision, GearItem, GearRule, Route, Season, WeatherDay } from '$lib/types';
+import type {
+	AttributeWarningRule,
+	CustomGearDecision,
+	CustomGearItem,
+	GearCondition,
+	GearDecision,
+	GearItem,
+	GearRule,
+	Route,
+	Season,
+	WeatherDay
+} from '$lib/types';
 
 interface Context {
 	route: Route;
@@ -81,13 +92,13 @@ function specificity(rule: GearRule): number {
 }
 
 /**
- * Evalúa la regla completa. AND con lógica de tres valores:
+ * Evalúa un bloque `when`. AND con lógica de tres valores:
  * cualquier condición falsa → nomatch (false AND desconocido = false);
  * si no, cualquier condición no evaluable → unknown; si no → match.
  */
-function evaluateRule(rule: GearRule, ctx: Context): RuleOutcome {
+function evaluateWhen(when: Record<string, GearCondition>, ctx: Context): RuleOutcome {
 	let unknown = false;
-	for (const [key, condition] of Object.entries(rule.when)) {
+	for (const [key, condition] of Object.entries(when)) {
 		const actual = resolveContextValue(key, ctx);
 		for (const [op, expected] of Object.entries(condition)) {
 			const result = actual === undefined ? null : compare(op, actual, expected);
@@ -96,6 +107,10 @@ function evaluateRule(rule: GearRule, ctx: Context): RuleOutcome {
 		}
 	}
 	return unknown ? 'unknown' : 'match';
+}
+
+function evaluateRule(rule: GearRule, ctx: Context): RuleOutcome {
+	return evaluateWhen(rule.when, ctx);
 }
 
 /** Interpola {clave} con valores del contexto; deja el marcador si falta el dato. */
@@ -212,4 +227,36 @@ export function evaluateGear(
 	}
 
 	return items.map((item) => decisions.get(item.id)!);
+}
+
+/**
+ * Evalúa el material custom del usuario (SPECS_V3 §4). Para cada ítem,
+ * comprueba las anti-reglas cuyo `attribute` posee y cuyo `when` se cumple en
+ * el contexto: si alguna salta, el ítem se desaconseja (`warn`) con sus
+ * motivos; si ninguna salta (o faltan datos), se mantiene (`keep`).
+ *
+ * Fail-safe coherente con el motor base: con datos insuficientes (meteo
+ * ausente → `when` no evaluable) NO se desaconseja, para no avisar a ciegas.
+ * Función pura, sin dependencias de UI.
+ */
+export function evaluateCustomGear(
+	route: Route,
+	weather: WeatherDay | null,
+	season: Season,
+	items: CustomGearItem[],
+	rules: AttributeWarningRule[]
+): CustomGearDecision[] {
+	const ctx: Context = { route, weather, season };
+	return items.map((item) => {
+		const warnings: string[] = [];
+		for (const rule of rules) {
+			if (!item.attributes.includes(rule.attribute)) continue;
+			if (evaluateWhen(rule.when, ctx) === 'match') warnings.push(interpolate(rule.reason, ctx));
+		}
+		return {
+			item,
+			status: warnings.length > 0 ? 'warn' : 'keep',
+			reason: warnings.length > 0 ? warnings.join(' · ') : null
+		};
+	});
 }
