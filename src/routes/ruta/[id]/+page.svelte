@@ -59,6 +59,9 @@
 	let hourlyByDate = $state<Record<string, HourlyPoint[]>>({});
 	let avisos = $state<Aviso[] | null>(null);
 	let travel = $state<{ estimate: DrivingEstimate; from: string } | null>(null);
+	// Coordenadas del origen (habitual o GPS) para enlazar indicaciones con
+	// punto de partida, no solo destino (SPECS_V3 §7).
+	let travelOrigin = $state<{ lat: number; lon: number } | null>(null);
 	let checkedItems = new SvelteSet<string>();
 	let profileHover = $state<[number, number] | null>(null);
 	let offlineTiles = $state<number | null>(null);
@@ -179,6 +182,7 @@
 		avisos = null;
 		hourlyByDate = {};
 		travel = null;
+		travelOrigin = settings.origin ? { lat: settings.origin.lat, lon: settings.origin.lon } : null;
 		travelStatus = null;
 		weatherLoading = true;
 		const ds = forecastDates();
@@ -282,6 +286,7 @@
 			async (position) => {
 				try {
 					const from = { lat: position.coords.latitude, lon: position.coords.longitude };
+					travelOrigin = from;
 					const estimate = await fetchDrivingEstimateCached(from, route.start);
 					travel = { estimate, from: 'tu posición actual' };
 					travelStatus = null;
@@ -445,7 +450,9 @@
 			{#if travelStatus}<p class="travel-hint" role="status">{travelStatus}</p>{/if}
 			<p class="travel-hint">
 				<a
-					href={`https://www.openstreetmap.org/directions?to=${route.start.lat}%2C${route.start.lon}`}
+					href={travelOrigin
+						? `https://www.openstreetmap.org/directions?from=${travelOrigin.lat}%2C${travelOrigin.lon}&to=${route.start.lat}%2C${route.start.lon}`
+						: `https://www.openstreetmap.org/directions?to=${route.start.lat}%2C${route.start.lon}`}
 					rel="external">Indicaciones en OpenStreetMap</a
 				>
 			</p>
