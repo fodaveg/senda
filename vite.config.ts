@@ -11,8 +11,16 @@ export default defineConfig({
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
 			adapter: adapter(),
-			// GitLab Pages sirve bajo /<proyecto>; la CI exporta BASE_PATH.
-			paths: { base: (process.env.BASE_PATH ?? '') as '' | `/${string}` }
+			// GitLab Pages redirige a un dominio único servido en la raíz, así que
+			// se compila con base vacío. `relative: false` fuerza rutas absolutas
+			// desde la raíz para todos los assets (JS, CSS, manifest, iconos): así
+			// no dependen de la página en que estés —el manifest dejaba de cargar en
+			// /ruta/* con rutas relativas—. BASE_PATH permite recolocar el sitio bajo
+			// un subdirectorio si algún día se sirve sin dominio único.
+			paths: {
+				base: (process.env.BASE_PATH ?? '') as '' | `/${string}`,
+				relative: false
+			}
 		})
 	],
 	test: {
