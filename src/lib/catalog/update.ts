@@ -12,9 +12,6 @@ import { routeSchema } from '$lib/data/schema';
 import type { Route } from '$lib/types';
 import type { StoredManifest } from './store';
 
-/** Catálogo publicado por la CI del propio repo (GitLab Pages). */
-export const DEFAULT_CATALOG_URL = 'https://fodaveg.gitlab.io/app-senderismo/catalog';
-
 const manifestSchema = z.object({
 	version: z.number().int().nonnegative(),
 	published_at: z.string().min(1),

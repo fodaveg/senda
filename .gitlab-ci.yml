@@ -69,7 +69,9 @@ pages:
     - test:unit
     - test:e2e
   script:
-    - BASE_PATH=/$CI_PROJECT_NAME npm run build
+    # Sin base path: GitLab Pages redirige a un dominio único servido en la
+    # raíz. El catálogo se publica junto a la web, en /catalog.
+    - npm run build
     - mkdir -p public
     - cp -r build/. public/
     - node scripts/publish/build-catalog.mjs public/catalog

@@ -11,7 +11,7 @@
 
 import { assets } from '$app/paths';
 import { getStoredManifest, getStoredTrack, storeFile } from '$lib/catalog/store';
-import { DEFAULT_CATALOG_URL } from '$lib/catalog/update';
+import { CATALOG_URL } from '$lib/catalog/url';
 
 export async function loadTrackXml(gpxFile: string): Promise<string> {
 	if (!/^[a-z0-9-]+\.gpx$/.test(gpxFile)) {
@@ -26,7 +26,7 @@ export async function loadTrackXml(gpxFile: string): Promise<string> {
 	// Ruta llegada por actualización de catálogo: su GPX no está en el build.
 	const manifest = await getStoredManifest();
 	if (manifest && `gpx/${gpxFile}` in manifest.files) {
-		const remote = await fetch(`${DEFAULT_CATALOG_URL}/gpx/${gpxFile}`);
+		const remote = await fetch(`${CATALOG_URL}/gpx/${gpxFile}`);
 		if (remote.ok) {
 			const xml = await remote.text();
 			await storeFile(`gpx/${gpxFile}`, xml);

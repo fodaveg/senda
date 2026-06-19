@@ -4,7 +4,8 @@
 	import { isTauri } from '@tauri-apps/api/core';
 	import { getCatalogInfo, resetCatalogCache, type CatalogInfo } from '$lib/catalog';
 	import { applyCatalogUpdate } from '$lib/catalog/store';
-	import { CatalogError, checkForCatalogUpdate, DEFAULT_CATALOG_URL } from '$lib/catalog/update';
+	import { CatalogError, checkForCatalogUpdate } from '$lib/catalog/update';
+	import { CATALOG_URL } from '$lib/catalog/url';
 	import {
 		applyTheme,
 		DEFAULT_SETTINGS,
@@ -82,7 +83,7 @@
 		catalogStatus = 'Comprobando si hay catálogo nuevo…';
 		try {
 			const current = catalogInfo?.manifest ?? null;
-			const update = await checkForCatalogUpdate(DEFAULT_CATALOG_URL, current);
+			const update = await checkForCatalogUpdate(CATALOG_URL, current);
 			if (!update) {
 				catalogStatus = 'Ya tienes la última versión del catálogo.';
 				return;
