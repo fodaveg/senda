@@ -13,6 +13,7 @@
 		saveSettings,
 		type Settings
 	} from '$lib/settings';
+	import { applyPalette, PALETTES } from '$lib/theme/palettes';
 	import { validateAemetKey, type AemetKeyCheck } from '$lib/weather/aemet';
 
 	let settings = $state<Settings>({ ...DEFAULT_SETTINGS });
@@ -255,6 +256,14 @@
 				<option value="auto">Automático (según el sistema)</option>
 				<option value="claro">Claro forzado (sol directo)</option>
 				<option value="oscuro">Oscuro</option>
+			</select>
+		</label>
+		<label>
+			Paleta de color
+			<select bind:value={settings.palette} onchange={() => applyPalette(settings.palette)}>
+				{#each PALETTES as palette (palette.id)}
+					<option value={palette.id}>{palette.name}</option>
+				{/each}
 			</select>
 		</label>
 	</fieldset>

@@ -27,6 +27,8 @@ export type Theme = 'auto' | 'claro' | 'oscuro';
 
 export interface Settings {
 	theme: Theme;
+	/** Id de la paleta de color (SPECS_V3 §9); ver src/lib/theme/palettes.ts. */
+	palette: string;
 	aemetApiKey: string;
 	vaultDir: string;
 	/** Muestra los detalles técnicos en crudo cuando algo falla. */
@@ -49,6 +51,7 @@ export const DEFAULT_EMERGENCY: EmergencySettings = {
 
 export const DEFAULT_SETTINGS: Settings = {
 	theme: 'auto',
+	palette: 'bosque',
 	aemetApiKey: '',
 	vaultDir: '',
 	debugMode: false,
@@ -82,6 +85,7 @@ export function loadSettings(): Settings {
 				parsed.theme === 'claro' || parsed.theme === 'oscuro' || parsed.theme === 'auto'
 					? parsed.theme
 					: 'auto',
+			palette: typeof parsed.palette === 'string' ? parsed.palette : 'bosque',
 			aemetApiKey: typeof parsed.aemetApiKey === 'string' ? parsed.aemetApiKey : '',
 			vaultDir: typeof parsed.vaultDir === 'string' ? parsed.vaultDir : '',
 			debugMode: parsed.debugMode === true,

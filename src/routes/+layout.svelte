@@ -3,13 +3,17 @@
 	import { resolve } from '$app/paths';
 	import favicon from '$lib/assets/favicon.svg';
 	import { applyTheme, loadSettings } from '$lib/settings';
+	import { applyPalette } from '$lib/theme/palettes';
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
 	let { children } = $props();
 
 	// Marcador para que los tests e2e esperen a la hidratación.
 	onMount(() => {
 		document.body.dataset.hydrated = 'true';
-		applyTheme(loadSettings().theme);
+		const settings = loadSettings();
+		applyTheme(settings.theme);
+		applyPalette(settings.palette);
 	});
 </script>
 
@@ -22,6 +26,7 @@
 	<span class="tagline">Senderos homologados FEMECV de la Comunitat Valenciana</span>
 	<a href={resolve('/diario')} class="nav-link">Diario</a>
 	<a href={resolve('/ajustes')} class="nav-link">Ajustes</a>
+	<ThemeToggle />
 </header>
 
 <main>
@@ -39,6 +44,7 @@
 		--muted: #555;
 		--muted-strong: #444;
 		--brand: #1d3a2a;
+		--brand-strong: #1d3a2a;
 		color-scheme: light;
 	}
 	:global(:root[data-theme='oscuro']) {
@@ -50,6 +56,7 @@
 		--muted: #a9aea5;
 		--muted-strong: #c3c8be;
 		--brand: #8fd3ae;
+		--brand-strong: #18241d;
 		color-scheme: dark;
 	}
 	@media (prefers-color-scheme: dark) {
@@ -62,6 +69,7 @@
 			--muted: #a9aea5;
 			--muted-strong: #c3c8be;
 			--brand: #8fd3ae;
+			--brand-strong: #18241d;
 			color-scheme: dark;
 		}
 	}
@@ -82,7 +90,7 @@
 		gap: 0.75rem;
 		flex-wrap: wrap;
 		padding: 0.75rem 1rem;
-		background: #1d3a2a;
+		background: var(--brand-strong, #1d3a2a);
 		color: #fff;
 	}
 	.brand {
