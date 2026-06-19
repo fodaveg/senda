@@ -1,12 +1,29 @@
 <script lang="ts" module>
-	let registeredProtocol = false;
+	import maplibregl from 'maplibre-gl';
+	import { getStoredBinary } from '$lib/catalog/store';
+	import { ignTileUrl } from '$lib/map/tiles';
+
+	// Base cartográfica: IGN España mapa raster (SPEC v1 §1, SPECS_V2 §11).
+	// El protocolo ign:// resuelve primero el almacén local (mapa offline
+	// descargado por ruta) y cae a la red del IGN. Se registra una sola vez
+	// al cargar el módulo; en SSR/prerender no se piden tiles.
+	if (typeof window !== 'undefined') {
+		maplibregl.addProtocol('ign', async (params) => {
+			const match = params.url.match(/^ign:\/\/(\d+)\/(\d+)\/(\d+)$/);
+			if (!match) throw new Error(`URL de tile no válida: ${params.url}`);
+			const [, z, x, y] = match;
+			const stored = await getStoredBinary(`tiles/${z}/${x}/${y}`);
+			if (stored) return { data: stored };
+			const response = await fetch(ignTileUrl(Number(z), Number(x), Number(y)));
+			if (!response.ok) throw new Error(`IGN respondió ${response.status}`);
+			return { data: await response.arrayBuffer() };
+		});
+	}
 </script>
 
 <script lang="ts">
-	import maplibregl from 'maplibre-gl';
 	import 'maplibre-gl/dist/maplibre-gl.css';
-	import { getStoredBinary } from '$lib/catalog/store';
-	import { IGN_ATTRIBUTION, ignTileUrl } from '$lib/map/tiles';
+	import { IGN_ATTRIBUTION } from '$lib/map/tiles';
 	import { onMount } from 'svelte';
 	import type { FeatureCollection } from 'geojson';
 	import type { StyleSpecification } from 'maplibre-gl';
@@ -85,23 +102,6 @@
 			highlightMarker.setLngLat(point);
 		}
 	});
-
-	// Base cartográfica: IGN España mapa raster (SPEC v1 §1, SPECS_V2 §11).
-	// El protocolo ign:// resuelve primero el almacén local (mapa offline
-	// descargado por ruta) y cae a la red del IGN.
-	if (!registeredProtocol) {
-		maplibregl.addProtocol('ign', async (params) => {
-			const match = params.url.match(/^ign:\/\/(\d+)\/(\d+)\/(\d+)$/);
-			if (!match) throw new Error(`URL de tile no válida: ${params.url}`);
-			const [, z, x, y] = match;
-			const stored = await getStoredBinary(`tiles/${z}/${x}/${y}`);
-			if (stored) return { data: stored };
-			const response = await fetch(ignTileUrl(Number(z), Number(x), Number(y)));
-			if (!response.ok) throw new Error(`IGN respondió ${response.status}`);
-			return { data: await response.arrayBuffer() };
-		});
-		registeredProtocol = true;
-	}
 
 	const style: StyleSpecification = {
 		version: 8,
