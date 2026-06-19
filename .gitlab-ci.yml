@@ -62,6 +62,12 @@ pages:
   stage: deploy
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+  # Solo depende de lint y tests: el build (pesado) de Tauri Linux no debe
+  # bloquear ni retrasar la publicación de la web.
+  needs:
+    - lint
+    - test:unit
+    - test:e2e
   script:
     - BASE_PATH=/$CI_PROJECT_NAME npm run build
     - mkdir -p public
@@ -76,6 +82,9 @@ pages:
 build:tauri:linux:
   extends: .node
   stage: build
+  # Best-effort: el binario de Linux es un artefacto opcional; su fallo no
+  # debe marcar en rojo la pipeline ni afectar a la web (que va por `needs`).
+  allow_failure: true
   variables:
     CARGO_HOME: $CI_PROJECT_DIR/.cargo
   cache:
