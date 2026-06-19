@@ -40,7 +40,7 @@ deja registrado cualquier bloqueo.
 - [ ] V3-M2 — Capas de datos: agua + POIs con toggles + crawl de waypoints
 - [ ] V3-M3 — Etapas: crawl relación + modelo + StagesList + "Ver Etapas" funcional
 - [ ] V3-M4 — Descubrimiento: filtro provincia + orden popularidad (si viable) + fix "Cómo llegar"
-- [ ] V3-M5 — Perfil de elevación: bicolor + tooltip legible
+- [x] V3-M5 — Perfil de elevación: relleno bicolor (terreno bajo la curva / cielo encima) + tooltip con caja de contraste fijo (oscura + texto blanco), legible en cualquier tema. En `ElevationProfile.svelte`. Test: profile.e2e.
 - [ ] V3-M6 — Mochila custom: atributos + estado `warn` + checklist/informe + formato anonimizable
 - [ ] V3-M7 — Apariencia: toggle en barra + paletas en Ajustes
 
