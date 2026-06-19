@@ -62,4 +62,39 @@ deja registrado cualquier bloqueo.
 
 ## Bloqueos / notas
 
-- (ninguno por ahora)
+### V3-M2 (capas de datos en el mapa) — BLOQUEADO por datos (decisión del usuario)
+
+Investigación §13 (2026-06-19):
+
+- **POIs (#14):** ningún GPX de FEMECV trae `<wpt>` (0 de 585). No hay fuente de
+  puntos de interés en los tracks. Pendiente: comprobar si la **ficha web** de
+  FEMECV publica POIs con descripción/imagen y, si es así, extender el crawler.
+  Hasta confirmarlo, **no hay POIs que pintar** (no se inventan).
+- **Fuentes de agua (#9):** `scripts/ingest/enrich/osm.ts` SÍ obtiene `lat/lon`
+  de cada fuente/manantial (`OsmWaterNode`), pero el enriquecido las colapsa a
+  **texto** (`"… (km X, a N m del track; OSM)"`) y descarta las coordenadas. Sin
+  coords no se pueden pintar marcadores.
+
+**Soluciones propuestas (a decidir por David):**
+
+1. _(recomendada)_ Persistir las fuentes con coordenadas: añadir al modelo un
+   campo estructurado `water_points_geo: [{ name, kind, lat, lon, km, dist_m }]`
+   (zod en `schema.ts`), guardar eso en el enrich junto al texto actual, y
+   **re-ejecutar `npm run ingest:enrich`** (red OSM, lento, ~585 rutas con
+   rate-limit; ojo a la incidencia de DNS del router). Luego re-publicar
+   catálogo. El texto actual se conserva para compatibilidad.
+2. Mínimo viable sin re-crawl: pintar agua solo en las rutas que ya tengan
+   coords si alguna las tuviera (no es el caso) → no aporta.
+3. Aplazar V3-M2 hasta tener decidido lo de POIs y hecho el re-enrich.
+
+**Acción tomada:** no re-ejecuto el enrich por mi cuenta (cambia datos y va por
+red). Salto a milestones que no dependen de re-crawlear (M5, M7, parte de M4) y
+dejo M2 a la espera de tu decisión.
+
+### Otros datos a confirmar antes de implementar
+
+- **Popularidad (#6, M4):** confirmar si la ficha FEMECV expone visitas/descargas.
+  Si no → no se ofrece la ordenación (no implementar a ciegas).
+- **Provincia (#7, M4):** parece **derivable en la app** desde comarca/zona con un
+  mapa estático (comarca→provincia), sin re-crawl. Vía segura; pendiente de
+  verificar qué campo de comarca/zona hay en las rutas.
