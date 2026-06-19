@@ -1,6 +1,6 @@
 # CLAUDE.md — Senderos CV
 
-La especificación de referencia del proyecto es **[SPEC.md](SPEC.md)**. Léela antes de implementar cualquier cosa; las decisiones de arquitectura del §1 están cerradas. La siguiente versión está especificada en **[SPECS_V2.md](SPECS_V2.md)** (deltas sobre v1; el código actual sigue rigiéndose por SPEC.md).
+La especificación de referencia del proyecto es **[SPEC.md](SPEC.md)**. Léela antes de implementar cualquier cosa; las decisiones de arquitectura del §1 están cerradas. La v2 está especificada en **[SPECS_V2.md](SPECS_V2.md)** y la v3 en **[SPECS_V3.md](SPECS_V3.md)** (deltas sucesivos; la v3 mantiene la arquitectura sin backend y aplaza a la v4 lo que exige servidor). El progreso y las decisiones de la v3 se registran en **[SPECS_V3_PROGRESS.md](SPECS_V3_PROGRESS.md)**.
 
 ## Reglas clave (resumen de SPEC.md)
 
