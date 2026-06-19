@@ -36,7 +36,7 @@ deja registrado cualquier bloqueo.
 
 ## Estado de los milestones (SPECS_V3.md §12)
 
-- [ ] V3-M1 — Mapa base: selector de capas IGN + visibilidad track + pins inicio/fin
+- [x] V3-M1 — Mapa base: selector de capas IGN (MTN topo por defecto/offline + PNOA satélite) + track con anchos interpolados por zoom (visible a poca escala) + pins de inicio/fin (un solo pin si circular). Capas en `src/lib/map/layers.ts`, extremos en `src/lib/map/track.ts`, UI en `Map.svelte`. Tests: layers.spec, track.spec, map.e2e. Pendiente futuro: añadir capa "Callejero" (IGN Base) si se confirma su WMTS, y persistir la capa en el módulo de apariencia de V3-M7 (ahora va en localStorage `senderoscv:map-layer`).
 - [ ] V3-M2 — Capas de datos: agua + POIs con toggles + crawl de waypoints
 - [ ] V3-M3 — Etapas: crawl relación + modelo + StagesList + "Ver Etapas" funcional
 - [ ] V3-M4 — Descubrimiento: filtro provincia + orden popularidad (si viable) + fix "Cómo llegar"

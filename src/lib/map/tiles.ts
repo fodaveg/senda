@@ -23,8 +23,24 @@ export function ignTileUrl(z: number, x: number, y: number): string {
 	);
 }
 
+/**
+ * URL de tile de la ortofoto PNOA del IGN (capa satélite, SPECS_V3 §5).
+ * Mismo WMTS GoogleMapsCompatible que el MTN; CC-BY 4.0. Solo online: el
+ * modo offline (almacén local) sigue ligado a la capa por defecto (MTN).
+ */
+export function pnoaTileUrl(z: number, x: number, y: number): string {
+	return (
+		'https://www.ign.es/wmts/pnoa-ma?layer=OI.OrthoimageCoverage&style=default' +
+		'&tilematrixset=GoogleMapsCompatible&Service=WMTS&Request=GetTile&Version=1.0.0' +
+		`&Format=image/jpeg&TileMatrix=${z}&TileCol=${x}&TileRow=${y}`
+	);
+}
+
 export const IGN_ATTRIBUTION =
 	'© <a href="https://www.ign.es">Instituto Geográfico Nacional de España</a> (CC-BY 4.0)';
+
+export const PNOA_ATTRIBUTION =
+	'© <a href="https://www.ign.es">IGN España</a> — PNOA máxima actualidad (CC-BY 4.0)';
 
 export function lonToTileX(lon: number, z: number): number {
 	return Math.floor(((lon + 180) / 360) * 2 ** z);

@@ -1,20 +1,25 @@
 <script lang="ts" module>
 	import maplibregl from 'maplibre-gl';
 	import { getStoredBinary } from '$lib/catalog/store';
-	import { ignTileUrl } from '$lib/map/tiles';
+	import { getLayer } from '$lib/map/layers';
 
-	// Base cartográfica: IGN España mapa raster (SPEC v1 §1, SPECS_V2 §11).
-	// El protocolo ign:// resuelve primero el almacén local (mapa offline
-	// descargado por ruta) y cae a la red del IGN. Se registra una sola vez
-	// al cargar el módulo; en SSR/prerender no se piden tiles.
+	// Base cartográfica: capas WMTS del IGN España (SPEC v1 §1, SPECS_V2 §11,
+	// SPECS_V3 §5). El protocolo ign://<capa>/<z>/<x>/<y> resuelve, solo para
+	// la capa offline (MTN), primero el almacén local (mapa descargado por
+	// ruta) y cae a la red del IGN; las demás capas son solo online. Se
+	// registra una sola vez al cargar el módulo; en SSR/prerender no se piden
+	// tiles.
 	if (typeof window !== 'undefined') {
 		maplibregl.addProtocol('ign', async (params) => {
-			const match = params.url.match(/^ign:\/\/(\d+)\/(\d+)\/(\d+)$/);
+			const match = params.url.match(/^ign:\/\/([a-z0-9]+)\/(\d+)\/(\d+)\/(\d+)$/);
 			if (!match) throw new Error(`URL de tile no válida: ${params.url}`);
-			const [, z, x, y] = match;
-			const stored = await getStoredBinary(`tiles/${z}/${x}/${y}`);
-			if (stored) return { data: stored };
-			const response = await fetch(ignTileUrl(Number(z), Number(x), Number(y)));
+			const [, layerId, z, x, y] = match;
+			const layer = getLayer(layerId);
+			if (layer.offline) {
+				const stored = await getStoredBinary(`tiles/${z}/${x}/${y}`);
+				if (stored) return { data: stored };
+			}
+			const response = await fetch(layer.tileUrl(Number(z), Number(x), Number(y)));
 			if (!response.ok) throw new Error(`IGN respondió ${response.status}`);
 			return { data: await response.arrayBuffer() };
 		});
@@ -23,7 +28,8 @@
 
 <script lang="ts">
 	import 'maplibre-gl/dist/maplibre-gl.css';
-	import { IGN_ATTRIBUTION } from '$lib/map/tiles';
+	import { DEFAULT_LAYER_ID, MAP_LAYERS } from '$lib/map/layers';
+	import { trackEndpoints } from '$lib/map/track';
 	import { onMount } from 'svelte';
 	import type { FeatureCollection } from 'geojson';
 	import type { StyleSpecification } from 'maplibre-gl';
@@ -50,12 +56,18 @@
 		highlight?: [number, number] | null;
 	} = $props();
 
+	// Clave de persistencia de la capa elegida (preferencia local; la gestión
+	// completa de apariencia llega en V3-M7).
+	const LAYER_STORAGE_KEY = 'senderoscv:map-layer';
+
 	let container: HTMLDivElement;
 	let mapFailed = $state(false);
+	let activeLayer = $state(DEFAULT_LAYER_ID);
 	let highlightMarker: maplibregl.Marker | null = null;
 	let mapInstance: maplibregl.Map | null = null;
 	let mapReady = $state(false);
 	let markerHandles: maplibregl.Marker[] = [];
+	let endpointHandles: maplibregl.Marker[] = [];
 
 	// Marcadores reactivos: el listado filtrado cambia y el mapa le sigue.
 	$effect(() => {
@@ -74,6 +86,27 @@
 			});
 			return m;
 		});
+	});
+
+	// Pins de inicio y fin del track (SPECS_V3 §5). En circular, un único pin.
+	$effect(() => {
+		const fc = track;
+		if (!mapReady || !mapInstance) return;
+		for (const handle of endpointHandles) handle.remove();
+		endpointHandles = [];
+		if (!fc) return;
+		const ep = trackEndpoints(fc);
+		if (!ep) return;
+		const start = new maplibregl.Marker({ color: '#1d7a3a' })
+			.setLngLat(ep.start)
+			.addTo(mapInstance);
+		start.getElement().setAttribute('title', ep.circular ? 'Inicio / fin' : 'Inicio');
+		endpointHandles.push(start);
+		if (!ep.circular) {
+			const end = new maplibregl.Marker({ color: '#c1121f' }).setLngLat(ep.end).addTo(mapInstance);
+			end.getElement().setAttribute('title', 'Fin');
+			endpointHandles.push(end);
+		}
 	});
 
 	// Reencuadre al cambiar el bbox del resultado filtrado.
@@ -103,26 +136,63 @@
 		}
 	});
 
-	const style: StyleSpecification = {
-		version: 8,
-		sources: {
-			ign: {
-				type: 'raster',
-				tiles: ['ign://{z}/{x}/{y}'],
-				tileSize: 256,
-				maxzoom: 17,
-				attribution: IGN_ATTRIBUTION
+	/** Estilo MapLibre con una capa base por cada capa del catálogo IGN. */
+	function buildStyle(activeId: string): StyleSpecification {
+		return {
+			version: 8,
+			sources: Object.fromEntries(
+				MAP_LAYERS.map((l) => [
+					`base-${l.id}`,
+					{
+						type: 'raster' as const,
+						tiles: [`ign://${l.id}/{z}/{x}/{y}`],
+						tileSize: 256,
+						maxzoom: l.maxzoom,
+						attribution: l.attribution
+					}
+				])
+			),
+			layers: MAP_LAYERS.map((l) => ({
+				id: `base-${l.id}`,
+				type: 'raster' as const,
+				source: `base-${l.id}`,
+				layout: { visibility: l.id === activeId ? ('visible' as const) : ('none' as const) }
+			}))
+		};
+	}
+
+	/** Cambia la capa base visible y persiste la elección. */
+	function setBaseLayer(id: string): void {
+		activeLayer = getLayer(id).id;
+		if (mapInstance) {
+			for (const l of MAP_LAYERS) {
+				mapInstance.setLayoutProperty(
+					`base-${l.id}`,
+					'visibility',
+					l.id === activeLayer ? 'visible' : 'none'
+				);
 			}
-		},
-		layers: [{ id: 'ign', type: 'raster', source: 'ign' }]
-	};
+		}
+		try {
+			localStorage.setItem(LAYER_STORAGE_KEY, activeLayer);
+		} catch {
+			// localStorage no disponible: la capa simplemente no se recuerda.
+		}
+	}
 
 	onMount(() => {
+		try {
+			const saved = localStorage.getItem(LAYER_STORAGE_KEY);
+			if (saved) activeLayer = getLayer(saved).id;
+		} catch {
+			// sin persistencia: se usa la capa por defecto
+		}
+
 		let map: maplibregl.Map;
 		try {
 			map = new maplibregl.Map({
 				container,
-				style,
+				style: buildStyle(activeLayer),
 				// Comunitat Valenciana por defecto.
 				center: [-0.55, 39.3],
 				zoom: 7
@@ -138,17 +208,27 @@
 		map.on('load', () => {
 			if (track) {
 				map.addSource('track', { type: 'geojson', data: track });
+				// Casing (halo blanco) + línea: anchos interpolados por zoom para
+				// que el track se distinga también a poca escala (SPECS_V3 §5).
 				map.addLayer({
 					id: 'track-casing',
 					type: 'line',
 					source: 'track',
-					paint: { 'line-color': '#ffffff', 'line-width': 6 }
+					layout: { 'line-cap': 'round', 'line-join': 'round' },
+					paint: {
+						'line-color': '#ffffff',
+						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 4, 12, 8, 16, 12]
+					}
 				});
 				map.addLayer({
 					id: 'track-line',
 					type: 'line',
 					source: 'track',
-					paint: { 'line-color': '#c1121f', 'line-width': 3 }
+					layout: { 'line-cap': 'round', 'line-join': 'round' },
+					paint: {
+						'line-color': '#e0001b',
+						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 2, 12, 4.5, 16, 7]
+					}
 				});
 			}
 		});
@@ -169,11 +249,25 @@
 <div class="map" bind:this={container}>
 	{#if mapFailed}
 		<p class="map-error">Mapa no disponible en este dispositivo (WebGL desactivado).</p>
+	{:else if MAP_LAYERS.length > 1}
+		<div class="layer-switcher">
+			<label class="sr-only" for="map-layer-select">Capa del mapa</label>
+			<select
+				id="map-layer-select"
+				value={activeLayer}
+				onchange={(e) => setBaseLayer((e.currentTarget as HTMLSelectElement).value)}
+			>
+				{#each MAP_LAYERS as layer (layer.id)}
+					<option value={layer.id}>{layer.name}</option>
+				{/each}
+			</select>
+		</div>
 	{/if}
 </div>
 
 <style>
 	.map {
+		position: relative;
 		width: 100%;
 		height: 100%;
 		min-height: 320px;
@@ -183,5 +277,32 @@
 		padding: 1rem;
 		margin: 0;
 		color: var(--muted-strong);
+	}
+	.layer-switcher {
+		position: absolute;
+		top: 0.5rem;
+		left: 0.5rem;
+		z-index: 1;
+	}
+	.layer-switcher select {
+		padding: 0.3rem 0.5rem;
+		border-radius: 0.4rem;
+		border: 1px solid var(--border, rgba(0, 0, 0, 0.2));
+		background: var(--surface, #fff);
+		color: var(--text, #1a1a1a);
+		font-size: 0.85rem;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+		cursor: pointer;
+	}
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
 	}
 </style>
