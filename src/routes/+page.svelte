@@ -12,6 +12,7 @@
 		type UserData
 	} from '$lib/user/marks';
 	import { applyFilters, EMPTY_FILTERS, type RouteFilters } from '$lib/filters';
+	import { PROVINCES } from '$lib/geo/province';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
 	import { haversineMeters } from '$lib/geo/distance';
 	import { searchRoutes } from '$lib/search';
@@ -157,6 +158,15 @@
 			<option value={null}>—</option>
 			<option value={true}>Circular</option>
 			<option value={false}>Lineal</option>
+		</select>
+	</label>
+	<label>
+		Provincia
+		<select bind:value={filters.province}>
+			<option value={null}>—</option>
+			{#each PROVINCES as p (p.id)}
+				<option value={p.id}>{p.label}</option>
+			{/each}
 		</select>
 	</label>
 	<label>

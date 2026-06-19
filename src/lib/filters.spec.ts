@@ -77,6 +77,33 @@ describe('applyFilters', () => {
 	});
 });
 
+describe('filtro por provincia (SPECS_V3 §7)', () => {
+	const WITH_ZONES = [
+		route({ id: 'val', zone: 'serranos' }), // Valencia
+		route({ id: 'ali', zone: 'marina-alta' }), // Alicante
+		route({ id: 'cas', zone: 'ports' }), // Castellón
+		route({ id: 'sin-zona', zone: null })
+	];
+
+	it('filtra por provincia derivada de la comarca (excluye otras provincias)', () => {
+		const ids = applyFilters(WITH_ZONES, { ...EMPTY_FILTERS, province: 'alicante' }).map(
+			(r) => r.id
+		);
+		expect(ids).toContain('ali');
+		expect(ids).not.toContain('val');
+		expect(ids).not.toContain('cas');
+	});
+
+	it('no excluye rutas con comarca desconocida (fail-safe, como el resto de filtros)', () => {
+		const ids = applyFilters(WITH_ZONES, { ...EMPTY_FILTERS, province: 'valencia' }).map(
+			(r) => r.id
+		);
+		expect(ids).toContain('val');
+		expect(ids).toContain('sin-zona');
+		expect(ids).not.toContain('ali');
+	});
+});
+
 describe('filtro de estado (SPECS_V2 §6)', () => {
 	const WITH_STATUS = [
 		...ROUTES,

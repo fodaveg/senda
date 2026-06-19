@@ -4,6 +4,7 @@
  */
 
 import type { Route, RouteStatus, RouteType } from '$lib/types';
+import { provinceOf, type Province } from '$lib/geo/province';
 
 export interface RouteFilters {
 	/** Tipos incluidos; vacío = todos. */
@@ -11,6 +12,8 @@ export interface RouteFilters {
 	maxDistanceKm: number | null;
 	maxAscentM: number | null;
 	zone: string | null;
+	/** Provincia derivada de la comarca (SPECS_V3 §7); null = todas. */
+	province: Province | null;
 	/** null = indiferente. */
 	circular: boolean | null;
 	/**
@@ -25,6 +28,7 @@ export const EMPTY_FILTERS: RouteFilters = {
 	maxDistanceKm: null,
 	maxAscentM: null,
 	zone: null,
+	province: null,
 	circular: null,
 	status: null
 };
@@ -44,6 +48,11 @@ export function applyFilters(routes: Route[], filters: RouteFilters): Route[] {
 		)
 			return false;
 		if (filters.zone !== null && route.zone !== null && route.zone !== filters.zone) return false;
+		// Provincia derivada de la comarca; comarca desconocida no excluye.
+		if (filters.province !== null) {
+			const prov = provinceOf(route.zone);
+			if (prov !== null && prov !== filters.province) return false;
+		}
 		if (filters.circular !== null && route.circular !== null && route.circular !== filters.circular)
 			return false;
 		// El estado nunca es null en la ruta; las deshabilitadas por FEMECV se

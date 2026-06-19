@@ -39,7 +39,7 @@ deja registrado cualquier bloqueo.
 - [x] V3-M1 — Mapa base: selector de capas IGN (MTN topo por defecto/offline + PNOA satélite) + track con anchos interpolados por zoom (visible a poca escala) + pins de inicio/fin (un solo pin si circular). Capas en `src/lib/map/layers.ts`, extremos en `src/lib/map/track.ts`, UI en `Map.svelte`. Tests: layers.spec, track.spec, map.e2e. Pendiente futuro: añadir capa "Callejero" (IGN Base) si se confirma su WMTS, y persistir la capa en el módulo de apariencia de V3-M7 (ahora va en localStorage `senderoscv:map-layer`).
 - [ ] V3-M2 — Capas de datos: agua + POIs con toggles + crawl de waypoints
 - [ ] V3-M3 — Etapas: crawl relación + modelo + StagesList + "Ver Etapas" funcional
-- [ ] V3-M4 — Descubrimiento: filtro provincia + orden popularidad (si viable) + fix "Cómo llegar"
+- [~] V3-M4 — Descubrimiento: [x] fix "Cómo llegar" (enlace OSM con from+to); [x] filtro por provincia (derivada de comarca en `src/lib/geo/province.ts`, sin re-crawl; selector en el listado); [ ] orden por popularidad — PENDIENTE de investigar si FEMECV expone el dato (§13). Tests: travel.e2e, province.e2e, province.spec, filters.spec.
 - [x] V3-M5 — Perfil de elevación: relleno bicolor (terreno bajo la curva / cielo encima) + tooltip con caja de contraste fijo (oscura + texto blanco), legible en cualquier tema. En `ElevationProfile.svelte`. Test: profile.e2e.
 - [ ] V3-M6 — Mochila custom: atributos + estado `warn` + checklist/informe + formato anonimizable
 - [ ] V3-M7 — Apariencia: toggle en barra + paletas en Ajustes
