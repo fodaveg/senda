@@ -114,6 +114,16 @@
 			<ul>
 				{#each customDecisions as d (d.item.id)}
 					<li class="item custom" class:warn={d.status === 'warn'}>
+						{#if checked && onToggle}
+							<input
+								type="checkbox"
+								class="check"
+								title="En la mochila"
+								aria-label={`${d.item.name} en la mochila`}
+								checked={checked.has(d.item.id)}
+								onchange={() => onToggle?.(d.item.id)}
+							/>
+						{/if}
 						<span class="name">{d.item.name}</span>
 						{#if d.status === 'warn' && d.reason}
 							<span class="reason warn-reason">⚠️ {d.reason}</span>

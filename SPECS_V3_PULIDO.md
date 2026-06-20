@@ -17,9 +17,9 @@ Prioridad orientativa: **[A]** alta (valor o coherencia claros), **[M]** media,
       "Mochila recomendada" como "Tu material" con su aviso (`warn`) y casilla `☐`
       (report/model.ts + informe). (La ficha de emergencia es para contactos/ruta,
       no para equipo: no aplica.)
-- [ ] **[M]** Integrar el material custom en el **checklist** (v2 §7): poder
-      marcarlo "en la mochila" y que persista por (ruta, fecha) como los ítems del
-      catálogo.
+- [x] **[M]** Material custom integrado en el **checklist** (v2 §7): casilla "en
+      la mochila" en la sección "Tu material", persiste por (ruta, fecha) y se
+      refleja en el informe (☑/☐).
 - [x] **[M]** Peso del material custom sumado al **peso total** de la mochila
       (BackpackPanel).
 - [ ] **[B]** Editar un ítem custom ya creado (hoy solo alta/baja).
