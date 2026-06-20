@@ -7,6 +7,7 @@
 
 import type { CustomGearDecision, GearDecision, Route, WeatherDay, WildlifeZone } from '$lib/types';
 import { minutesToHhMm, type StartWindow } from '$lib/engine/startWindow';
+import type { EnergyEstimate, WaterEstimate } from '$lib/engine';
 import type { Aviso } from '$lib/weather/avisos';
 import { formatDuration, formatKm, formatMeters } from '$lib/format';
 
@@ -19,6 +20,9 @@ export interface ReportInput {
 	decisions: GearDecision[];
 	/** Material propio del usuario evaluado (SPECS_V3 §4), si lo hay. */
 	customDecisions?: CustomGearDecision[];
+	/** Agua y energía estimadas (SPECS_V3.5 §1), si se calcularon. */
+	hydration?: WaterEstimate | null;
+	energy?: EnergyEstimate | null;
 	/** Ficha de fauna de la zona, si existe. */
 	wildlife: WildlifeZone | null;
 	/** Rutas alternativas resueltas (id → nombre). */
@@ -186,6 +190,10 @@ export function buildReportModel(input: ReportInput): ReportModel {
 	const indeterminate = decisions.filter((d) => d.status === 'indeterminate');
 	const disabled = decisions.filter((d) => d.status === 'disabled');
 	const gearBlocks: ReportBlock[] = [];
+	const needs: string[] = [];
+	if (input.hydration) needs.push(`Agua: ${input.hydration.reason}`);
+	if (input.energy) needs.push(`Energía: ${input.energy.reason}`);
+	if (needs.length > 0) gearBlocks.push({ kind: 'list', items: needs });
 	if (enabled.length > 0) {
 		gearBlocks.push({ kind: 'paragraph', text: 'Llevar:' });
 		gearBlocks.push({ kind: 'list', items: enabled.map((d) => gearLine(d, checked)) });

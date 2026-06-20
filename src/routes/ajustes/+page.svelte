@@ -341,6 +341,17 @@
 	</fieldset>
 
 	<fieldset>
+		<legend>Tu perfil</legend>
+		<label>
+			Peso (kg)
+			<input type="number" min="20" max="200" step="1" bind:value={settings.weightKg} />
+		</label>
+		<p class="help">
+			Opcional; solo se usa para estimar las calorías de cada ruta. Solo en este dispositivo.
+		</p>
+	</fieldset>
+
+	<fieldset>
 		<legend>Mi material</legend>
 		<p class="help">
 			Objetos propios que se añaden a la mochila de cada ruta. Marca atributos (opcional) para que

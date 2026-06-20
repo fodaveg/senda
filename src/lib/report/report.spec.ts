@@ -118,6 +118,19 @@ describe('buildReportModel + renderMarkdown', () => {
 		expect(md).toContain('Botiquín — Equipo base: siempre en la mochila');
 	});
 
+	it('incluye agua y energía estimadas en la mochila', () => {
+		const md = renderMarkdown(
+			buildReportModel(
+				inputWith({
+					hydration: { liters: 1.5, reason: '≈ 1.5 L para 3 h (estimación)' },
+					energy: { kcal: 700, reason: '≈ 700 kcal (estimación)' }
+				})
+			)
+		);
+		expect(md).toContain('Agua: ≈ 1.5 L');
+		expect(md).toContain('Energía: ≈ 700 kcal');
+	});
+
 	it('incluye el material propio del usuario con su aviso', () => {
 		const withCustom = renderMarkdown(
 			buildReportModel(

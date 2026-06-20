@@ -20,7 +20,13 @@
 	import { gearItems, gearRules } from '$lib/data/gear';
 	import { loadTrackXml } from '$lib/data/tracks';
 	import { wildlifeForZone } from '$lib/data/wildlife';
-	import { evaluateGear, evaluateCustomGear, ATTRIBUTE_WARNING_RULES } from '$lib/engine';
+	import {
+		evaluateGear,
+		evaluateCustomGear,
+		ATTRIBUTE_WARNING_RULES,
+		waterEstimate,
+		energyEstimate
+	} from '$lib/engine';
 	import { loadCustomGear } from '$lib/user/customGear';
 	import type { CustomGearItem } from '$lib/types';
 	import { startWindow } from '$lib/engine/startWindow';
@@ -103,6 +109,10 @@
 	// Material propio del usuario (se gestiona en Ajustes): se evalúa y se muestra
 	// integrado en la lista de la mochila (SPECS_V3 §4).
 	let customItems = $state<CustomGearItem[]>([]);
+	let userWeight = $state<number | null>(null);
+	// Agua y energía estimadas para el día seleccionado (SPECS_V3.5 §1).
+	let hydration = $derived(waterEstimate(route, selectedDay));
+	let energy = $derived(energyEstimate(route, userWeight ?? undefined));
 	let customDecisions = $derived(
 		selectedDate
 			? evaluateCustomGear(
@@ -236,6 +246,7 @@
 
 	async function loadRouteData(r: typeof route, token: number) {
 		const settings = loadSettings();
+		userWeight = settings.weightKg;
 		customItems = loadCustomGear().items;
 		const mapPrefs = loadMapPrefs();
 		showWater = mapPrefs.showWater;
@@ -515,6 +526,8 @@
 			checked={checkedItems}
 			onToggle={toggleChecklistItem}
 			{customDecisions}
+			{hydration}
+			{energy}
 		/>
 	</section>
 

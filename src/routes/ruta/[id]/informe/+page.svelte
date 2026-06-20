@@ -6,7 +6,13 @@
 	import { gearItems, gearRules } from '$lib/data/gear';
 	import { routeById } from '$lib/data/routes';
 	import { wildlifeForZone } from '$lib/data/wildlife';
-	import { evaluateGear, evaluateCustomGear, ATTRIBUTE_WARNING_RULES } from '$lib/engine';
+	import {
+		evaluateGear,
+		evaluateCustomGear,
+		ATTRIBUTE_WARNING_RULES,
+		waterEstimate,
+		energyEstimate
+	} from '$lib/engine';
 	import { loadCustomGear } from '$lib/user/customGear';
 	import { startWindow } from '$lib/engine/startWindow';
 	import { buildReportModel, type ReportModel } from '$lib/report/model';
@@ -50,6 +56,8 @@
 			weather,
 			decisions,
 			customDecisions,
+			hydration: waterEstimate(route, weather),
+			energy: energyEstimate(route, loadSettings().weightKg ?? undefined),
 			wildlife: wildlifeForZone(route.zone),
 			alternatives,
 			startWindow: startWindow(route, weather, hourly),

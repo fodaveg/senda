@@ -31,6 +31,8 @@ export interface Settings {
 	 * ver src/lib/theme/schemes.ts. El toggle de modo aplica el que toque. */
 	schemeLight: string;
 	schemeDark: string;
+	/** Peso del usuario en kg (opcional, para estimar calorías; SPECS_V3.5 §1). */
+	weightKg: number | null;
 	aemetApiKey: string;
 	vaultDir: string;
 	/** Muestra los detalles técnicos en crudo cuando algo falla. */
@@ -55,6 +57,7 @@ export const DEFAULT_SETTINGS: Settings = {
 	theme: 'auto',
 	schemeLight: 'bosque-claro',
 	schemeDark: 'bosque-oscuro',
+	weightKg: null,
 	aemetApiKey: '',
 	vaultDir: '',
 	debugMode: false,
@@ -90,6 +93,7 @@ export function loadSettings(): Settings {
 					: 'auto',
 			schemeLight: typeof parsed.schemeLight === 'string' ? parsed.schemeLight : 'bosque-claro',
 			schemeDark: typeof parsed.schemeDark === 'string' ? parsed.schemeDark : 'bosque-oscuro',
+			weightKg: typeof parsed.weightKg === 'number' && parsed.weightKg > 0 ? parsed.weightKg : null,
 			aemetApiKey: typeof parsed.aemetApiKey === 'string' ? parsed.aemetApiKey : '',
 			vaultDir: typeof parsed.vaultDir === 'string' ? parsed.vaultDir : '',
 			debugMode: parsed.debugMode === true,

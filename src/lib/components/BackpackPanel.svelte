@@ -1,11 +1,14 @@
 <script lang="ts">
 	import type { CustomGearDecision, GearDecision } from '$lib/types';
+	import type { EnergyEstimate, WaterEstimate } from '$lib/engine';
 
 	let {
 		decisions,
 		checked = null,
 		onToggle = null,
-		customDecisions = []
+		customDecisions = [],
+		hydration = null,
+		energy = null
 	}: {
 		decisions: GearDecision[];
 		/** Checklist de preparación (SPECS_V2 §7); null = sin checklist. */
@@ -13,6 +16,9 @@
 		onToggle?: ((itemId: string) => void) | null;
 		/** Material propio del usuario evaluado (SPECS_V3 §4); se gestiona en Ajustes. */
 		customDecisions?: CustomGearDecision[];
+		/** Agua y energía estimadas (SPECS_V3.5 §1). */
+		hydration?: WaterEstimate | null;
+		energy?: EnergyEstimate | null;
 	} = $props();
 
 	let enabled = $derived(
@@ -30,6 +36,23 @@
 </script>
 
 <div class="backpack">
+	{#if hydration || energy}
+		<div class="needs">
+			<h3>Agua y energía</h3>
+			<ul>
+				{#if hydration}
+					<li>
+						💧 <strong>{hydration.liters} L</strong> <span class="reason">{hydration.reason}</span>
+					</li>
+				{/if}
+				{#if energy}
+					<li>
+						🔥 <strong>{energy.kcal} kcal</strong> <span class="reason">{energy.reason}</span>
+					</li>
+				{/if}
+			</ul>
+		</div>
+	{/if}
 	<section>
 		<h3>Llevar <span class="count">({enabled.length})</span></h3>
 		<ul>
@@ -139,6 +162,9 @@
 <style>
 	.backpack section + section {
 		margin-top: 1rem;
+	}
+	.needs {
+		margin-bottom: 1rem;
 	}
 	h3 {
 		margin: 0 0 0.4rem;
