@@ -33,6 +33,29 @@ export function axisTicks(min: number, max: number, targetCount = 4): number[] {
 	return ticks;
 }
 
+export type SlopeHardness = 'suave' | 'media' | 'dura';
+
+/** Pendiente en % entre dos puntos del perfil (signo = sube/baja). */
+export function slopePercent(a: ProfilePoint, b: ProfilePoint): number {
+	const dMeters = (b.km - a.km) * 1000;
+	if (dMeters <= 0) return 0;
+	return ((b.ele - a.ele) / dMeters) * 100;
+}
+
+/** Dureza por pendiente absoluta: <8% suave, 8–15% media, >15% dura. */
+export function slopeHardness(pct: number): SlopeHardness {
+	const abs = Math.abs(pct);
+	return abs < 8 ? 'suave' : abs < 15 ? 'media' : 'dura';
+}
+
+/** Pendiente local en el punto i (del anterior al siguiente), en %. */
+export function slopeAtIndex(points: ProfilePoint[], i: number): number {
+	if (points.length < 2) return 0;
+	const a = points[Math.max(0, i - 1)];
+	const b = points[Math.min(points.length - 1, i + 1)];
+	return slopePercent(a, b);
+}
+
 export function elevationProfile(positions: Position[]): ProfilePoint[] {
 	const points: ProfilePoint[] = [];
 	let cumulativeM = 0;

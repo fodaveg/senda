@@ -1,5 +1,11 @@
 <script lang="ts">
-	import { axisTicks, type ProfilePoint } from '$lib/geo/profile';
+	import {
+		axisTicks,
+		slopeAtIndex,
+		slopeHardness,
+		slopePercent,
+		type ProfilePoint
+	} from '$lib/geo/profile';
 	import { formatKm, formatMeters } from '$lib/format';
 
 	let {
@@ -69,9 +75,22 @@
 		const lastX = x(maxKm);
 		const areaBelow = `${polyline} ${lastX.toFixed(1)},${bottomY} ${firstX.toFixed(1)},${bottomY}`;
 		const areaAbove = `${firstX.toFixed(1)},${topY} ${polyline} ${lastX.toFixed(1)},${topY}`;
+		// Segmentos coloreados por dureza de la pendiente (SPECS_V3.5 §2).
+		const segments = [];
+		for (let i = 1; i < points.length; i++) {
+			const p0 = points[i - 1];
+			const p1 = points[i];
+			segments.push({
+				x1: x(p0.km),
+				y1: y(p0.ele),
+				x2: x(p1.km),
+				y2: y(p1.ele),
+				hardness: slopeHardness(slopePercent(p0, p1))
+			});
+		}
 		const eleTicks = axisTicks(minEle, maxEle, 4).map((ele) => ({ ele, y: y(ele) }));
 		const kmTicks = axisTicks(0, maxKm, 5).map((km) => ({ km, x: x(km) }));
-		return { minEle, maxEle, maxKm, polyline, areaBelow, areaAbove, eleTicks, kmTicks };
+		return { minEle, maxEle, maxKm, polyline, areaBelow, areaAbove, segments, eleTicks, kmTicks };
 	});
 </script>
 
@@ -112,7 +131,16 @@
 					{tick.km} km
 				</text>
 			{/each}
-			<polyline points={stats.polyline} fill="none" stroke="var(--brand)" stroke-width="2.5" />
+			{#each stats.segments as seg, i (i)}
+				<line
+					x1={seg.x1}
+					y1={seg.y1}
+					x2={seg.x2}
+					y2={seg.y2}
+					class="seg seg-{seg.hardness}"
+					stroke-width="2.5"
+				/>
+			{/each}
 			{#if hoverIndex !== null && points[hoverIndex]}
 				{@const hp = points[hoverIndex]}
 				{@const hx = PAD_LEFT + (hp.km / (stats.maxKm || 1)) * (W - PAD_LEFT - PAD_RIGHT)}
@@ -131,11 +159,13 @@
 				/>
 				<circle cx={hx} cy={hy} r="4" fill="var(--brand)" stroke="#fff" stroke-width="1.5" />
 				{@const label = `km ${hp.km.toFixed(1)} · ${Math.round(hp.ele)} m`}
-				{@const boxW = label.length * 6.4 + 14}
+				{@const slope = slopeAtIndex(points, hoverIndex)}
+				{@const slopeLabel = `${slope >= 0 ? '↗' : '↘'} ${Math.abs(slope).toFixed(0)}% pendiente`}
+				{@const boxW = Math.max(label.length, slopeLabel.length) * 6.4 + 14}
 				{@const boxX = Math.min(Math.max(hx - boxW / 2, PAD_LEFT), W - PAD_RIGHT - boxW)}
 				<!-- Tooltip con contraste fijo (caja oscura + texto claro): legible
 				     sobre cualquier capa/tema, no depende del fondo (SPECS_V3 §8). -->
-				<rect x={boxX} y={PAD_TOP} width={boxW} height="18" rx="4" class="tooltip-box" />
+				<rect x={boxX} y={PAD_TOP} width={boxW} height="32" rx="4" class="tooltip-box" />
 				<text
 					x={boxX + boxW / 2}
 					y={PAD_TOP + 13}
@@ -144,6 +174,9 @@
 					data-testid="profile-tooltip"
 				>
 					{label}
+				</text>
+				<text x={boxX + boxW / 2} y={PAD_TOP + 27} text-anchor="middle" class="tooltip-text">
+					{slopeLabel}
 				</text>
 			{/if}
 		</svg>
@@ -175,6 +208,18 @@
 	.area-above {
 		/* cielo por encima de la curva */
 		fill: rgba(120, 160, 205, 0.16);
+	}
+	.seg {
+		fill: none;
+	}
+	.seg-suave {
+		stroke: #2e9e4f;
+	}
+	.seg-media {
+		stroke: #e8a33d;
+	}
+	.seg-dura {
+		stroke: #c1121f;
 	}
 	.tooltip-box {
 		fill: #1d3a2a;

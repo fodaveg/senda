@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { DOMParser } from '@xmldom/xmldom';
 import { haversineMeters } from './distance';
 import { gpxToGeoJSON, trackPositions } from './gpx';
-import { axisTicks, elevationProfile } from './profile';
+import { axisTicks, elevationProfile, slopeAtIndex, slopeHardness, slopePercent } from './profile';
 import { fetchDrivingEstimate, fetchDrivingEstimateCached, RoutingError } from './routing';
 
 const GPX = `<?xml version="1.0" encoding="UTF-8"?>
@@ -36,6 +36,30 @@ describe('gpxToGeoJSON + trackPositions', () => {
 	it('tolera el BOM inicial de CompeGPS', () => {
 		const positions = trackPositions(gpxToGeoJSON('﻿' + GPX, xmlParser));
 		expect(positions).toHaveLength(3);
+	});
+});
+
+describe('pendiente del perfil', () => {
+	const a = { km: 0, ele: 100, lon: 0, lat: 0 };
+	const b = { km: 0.1, ele: 150, lon: 0, lat: 0 }; // +50 m en 100 m = 50%
+
+	it('calcula % con signo (km siempre avanza)', () => {
+		expect(slopePercent(a, b)).toBeCloseTo(50); // sube
+		const bajada = { km: 0.2, ele: 100, lon: 0, lat: 0 }; // de 150 a 100 en 100 m
+		expect(slopePercent(b, bajada)).toBeCloseTo(-50); // baja
+		expect(slopePercent(a, { ...a, km: 0 })).toBe(0); // sin avance horizontal
+	});
+
+	it('clasifica la dureza por pendiente absoluta', () => {
+		expect(slopeHardness(3)).toBe('suave');
+		expect(slopeHardness(-10)).toBe('media');
+		expect(slopeHardness(20)).toBe('dura');
+	});
+
+	it('slopeAtIndex usa los puntos vecinos', () => {
+		const pts = [a, b, { km: 0.2, ele: 150, lon: 0, lat: 0 }];
+		expect(slopeAtIndex(pts, 1)).toBeCloseTo(25); // de 100 a 150 en 200 m
+		expect(slopeAtIndex([a], 0)).toBe(0);
 	});
 });
 
