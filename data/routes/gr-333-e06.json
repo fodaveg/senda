@@ -35,7 +35,88 @@
 		"Fuente (km 5.7, a 46 m del track; OSM, no verificado en campo)",
 		"Fuente (km 5.9, a 21 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9886146,
+			"lon": -0.4386295,
+			"km": 0.1,
+			"dist_m": 26
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9887595,
+			"lon": -0.4380679,
+			"km": 0.1,
+			"dist_m": 13
+		},
+		{
+			"name": "Fuente Vieja",
+			"kind": "manantial",
+			"lat": 39.9889527,
+			"lon": -0.4372001,
+			"km": 0.3,
+			"dist_m": 3
+		},
+		{
+			"name": "Fuente de la Pastora",
+			"kind": "manantial",
+			"lat": 40.0067281,
+			"lon": -0.4292695,
+			"km": 2.9,
+			"dist_m": 23
+		},
+		{
+			"name": "Fuente del Río",
+			"kind": "manantial",
+			"lat": 40.0075169,
+			"lon": -0.4295764,
+			"km": 3,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente del Zuro",
+			"kind": "manantial",
+			"lat": 40.0117081,
+			"lon": -0.4295846,
+			"km": 3.8,
+			"dist_m": 33
+		},
+		{
+			"name": "Fuente la Paciencia",
+			"kind": "manantial",
+			"lat": 40.0208443,
+			"lon": -0.4248359,
+			"km": 5.3,
+			"dist_m": 12
+		},
+		{
+			"name": "Fuente del Cañar",
+			"kind": "manantial",
+			"lat": 40.0210691,
+			"lon": -0.4224492,
+			"km": 5.5,
+			"dist_m": 16
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0209989,
+			"lon": -0.4205613,
+			"km": 5.7,
+			"dist_m": 46
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0202963,
+			"lon": -0.4191609,
+			"km": 5.9,
+			"dist_m": 21
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -61,7 +142,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e06 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-333-e06.gpx (derivados: inicio, bbox)"
 	]
 }

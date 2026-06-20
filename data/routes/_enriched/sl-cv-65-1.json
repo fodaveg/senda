@@ -1,7 +1,41 @@
 {
-	"water_points": ["Fuente \"la Font\" (km 0.0, a 13 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente \"la Font\" (km 0.0, a 13 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "la Font",
+			"kind": "fuente",
+			"lat": 40.2164522,
+			"lon": -0.1709443,
+			"km": 0,
+			"dist_m": 13
+		}
+	],
+	"pois": [
+		{
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.2157577,
+			"lon": -0.1723349,
+			"km": 0,
+			"dist_m": 146
+		},
+		{
+			"name": "Pou del Bustalet",
+			"type": "patrimonio",
+			"lat": 40.2537936,
+			"lon": -0.147376,
+			"km": 5.1,
+			"dist_m": 8
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["gr-33-e05", "pr-cv-316", "gr-33-e07"],
-	"enriched_at": "2026-06-11T18:46:10.919Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-33-e05",
+		"pr-cv-316",
+		"gr-33-e07"
+	],
+	"enriched_at": "2026-06-20T10:11:57.896Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

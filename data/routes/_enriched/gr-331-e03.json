@@ -6,8 +6,80 @@
 		"Fuente (km 12.8, a 3 m del track; OSM, no verificado en campo)",
 		"Fuente (km 13.4, a 93 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.631719,
+			"lon": -0.2378279,
+			"km": 8.1,
+			"dist_m": 7
+		},
+		{
+			"name": "Font de la Saranyana",
+			"kind": "manantial",
+			"lat": 40.6327785,
+			"lon": -0.245655,
+			"km": 9.1,
+			"dist_m": 72
+		},
+		{
+			"name": "Font de la Vila",
+			"kind": "manantial",
+			"lat": 40.6196049,
+			"lon": -0.2717356,
+			"km": 12.5,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6175184,
+			"lon": -0.2744813,
+			"km": 12.8,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6162161,
+			"lon": -0.280057,
+			"km": 13.4,
+			"dist_m": 93
+		}
+	],
+	"pois": [
+		{
+			"name": "Peiró de Sant Pere",
+			"type": "patrimonio",
+			"lat": 40.6191921,
+			"lon": -0.2307169,
+			"km": 6.5,
+			"dist_m": 26
+		},
+		{
+			"name": "Peiró de Sant Josep",
+			"type": "patrimonio",
+			"lat": 40.6176555,
+			"lon": -0.2747601,
+			"km": 12.8,
+			"dist_m": 1
+		},
+		{
+			"name": "Peiró de Sant Gil",
+			"type": "patrimonio",
+			"lat": 40.6175702,
+			"lon": -0.2756591,
+			"km": 12.9,
+			"dist_m": 5
+		}
+	],
 	"shade_ratio": 0.26,
-	"alternatives": ["sl-cv-33", "pr-cv-118", "sl-cv-36"],
-	"enriched_at": "2026-06-11T17:41:55.943Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-33",
+		"pr-cv-118",
+		"sl-cv-36"
+	],
+	"enriched_at": "2026-06-20T08:37:46.138Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

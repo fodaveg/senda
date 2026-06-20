@@ -5,8 +5,56 @@
 		"Manantial \"Font d'Isbert\" (km 1.5, a 56 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Regall\" (km 2.1, a 3 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7790863,
+			"lon": -0.1042484,
+			"km": 0.6,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.780133,
+			"lon": -0.1022761,
+			"km": 0.8,
+			"dist_m": 24
+		},
+		{
+			"name": "Font d'Isbert",
+			"kind": "manantial",
+			"lat": 38.7825055,
+			"lon": -0.0963179,
+			"km": 1.5,
+			"dist_m": 56
+		},
+		{
+			"name": "Font del Regall",
+			"kind": "manantial",
+			"lat": 38.7847388,
+			"lon": -0.0935635,
+			"km": 2.1,
+			"dist_m": 3
+		}
+	],
+	"pois": [
+		{
+			"name": "Castell de les Atzavares",
+			"type": "patrimonio",
+			"lat": 38.7814094,
+			"lon": -0.0923278,
+			"km": 5.4,
+			"dist_m": 95
+		}
+	],
 	"shade_ratio": 0.06,
-	"alternatives": ["pr-cv-147", "sl-cv-185", "pr-cv-426"],
-	"enriched_at": "2026-06-11T17:57:45.828Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-147",
+		"sl-cv-185",
+		"pr-cv-426"
+	],
+	"enriched_at": "2026-06-20T09:16:23.011Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

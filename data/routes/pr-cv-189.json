@@ -27,7 +27,24 @@
 		"Fuente (km 0.6, a 28 m del track; OSM, no verificado en campo)",
 		"Fuente (km 9.1, a 96 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.439664,
+			"lon": -0.6350165,
+			"km": 0.6,
+			"dist_m": 28
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.4355903,
+			"lon": -0.6357618,
+			"km": 9.1,
+			"dist_m": 96
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -53,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-189 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-189.gpx (derivados: inicio, bbox)"
 	]
 }

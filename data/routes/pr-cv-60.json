@@ -29,8 +29,58 @@
 		"Fuente \"Font de la Betina\" (km 9.8, a 8 m del track; OSM, no verificado en campo)",
 		"Fuente \"Font del Teular\" (km 9.9, a 21 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font de la Drova",
+			"kind": "fuente",
+			"lat": 39.0037978,
+			"lon": -0.2869339,
+			"km": 1.8,
+			"dist_m": 20
+		},
+		{
+			"name": "Font de la Mongeta",
+			"kind": "manantial",
+			"lat": 39.0016445,
+			"lon": -0.2848593,
+			"km": 2.2,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de la Betina",
+			"kind": "fuente",
+			"lat": 39.0107723,
+			"lon": -0.3071313,
+			"km": 9.8,
+			"dist_m": 8
+		},
+		{
+			"name": "Font del Teular",
+			"kind": "fuente",
+			"lat": 39.0104152,
+			"lon": -0.3061416,
+			"km": 9.9,
+			"dist_m": 21
+		}
+	],
+	"pois": [
+		{
+			"name": "el Portitxolet",
+			"type": "cumbre",
+			"lat": 39.0088146,
+			"lon": -0.2965931,
+			"km": 0.8,
+			"dist_m": 141
+		},
+		{
+			"name": "Alt de la Figuerota",
+			"type": "cumbre",
+			"lat": 38.9965924,
+			"lon": -0.3036243,
+			"km": 5.3,
+			"dist_m": 142
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +105,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-60 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-60.gpx (derivados: inicio, bbox)"
 	]
 }

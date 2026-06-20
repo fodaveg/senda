@@ -28,8 +28,114 @@
 		"Fuente (km 0.3, a 13 m del track; OSM, no verificado en campo)",
 		"Fuente (km 12.2, a 42 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6244093,
+			"lon": -0.1003236,
+			"km": 0.3,
+			"dist_m": 13
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6242469,
+			"lon": -0.100236,
+			"km": 0.3,
+			"dist_m": 2
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6620232,
+			"lon": -0.0191815,
+			"km": 12.2,
+			"dist_m": 42
+		}
+	],
+	"pois": [
+		{
+			"name": "Portal de Sant Miquel",
+			"type": "patrimonio",
+			"lat": 40.6217327,
+			"lon": -0.0991148,
+			"km": 0,
+			"dist_m": 72
+		},
+		{
+			"name": "Torre del Panto",
+			"type": "patrimonio",
+			"lat": 40.6210263,
+			"lon": -0.100653,
+			"km": 0,
+			"dist_m": 139
+		},
+		{
+			"name": "Nevera de Morella",
+			"type": "patrimonio",
+			"lat": 40.6218541,
+			"lon": -0.1005158,
+			"km": 0,
+			"dist_m": 58
+		},
+		{
+			"name": "Portal de la Nevera",
+			"type": "patrimonio",
+			"lat": 40.6214335,
+			"lon": -0.0999303,
+			"km": 0,
+			"dist_m": 76
+		},
+		{
+			"name": "Conxa Dolz",
+			"type": "patrimonio",
+			"lat": 40.627635,
+			"lon": -0.0978656,
+			"km": 0.8,
+			"dist_m": 28
+		},
+		{
+			"name": "Collet de la Querola",
+			"type": "cumbre",
+			"lat": 40.6280978,
+			"lon": -0.0939739,
+			"km": 1,
+			"dist_m": 117
+		},
+		{
+			"name": "Mirador del Mas de Bessó",
+			"type": "mirador",
+			"lat": 40.6354769,
+			"lon": -0.0970604,
+			"km": 2,
+			"dist_m": 3
+		},
+		{
+			"name": "Peiró de Sant Antoni i Santa Bàrbera",
+			"type": "patrimonio",
+			"lat": 40.6405964,
+			"lon": -0.082318,
+			"km": 4.2,
+			"dist_m": 3
+		},
+		{
+			"name": "Moleta de la Carcellera",
+			"type": "cumbre",
+			"lat": 40.6438666,
+			"lon": -0.0437647,
+			"km": 7.8,
+			"dist_m": 149
+		},
+		{
+			"name": "Peiró de Sant Antoni",
+			"type": "patrimonio",
+			"lat": 40.6589439,
+			"lon": -0.0301584,
+			"km": 10.6,
+			"dist_m": 7
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +160,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e09 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-331-e09.gpx (derivados: inicio, bbox)"
 	]
 }

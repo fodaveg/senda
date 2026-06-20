@@ -2,8 +2,48 @@
 	"water_points": [
 		"Fuente \"Fuente el Hinchidor\" (km 1.1, a 51 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente el Hinchidor",
+			"kind": "fuente",
+			"lat": 39.2365471,
+			"lon": -0.7733145,
+			"km": 1.1,
+			"dist_m": 51
+		}
+	],
+	"pois": [
+		{
+			"name": "Alto del Atajo",
+			"type": "cumbre",
+			"lat": 39.2317389,
+			"lon": -0.7723764,
+			"km": 2.1,
+			"dist_m": 148
+		},
+		{
+			"name": "Loma del Pino del Pajaro",
+			"type": "cumbre",
+			"lat": 39.2221635,
+			"lon": -0.7513571,
+			"km": 4.6,
+			"dist_m": 57
+		},
+		{
+			"name": "Alto del Cámaro",
+			"type": "cumbre",
+			"lat": 39.2102554,
+			"lon": -0.7265488,
+			"km": 7.9,
+			"dist_m": 12
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-173", "gr-332-e03", "pr-cv-235"],
-	"enriched_at": "2026-06-11T18:03:28.026Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-173",
+		"gr-332-e03",
+		"pr-cv-235"
+	],
+	"enriched_at": "2026-06-20T09:25:22.800Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

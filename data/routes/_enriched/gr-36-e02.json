@@ -9,8 +9,79 @@
 		"Fuente \"Fuente de los Dos Caños\" (km 6.9, a 99 m del track; OSM, no verificado en campo)",
 		"Fuente (km 7.1, a 7 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8792887,
+			"lon": -0.3080348,
+			"km": 0,
+			"dist_m": 4
+		},
+		{
+			"name": "Font de la Figuera",
+			"kind": "manantial",
+			"lat": 39.8803532,
+			"lon": -0.3254488,
+			"km": 1.9,
+			"dist_m": 8
+		},
+		{
+			"name": "Font dels Noguerals",
+			"kind": "manantial",
+			"lat": 39.8809606,
+			"lon": -0.343375,
+			"km": 4.2,
+			"dist_m": 13
+		},
+		{
+			"name": "Font de la Caritat",
+			"kind": "manantial",
+			"lat": 39.8910131,
+			"lon": -0.3457366,
+			"km": 5.5,
+			"dist_m": 11
+		},
+		{
+			"name": "Font de l' Arquet (seca)",
+			"kind": "manantial",
+			"lat": 39.8959692,
+			"lon": -0.3441822,
+			"km": 6.2,
+			"dist_m": 20
+		},
+		{
+			"name": "Font de l'Avellaner",
+			"kind": "manantial",
+			"lat": 39.8978839,
+			"lon": -0.3426994,
+			"km": 6.5,
+			"dist_m": 37
+		},
+		{
+			"name": "Fuente de los Dos Caños",
+			"kind": "fuente",
+			"lat": 39.900437,
+			"lon": -0.3403491,
+			"km": 6.9,
+			"dist_m": 99
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.901244,
+			"lon": -0.3420523,
+			"km": 7.1,
+			"dist_m": 7
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-101", "pr-cv-138", "pr-cv-352"],
-	"enriched_at": "2026-06-11T22:02:30.264Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-101",
+		"pr-cv-138",
+		"pr-cv-352"
+	],
+	"enriched_at": "2026-06-20T08:44:37.191Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

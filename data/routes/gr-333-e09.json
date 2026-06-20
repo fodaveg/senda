@@ -23,20 +23,106 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 225,
-	"water_points": [],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points": [
+		"Fuente (km 0.0, a 52 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de la Piqueta\" (km 1.6, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Sastre\" (km 2.7, a 21 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Melic\" (km 4.1, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.4, a 21 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.5, a 31 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.7, a 12 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0263911,
+			"lon": -0.3563945,
+			"km": 0,
+			"dist_m": 52
+		},
+		{
+			"name": "Fuente de la Piqueta",
+			"kind": "manantial",
+			"lat": 40.0205209,
+			"lon": -0.3698326,
+			"km": 1.6,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente del Sastre",
+			"kind": "manantial",
+			"lat": 40.0235372,
+			"lon": -0.3755069,
+			"km": 2.7,
+			"dist_m": 21
+		},
+		{
+			"name": "Fuente del Melic",
+			"kind": "manantial",
+			"lat": 40.0242175,
+			"lon": -0.3854685,
+			"km": 4.1,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0486118,
+			"lon": -0.3983466,
+			"km": 9.4,
+			"dist_m": 21
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0492744,
+			"lon": -0.3980506,
+			"km": 9.5,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0484086,
+			"lon": -0.3960343,
+			"km": 9.7,
+			"dist_m": 12
+		}
+	],
+	"pois": [
+		{
+			"name": "Pilón Espadilla",
+			"type": "patrimonio",
+			"lat": 40.0265809,
+			"lon": -0.396921,
+			"km": 5.6,
+			"dist_m": 12
+		},
+		{
+			"name": "Pilón Torrechiva",
+			"type": "patrimonio",
+			"lat": 40.0294678,
+			"lon": -0.398967,
+			"km": 6,
+			"dist_m": 2
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.06,
 	"gpx": "gr-333-e09.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e09",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-386",
+		"pr-cv-314",
+		"sl-cv-70"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.401961961761117,
@@ -46,6 +132,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e09 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-333-e09.gpx (derivados: inicio, bbox)"
 	]
 }

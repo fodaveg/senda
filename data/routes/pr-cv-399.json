@@ -21,8 +21,26 @@
 	"water_points": [
 		"Fuente (km 0.3, a 94 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.3663233,
+			"lon": -0.8991327,
+			"km": 0.3,
+			"dist_m": 94
+		}
+	],
+	"pois": [
+		{
+			"name": "Penya de la Mina",
+			"type": "cumbre",
+			"lat": 38.3295574,
+			"lon": -0.9385218,
+			"km": 9.3,
+			"dist_m": 0
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -47,7 +65,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-399 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-399.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

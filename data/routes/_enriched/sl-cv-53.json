@@ -1,7 +1,22 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "El Cerrín",
+			"type": "cumbre",
+			"lat": 39.904035,
+			"lon": -0.7131652,
+			"km": 1.1,
+			"dist_m": 51
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-52", "gr-7-e35", "gr-231-e02"],
-	"enriched_at": "2026-06-11T19:56:15.331Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-52",
+		"gr-7-e35",
+		"gr-231-e02"
+	],
+	"enriched_at": "2026-06-20T10:09:46.601Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

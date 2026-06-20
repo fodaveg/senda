@@ -27,7 +27,24 @@
 		"Manantial \"Font del Brull\" (km 10.7, a 30 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de la Coveta (Naiximent Riu Vinalopó)\" (km 11.4, a 6 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": "Font del Brull",
+			"kind": "manantial",
+			"lat": 38.7239733,
+			"lon": -0.6235221,
+			"km": 10.7,
+			"dist_m": 30
+		},
+		{
+			"name": "Font de la Coveta (Naiximent Riu Vinalopó)",
+			"kind": "manantial",
+			"lat": 38.7189697,
+			"lon": -0.6259556,
+			"km": 11.4,
+			"dist_m": 6
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -53,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-4 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-4.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -1,0 +1,104 @@
+{
+	"water_points": [
+		"Manantial \"Fuente de San Pedro\" (km 0.3, a 7 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Molina\" (km 2.7, a 90 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fonteta de Maria Teresa\" (km 3.8, a 17 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de Felipo\" (km 4.0, a 10 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Tio Agustín\" (km 4.4, a 64 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font dels Castillos\" (km 4.5, a 98 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Avellaner\" (km 4.7, a 58 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente El Prau\" (km 9.2, a 32 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de San Pedro",
+			"kind": "manantial",
+			"lat": 39.9181948,
+			"lon": -0.3562437,
+			"km": 0.3,
+			"dist_m": 7
+		},
+		{
+			"name": "Font de Molina",
+			"kind": "manantial",
+			"lat": 39.9324714,
+			"lon": -0.3699303,
+			"km": 2.7,
+			"dist_m": 90
+		},
+		{
+			"name": "Fonteta de Maria Teresa",
+			"kind": "manantial",
+			"lat": 39.930581,
+			"lon": -0.3783622,
+			"km": 3.8,
+			"dist_m": 17
+		},
+		{
+			"name": "Font de Felipo",
+			"kind": "manantial",
+			"lat": 39.9300722,
+			"lon": -0.3798725,
+			"km": 4,
+			"dist_m": 10
+		},
+		{
+			"name": "Font del Tio Agustín",
+			"kind": "manantial",
+			"lat": 39.932883,
+			"lon": -0.3800184,
+			"km": 4.4,
+			"dist_m": 64
+		},
+		{
+			"name": "Font dels Castillos",
+			"kind": "manantial",
+			"lat": 39.9330751,
+			"lon": -0.3790262,
+			"km": 4.5,
+			"dist_m": 98
+		},
+		{
+			"name": "Font de l'Avellaner",
+			"kind": "manantial",
+			"lat": 39.9348555,
+			"lon": -0.3780771,
+			"km": 4.7,
+			"dist_m": 58
+		},
+		{
+			"name": "Fuente El Prau",
+			"kind": "manantial",
+			"lat": 39.9607866,
+			"lon": -0.4020852,
+			"km": 9.2,
+			"dist_m": 32
+		}
+	],
+	"pois": [
+		{
+			"name": "Alt de Molina",
+			"type": "cumbre",
+			"lat": 39.9304261,
+			"lon": -0.3696677,
+			"km": 2.6,
+			"dist_m": 128
+		},
+		{
+			"name": "la Campana",
+			"type": "patrimonio",
+			"lat": 39.9306502,
+			"lon": -0.3786198,
+			"km": 3.8,
+			"dist_m": 7
+		}
+	],
+	"shade_ratio": 0.38,
+	"alternatives": [
+		"gr-333-e04",
+		"gr-333-e03",
+		"sl-cv-29"
+	],
+	"enriched_at": "2026-06-20T08:44:49.128Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

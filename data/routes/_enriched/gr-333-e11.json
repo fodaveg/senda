@@ -6,8 +6,72 @@
 		"Fuente (km 3.0, a 24 m del track; OSM, no verificado en campo)",
 		"Fuente (km 3.1, a 14 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.042667,
+			"lon": -0.3667239,
+			"km": 0.1,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente de los Leones",
+			"kind": "manantial",
+			"lat": 40.0434891,
+			"lon": -0.3676668,
+			"km": 0.3,
+			"dist_m": 3
+		},
+		{
+			"name": "Fuente Caliente",
+			"kind": "manantial",
+			"lat": 40.0456662,
+			"lon": -0.3655938,
+			"km": 0.8,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0544412,
+			"lon": -0.3504359,
+			"km": 3,
+			"dist_m": 24
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0549732,
+			"lon": -0.3495471,
+			"km": 3.1,
+			"dist_m": 14
+		}
+	],
+	"pois": [
+		{
+			"name": "Capilla San Antonio",
+			"type": "patrimonio",
+			"lat": 40.0415223,
+			"lon": -0.3669221,
+			"km": 0,
+			"dist_m": 69
+		},
+		{
+			"name": "Nuestra Señora del Carmen",
+			"type": "patrimonio",
+			"lat": 40.0521753,
+			"lon": -0.3516023,
+			"km": 2.7,
+			"dist_m": 8
+		}
+	],
 	"shade_ratio": null,
-	"alternatives": ["sl-cv-70", "pr-cv-386", "pr-cv-314"],
-	"enriched_at": "2026-06-11T17:45:09.647Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-70",
+		"pr-cv-386",
+		"pr-cv-314"
+	],
+	"enriched_at": "2026-06-20T08:43:19.618Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

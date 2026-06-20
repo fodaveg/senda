@@ -6,8 +6,80 @@
 		"Fuente (km 0.3, a 7 m del track; OSM, no verificado en campo)",
 		"Fuente \"Fuente La Tejería\" (km 10.8, a 20 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Pechina",
+			"kind": "manantial",
+			"lat": 40.0710058,
+			"lon": -0.5262262,
+			"km": 0,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0708283,
+			"lon": -0.5243381,
+			"km": 0.1,
+			"dist_m": 78
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0699965,
+			"lon": -0.5247344,
+			"km": 0.2,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0690223,
+			"lon": -0.5241648,
+			"km": 0.3,
+			"dist_m": 7
+		},
+		{
+			"name": "Fuente La Tejería",
+			"kind": "fuente",
+			"lat": 40.0351798,
+			"lon": -0.5632863,
+			"km": 10.8,
+			"dist_m": 20
+		}
+	],
+	"pois": [
+		{
+			"name": "Buzón",
+			"type": "patrimonio",
+			"lat": 40.0650981,
+			"lon": -0.5457109,
+			"km": 3.6,
+			"dist_m": 3
+		},
+		{
+			"name": "Cerro Pachón",
+			"type": "cumbre",
+			"lat": 40.0345836,
+			"lon": -0.5877919,
+			"km": 13.3,
+			"dist_m": 134
+		},
+		{
+			"name": "Alto Pino Rey",
+			"type": "cumbre",
+			"lat": 40.0285659,
+			"lon": -0.6017343,
+			"km": 15.6,
+			"dist_m": 71
+		}
+	],
 	"shade_ratio": 0.26,
-	"alternatives": ["gr-160-e03", "sl-cv-105", "sl-cv-104"],
-	"enriched_at": "2026-06-11T19:03:17.317Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-160-e03",
+		"sl-cv-105",
+		"sl-cv-104"
+	],
+	"enriched_at": "2026-06-20T08:48:35.894Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

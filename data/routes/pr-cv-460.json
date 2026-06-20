@@ -26,8 +26,50 @@
 	"water_points": [
 		"Manantial \"Font del Ros\" (km 7.5, a 20 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font del Ros",
+			"kind": "manantial",
+			"lat": 40.0705857,
+			"lon": -0.0877965,
+			"km": 7.5,
+			"dist_m": 20
+		}
+	],
+	"pois": [
+		{
+			"name": "Cormo del Portell",
+			"type": "cumbre",
+			"lat": 40.0706939,
+			"lon": -0.0821165,
+			"km": 0.7,
+			"dist_m": 78
+		},
+		{
+			"name": "Tossal de Mollet",
+			"type": "cumbre",
+			"lat": 40.080865,
+			"lon": -0.0850793,
+			"km": 3.9,
+			"dist_m": 122
+		},
+		{
+			"name": "Jaciment de Mollet",
+			"type": "patrimonio",
+			"lat": 40.0807362,
+			"lon": -0.0852215,
+			"km": 3.9,
+			"dist_m": 117
+		},
+		{
+			"name": "Jaciment de Mollet",
+			"type": "patrimonio",
+			"lat": 40.0781629,
+			"lon": -0.0880146,
+			"km": 4.6,
+			"dist_m": 3
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +94,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-460 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-460.gpx (derivados: inicio, bbox)"
 	]
 }

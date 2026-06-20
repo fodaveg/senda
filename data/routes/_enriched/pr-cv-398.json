@@ -3,8 +3,31 @@
 		"Manantial \"Fuente Larga\" (km 0.0, a 13 m del track; OSM, no verificado en campo)",
 		"Manantial \"Ojal de Reca\" (km 12.0, a 34 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente Larga",
+			"kind": "manantial",
+			"lat": 39.9958769,
+			"lon": -0.3730697,
+			"km": 0,
+			"dist_m": 13
+		},
+		{
+			"name": "Ojal de Reca",
+			"kind": "manantial",
+			"lat": 39.9899847,
+			"lon": -0.3802886,
+			"km": 12,
+			"dist_m": 34
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-276", "gr-333-e08", "pr-cv-314"],
-	"enriched_at": "2026-06-11T18:18:17.645Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-276",
+		"gr-333-e08",
+		"pr-cv-314"
+	],
+	"enriched_at": "2026-06-20T09:38:50.787Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

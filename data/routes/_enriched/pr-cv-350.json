@@ -5,8 +5,96 @@
 		"Manantial \"Font dels Solers\" (km 7.8, a 26 m del track; OSM, no verificado en campo)",
 		"Fuente (km 9.8, a 77 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Ullal de la Manjorna",
+			"kind": "manantial",
+			"lat": 40.2810365,
+			"lon": -0.0097874,
+			"km": 3.9,
+			"dist_m": 8
+		},
+		{
+			"name": "Font de la Ballestera",
+			"kind": "manantial",
+			"lat": 40.2699647,
+			"lon": -0.0268778,
+			"km": 7.7,
+			"dist_m": 99
+		},
+		{
+			"name": "Font dels Solers",
+			"kind": "manantial",
+			"lat": 40.2714287,
+			"lon": -0.0268199,
+			"km": 7.8,
+			"dist_m": 26
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2696487,
+			"lon": -0.0189529,
+			"km": 9.8,
+			"dist_m": 77
+		}
+	],
+	"pois": [
+		{
+			"name": "Peiró de les Ombries",
+			"type": "patrimonio",
+			"lat": 40.2735968,
+			"lon": -0.0052883,
+			"km": 1.2,
+			"dist_m": 12
+		},
+		{
+			"name": "Tossal d'en Fos",
+			"type": "cumbre",
+			"lat": 40.2814748,
+			"lon": -0.000693,
+			"km": 2.5,
+			"dist_m": 25
+		},
+		{
+			"name": "Tossal del Coix",
+			"type": "cumbre",
+			"lat": 40.2842851,
+			"lon": -0.0072309,
+			"km": 3.4,
+			"dist_m": 137
+		},
+		{
+			"name": "Tossal de la Bandereta",
+			"type": "cumbre",
+			"lat": 40.2772093,
+			"lon": -0.0246807,
+			"km": 5.4,
+			"dist_m": 101
+		},
+		{
+			"name": "Ermita de Sant Marc",
+			"type": "patrimonio",
+			"lat": 40.2760753,
+			"lon": -0.0315657,
+			"km": 6.1,
+			"dist_m": 40
+		},
+		{
+			"name": "Miradors de la Serra",
+			"type": "mirador",
+			"lat": 40.2763624,
+			"lon": -0.0330842,
+			"km": 6.2,
+			"dist_m": 15
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-348", "pr-cv-349", "sl-cv-94"],
-	"enriched_at": "2026-06-11T18:12:30.442Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-348",
+		"pr-cv-349",
+		"sl-cv-94"
+	],
+	"enriched_at": "2026-06-20T09:31:15.322Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

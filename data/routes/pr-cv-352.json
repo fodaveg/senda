@@ -32,8 +32,98 @@
 		"Fuente (km 12.0, a 85 m del track; OSM, no verificado en campo)",
 		"Fuente (km 12.0, a 4 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.880838,
+			"lon": -0.3059578,
+			"km": 0,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8802142,
+			"lon": -0.3071137,
+			"km": 0.2,
+			"dist_m": 3
+		},
+		{
+			"name": "Font de la Figuera",
+			"kind": "manantial",
+			"lat": 39.8803532,
+			"lon": -0.3254488,
+			"km": 9.3,
+			"dist_m": 9
+		},
+		{
+			"name": "Font de les Escaletes",
+			"kind": "manantial",
+			"lat": 39.8776373,
+			"lon": -0.3180403,
+			"km": 10.4,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8792887,
+			"lon": -0.3080348,
+			"km": 11.8,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8808157,
+			"lon": -0.3070076,
+			"km": 12,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8812922,
+			"lon": -0.3078445,
+			"km": 12,
+			"dist_m": 85
+		}
+	],
+	"pois": [
+		{
+			"name": "Creu d'Eslida",
+			"type": "cumbre",
+			"lat": 39.865043,
+			"lon": -0.3200327,
+			"km": 3.2,
+			"dist_m": 88
+		},
+		{
+			"name": "Puntal de l'Aljub",
+			"type": "cumbre",
+			"lat": 39.8720608,
+			"lon": -0.3247975,
+			"km": 5.8,
+			"dist_m": 4
+		},
+		{
+			"name": "el Corralet",
+			"type": "cumbre",
+			"lat": 39.8793595,
+			"lon": -0.3381467,
+			"km": 7.5,
+			"dist_m": 70
+		},
+		{
+			"name": "Penya de la Boda",
+			"type": "cumbre",
+			"lat": 39.878668,
+			"lon": -0.3142922,
+			"km": 10.8,
+			"dist_m": 44
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -58,7 +148,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-352 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-352.gpx (derivados: inicio, bbox)"
 	]
 }

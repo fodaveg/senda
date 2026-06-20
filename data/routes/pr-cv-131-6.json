@@ -33,8 +33,114 @@
 		"Fuente (km 6.2, a 54 m del track; OSM, no verificado en campo)",
 		"Manantial (km 6.2, a 33 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente del Tío Manzano",
+			"kind": "fuente",
+			"lat": 40.0570771,
+			"lon": -1.2937022,
+			"km": 4.6,
+			"dist_m": 3
+		},
+		{
+			"name": "Nueva Fuente de Juan Manzano",
+			"kind": "fuente",
+			"lat": 40.0592357,
+			"lon": -1.2887885,
+			"km": 5.1,
+			"dist_m": 18
+		},
+		{
+			"name": "Fuente Vieja",
+			"kind": "manantial",
+			"lat": 40.0581883,
+			"lon": -1.287745,
+			"km": 5.3,
+			"dist_m": 22
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0586487,
+			"lon": -1.2865349,
+			"km": 5.4,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0608691,
+			"lon": -1.2857293,
+			"km": 5.7,
+			"dist_m": 39
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0613839,
+			"lon": -1.2854433,
+			"km": 5.8,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.065123,
+			"lon": -1.284976,
+			"km": 6.2,
+			"dist_m": 33
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0651881,
+			"lon": -1.2852176,
+			"km": 6.2,
+			"dist_m": 54
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de la Hoz",
+			"type": "mirador",
+			"lat": 40.057848,
+			"lon": -1.3046805,
+			"km": 3.5,
+			"dist_m": 81
+		},
+		{
+			"name": "Mirador del Solano",
+			"type": "mirador",
+			"lat": 40.0597517,
+			"lon": -1.2864987,
+			"km": 5.5,
+			"dist_m": 58
+		},
+		{
+			"name": "Portal de San Vicente",
+			"type": "patrimonio",
+			"lat": 40.0612719,
+			"lon": -1.2865067,
+			"km": 5.8,
+			"dist_m": 99
+		},
+		{
+			"name": "La Celadilla",
+			"type": "patrimonio",
+			"lat": 40.0605357,
+			"lon": -1.2765065,
+			"km": 7.4,
+			"dist_m": 73
+		},
+		{
+			"name": "La Muela",
+			"type": "mirador",
+			"lat": 40.0578054,
+			"lon": -1.2711577,
+			"km": 8.2,
+			"dist_m": 73
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -59,7 +165,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-131-6 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-131-6.gpx (derivados: inicio, bbox)"
 	]
 }

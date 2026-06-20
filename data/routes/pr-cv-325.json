@@ -21,8 +21,26 @@
 	"water_points": [
 		"Fuente (km 0.0, a 63 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.388899,
+			"lon": -0.7668317,
+			"km": 0,
+			"dist_m": 63
+		}
+	],
+	"pois": [
+		{
+			"name": "Cid",
+			"type": "cumbre",
+			"lat": 38.4538041,
+			"lon": -0.7191452,
+			"km": 13.5,
+			"dist_m": 39
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -47,7 +65,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-325 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-325.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

@@ -27,8 +27,34 @@
 		"Manantial \"Font Nova\" (km 2.8, a 25 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Gauet\" (km 3.6, a 19 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font Nova",
+			"kind": "manantial",
+			"lat": 38.9005692,
+			"lon": -0.2729397,
+			"km": 2.8,
+			"dist_m": 25
+		},
+		{
+			"name": "Font del Gauet",
+			"kind": "manantial",
+			"lat": 38.8984744,
+			"lon": -0.2661565,
+			"km": 3.6,
+			"dist_m": 19
+		}
+	],
+	"pois": [
+		{
+			"name": "El Murtadell",
+			"type": "cumbre",
+			"lat": 38.904036,
+			"lon": -0.2720789,
+			"km": 2.2,
+			"dist_m": 116
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +79,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-343 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-343.gpx (derivados: inicio, bbox)"
 	]
 }

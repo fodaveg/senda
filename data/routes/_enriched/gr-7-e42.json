@@ -5,8 +5,72 @@
 		"Manantial \"Fuente de las Huertecillas\" (km 11.4, a 2 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente del Collado\" (km 30.9, a 16 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente del Chapole",
+			"kind": "manantial",
+			"lat": 39.2407493,
+			"lon": -0.9426003,
+			"km": 0.1,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.2412493,
+			"lon": -0.9451012,
+			"km": 0.4,
+			"dist_m": 42
+		},
+		{
+			"name": "Fuente de las Huertecillas",
+			"kind": "manantial",
+			"lat": 39.2098868,
+			"lon": -0.994237,
+			"km": 11.4,
+			"dist_m": 2
+		},
+		{
+			"name": "Fuente del Collado",
+			"kind": "manantial",
+			"lat": 39.0935104,
+			"lon": -0.9204955,
+			"km": 30.9,
+			"dist_m": 16
+		}
+	],
+	"pois": [
+		{
+			"name": "Los Atascadores",
+			"type": "cumbre",
+			"lat": 39.2411368,
+			"lon": -0.9545326,
+			"km": 2,
+			"dist_m": 148
+		},
+		{
+			"name": "Pico del Carrascal",
+			"type": "cumbre",
+			"lat": 39.2288002,
+			"lon": -1.0003591,
+			"km": 8,
+			"dist_m": 140
+		},
+		{
+			"name": "Puntal de Sácaras",
+			"type": "cumbre",
+			"lat": 39.2295786,
+			"lon": -1.0047778,
+			"km": 8.5,
+			"dist_m": 60
+		}
+	],
 	"shade_ratio": 0.01,
-	"alternatives": ["pr-cv-381", "pr-cv-380", "pr-cv-379"],
-	"enriched_at": "2026-06-11T19:04:28.333Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-381",
+		"pr-cv-380",
+		"pr-cv-379"
+	],
+	"enriched_at": "2026-06-20T08:49:56.122Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

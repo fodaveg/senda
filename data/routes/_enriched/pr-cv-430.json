@@ -1,7 +1,22 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Lloma de la Canyaeta Blanca",
+			"type": "cumbre",
+			"lat": 38.4573148,
+			"lon": -0.6411383,
+			"km": 13.5,
+			"dist_m": 138
+		}
+	],
 	"shade_ratio": 0.19,
-	"alternatives": ["pr-cv-189", "pr-cv-269", "pr-cv-274"],
-	"enriched_at": "2026-06-11T18:21:59.995Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-189",
+		"pr-cv-269",
+		"pr-cv-274"
+	],
+	"enriched_at": "2026-06-20T09:42:02.830Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

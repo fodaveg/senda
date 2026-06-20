@@ -8,8 +8,184 @@
 		"Manantial \"Font de la Randera\" (km 17.2, a 17 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fonteta d'Anton\" (km 17.6, a 4 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.3373259,
+			"lon": -0.1652337,
+			"km": 0.1,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.3374167,
+			"lon": -0.1659014,
+			"km": 0.1,
+			"dist_m": 74
+		},
+		{
+			"name": "Font de Santa Maria",
+			"kind": "manantial",
+			"lat": 40.3415216,
+			"lon": -0.1786404,
+			"km": 2,
+			"dist_m": 33
+		},
+		{
+			"name": "Font del Molinàs",
+			"kind": "manantial",
+			"lat": 40.3450499,
+			"lon": -0.2015559,
+			"km": 5.2,
+			"dist_m": 13
+		},
+		{
+			"name": "el Baciolet",
+			"kind": "manantial",
+			"lat": 40.3300545,
+			"lon": -0.263894,
+			"km": 13.4,
+			"dist_m": 5
+		},
+		{
+			"name": "Font de la Randera",
+			"kind": "manantial",
+			"lat": 40.3067616,
+			"lon": -0.2866293,
+			"km": 17.2,
+			"dist_m": 17
+		},
+		{
+			"name": "Fonteta d'Anton",
+			"kind": "manantial",
+			"lat": 40.3030567,
+			"lon": -0.2872466,
+			"km": 17.6,
+			"dist_m": 4
+		}
+	],
+	"pois": [
+		{
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.3372645,
+			"lon": -0.1629625,
+			"km": 0,
+			"dist_m": 117
+		},
+		{
+			"name": "Portal de la Font",
+			"type": "patrimonio",
+			"lat": 40.3375945,
+			"lon": -0.1653671,
+			"km": 0.1,
+			"dist_m": 61
+		},
+		{
+			"name": "Arc de la Porta Nova",
+			"type": "patrimonio",
+			"lat": 40.3374733,
+			"lon": -0.1657731,
+			"km": 0.1,
+			"dist_m": 73
+		},
+		{
+			"name": "el Pelleric",
+			"type": "patrimonio",
+			"lat": 40.3377124,
+			"lon": -0.1658197,
+			"km": 0.1,
+			"dist_m": 96
+		},
+		{
+			"name": "Castell de Culla",
+			"type": "cumbre",
+			"lat": 40.3375902,
+			"lon": -0.166706,
+			"km": 0.2,
+			"dist_m": 129
+		},
+		{
+			"name": "Mirador del Cinglet",
+			"type": "mirador",
+			"lat": 40.3372762,
+			"lon": -0.1664455,
+			"km": 0.2,
+			"dist_m": 88
+		},
+		{
+			"name": "Porta de la Barbacana",
+			"type": "patrimonio",
+			"lat": 40.337593,
+			"lon": -0.166261,
+			"km": 0.2,
+			"dist_m": 108
+		},
+		{
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.3364081,
+			"lon": -0.1665003,
+			"km": 0.2,
+			"dist_m": 2
+		},
+		{
+			"name": "Mirador del Castell",
+			"type": "mirador",
+			"lat": 40.3374876,
+			"lon": -0.1667792,
+			"km": 0.3,
+			"dist_m": 120
+		},
+		{
+			"name": "Peiró de Sant Bertomeu",
+			"type": "patrimonio",
+			"lat": 40.3342146,
+			"lon": -0.2432051,
+			"km": 10.9,
+			"dist_m": 3
+		},
+		{
+			"name": "Pintures Rupestres de la Cova del Morral",
+			"type": "patrimonio",
+			"lat": 40.333607,
+			"lon": -0.2561241,
+			"km": 12.4,
+			"dist_m": 124
+		},
+		{
+			"name": "Mirador del Castell",
+			"type": "mirador",
+			"lat": 40.2945905,
+			"lon": -0.2928516,
+			"km": 18.8,
+			"dist_m": 133
+		},
+		{
+			"name": "Portal del Forn",
+			"type": "patrimonio",
+			"lat": 40.2933408,
+			"lon": -0.2926508,
+			"km": 18.8,
+			"dist_m": 120
+		},
+		{
+			"name": "el Pedrís",
+			"type": "patrimonio",
+			"lat": 40.2938339,
+			"lon": -0.2920735,
+			"km": 18.8,
+			"dist_m": 51
+		}
+	],
 	"shade_ratio": 0.11,
-	"alternatives": ["pr-cv-1", "pr-cv-225", "pr-cv-297"],
-	"enriched_at": "2026-06-11T17:48:18.706Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-1",
+		"pr-cv-225",
+		"pr-cv-297"
+	],
+	"enriched_at": "2026-06-20T08:48:06.975Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -29,8 +29,74 @@
 		"Fuente (km 9.3, a 23 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Molí Mató\" (km 9.3, a 20 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7525246,
+			"lon": -0.5483659,
+			"km": 3,
+			"dist_m": 22
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7745157,
+			"lon": -0.524713,
+			"km": 8.9,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7741352,
+			"lon": -0.529087,
+			"km": 9.3,
+			"dist_m": 23
+		},
+		{
+			"name": "Font del Molí Mató",
+			"kind": "manantial",
+			"lat": 38.7740375,
+			"lon": -0.5291358,
+			"km": 9.3,
+			"dist_m": 20
+		}
+	],
+	"pois": [
+		{
+			"name": "el Portell de Just d'Alfafara",
+			"type": "cumbre",
+			"lat": 38.7636621,
+			"lon": -0.5422889,
+			"km": 5.4,
+			"dist_m": 1
+		},
+		{
+			"name": "Portell d'Alfafara",
+			"type": "cumbre",
+			"lat": 38.7637821,
+			"lon": -0.5419759,
+			"km": 5.4,
+			"dist_m": 18
+		},
+		{
+			"name": "Tossalet del Tio Eduard",
+			"type": "cumbre",
+			"lat": 38.7654046,
+			"lon": -0.541671,
+			"km": 5.6,
+			"dist_m": 131
+		},
+		{
+			"name": "Alt de la Cava",
+			"type": "cumbre",
+			"lat": 38.7661931,
+			"lon": -0.5342672,
+			"km": 6.3,
+			"dist_m": 5
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +121,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-370 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-370.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -2,8 +2,23 @@
 	"water_points": [
 		"Manantial \"Font de les Arenetes\" (km 7.2, a 3 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de les Arenetes",
+			"kind": "manantial",
+			"lat": 38.9013166,
+			"lon": -0.8299716,
+			"km": 7.2,
+			"dist_m": 3
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-264", "pr-cv-471", "gr-239-e04"],
-	"enriched_at": "2026-06-11T19:48:05.809Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-264",
+		"pr-cv-471",
+		"gr-239-e04"
+	],
+	"enriched_at": "2026-06-20T09:59:08.261Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

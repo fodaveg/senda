@@ -1,7 +1,33 @@
 {
-	"water_points": ["Fuente (km 22.9, a 8 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 22.9, a 8 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8358366,
+			"lon": -0.813406,
+			"km": 22.9,
+			"dist_m": 8
+		}
+	],
+	"pois": [
+		{
+			"name": "Cruz de San Sebastián",
+			"type": "patrimonio",
+			"lat": 39.8326112,
+			"lon": -0.8217376,
+			"km": 21.9,
+			"dist_m": 14
+		}
+	],
 	"shade_ratio": 0.23,
-	"alternatives": ["pr-cv-176", "gr-7-e36", "gr-10-e07"],
-	"enriched_at": "2026-06-11T18:21:00.151Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-176",
+		"gr-7-e36",
+		"gr-10-e07"
+	],
+	"enriched_at": "2026-06-20T09:41:46.405Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

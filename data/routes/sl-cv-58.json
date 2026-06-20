@@ -26,8 +26,26 @@
 	"water_points": [
 		"Fuente (km 1.4, a 11 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.5396581,
+			"lon": 0.2373272,
+			"km": 1.4,
+			"dist_m": 11
+		}
+	],
+	"pois": [
+		{
+			"name": "Ermita de Santa Isabel",
+			"type": "patrimonio",
+			"lat": 40.5397001,
+			"lon": 0.2373962,
+			"km": 1.4,
+			"dist_m": 18
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-58 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-58.gpx (derivados: inicio, bbox)"
 	]
 }

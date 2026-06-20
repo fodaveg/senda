@@ -30,8 +30,58 @@
 		"Fuente (km 0.2, a 3 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font dels Llops\" (km 3.6, a 12 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.880838,
+			"lon": -0.3059578,
+			"km": 0,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8808157,
+			"lon": -0.3070076,
+			"km": 0.1,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8812922,
+			"lon": -0.3078445,
+			"km": 0.1,
+			"dist_m": 85
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8802142,
+			"lon": -0.3071137,
+			"km": 0.2,
+			"dist_m": 3
+		},
+		{
+			"name": "Font dels Llops",
+			"kind": "manantial",
+			"lat": 39.8785986,
+			"lon": -0.2882181,
+			"km": 3.6,
+			"dist_m": 12
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de les Eretes",
+			"type": "mirador",
+			"lat": 39.8794248,
+			"lon": -0.3042319,
+			"km": 0.6,
+			"dist_m": 2
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +106,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-101 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-101.gpx (derivados: inicio, bbox)"
 	]
 }

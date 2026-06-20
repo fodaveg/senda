@@ -2,8 +2,32 @@
 	"water_points": [
 		"Fuente \"Font del Llavador\" (km 7.1, a 5 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Llavador",
+			"kind": "fuente",
+			"lat": 38.4857409,
+			"lon": -0.7651513,
+			"km": 7.1,
+			"dist_m": 5
+		}
+	],
+	"pois": [
+		{
+			"name": "l'Almorxoneta",
+			"type": "cumbre",
+			"lat": 38.5018183,
+			"lon": -0.7807642,
+			"km": 4.4,
+			"dist_m": 132
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-194", "pr-cv-25", "pr-cv-221"],
-	"enriched_at": "2026-06-11T17:59:56.394Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-194",
+		"pr-cv-25",
+		"pr-cv-221"
+	],
+	"enriched_at": "2026-06-20T09:20:49.758Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -6,8 +6,72 @@
 		"Fuente \"Font de Barraix\" (km 7.7, a 4 m del track; OSM, no verificado en campo)",
 		"Fuente (km 21.2, a 87 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7122612,
+			"lon": -0.3478103,
+			"km": 0.2,
+			"dist_m": 64
+		},
+		{
+			"name": "Font de l'Omet",
+			"kind": "manantial",
+			"lat": 39.7051875,
+			"lon": -0.3634257,
+			"km": 3.5,
+			"dist_m": 1
+		},
+		{
+			"name": "Font del Catxorro",
+			"kind": "manantial",
+			"lat": 39.6997093,
+			"lon": -0.386094,
+			"km": 6.7,
+			"dist_m": 8
+		},
+		{
+			"name": "Font de Barraix",
+			"kind": "fuente",
+			"lat": 39.6982837,
+			"lon": -0.3943749,
+			"km": 7.7,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7148763,
+			"lon": -0.3513097,
+			"km": 21.2,
+			"dist_m": 87
+		}
+	],
+	"pois": [
+		{
+			"name": "Penya Roja",
+			"type": "cumbre",
+			"lat": 39.7132697,
+			"lon": -0.4017678,
+			"km": 12.4,
+			"dist_m": 3
+		},
+		{
+			"name": "Muntanyeta Negra",
+			"type": "cumbre",
+			"lat": 39.7187591,
+			"lon": -0.4007195,
+			"km": 13,
+			"dist_m": 129
+		}
+	],
 	"shade_ratio": 0.06,
-	"alternatives": ["sl-cv-24", "sl-cv-23", "pr-cv-318"],
-	"enriched_at": "2026-06-11T18:14:23.158Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-24",
+		"sl-cv-23",
+		"pr-cv-318"
+	],
+	"enriched_at": "2026-06-20T09:33:28.980Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

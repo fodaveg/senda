@@ -1,7 +1,62 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Mirador de la Fonseca",
+			"type": "mirador",
+			"lat": 39.489586,
+			"lon": -1.4904507,
+			"km": 4.8,
+			"dist_m": 16
+		},
+		{
+			"name": "Mirador Hoz Rabo de la sartén",
+			"type": "mirador",
+			"lat": 39.490739,
+			"lon": -1.5026386,
+			"km": 6.2,
+			"dist_m": 5
+		},
+		{
+			"name": "Mirador Hoz de Vicente",
+			"type": "mirador",
+			"lat": 39.4871419,
+			"lon": -1.5038491,
+			"km": 8.1,
+			"dist_m": 10
+		},
+		{
+			"name": "Banco 2-Mirador Hoz del Purgatorio",
+			"type": "mirador",
+			"lat": 39.4789077,
+			"lon": -1.4977969,
+			"km": 9.3,
+			"dist_m": 16
+		},
+		{
+			"name": "Banco 2-Mirador Natural Hoz del Purgatorio",
+			"type": "mirador",
+			"lat": 39.4777793,
+			"lon": -1.4979028,
+			"km": 9.4,
+			"dist_m": 16
+		},
+		{
+			"name": "Cerro del Purgatorio",
+			"type": "cumbre",
+			"lat": 39.4777291,
+			"lon": -1.4966644,
+			"km": 9.5,
+			"dist_m": 67
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["gr-238-e13", "pr-cv-299", "gr-238-e01"],
-	"enriched_at": "2026-06-11T18:11:45.678Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-238-e13",
+		"pr-cv-299",
+		"gr-238-e01"
+	],
+	"enriched_at": "2026-06-20T09:29:54.906Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

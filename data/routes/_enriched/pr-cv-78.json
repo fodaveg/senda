@@ -8,8 +8,104 @@
 		"Fuente (km 15.0, a 92 m del track; OSM, no verificado en campo)",
 		"Fuente \"Font dels vint-i-cinc dolls\" (km 15.8, a 4 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9888422,
+			"lon": -0.5125007,
+			"km": 0,
+			"dist_m": 21
+		},
+		{
+			"name": "Font Arcadetes",
+			"kind": "manantial",
+			"lat": 38.974746,
+			"lon": -0.4911691,
+			"km": 4.2,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente Romero",
+			"kind": "manantial",
+			"lat": 38.9681815,
+			"lon": -0.4956903,
+			"km": 5.3,
+			"dist_m": 9
+		},
+		{
+			"name": "Font de Quintana",
+			"kind": "manantial",
+			"lat": 38.9601406,
+			"lon": -0.5257625,
+			"km": 9.9,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.986872,
+			"lon": -0.5172567,
+			"km": 15,
+			"dist_m": 92
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9859372,
+			"lon": -0.5178263,
+			"km": 15,
+			"dist_m": 39
+		},
+		{
+			"name": "Font dels vint-i-cinc dolls",
+			"kind": "fuente",
+			"lat": 38.988619,
+			"lon": -0.51245,
+			"km": 15.8,
+			"dist_m": 4
+		}
+	],
+	"pois": [
+		{
+			"name": "Cova Negra",
+			"type": "patrimonio",
+			"lat": 38.9651708,
+			"lon": -0.4965661,
+			"km": 5.7,
+			"dist_m": 16
+		},
+		{
+			"name": "Cueva del barranco del Águila",
+			"type": "patrimonio",
+			"lat": 38.9616189,
+			"lon": -0.4928024,
+			"km": 6.4,
+			"dist_m": 43
+		},
+		{
+			"name": "Lloma Plana",
+			"type": "cumbre",
+			"lat": 38.9709906,
+			"lon": -0.5375936,
+			"km": 11.7,
+			"dist_m": 128
+		},
+		{
+			"name": "Cova dels Lleons",
+			"type": "mirador",
+			"lat": 38.9831466,
+			"lon": -0.5176543,
+			"km": 14.7,
+			"dist_m": 142
+		}
+	],
 	"shade_ratio": 0.18,
-	"alternatives": ["gr-239-e03", "pr-cv-193-4", "pr-cv-193-3"],
-	"enriched_at": "2026-06-11T18:29:18.083Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-239-e03",
+		"pr-cv-193-4",
+		"pr-cv-193-3"
+	],
+	"enriched_at": "2026-06-20T09:48:11.127Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

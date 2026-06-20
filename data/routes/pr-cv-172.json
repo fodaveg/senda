@@ -29,8 +29,50 @@
 		"Manantial \"La Fonteta de Peret\" (km 7.0, a 83 m del track; OSM, no verificado en campo)",
 		"Manantial \"Cava de la Falaguera\" (km 9.7, a 10 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9820594,
+			"lon": -0.3791392,
+			"km": 6.5,
+			"dist_m": 52
+		},
+		{
+			"name": "El Pla dels Engolidors",
+			"kind": "fuente",
+			"lat": 38.9825623,
+			"lon": -0.3786045,
+			"km": 6.8,
+			"dist_m": 74
+		},
+		{
+			"name": "La Fonteta de Peret",
+			"kind": "manantial",
+			"lat": 38.9833175,
+			"lon": -0.3760369,
+			"km": 7,
+			"dist_m": 83
+		},
+		{
+			"name": "Cava de la Falaguera",
+			"kind": "manantial",
+			"lat": 38.9846203,
+			"lon": -0.3603527,
+			"km": 9.7,
+			"dist_m": 10
+		}
+	],
+	"pois": [
+		{
+			"name": "Tossal de la Creu",
+			"type": "cumbre",
+			"lat": 38.9796705,
+			"lon": -0.3513062,
+			"km": 11.3,
+			"dist_m": 106
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +97,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-172 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-172.gpx (derivados: inicio, bbox)"
 	]
 }

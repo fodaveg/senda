@@ -2,8 +2,56 @@
 	"water_points": [
 		"Manantial \"Font de Ribera\" (km 8.5, a 53 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de Ribera",
+			"kind": "manantial",
+			"lat": 39.7263915,
+			"lon": -0.2972549,
+			"km": 8.5,
+			"dist_m": 53
+		}
+	],
+	"pois": [
+		{
+			"name": "Creu homenatge a Jesús Balanzà",
+			"type": "patrimonio",
+			"lat": 39.7253295,
+			"lon": -0.2889655,
+			"km": 4.7,
+			"dist_m": 56
+		},
+		{
+			"name": "El Portell",
+			"type": "cumbre",
+			"lat": 39.7264237,
+			"lon": -0.2916218,
+			"km": 4.9,
+			"dist_m": 110
+		},
+		{
+			"name": "la Creu de Quart",
+			"type": "cumbre",
+			"lat": 39.7307305,
+			"lon": -0.2881341,
+			"km": 5.4,
+			"dist_m": 1
+		},
+		{
+			"name": "Puntal del Povitxol",
+			"type": "cumbre",
+			"lat": 39.7304721,
+			"lon": -0.2967248,
+			"km": 6.3,
+			"dist_m": 114
+		}
+	],
 	"shade_ratio": 0.71,
-	"alternatives": ["pr-cv-318", "sl-cv-42", "pr-cv-369"],
-	"enriched_at": "2026-06-11T19:19:57.600Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-318",
+		"sl-cv-42",
+		"pr-cv-369"
+	],
+	"enriched_at": "2026-06-20T09:28:52.074Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

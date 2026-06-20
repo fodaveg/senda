@@ -21,8 +21,74 @@
 	"water_points": [
 		"Fuente \"Font de Català\" (km 4.8, a 1 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font de Català",
+			"kind": "fuente",
+			"lat": 38.837136,
+			"lon": -0.0289439,
+			"km": 4.8,
+			"dist_m": 1
+		}
+	],
+	"pois": [
+		{
+			"name": "Punto de informacion",
+			"type": "mirador",
+			"lat": 38.841985,
+			"lon": -0.0034333,
+			"km": 1.9,
+			"dist_m": 142
+		},
+		{
+			"name": "Cim de la Penya Roja",
+			"type": "cumbre",
+			"lat": 38.844836,
+			"lon": -0.0060438,
+			"km": 2.4,
+			"dist_m": 107
+		},
+		{
+			"name": "Cim de Segària",
+			"type": "cumbre",
+			"lat": 38.8381981,
+			"lon": -0.0208651,
+			"km": 3.9,
+			"dist_m": 127
+		},
+		{
+			"name": "Repetidors de Segària",
+			"type": "mirador",
+			"lat": 38.8305387,
+			"lon": -0.0350002,
+			"km": 6.1,
+			"dist_m": 2
+		},
+		{
+			"name": "Mirador de Segària",
+			"type": "mirador",
+			"lat": 38.8306045,
+			"lon": -0.0360956,
+			"km": 6.2,
+			"dist_m": 7
+		},
+		{
+			"name": "Penyetes Roges",
+			"type": "cumbre",
+			"lat": 38.8266111,
+			"lon": -0.0344956,
+			"km": 6.8,
+			"dist_m": 122
+		},
+		{
+			"name": "Mirador de Segària",
+			"type": "mirador",
+			"lat": 38.8350532,
+			"lon": -0.0128673,
+			"km": 9.5,
+			"dist_m": 15
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -47,7 +113,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-415 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-415.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

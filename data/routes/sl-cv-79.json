@@ -29,8 +29,58 @@
 		"Manantial \"Font de la Caldereta\" (km 1.4, a 19 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Garrofer\" (km 3.1, a 5 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0018037,
+			"lon": -0.2748617,
+			"km": 0,
+			"dist_m": 20
+		},
+		{
+			"name": "Font del Parpalló",
+			"kind": "manantial",
+			"lat": 39.0041168,
+			"lon": -0.2706689,
+			"km": 0.9,
+			"dist_m": 48
+		},
+		{
+			"name": "Font de la Caldereta",
+			"kind": "manantial",
+			"lat": 39.0040431,
+			"lon": -0.2664487,
+			"km": 1.4,
+			"dist_m": 19
+		},
+		{
+			"name": "Font del Garrofer",
+			"kind": "manantial",
+			"lat": 38.9988442,
+			"lon": -0.2572419,
+			"km": 3.1,
+			"dist_m": 5
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de la Caldereta",
+			"type": "mirador",
+			"lat": 39.0015756,
+			"lon": -0.2605484,
+			"km": 2.1,
+			"dist_m": 3
+		},
+		{
+			"name": "Tossal de la Caldereta",
+			"type": "cumbre",
+			"lat": 38.9991495,
+			"lon": -0.2617873,
+			"km": 2.5,
+			"dist_m": 83
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +105,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-79 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-79.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -27,8 +27,50 @@
 		"Fuente (km 0.0, a 10 m del track; OSM, no verificado en campo)",
 		"Fuente (km 12.4, a 10 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.6290889,
+			"lon": -0.7509995,
+			"km": 0,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.6209278,
+			"lon": -0.7605305,
+			"km": 12.4,
+			"dist_m": 10
+		}
+	],
+	"pois": [
+		{
+			"name": "Corral del Flare",
+			"type": "patrimonio",
+			"lat": 38.6174161,
+			"lon": -0.7644668,
+			"km": 2.7,
+			"dist_m": 28
+		},
+		{
+			"name": "Sierra del Fraile",
+			"type": "cumbre",
+			"lat": 38.6119202,
+			"lon": -0.7783334,
+			"km": 4.6,
+			"dist_m": 117
+		},
+		{
+			"name": "Casa de la Marcota",
+			"type": "patrimonio",
+			"lat": 38.6252374,
+			"lon": -0.7550588,
+			"km": 13.2,
+			"dist_m": 105
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +95,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-155 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-155.gpx (derivados: inicio, bbox)"
 	]
 }

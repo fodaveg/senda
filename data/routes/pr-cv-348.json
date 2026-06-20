@@ -35,8 +35,114 @@
 		"Fuente (km 20.8, a 97 m del track; OSM, no verificado en campo)",
 		"Fuente (km 20.9, a 12 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font Ditxós",
+			"kind": "manantial",
+			"lat": 40.2659566,
+			"lon": -0.0197612,
+			"km": 0.3,
+			"dist_m": 38
+		},
+		{
+			"name": "Font del Toll",
+			"kind": "manantial",
+			"lat": 40.2595302,
+			"lon": -0.0225108,
+			"km": 1.4,
+			"dist_m": 77
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2390578,
+			"lon": -0.04573,
+			"km": 5,
+			"dist_m": 45
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2274404,
+			"lon": -0.0781106,
+			"km": 9.4,
+			"dist_m": 39
+		},
+		{
+			"name": "Font del Mas d'Agut",
+			"kind": "manantial",
+			"lat": 40.2654945,
+			"lon": -0.0438614,
+			"km": 15.5,
+			"dist_m": 8
+		},
+		{
+			"name": "Font de la Ballestera",
+			"kind": "manantial",
+			"lat": 40.2699647,
+			"lon": -0.0268778,
+			"km": 18.7,
+			"dist_m": 97
+		},
+		{
+			"name": "Font dels Solers",
+			"kind": "manantial",
+			"lat": 40.2714287,
+			"lon": -0.0268199,
+			"km": 18.8,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2696487,
+			"lon": -0.0189529,
+			"km": 20.8,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2699813,
+			"lon": -0.0201099,
+			"km": 20.8,
+			"dist_m": 97
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2690128,
+			"lon": -0.0191195,
+			"km": 20.9,
+			"dist_m": 12
+		}
+	],
+	"pois": [
+		{
+			"name": "Tossal del Baranc de la Cova",
+			"type": "cumbre",
+			"lat": 40.2320671,
+			"lon": -0.0595043,
+			"km": 7.3,
+			"dist_m": 24
+		},
+		{
+			"name": "Miradors de la Serra",
+			"type": "mirador",
+			"lat": 40.2763624,
+			"lon": -0.0330842,
+			"km": 17.6,
+			"dist_m": 66
+		},
+		{
+			"name": "Ermita de Sant Marc",
+			"type": "patrimonio",
+			"lat": 40.2760753,
+			"lon": -0.0315657,
+			"km": 17.7,
+			"dist_m": 143
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -61,7 +167,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-348 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-348.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -27,8 +27,42 @@
 		"Fuente (km 1.2, a 75 m del track; OSM, no verificado en campo)",
 		"Fuente (km 11.8, a 11 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.1857832,
+			"lon": -0.2534352,
+			"km": 1.2,
+			"dist_m": 75
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.1656888,
+			"lon": -0.2499967,
+			"km": 11.8,
+			"dist_m": 11
+		}
+	],
+	"pois": [
+		{
+			"name": "els Cabeçols",
+			"type": "cumbre",
+			"lat": 39.1778151,
+			"lon": -0.2496952,
+			"km": 9.9,
+			"dist_m": 51
+		},
+		{
+			"name": "Pic dels Francesos",
+			"type": "cumbre",
+			"lat": 39.1760926,
+			"lon": -0.2510293,
+			"km": 10.1,
+			"dist_m": 15
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +87,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-336 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-336.gpx (derivados: inicio, bbox)"
 	]
 }

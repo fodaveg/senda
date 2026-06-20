@@ -28,8 +28,42 @@
 		"Fuente (km 0.4, a 55 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente de la Teja\" (km 6.4, a 9 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.2281752,
+			"lon": -1.0639346,
+			"km": 0.3,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.2277389,
+			"lon": -1.0649703,
+			"km": 0.4,
+			"dist_m": 55
+		},
+		{
+			"name": "Fuente de la Teja",
+			"kind": "manantial",
+			"lat": 39.2351052,
+			"lon": -1.0261045,
+			"km": 6.4,
+			"dist_m": 9
+		}
+	],
+	"pois": [
+		{
+			"name": "Balcón del Cabriel",
+			"type": "mirador",
+			"lat": 39.228642,
+			"lon": -1.0654859,
+			"km": 0.3,
+			"dist_m": 143
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +88,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-381 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-381.gpx (derivados: inicio, bbox)"
 	]
 }

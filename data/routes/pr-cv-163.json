@@ -26,8 +26,34 @@
 	"water_points": [
 		"Manantial \"Font del Túnel\" (km 0.0, a 6 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font del Túnel",
+			"kind": "manantial",
+			"lat": 38.9283025,
+			"lon": -0.5776878,
+			"km": 0,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Mare de Déu dels Dolors",
+			"type": "patrimonio",
+			"lat": 38.9209211,
+			"lon": -0.585349,
+			"km": 1.6,
+			"dist_m": 142
+		},
+		{
+			"name": "Mirador del Barranco de Cairent",
+			"type": "mirador",
+			"lat": 38.919756,
+			"lon": -0.5866796,
+			"km": 1.7,
+			"dist_m": 5
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +78,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-163 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-163.gpx (derivados: inicio, bbox)"
 	]
 }

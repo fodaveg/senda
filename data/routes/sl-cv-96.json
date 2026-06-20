@@ -27,7 +27,24 @@
 		"Manantial \"fuente Magraile\" (km 1.5, a 31 m del track; OSM, no verificado en campo)",
 		"Fuente (km 7.8, a 1 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": "fuente Magraile",
+			"kind": "manantial",
+			"lat": 40.085627,
+			"lon": -0.4993277,
+			"km": 1.5,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0860111,
+			"lon": -0.5065942,
+			"km": 7.8,
+			"dist_m": 1
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -53,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-96 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-96.gpx (derivados: inicio, bbox)"
 	]
 }

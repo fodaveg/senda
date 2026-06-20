@@ -1,7 +1,38 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "El Hocino",
+			"type": "cumbre",
+			"lat": 39.5824712,
+			"lon": -0.7752067,
+			"km": 6,
+			"dist_m": 3
+		},
+		{
+			"name": "Aliagar",
+			"type": "cumbre",
+			"lat": 39.5861647,
+			"lon": -0.7720014,
+			"km": 6.6,
+			"dist_m": 2
+		},
+		{
+			"name": "Cova de Meriñel",
+			"type": "patrimonio",
+			"lat": 39.5963889,
+			"lon": -0.7633334,
+			"km": 8.5,
+			"dist_m": 121
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-321", "sl-cv-77", "sl-cv-78"],
-	"enriched_at": "2026-06-11T18:26:05.562Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-321",
+		"sl-cv-77",
+		"sl-cv-78"
+	],
+	"enriched_at": "2026-06-20T09:44:42.121Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

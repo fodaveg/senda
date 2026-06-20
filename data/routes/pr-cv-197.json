@@ -20,7 +20,16 @@
 	"est_duration_min": 900,
 	"water_points": [],
 	"water_points_geo": [],
-	"pois": [],
+	"pois": [
+		{
+			"name": "Cabezo del Chocolaino",
+			"type": "cumbre",
+			"lat": 38.6023738,
+			"lon": -0.8901412,
+			"km": 6.5,
+			"dist_m": 133
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -45,7 +54,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-197 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-197.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

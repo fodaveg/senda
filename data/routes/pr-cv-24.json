@@ -27,8 +27,50 @@
 		"Manantial \"Font de l'Espinal\" (km 2.5, a 1 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font Roja\" (km 3.8, a 6 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font de l'Espinal",
+			"kind": "manantial",
+			"lat": 38.7181208,
+			"lon": -0.2961736,
+			"km": 2.5,
+			"dist_m": 1
+		},
+		{
+			"name": "Font Roja",
+			"kind": "manantial",
+			"lat": 38.7138947,
+			"lon": -0.2862099,
+			"km": 3.8,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Tossal de la Terra Nova",
+			"type": "cumbre",
+			"lat": 38.7243951,
+			"lon": -0.3118581,
+			"km": 0.1,
+			"dist_m": 122
+		},
+		{
+			"name": "Tossal Borreguer",
+			"type": "cumbre",
+			"lat": 38.7201057,
+			"lon": -0.3114278,
+			"km": 0.5,
+			"dist_m": 96
+		},
+		{
+			"name": "Pla de la Casa",
+			"type": "cumbre",
+			"lat": 38.7165256,
+			"lon": -0.2746227,
+			"km": 5.7,
+			"dist_m": 1
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +95,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-24 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-24.gpx (derivados: inicio, bbox)"
 	]
 }

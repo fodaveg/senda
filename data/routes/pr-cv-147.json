@@ -33,7 +33,72 @@
 		"Manantial \"Font de Can Torres\" (km 12.0, a 51 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font dels Esmeradors\" (km 12.2, a 29 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": "Font Grossa",
+			"kind": "manantial",
+			"lat": 38.7769679,
+			"lon": -0.112872,
+			"km": 0.3,
+			"dist_m": 13
+		},
+		{
+			"name": "Pou de la Juvea",
+			"kind": "manantial",
+			"lat": 38.7897094,
+			"lon": -0.1229424,
+			"km": 3.5,
+			"dist_m": 7
+		},
+		{
+			"name": "Font de Reinós",
+			"kind": "manantial",
+			"lat": 38.7902516,
+			"lon": -0.1350287,
+			"km": 5.2,
+			"dist_m": 12
+		},
+		{
+			"name": "Font dels Olbis",
+			"kind": "manantial",
+			"lat": 38.7714399,
+			"lon": -0.1344917,
+			"km": 10.2,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7729208,
+			"lon": -0.1270589,
+			"km": 10.9,
+			"dist_m": 68
+		},
+		{
+			"name": "Font de Benimaurell",
+			"kind": "manantial",
+			"lat": 38.7728465,
+			"lon": -0.1249809,
+			"km": 11.3,
+			"dist_m": 11
+		},
+		{
+			"name": "Font de Can Torres",
+			"kind": "manantial",
+			"lat": 38.7740483,
+			"lon": -0.1177937,
+			"km": 12,
+			"dist_m": 51
+		},
+		{
+			"name": "Font dels Esmeradors",
+			"kind": "manantial",
+			"lat": 38.7759131,
+			"lon": -0.1168432,
+			"km": 12.2,
+			"dist_m": 29
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -62,7 +127,7 @@
 		"aemet_municipio: código INE 03137 (la Vall de Laguar), relación de municipios INE vía Idescat (consulta 2026-06-10)",
 		"Pendiente de verificar: zone, water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain",
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-147 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-147.gpx (derivados: inicio, bbox)"
 	]
 }

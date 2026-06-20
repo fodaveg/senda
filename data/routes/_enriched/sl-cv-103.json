@@ -6,8 +6,64 @@
 		"Fuente (km 7.2, a 21 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente Vieja\" (km 7.2, a 97 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente del Cerezo",
+			"kind": "manantial",
+			"lat": 39.9856208,
+			"lon": -0.4372148,
+			"km": 0.4,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente de las Montalbanas",
+			"kind": "manantial",
+			"lat": 39.9796941,
+			"lon": -0.4389388,
+			"km": 1.2,
+			"dist_m": 16
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9886146,
+			"lon": -0.4386295,
+			"km": 7.2,
+			"dist_m": 27
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9887595,
+			"lon": -0.4380679,
+			"km": 7.2,
+			"dist_m": 21
+		},
+		{
+			"name": "Fuente Vieja",
+			"kind": "manantial",
+			"lat": 39.9889527,
+			"lon": -0.4372001,
+			"km": 7.2,
+			"dist_m": 97
+		}
+	],
+	"pois": [
+		{
+			"name": "El Pinar",
+			"type": "cumbre",
+			"lat": 39.9814365,
+			"lon": -0.4508329,
+			"km": 3.5,
+			"dist_m": 79
+		}
+	],
 	"shade_ratio": null,
-	"alternatives": ["gr-333-e06", "gr-333-e07", "gr-36-e05"],
-	"enriched_at": "2026-06-11T18:30:38.084Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-333-e06",
+		"gr-333-e07",
+		"gr-36-e05"
+	],
+	"enriched_at": "2026-06-20T09:50:13.537Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

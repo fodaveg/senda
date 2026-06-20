@@ -6,8 +6,64 @@
 		"Manantial \"font de la Solana\" (km 3.7, a 8 m del track; OSM, no verificado en campo)",
 		"Manantial (km 8.0, a 9 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Solera",
+			"kind": "manantial",
+			"lat": 40.334998,
+			"lon": -0.1668056,
+			"km": 0.1,
+			"dist_m": 51
+		},
+		{
+			"name": "Font d'en Cabrit",
+			"kind": "manantial",
+			"lat": 40.3285369,
+			"lon": -0.1648039,
+			"km": 0.9,
+			"dist_m": 34
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.32824,
+			"lon": -0.1643147,
+			"km": 1,
+			"dist_m": 44
+		},
+		{
+			"name": "font de la Solana",
+			"kind": "manantial",
+			"lat": 40.3075191,
+			"lon": -0.165098,
+			"km": 3.7,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.2732242,
+			"lon": -0.1613077,
+			"km": 8,
+			"dist_m": 9
+		}
+	],
+	"pois": [
+		{
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.3364081,
+			"lon": -0.1665003,
+			"km": 0,
+			"dist_m": 65
+		}
+	],
 	"shade_ratio": 0.06,
-	"alternatives": ["pr-cv-225", "pr-cv-1", "gr-7-e29"],
-	"enriched_at": "2026-06-11T19:57:10.555Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-225",
+		"pr-cv-1",
+		"gr-7-e29"
+	],
+	"enriched_at": "2026-06-20T10:12:05.242Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

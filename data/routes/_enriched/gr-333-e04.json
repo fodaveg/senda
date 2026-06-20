@@ -7,8 +7,88 @@
 		"Manantial \"Fuente del Baladre\" (km 6.2, a 64 m del track; OSM, no verificado en campo)",
 		"Fuente \"Fuente de la Era Concejo\" (km 13.3, a 6 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9157832,
+			"lon": -0.3543602,
+			"km": 0,
+			"dist_m": 36
+		},
+		{
+			"name": "Fuente de San Pedro",
+			"kind": "manantial",
+			"lat": 39.9181948,
+			"lon": -0.3562437,
+			"km": 0.4,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente de Jinquer",
+			"kind": "manantial",
+			"lat": 39.9265308,
+			"lon": -0.3887696,
+			"km": 4,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente de la Solana",
+			"kind": "manantial",
+			"lat": 39.9327596,
+			"lon": -0.4035491,
+			"km": 5.8,
+			"dist_m": 3
+		},
+		{
+			"name": "Fuente del Baladre",
+			"kind": "manantial",
+			"lat": 39.9345852,
+			"lon": -0.4076743,
+			"km": 6.2,
+			"dist_m": 64
+		},
+		{
+			"name": "Fuente de la Era Concejo",
+			"kind": "fuente",
+			"lat": 39.963992,
+			"lon": -0.3944955,
+			"km": 13.3,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Jinquer",
+			"type": "patrimonio",
+			"lat": 39.9265166,
+			"lon": -0.3916841,
+			"km": 4.3,
+			"dist_m": 16
+		},
+		{
+			"name": "Castillo de Jinquer",
+			"type": "patrimonio",
+			"lat": 39.9275938,
+			"lon": -0.3944872,
+			"km": 4.7,
+			"dist_m": 58
+		},
+		{
+			"name": "El Jupillo",
+			"type": "cumbre",
+			"lat": 39.9486462,
+			"lon": -0.3874613,
+			"km": 11.1,
+			"dist_m": 62
+		}
+	],
 	"shade_ratio": 0.16,
-	"alternatives": ["gr-36-e04", "gr-333-e03", "sl-cv-29"],
-	"enriched_at": "2026-06-11T17:44:17.735Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-36-e04",
+		"gr-333-e03",
+		"sl-cv-29"
+	],
+	"enriched_at": "2026-06-20T08:41:59.863Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

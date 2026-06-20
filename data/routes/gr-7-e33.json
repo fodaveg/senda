@@ -30,8 +30,74 @@
 		"Fuente (km 0.3, a 7 m del track; OSM, no verificado en campo)",
 		"Fuente \"Fuente La Tejería\" (km 10.8, a 20 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Pechina",
+			"kind": "manantial",
+			"lat": 40.0710058,
+			"lon": -0.5262262,
+			"km": 0,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0708283,
+			"lon": -0.5243381,
+			"km": 0.1,
+			"dist_m": 78
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0699965,
+			"lon": -0.5247344,
+			"km": 0.2,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0690223,
+			"lon": -0.5241648,
+			"km": 0.3,
+			"dist_m": 7
+		},
+		{
+			"name": "Fuente La Tejería",
+			"kind": "fuente",
+			"lat": 40.0351798,
+			"lon": -0.5632863,
+			"km": 10.8,
+			"dist_m": 20
+		}
+	],
+	"pois": [
+		{
+			"name": "Buzón",
+			"type": "patrimonio",
+			"lat": 40.0650981,
+			"lon": -0.5457109,
+			"km": 3.6,
+			"dist_m": 3
+		},
+		{
+			"name": "Cerro Pachón",
+			"type": "cumbre",
+			"lat": 40.0345836,
+			"lon": -0.5877919,
+			"km": 13.3,
+			"dist_m": 134
+		},
+		{
+			"name": "Alto Pino Rey",
+			"type": "cumbre",
+			"lat": 40.0285659,
+			"lon": -0.6017343,
+			"km": 15.6,
+			"dist_m": 71
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +122,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e33 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e33.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -5,8 +5,56 @@
 		"Fuente (km 16.3, a 8 m del track; OSM, no verificado en campo)",
 		"Fuente (km 16.5, a 62 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Torre",
+			"kind": "fuente",
+			"lat": 39.9646281,
+			"lon": -1.0214514,
+			"km": 0.2,
+			"dist_m": 19
+		},
+		{
+			"name": "Fuente del Prado",
+			"kind": "manantial",
+			"lat": 39.9268792,
+			"lon": -1.1362953,
+			"km": 15.8,
+			"dist_m": 85
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9240339,
+			"lon": -1.1330934,
+			"km": 16.3,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9234716,
+			"lon": -1.1320227,
+			"km": 16.5,
+			"dist_m": 62
+		}
+	],
+	"pois": [
+		{
+			"name": "Piedra de San Miguel",
+			"type": "cumbre",
+			"lat": 39.9773784,
+			"lon": -1.0408702,
+			"km": 3.3,
+			"dist_m": 47
+		}
+	],
 	"shade_ratio": 0.04,
-	"alternatives": ["sl-cv-176", "pr-cv-331", "gr-37"],
-	"enriched_at": "2026-06-11T17:47:17.635Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-176",
+		"pr-cv-331",
+		"gr-37"
+	],
+	"enriched_at": "2026-06-20T08:46:45.032Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

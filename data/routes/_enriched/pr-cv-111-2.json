@@ -7,8 +7,72 @@
 		"Fuente (km 0.4, a 3 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente del Pilar\" (km 0.5, a 35 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1861505,
+			"lon": -0.5422091,
+			"km": 0,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1870742,
+			"lon": -0.541833,
+			"km": 0,
+			"dist_m": 80
+		},
+		{
+			"name": "Fuente el Puente",
+			"kind": "fuente",
+			"lat": 40.1854748,
+			"lon": -0.5427142,
+			"km": 0.1,
+			"dist_m": 13
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1845978,
+			"lon": -0.5424037,
+			"km": 0.2,
+			"dist_m": 37
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1834783,
+			"lon": -0.5430191,
+			"km": 0.4,
+			"dist_m": 3
+		},
+		{
+			"name": "Fuente del Pilar",
+			"kind": "manantial",
+			"lat": 40.1820495,
+			"lon": -0.5421696,
+			"km": 0.5,
+			"dist_m": 35
+		}
+	],
+	"pois": [
+		{
+			"name": "Portal Herrerías",
+			"type": "patrimonio",
+			"lat": 40.1857892,
+			"lon": -0.5429597,
+			"km": 0.1,
+			"dist_m": 42
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-111-1", "gr-7-e32", "gr-160-e01"],
-	"enriched_at": "2026-06-11T17:52:23.043Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-111-1",
+		"gr-7-e32",
+		"gr-160-e01"
+	],
+	"enriched_at": "2026-06-20T08:59:18.285Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

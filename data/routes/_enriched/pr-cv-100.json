@@ -3,8 +3,72 @@
 		"Manantial \"Font de les Galeries\" (km 2.3, a 5 m del track; OSM, no verificado en campo)",
 		"Fuente (km 8.2, a 11 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de les Galeries",
+			"kind": "manantial",
+			"lat": 38.936565,
+			"lon": -0.2771124,
+			"km": 2.3,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9327147,
+			"lon": -0.2590265,
+			"km": 8.2,
+			"dist_m": 11
+		}
+	],
+	"pois": [
+		{
+			"name": "Forn de Calç",
+			"type": "patrimonio",
+			"lat": 38.9364549,
+			"lon": -0.2777188,
+			"km": 2.4,
+			"dist_m": 7
+		},
+		{
+			"name": "el Picaio",
+			"type": "mirador",
+			"lat": 38.9401741,
+			"lon": -0.287217,
+			"km": 3.8,
+			"dist_m": 8
+		},
+		{
+			"name": "Alt de les Aligues",
+			"type": "cumbre",
+			"lat": 38.9453992,
+			"lon": -0.291471,
+			"km": 4.3,
+			"dist_m": 148
+		},
+		{
+			"name": "Penyo de Montoig",
+			"type": "cumbre",
+			"lat": 38.944182,
+			"lon": -0.284383,
+			"km": 4.9,
+			"dist_m": 27
+		},
+		{
+			"name": "Ceràmica a la Verge de la Salud",
+			"type": "patrimonio",
+			"lat": 38.9330904,
+			"lon": -0.2590699,
+			"km": 8.1,
+			"dist_m": 9
+		}
+	],
 	"shade_ratio": 0.14,
-	"alternatives": ["sl-cv-138", "pr-cv-343", "gr-236-e02"],
-	"enriched_at": "2026-06-11T17:51:57.461Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-138",
+		"pr-cv-343",
+		"gr-236-e02"
+	],
+	"enriched_at": "2026-06-20T08:58:32.775Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

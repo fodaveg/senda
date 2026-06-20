@@ -6,8 +6,88 @@
 		"Fuente (km 11.2, a 100 m del track; OSM, no verificado en campo)",
 		"Fuente (km 11.2, a 49 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Plaça",
+			"kind": "fuente",
+			"lat": 40.6608348,
+			"lon": 0.0428232,
+			"km": 0,
+			"dist_m": 47
+		},
+		{
+			"name": "Font de la Gatellera",
+			"kind": "manantial",
+			"lat": 40.618561,
+			"lon": 0.0497887,
+			"km": 8.9,
+			"dist_m": 15
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6032969,
+			"lon": 0.0462376,
+			"km": 11.2,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6029115,
+			"lon": 0.0469821,
+			"km": 11.2,
+			"dist_m": 100
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6028505,
+			"lon": 0.0455741,
+			"km": 11.2,
+			"dist_m": 49
+		}
+	],
+	"pois": [
+		{
+			"name": "Joaquín Gil Abella",
+			"type": "patrimonio",
+			"lat": 40.6602633,
+			"lon": 0.0431375,
+			"km": 0,
+			"dist_m": 20
+		},
+		{
+			"name": "Prigó de Sant Abdó i Sant Senent",
+			"type": "patrimonio",
+			"lat": 40.6607399,
+			"lon": 0.0451601,
+			"km": 0.2,
+			"dist_m": 6
+		},
+		{
+			"name": "Mirador de la Placeta",
+			"type": "mirador",
+			"lat": 40.6028629,
+			"lon": 0.04626,
+			"km": 11.2,
+			"dist_m": 52
+		},
+		{
+			"name": "el Portal",
+			"type": "patrimonio",
+			"lat": 40.60302,
+			"lon": 0.0460313,
+			"km": 11.2,
+			"dist_m": 26
+		}
+	],
 	"shade_ratio": 0.04,
-	"alternatives": ["gr-331-e10", "gr-331-e12", "gr-7-e26"],
-	"enriched_at": "2026-06-11T17:42:38.295Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-331-e10",
+		"gr-331-e12",
+		"gr-7-e26"
+	],
+	"enriched_at": "2026-06-20T08:38:28.906Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

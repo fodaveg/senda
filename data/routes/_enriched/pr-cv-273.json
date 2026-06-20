@@ -2,8 +2,48 @@
 	"water_points": [
 		"Manantial \"Fuente de la Peña del Diablo\" (km 12.8, a 17 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Peña del Diablo",
+			"kind": "manantial",
+			"lat": 39.8858579,
+			"lon": -0.7884145,
+			"km": 12.8,
+			"dist_m": 17
+		}
+	],
+	"pois": [
+		{
+			"name": "Picacho Bigas",
+			"type": "cumbre",
+			"lat": 39.9272762,
+			"lon": -0.7394184,
+			"km": 3.4,
+			"dist_m": 120
+		},
+		{
+			"name": "Peña Elvira",
+			"type": "cumbre",
+			"lat": 39.9262203,
+			"lon": -0.754407,
+			"km": 5,
+			"dist_m": 146
+		},
+		{
+			"name": "Cerrito Güeña",
+			"type": "cumbre",
+			"lat": 39.898613,
+			"lon": -0.7645256,
+			"km": 18.4,
+			"dist_m": 38
+		}
+	],
 	"shade_ratio": 0.3,
-	"alternatives": ["pr-cv-275", "sl-cv-52", "gr-231-e02"],
-	"enriched_at": "2026-06-11T22:20:58.908Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-275",
+		"sl-cv-52",
+		"gr-231-e02"
+	],
+	"enriched_at": "2026-06-20T09:25:46.204Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

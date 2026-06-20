@@ -26,8 +26,26 @@
 	"water_points": [
 		"Manantial \"Font Negra\" (km 4.2, a 59 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font Negra",
+			"kind": "manantial",
+			"lat": 39.1331791,
+			"lon": -0.3483604,
+			"km": 4.2,
+			"dist_m": 59
+		}
+	],
+	"pois": [
+		{
+			"name": "Creu del Cardenal",
+			"type": "cumbre",
+			"lat": 39.1263717,
+			"lon": -0.3474295,
+			"km": 5.3,
+			"dist_m": 104
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-335 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-335.gpx (derivados: inicio, bbox)"
 	]
 }

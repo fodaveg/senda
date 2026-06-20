@@ -31,8 +31,74 @@
 		"Fuente \"Fuente de la Roca\" (km 20.1, a 72 m del track; OSM, no verificado en campo)",
 		"Fuente \"Fuente de la Gota\" (km 20.1, a 59 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente del Rodeno",
+			"kind": "fuente",
+			"lat": 39.5774694,
+			"lon": -0.9700432,
+			"km": 2.3,
+			"dist_m": 3
+		},
+		{
+			"name": "Fuente del Río",
+			"kind": "manantial",
+			"lat": 39.5709785,
+			"lon": -0.9692846,
+			"km": 3.2,
+			"dist_m": 16
+		},
+		{
+			"name": "Fuente La Vallesa",
+			"kind": "fuente",
+			"lat": 39.512583,
+			"lon": -0.9012401,
+			"km": 14.9,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.4824058,
+			"lon": -0.9128353,
+			"km": 19.8,
+			"dist_m": 15
+		},
+		{
+			"name": "Fuente de la Roca",
+			"kind": "fuente",
+			"lat": 39.4801168,
+			"lon": -0.9147904,
+			"km": 20.1,
+			"dist_m": 72
+		},
+		{
+			"name": "Fuente de la Gota",
+			"kind": "fuente",
+			"lat": 39.4799713,
+			"lon": -0.914678,
+			"km": 20.1,
+			"dist_m": 59
+		}
+	],
+	"pois": [
+		{
+			"name": "Cruz Pairal",
+			"type": "patrimonio",
+			"lat": 39.4728467,
+			"lon": -0.9145597,
+			"km": 20.9,
+			"dist_m": 39
+		},
+		{
+			"name": "Fuente de los Siete Caños",
+			"type": "patrimonio",
+			"lat": 39.4720249,
+			"lon": -0.915533,
+			"km": 20.9,
+			"dist_m": 123
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -57,7 +123,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e39 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e39.gpx (derivados: inicio, bbox)"
 	]
 }

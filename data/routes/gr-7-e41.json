@@ -31,8 +31,82 @@
 		"Fuente (km 26.1, a 16 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente del Chapole\" (km 26.2, a 76 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Vagona",
+			"kind": "fuente",
+			"lat": 39.244928,
+			"lon": -0.9324456,
+			"km": 25,
+			"dist_m": 2
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.244801,
+			"lon": -0.9344634,
+			"km": 25.2,
+			"dist_m": 25
+		},
+		{
+			"name": "Fuente de los Chorros",
+			"kind": "manantial",
+			"lat": 39.2429881,
+			"lon": -0.9387472,
+			"km": 25.9,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.243039,
+			"lon": -0.9407039,
+			"km": 26,
+			"dist_m": 69
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.2418995,
+			"lon": -0.941191,
+			"km": 26.1,
+			"dist_m": 16
+		},
+		{
+			"name": "Fuente del Chapole",
+			"kind": "manantial",
+			"lat": 39.2407493,
+			"lon": -0.9426003,
+			"km": 26.2,
+			"dist_m": 76
+		}
+	],
+	"pois": [
+		{
+			"name": "El Picayo",
+			"type": "cumbre",
+			"lat": 39.2758755,
+			"lon": -0.9748147,
+			"km": 16.3,
+			"dist_m": 33
+		},
+		{
+			"name": "Puntal de los Amoladeros",
+			"type": "cumbre",
+			"lat": 39.2683324,
+			"lon": -0.9588823,
+			"km": 18.6,
+			"dist_m": 69
+		},
+		{
+			"name": "Castillo de la Pileta",
+			"type": "patrimonio",
+			"lat": 39.2450422,
+			"lon": -0.9350982,
+			"km": 25.3,
+			"dist_m": 48
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -57,7 +131,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e41 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e41.gpx (derivados: inicio, bbox)"
 	]
 }

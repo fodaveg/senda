@@ -65,8 +65,698 @@
 		"Manantial \"Font del Molí\" (km 156.8, a 80 m del track; OSM, no verificado en campo)",
 		"Fuente (km 170.4, a 34 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.5316351,
+			"lon": -0.2633883,
+			"km": 14.1,
+			"dist_m": 88
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.5316067,
+			"lon": -0.2645291,
+			"km": 14.2,
+			"dist_m": 7
+		},
+		{
+			"name": "Font del Bassi",
+			"kind": "manantial",
+			"lat": 40.5792982,
+			"lon": -0.2207805,
+			"km": 22,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.631719,
+			"lon": -0.2378279,
+			"km": 30.8,
+			"dist_m": 7
+		},
+		{
+			"name": "Font de la Saranyana",
+			"kind": "manantial",
+			"lat": 40.6327785,
+			"lon": -0.245655,
+			"km": 31.7,
+			"dist_m": 72
+		},
+		{
+			"name": "Font de la Vila",
+			"kind": "manantial",
+			"lat": 40.6196049,
+			"lon": -0.2717356,
+			"km": 35.1,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6175184,
+			"lon": -0.2744813,
+			"km": 35.4,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6162161,
+			"lon": -0.280057,
+			"km": 36,
+			"dist_m": 82
+		},
+		{
+			"name": "Fuente de la Canaleta",
+			"kind": "manantial",
+			"lat": 40.6338305,
+			"lon": -0.3381106,
+			"km": 43.7,
+			"dist_m": 27
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.6359254,
+			"lon": -0.3393395,
+			"km": 43.9,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6379864,
+			"lon": -0.3395986,
+			"km": 44.3,
+			"dist_m": 47
+		},
+		{
+			"name": "Font del Mas de la Mola",
+			"kind": "manantial",
+			"lat": 40.6562764,
+			"lon": -0.294763,
+			"km": 49.9,
+			"dist_m": 23
+		},
+		{
+			"name": "Font del Xorret",
+			"kind": "manantial",
+			"lat": 40.6474273,
+			"lon": -0.248815,
+			"km": 55.3,
+			"dist_m": 36
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6460621,
+			"lon": -0.2473463,
+			"km": 55.8,
+			"dist_m": 68
+		},
+		{
+			"name": "la Font",
+			"kind": "manantial",
+			"lat": 40.6736234,
+			"lon": -0.2013684,
+			"km": 68.4,
+			"dist_m": 46
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6757089,
+			"lon": -0.2009078,
+			"km": 68.6,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6761072,
+			"lon": -0.2006296,
+			"km": 68.7,
+			"dist_m": 5
+		},
+		{
+			"name": "Font del Pont",
+			"kind": "manantial",
+			"lat": 40.6646208,
+			"lon": -0.1448664,
+			"km": 76.9,
+			"dist_m": 10
+		},
+		{
+			"name": "Font dels Llavadors",
+			"kind": "manantial",
+			"lat": 40.6581582,
+			"lon": -0.1248659,
+			"km": 78.9,
+			"dist_m": 52
+		},
+		{
+			"name": "Font de l'Ordanyó",
+			"kind": "manantial",
+			"lat": 40.6534559,
+			"lon": -0.1123919,
+			"km": 80.4,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6244093,
+			"lon": -0.1003236,
+			"km": 85.5,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6242469,
+			"lon": -0.100236,
+			"km": 85.5,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.621233,
+			"lon": -0.0995382,
+			"km": 85.9,
+			"dist_m": 46
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6620232,
+			"lon": -0.0191815,
+			"km": 98.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de la Plaça",
+			"kind": "fuente",
+			"lat": 40.6608348,
+			"lon": 0.0428232,
+			"km": 107,
+			"dist_m": 4
+		},
+		{
+			"name": "Font de la Gatellera",
+			"kind": "manantial",
+			"lat": 40.618561,
+			"lon": 0.0497887,
+			"km": 116,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6032969,
+			"lon": 0.0462376,
+			"km": 118.3,
+			"dist_m": 30
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6028505,
+			"lon": 0.0455741,
+			"km": 118.3,
+			"dist_m": 52
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6029115,
+			"lon": 0.0469821,
+			"km": 118.4,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6024851,
+			"lon": 0.0475361,
+			"km": 118.5,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6020672,
+			"lon": 0.0480185,
+			"km": 118.6,
+			"dist_m": 12
+		},
+		{
+			"name": "Font Vella",
+			"kind": "manantial",
+			"lat": 40.6017374,
+			"lon": 0.0484034,
+			"km": 118.6,
+			"dist_m": 6
+		},
+		{
+			"name": "Fonteta dels Grillos",
+			"kind": "manantial",
+			"lat": 40.5965294,
+			"lon": 0.0539504,
+			"km": 119.6,
+			"dist_m": 50
+		},
+		{
+			"name": "Font de les Covetes",
+			"kind": "manantial",
+			"lat": 40.5107122,
+			"lon": -0.0110981,
+			"km": 139,
+			"dist_m": 37
+		},
+		{
+			"name": "Font de Salvassòria",
+			"kind": "manantial",
+			"lat": 40.5109281,
+			"lon": -0.0353695,
+			"km": 141.7,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.4607817,
+			"lon": -0.1196698,
+			"km": 154.7,
+			"dist_m": 10
+		},
+		{
+			"name": "Font dels Regatxols",
+			"kind": "manantial",
+			"lat": 40.460867,
+			"lon": -0.1198347,
+			"km": 154.7,
+			"dist_m": 18
+		},
+		{
+			"name": "Font de la Vila",
+			"kind": "fuente",
+			"lat": 40.4569257,
+			"lon": -0.13193,
+			"km": 156.1,
+			"dist_m": 12
+		},
+		{
+			"name": "Font del Molí",
+			"kind": "manantial",
+			"lat": 40.4584729,
+			"lon": -0.1345982,
+			"km": 156.8,
+			"dist_m": 80
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.4297733,
+			"lon": -0.2524491,
+			"km": 170.4,
+			"dist_m": 34
+		}
+	],
+	"pois": [
+		{
+			"name": "Peiró de Sant Pere",
+			"type": "patrimonio",
+			"lat": 40.4609502,
+			"lon": -0.2481156,
+			"km": 3.6,
+			"dist_m": 7
+		},
+		{
+			"name": "Ermita del Pilar",
+			"type": "patrimonio",
+			"lat": 40.5792103,
+			"lon": -0.2208451,
+			"km": 22,
+			"dist_m": 9
+		},
+		{
+			"name": "Peiró de Sant Pere",
+			"type": "patrimonio",
+			"lat": 40.6191921,
+			"lon": -0.2307169,
+			"km": 29.2,
+			"dist_m": 26
+		},
+		{
+			"name": "Peiró de Sant Josep",
+			"type": "patrimonio",
+			"lat": 40.6176555,
+			"lon": -0.2747601,
+			"km": 35.5,
+			"dist_m": 1
+		},
+		{
+			"name": "Peiró de Sant Gil",
+			"type": "patrimonio",
+			"lat": 40.6175702,
+			"lon": -0.2756591,
+			"km": 35.6,
+			"dist_m": 5
+		},
+		{
+			"name": "Peiró de les Canals",
+			"type": "patrimonio",
+			"lat": 40.6146268,
+			"lon": -0.2837086,
+			"km": 36.4,
+			"dist_m": 20
+		},
+		{
+			"name": "Ermita de San Roque",
+			"type": "patrimonio",
+			"lat": 40.6372602,
+			"lon": -0.3403887,
+			"km": 44.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Nevera Medieval",
+			"type": "patrimonio",
+			"lat": 40.6378105,
+			"lon": -0.3397369,
+			"km": 44.2,
+			"dist_m": 29
+		},
+		{
+			"name": "Cárcel Pública",
+			"type": "patrimonio",
+			"lat": 40.6377609,
+			"lon": -0.3395724,
+			"km": 44.2,
+			"dist_m": 35
+		},
+		{
+			"name": "Peiró de Sant Pere",
+			"type": "patrimonio",
+			"lat": 40.6504881,
+			"lon": -0.2806055,
+			"km": 51.7,
+			"dist_m": 6
+		},
+		{
+			"name": "Peiró de Santa Bàrbera",
+			"type": "patrimonio",
+			"lat": 40.6477082,
+			"lon": -0.266683,
+			"km": 53,
+			"dist_m": 13
+		},
+		{
+			"name": "Observatorio Astronómico Astropunt del paraje de Santa Bárbara",
+			"type": "mirador",
+			"lat": 40.6474449,
+			"lon": -0.2649457,
+			"km": 53.2,
+			"dist_m": 16
+		},
+		{
+			"name": "Lloma dels Castellans",
+			"type": "cumbre",
+			"lat": 40.6455454,
+			"lon": -0.261554,
+			"km": 53.5,
+			"dist_m": 34
+		},
+		{
+			"name": "Peiró de la Mare de Déu",
+			"type": "patrimonio",
+			"lat": 40.6437383,
+			"lon": -0.2456881,
+			"km": 55.7,
+			"dist_m": 133
+		},
+		{
+			"name": "Castell de la Todolella",
+			"type": "patrimonio",
+			"lat": 40.647612,
+			"lon": -0.2459911,
+			"km": 56.1,
+			"dist_m": 52
+		},
+		{
+			"name": "Peiró de Santa Caterina",
+			"type": "patrimonio",
+			"lat": 40.6500332,
+			"lon": -0.2429701,
+			"km": 56.5,
+			"dist_m": 4
+		},
+		{
+			"name": "Peiró de la Consolacioneta",
+			"type": "patrimonio",
+			"lat": 40.6486609,
+			"lon": -0.1925732,
+			"km": 64.8,
+			"dist_m": 146
+		},
+		{
+			"name": "Capelleta del Carme",
+			"type": "patrimonio",
+			"lat": 40.6895569,
+			"lon": -0.1772397,
+			"km": 72.1,
+			"dist_m": 2
+		},
+		{
+			"name": "Peiró de Ferro",
+			"type": "patrimonio",
+			"lat": 40.6878123,
+			"lon": -0.178631,
+			"km": 72.3,
+			"dist_m": 47
+		},
+		{
+			"name": "Creu del Pont",
+			"type": "patrimonio",
+			"lat": 40.6577343,
+			"lon": -0.1238774,
+			"km": 79.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Mirador de Xiva",
+			"type": "mirador",
+			"lat": 40.656085,
+			"lon": -0.119018,
+			"km": 79.6,
+			"dist_m": 12
+		},
+		{
+			"name": "Mirador de la Serra de Sant Isidre",
+			"type": "mirador",
+			"lat": 40.6455778,
+			"lon": -0.0958007,
+			"km": 82.4,
+			"dist_m": 3
+		},
+		{
+			"name": "Mirador del Mas de Bessó",
+			"type": "mirador",
+			"lat": 40.6354769,
+			"lon": -0.0970604,
+			"km": 83.9,
+			"dist_m": 8
+		},
+		{
+			"name": "Collet de la Querola",
+			"type": "cumbre",
+			"lat": 40.6280978,
+			"lon": -0.0939739,
+			"km": 84.7,
+			"dist_m": 117
+		},
+		{
+			"name": "Torre del Panto",
+			"type": "patrimonio",
+			"lat": 40.6210263,
+			"lon": -0.100653,
+			"km": 85.8,
+			"dist_m": 120
+		},
+		{
+			"name": "Nevera de Morella",
+			"type": "patrimonio",
+			"lat": 40.6218541,
+			"lon": -0.1005158,
+			"km": 85.8,
+			"dist_m": 51
+		},
+		{
+			"name": "Portal de la Nevera",
+			"type": "patrimonio",
+			"lat": 40.6214335,
+			"lon": -0.0999303,
+			"km": 85.8,
+			"dist_m": 53
+		},
+		{
+			"name": "Portal de Sant Miquel",
+			"type": "patrimonio",
+			"lat": 40.6217327,
+			"lon": -0.0991148,
+			"km": 85.9,
+			"dist_m": 5
+		},
+		{
+			"name": "Torre Redona",
+			"type": "patrimonio",
+			"lat": 40.6212583,
+			"lon": -0.098042,
+			"km": 85.9,
+			"dist_m": 83
+		},
+		{
+			"name": "Torre de la Font",
+			"type": "patrimonio",
+			"lat": 40.620466,
+			"lon": -0.0979692,
+			"km": 85.9,
+			"dist_m": 138
+		},
+		{
+			"name": "Conxa Dolz",
+			"type": "patrimonio",
+			"lat": 40.627635,
+			"lon": -0.0978656,
+			"km": 86.8,
+			"dist_m": 27
+		},
+		{
+			"name": "Peiró de Sant Antoni i Santa Bàrbera",
+			"type": "patrimonio",
+			"lat": 40.6405964,
+			"lon": -0.082318,
+			"km": 90.1,
+			"dist_m": 3
+		},
+		{
+			"name": "Moleta de la Carcellera",
+			"type": "cumbre",
+			"lat": 40.6438666,
+			"lon": -0.0437647,
+			"km": 93.7,
+			"dist_m": 148
+		},
+		{
+			"name": "Peiró de Sant Antoni",
+			"type": "patrimonio",
+			"lat": 40.6589439,
+			"lon": -0.0301584,
+			"km": 96.5,
+			"dist_m": 3
+		},
+		{
+			"name": "Peiró de Sant Isidre",
+			"type": "patrimonio",
+			"lat": 40.6591029,
+			"lon": -0.0136594,
+			"km": 99.2,
+			"dist_m": 105
+		},
+		{
+			"name": "Joaquín Gil Abella",
+			"type": "patrimonio",
+			"lat": 40.6602633,
+			"lon": 0.0431375,
+			"km": 107.1,
+			"dist_m": 14
+		},
+		{
+			"name": "Prigó de Sant Abdó i Sant Senent",
+			"type": "patrimonio",
+			"lat": 40.6607399,
+			"lon": 0.0451601,
+			"km": 107.3,
+			"dist_m": 6
+		},
+		{
+			"name": "Mirador de la Placeta",
+			"type": "mirador",
+			"lat": 40.6028629,
+			"lon": 0.04626,
+			"km": 118.3,
+			"dist_m": 54
+		},
+		{
+			"name": "el Portal",
+			"type": "patrimonio",
+			"lat": 40.60302,
+			"lon": 0.0460313,
+			"km": 118.3,
+			"dist_m": 29
+		},
+		{
+			"name": "el Peironet",
+			"type": "patrimonio",
+			"lat": 40.6026328,
+			"lon": 0.0492212,
+			"km": 118.7,
+			"dist_m": 73
+		},
+		{
+			"name": "Mirador del Peironet",
+			"type": "mirador",
+			"lat": 40.6026132,
+			"lon": 0.0492705,
+			"km": 118.7,
+			"dist_m": 70
+		},
+		{
+			"name": "Peiró de Baix",
+			"type": "patrimonio",
+			"lat": 40.5392699,
+			"lon": 0.056148,
+			"km": 130.1,
+			"dist_m": 51
+		},
+		{
+			"name": "Mirador Ares del Maestrat",
+			"type": "mirador",
+			"lat": 40.4552747,
+			"lon": -0.1317411,
+			"km": 156.5,
+			"dist_m": 134
+		},
+		{
+			"name": "En record de les víctimes dels bombardejos de la Legió Cóndor",
+			"type": "patrimonio",
+			"lat": 40.4560077,
+			"lon": -0.1310526,
+			"km": 156.5,
+			"dist_m": 75
+		},
+		{
+			"name": "Alfredo Rovira Pitarch",
+			"type": "patrimonio",
+			"lat": 40.4560048,
+			"lon": -0.1310445,
+			"km": 156.5,
+			"dist_m": 76
+		},
+		{
+			"name": "Peiró de Sant Isidre",
+			"type": "patrimonio",
+			"lat": 40.4477558,
+			"lon": -0.209099,
+			"km": 165.4,
+			"dist_m": 31
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -91,7 +781,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-331.gpx (derivados: inicio, bbox)"
 	]
 }

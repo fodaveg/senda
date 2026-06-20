@@ -5,8 +5,47 @@
 		"Manantial \"Font del Mas de Bernús\" (km 4.3, a 8 m del track; OSM, no verificado en campo)",
 		"Manantial \"Naixement del Riu\" (km 9.9, a 21 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Mas de la Costa",
+			"kind": "manantial",
+			"lat": 40.1754264,
+			"lon": -0.3031388,
+			"km": 0.3,
+			"dist_m": 9
+		},
+		{
+			"name": "Font de la Canaleta",
+			"kind": "manantial",
+			"lat": 40.1930351,
+			"lon": -0.3109094,
+			"km": 3.1,
+			"dist_m": 10
+		},
+		{
+			"name": "Font del Mas de Bernús",
+			"kind": "manantial",
+			"lat": 40.1980743,
+			"lon": -0.3023959,
+			"km": 4.3,
+			"dist_m": 8
+		},
+		{
+			"name": "Naixement del Riu",
+			"kind": "manantial",
+			"lat": 40.1812768,
+			"lon": -0.2913622,
+			"km": 9.9,
+			"dist_m": 21
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.02,
-	"alternatives": ["pr-cv-326", "gr-33-e07", "pr-cv-341"],
-	"enriched_at": "2026-06-11T18:09:57.841Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-326",
+		"gr-33-e07",
+		"pr-cv-341"
+	],
+	"enriched_at": "2026-06-20T09:29:16.033Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

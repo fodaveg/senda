@@ -26,8 +26,42 @@
 	"water_points": [
 		"Fuente (km 10.8, a 50 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.1318366,
+			"lon": -0.790069,
+			"km": 10.8,
+			"dist_m": 50
+		}
+	],
+	"pois": [
+		{
+			"name": "Casa Cueva La Joaquina",
+			"type": "patrimonio",
+			"lat": 39.1381945,
+			"lon": -0.8376813,
+			"km": 5.2,
+			"dist_m": 59
+		},
+		{
+			"name": "Abrigo de la Balsa de Calicanto",
+			"type": "patrimonio",
+			"lat": 39.1379504,
+			"lon": -0.8361979,
+			"km": 5.4,
+			"dist_m": 4
+		},
+		{
+			"name": "Casa Cueva",
+			"type": "patrimonio",
+			"lat": 39.1374839,
+			"lon": -0.8317117,
+			"km": 6,
+			"dist_m": 5
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +86,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-173 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-173.gpx (derivados: inicio, bbox)"
 	]
 }

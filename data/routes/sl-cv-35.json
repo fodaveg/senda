@@ -32,8 +32,98 @@
 		"Manantial \"font del mas de Sorribes\" (km 3.6, a 6 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Bassi\" (km 10.1, a 4 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.5817365,
+			"lon": -0.2170948,
+			"km": 0.2,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.5816979,
+			"lon": -0.2158937,
+			"km": 0.3,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.5828833,
+			"lon": -0.2164845,
+			"km": 0.3,
+			"dist_m": 85
+		},
+		{
+			"name": "Font de la Vila",
+			"kind": "manantial",
+			"lat": 40.5813894,
+			"lon": -0.21345,
+			"km": 0.6,
+			"dist_m": 7
+		},
+		{
+			"name": "Povet de Sant Pere",
+			"kind": "manantial",
+			"lat": 40.5700632,
+			"lon": -0.2038102,
+			"km": 2.8,
+			"dist_m": 2
+		},
+		{
+			"name": "font del mas de Sorribes",
+			"kind": "manantial",
+			"lat": 40.5676857,
+			"lon": -0.1960778,
+			"km": 3.6,
+			"dist_m": 6
+		},
+		{
+			"name": "Font del Bassi",
+			"kind": "manantial",
+			"lat": 40.5792982,
+			"lon": -0.2207805,
+			"km": 10.1,
+			"dist_m": 4
+		}
+	],
+	"pois": [
+		{
+			"name": "Cruz de los Caídos",
+			"type": "patrimonio",
+			"lat": 40.58237,
+			"lon": -0.2149364,
+			"km": 0.4,
+			"dist_m": 62
+		},
+		{
+			"name": "Llomet de Collet",
+			"type": "cumbre",
+			"lat": 40.5631352,
+			"lon": -0.1980497,
+			"km": 5.2,
+			"dist_m": 133
+		},
+		{
+			"name": "Tossal de Montargull",
+			"type": "cumbre",
+			"lat": 40.562666,
+			"lon": -0.2137166,
+			"km": 7.5,
+			"dist_m": 71
+		},
+		{
+			"name": "Ermita del Pilar",
+			"type": "patrimonio",
+			"lat": 40.5792103,
+			"lon": -0.2208451,
+			"km": 10.1,
+			"dist_m": 6
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -58,7 +148,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-35 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-35.gpx (derivados: inicio, bbox)"
 	]
 }

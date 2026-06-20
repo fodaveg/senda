@@ -19,8 +19,216 @@
 		"Manantial (km 45.4, a 17 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente del Collado\" (km 61.0, a 20 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Llavador",
+			"kind": "manantial",
+			"lat": 39.0183578,
+			"lon": -0.6237819,
+			"km": 0.1,
+			"dist_m": 35
+		},
+		{
+			"name": "Fuente Tía Rulla",
+			"kind": "manantial",
+			"lat": 39.019988,
+			"lon": -0.6234171,
+			"km": 0.8,
+			"dist_m": 25
+		},
+		{
+			"name": "Fuente del Tío Marcelino",
+			"kind": "manantial",
+			"lat": 39.0194201,
+			"lon": -0.625052,
+			"km": 1.1,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente de Santa Maria",
+			"kind": "fuente",
+			"lat": 39.0221572,
+			"lon": -0.6429113,
+			"km": 4.7,
+			"dist_m": 2
+		},
+		{
+			"name": "Fuente de Abajo",
+			"kind": "fuente",
+			"lat": 39.0231148,
+			"lon": -0.6461723,
+			"km": 5.1,
+			"dist_m": 2
+		},
+		{
+			"name": "Fuente de Arriba",
+			"kind": "fuente",
+			"lat": 39.0244605,
+			"lon": -0.6467015,
+			"km": 5.2,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0419115,
+			"lon": -0.6573492,
+			"km": 10.2,
+			"dist_m": 17
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0413222,
+			"lon": -0.6590761,
+			"km": 10.4,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0418198,
+			"lon": -0.6594415,
+			"km": 10.5,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0445165,
+			"lon": -0.6616803,
+			"km": 10.9,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0452376,
+			"lon": -0.6600766,
+			"km": 11.2,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0471133,
+			"lon": -0.6620187,
+			"km": 11.7,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.060968,
+			"lon": -0.6740408,
+			"km": 15.2,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0789433,
+			"lon": -0.6986587,
+			"km": 21.1,
+			"dist_m": 34
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.1318366,
+			"lon": -0.790069,
+			"km": 42.5,
+			"dist_m": 26
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.1317985,
+			"lon": -0.7874775,
+			"km": 43.1,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.1230193,
+			"lon": -0.8051802,
+			"km": 45.4,
+			"dist_m": 17
+		},
+		{
+			"name": "Fuente del Collado",
+			"kind": "manantial",
+			"lat": 39.0935104,
+			"lon": -0.9204955,
+			"km": 61,
+			"dist_m": 20
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador del Salto de Chella",
+			"type": "mirador",
+			"lat": 39.0454193,
+			"lon": -0.6600673,
+			"km": 11.2,
+			"dist_m": 2
+		},
+		{
+			"name": "Mirador de las Cuevas del Turco",
+			"type": "mirador",
+			"lat": 39.0502242,
+			"lon": -0.660319,
+			"km": 12.2,
+			"dist_m": 99
+		},
+		{
+			"name": "Altico Redondo",
+			"type": "cumbre",
+			"lat": 39.1201819,
+			"lon": -0.7157233,
+			"km": 29.5,
+			"dist_m": 145
+		},
+		{
+			"name": "Pico los Alticos",
+			"type": "cumbre",
+			"lat": 39.122314,
+			"lon": -0.7276345,
+			"km": 31,
+			"dist_m": 101
+		},
+		{
+			"name": "Los Albaidares",
+			"type": "cumbre",
+			"lat": 39.12891,
+			"lon": -0.7493683,
+			"km": 35.7,
+			"dist_m": 102
+		},
+		{
+			"name": "La Barchilla",
+			"type": "cumbre",
+			"lat": 39.0898722,
+			"lon": -0.9169106,
+			"km": 62.2,
+			"dist_m": 42
+		},
+		{
+			"name": "Pico de Caroche",
+			"type": "cumbre",
+			"lat": 39.0896288,
+			"lon": -0.9141714,
+			"km": 62.4,
+			"dist_m": 2
+		}
+	],
 	"shade_ratio": 0.05,
-	"alternatives": ["gr-332-e01", "pr-cv-113", "sl-cv-6"],
-	"enriched_at": "2026-06-11T19:00:24.651Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-332-e01",
+		"pr-cv-113",
+		"sl-cv-6"
+	],
+	"enriched_at": "2026-06-20T08:41:47.486Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -23,20 +23,62 @@
 		"esfuerzo": 2
 	},
 	"est_duration_min": 90,
-	"water_points": [],
-	"water_points_geo": [],
+	"water_points": [
+		"Manantial \"Fuente El Cantón\" (km 0.0, a 18 m del track; OSM, no verificado en campo)",
+		"Fuente (km 4.2, a 8 m del track; OSM, no verificado en campo)",
+		"Fuente (km 4.3, a 84 m del track; OSM, no verificado en campo)",
+		"Fuente (km 4.4, a 53 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Fuente El Cantón",
+			"kind": "manantial",
+			"lat": 40.0195256,
+			"lon": -0.3130238,
+			"km": 0,
+			"dist_m": 18
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.023004,
+			"lon": -0.2790892,
+			"km": 4.2,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0221709,
+			"lon": -0.2775001,
+			"km": 4.3,
+			"dist_m": 84
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0209545,
+			"lon": -0.2799086,
+			"km": 4.4,
+			"dist_m": 53
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "gr-333-e14.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e14",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"gr-333-e13",
+		"gr-333-e15",
+		"gr-333-e09"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.312818996608257,
@@ -46,6 +88,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e14 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-333-e14.gpx (derivados: inicio, bbox)"
 	]
 }

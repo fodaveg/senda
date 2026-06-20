@@ -27,8 +27,34 @@
 		"Manantial \"Font Jordana\" (km 0.1, a 4 m del track; OSM, no verificado en campo)",
 		"Fuente \"Font de Barxeta\" (km 7.5, a 67 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font Jordana",
+			"kind": "manantial",
+			"lat": 38.8192897,
+			"lon": -0.5487679,
+			"km": 0.1,
+			"dist_m": 4
+		},
+		{
+			"name": "Font de Barxeta",
+			"kind": "fuente",
+			"lat": 38.7813323,
+			"lon": -0.5155027,
+			"km": 7.5,
+			"dist_m": 67
+		}
+	],
+	"pois": [
+		{
+			"name": "la Simeta",
+			"type": "cumbre",
+			"lat": 38.8081862,
+			"lon": -0.5402883,
+			"km": 2.7,
+			"dist_m": 98
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +79,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-134 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-134.gpx (derivados: inicio, bbox)"
 	]
 }

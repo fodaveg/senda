@@ -2,8 +2,23 @@
 	"water_points": [
 		"Manantial \"Fuente de la Araña\" (km 4.8, a 36 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Araña",
+			"kind": "manantial",
+			"lat": 39.9333609,
+			"lon": -1.1910226,
+			"km": 4.8,
+			"dist_m": 36
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.05,
-	"alternatives": ["pr-cv-187", "sl-cv-22", "pr-cv-307"],
-	"enriched_at": "2026-06-11T18:46:08.222Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-187",
+		"sl-cv-22",
+		"pr-cv-307"
+	],
+	"enriched_at": "2026-06-20T10:11:55.128Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

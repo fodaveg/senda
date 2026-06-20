@@ -6,8 +6,80 @@
 		"Fuente (km 6.5, a 5 m del track; OSM, no verificado en campo)",
 		"Fuente (km 6.8, a 97 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font Nova",
+			"kind": "manantial",
+			"lat": 40.0804938,
+			"lon": -0.2098644,
+			"km": 0.9,
+			"dist_m": 4
+		},
+		{
+			"name": "Font de Sant Vicent de Baix",
+			"kind": "manantial",
+			"lat": 40.0845226,
+			"lon": -0.218243,
+			"km": 2,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0770916,
+			"lon": -0.2146434,
+			"km": 6.1,
+			"dist_m": 89
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0763962,
+			"lon": -0.2116773,
+			"km": 6.5,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0748829,
+			"lon": -0.2137259,
+			"km": 6.8,
+			"dist_m": 97
+		}
+	],
+	"pois": [
+		{
+			"name": "Forn del Poero",
+			"type": "patrimonio",
+			"lat": 40.0822087,
+			"lon": -0.2167508,
+			"km": 1.6,
+			"dist_m": 71
+		},
+		{
+			"name": "Ermita de Sant Cristòfol",
+			"type": "patrimonio",
+			"lat": 40.079486,
+			"lon": -0.2174421,
+			"km": 5.2,
+			"dist_m": 14
+		},
+		{
+			"name": "Ermita del Calvari",
+			"type": "patrimonio",
+			"lat": 40.0775614,
+			"lon": -0.2169083,
+			"km": 5.8,
+			"dist_m": 29
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-357", "pr-cv-120", "pr-cv-341"],
-	"enriched_at": "2026-06-11T18:49:18.780Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-357",
+		"pr-cv-120",
+		"pr-cv-341"
+	],
+	"enriched_at": "2026-06-20T10:15:59.009Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

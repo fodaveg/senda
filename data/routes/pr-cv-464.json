@@ -27,7 +27,24 @@
 		"Manantial \"Font de Partegat\" (km 7.4, a 13 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Molí\" (km 11.5, a 22 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": "Font de Partegat",
+			"kind": "manantial",
+			"lat": 38.6573244,
+			"lon": -0.241888,
+			"km": 7.4,
+			"dist_m": 13
+		},
+		{
+			"name": "Font del Molí",
+			"kind": "manantial",
+			"lat": 38.6623822,
+			"lon": -0.2078379,
+			"km": 11.5,
+			"dist_m": 22
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -53,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-464 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-464.gpx (derivados: inicio, bbox)"
 	]
 }

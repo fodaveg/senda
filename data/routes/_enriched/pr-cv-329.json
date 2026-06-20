@@ -5,8 +5,47 @@
 		"Fuente \"Font de l'Oro\" (km 4.3, a 3 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Salt\" (km 6.3, a 72 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6577984,
+			"lon": -0.4238458,
+			"km": 0,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6596899,
+			"lon": -0.4245101,
+			"km": 0.3,
+			"dist_m": 35
+		},
+		{
+			"name": "Font de l'Oro",
+			"kind": "fuente",
+			"lat": 39.6574112,
+			"lon": -0.4036774,
+			"km": 4.3,
+			"dist_m": 3
+		},
+		{
+			"name": "Font del Salt",
+			"kind": "manantial",
+			"lat": 39.6701311,
+			"lon": -0.3957099,
+			"km": 6.3,
+			"dist_m": 72
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.24,
-	"alternatives": ["gr-10-e03", "gr-10-e02", "sl-cv-23"],
-	"enriched_at": "2026-06-11T18:10:03.552Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-10-e03",
+		"gr-10-e02",
+		"sl-cv-23"
+	],
+	"enriched_at": "2026-06-20T09:29:18.848Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

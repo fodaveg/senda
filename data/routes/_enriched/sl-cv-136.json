@@ -4,8 +4,56 @@
 		"Manantial \"Font de Santa Anna\" (km 1.7, a 59 m del track; OSM, no verificado en campo)",
 		"Fuente (km 8.7, a 42 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Pou d'Avall",
+			"kind": "manantial",
+			"lat": 38.7149118,
+			"lon": 0.0549136,
+			"km": 0.9,
+			"dist_m": 5
+		},
+		{
+			"name": "Font de Santa Anna",
+			"kind": "manantial",
+			"lat": 38.7089532,
+			"lon": 0.056169,
+			"km": 1.7,
+			"dist_m": 59
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7152927,
+			"lon": 0.0511686,
+			"km": 8.7,
+			"dist_m": 42
+		}
+	],
+	"pois": [
+		{
+			"name": "Monument al Riberer",
+			"type": "patrimonio",
+			"lat": 38.7159859,
+			"lon": 0.0513719,
+			"km": 0.1,
+			"dist_m": 3
+		},
+		{
+			"name": "Ruïnes Antiga Església de Benissa",
+			"type": "patrimonio",
+			"lat": 38.7161377,
+			"lon": 0.0528587,
+			"km": 0.3,
+			"dist_m": 19
+		}
+	],
 	"shade_ratio": 0.06,
-	"alternatives": ["pr-cv-388", "sl-cv-73", "pr-cv-53-5"],
-	"enriched_at": "2026-06-11T18:34:32.890Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-388",
+		"sl-cv-73",
+		"pr-cv-53-5"
+	],
+	"enriched_at": "2026-06-20T09:53:47.579Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

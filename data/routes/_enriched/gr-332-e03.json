@@ -3,8 +3,48 @@
 		"Manantial (km 2.1, a 17 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente del Collado\" (km 17.7, a 20 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.1230193,
+			"lon": -0.8051802,
+			"km": 2.1,
+			"dist_m": 17
+		},
+		{
+			"name": "Fuente del Collado",
+			"kind": "manantial",
+			"lat": 39.0935104,
+			"lon": -0.9204955,
+			"km": 17.7,
+			"dist_m": 20
+		}
+	],
+	"pois": [
+		{
+			"name": "La Barchilla",
+			"type": "cumbre",
+			"lat": 39.0898722,
+			"lon": -0.9169106,
+			"km": 19,
+			"dist_m": 42
+		},
+		{
+			"name": "Pico de Caroche",
+			"type": "cumbre",
+			"lat": 39.0896288,
+			"lon": -0.9141714,
+			"km": 19.2,
+			"dist_m": 2
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-235", "pr-cv-173", "pr-cv-204"],
-	"enriched_at": "2026-06-11T19:00:15.164Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-235",
+		"pr-cv-173",
+		"pr-cv-204"
+	],
+	"enriched_at": "2026-06-20T08:41:44.020Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

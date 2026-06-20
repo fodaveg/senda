@@ -30,8 +30,90 @@
 		"Manantial \"Font Coberta\" (km 6.5, a 81 m del track; OSM, no verificado en campo)",
 		"Fuente (km 6.5, a 1 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font dels Posos",
+			"kind": "manantial",
+			"lat": 40.2485263,
+			"lon": -0.2986905,
+			"km": 1,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2515175,
+			"lon": -0.3526689,
+			"km": 6.3,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.2511472,
+			"lon": -0.3541096,
+			"km": 6.5,
+			"dist_m": 2
+		},
+		{
+			"name": "Font Coberta",
+			"kind": "manantial",
+			"lat": 40.2510777,
+			"lon": -0.3550583,
+			"km": 6.5,
+			"dist_m": 81
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2513449,
+			"lon": -0.3541549,
+			"km": 6.5,
+			"dist_m": 1
+		}
+	],
+	"pois": [
+		{
+			"name": "El Peiró de la Font",
+			"type": "patrimonio",
+			"lat": 40.2466032,
+			"lon": -0.2905046,
+			"km": 0,
+			"dist_m": 6
+		},
+		{
+			"name": "Tossal de Sant Cristòfol",
+			"type": "cumbre",
+			"lat": 40.2478198,
+			"lon": -0.2903025,
+			"km": 0,
+			"dist_m": 127
+		},
+		{
+			"name": "La Segona Creveta",
+			"type": "patrimonio",
+			"lat": 40.2465316,
+			"lon": -0.292363,
+			"km": 0.2,
+			"dist_m": 4
+		},
+		{
+			"name": "Moleta de Mor",
+			"type": "cumbre",
+			"lat": 40.2491586,
+			"lon": -0.3264892,
+			"km": 3.8,
+			"dist_m": 102
+		},
+		{
+			"name": "Capoll de la Lloma",
+			"type": "cumbre",
+			"lat": 40.2512118,
+			"lon": -0.3330284,
+			"km": 4.5,
+			"dist_m": 35
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +138,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-33-e07 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-33-e07.gpx (derivados: inicio, bbox)"
 	]
 }

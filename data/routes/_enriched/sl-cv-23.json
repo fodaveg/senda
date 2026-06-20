@@ -4,8 +4,48 @@
 		"Manantial \"Font de la Llosa\" (km 2.2, a 17 m del track; OSM, no verificado en campo)",
 		"Fuente \"Font de Barraix\" (km 6.2, a 5 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7116523,
+			"lon": -0.3683625,
+			"km": 0.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de la Llosa",
+			"kind": "manantial",
+			"lat": 39.7123382,
+			"lon": -0.38091,
+			"km": 2.2,
+			"dist_m": 17
+		},
+		{
+			"name": "Font de Barraix",
+			"kind": "fuente",
+			"lat": 39.6982837,
+			"lon": -0.3943749,
+			"km": 6.2,
+			"dist_m": 5
+		}
+	],
+	"pois": [
+		{
+			"name": "Castell de Beselga",
+			"type": "patrimonio",
+			"lat": 39.7121151,
+			"lon": -0.3681664,
+			"km": 0.1,
+			"dist_m": 51
+		}
+	],
 	"shade_ratio": 0.17,
-	"alternatives": ["sl-cv-24", "sl-cv-68", "pr-cv-369"],
-	"enriched_at": "2026-06-11T18:41:46.602Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-24",
+		"sl-cv-68",
+		"pr-cv-369"
+	],
+	"enriched_at": "2026-06-20T10:04:27.720Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

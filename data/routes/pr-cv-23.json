@@ -23,20 +23,87 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 235,
-	"water_points": [],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points": [
+		"Manantial \"Font de l'Espinal\" (km 2.5, a 1 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font Roja\" (km 3.8, a 6 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fonteta del Teularet\" (km 9.1, a 32 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fonteta de la Solana\" (km 9.1, a 51 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Font de l'Espinal",
+			"kind": "manantial",
+			"lat": 38.7181208,
+			"lon": -0.2961736,
+			"km": 2.5,
+			"dist_m": 1
+		},
+		{
+			"name": "Font Roja",
+			"kind": "manantial",
+			"lat": 38.7138947,
+			"lon": -0.2862099,
+			"km": 3.8,
+			"dist_m": 6
+		},
+		{
+			"name": "Fonteta del Teularet",
+			"kind": "manantial",
+			"lat": 38.6930317,
+			"lon": -0.3261641,
+			"km": 9.1,
+			"dist_m": 32
+		},
+		{
+			"name": "Fonteta de la Solana",
+			"kind": "manantial",
+			"lat": 38.6918361,
+			"lon": -0.3259166,
+			"km": 9.1,
+			"dist_m": 51
+		}
+	],
+	"pois": [
+		{
+			"name": "Tossal de la Terra Nova",
+			"type": "cumbre",
+			"lat": 38.7243951,
+			"lon": -0.3118581,
+			"km": 0.1,
+			"dist_m": 123
+		},
+		{
+			"name": "Tossal Borreguer",
+			"type": "cumbre",
+			"lat": 38.7201057,
+			"lon": -0.3114278,
+			"km": 0.5,
+			"dist_m": 96
+		},
+		{
+			"name": "Penya Meralda",
+			"type": "cumbre",
+			"lat": 38.7032963,
+			"lon": -0.2999944,
+			"km": 5.8,
+			"dist_m": 149
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.33,
 	"gpx": "pr-cv-23.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-23",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-24",
+		"pr-cv-168",
+		"pr-cv-182"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.34045547246933,
@@ -46,6 +113,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-23 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-23.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -1,7 +1,65 @@
 {
-	"water_points": ["Fuente (km 9.9, a 76 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 9.9, a 76 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.0896726,
+			"lon": -0.6482023,
+			"km": 9.9,
+			"dist_m": 76
+		}
+	],
+	"pois": [
+		{
+			"name": "Monumento a la aviación española",
+			"type": "patrimonio",
+			"lat": 38.0951,
+			"lon": -0.661121,
+			"km": 5.1,
+			"dist_m": 84
+		},
+		{
+			"name": "Busto de Francisco Mira y Botella",
+			"type": "patrimonio",
+			"lat": 38.0955342,
+			"lon": -0.6474782,
+			"km": 9,
+			"dist_m": 49
+		},
+		{
+			"name": "Mirador El Moncayo",
+			"type": "mirador",
+			"lat": 38.061663,
+			"lon": -0.6553522,
+			"km": 13.4,
+			"dist_m": 36
+		},
+		{
+			"name": "A las Culturas del Mediterráneo",
+			"type": "patrimonio",
+			"lat": 37.9760665,
+			"lon": -0.667043,
+			"km": 25.8,
+			"dist_m": 8
+		},
+		{
+			"name": "Al Hombre del Mar",
+			"type": "patrimonio",
+			"lat": 37.9739412,
+			"lon": -0.6779596,
+			"km": 26.9,
+			"dist_m": 15
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-148", "sl-cv-135", "pr-cv-442"],
-	"enriched_at": "2026-06-11T17:51:44.458Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-148",
+		"sl-cv-135",
+		"pr-cv-442"
+	],
+	"enriched_at": "2026-06-20T08:57:38.785Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

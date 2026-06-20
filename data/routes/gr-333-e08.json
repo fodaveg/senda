@@ -36,7 +36,96 @@
 		"Fuente (km 6.1, a 4 m del track; OSM, no verificado en campo)",
 		"Fuente \"Fuente de San Juan Bautista\" (km 6.2, a 31 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9990504,
+			"lon": -0.374185,
+			"km": 0,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9983816,
+			"lon": -0.3752567,
+			"km": 0,
+			"dist_m": 87
+		},
+		{
+			"name": "Fuente Rita",
+			"kind": "fuente",
+			"lat": 39.9985893,
+			"lon": -0.3743978,
+			"km": 0,
+			"dist_m": 43
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9992853,
+			"lon": -0.3750645,
+			"km": 0,
+			"dist_m": 55
+		},
+		{
+			"name": "Fuente El Turio",
+			"kind": "manantial",
+			"lat": 39.9985764,
+			"lon": -0.3744156,
+			"km": 0,
+			"dist_m": 44
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9992334,
+			"lon": -0.3741208,
+			"km": 0.1,
+			"dist_m": 3
+		},
+		{
+			"name": "Fuente del Castillo",
+			"kind": "manantial",
+			"lat": 40.0201712,
+			"lon": -0.3584596,
+			"km": 4.9,
+			"dist_m": 20
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.0207648,
+			"lon": -0.3576351,
+			"km": 5,
+			"dist_m": 19
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0251877,
+			"lon": -0.3571614,
+			"km": 5.8,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0263911,
+			"lon": -0.3563945,
+			"km": 6.1,
+			"dist_m": 4
+		},
+		{
+			"name": "Fuente de San Juan Bautista",
+			"kind": "fuente",
+			"lat": 40.0266438,
+			"lon": -0.3554948,
+			"km": 6.2,
+			"dist_m": 31
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -62,7 +151,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e08 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-333-e08.gpx (derivados: inicio, bbox)"
 	]
 }

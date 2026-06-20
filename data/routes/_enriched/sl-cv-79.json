@@ -5,8 +5,64 @@
 		"Manantial \"Font de la Caldereta\" (km 1.4, a 19 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Garrofer\" (km 3.1, a 5 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0018037,
+			"lon": -0.2748617,
+			"km": 0,
+			"dist_m": 20
+		},
+		{
+			"name": "Font del Parpalló",
+			"kind": "manantial",
+			"lat": 39.0041168,
+			"lon": -0.2706689,
+			"km": 0.9,
+			"dist_m": 48
+		},
+		{
+			"name": "Font de la Caldereta",
+			"kind": "manantial",
+			"lat": 39.0040431,
+			"lon": -0.2664487,
+			"km": 1.4,
+			"dist_m": 19
+		},
+		{
+			"name": "Font del Garrofer",
+			"kind": "manantial",
+			"lat": 38.9988442,
+			"lon": -0.2572419,
+			"km": 3.1,
+			"dist_m": 5
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de la Caldereta",
+			"type": "mirador",
+			"lat": 39.0015756,
+			"lon": -0.2605484,
+			"km": 2.1,
+			"dist_m": 3
+		},
+		{
+			"name": "Tossal de la Caldereta",
+			"type": "cumbre",
+			"lat": 38.9991495,
+			"lon": -0.2617873,
+			"km": 2.5,
+			"dist_m": 83
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-80", "pr-cv-60", "pr-cv-183"],
-	"enriched_at": "2026-06-11T19:59:58.045Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-80",
+		"pr-cv-60",
+		"pr-cv-183"
+	],
+	"enriched_at": "2026-06-20T10:14:17.481Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

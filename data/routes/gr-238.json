@@ -26,8 +26,98 @@
 		"Manantial (km 128.6, a 38 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente del Pocillo\" (km 139.8, a 19 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.536043,
+			"lon": -1.4391456,
+			"km": 46.1,
+			"dist_m": 37
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.5820066,
+			"lon": -1.3650987,
+			"km": 56.6,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6705071,
+			"lon": -1.3358301,
+			"km": 82.7,
+			"dist_m": 61
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6259363,
+			"lon": -1.1400054,
+			"km": 123.4,
+			"dist_m": 49
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.6000556,
+			"lon": -1.1106706,
+			"km": 128.6,
+			"dist_m": 38
+		},
+		{
+			"name": "Fuente del Pocillo",
+			"kind": "manantial",
+			"lat": 39.5955839,
+			"lon": -1.0629928,
+			"km": 139.8,
+			"dist_m": 19
+		}
+	],
+	"pois": [
+		{
+			"name": "Marisancho",
+			"type": "cumbre",
+			"lat": 39.6553277,
+			"lon": -1.1630231,
+			"km": 113.2,
+			"dist_m": 139
+		},
+		{
+			"name": "Casa Medina",
+			"type": "patrimonio",
+			"lat": 39.6239706,
+			"lon": -1.1626053,
+			"km": 120.7,
+			"dist_m": 84
+		},
+		{
+			"name": "Santuario del Remedio",
+			"type": "patrimonio",
+			"lat": 39.6269625,
+			"lon": -1.1420111,
+			"km": 123.2,
+			"dist_m": 90
+		},
+		{
+			"name": "Carbonero",
+			"type": "cumbre",
+			"lat": 39.6204524,
+			"lon": -1.1371996,
+			"km": 124.6,
+			"dist_m": 11
+		},
+		{
+			"name": "Cerro Simón",
+			"type": "cumbre",
+			"lat": 39.4367893,
+			"lon": -0.984926,
+			"km": 178.1,
+			"dist_m": 130
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +142,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-238 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-238.gpx (derivados: inicio, bbox)"
 	]
 }

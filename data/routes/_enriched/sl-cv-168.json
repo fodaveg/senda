@@ -7,8 +7,80 @@
 		"Fuente (km 8.7, a 16 m del track; OSM, no verificado en campo)",
 		"Fuente \"Font del Molí\" (km 9.6, a 96 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de l'Assut",
+			"kind": "fuente",
+			"lat": 38.7776669,
+			"lon": -0.51553,
+			"km": 0,
+			"dist_m": 86
+		},
+		{
+			"name": "Font del Convent",
+			"kind": "fuente",
+			"lat": 38.7758551,
+			"lon": -0.5156447,
+			"km": 0.2,
+			"dist_m": 1
+		},
+		{
+			"name": "Cova del Convent",
+			"kind": "fuente",
+			"lat": 38.7757756,
+			"lon": -0.5159249,
+			"km": 0.2,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de la Cava",
+			"kind": "manantial",
+			"lat": 38.7681021,
+			"lon": -0.503304,
+			"km": 2.8,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7745157,
+			"lon": -0.524713,
+			"km": 8.7,
+			"dist_m": 16
+		},
+		{
+			"name": "Font del Molí",
+			"kind": "fuente",
+			"lat": 38.7778455,
+			"lon": -0.5156064,
+			"km": 9.6,
+			"dist_m": 96
+		}
+	],
+	"pois": [
+		{
+			"name": "Alt de la Cava",
+			"type": "cumbre",
+			"lat": 38.7667803,
+			"lon": -0.5226887,
+			"km": 5.2,
+			"dist_m": 92
+		},
+		{
+			"name": "Alt de la Cava",
+			"type": "cumbre",
+			"lat": 38.7661931,
+			"lon": -0.5342672,
+			"km": 6.2,
+			"dist_m": 112
+		}
+	],
 	"shade_ratio": 0.63,
-	"alternatives": ["pr-cv-27", "pr-cv-104", "pr-cv-389"],
-	"enriched_at": "2026-06-11T18:37:01.954Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-27",
+		"pr-cv-104",
+		"pr-cv-389"
+	],
+	"enriched_at": "2026-06-20T09:57:37.457Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

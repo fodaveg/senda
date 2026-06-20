@@ -4,8 +4,112 @@
 		"Fuente (km 0.3, a 7 m del track; OSM, no verificado en campo)",
 		"Fuente (km 12.2, a 98 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6244093,
+			"lon": -0.1003236,
+			"km": 0.3,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6242469,
+			"lon": -0.100236,
+			"km": 0.3,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6620232,
+			"lon": -0.0191815,
+			"km": 12.2,
+			"dist_m": 98
+		}
+	],
+	"pois": [
+		{
+			"name": "Portal de Sant Miquel",
+			"type": "patrimonio",
+			"lat": 40.6217327,
+			"lon": -0.0991148,
+			"km": 0,
+			"dist_m": 81
+		},
+		{
+			"name": "Torre del Panto",
+			"type": "patrimonio",
+			"lat": 40.6210263,
+			"lon": -0.100653,
+			"km": 0,
+			"dist_m": 136
+		},
+		{
+			"name": "Nevera de Morella",
+			"type": "patrimonio",
+			"lat": 40.6218541,
+			"lon": -0.1005158,
+			"km": 0,
+			"dist_m": 56
+		},
+		{
+			"name": "Portal de la Nevera",
+			"type": "patrimonio",
+			"lat": 40.6214335,
+			"lon": -0.0999303,
+			"km": 0,
+			"dist_m": 77
+		},
+		{
+			"name": "Conxa Dolz",
+			"type": "patrimonio",
+			"lat": 40.627635,
+			"lon": -0.0978656,
+			"km": 0.8,
+			"dist_m": 35
+		},
+		{
+			"name": "Collet de la Querola",
+			"type": "cumbre",
+			"lat": 40.6280978,
+			"lon": -0.0939739,
+			"km": 1.1,
+			"dist_m": 117
+		},
+		{
+			"name": "Mirador del Mas de Bessó",
+			"type": "mirador",
+			"lat": 40.6354769,
+			"lon": -0.0970604,
+			"km": 2,
+			"dist_m": 1
+		},
+		{
+			"name": "Peiró de Sant Antoni i Santa Bàrbera",
+			"type": "patrimonio",
+			"lat": 40.6405964,
+			"lon": -0.082318,
+			"km": 4.1,
+			"dist_m": 5
+		},
+		{
+			"name": "Peiró de Sant Antoni",
+			"type": "patrimonio",
+			"lat": 40.6589439,
+			"lon": -0.0301584,
+			"km": 10.6,
+			"dist_m": 6
+		}
+	],
 	"shade_ratio": 0.13,
-	"alternatives": ["gr-331-e09", "sl-cv-89", "gr-7-e27"],
-	"enriched_at": "2026-06-11T17:59:45.877Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-331-e09",
+		"sl-cv-89",
+		"gr-7-e27"
+	],
+	"enriched_at": "2026-06-20T09:20:46.837Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

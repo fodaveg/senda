@@ -3,8 +3,56 @@
 		"Manantial (km 0.3, a 4 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font d'Al-Azraq\" (km 9.5, a 6 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.7949242,
+			"lon": -0.2516506,
+			"km": 0.3,
+			"dist_m": 4
+		},
+		{
+			"name": "Font d'Al-Azraq",
+			"kind": "manantial",
+			"lat": 38.7943695,
+			"lon": -0.2524605,
+			"km": 9.5,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Tossal de Bartolo",
+			"type": "cumbre",
+			"lat": 38.7880719,
+			"lon": -0.2268808,
+			"km": 4.6,
+			"dist_m": 96
+		},
+		{
+			"name": "Tossal de Manuel",
+			"type": "cumbre",
+			"lat": 38.7858616,
+			"lon": -0.2297258,
+			"km": 4.8,
+			"dist_m": 85
+		},
+		{
+			"name": "Penya Llarga",
+			"type": "cumbre",
+			"lat": 38.7868881,
+			"lon": -0.2334005,
+			"km": 5.4,
+			"dist_m": 59
+		}
+	],
 	"shade_ratio": 0.03,
-	"alternatives": ["pr-cv-167", "pr-cv-168", "pr-cv-182"],
-	"enriched_at": "2026-06-11T19:48:49.851Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-167",
+		"pr-cv-168",
+		"pr-cv-182"
+	],
+	"enriched_at": "2026-06-20T10:00:02.578Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

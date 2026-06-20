@@ -27,8 +27,34 @@
 		"Manantial (km 0.0, a 73 m del track; OSM, no verificado en campo)",
 		"Fuente (km 4.5, a 6 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.4188364,
+			"lon": -0.7979927,
+			"km": 0,
+			"dist_m": 73
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.404233,
+			"lon": -0.7895791,
+			"km": 4.5,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador del Turche",
+			"type": "mirador",
+			"lat": 39.4043428,
+			"lon": -0.7904115,
+			"km": 4.5,
+			"dist_m": 60
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +79,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-166 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-166.gpx (derivados: inicio, bbox)"
 	]
 }

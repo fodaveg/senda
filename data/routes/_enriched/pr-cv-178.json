@@ -1,7 +1,41 @@
 {
-	"water_points": ["Fuente (km 0.0, a 63 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 0.0, a 63 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8524289,
+			"lon": -0.5189084,
+			"km": 0,
+			"dist_m": 63
+		}
+	],
+	"pois": [
+		{
+			"name": "Pilón del Collado",
+			"type": "patrimonio",
+			"lat": 39.85051,
+			"lon": -0.5379208,
+			"km": 1.8,
+			"dist_m": 12
+		},
+		{
+			"name": "Alto de las Cuevas",
+			"type": "cumbre",
+			"lat": 39.8513708,
+			"lon": -0.5526478,
+			"km": 3.1,
+			"dist_m": 81
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["gr-160-e05", "gr-231-e01", "gr-231"],
-	"enriched_at": "2026-06-11T17:57:29.906Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-160-e05",
+		"gr-231-e01",
+		"gr-231"
+	],
+	"enriched_at": "2026-06-20T09:16:07.822Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

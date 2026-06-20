@@ -6,8 +6,104 @@
 		"Manantial (km 15.6, a 16 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font Vella\" (km 17.9, a 7 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de Sant Vicent",
+			"kind": "manantial",
+			"lat": 40.4728207,
+			"lon": 0.0233247,
+			"km": 0.5,
+			"dist_m": 5
+		},
+		{
+			"name": "Font de l'Avellà",
+			"kind": "fuente",
+			"lat": 40.5014059,
+			"lon": 0.0013676,
+			"km": 4.8,
+			"dist_m": 74
+		},
+		{
+			"name": "Font de l'Almassà",
+			"kind": "manantial",
+			"lat": 40.4877816,
+			"lon": -0.0057327,
+			"km": 14.4,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.4840273,
+			"lon": 0.006296,
+			"km": 15.6,
+			"dist_m": 16
+		},
+		{
+			"name": "Font Vella",
+			"kind": "manantial",
+			"lat": 40.469101,
+			"lon": 0.0196099,
+			"km": 17.9,
+			"dist_m": 7
+		}
+	],
+	"pois": [
+		{
+			"name": "Església Parroquial de l'Assumpció",
+			"type": "patrimonio",
+			"lat": 40.4717284,
+			"lon": 0.0230864,
+			"km": 0.4,
+			"dist_m": 8
+		},
+		{
+			"name": "Capella de Sant Vicent",
+			"type": "patrimonio",
+			"lat": 40.4728319,
+			"lon": 0.0233127,
+			"km": 0.5,
+			"dist_m": 7
+		},
+		{
+			"name": "El Marro",
+			"type": "cumbre",
+			"lat": 40.4928665,
+			"lon": 0.0106055,
+			"km": 3.2,
+			"dist_m": 97
+		},
+		{
+			"name": "Porta de Conrony",
+			"type": "patrimonio",
+			"lat": 40.4795184,
+			"lon": -0.0258715,
+			"km": 8.8,
+			"dist_m": 18
+		},
+		{
+			"name": "Tossal de la Nevera",
+			"type": "cumbre",
+			"lat": 40.4677938,
+			"lon": -0.0299841,
+			"km": 10.2,
+			"dist_m": 1
+		},
+		{
+			"name": "Prigonet Trencat",
+			"type": "patrimonio",
+			"lat": 40.4775842,
+			"lon": 0.0154531,
+			"km": 16.6,
+			"dist_m": 4
+		}
+	],
 	"shade_ratio": 0.28,
-	"alternatives": ["pr-cv-409", "gr-331-e14", "gr-331-e13"],
-	"enriched_at": "2026-06-11T18:19:55.632Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-409",
+		"gr-331-e14",
+		"gr-331-e13"
+	],
+	"enriched_at": "2026-06-20T09:40:47.776Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

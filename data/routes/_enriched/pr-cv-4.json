@@ -3,8 +3,31 @@
 		"Manantial \"Font del Brull\" (km 10.7, a 30 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de la Coveta (Naiximent Riu Vinalopó)\" (km 11.4, a 6 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Brull",
+			"kind": "manantial",
+			"lat": 38.7239733,
+			"lon": -0.6235221,
+			"km": 10.7,
+			"dist_m": 30
+		},
+		{
+			"name": "Font de la Coveta (Naiximent Riu Vinalopó)",
+			"kind": "manantial",
+			"lat": 38.7189697,
+			"lon": -0.6259556,
+			"km": 11.4,
+			"dist_m": 6
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.18,
-	"alternatives": ["sl-cv-117", "pr-cv-52", "sl-cv-19"],
-	"enriched_at": "2026-06-11T18:18:32.649Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-117",
+		"pr-cv-52",
+		"sl-cv-19"
+	],
+	"enriched_at": "2026-06-20T09:38:58.473Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

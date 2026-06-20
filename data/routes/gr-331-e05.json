@@ -29,8 +29,106 @@
 		"Manantial \"Font del Xorret\" (km 11.0, a 35 m del track; OSM, no verificado en campo)",
 		"Fuente (km 11.2, a 8 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6379864,
+			"lon": -0.3395986,
+			"km": 0,
+			"dist_m": 33
+		},
+		{
+			"name": "Font del Mas de la Mola",
+			"kind": "manantial",
+			"lat": 40.6562764,
+			"lon": -0.294763,
+			"km": 5.7,
+			"dist_m": 9
+		},
+		{
+			"name": "Font del Xorret",
+			"kind": "manantial",
+			"lat": 40.6474273,
+			"lon": -0.248815,
+			"km": 11,
+			"dist_m": 35
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6460621,
+			"lon": -0.2473463,
+			"km": 11.2,
+			"dist_m": 8
+		}
+	],
+	"pois": [
+		{
+			"name": "Nevera Medieval",
+			"type": "patrimonio",
+			"lat": 40.6378105,
+			"lon": -0.3397369,
+			"km": 0,
+			"dist_m": 15
+		},
+		{
+			"name": "Ermita de San Roque",
+			"type": "patrimonio",
+			"lat": 40.6372602,
+			"lon": -0.3403887,
+			"km": 0,
+			"dist_m": 75
+		},
+		{
+			"name": "Cárcel Pública",
+			"type": "patrimonio",
+			"lat": 40.6377609,
+			"lon": -0.3395724,
+			"km": 0,
+			"dist_m": 14
+		},
+		{
+			"name": "Peiró de Sant Pere",
+			"type": "patrimonio",
+			"lat": 40.6504881,
+			"lon": -0.2806055,
+			"km": 7.5,
+			"dist_m": 27
+		},
+		{
+			"name": "Peiró de Santa Bàrbera",
+			"type": "patrimonio",
+			"lat": 40.6477082,
+			"lon": -0.266683,
+			"km": 8.7,
+			"dist_m": 4
+		},
+		{
+			"name": "Observatorio Astronómico Astropunt del paraje de Santa Bárbara",
+			"type": "mirador",
+			"lat": 40.6474449,
+			"lon": -0.2649457,
+			"km": 8.9,
+			"dist_m": 15
+		},
+		{
+			"name": "Lloma dels Castellans",
+			"type": "cumbre",
+			"lat": 40.6455454,
+			"lon": -0.261554,
+			"km": 9.3,
+			"dist_m": 33
+		},
+		{
+			"name": "Peiró de la Mare de Déu",
+			"type": "patrimonio",
+			"lat": 40.6437383,
+			"lon": -0.2456881,
+			"km": 11.4,
+			"dist_m": 142
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +153,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e05 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-331-e05.gpx (derivados: inicio, bbox)"
 	]
 }

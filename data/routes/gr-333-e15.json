@@ -31,7 +31,56 @@
 		"Fuente (km 15.9, a 10 m del track; OSM, no verificado en campo)",
 		"Fuente \"Font de la Perera\" (km 16.2, a 68 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0209545,
+			"lon": -0.2799086,
+			"km": 0.1,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0191561,
+			"lon": -0.2787239,
+			"km": 0.3,
+			"dist_m": 6
+		},
+		{
+			"name": "Font del Coco",
+			"kind": "manantial",
+			"lat": 40.0131707,
+			"lon": -0.2827075,
+			"km": 1.7,
+			"dist_m": 4
+		},
+		{
+			"name": "Fuente del Canónigo",
+			"kind": "manantial",
+			"lat": 39.9974069,
+			"lon": -0.3020961,
+			"km": 7.5,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9508962,
+			"lon": -0.3039466,
+			"km": 15.9,
+			"dist_m": 10
+		},
+		{
+			"name": "Font de la Perera",
+			"kind": "fuente",
+			"lat": 39.9489587,
+			"lon": -0.3068366,
+			"km": 16.2,
+			"dist_m": 68
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -57,7 +106,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e15 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-333-e15.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -26,8 +26,26 @@
 	"water_points": [
 		"Fuente (km 0.0, a 79 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0921127,
+			"lon": 0.1312198,
+			"km": 0,
+			"dist_m": 79
+		}
+	],
+	"pois": [
+		{
+			"name": "Alt del Pla",
+			"type": "cumbre",
+			"lat": 40.119808,
+			"lon": 0.1208312,
+			"km": 12.9,
+			"dist_m": 4
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-459 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-459.gpx (derivados: inicio, bbox)"
 	]
 }

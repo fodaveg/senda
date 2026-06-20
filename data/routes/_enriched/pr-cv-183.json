@@ -7,8 +7,104 @@
 		"Manantial \"Font del Xopet\" (km 9.7, a 17 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de l'Olivera\" (km 11.3, a 3 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de l'Ull",
+			"kind": "manantial",
+			"lat": 39.0223861,
+			"lon": -0.259317,
+			"km": 0.6,
+			"dist_m": 18
+		},
+		{
+			"name": "Font del Bancal",
+			"kind": "manantial",
+			"lat": 39.0276216,
+			"lon": -0.2571129,
+			"km": 2.6,
+			"dist_m": 5
+		},
+		{
+			"name": "Font de l'Escudella",
+			"kind": "manantial",
+			"lat": 39.0280799,
+			"lon": -0.2623255,
+			"km": 3.3,
+			"dist_m": 2
+		},
+		{
+			"name": "Font de l'Orxana",
+			"kind": "manantial",
+			"lat": 39.0307057,
+			"lon": -0.2529936,
+			"km": 9.4,
+			"dist_m": 19
+		},
+		{
+			"name": "Font del Xopet",
+			"kind": "manantial",
+			"lat": 39.0297944,
+			"lon": -0.2548716,
+			"km": 9.7,
+			"dist_m": 17
+		},
+		{
+			"name": "Font de l'Olivera",
+			"kind": "manantial",
+			"lat": 39.0227333,
+			"lon": -0.2555732,
+			"km": 11.3,
+			"dist_m": 3
+		}
+	],
+	"pois": [
+		{
+			"name": "Barranc de Serra",
+			"type": "mirador",
+			"lat": 39.0277333,
+			"lon": -0.2586004,
+			"km": 2.8,
+			"dist_m": 14
+		},
+		{
+			"name": "El Balcó del Pla dels Esmoladors",
+			"type": "mirador",
+			"lat": 39.037618,
+			"lon": -0.2494802,
+			"km": 5.1,
+			"dist_m": 6
+		},
+		{
+			"name": "el Penyó",
+			"type": "cumbre",
+			"lat": 39.0383158,
+			"lon": -0.2505982,
+			"km": 5.2,
+			"dist_m": 56
+		},
+		{
+			"name": "Cruz. Mirador.",
+			"type": "mirador",
+			"lat": 39.0365382,
+			"lon": -0.2449588,
+			"km": 6.3,
+			"dist_m": 135
+		},
+		{
+			"name": "el Piló",
+			"type": "cumbre",
+			"lat": 39.0364312,
+			"lon": -0.245169,
+			"km": 6.3,
+			"dist_m": 123
+		}
+	],
 	"shade_ratio": 0.04,
-	"alternatives": ["sl-cv-79", "pr-cv-153", "pr-cv-60"],
-	"enriched_at": "2026-06-11T17:58:00.354Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-79",
+		"pr-cv-153",
+		"pr-cv-60"
+	],
+	"enriched_at": "2026-06-20T09:16:39.591Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -27,7 +27,24 @@
 		"Fuente (km 0.7, a 76 m del track; OSM, no verificado en campo)",
 		"Fuente (km 0.9, a 13 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.87431,
+			"lon": -0.7530754,
+			"km": 0.7,
+			"dist_m": 76
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.8740435,
+			"lon": -0.7543322,
+			"km": 0.9,
+			"dist_m": 13
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -53,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-239-e04 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-239-e04.gpx (derivados: inicio, bbox)"
 	]
 }

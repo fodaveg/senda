@@ -26,7 +26,16 @@
 	"water_points": [
 		"Fuente (km 3.7, a 3 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.87076,
+			"lon": -0.998063,
+			"km": 3.7,
+			"dist_m": 3
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -52,7 +61,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-37-e03 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-37-e03.gpx (derivados: inicio, bbox)"
 	]
 }

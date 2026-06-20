@@ -2,8 +2,23 @@
 	"water_points": [
 		"Manantial \"Nacimieto del río Palancia\" (km 6.1, a 3 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Nacimieto del río Palancia",
+			"kind": "manantial",
+			"lat": 39.9373792,
+			"lon": -0.760396,
+			"km": 6.1,
+			"dist_m": 3
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.35,
-	"alternatives": ["pr-cv-273", "gr-231-e02", "sl-cv-52"],
-	"enriched_at": "2026-06-11T18:04:32.793Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-273",
+		"gr-231-e02",
+		"sl-cv-52"
+	],
+	"enriched_at": "2026-06-20T09:25:56.025Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

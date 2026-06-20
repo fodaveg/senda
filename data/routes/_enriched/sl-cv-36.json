@@ -6,8 +6,72 @@
 		"Manantial \"Font de la Vila\" (km 10.0, a 72 m del track; OSM, no verificado en campo)",
 		"Fuente (km 10.2, a 10 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.5828833,
+			"lon": -0.2164845,
+			"km": 0.2,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.5817365,
+			"lon": -0.2170948,
+			"km": 0.3,
+			"dist_m": 6
+		},
+		{
+			"name": "Font del Bassi",
+			"kind": "manantial",
+			"lat": 40.5792982,
+			"lon": -0.2207805,
+			"km": 0.8,
+			"dist_m": 5
+		},
+		{
+			"name": "Font de la Vila",
+			"kind": "manantial",
+			"lat": 40.5813894,
+			"lon": -0.21345,
+			"km": 10,
+			"dist_m": 72
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.5816979,
+			"lon": -0.2158937,
+			"km": 10.2,
+			"dist_m": 10
+		}
+	],
+	"pois": [
+		{
+			"name": "Ermita del Pilar",
+			"type": "patrimonio",
+			"lat": 40.5792103,
+			"lon": -0.2208451,
+			"km": 0.8,
+			"dist_m": 10
+		},
+		{
+			"name": "Cruz de los Caídos",
+			"type": "patrimonio",
+			"lat": 40.58237,
+			"lon": -0.2149364,
+			"km": 10.1,
+			"dist_m": 55
+		}
+	],
 	"shade_ratio": 0.09,
-	"alternatives": ["sl-cv-33", "gr-331-e03", "pr-cv-118"],
-	"enriched_at": "2026-06-11T18:42:47.561Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-33",
+		"gr-331-e03",
+		"pr-cv-118"
+	],
+	"enriched_at": "2026-06-20T10:05:43.744Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

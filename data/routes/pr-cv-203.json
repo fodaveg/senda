@@ -27,8 +27,58 @@
 		"Manantial \"Fuente Los Charcos\" (km 0.7, a 85 m del track; OSM, no verificado en campo)",
 		"Fuente (km 1.8, a 41 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente Los Charcos",
+			"kind": "manantial",
+			"lat": 39.0887306,
+			"lon": -0.7832957,
+			"km": 0.7,
+			"dist_m": 85
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0821218,
+			"lon": -0.779449,
+			"km": 1.8,
+			"dist_m": 41
+		}
+	],
+	"pois": [
+		{
+			"name": "Cueva del Carbo",
+			"type": "refugio",
+			"lat": 39.0869186,
+			"lon": -0.7802913,
+			"km": 1,
+			"dist_m": 9
+		},
+		{
+			"name": "Casa Cueva",
+			"type": "patrimonio",
+			"lat": 39.0646234,
+			"lon": -0.7830773,
+			"km": 5.4,
+			"dist_m": 58
+		},
+		{
+			"name": "Abrigo del Voro (Pinturas rupestres)",
+			"type": "patrimonio",
+			"lat": 39.0655363,
+			"lon": -0.785476,
+			"km": 5.8,
+			"dist_m": 14
+		},
+		{
+			"name": "Puntal de la Sima",
+			"type": "cumbre",
+			"lat": 39.0640216,
+			"lon": -0.7884557,
+			"km": 6.3,
+			"dist_m": 8
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +103,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-203 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-203.gpx (derivados: inicio, bbox)"
 	]
 }

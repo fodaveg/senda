@@ -27,8 +27,34 @@
 		"Fuente (km 0.1, a 97 m del track; OSM, no verificado en campo)",
 		"Manantial (km 0.1, a 95 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8056037,
+			"lon": -0.4091858,
+			"km": 0.1,
+			"dist_m": 97
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.8055574,
+			"lon": -0.4090798,
+			"km": 0.1,
+			"dist_m": 95
+		}
+	],
+	"pois": [
+		{
+			"name": "Alto del Azut",
+			"type": "cumbre",
+			"lat": 39.8118603,
+			"lon": -0.4057983,
+			"km": 3.3,
+			"dist_m": 40
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +79,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-116 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-116.gpx (derivados: inicio, bbox)"
 	]
 }

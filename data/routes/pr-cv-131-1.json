@@ -28,8 +28,74 @@
 		"Manantial \"Fuente del Barrioso\" (km 0.0, a 94 m del track; OSM, no verificado en campo)",
 		"Fuente \"Fuente del Postiguillo\" (km 0.2, a 77 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1308665,
+			"lon": -1.3039823,
+			"km": 0,
+			"dist_m": 96
+		},
+		{
+			"name": "Fuente del Barrioso",
+			"kind": "manantial",
+			"lat": 40.1312127,
+			"lon": -1.3040067,
+			"km": 0,
+			"dist_m": 94
+		},
+		{
+			"name": "Fuente del Postiguillo",
+			"kind": "fuente",
+			"lat": 40.1305086,
+			"lon": -1.3043484,
+			"km": 0.2,
+			"dist_m": 77
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador Peña Garrate",
+			"type": "mirador",
+			"lat": 40.1309204,
+			"lon": -1.3033812,
+			"km": 0,
+			"dist_m": 146
+		},
+		{
+			"name": "Mirador de la Torreta",
+			"type": "mirador",
+			"lat": 40.1308728,
+			"lon": -1.305632,
+			"km": 0.2,
+			"dist_m": 5
+		},
+		{
+			"name": "Mirador del Moral",
+			"type": "mirador",
+			"lat": 40.1308201,
+			"lon": -1.3051252,
+			"km": 0.2,
+			"dist_m": 3
+		},
+		{
+			"name": "Corrales de la Nava",
+			"type": "patrimonio",
+			"lat": 40.1292663,
+			"lon": -1.3738865,
+			"km": 8.1,
+			"dist_m": 44
+		},
+		{
+			"name": "Cruz de los tres Reinos",
+			"type": "cumbre",
+			"lat": 40.1451882,
+			"lon": -1.4488577,
+			"km": 21.4,
+			"dist_m": 11
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +120,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-131-1 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-131-1.gpx (derivados: inicio, bbox)"
 	]
 }

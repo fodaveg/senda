@@ -4,8 +4,64 @@
 		"Manantial \"Fuente de Chelva\" (km 10.3, a 6 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente Gabriel\" (km 25.6, a 3 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7070133,
+			"lon": -1.09951,
+			"km": 0,
+			"dist_m": 30
+		},
+		{
+			"name": "Fuente de Chelva",
+			"kind": "manantial",
+			"lat": 39.6671992,
+			"lon": -1.0523906,
+			"km": 10.3,
+			"dist_m": 6
+		},
+		{
+			"name": "Fuente Gabriel",
+			"kind": "manantial",
+			"lat": 39.5945582,
+			"lon": -0.9803335,
+			"km": 25.6,
+			"dist_m": 3
+		}
+	],
+	"pois": [
+		{
+			"name": "Loma de los Visos",
+			"type": "cumbre",
+			"lat": 39.6939604,
+			"lon": -1.0673591,
+			"km": 5.9,
+			"dist_m": 131
+		},
+		{
+			"name": "Ceja del Mas del Pinar",
+			"type": "cumbre",
+			"lat": 39.6560943,
+			"lon": -1.0530891,
+			"km": 13.5,
+			"dist_m": 68
+		},
+		{
+			"name": "La Cruz del Cuarto",
+			"type": "cumbre",
+			"lat": 39.6507947,
+			"lon": -1.0404529,
+			"km": 14.8,
+			"dist_m": 10
+		}
+	],
 	"shade_ratio": 0.1,
-	"alternatives": ["pr-cv-114", "pr-cv-456", "pr-cv-177-1"],
-	"enriched_at": "2026-06-11T17:49:37.883Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-114",
+		"pr-cv-456",
+		"pr-cv-177-1"
+	],
+	"enriched_at": "2026-06-20T08:49:44.084Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

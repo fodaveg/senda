@@ -30,8 +30,58 @@
 		"Manantial \"Font de l'Almorquí\" (km 1.9, a 14 m del track; OSM, no verificado en campo)",
 		"Fuente (km 12.9, a 22 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.4073984,
+			"lon": -0.9518629,
+			"km": 0,
+			"dist_m": 24
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.4073949,
+			"lon": -0.9520387,
+			"km": 0,
+			"dist_m": 19
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.4058495,
+			"lon": -0.9533205,
+			"km": 0.2,
+			"dist_m": 49
+		},
+		{
+			"name": "Font de l'Almorquí",
+			"kind": "manantial",
+			"lat": 38.3939148,
+			"lon": -0.9598417,
+			"km": 1.9,
+			"dist_m": 14
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.3769749,
+			"lon": -0.9757357,
+			"km": 12.9,
+			"dist_m": 22
+		}
+	],
+	"pois": [
+		{
+			"name": "Pi de la Farola",
+			"type": "refugio",
+			"lat": 38.3856731,
+			"lon": -0.9571853,
+			"km": 3.7,
+			"dist_m": 6
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +106,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-166 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-166.gpx (derivados: inicio, bbox)"
 	]
 }

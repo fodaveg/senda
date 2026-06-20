@@ -27,7 +27,24 @@
 		"Fuente \"Hondo de las fuentes\" (km 1.5, a 18 m del track; OSM, no verificado en campo)",
 		"Manantial (km 2.8, a 13 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": "Hondo de las fuentes",
+			"kind": "fuente",
+			"lat": 38.3385064,
+			"lon": -0.7796672,
+			"km": 1.5,
+			"dist_m": 18
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.3452884,
+			"lon": -0.7697688,
+			"km": 2.8,
+			"dist_m": 13
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -53,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-433 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-433.gpx (derivados: distancia, inicio, bbox)"
 	]
 }

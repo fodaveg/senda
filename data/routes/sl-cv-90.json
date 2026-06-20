@@ -30,8 +30,74 @@
 		"Fuente (km 6.5, a 5 m del track; OSM, no verificado en campo)",
 		"Fuente (km 6.8, a 97 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font Nova",
+			"kind": "manantial",
+			"lat": 40.0804938,
+			"lon": -0.2098644,
+			"km": 0.9,
+			"dist_m": 4
+		},
+		{
+			"name": "Font de Sant Vicent de Baix",
+			"kind": "manantial",
+			"lat": 40.0845226,
+			"lon": -0.218243,
+			"km": 2,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0770916,
+			"lon": -0.2146434,
+			"km": 6.1,
+			"dist_m": 89
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0763962,
+			"lon": -0.2116773,
+			"km": 6.5,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0748829,
+			"lon": -0.2137259,
+			"km": 6.8,
+			"dist_m": 97
+		}
+	],
+	"pois": [
+		{
+			"name": "Forn del Poero",
+			"type": "patrimonio",
+			"lat": 40.0822087,
+			"lon": -0.2167508,
+			"km": 1.6,
+			"dist_m": 71
+		},
+		{
+			"name": "Ermita de Sant Cristòfol",
+			"type": "patrimonio",
+			"lat": 40.079486,
+			"lon": -0.2174421,
+			"km": 5.2,
+			"dist_m": 14
+		},
+		{
+			"name": "Ermita del Calvari",
+			"type": "patrimonio",
+			"lat": 40.0775614,
+			"lon": -0.2169083,
+			"km": 5.8,
+			"dist_m": 29
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +122,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-90 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-90.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -23,20 +23,98 @@
 		"esfuerzo": 4
 	},
 	"est_duration_min": 490,
-	"water_points": [],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points": [
+		"Fuente (km 0.1, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 1.4, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 1.5, a 24 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de la Porqueta\" (km 11.6, a 49 m del track; OSM, no verificado en campo)",
+		"Manantial (km 24.8, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 25.8, a 41 m del track; OSM, no verificado en campo)",
+		"Fuente (km 25.8, a 60 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8358366,
+			"lon": -0.813406,
+			"km": 0.1,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8376405,
+			"lon": -0.8237893,
+			"km": 1.4,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8384958,
+			"lon": -0.8248796,
+			"km": 1.5,
+			"dist_m": 24
+		},
+		{
+			"name": "Fuente de la Porqueta",
+			"kind": "manantial",
+			"lat": 39.8189655,
+			"lon": -0.9157232,
+			"km": 11.6,
+			"dist_m": 49
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.7565557,
+			"lon": -0.995962,
+			"km": 24.8,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.749192,
+			"lon": -0.9959064,
+			"km": 25.8,
+			"dist_m": 41
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7489801,
+			"lon": -0.9958613,
+			"km": 25.8,
+			"dist_m": 60
+		}
+	],
+	"pois": [
+		{
+			"name": "La Torrecilla",
+			"type": "patrimonio",
+			"lat": 39.7555854,
+			"lon": -0.9894164,
+			"km": 23.9,
+			"dist_m": 131
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.11,
 	"gpx": "gr-7-e36.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-7-e36",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"gr-10-e07",
+		"pr-cv-176",
+		"pr-cv-424"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.996027002111077,
@@ -46,6 +124,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e36 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e36.gpx (derivados: inicio, bbox)"
 	]
 }

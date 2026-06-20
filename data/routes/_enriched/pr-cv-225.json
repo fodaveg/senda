@@ -3,8 +3,80 @@
 		"Fuente (km 0.0, a 86 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de la Solera\" (km 0.3, a 14 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.3373259,
+			"lon": -0.1652337,
+			"km": 0,
+			"dist_m": 86
+		},
+		{
+			"name": "Font de la Solera",
+			"kind": "manantial",
+			"lat": 40.334998,
+			"lon": -0.1668056,
+			"km": 0.3,
+			"dist_m": 14
+		}
+	],
+	"pois": [
+		{
+			"name": "Portal de la Font",
+			"type": "patrimonio",
+			"lat": 40.3375945,
+			"lon": -0.1653671,
+			"km": 0,
+			"dist_m": 116
+		},
+		{
+			"name": "Arc de la Porta Nova",
+			"type": "patrimonio",
+			"lat": 40.3374733,
+			"lon": -0.1657731,
+			"km": 0,
+			"dist_m": 127
+		},
+		{
+			"name": "el Pelleric",
+			"type": "patrimonio",
+			"lat": 40.3377124,
+			"lon": -0.1658197,
+			"km": 0,
+			"dist_m": 150
+		},
+		{
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.3372645,
+			"lon": -0.1629625,
+			"km": 0,
+			"dist_m": 135
+		},
+		{
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.3364081,
+			"lon": -0.1665003,
+			"km": 0.2,
+			"dist_m": 69
+		},
+		{
+			"name": "l'Assomador de la Cingla",
+			"type": "mirador",
+			"lat": 40.3172094,
+			"lon": -0.1950084,
+			"km": 3.8,
+			"dist_m": 8
+		}
+	],
 	"shade_ratio": 0.01,
-	"alternatives": ["pr-cv-1", "gr-7-e29", "pr-cv-297"],
-	"enriched_at": "2026-06-11T19:10:28.841Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-1",
+		"gr-7-e29",
+		"pr-cv-297"
+	],
+	"enriched_at": "2026-06-20T09:21:23.199Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

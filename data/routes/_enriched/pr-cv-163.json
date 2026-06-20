@@ -2,8 +2,40 @@
 	"water_points": [
 		"Manantial \"Font del Túnel\" (km 0.0, a 6 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Túnel",
+			"kind": "manantial",
+			"lat": 38.9283025,
+			"lon": -0.5776878,
+			"km": 0,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Mare de Déu dels Dolors",
+			"type": "patrimonio",
+			"lat": 38.9209211,
+			"lon": -0.585349,
+			"km": 1.6,
+			"dist_m": 142
+		},
+		{
+			"name": "Mirador del Barranco de Cairent",
+			"type": "mirador",
+			"lat": 38.919756,
+			"lon": -0.5866796,
+			"km": 1.7,
+			"dist_m": 5
+		}
+	],
 	"shade_ratio": 0.15,
-	"alternatives": ["pr-cv-125", "sl-cv-11", "pr-cv-193-4"],
-	"enriched_at": "2026-06-11T17:56:15.152Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-125",
+		"sl-cv-11",
+		"pr-cv-193-4"
+	],
+	"enriched_at": "2026-06-20T09:14:00.569Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

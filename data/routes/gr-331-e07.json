@@ -30,8 +30,82 @@
 		"Manantial \"Font del Pont\" (km 12.9, a 11 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font dels Llavadors\" (km 14.9, a 50 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "la Font",
+			"kind": "manantial",
+			"lat": 40.6736234,
+			"lon": -0.2013684,
+			"km": 4.3,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6757089,
+			"lon": -0.2009078,
+			"km": 4.5,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6761072,
+			"lon": -0.2006296,
+			"km": 4.6,
+			"dist_m": 4
+		},
+		{
+			"name": "Font del Pont",
+			"kind": "manantial",
+			"lat": 40.6646208,
+			"lon": -0.1448664,
+			"km": 12.9,
+			"dist_m": 11
+		},
+		{
+			"name": "Font dels Llavadors",
+			"kind": "manantial",
+			"lat": 40.6581582,
+			"lon": -0.1248659,
+			"km": 14.9,
+			"dist_m": 50
+		}
+	],
+	"pois": [
+		{
+			"name": "Peiró de la Consolacioneta",
+			"type": "patrimonio",
+			"lat": 40.6486609,
+			"lon": -0.1925732,
+			"km": 0.6,
+			"dist_m": 144
+		},
+		{
+			"name": "Capelleta del Carme",
+			"type": "patrimonio",
+			"lat": 40.6895569,
+			"lon": -0.1772397,
+			"km": 8.1,
+			"dist_m": 4
+		},
+		{
+			"name": "Peiró de Ferro",
+			"type": "patrimonio",
+			"lat": 40.6878123,
+			"lon": -0.178631,
+			"km": 8.3,
+			"dist_m": 43
+		},
+		{
+			"name": "Creu del Pont",
+			"type": "patrimonio",
+			"lat": 40.6577343,
+			"lon": -0.1238774,
+			"km": 15.1,
+			"dist_m": 2
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +130,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e07 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-331-e07.gpx (derivados: inicio, bbox)"
 	]
 }

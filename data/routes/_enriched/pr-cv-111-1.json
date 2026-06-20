@@ -6,8 +6,72 @@
 		"Manantial \"Fuente La Balseta\" (km 0.3, a 4 m del track; OSM, no verificado en campo)",
 		"Fuente (km 13.1, a 15 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1861505,
+			"lon": -0.5422091,
+			"km": 0,
+			"dist_m": 30
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1870742,
+			"lon": -0.541833,
+			"km": 0.1,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1875339,
+			"lon": -0.5426626,
+			"km": 0.1,
+			"dist_m": 72
+		},
+		{
+			"name": "Fuente La Balseta",
+			"kind": "manantial",
+			"lat": 40.1879081,
+			"lon": -0.5405617,
+			"km": 0.3,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1381904,
+			"lon": -0.5017259,
+			"km": 13.1,
+			"dist_m": 15
+		}
+	],
+	"pois": [
+		{
+			"name": "Portal Herrerías",
+			"type": "patrimonio",
+			"lat": 40.1857892,
+			"lon": -0.5429597,
+			"km": 0,
+			"dist_m": 98
+		},
+		{
+			"name": "Horno Comunal de San Vicente de Piedrahita",
+			"type": "patrimonio",
+			"lat": 40.1379995,
+			"lon": -0.5013986,
+			"km": 13.1,
+			"dist_m": 27
+		}
+	],
 	"shade_ratio": 0.15,
-	"alternatives": ["pr-cv-111-2", "gr-7-e32", "gr-160-e01"],
-	"enriched_at": "2026-06-11T17:52:19.231Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-111-2",
+		"gr-7-e32",
+		"gr-160-e01"
+	],
+	"enriched_at": "2026-06-20T08:59:10.584Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

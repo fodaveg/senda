@@ -27,8 +27,34 @@
 		"Manantial \"Font de les Piques\" (km 2.2, a 8 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font Coberta\" (km 8.8, a 43 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font de les Piques",
+			"kind": "manantial",
+			"lat": 40.4800515,
+			"lon": 0.1994028,
+			"km": 2.2,
+			"dist_m": 8
+		},
+		{
+			"name": "Font Coberta",
+			"kind": "manantial",
+			"lat": 40.4694731,
+			"lon": 0.2030889,
+			"km": 8.8,
+			"dist_m": 43
+		}
+	],
+	"pois": [
+		{
+			"name": "Muntanyeta de Sant Joan",
+			"type": "cumbre",
+			"lat": 40.4691682,
+			"lon": 0.1852173,
+			"km": 0.3,
+			"dist_m": 22
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +79,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-201 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-201.gpx (derivados: inicio, bbox)"
 	]
 }

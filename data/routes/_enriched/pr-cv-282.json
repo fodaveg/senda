@@ -1,7 +1,24 @@
 {
-	"water_points": ["Manantial (km 1.4, a 8 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Manantial (km 1.4, a 8 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.405643,
+			"lon": -0.5151758,
+			"km": 1.4,
+			"dist_m": 8
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.06,
-	"alternatives": ["sl-cv-153", "sl-cv-152", "sl-cv-155"],
-	"enriched_at": "2026-06-11T18:05:25.441Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-153",
+		"sl-cv-152",
+		"sl-cv-155"
+	],
+	"enriched_at": "2026-06-20T09:26:38.342Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

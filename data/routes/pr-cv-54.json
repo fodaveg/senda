@@ -26,8 +26,34 @@
 	"water_points": [
 		"Fuente (km 0.0, a 74 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.1221795,
+			"lon": -0.8885865,
+			"km": 0,
+			"dist_m": 74
+		}
+	],
+	"pois": [
+		{
+			"name": "Pico del Águila",
+			"type": "cumbre",
+			"lat": 38.1214361,
+			"lon": -0.9007562,
+			"km": 1.7,
+			"dist_m": 3
+		},
+		{
+			"name": "Pico del Chinar",
+			"type": "cumbre",
+			"lat": 38.1249706,
+			"lon": -0.9080275,
+			"km": 2.5,
+			"dist_m": 2
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +78,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-54 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-54.gpx (derivados: inicio, bbox)"
 	]
 }

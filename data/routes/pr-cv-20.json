@@ -30,8 +30,58 @@
 		"Manantial (km 4.1, a 6 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de Forata\" (km 9.9, a 6 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font de l'Espinal",
+			"kind": "manantial",
+			"lat": 38.6592332,
+			"lon": -0.3084262,
+			"km": 2.2,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.6593185,
+			"lon": -0.3084782,
+			"km": 2.2,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.6621795,
+			"lon": -0.2903534,
+			"km": 4.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de l'Arbre",
+			"kind": "manantial",
+			"lat": 38.6623478,
+			"lon": -0.2904302,
+			"km": 4.1,
+			"dist_m": 25
+		},
+		{
+			"name": "Font de Forata",
+			"kind": "manantial",
+			"lat": 38.6532137,
+			"lon": -0.2628302,
+			"km": 9.9,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Aitana Oriental",
+			"type": "cumbre",
+			"lat": 38.650336,
+			"lon": -0.2598497,
+			"km": 9.2,
+			"dist_m": 3
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +106,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-20 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-20.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -27,8 +27,74 @@
 		"Fuente (km 0.0, a 86 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de la Solera\" (km 0.3, a 14 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.3373259,
+			"lon": -0.1652337,
+			"km": 0,
+			"dist_m": 86
+		},
+		{
+			"name": "Font de la Solera",
+			"kind": "manantial",
+			"lat": 40.334998,
+			"lon": -0.1668056,
+			"km": 0.3,
+			"dist_m": 14
+		}
+	],
+	"pois": [
+		{
+			"name": "Portal de la Font",
+			"type": "patrimonio",
+			"lat": 40.3375945,
+			"lon": -0.1653671,
+			"km": 0,
+			"dist_m": 116
+		},
+		{
+			"name": "Arc de la Porta Nova",
+			"type": "patrimonio",
+			"lat": 40.3374733,
+			"lon": -0.1657731,
+			"km": 0,
+			"dist_m": 127
+		},
+		{
+			"name": "el Pelleric",
+			"type": "patrimonio",
+			"lat": 40.3377124,
+			"lon": -0.1658197,
+			"km": 0,
+			"dist_m": 150
+		},
+		{
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.3372645,
+			"lon": -0.1629625,
+			"km": 0,
+			"dist_m": 135
+		},
+		{
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.3364081,
+			"lon": -0.1665003,
+			"km": 0.2,
+			"dist_m": 69
+		},
+		{
+			"name": "l'Assomador de la Cingla",
+			"type": "mirador",
+			"lat": 40.3172094,
+			"lon": -0.1950084,
+			"km": 3.8,
+			"dist_m": 8
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +119,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-225 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-225.gpx (derivados: inicio, bbox)"
 	]
 }

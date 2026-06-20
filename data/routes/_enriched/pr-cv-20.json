@@ -6,8 +6,64 @@
 		"Manantial (km 4.1, a 6 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de Forata\" (km 9.9, a 6 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de l'Espinal",
+			"kind": "manantial",
+			"lat": 38.6592332,
+			"lon": -0.3084262,
+			"km": 2.2,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.6593185,
+			"lon": -0.3084782,
+			"km": 2.2,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.6621795,
+			"lon": -0.2903534,
+			"km": 4.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de l'Arbre",
+			"kind": "manantial",
+			"lat": 38.6623478,
+			"lon": -0.2904302,
+			"km": 4.1,
+			"dist_m": 25
+		},
+		{
+			"name": "Font de Forata",
+			"kind": "manantial",
+			"lat": 38.6532137,
+			"lon": -0.2628302,
+			"km": 9.9,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Aitana Oriental",
+			"type": "cumbre",
+			"lat": 38.650336,
+			"lon": -0.2598497,
+			"km": 9.2,
+			"dist_m": 3
+		}
+	],
 	"shade_ratio": 0.15,
-	"alternatives": ["pr-cv-198", "sl-cv-112", "pr-cv-9"],
-	"enriched_at": "2026-06-11T19:09:22.663Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-198",
+		"sl-cv-112",
+		"pr-cv-9"
+	],
+	"enriched_at": "2026-06-20T09:19:33.322Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

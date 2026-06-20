@@ -28,8 +28,66 @@
 		"Fuente \"Fuente de los Dos Caños\" (km 0.2, a 38 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de la Basseta\" (km 1.1, a 3 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.901244,
+			"lon": -0.3420523,
+			"km": 0,
+			"dist_m": 2
+		},
+		{
+			"name": "Fuente de los Dos Caños",
+			"kind": "fuente",
+			"lat": 39.900437,
+			"lon": -0.3403491,
+			"km": 0.2,
+			"dist_m": 38
+		},
+		{
+			"name": "Font de la Basseta",
+			"kind": "manantial",
+			"lat": 39.9037088,
+			"lon": -0.3333692,
+			"km": 1.1,
+			"dist_m": 3
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de la Batalla",
+			"type": "mirador",
+			"lat": 39.9023622,
+			"lon": -0.3341308,
+			"km": 0.9,
+			"dist_m": 13
+		},
+		{
+			"name": "forn de calç",
+			"type": "patrimonio",
+			"lat": 39.9036409,
+			"lon": -0.3333986,
+			"km": 1.1,
+			"dist_m": 1
+		},
+		{
+			"name": "En memoria dels combatents de la 195 brigada",
+			"type": "patrimonio",
+			"lat": 39.9070979,
+			"lon": -0.339971,
+			"km": 2.8,
+			"dist_m": 16
+		},
+		{
+			"name": "Penya de la Campana",
+			"type": "cumbre",
+			"lat": 39.9071233,
+			"lon": -0.3403831,
+			"km": 2.9,
+			"dist_m": 34
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +112,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-29 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-29.gpx (derivados: inicio, bbox)"
 	]
 }

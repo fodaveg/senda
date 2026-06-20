@@ -1,7 +1,22 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Rasos de Catí",
+			"type": "cumbre",
+			"lat": 38.4901418,
+			"lon": -0.6852318,
+			"km": 3.4,
+			"dist_m": 20
+		}
+	],
 	"shade_ratio": 0.13,
-	"alternatives": ["pr-cv-6-1", "pr-cv-6-2", "pr-cv-6-3"],
-	"enriched_at": "2026-06-11T18:27:59.760Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-6-1",
+		"pr-cv-6-2",
+		"pr-cv-6-3"
+	],
+	"enriched_at": "2026-06-20T09:45:51.069Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

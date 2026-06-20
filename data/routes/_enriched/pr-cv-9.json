@@ -3,8 +3,56 @@
 		"Manantial \"Font del Pí\" (km 12.8, a 19 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Molí\" (km 14.5, a 96 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Pí",
+			"kind": "manantial",
+			"lat": 38.6546336,
+			"lon": -0.1941336,
+			"km": 12.8,
+			"dist_m": 19
+		},
+		{
+			"name": "Font del Molí",
+			"kind": "manantial",
+			"lat": 38.6623822,
+			"lon": -0.2078379,
+			"km": 14.5,
+			"dist_m": 96
+		}
+	],
+	"pois": [
+		{
+			"name": "Cementeri Vell",
+			"type": "patrimonio",
+			"lat": 38.6095223,
+			"lon": -0.2696475,
+			"km": 0.2,
+			"dist_m": 52
+		},
+		{
+			"name": "Penyó Roc",
+			"type": "cumbre",
+			"lat": 38.6420232,
+			"lon": -0.1871326,
+			"km": 10.9,
+			"dist_m": 96
+		},
+		{
+			"name": "Morro de la Molinera",
+			"type": "cumbre",
+			"lat": 38.6458372,
+			"lon": -0.18732,
+			"km": 11.3,
+			"dist_m": 132
+		}
+	],
 	"shade_ratio": 0.1,
-	"alternatives": ["sl-cv-112", "pr-cv-198", "pr-cv-353"],
-	"enriched_at": "2026-06-11T19:39:49.369Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-112",
+		"pr-cv-198",
+		"pr-cv-353"
+	],
+	"enriched_at": "2026-06-20T09:49:08.308Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

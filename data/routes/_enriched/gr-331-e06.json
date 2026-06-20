@@ -1,7 +1,49 @@
 {
-	"water_points": ["Fuente (km 0.2, a 68 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 0.2, a 68 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6460621,
+			"lon": -0.2473463,
+			"km": 0.2,
+			"dist_m": 68
+		}
+	],
+	"pois": [
+		{
+			"name": "Peiró de la Mare de Déu",
+			"type": "patrimonio",
+			"lat": 40.6437383,
+			"lon": -0.2456881,
+			"km": 0,
+			"dist_m": 135
+		},
+		{
+			"name": "Castell de la Todolella",
+			"type": "patrimonio",
+			"lat": 40.647612,
+			"lon": -0.2459911,
+			"km": 0.4,
+			"dist_m": 45
+		},
+		{
+			"name": "Peiró de Santa Caterina",
+			"type": "patrimonio",
+			"lat": 40.6500332,
+			"lon": -0.2429701,
+			"km": 0.8,
+			"dist_m": 8
+		}
+	],
 	"shade_ratio": 0.22,
-	"alternatives": ["pr-cv-244", "pr-cv-228", "pr-cv-117"],
-	"enriched_at": "2026-06-11T17:42:25.598Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-244",
+		"pr-cv-228",
+		"pr-cv-117"
+	],
+	"enriched_at": "2026-06-20T08:38:05.766Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

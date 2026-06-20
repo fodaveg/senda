@@ -2,8 +2,48 @@
 	"water_points": [
 		"Manantial \"Font de la Cava\" (km 0.1, a 90 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Cava",
+			"kind": "manantial",
+			"lat": 38.7486115,
+			"lon": -0.0409888,
+			"km": 0.1,
+			"dist_m": 90
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador del Ravalet",
+			"type": "mirador",
+			"lat": 38.7490381,
+			"lon": -0.0418114,
+			"km": 0.1,
+			"dist_m": 9
+		},
+		{
+			"name": "Sénia de la Partida de les Mosqueres",
+			"type": "patrimonio",
+			"lat": 38.7396532,
+			"lon": -0.0488287,
+			"km": 1.5,
+			"dist_m": 17
+		},
+		{
+			"name": "Coll de Rates",
+			"type": "mirador",
+			"lat": 38.7249551,
+			"lon": -0.0579861,
+			"km": 5.2,
+			"dist_m": 4
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-193", "pr-cv-158", "sl-cv-119"],
-	"enriched_at": "2026-06-11T22:41:14.572Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-193",
+		"pr-cv-158",
+		"sl-cv-119"
+	],
+	"enriched_at": "2026-06-20T09:41:49.129Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

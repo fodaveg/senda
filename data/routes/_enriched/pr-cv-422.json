@@ -6,8 +6,104 @@
 		"Manantial \"Font del Tord\" (km 10.8, a 3 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font dels Capellans\" (km 11.0, a 12 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1003498,
+			"lon": -0.0004032,
+			"km": 0,
+			"dist_m": 14
+		},
+		{
+			"name": "Naixement dels Pardos",
+			"kind": "manantial",
+			"lat": 40.0961529,
+			"lon": 0.0347044,
+			"km": 9.2,
+			"dist_m": 33
+		},
+		{
+			"name": "Font de Les Santes",
+			"kind": "manantial",
+			"lat": 40.1033466,
+			"lon": 0.0371657,
+			"km": 10.4,
+			"dist_m": 6
+		},
+		{
+			"name": "Font del Tord",
+			"kind": "manantial",
+			"lat": 40.1021733,
+			"lon": 0.0340788,
+			"km": 10.8,
+			"dist_m": 3
+		},
+		{
+			"name": "Font dels Capellans",
+			"kind": "manantial",
+			"lat": 40.100805,
+			"lon": 0.0333458,
+			"km": 11,
+			"dist_m": 12
+		}
+	],
+	"pois": [
+		{
+			"name": "Mojón Caragol de Panxa",
+			"type": "patrimonio",
+			"lat": 40.076014,
+			"lon": 0.0139409,
+			"km": 4.5,
+			"dist_m": 7
+		},
+		{
+			"name": "el Cantal Gros",
+			"type": "cumbre",
+			"lat": 40.0759172,
+			"lon": 0.014,
+			"km": 4.5,
+			"dist_m": 5
+		},
+		{
+			"name": "Mojón de l'Ondí",
+			"type": "patrimonio",
+			"lat": 40.0790358,
+			"lon": 0.0199631,
+			"km": 5.2,
+			"dist_m": 9
+		},
+		{
+			"name": "el Caragol de Panxa",
+			"type": "cumbre",
+			"lat": 40.0789347,
+			"lon": 0.0200283,
+			"km": 5.2,
+			"dist_m": 3
+		},
+		{
+			"name": "Creu del Bartolo",
+			"type": "patrimonio",
+			"lat": 40.0848317,
+			"lon": 0.0275756,
+			"km": 6.2,
+			"dist_m": 4
+		},
+		{
+			"name": "el Bartolo",
+			"type": "cumbre",
+			"lat": 40.0855084,
+			"lon": 0.0310999,
+			"km": 6.5,
+			"dist_m": 100
+		}
+	],
 	"shade_ratio": 0.04,
-	"alternatives": ["pr-cv-451", "gr-33-e03", "pr-cv-397"],
-	"enriched_at": "2026-06-11T19:30:09.389Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-451",
+		"gr-33-e03",
+		"pr-cv-397"
+	],
+	"enriched_at": "2026-06-20T09:41:40.849Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

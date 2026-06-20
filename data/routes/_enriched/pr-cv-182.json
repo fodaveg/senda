@@ -4,8 +4,48 @@
 		"Manantial \"Font del Cuquero\" (km 2.5, a 3 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font Roja\" (km 5.5, a 6 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de l'Esperit Sant",
+			"kind": "manantial",
+			"lat": 38.7335404,
+			"lon": -0.2668657,
+			"km": 0.6,
+			"dist_m": 9
+		},
+		{
+			"name": "Font del Cuquero",
+			"kind": "manantial",
+			"lat": 38.7205978,
+			"lon": -0.2656034,
+			"km": 2.5,
+			"dist_m": 3
+		},
+		{
+			"name": "Font Roja",
+			"kind": "manantial",
+			"lat": 38.7138947,
+			"lon": -0.2862099,
+			"km": 5.5,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Pla de la Casa",
+			"type": "cumbre",
+			"lat": 38.7165256,
+			"lon": -0.2746227,
+			"km": 3.9,
+			"dist_m": 93
+		}
+	],
 	"shade_ratio": 0.04,
-	"alternatives": ["pr-cv-168", "pr-cv-23", "pr-cv-24"],
-	"enriched_at": "2026-06-11T17:57:55.463Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-168",
+		"pr-cv-23",
+		"pr-cv-24"
+	],
+	"enriched_at": "2026-06-20T09:16:30.388Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -4,8 +4,64 @@
 		"Manantial \"Font Roser\" (km 12.6, a 4 m del track; OSM, no verificado en campo)",
 		"Manantial \"Pozico Valentín\" (km 22.3, a 15 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.4720466,
+			"lon": -0.915606,
+			"km": 0.1,
+			"dist_m": 87
+		},
+		{
+			"name": "Font Roser",
+			"kind": "manantial",
+			"lat": 39.4209228,
+			"lon": -0.9579662,
+			"km": 12.6,
+			"dist_m": 4
+		},
+		{
+			"name": "Pozico Valentín",
+			"kind": "manantial",
+			"lat": 39.3760334,
+			"lon": -0.9634817,
+			"km": 22.3,
+			"dist_m": 15
+		}
+	],
+	"pois": [
+		{
+			"name": "Cruz Pairal",
+			"type": "patrimonio",
+			"lat": 39.4728467,
+			"lon": -0.9145597,
+			"km": 0,
+			"dist_m": 4
+		},
+		{
+			"name": "Fuente de los Siete Caños",
+			"type": "patrimonio",
+			"lat": 39.4720249,
+			"lon": -0.915533,
+			"km": 0.1,
+			"dist_m": 80
+		},
+		{
+			"name": "Puente Real",
+			"type": "patrimonio",
+			"lat": 39.4701433,
+			"lon": -0.9123938,
+			"km": 0.4,
+			"dist_m": 3
+		}
+	],
 	"shade_ratio": 0.02,
-	"alternatives": ["pr-cv-462", "gr-238-e10", "pr-cv-300"],
-	"enriched_at": "2026-06-11T17:49:51.620Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-462",
+		"gr-238-e10",
+		"pr-cv-300"
+	],
+	"enriched_at": "2026-06-20T08:49:49.974Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

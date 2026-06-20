@@ -1,0 +1,49 @@
+{
+	"water_points": [
+		"Manantial \"Fuente de la Peraleja\" (km 0.0, a 55 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Peraleja",
+			"kind": "manantial",
+			"lat": 39.5529469,
+			"lon": -0.8901254,
+			"km": 0,
+			"dist_m": 55
+		}
+	],
+	"pois": [
+		{
+			"name": "Cerro del Morro",
+			"type": "cumbre",
+			"lat": 39.5472486,
+			"lon": -0.845516,
+			"km": 6.9,
+			"dist_m": 112
+		},
+		{
+			"name": "Alto de la Sima",
+			"type": "cumbre",
+			"lat": 39.5433158,
+			"lon": -0.8379545,
+			"km": 7.6,
+			"dist_m": 22
+		},
+		{
+			"name": "Alto de la Yerba",
+			"type": "cumbre",
+			"lat": 39.5406353,
+			"lon": -0.8347982,
+			"km": 8,
+			"dist_m": 123
+		}
+	],
+	"shade_ratio": 0,
+	"alternatives": [
+		"pr-cv-223",
+		"pr-cv-414",
+		"gr-238-e09"
+	],
+	"enriched_at": "2026-06-20T09:28:02.631Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

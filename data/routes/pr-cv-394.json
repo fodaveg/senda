@@ -29,8 +29,74 @@
 		"Manantial \"Font del Camí\" (km 6.9, a 11 m del track; OSM, no verificado en campo)",
 		"Fuente \"Font del Parc\" (km 8.4, a 7 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font Nova",
+			"kind": "manantial",
+			"lat": 40.3121203,
+			"lon": 0.0307006,
+			"km": 0,
+			"dist_m": 97
+		},
+		{
+			"name": "Font Vella",
+			"kind": "fuente",
+			"lat": 40.3124115,
+			"lon": 0.0322765,
+			"km": 0.2,
+			"dist_m": 76
+		},
+		{
+			"name": "Font del Camí",
+			"kind": "manantial",
+			"lat": 40.3176006,
+			"lon": 0.0204726,
+			"km": 6.9,
+			"dist_m": 11
+		},
+		{
+			"name": "Font del Parc",
+			"kind": "fuente",
+			"lat": 40.3129172,
+			"lon": 0.0300679,
+			"km": 8.4,
+			"dist_m": 7
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador del Maestrat Interior: Sant Joan Nepomucé de la Serratella",
+			"type": "mirador",
+			"lat": 40.3210999,
+			"lon": 0.0235026,
+			"km": 4.9,
+			"dist_m": 18
+		},
+		{
+			"name": "la Bastida",
+			"type": "cumbre",
+			"lat": 40.3206081,
+			"lon": 0.0234422,
+			"km": 4.9,
+			"dist_m": 4
+		},
+		{
+			"name": "Mirador del Maestrat Litoral: Sant Joan Nepomucé de la Serratella",
+			"type": "mirador",
+			"lat": 40.3208012,
+			"lon": 0.0238538,
+			"km": 5,
+			"dist_m": 6
+		},
+		{
+			"name": "Mirador de la Serratella. Sant Joan Nepomucé",
+			"type": "mirador",
+			"lat": 40.3206771,
+			"lon": 0.0237878,
+			"km": 5,
+			"dist_m": 2
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +121,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-394 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-394.gpx (derivados: inicio, bbox)"
 	]
 }

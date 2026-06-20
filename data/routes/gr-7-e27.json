@@ -28,8 +28,98 @@
 		"Manantial \"Font dels Regatxols\" (km 22.5, a 25 m del track; OSM, no verificado en campo)",
 		"Fuente \"Font de la Vila\" (km 23.9, a 9 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.4607817,
+			"lon": -0.1196698,
+			"km": 22.5,
+			"dist_m": 19
+		},
+		{
+			"name": "Font dels Regatxols",
+			"kind": "manantial",
+			"lat": 40.460867,
+			"lon": -0.1198347,
+			"km": 22.5,
+			"dist_m": 25
+		},
+		{
+			"name": "Font de la Vila",
+			"kind": "fuente",
+			"lat": 40.4569257,
+			"lon": -0.13193,
+			"km": 23.9,
+			"dist_m": 9
+		}
+	],
+	"pois": [
+		{
+			"name": "Portal de Sant Mateu",
+			"type": "patrimonio",
+			"lat": 40.6173016,
+			"lon": -0.0989909,
+			"km": 0,
+			"dist_m": 18
+		},
+		{
+			"name": "Torre del Forcall",
+			"type": "patrimonio",
+			"lat": 40.6172122,
+			"lon": -0.1017322,
+			"km": 0.1,
+			"dist_m": 136
+		},
+		{
+			"name": "Torre de Fredes",
+			"type": "patrimonio",
+			"lat": 40.6172783,
+			"lon": -0.1006305,
+			"km": 0.1,
+			"dist_m": 62
+		},
+		{
+			"name": "Portal del Forcall",
+			"type": "patrimonio",
+			"lat": 40.6172792,
+			"lon": -0.1017613,
+			"km": 0.1,
+			"dist_m": 141
+		},
+		{
+			"name": "Sant Vicent Ferrer",
+			"type": "patrimonio",
+			"lat": 40.6145926,
+			"lon": -0.0985706,
+			"km": 0.4,
+			"dist_m": 2
+		},
+		{
+			"name": "Mirador Ares del Maestrat",
+			"type": "mirador",
+			"lat": 40.4552747,
+			"lon": -0.1317411,
+			"km": 23.9,
+			"dist_m": 118
+		},
+		{
+			"name": "En record de les víctimes dels bombardejos de la Legió Cóndor",
+			"type": "patrimonio",
+			"lat": 40.4560077,
+			"lon": -0.1310526,
+			"km": 23.9,
+			"dist_m": 95
+		},
+		{
+			"name": "Alfredo Rovira Pitarch",
+			"type": "patrimonio",
+			"lat": 40.4560048,
+			"lon": -0.1310445,
+			"km": 23.9,
+			"dist_m": 96
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +144,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e27 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e27.gpx (derivados: inicio, bbox)"
 	]
 }

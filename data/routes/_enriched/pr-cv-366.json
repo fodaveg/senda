@@ -1,7 +1,30 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "el Xim",
+			"type": "cumbre",
+			"lat": 38.9896551,
+			"lon": -0.3872934,
+			"km": 7,
+			"dist_m": 74
+		},
+		{
+			"name": "Alt de la Malladeta",
+			"type": "cumbre",
+			"lat": 38.98575,
+			"lon": -0.4147822,
+			"km": 9.8,
+			"dist_m": 95
+		}
+	],
 	"shade_ratio": 0.04,
-	"alternatives": ["pr-cv-396", "sl-cv-39", "pr-cv-193-1"],
-	"enriched_at": "2026-06-11T18:14:11.639Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-396",
+		"sl-cv-39",
+		"pr-cv-193-1"
+	],
+	"enriched_at": "2026-06-20T09:33:09.011Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -1,0 +1,95 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 52 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de la Piqueta\" (km 1.6, a 5 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Sastre\" (km 2.7, a 21 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente del Melic\" (km 4.1, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.4, a 21 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.5, a 31 m del track; OSM, no verificado en campo)",
+		"Fuente (km 9.7, a 12 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0263911,
+			"lon": -0.3563945,
+			"km": 0,
+			"dist_m": 52
+		},
+		{
+			"name": "Fuente de la Piqueta",
+			"kind": "manantial",
+			"lat": 40.0205209,
+			"lon": -0.3698326,
+			"km": 1.6,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente del Sastre",
+			"kind": "manantial",
+			"lat": 40.0235372,
+			"lon": -0.3755069,
+			"km": 2.7,
+			"dist_m": 21
+		},
+		{
+			"name": "Fuente del Melic",
+			"kind": "manantial",
+			"lat": 40.0242175,
+			"lon": -0.3854685,
+			"km": 4.1,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0486118,
+			"lon": -0.3983466,
+			"km": 9.4,
+			"dist_m": 21
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0492744,
+			"lon": -0.3980506,
+			"km": 9.5,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0484086,
+			"lon": -0.3960343,
+			"km": 9.7,
+			"dist_m": 12
+		}
+	],
+	"pois": [
+		{
+			"name": "Pilón Espadilla",
+			"type": "patrimonio",
+			"lat": 40.0265809,
+			"lon": -0.396921,
+			"km": 5.6,
+			"dist_m": 12
+		},
+		{
+			"name": "Pilón Torrechiva",
+			"type": "patrimonio",
+			"lat": 40.0294678,
+			"lon": -0.398967,
+			"km": 6,
+			"dist_m": 2
+		}
+	],
+	"shade_ratio": 0.06,
+	"alternatives": [
+		"pr-cv-386",
+		"pr-cv-314",
+		"sl-cv-70"
+	],
+	"enriched_at": "2026-06-20T08:42:32.224Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

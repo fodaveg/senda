@@ -31,8 +31,82 @@
 		"Manantial \"Fuente del Baladre\" (km 6.2, a 64 m del track; OSM, no verificado en campo)",
 		"Fuente \"Fuente de la Era Concejo\" (km 13.3, a 6 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9157832,
+			"lon": -0.3543602,
+			"km": 0,
+			"dist_m": 36
+		},
+		{
+			"name": "Fuente de San Pedro",
+			"kind": "manantial",
+			"lat": 39.9181948,
+			"lon": -0.3562437,
+			"km": 0.4,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente de Jinquer",
+			"kind": "manantial",
+			"lat": 39.9265308,
+			"lon": -0.3887696,
+			"km": 4,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente de la Solana",
+			"kind": "manantial",
+			"lat": 39.9327596,
+			"lon": -0.4035491,
+			"km": 5.8,
+			"dist_m": 3
+		},
+		{
+			"name": "Fuente del Baladre",
+			"kind": "manantial",
+			"lat": 39.9345852,
+			"lon": -0.4076743,
+			"km": 6.2,
+			"dist_m": 64
+		},
+		{
+			"name": "Fuente de la Era Concejo",
+			"kind": "fuente",
+			"lat": 39.963992,
+			"lon": -0.3944955,
+			"km": 13.3,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Jinquer",
+			"type": "patrimonio",
+			"lat": 39.9265166,
+			"lon": -0.3916841,
+			"km": 4.3,
+			"dist_m": 16
+		},
+		{
+			"name": "Castillo de Jinquer",
+			"type": "patrimonio",
+			"lat": 39.9275938,
+			"lon": -0.3944872,
+			"km": 4.7,
+			"dist_m": 58
+		},
+		{
+			"name": "El Jupillo",
+			"type": "cumbre",
+			"lat": 39.9486462,
+			"lon": -0.3874613,
+			"km": 11.1,
+			"dist_m": 62
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -57,7 +131,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e04 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-333-e04.gpx (derivados: inicio, bbox)"
 	]
 }

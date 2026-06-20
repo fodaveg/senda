@@ -3,8 +3,40 @@
 		"Fuente (km 0.0, a 88 m del track; OSM, no verificado en campo)",
 		"Fuente (km 0.2, a 5 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7735376,
+			"lon": 0.0835937,
+			"km": 0,
+			"dist_m": 88
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7724169,
+			"lon": 0.0810164,
+			"km": 0.2,
+			"dist_m": 5
+		}
+	],
+	"pois": [
+		{
+			"name": "Pedra 2001 (Francisco Sainz Jen Guy Ladoraye)",
+			"type": "patrimonio",
+			"lat": 38.7731103,
+			"lon": 0.0832783,
+			"km": 0,
+			"dist_m": 33
+		}
+	],
 	"shade_ratio": 0.14,
-	"alternatives": ["pr-cv-412", "pr-cv-53", "pr-cv-388"],
-	"enriched_at": "2026-06-11T18:25:57.852Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-412",
+		"pr-cv-53",
+		"pr-cv-388"
+	],
+	"enriched_at": "2026-06-20T09:44:30.490Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

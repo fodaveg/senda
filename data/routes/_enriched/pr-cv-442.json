@@ -1,7 +1,46 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "En reconocimiento a todos los Héroes de la DANA",
+			"type": "patrimonio",
+			"lat": 38.0938922,
+			"lon": -0.795716,
+			"km": 7.7,
+			"dist_m": 63
+		},
+		{
+			"name": "Cabezo del Rosario",
+			"type": "cumbre",
+			"lat": 38.0666377,
+			"lon": -0.8267131,
+			"km": 14.7,
+			"dist_m": 87
+		},
+		{
+			"name": "Balcón de Montes de Benejúzar",
+			"type": "mirador",
+			"lat": 38.0561382,
+			"lon": -0.8183647,
+			"km": 16.5,
+			"dist_m": 12
+		},
+		{
+			"name": "Cabezo Redondo",
+			"type": "cumbre",
+			"lat": 38.0558214,
+			"lon": -0.8176419,
+			"km": 16.6,
+			"dist_m": 47
+		}
+	],
 	"shade_ratio": 0.4,
-	"alternatives": ["sl-cv-135", "sl-cv-115", "sl-cv-148"],
-	"enriched_at": "2026-06-11T18:23:14.200Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-135",
+		"sl-cv-115",
+		"sl-cv-148"
+	],
+	"enriched_at": "2026-06-20T09:42:39.530Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

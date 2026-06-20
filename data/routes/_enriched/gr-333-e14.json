@@ -1,0 +1,51 @@
+{
+	"water_points": [
+		"Manantial \"Fuente El Cantón\" (km 0.0, a 18 m del track; OSM, no verificado en campo)",
+		"Fuente (km 4.2, a 8 m del track; OSM, no verificado en campo)",
+		"Fuente (km 4.3, a 84 m del track; OSM, no verificado en campo)",
+		"Fuente (km 4.4, a 53 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Fuente El Cantón",
+			"kind": "manantial",
+			"lat": 40.0195256,
+			"lon": -0.3130238,
+			"km": 0,
+			"dist_m": 18
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.023004,
+			"lon": -0.2790892,
+			"km": 4.2,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0221709,
+			"lon": -0.2775001,
+			"km": 4.3,
+			"dist_m": 84
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0209545,
+			"lon": -0.2799086,
+			"km": 4.4,
+			"dist_m": 53
+		}
+	],
+	"pois": [],
+	"shade_ratio": 0,
+	"alternatives": [
+		"gr-333-e13",
+		"gr-333-e15",
+		"gr-333-e09"
+	],
+	"enriched_at": "2026-06-20T08:44:12.444Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

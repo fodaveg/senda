@@ -27,8 +27,42 @@
 		"Fuente (km 0.0, a 30 m del track; OSM, no verificado en campo)",
 		"Fuente (km 3.6, a 2 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.901244,
+			"lon": -0.3420523,
+			"km": 0,
+			"dist_m": 30
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9157832,
+			"lon": -0.3543602,
+			"km": 3.6,
+			"dist_m": 2
+		}
+	],
+	"pois": [
+		{
+			"name": "El Molinet",
+			"type": "patrimonio",
+			"lat": 39.9144581,
+			"lon": -0.3522081,
+			"km": 3.2,
+			"dist_m": 118
+		},
+		{
+			"name": "Nuestra Señora de la Cueva Santa",
+			"type": "patrimonio",
+			"lat": 39.9158263,
+			"lon": -0.3524798,
+			"km": 3.5,
+			"dist_m": 132
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +87,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e03 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-333-e03.gpx (derivados: inicio, bbox)"
 	]
 }

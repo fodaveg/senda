@@ -1,0 +1,24 @@
+{
+	"water_points": [
+		"Manantial \"Font de la Murta\" (km 1.6, a 3 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Murta",
+			"kind": "manantial",
+			"lat": 39.1291739,
+			"lon": -0.3554613,
+			"km": 1.6,
+			"dist_m": 3
+		}
+	],
+	"pois": [],
+	"shade_ratio": 0,
+	"alternatives": [
+		"pr-cv-335",
+		"pr-cv-334",
+		"sl-cv-81"
+	],
+	"enriched_at": "2026-06-20T10:14:37.673Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

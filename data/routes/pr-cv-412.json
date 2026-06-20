@@ -30,8 +30,66 @@
 		"Fuente (km 11.5, a 49 m del track; OSM, no verificado en campo)",
 		"Fuente (km 11.6, a 76 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7724169,
+			"lon": 0.0810164,
+			"km": 0.2,
+			"dist_m": 11
+		},
+		{
+			"name": "Font de la Mata",
+			"kind": "manantial",
+			"lat": 38.757536,
+			"lon": 0.0617157,
+			"km": 3.2,
+			"dist_m": 93
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.7467701,
+			"lon": 0.0801008,
+			"km": 6.6,
+			"dist_m": 27
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7733473,
+			"lon": 0.084059,
+			"km": 11.5,
+			"dist_m": 49
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7735376,
+			"lon": 0.0835937,
+			"km": 11.6,
+			"dist_m": 76
+		}
+	],
+	"pois": [
+		{
+			"name": "Forn de Calç",
+			"type": "patrimonio",
+			"lat": 38.746433,
+			"lon": 0.0640934,
+			"km": 4.7,
+			"dist_m": 7
+		},
+		{
+			"name": "Pedra 2001 (Francisco Sainz Jen Guy Ladoraye)",
+			"type": "patrimonio",
+			"lat": 38.7731103,
+			"lon": 0.0832783,
+			"km": 11.6,
+			"dist_m": 23
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +114,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-412 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-412.gpx (derivados: inicio, bbox)"
 	]
 }

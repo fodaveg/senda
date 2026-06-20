@@ -20,7 +20,24 @@
 	"est_duration_min": 250,
 	"water_points": [],
 	"water_points_geo": [],
-	"pois": [],
+	"pois": [
+		{
+			"name": "el Torrelló",
+			"type": "patrimonio",
+			"lat": 40.6704775,
+			"lon": -0.0648927,
+			"km": 5,
+			"dist_m": 35
+		},
+		{
+			"name": "Creu d'en Balat",
+			"type": "patrimonio",
+			"lat": 40.6771499,
+			"lon": -0.0819781,
+			"km": 7.6,
+			"dist_m": 35
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -45,7 +62,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-375 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-375.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

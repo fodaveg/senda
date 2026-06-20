@@ -27,8 +27,42 @@
 		"Manantial \"Fuente del Prado\" (km 17.5, a 44 m del track; OSM, no verificado en campo)",
 		"Fuente (km 18.0, a 68 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente del Prado",
+			"kind": "manantial",
+			"lat": 39.9268792,
+			"lon": -1.1362953,
+			"km": 17.5,
+			"dist_m": 44
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9240339,
+			"lon": -1.1330934,
+			"km": 18,
+			"dist_m": 68
+		}
+	],
+	"pois": [
+		{
+			"name": "Cerro del Resquijo",
+			"type": "cumbre",
+			"lat": 39.9162105,
+			"lon": -1.1969891,
+			"km": 9.9,
+			"dist_m": 81
+		},
+		{
+			"name": "Puntal del Corral de la Peña",
+			"type": "cumbre",
+			"lat": 39.9169032,
+			"lon": -1.1944161,
+			"km": 11.6,
+			"dist_m": 91
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +87,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-187 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-187.gpx (derivados: inicio, bbox)"
 	]
 }

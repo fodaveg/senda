@@ -8,8 +8,96 @@
 		"Manantial \"Font de la Teula\" (km 13.6, a 4 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Pastoret\" (km 14.1, a 5 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Cirer",
+			"kind": "manantial",
+			"lat": 38.7583991,
+			"lon": -0.5291049,
+			"km": 2.3,
+			"dist_m": 31
+		},
+		{
+			"name": "Font de la Foia Ampla",
+			"kind": "manantial",
+			"lat": 38.7606348,
+			"lon": -0.5020009,
+			"km": 5,
+			"dist_m": 2
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.7576764,
+			"lon": -0.4862055,
+			"km": 7.1,
+			"dist_m": 16
+		},
+		{
+			"name": "Font del Pouet",
+			"kind": "manantial",
+			"lat": 38.7574484,
+			"lon": -0.4861082,
+			"km": 7.2,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.7266017,
+			"lon": -0.5008594,
+			"km": 12.1,
+			"dist_m": 51
+		},
+		{
+			"name": "Font de la Teula",
+			"kind": "manantial",
+			"lat": 38.7161578,
+			"lon": -0.493775,
+			"km": 13.6,
+			"dist_m": 4
+		},
+		{
+			"name": "Font del Pastoret",
+			"kind": "manantial",
+			"lat": 38.711926,
+			"lon": -0.4911007,
+			"km": 14.1,
+			"dist_m": 5
+		}
+	],
+	"pois": [
+		{
+			"name": "Montcabrer",
+			"type": "cumbre",
+			"lat": 38.7578464,
+			"lon": -0.4878421,
+			"km": 7,
+			"dist_m": 91
+		},
+		{
+			"name": "Penyes Monteses",
+			"type": "cumbre",
+			"lat": 38.7521455,
+			"lon": -0.4807954,
+			"km": 7.9,
+			"dist_m": 138
+		},
+		{
+			"name": "Mirador de l'Estret",
+			"type": "mirador",
+			"lat": 38.711513,
+			"lon": -0.4880869,
+			"km": 14.3,
+			"dist_m": 110
+		}
+	],
 	"shade_ratio": 0.25,
-	"alternatives": ["pr-cv-370", "pr-cv-389", "pr-cv-27"],
-	"enriched_at": "2026-06-11T17:50:58.841Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-370",
+		"pr-cv-389",
+		"pr-cv-27"
+	],
+	"enriched_at": "2026-06-20T08:50:34.895Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

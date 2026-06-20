@@ -4,8 +4,48 @@
 		"Fuente (km 0.4, a 55 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente de la Teja\" (km 6.4, a 9 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.2281752,
+			"lon": -1.0639346,
+			"km": 0.3,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.2277389,
+			"lon": -1.0649703,
+			"km": 0.4,
+			"dist_m": 55
+		},
+		{
+			"name": "Fuente de la Teja",
+			"kind": "manantial",
+			"lat": 39.2351052,
+			"lon": -1.0261045,
+			"km": 6.4,
+			"dist_m": 9
+		}
+	],
+	"pois": [
+		{
+			"name": "Balcón del Cabriel",
+			"type": "mirador",
+			"lat": 39.228642,
+			"lon": -1.0654859,
+			"km": 0.3,
+			"dist_m": 143
+		}
+	],
 	"shade_ratio": 0.3,
-	"alternatives": ["pr-cv-380", "pr-cv-379", "pr-cv-382"],
-	"enriched_at": "2026-06-11T19:26:38.617Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-380",
+		"pr-cv-379",
+		"pr-cv-382"
+	],
+	"enriched_at": "2026-06-20T09:37:52.776Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

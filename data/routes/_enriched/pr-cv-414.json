@@ -7,8 +7,63 @@
 		"Manantial \"Fuente del ramal\" (km 11.8, a 84 m del track; OSM, no verificado en campo)",
 		"Fuente (km 12.4, a 18 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6227523,
+			"lon": -0.9092503,
+			"km": 0.3,
+			"dist_m": 7
+		},
+		{
+			"name": "Fuente de Mosen Lucas",
+			"kind": "fuente",
+			"lat": 39.6232797,
+			"lon": -0.9095481,
+			"km": 0.5,
+			"dist_m": 1
+		},
+		{
+			"name": "Fuente Fetge",
+			"kind": "fuente",
+			"lat": 39.6316754,
+			"lon": -0.9219492,
+			"km": 3.5,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente La Palomera",
+			"kind": "manantial",
+			"lat": 39.6220257,
+			"lon": -0.9233547,
+			"km": 10.8,
+			"dist_m": 90
+		},
+		{
+			"name": "Fuente del ramal",
+			"kind": "manantial",
+			"lat": 39.6222977,
+			"lon": -0.9147702,
+			"km": 11.8,
+			"dist_m": 84
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6212205,
+			"lon": -0.9139841,
+			"km": 12.4,
+			"dist_m": 18
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.15,
-	"alternatives": ["pr-cv-223", "pr-cv-77", "sl-cv-72"],
-	"enriched_at": "2026-06-11T18:20:04.469Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-223",
+		"pr-cv-77",
+		"sl-cv-72"
+	],
+	"enriched_at": "2026-06-20T09:41:08.316Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

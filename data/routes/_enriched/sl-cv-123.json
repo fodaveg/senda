@@ -1,7 +1,22 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Arquillo",
+			"type": "patrimonio",
+			"lat": 39.4336991,
+			"lon": -0.4891006,
+			"km": 1.6,
+			"dist_m": 2
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-49", "pr-cv-162", "pr-cv-404"],
-	"enriched_at": "2026-06-11T19:44:09.654Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-49",
+		"pr-cv-162",
+		"pr-cv-404"
+	],
+	"enriched_at": "2026-06-20T09:53:15.019Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

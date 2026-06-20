@@ -26,7 +26,16 @@
 	"water_points": [
 		"Manantial \"Font Carbonell\" (km 2.4, a 7 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": "Font Carbonell",
+			"kind": "manantial",
+			"lat": 38.7919398,
+			"lon": -0.5621738,
+			"km": 2.4,
+			"dist_m": 7
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -52,7 +61,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-389 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-389.gpx (derivados: inicio, bbox)"
 	]
 }

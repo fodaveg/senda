@@ -2,8 +2,32 @@
 	"water_points": [
 		"Manantial \"Font Vella\" (km 0.0, a 35 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font Vella",
+			"kind": "manantial",
+			"lat": 40.469101,
+			"lon": 0.0196099,
+			"km": 0,
+			"dist_m": 35
+		}
+	],
+	"pois": [
+		{
+			"name": "Església Parroquial de l'Assumpció",
+			"type": "patrimonio",
+			"lat": 40.4717284,
+			"lon": 0.0230864,
+			"km": 0.4,
+			"dist_m": 144
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-410", "gr-331-e14", "gr-331-e13"],
-	"enriched_at": "2026-06-11T18:19:47.510Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-410",
+		"gr-331-e14",
+		"gr-331-e13"
+	],
+	"enriched_at": "2026-06-20T09:40:40.814Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

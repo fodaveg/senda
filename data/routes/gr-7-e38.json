@@ -28,8 +28,58 @@
 		"Manantial \"Fuente de Chelva\" (km 10.3, a 6 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente Gabriel\" (km 25.6, a 3 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7070133,
+			"lon": -1.09951,
+			"km": 0,
+			"dist_m": 30
+		},
+		{
+			"name": "Fuente de Chelva",
+			"kind": "manantial",
+			"lat": 39.6671992,
+			"lon": -1.0523906,
+			"km": 10.3,
+			"dist_m": 6
+		},
+		{
+			"name": "Fuente Gabriel",
+			"kind": "manantial",
+			"lat": 39.5945582,
+			"lon": -0.9803335,
+			"km": 25.6,
+			"dist_m": 3
+		}
+	],
+	"pois": [
+		{
+			"name": "Loma de los Visos",
+			"type": "cumbre",
+			"lat": 39.6939604,
+			"lon": -1.0673591,
+			"km": 5.9,
+			"dist_m": 131
+		},
+		{
+			"name": "Ceja del Mas del Pinar",
+			"type": "cumbre",
+			"lat": 39.6560943,
+			"lon": -1.0530891,
+			"km": 13.5,
+			"dist_m": 68
+		},
+		{
+			"name": "La Cruz del Cuarto",
+			"type": "cumbre",
+			"lat": 39.6507947,
+			"lon": -1.0404529,
+			"km": 14.8,
+			"dist_m": 10
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -58,7 +108,7 @@
 		"aemet_municipio: código INE 46050 (Benagéber), relación de municipios INE vía Idescat (consulta 2026-06-10)",
 		"Pendiente de verificar: water_points, escape_routes, highlights, best_season, best_start_time, shade_ratio, alternatives, notes_rain",
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e38 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e38.gpx (derivados: inicio, bbox)"
 	]
 }

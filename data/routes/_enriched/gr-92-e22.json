@@ -1,7 +1,38 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Monumento a las habaneras",
+			"type": "patrimonio",
+			"lat": 37.9749892,
+			"lon": -0.6847134,
+			"km": 0,
+			"dist_m": 128
+		},
+		{
+			"name": "Teniente D. José Luis Morejón Verdú",
+			"type": "patrimonio",
+			"lat": 37.9111075,
+			"lon": -0.7233971,
+			"km": 10.5,
+			"dist_m": 7
+		},
+		{
+			"name": "Camino del Sureste - Ramal Sur",
+			"type": "patrimonio",
+			"lat": 37.8683183,
+			"lon": -0.7566538,
+			"km": 18.4,
+			"dist_m": 3
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-115", "sl-cv-135", "sl-cv-148"],
-	"enriched_at": "2026-06-11T17:51:47.557Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-115",
+		"sl-cv-135",
+		"sl-cv-148"
+	],
+	"enriched_at": "2026-06-20T08:57:47.194Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

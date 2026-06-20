@@ -30,8 +30,82 @@
 		"Fuente (km 15.0, a 22 m del track; OSM, no verificado en campo)",
 		"Fuente (km 15.0, a 16 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8231749,
+			"lon": -0.2493589,
+			"km": 0.4,
+			"dist_m": 68
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8214637,
+			"lon": -0.2440765,
+			"km": 0.9,
+			"dist_m": 7
+		},
+		{
+			"name": "Font del Garrut",
+			"kind": "manantial",
+			"lat": 39.8138629,
+			"lon": -0.269387,
+			"km": 4.6,
+			"dist_m": 2
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8243965,
+			"lon": -0.2531925,
+			"km": 15,
+			"dist_m": 16
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8248353,
+			"lon": -0.2535827,
+			"km": 15,
+			"dist_m": 22
+		}
+	],
+	"pois": [
+		{
+			"name": "el Carrascalet",
+			"type": "cumbre",
+			"lat": 39.8111239,
+			"lon": -0.2705383,
+			"km": 5.4,
+			"dist_m": 54
+		},
+		{
+			"name": "el Rodeno",
+			"type": "cumbre",
+			"lat": 39.8100813,
+			"lon": -0.2852124,
+			"km": 10.2,
+			"dist_m": 102
+		},
+		{
+			"name": "Alt del Pipa",
+			"type": "cumbre",
+			"lat": 39.8226181,
+			"lon": -0.2707846,
+			"km": 12.4,
+			"dist_m": 2
+		},
+		{
+			"name": "Poblat Ibèric de Sant Josep",
+			"type": "patrimonio",
+			"lat": 39.823736,
+			"lon": -0.2516228,
+			"km": 15.2,
+			"dist_m": 54
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +130,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-241 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-241.gpx (derivados: inicio, bbox)"
 	]
 }

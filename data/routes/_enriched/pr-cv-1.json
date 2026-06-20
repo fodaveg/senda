@@ -20,8 +20,248 @@
 		"Fuente (km 31.3, a 6 m del track; OSM, no verificado en campo)",
 		"Fuente \"Fuente Nueva\" (km 31.3, a 9 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.3373259,
+			"lon": -0.1652337,
+			"km": 0,
+			"dist_m": 89
+		},
+		{
+			"name": "Font de Santa Maria",
+			"kind": "manantial",
+			"lat": 40.3415216,
+			"lon": -0.1786404,
+			"km": 1.9,
+			"dist_m": 31
+		},
+		{
+			"name": "Font de l'Om",
+			"kind": "manantial",
+			"lat": 40.3978949,
+			"lon": -0.2229547,
+			"km": 11.1,
+			"dist_m": 25
+		},
+		{
+			"name": "Font del Serro",
+			"kind": "manantial",
+			"lat": 40.4106992,
+			"lon": -0.2388295,
+			"km": 13.4,
+			"dist_m": 97
+		},
+		{
+			"name": "els Abeuradors",
+			"kind": "manantial",
+			"lat": 40.4180183,
+			"lon": -0.2495053,
+			"km": 14.7,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.423084,
+			"lon": -0.2538124,
+			"km": 15.4,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.4249059,
+			"lon": -0.255779,
+			"km": 15.6,
+			"dist_m": 67
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.424905,
+			"lon": -0.2557753,
+			"km": 15.6,
+			"dist_m": 66
+		},
+		{
+			"name": "Font de la Nevera",
+			"kind": "fuente",
+			"lat": 40.426,
+			"lon": -0.2563914,
+			"km": 15.7,
+			"dist_m": 15
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.426895,
+			"lon": -0.2575959,
+			"km": 15.9,
+			"dist_m": 7
+		},
+		{
+			"name": "Font del Rellotge",
+			"kind": "fuente",
+			"lat": 40.4285831,
+			"lon": -0.2593288,
+			"km": 16.1,
+			"dist_m": 17
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.42751,
+			"lon": -0.259154,
+			"km": 16.1,
+			"dist_m": 58
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.4382332,
+			"lon": -0.2675626,
+			"km": 17.4,
+			"dist_m": 5
+		},
+		{
+			"name": "Fonts del Llosar",
+			"kind": "manantial",
+			"lat": 40.4404361,
+			"lon": -0.2727052,
+			"km": 18.1,
+			"dist_m": 17
+		},
+		{
+			"name": "Font d'Horta",
+			"kind": "manantial",
+			"lat": 40.4373731,
+			"lon": -0.3129466,
+			"km": 24,
+			"dist_m": 24
+		},
+		{
+			"name": "Font de Sant Miquel",
+			"kind": "manantial",
+			"lat": 40.4633804,
+			"lon": -0.3096076,
+			"km": 27.5,
+			"dist_m": 3
+		},
+		{
+			"name": "Fuente de Salla",
+			"kind": "manantial",
+			"lat": 40.4784143,
+			"lon": -0.3145061,
+			"km": 30.6,
+			"dist_m": 10
+		},
+		{
+			"name": "Fuente Nueva",
+			"kind": "fuente",
+			"lat": 40.4816361,
+			"lon": -0.319413,
+			"km": 31.3,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.4817317,
+			"lon": -0.3194761,
+			"km": 31.3,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Portal de la Font",
+			"type": "patrimonio",
+			"lat": 40.3375945,
+			"lon": -0.1653671,
+			"km": 0,
+			"dist_m": 117
+		},
+		{
+			"name": "Arc de la Porta Nova",
+			"type": "patrimonio",
+			"lat": 40.3374733,
+			"lon": -0.1657731,
+			"km": 0,
+			"dist_m": 134
+		},
+		{
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.3372645,
+			"lon": -0.1629625,
+			"km": 0,
+			"dist_m": 128
+		},
+		{
+			"name": "Castell de Culla",
+			"type": "cumbre",
+			"lat": 40.3375902,
+			"lon": -0.166706,
+			"km": 0.3,
+			"dist_m": 133
+		},
+		{
+			"name": "Mirador del Cinglet",
+			"type": "mirador",
+			"lat": 40.3372762,
+			"lon": -0.1664455,
+			"km": 0.3,
+			"dist_m": 109
+		},
+		{
+			"name": "Mirador del Castell",
+			"type": "mirador",
+			"lat": 40.3374876,
+			"lon": -0.1667792,
+			"km": 0.3,
+			"dist_m": 120
+		},
+		{
+			"name": "Porta de la Barbacana",
+			"type": "patrimonio",
+			"lat": 40.337593,
+			"lon": -0.166261,
+			"km": 0.3,
+			"dist_m": 148
+		},
+		{
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.3364081,
+			"lon": -0.1665003,
+			"km": 0.3,
+			"dist_m": 18
+		},
+		{
+			"name": "Portal de Sant Roc",
+			"type": "patrimonio",
+			"lat": 40.4237712,
+			"lon": -0.2542424,
+			"km": 15.5,
+			"dist_m": 27
+		},
+		{
+			"name": "Peiró de la Joia",
+			"type": "patrimonio",
+			"lat": 40.441688,
+			"lon": -0.2701873,
+			"km": 17.9,
+			"dist_m": 34
+		}
+	],
 	"shade_ratio": 0.27,
-	"alternatives": ["pr-cv-225", "gr-7-e29", "pr-cv-297"],
-	"enriched_at": "2026-06-11T17:51:54.812Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-225",
+		"gr-7-e29",
+		"pr-cv-297"
+	],
+	"enriched_at": "2026-06-20T08:57:50.504Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

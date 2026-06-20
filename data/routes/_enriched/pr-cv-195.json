@@ -1,7 +1,22 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Pórtico del Cementerio",
+			"type": "patrimonio",
+			"lat": 38.4660877,
+			"lon": -0.8288863,
+			"km": 8.7,
+			"dist_m": 61
+		}
+	],
 	"shade_ratio": 0.05,
-	"alternatives": ["gr-7-e51", "pr-cv-196", "pr-cv-221"],
-	"enriched_at": "2026-06-11T17:58:36.996Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-7-e51",
+		"pr-cv-196",
+		"pr-cv-221"
+	],
+	"enriched_at": "2026-06-20T09:19:18.822Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

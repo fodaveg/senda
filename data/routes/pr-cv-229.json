@@ -27,8 +27,50 @@
 		"Fuente (km 0.0, a 90 m del track; OSM, no verificado en campo)",
 		"Fuente (km 7.9, a 68 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6162161,
+			"lon": -0.280057,
+			"km": 0,
+			"dist_m": 90
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6175184,
+			"lon": -0.2744813,
+			"km": 7.9,
+			"dist_m": 68
+		}
+	],
+	"pois": [
+		{
+			"name": "el Tossal",
+			"type": "cumbre",
+			"lat": 40.6002323,
+			"lon": -0.282173,
+			"km": 2.1,
+			"dist_m": 149
+		},
+		{
+			"name": "Peiró de Sant Gil",
+			"type": "patrimonio",
+			"lat": 40.6175702,
+			"lon": -0.2756591,
+			"km": 7.9,
+			"dist_m": 127
+		},
+		{
+			"name": "Peiró de Sant Josep",
+			"type": "patrimonio",
+			"lat": 40.6176555,
+			"lon": -0.2747601,
+			"km": 7.9,
+			"dist_m": 89
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +95,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-229 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-229.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -26,8 +26,42 @@
 	"water_points": [
 		"Fuente (km 0.0, a 12 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.388899,
+			"lon": -0.7668317,
+			"km": 0,
+			"dist_m": 12
+		}
+	],
+	"pois": [
+		{
+			"name": "La Mola",
+			"type": "patrimonio",
+			"lat": 38.4086922,
+			"lon": -0.7928793,
+			"km": 4.1,
+			"dist_m": 17
+		},
+		{
+			"name": "La Mola",
+			"type": "cumbre",
+			"lat": 38.4064689,
+			"lon": -0.7989202,
+			"km": 5.6,
+			"dist_m": 2
+		},
+		{
+			"name": "Refugio Canteros",
+			"type": "refugio",
+			"lat": 38.4038115,
+			"lon": -0.7997354,
+			"km": 7,
+			"dist_m": 146
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +86,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-311 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-311.gpx (derivados: inicio, bbox)"
 	]
 }

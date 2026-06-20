@@ -30,8 +30,58 @@
 		"Fuente (km 7.2, a 21 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente Vieja\" (km 7.2, a 97 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente del Cerezo",
+			"kind": "manantial",
+			"lat": 39.9856208,
+			"lon": -0.4372148,
+			"km": 0.4,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente de las Montalbanas",
+			"kind": "manantial",
+			"lat": 39.9796941,
+			"lon": -0.4389388,
+			"km": 1.2,
+			"dist_m": 16
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9886146,
+			"lon": -0.4386295,
+			"km": 7.2,
+			"dist_m": 27
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9887595,
+			"lon": -0.4380679,
+			"km": 7.2,
+			"dist_m": 21
+		},
+		{
+			"name": "Fuente Vieja",
+			"kind": "manantial",
+			"lat": 39.9889527,
+			"lon": -0.4372001,
+			"km": 7.2,
+			"dist_m": 97
+		}
+	],
+	"pois": [
+		{
+			"name": "El Pinar",
+			"type": "cumbre",
+			"lat": 39.9814365,
+			"lon": -0.4508329,
+			"km": 3.5,
+			"dist_m": 79
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +106,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-103 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-103.gpx (derivados: inicio, bbox)"
 	]
 }

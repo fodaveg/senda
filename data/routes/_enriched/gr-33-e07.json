@@ -6,8 +6,96 @@
 		"Manantial \"Font Coberta\" (km 6.5, a 81 m del track; OSM, no verificado en campo)",
 		"Fuente (km 6.5, a 1 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font dels Posos",
+			"kind": "manantial",
+			"lat": 40.2485263,
+			"lon": -0.2986905,
+			"km": 1,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2515175,
+			"lon": -0.3526689,
+			"km": 6.3,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.2511472,
+			"lon": -0.3541096,
+			"km": 6.5,
+			"dist_m": 2
+		},
+		{
+			"name": "Font Coberta",
+			"kind": "manantial",
+			"lat": 40.2510777,
+			"lon": -0.3550583,
+			"km": 6.5,
+			"dist_m": 81
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2513449,
+			"lon": -0.3541549,
+			"km": 6.5,
+			"dist_m": 1
+		}
+	],
+	"pois": [
+		{
+			"name": "El Peiró de la Font",
+			"type": "patrimonio",
+			"lat": 40.2466032,
+			"lon": -0.2905046,
+			"km": 0,
+			"dist_m": 6
+		},
+		{
+			"name": "Tossal de Sant Cristòfol",
+			"type": "cumbre",
+			"lat": 40.2478198,
+			"lon": -0.2903025,
+			"km": 0,
+			"dist_m": 127
+		},
+		{
+			"name": "La Segona Creveta",
+			"type": "patrimonio",
+			"lat": 40.2465316,
+			"lon": -0.292363,
+			"km": 0.2,
+			"dist_m": 4
+		},
+		{
+			"name": "Moleta de Mor",
+			"type": "cumbre",
+			"lat": 40.2491586,
+			"lon": -0.3264892,
+			"km": 3.8,
+			"dist_m": 102
+		},
+		{
+			"name": "Capoll de la Lloma",
+			"type": "cumbre",
+			"lat": 40.2512118,
+			"lon": -0.3330284,
+			"km": 4.5,
+			"dist_m": 35
+		}
+	],
 	"shade_ratio": 0.45,
-	"alternatives": ["gr-7-e30", "pr-cv-328", "sl-cv-65-1"],
-	"enriched_at": "2026-06-11T17:41:20.593Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-7-e30",
+		"pr-cv-328",
+		"sl-cv-65-1"
+	],
+	"enriched_at": "2026-06-20T08:37:23.934Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

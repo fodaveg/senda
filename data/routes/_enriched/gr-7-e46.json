@@ -10,8 +10,96 @@
 		"Fuente (km 9.7, a 39 m del track; OSM, no verificado en campo)",
 		"Fuente (km 20.0, a 13 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7690123,
+			"lon": -0.6081408,
+			"km": 8.7,
+			"dist_m": 26
+		},
+		{
+			"name": "Font de Darrere l'Església",
+			"kind": "fuente",
+			"lat": 38.7679781,
+			"lon": -0.609012,
+			"km": 8.9,
+			"dist_m": 53
+		},
+		{
+			"name": "Font de Sant Jaume",
+			"kind": "fuente",
+			"lat": 38.7679601,
+			"lon": -0.6096353,
+			"km": 8.9,
+			"dist_m": 3
+		},
+		{
+			"name": "Font de l'Empedrat",
+			"kind": "fuente",
+			"lat": 38.7675143,
+			"lon": -0.6087438,
+			"km": 8.9,
+			"dist_m": 94
+		},
+		{
+			"name": "Font de l'Escaleta",
+			"kind": "fuente",
+			"lat": 38.7669406,
+			"lon": -0.6097753,
+			"km": 9,
+			"dist_m": 52
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7674346,
+			"lon": -0.6100771,
+			"km": 9,
+			"dist_m": 10
+		},
+		{
+			"name": "Font del Ravalet",
+			"kind": "fuente",
+			"lat": 38.766585,
+			"lon": -0.6113027,
+			"km": 9.1,
+			"dist_m": 64
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7620269,
+			"lon": -0.6101334,
+			"km": 9.7,
+			"dist_m": 39
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7525246,
+			"lon": -0.5483659,
+			"km": 20,
+			"dist_m": 13
+		}
+	],
+	"pois": [
+		{
+			"name": "l'Excusada",
+			"type": "patrimonio",
+			"lat": 38.768546,
+			"lon": -0.6089903,
+			"km": 8.8,
+			"dist_m": 16
+		}
+	],
 	"shade_ratio": 0.17,
-	"alternatives": ["pr-cv-121", "pr-cv-122", "pr-cv-135"],
-	"enriched_at": "2026-06-11T19:05:08.428Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-121",
+		"pr-cv-122",
+		"pr-cv-135"
+	],
+	"enriched_at": "2026-06-20T08:50:23.763Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

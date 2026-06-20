@@ -1,7 +1,30 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Restos iglesia Bizantina",
+			"type": "patrimonio",
+			"lat": 38.4944868,
+			"lon": -0.7883697,
+			"km": 2.3,
+			"dist_m": 79
+		},
+		{
+			"name": "Calera del Pantano",
+			"type": "patrimonio",
+			"lat": 38.4972388,
+			"lon": -0.7983337,
+			"km": 3.3,
+			"dist_m": 68
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-25", "pr-cv-221", "pr-cv-196"],
-	"enriched_at": "2026-06-11T19:51:32.920Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-25",
+		"pr-cv-221",
+		"pr-cv-196"
+	],
+	"enriched_at": "2026-06-20T10:01:52.908Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

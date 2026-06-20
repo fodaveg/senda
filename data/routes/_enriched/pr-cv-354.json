@@ -1,0 +1,46 @@
+{
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Torre de la Granadella",
+			"type": "patrimonio",
+			"lat": 38.7254837,
+			"lon": 0.1989276,
+			"km": 1.3,
+			"dist_m": 56
+		},
+		{
+			"name": "Mirador De Llevant",
+			"type": "mirador",
+			"lat": 38.7252375,
+			"lon": 0.1902851,
+			"km": 2.2,
+			"dist_m": 19
+		},
+		{
+			"name": "Mirador de la Granadella",
+			"type": "mirador",
+			"lat": 38.7438877,
+			"lon": 0.1936479,
+			"km": 9.3,
+			"dist_m": 29
+		},
+		{
+			"name": "Forn De Calc De La Granadella",
+			"type": "patrimonio",
+			"lat": 38.7353379,
+			"lon": 0.1990739,
+			"km": 11.9,
+			"dist_m": 55
+		}
+	],
+	"shade_ratio": 0.15,
+	"alternatives": [
+		"sl-cv-98",
+		"sl-cv-97",
+		"sl-cv-50"
+	],
+	"enriched_at": "2026-06-20T09:31:29.684Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

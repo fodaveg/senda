@@ -28,8 +28,58 @@
 		"Fuente (km 14.0, a 57 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente de la Pechina\" (km 14.3, a 9 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1381904,
+			"lon": -0.5017259,
+			"km": 0,
+			"dist_m": 15
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0731235,
+			"lon": -0.5266326,
+			"km": 14,
+			"dist_m": 57
+		},
+		{
+			"name": "Fuente de la Pechina",
+			"kind": "manantial",
+			"lat": 40.0710058,
+			"lon": -0.5262262,
+			"km": 14.3,
+			"dist_m": 9
+		}
+	],
+	"pois": [
+		{
+			"name": "Horno Comunal de San Vicente de Piedrahita",
+			"type": "patrimonio",
+			"lat": 40.1379995,
+			"lon": -0.5013986,
+			"km": 0,
+			"dist_m": 12
+		},
+		{
+			"name": "Mirador de San Vicente de Piedrahita",
+			"type": "mirador",
+			"lat": 40.1254963,
+			"lon": -0.5025834,
+			"km": 1.9,
+			"dist_m": 7
+		},
+		{
+			"name": "Sant Vicenç Ferrer",
+			"type": "patrimonio",
+			"lat": 40.1254868,
+			"lon": -0.5026032,
+			"km": 1.9,
+			"dist_m": 7
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +104,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e32 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e32.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -22,8 +22,58 @@
 		"Fuente (km 0.3, a 85 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Marqués\" (km 1.8, a 1 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7933176,
+			"lon": -0.028507,
+			"km": 0.3,
+			"dist_m": 85
+		},
+		{
+			"name": "Font del Marqués",
+			"kind": "manantial",
+			"lat": 38.7883356,
+			"lon": -0.0156554,
+			"km": 1.8,
+			"dist_m": 1
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador Lloma de la Cova",
+			"type": "mirador",
+			"lat": 38.7906595,
+			"lon": -0.0172506,
+			"km": 1.5,
+			"dist_m": 18
+		},
+		{
+			"name": "Mirador de les Voltes",
+			"type": "mirador",
+			"lat": 38.7881695,
+			"lon": -0.0229683,
+			"km": 2.8,
+			"dist_m": 3
+		},
+		{
+			"name": "Mirador del Badall del Gat",
+			"type": "mirador",
+			"lat": 38.7837451,
+			"lon": -0.0342273,
+			"km": 8.4,
+			"dist_m": 1
+		},
+		{
+			"name": "Mirador de la Costereta",
+			"type": "mirador",
+			"lat": 38.7923052,
+			"lon": -0.0327387,
+			"km": 11.2,
+			"dist_m": 1
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -48,7 +98,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-445 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-445.gpx (derivados: inicio, bbox)"
 	]
 }

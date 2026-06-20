@@ -4,8 +4,56 @@
 		"Fuente (km 26.4, a 12 m del track; OSM, no verificado en campo)",
 		"Fuente (km 26.8, a 48 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente Santa o de San Pascual",
+			"kind": "manantial",
+			"lat": 38.3781574,
+			"lon": -0.686968,
+			"km": 26.4,
+			"dist_m": 25
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.3782413,
+			"lon": -0.686851,
+			"km": 26.4,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.3777847,
+			"lon": -0.6882047,
+			"km": 26.8,
+			"dist_m": 48
+		}
+	],
+	"pois": [
+		{
+			"name": "Torre Árabe de Monforte del Cid",
+			"type": "patrimonio",
+			"lat": 38.3846422,
+			"lon": -0.7284164,
+			"km": 0,
+			"dist_m": 19
+		},
+		{
+			"name": "Cid",
+			"type": "cumbre",
+			"lat": 38.4538041,
+			"lon": -0.7191452,
+			"km": 12.1,
+			"dist_m": 5
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-126", "pr-cv-311", "pr-cv-325"],
-	"enriched_at": "2026-06-11T19:21:58.052Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-126",
+		"pr-cv-311",
+		"pr-cv-325"
+	],
+	"enriched_at": "2026-06-20T09:29:46.579Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

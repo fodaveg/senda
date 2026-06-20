@@ -23,8 +23,19 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 260,
-	"water_points": [],
-	"water_points_geo": [],
+	"water_points": [
+		"Manantial \"Font de na Roca\" (km 0.7, a 9 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Font de na Roca",
+			"kind": "manantial",
+			"lat": 40.5441108,
+			"lon": 0.2460353,
+			"km": 0.7,
+			"dist_m": 9
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -36,7 +47,11 @@
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-296",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"sl-cv-58",
+		"pr-cv-295",
+		"pr-cv-469"
+	],
 	"notes_rain": null,
 	"bbox": [
 		0.242732036858797,
@@ -46,6 +61,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-296 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-296.gpx (derivados: inicio, bbox)"
 	]
 }

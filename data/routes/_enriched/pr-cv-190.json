@@ -8,8 +8,88 @@
 		"Manantial \"Fuente de Carcalin\" (km 1.2, a 7 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente Umbría\" (km 20.7, a 72 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.4188364,
+			"lon": -0.7979927,
+			"km": 0,
+			"dist_m": 66
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.4189356,
+			"lon": -0.8008048,
+			"km": 0.2,
+			"dist_m": 88
+		},
+		{
+			"name": "Fuente los Pitufos",
+			"kind": "manantial",
+			"lat": 39.4185385,
+			"lon": -0.8002131,
+			"km": 0.2,
+			"dist_m": 40
+		},
+		{
+			"name": "Fuente La Alegría",
+			"kind": "manantial",
+			"lat": 39.4189463,
+			"lon": -0.8016946,
+			"km": 0.4,
+			"dist_m": 88
+		},
+		{
+			"name": "Fuente la Jarra",
+			"kind": "fuente",
+			"lat": 39.4181272,
+			"lon": -0.8027527,
+			"km": 0.4,
+			"dist_m": 11
+		},
+		{
+			"name": "Fuente de Carcalin",
+			"kind": "manantial",
+			"lat": 39.4155668,
+			"lon": -0.8059153,
+			"km": 1.2,
+			"dist_m": 7
+		},
+		{
+			"name": "Fuente Umbría",
+			"kind": "manantial",
+			"lat": 39.4155034,
+			"lon": -0.9405771,
+			"km": 20.7,
+			"dist_m": 72
+		}
+	],
+	"pois": [
+		{
+			"name": "Puntal de las Palomas",
+			"type": "cumbre",
+			"lat": 39.4265133,
+			"lon": -0.9059951,
+			"km": 15,
+			"dist_m": 80
+		},
+		{
+			"name": "Puntal de la Nevera",
+			"type": "cumbre",
+			"lat": 39.4259343,
+			"lon": -0.9137509,
+			"km": 15.9,
+			"dist_m": 7
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-166", "sl-cv-167", "sl-cv-164"],
-	"enriched_at": "2026-06-11T17:58:08.043Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-166",
+		"sl-cv-167",
+		"sl-cv-164"
+	],
+	"enriched_at": "2026-06-20T09:18:07.224Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

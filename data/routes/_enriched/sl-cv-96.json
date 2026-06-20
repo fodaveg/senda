@@ -3,8 +3,31 @@
 		"Manantial \"fuente Magraile\" (km 1.5, a 31 m del track; OSM, no verificado en campo)",
 		"Fuente (km 7.8, a 1 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "fuente Magraile",
+			"kind": "manantial",
+			"lat": 40.085627,
+			"lon": -0.4993277,
+			"km": 1.5,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0860111,
+			"lon": -0.5065942,
+			"km": 7.8,
+			"dist_m": 1
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-95", "gr-7-e33", "gr-160-e03"],
-	"enriched_at": "2026-06-11T18:50:09.803Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-95",
+		"gr-7-e33",
+		"gr-160-e03"
+	],
+	"enriched_at": "2026-06-20T10:17:52.291Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

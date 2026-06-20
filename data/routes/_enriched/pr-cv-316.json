@@ -8,8 +8,88 @@
 		"Fuente (km 11.9, a 39 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de Baix\" (km 12.1, a 92 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Mestre",
+			"kind": "manantial",
+			"lat": 40.1794124,
+			"lon": -0.1756927,
+			"km": 7.7,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de la Presola",
+			"kind": "manantial",
+			"lat": 40.1666185,
+			"lon": -0.1574071,
+			"km": 10.4,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1572655,
+			"lon": -0.1629657,
+			"km": 11.7,
+			"dist_m": 77
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1573526,
+			"lon": -0.162077,
+			"km": 11.7,
+			"dist_m": 94
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.1571438,
+			"lon": -0.1633972,
+			"km": 11.8,
+			"dist_m": 76
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1574507,
+			"lon": -0.1643041,
+			"km": 11.9,
+			"dist_m": 39
+		},
+		{
+			"name": "Font de Baix",
+			"kind": "manantial",
+			"lat": 40.1578115,
+			"lon": -0.166824,
+			"km": 12.1,
+			"dist_m": 92
+		}
+	],
+	"pois": [
+		{
+			"name": "Piló de la Creu",
+			"type": "patrimonio",
+			"lat": 40.1834868,
+			"lon": -0.1882692,
+			"km": 5.7,
+			"dist_m": 5
+		},
+		{
+			"name": "Capelleta de la Mare de Déu del Carme",
+			"type": "patrimonio",
+			"lat": 40.156642,
+			"lon": -0.1645488,
+			"km": 11.9,
+			"dist_m": 128
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["gr-33-e05", "sl-cv-65-1", "pr-cv-341"],
-	"enriched_at": "2026-06-11T18:08:43.433Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-33-e05",
+		"sl-cv-65-1",
+		"pr-cv-341"
+	],
+	"enriched_at": "2026-06-20T09:28:46.694Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

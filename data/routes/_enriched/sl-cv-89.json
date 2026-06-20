@@ -5,8 +5,168 @@
 		"Fuente (km 1.9, a 90 m del track; OSM, no verificado en campo)",
 		"Fuente (km 3.4, a 81 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6244093,
+			"lon": -0.1003236,
+			"km": 0,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6242469,
+			"lon": -0.100236,
+			"km": 0,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6179931,
+			"lon": -0.1023971,
+			"km": 1.9,
+			"dist_m": 90
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.621233,
+			"lon": -0.0995382,
+			"km": 3.4,
+			"dist_m": 81
+		}
+	],
+	"pois": [
+		{
+			"name": "Torre dels Estudis",
+			"type": "patrimonio",
+			"lat": 40.6184595,
+			"lon": -0.1038211,
+			"km": 1.8,
+			"dist_m": 113
+		},
+		{
+			"name": "Torres del Carraixet",
+			"type": "patrimonio",
+			"lat": 40.6173309,
+			"lon": -0.1027233,
+			"km": 1.9,
+			"dist_m": 19
+		},
+		{
+			"name": "Portal del Forcall",
+			"type": "patrimonio",
+			"lat": 40.6172792,
+			"lon": -0.1017613,
+			"km": 1.9,
+			"dist_m": 2
+		},
+		{
+			"name": "Torre del Forcall",
+			"type": "patrimonio",
+			"lat": 40.6172122,
+			"lon": -0.1017322,
+			"km": 2,
+			"dist_m": 2
+		},
+		{
+			"name": "Torre de Fredes",
+			"type": "patrimonio",
+			"lat": 40.6172783,
+			"lon": -0.1006305,
+			"km": 2.1,
+			"dist_m": 13
+		},
+		{
+			"name": "Portal de Sant Mateu",
+			"type": "patrimonio",
+			"lat": 40.6173016,
+			"lon": -0.0989909,
+			"km": 2.3,
+			"dist_m": 17
+		},
+		{
+			"name": "Torre de Beneito",
+			"type": "patrimonio",
+			"lat": 40.6180282,
+			"lon": -0.0977192,
+			"km": 2.4,
+			"dist_m": 61
+		},
+		{
+			"name": "Torre d'Alós",
+			"type": "patrimonio",
+			"lat": 40.6189901,
+			"lon": -0.0976915,
+			"km": 2.9,
+			"dist_m": 56
+		},
+		{
+			"name": "Torre de l'Aspró",
+			"type": "patrimonio",
+			"lat": 40.6195853,
+			"lon": -0.0976759,
+			"km": 3,
+			"dist_m": 12
+		},
+		{
+			"name": "Torre de la Font",
+			"type": "patrimonio",
+			"lat": 40.620466,
+			"lon": -0.0979692,
+			"km": 3.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Torre Redona",
+			"type": "patrimonio",
+			"lat": 40.6212583,
+			"lon": -0.098042,
+			"km": 3.2,
+			"dist_m": 13
+		},
+		{
+			"name": "Portal de Sant Miquel",
+			"type": "patrimonio",
+			"lat": 40.6217327,
+			"lon": -0.0991148,
+			"km": 3.3,
+			"dist_m": 20
+		},
+		{
+			"name": "Torre del Panto",
+			"type": "patrimonio",
+			"lat": 40.6210263,
+			"lon": -0.100653,
+			"km": 3.4,
+			"dist_m": 138
+		},
+		{
+			"name": "Portal de la Nevera",
+			"type": "patrimonio",
+			"lat": 40.6214335,
+			"lon": -0.0999303,
+			"km": 3.4,
+			"dist_m": 71
+		},
+		{
+			"name": "Nevera de Morella",
+			"type": "patrimonio",
+			"lat": 40.6218541,
+			"lon": -0.1005158,
+			"km": 3.5,
+			"dist_m": 60
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["gr-331-e09", "pr-cv-215", "gr-7-e27"],
-	"enriched_at": "2026-06-11T20:00:31.947Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-331-e09",
+		"pr-cv-215",
+		"gr-7-e27"
+	],
+	"enriched_at": "2026-06-20T10:15:56.051Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

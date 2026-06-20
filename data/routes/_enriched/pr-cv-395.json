@@ -8,8 +8,128 @@
 		"Manantial (km 14.7, a 36 m del track; OSM, no verificado en campo)",
 		"Fuente (km 14.8, a 26 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.3596504,
+			"lon": -0.1393885,
+			"km": 2.7,
+			"dist_m": 3
+		},
+		{
+			"name": "els Xorros",
+			"kind": "manantial",
+			"lat": 40.3661735,
+			"lon": -0.1372586,
+			"km": 3.8,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de l'Ombria",
+			"kind": "manantial",
+			"lat": 40.3555519,
+			"lon": -0.1149162,
+			"km": 7.2,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.3558724,
+			"lon": -0.1137882,
+			"km": 7.3,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.3744996,
+			"lon": -0.1262314,
+			"km": 11.7,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.3786923,
+			"lon": -0.1374961,
+			"km": 14.7,
+			"dist_m": 36
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.3787067,
+			"lon": -0.1381005,
+			"km": 14.8,
+			"dist_m": 26
+		}
+	],
+	"pois": [
+		{
+			"name": "Castell d'Àsens",
+			"type": "cumbre",
+			"lat": 40.3713657,
+			"lon": -0.1422751,
+			"km": 0.8,
+			"dist_m": 149
+		},
+		{
+			"name": "Montcàtil",
+			"type": "cumbre",
+			"lat": 40.3596362,
+			"lon": -0.1399393,
+			"km": 2.6,
+			"dist_m": 8
+		},
+		{
+			"name": "Cruz de los Caídos",
+			"type": "patrimonio",
+			"lat": 40.3675266,
+			"lon": -0.138743,
+			"km": 3.9,
+			"dist_m": 127
+		},
+		{
+			"name": "Torre de la Nevera",
+			"type": "patrimonio",
+			"lat": 40.3689366,
+			"lon": -0.1368156,
+			"km": 4.2,
+			"dist_m": 63
+		},
+		{
+			"name": "Sagrada Família",
+			"type": "patrimonio",
+			"lat": 40.3780141,
+			"lon": -0.1328579,
+			"km": 14.3,
+			"dist_m": 8
+		},
+		{
+			"name": "Cruz de los Caídos",
+			"type": "patrimonio",
+			"lat": 40.3784642,
+			"lon": -0.1374213,
+			"km": 14.7,
+			"dist_m": 12
+		},
+		{
+			"name": "Peiró dels Plans",
+			"type": "patrimonio",
+			"lat": 40.3788168,
+			"lon": -0.1376412,
+			"km": 14.8,
+			"dist_m": 45
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-102", "pr-cv-294", "pr-cv-297"],
-	"enriched_at": "2026-06-11T22:38:23.265Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-102",
+		"pr-cv-294",
+		"pr-cv-297"
+	],
+	"enriched_at": "2026-06-20T09:38:37.826Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

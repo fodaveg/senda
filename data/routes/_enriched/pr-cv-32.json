@@ -1,7 +1,57 @@
 {
-	"water_points": ["Fuente (km 0.0, a 33 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 0.0, a 33 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5190192,
+			"lon": -0.6765044,
+			"km": 0,
+			"dist_m": 33
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de Catí",
+			"type": "mirador",
+			"lat": 38.5244514,
+			"lon": -0.6816643,
+			"km": 1.5,
+			"dist_m": 12
+		},
+		{
+			"name": "Alt del Molló",
+			"type": "cumbre",
+			"lat": 38.5228603,
+			"lon": -0.6843189,
+			"km": 1.9,
+			"dist_m": 70
+		},
+		{
+			"name": "Pic del Flare",
+			"type": "cumbre",
+			"lat": 38.5213689,
+			"lon": -0.6868464,
+			"km": 2.1,
+			"dist_m": 58
+		},
+		{
+			"name": "el Pantanet",
+			"type": "mirador",
+			"lat": 38.5108986,
+			"lon": -0.7134044,
+			"km": 4.9,
+			"dist_m": 121
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-28", "pr-cv-31", "pr-cv-6-2"],
-	"enriched_at": "2026-06-11T19:20:04.670Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-28",
+		"pr-cv-31",
+		"pr-cv-6-2"
+	],
+	"enriched_at": "2026-06-20T09:28:54.709Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

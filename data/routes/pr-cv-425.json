@@ -26,8 +26,42 @@
 	"water_points": [
 		"Manantial \"Font de la Cava\" (km 0.1, a 90 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font de la Cava",
+			"kind": "manantial",
+			"lat": 38.7486115,
+			"lon": -0.0409888,
+			"km": 0.1,
+			"dist_m": 90
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador del Ravalet",
+			"type": "mirador",
+			"lat": 38.7490381,
+			"lon": -0.0418114,
+			"km": 0.1,
+			"dist_m": 9
+		},
+		{
+			"name": "Sénia de la Partida de les Mosqueres",
+			"type": "patrimonio",
+			"lat": 38.7396532,
+			"lon": -0.0488287,
+			"km": 1.5,
+			"dist_m": 17
+		},
+		{
+			"name": "Coll de Rates",
+			"type": "mirador",
+			"lat": 38.7249551,
+			"lon": -0.0579861,
+			"km": 5.2,
+			"dist_m": 4
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +86,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-425 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-425.gpx (derivados: inicio, bbox)"
 	]
 }

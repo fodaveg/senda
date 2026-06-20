@@ -30,8 +30,74 @@
 		"Manantial \"Font de Roset\" (km 4.5, a 10 m del track; OSM, no verificado en campo)",
 		"Fuente (km 9.8, a 60 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5375043,
+			"lon": -0.5076898,
+			"km": 0.1,
+			"dist_m": 83
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5399547,
+			"lon": -0.5093206,
+			"km": 0.8,
+			"dist_m": 29
+		},
+		{
+			"name": "Font de Cotelles",
+			"kind": "manantial",
+			"lat": 38.5484481,
+			"lon": -0.5087189,
+			"km": 1.9,
+			"dist_m": 11
+		},
+		{
+			"name": "Font de Roset",
+			"kind": "manantial",
+			"lat": 38.5647722,
+			"lon": -0.5260803,
+			"km": 4.5,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5869489,
+			"lon": -0.55194,
+			"km": 9.8,
+			"dist_m": 60
+		}
+	],
+	"pois": [
+		{
+			"name": "Torre Grossa",
+			"type": "patrimonio",
+			"lat": 38.5390266,
+			"lon": -0.5091931,
+			"km": 0.7,
+			"dist_m": 7
+		},
+		{
+			"name": "Església Vella",
+			"type": "patrimonio",
+			"lat": 38.5390467,
+			"lon": -0.5082236,
+			"km": 0.7,
+			"dist_m": 90
+		},
+		{
+			"name": "Cabeç dels Nanos",
+			"type": "cumbre",
+			"lat": 38.5462324,
+			"lon": -0.5090343,
+			"km": 17.6,
+			"dist_m": 84
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +122,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-112 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-112.gpx (derivados: inicio, bbox)"
 	]
 }

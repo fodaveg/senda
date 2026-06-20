@@ -47,8 +47,306 @@
 		"Manantial \"Fuente de Juan Roya\" (km 56.0, a 9 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente de Leonor\" (km 57.3, a 12 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fonteta d'Oliver",
+			"kind": "manantial",
+			"lat": 39.8629502,
+			"lon": -0.1967672,
+			"km": 0.9,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de Cabres",
+			"kind": "manantial",
+			"lat": 39.8660417,
+			"lon": -0.2242314,
+			"km": 4.2,
+			"dist_m": 4
+		},
+		{
+			"name": "Font de Castro",
+			"kind": "manantial",
+			"lat": 39.8715521,
+			"lon": -0.2986268,
+			"km": 14.4,
+			"dist_m": 25
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8792887,
+			"lon": -0.3080348,
+			"km": 16.2,
+			"dist_m": 4
+		},
+		{
+			"name": "Font de la Figuera",
+			"kind": "manantial",
+			"lat": 39.8803532,
+			"lon": -0.3254488,
+			"km": 18.1,
+			"dist_m": 8
+		},
+		{
+			"name": "Font dels Noguerals",
+			"kind": "manantial",
+			"lat": 39.8809606,
+			"lon": -0.343375,
+			"km": 20.4,
+			"dist_m": 13
+		},
+		{
+			"name": "Font de la Caritat",
+			"kind": "manantial",
+			"lat": 39.8910131,
+			"lon": -0.3457366,
+			"km": 21.7,
+			"dist_m": 11
+		},
+		{
+			"name": "Font de l' Arquet (seca)",
+			"kind": "manantial",
+			"lat": 39.8959692,
+			"lon": -0.3441822,
+			"km": 22.4,
+			"dist_m": 20
+		},
+		{
+			"name": "Font de l'Avellaner",
+			"kind": "manantial",
+			"lat": 39.8978839,
+			"lon": -0.3426994,
+			"km": 22.7,
+			"dist_m": 37
+		},
+		{
+			"name": "Fuente de los Dos Caños",
+			"kind": "fuente",
+			"lat": 39.900437,
+			"lon": -0.3403491,
+			"km": 23.1,
+			"dist_m": 99
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.901244,
+			"lon": -0.3420523,
+			"km": 23.2,
+			"dist_m": 7
+		},
+		{
+			"name": "Font de la Pistola",
+			"kind": "manantial",
+			"lat": 39.9157532,
+			"lon": -0.3383482,
+			"km": 26,
+			"dist_m": 11
+		},
+		{
+			"name": "Fuente de San Pedro",
+			"kind": "manantial",
+			"lat": 39.9181948,
+			"lon": -0.3562437,
+			"km": 28.9,
+			"dist_m": 7
+		},
+		{
+			"name": "Font de Molina",
+			"kind": "manantial",
+			"lat": 39.9324714,
+			"lon": -0.3699303,
+			"km": 31.3,
+			"dist_m": 90
+		},
+		{
+			"name": "Fonteta de Maria Teresa",
+			"kind": "manantial",
+			"lat": 39.930581,
+			"lon": -0.3783622,
+			"km": 32.5,
+			"dist_m": 17
+		},
+		{
+			"name": "Font de Felipo",
+			"kind": "manantial",
+			"lat": 39.9300722,
+			"lon": -0.3798725,
+			"km": 32.6,
+			"dist_m": 10
+		},
+		{
+			"name": "Font del Tio Agustín",
+			"kind": "manantial",
+			"lat": 39.932883,
+			"lon": -0.3800184,
+			"km": 33.1,
+			"dist_m": 64
+		},
+		{
+			"name": "Font dels Castillos",
+			"kind": "manantial",
+			"lat": 39.9330751,
+			"lon": -0.3790262,
+			"km": 33.1,
+			"dist_m": 98
+		},
+		{
+			"name": "Font de l'Avellaner",
+			"kind": "manantial",
+			"lat": 39.9348555,
+			"lon": -0.3780771,
+			"km": 33.3,
+			"dist_m": 58
+		},
+		{
+			"name": "Fuente El Prau",
+			"kind": "manantial",
+			"lat": 39.9607866,
+			"lon": -0.4020852,
+			"km": 37.8,
+			"dist_m": 32
+		},
+		{
+			"name": "Fuente del Cerezo",
+			"kind": "manantial",
+			"lat": 39.9856208,
+			"lon": -0.4372148,
+			"km": 43.3,
+			"dist_m": 13
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9887595,
+			"lon": -0.4380679,
+			"km": 43.7,
+			"dist_m": 38
+		},
+		{
+			"name": "Fuente Vieja",
+			"kind": "manantial",
+			"lat": 39.9889527,
+			"lon": -0.4372001,
+			"km": 43.7,
+			"dist_m": 99
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9886146,
+			"lon": -0.4386295,
+			"km": 43.8,
+			"dist_m": 7
+		},
+		{
+			"name": "Fuente de Santa Bárbara",
+			"kind": "fuente",
+			"lat": 39.9903164,
+			"lon": -0.4394583,
+			"km": 44,
+			"dist_m": 22
+		},
+		{
+			"name": "Fuente de Juan Roya",
+			"kind": "manantial",
+			"lat": 40.0359496,
+			"lon": -0.5124242,
+			"km": 56,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente de Leonor",
+			"kind": "manantial",
+			"lat": 40.0447311,
+			"lon": -0.5174335,
+			"km": 57.3,
+			"dist_m": 12
+		}
+	],
+	"pois": [
+		{
+			"name": "Castell de la Vilavella",
+			"type": "patrimonio",
+			"lat": 39.8623927,
+			"lon": -0.1882303,
+			"km": 0.2,
+			"dist_m": 131
+		},
+		{
+			"name": "El Poble Desert",
+			"type": "patrimonio",
+			"lat": 39.8622665,
+			"lon": -0.2020742,
+			"km": 1.8,
+			"dist_m": 71
+		},
+		{
+			"name": "Llomet del Cove",
+			"type": "cumbre",
+			"lat": 39.861002,
+			"lon": -0.2356843,
+			"km": 7.4,
+			"dist_m": 75
+		},
+		{
+			"name": "Signe de Federo",
+			"type": "patrimonio",
+			"lat": 39.8664279,
+			"lon": -0.2530802,
+			"km": 9.1,
+			"dist_m": 14
+		},
+		{
+			"name": "Mirador de les Eretes",
+			"type": "mirador",
+			"lat": 39.8794248,
+			"lon": -0.3042319,
+			"km": 15.8,
+			"dist_m": 9
+		},
+		{
+			"name": "El Molinet",
+			"type": "patrimonio",
+			"lat": 39.9144581,
+			"lon": -0.3522081,
+			"km": 28.2,
+			"dist_m": 15
+		},
+		{
+			"name": "Nuestra Señora de la Cueva Santa",
+			"type": "patrimonio",
+			"lat": 39.9158263,
+			"lon": -0.3524798,
+			"km": 28.3,
+			"dist_m": 17
+		},
+		{
+			"name": "Alt de Molina",
+			"type": "cumbre",
+			"lat": 39.9304261,
+			"lon": -0.3696677,
+			"km": 31.2,
+			"dist_m": 128
+		},
+		{
+			"name": "la Campana",
+			"type": "patrimonio",
+			"lat": 39.9306502,
+			"lon": -0.3786198,
+			"km": 32.5,
+			"dist_m": 7
+		},
+		{
+			"name": "Castillo de Villahaleva",
+			"type": "patrimonio",
+			"lat": 39.9799631,
+			"lon": -0.4287943,
+			"km": 42,
+			"dist_m": 64
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -73,7 +371,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-36 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-36.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -26,8 +26,26 @@
 	"water_points": [
 		"Fuente \"les Fontetes\" (km 4.4, a 8 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "les Fontetes",
+			"kind": "fuente",
+			"lat": 38.8381525,
+			"lon": -0.4083493,
+			"km": 4.4,
+			"dist_m": 8
+		}
+	],
+	"pois": [
+		{
+			"name": "Penya de Migdia",
+			"type": "cumbre",
+			"lat": 38.8354997,
+			"lon": -0.4133476,
+			"km": 6.4,
+			"dist_m": 41
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-213 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-213.gpx (derivados: inicio, bbox)"
 	]
 }

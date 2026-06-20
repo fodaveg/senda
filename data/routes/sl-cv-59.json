@@ -26,7 +26,16 @@
 	"water_points": [
 		"Manantial \"Font del Sister\" (km 1.2, a 10 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": "Font del Sister",
+			"kind": "manantial",
+			"lat": 38.918902,
+			"lon": -0.238148,
+			"km": 1.2,
+			"dist_m": 10
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -52,7 +61,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-59 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-59.gpx (derivados: inicio, bbox)"
 	]
 }

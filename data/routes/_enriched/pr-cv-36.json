@@ -1,0 +1,30 @@
+{
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "la Cilla del Sit",
+			"type": "cumbre",
+			"lat": 38.4782571,
+			"lon": -0.7261061,
+			"km": 6,
+			"dist_m": 12
+		},
+		{
+			"name": "Alto Silla del Cid",
+			"type": "mirador",
+			"lat": 38.4782387,
+			"lon": -0.72614,
+			"km": 6,
+			"dist_m": 9
+		}
+	],
+	"shade_ratio": 0.39,
+	"alternatives": [
+		"pr-cv-195",
+		"pr-cv-196",
+		"gr-7-e51"
+	],
+	"enriched_at": "2026-06-20T09:32:33.338Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

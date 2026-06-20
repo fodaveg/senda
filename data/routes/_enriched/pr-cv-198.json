@@ -1,0 +1,38 @@
+{
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Alt de la Penya de Sella",
+			"type": "cumbre",
+			"lat": 38.6239936,
+			"lon": -0.25819,
+			"km": 3.6,
+			"dist_m": 9
+		},
+		{
+			"name": "Altet de Nono",
+			"type": "cumbre",
+			"lat": 38.6259051,
+			"lon": -0.2531437,
+			"km": 4.1,
+			"dist_m": 149
+		},
+		{
+			"name": "Cementeri Vell",
+			"type": "patrimonio",
+			"lat": 38.6095223,
+			"lon": -0.2696475,
+			"km": 7.9,
+			"dist_m": 14
+		}
+	],
+	"shade_ratio": 0.14,
+	"alternatives": [
+		"sl-cv-112",
+		"pr-cv-9",
+		"pr-cv-353"
+	],
+	"enriched_at": "2026-06-20T09:19:27.814Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

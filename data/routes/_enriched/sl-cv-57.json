@@ -6,8 +6,64 @@
 		"Fuente (km 9.7, a 24 m del track; OSM, no verificado en campo)",
 		"Fuente (km 9.9, a 3 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1032616,
+			"lon": -0.591389,
+			"km": 0.1,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1023585,
+			"lon": -0.6038428,
+			"km": 8.1,
+			"dist_m": 17
+		},
+		{
+			"name": "Fuente San Miguel",
+			"kind": "fuente",
+			"lat": 40.1033811,
+			"lon": -0.6043492,
+			"km": 8.2,
+			"dist_m": 13
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1049026,
+			"lon": -0.5928636,
+			"km": 9.7,
+			"dist_m": 24
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1046691,
+			"lon": -0.5908837,
+			"km": 9.9,
+			"dist_m": 3
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de Carrasquica",
+			"type": "mirador",
+			"lat": 40.0973153,
+			"lon": -0.5934602,
+			"km": 2.9,
+			"dist_m": 4
+		}
+	],
 	"shade_ratio": 0.22,
-	"alternatives": ["gr-160-e02", "gr-160-e01", "gr-160"],
-	"enriched_at": "2026-06-11T18:45:21.609Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-160-e02",
+		"gr-160-e01",
+		"gr-160"
+	],
+	"enriched_at": "2026-06-20T10:10:01.007Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

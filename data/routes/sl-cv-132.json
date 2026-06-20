@@ -26,7 +26,16 @@
 	"water_points": [
 		"Fuente (km 1.0, a 48 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.4832563,
+			"lon": -1.3586765,
+			"km": 1,
+			"dist_m": 48
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -52,7 +61,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-132 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-132.gpx (derivados: inicio, bbox)"
 	]
 }

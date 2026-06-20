@@ -5,8 +5,56 @@
 		"Manantial (km 7.8, a 4 m del track; OSM, no verificado en campo)",
 		"Manantial (km 9.7, a 99 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8690598,
+			"lon": -1.1521694,
+			"km": 6.9,
+			"dist_m": 54
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.8680176,
+			"lon": -1.1530336,
+			"km": 7.1,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.86629,
+			"lon": -1.1576899,
+			"km": 7.8,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.8590724,
+			"lon": -1.1490367,
+			"km": 9.7,
+			"dist_m": 99
+		}
+	],
+	"pois": [
+		{
+			"name": "Puntal del Quemado",
+			"type": "cumbre",
+			"lat": 39.8652745,
+			"lon": -1.1518774,
+			"km": 8.8,
+			"dist_m": 59
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-30", "gr-37-e02", "pr-cv-337"],
-	"enriched_at": "2026-06-11T19:10:07.989Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-30",
+		"gr-37-e02",
+		"pr-cv-337"
+	],
+	"enriched_at": "2026-06-20T09:20:58.506Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

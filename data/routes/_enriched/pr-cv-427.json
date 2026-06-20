@@ -5,8 +5,56 @@
 		"Manantial \"Font de Contreres\" (km 0.5, a 28 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Barranquet de Dalt\" (km 12.6, a 22 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Bota",
+			"kind": "manantial",
+			"lat": 38.7212843,
+			"lon": -0.1959236,
+			"km": 0.3,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7214051,
+			"lon": -0.1961188,
+			"km": 0.3,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de Contreres",
+			"kind": "manantial",
+			"lat": 38.7209579,
+			"lon": -0.1935258,
+			"km": 0.5,
+			"dist_m": 28
+		},
+		{
+			"name": "Font del Barranquet de Dalt",
+			"kind": "manantial",
+			"lat": 38.7499887,
+			"lon": -0.1249829,
+			"km": 12.6,
+			"dist_m": 22
+		}
+	],
+	"pois": [
+		{
+			"name": "Cocoll",
+			"type": "cumbre",
+			"lat": 38.7362211,
+			"lon": -0.1492696,
+			"km": 8.1,
+			"dist_m": 8
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-149", "pr-cv-151", "pr-cv-464"],
-	"enriched_at": "2026-06-11T19:31:09.374Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-149",
+		"pr-cv-151",
+		"pr-cv-464"
+	],
+	"enriched_at": "2026-06-20T09:41:54.733Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

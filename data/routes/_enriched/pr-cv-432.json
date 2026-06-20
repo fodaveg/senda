@@ -1,7 +1,31 @@
 {
-	"water_points": ["Fuente (km 23.5, a 90 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 23.5, a 90 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.3048075,
+			"lon": 0.2260958,
+			"km": 23.5,
+			"dist_m": 90
+		}
+	],
+	"pois": [
+		{
+			"name": "Creu del Francés",
+			"type": "patrimonio",
+			"lat": 40.2939967,
+			"lon": 0.2418702,
+			"km": 3.2,
+			"dist_m": 5
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-431"],
-	"enriched_at": "2026-06-11T18:22:21.764Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-431"
+	],
+	"enriched_at": "2026-06-20T09:42:08.803Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

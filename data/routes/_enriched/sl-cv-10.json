@@ -1,7 +1,30 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Castell de Carbonera",
+			"type": "patrimonio",
+			"lat": 38.8359191,
+			"lon": -0.434517,
+			"km": 4.3,
+			"dist_m": 116
+		},
+		{
+			"name": "Tossal d'Otos",
+			"type": "cumbre",
+			"lat": 38.8343315,
+			"lon": -0.4410872,
+			"km": 5.3,
+			"dist_m": 119
+		}
+	],
 	"shade_ratio": 0.09,
-	"alternatives": ["pr-cv-213", "sl-cv-118", "pr-cv-222"],
-	"enriched_at": "2026-06-11T19:39:56.045Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-213",
+		"sl-cv-118",
+		"pr-cv-222"
+	],
+	"enriched_at": "2026-06-20T09:49:13.476Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -28,8 +28,106 @@
 		"Fuente (km 2.3, a 12 m del track; OSM, no verificado en campo)",
 		"Fuente (km 10.0, a 15 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.3571784,
+			"lon": -0.066476,
+			"km": 0.2,
+			"dist_m": 36
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.3422085,
+			"lon": -0.0726252,
+			"km": 2.3,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.3580958,
+			"lon": -0.0656218,
+			"km": 10,
+			"dist_m": 15
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador del Sendero Caminos del Señorío de Vilar de Canes",
+			"type": "mirador",
+			"lat": 40.3564549,
+			"lon": -0.0675735,
+			"km": 0.3,
+			"dist_m": 14
+		},
+		{
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.3559026,
+			"lon": -0.0665304,
+			"km": 0.3,
+			"dist_m": 119
+		},
+		{
+			"name": "Pou del Mas d'en Romeu",
+			"type": "patrimonio",
+			"lat": 40.345108,
+			"lon": -0.0638701,
+			"km": 3.4,
+			"dist_m": 3
+		},
+		{
+			"name": "Cisterna dels Pous",
+			"type": "patrimonio",
+			"lat": 40.3547437,
+			"lon": -0.0652198,
+			"km": 4.6,
+			"dist_m": 88
+		},
+		{
+			"name": "els Pous",
+			"type": "patrimonio",
+			"lat": 40.3547516,
+			"lon": -0.0649313,
+			"km": 4.6,
+			"dist_m": 74
+		},
+		{
+			"name": "Tossal de l'Olivera",
+			"type": "cumbre",
+			"lat": 40.3616533,
+			"lon": -0.054642,
+			"km": 5.9,
+			"dist_m": 101
+		},
+		{
+			"name": "Pou de Forés",
+			"type": "patrimonio",
+			"lat": 40.3655452,
+			"lon": -0.0637775,
+			"km": 9.1,
+			"dist_m": 4
+		},
+		{
+			"name": "Església Parroquial de la Purificació de la Mare de Déu",
+			"type": "patrimonio",
+			"lat": 40.3582717,
+			"lon": -0.0658108,
+			"km": 10,
+			"dist_m": 12
+		},
+		{
+			"name": "En record de les víctimes dels bombardejos de la Legió Còndor",
+			"type": "patrimonio",
+			"lat": 40.3582524,
+			"lon": -0.065985,
+			"km": 10,
+			"dist_m": 3
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +152,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-405 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-405.gpx (derivados: inicio, bbox)"
 	]
 }

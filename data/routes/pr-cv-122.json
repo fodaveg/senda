@@ -26,8 +26,26 @@
 	"water_points": [
 		"Manantial \"Font del Barranc dels Tarongers\" (km 0.3, a 7 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font del Barranc dels Tarongers",
+			"kind": "manantial",
+			"lat": 38.7946773,
+			"lon": -0.6103283,
+			"km": 0.3,
+			"dist_m": 7
+		}
+	],
+	"pois": [
+		{
+			"name": "Alt del Costellar",
+			"type": "cumbre",
+			"lat": 38.7927779,
+			"lon": -0.6023771,
+			"km": 9.1,
+			"dist_m": 46
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-122 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-122.gpx (derivados: inicio, bbox)"
 	]
 }

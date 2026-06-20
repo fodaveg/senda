@@ -32,8 +32,114 @@
 		"Manantial \"Fuente del Prado\" (km 36.1, a 63 m del track; OSM, no verificado en campo)",
 		"Fuente (km 36.9, a 74 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente de Los Masetes",
+			"kind": "manantial",
+			"lat": 39.8820958,
+			"lon": -1.1673583,
+			"km": 9.4,
+			"dist_m": 15
+		},
+		{
+			"name": "Fuente del rebollo",
+			"kind": "manantial",
+			"lat": 39.877735,
+			"lon": -1.1853416,
+			"km": 12.6,
+			"dist_m": 15
+		},
+		{
+			"name": "Fuente del Rebollo",
+			"kind": "manantial",
+			"lat": 39.8777266,
+			"lon": -1.185264,
+			"km": 12.6,
+			"dist_m": 11
+		},
+		{
+			"name": "Fuente de Los Antolines",
+			"kind": "manantial",
+			"lat": 39.9197798,
+			"lon": -1.1990747,
+			"km": 21.6,
+			"dist_m": 30
+		},
+		{
+			"name": "Fuente de la Araña",
+			"kind": "manantial",
+			"lat": 39.9333609,
+			"lon": -1.1910226,
+			"km": 26.7,
+			"dist_m": 15
+		},
+		{
+			"name": "Fuente del Prado",
+			"kind": "manantial",
+			"lat": 39.9268792,
+			"lon": -1.1362953,
+			"km": 36.1,
+			"dist_m": 63
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9234716,
+			"lon": -1.1320227,
+			"km": 36.9,
+			"dist_m": 74
+		}
+	],
+	"pois": [
+		{
+			"name": "Cobijo forestal fuente del rebollo",
+			"type": "refugio",
+			"lat": 39.877743,
+			"lon": -1.185377,
+			"km": 12.6,
+			"dist_m": 16
+		},
+		{
+			"name": "El Mojón",
+			"type": "cumbre",
+			"lat": 39.8885324,
+			"lon": -1.1985412,
+			"km": 14.7,
+			"dist_m": 136
+		},
+		{
+			"name": "Cerro del Rodeno",
+			"type": "cumbre",
+			"lat": 39.8912216,
+			"lon": -1.1983749,
+			"km": 15.1,
+			"dist_m": 119
+		},
+		{
+			"name": "Cerro del Resquijo",
+			"type": "cumbre",
+			"lat": 39.9162105,
+			"lon": -1.1969891,
+			"km": 21,
+			"dist_m": 77
+		},
+		{
+			"name": "Puntal del Corral de la Peña",
+			"type": "cumbre",
+			"lat": 39.9169032,
+			"lon": -1.1944161,
+			"km": 21.1,
+			"dist_m": 121
+		},
+		{
+			"name": "Fuente de los Antolines",
+			"type": "refugio",
+			"lat": 39.9193644,
+			"lon": -1.1981269,
+			"km": 21.5,
+			"dist_m": 23
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -58,7 +164,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-307 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-307.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -1,7 +1,62 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "La Copa de la Maceta",
+			"type": "cumbre",
+			"lat": 38.1026062,
+			"lon": -0.9482226,
+			"km": 5.7,
+			"dist_m": 115
+		},
+		{
+			"name": "Cruz de la Muela",
+			"type": "mirador",
+			"lat": 38.1020339,
+			"lon": -0.9515665,
+			"km": 6.3,
+			"dist_m": 6
+		},
+		{
+			"name": "Cruz de la Muela",
+			"type": "cumbre",
+			"lat": 38.1020354,
+			"lon": -0.9515658,
+			"km": 6.3,
+			"dist_m": 6
+		},
+		{
+			"name": "La Naveta",
+			"type": "cumbre",
+			"lat": 38.1056553,
+			"lon": -0.978927,
+			"km": 9.2,
+			"dist_m": 139
+		},
+		{
+			"name": "Peña de Orihuela",
+			"type": "cumbre",
+			"lat": 38.099027,
+			"lon": -0.9992364,
+			"km": 11.4,
+			"dist_m": 1
+		},
+		{
+			"name": "Cabezo Lodroño",
+			"type": "cumbre",
+			"lat": 38.0979386,
+			"lon": -0.9927799,
+			"km": 12.1,
+			"dist_m": 66
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-441", "sl-cv-146", "pr-cv-54"],
-	"enriched_at": "2026-06-11T18:27:44.423Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-441",
+		"sl-cv-146",
+		"pr-cv-54"
+	],
+	"enriched_at": "2026-06-20T09:45:26.193Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -8,8 +8,96 @@
 		"Fuente (km 21.5, a 96 m del track; OSM, no verificado en campo)",
 		"Fuente (km 21.6, a 81 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1335489,
+			"lon": -0.2753283,
+			"km": 0,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1326518,
+			"lon": -0.2711558,
+			"km": 0.4,
+			"dist_m": 17
+		},
+		{
+			"name": "Fonteta dels Pixadors",
+			"kind": "manantial",
+			"lat": 40.1453142,
+			"lon": -0.2785836,
+			"km": 19.6,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1379376,
+			"lon": -0.2804025,
+			"km": 21.2,
+			"dist_m": 81
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1385956,
+			"lon": -0.2792766,
+			"km": 21.2,
+			"dist_m": 99
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1348518,
+			"lon": -0.2809913,
+			"km": 21.5,
+			"dist_m": 96
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1358998,
+			"lon": -0.2786158,
+			"km": 21.6,
+			"dist_m": 81
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de la Terrasseta Polos",
+			"type": "mirador",
+			"lat": 40.1385779,
+			"lon": -0.2792535,
+			"km": 21.2,
+			"dist_m": 97
+		},
+		{
+			"name": "el Portalet",
+			"type": "patrimonio",
+			"lat": 40.1380639,
+			"lon": -0.2801443,
+			"km": 21.2,
+			"dist_m": 77
+		},
+		{
+			"name": "Mirador Mitja Lluna",
+			"type": "mirador",
+			"lat": 40.1358334,
+			"lon": -0.278279,
+			"km": 21.6,
+			"dist_m": 109
+		}
+	],
 	"shade_ratio": 0.09,
-	"alternatives": ["pr-cv-341", "pr-cv-328", "sl-cv-90"],
-	"enriched_at": "2026-06-11T18:09:55.028Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-341",
+		"pr-cv-328",
+		"sl-cv-90"
+	],
+	"enriched_at": "2026-06-20T09:29:13.396Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -30,8 +30,82 @@
 		"Manantial \"Font de Bèrnia\" (km 9.9, a 5 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Runar\" (km 13.5, a 3 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font del Garroferet",
+			"kind": "manantial",
+			"lat": 38.6356787,
+			"lon": -0.0410372,
+			"km": 0,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de la Barca",
+			"kind": "manantial",
+			"lat": 38.6569667,
+			"lon": -0.050572,
+			"km": 3.8,
+			"dist_m": 10
+		},
+		{
+			"name": "Font del Fort de Bèrnia",
+			"kind": "manantial",
+			"lat": 38.6600678,
+			"lon": -0.0611129,
+			"km": 5.5,
+			"dist_m": 67
+		},
+		{
+			"name": "Font de Bèrnia",
+			"kind": "manantial",
+			"lat": 38.6645933,
+			"lon": -0.0393603,
+			"km": 9.9,
+			"dist_m": 5
+		},
+		{
+			"name": "Font del Runar",
+			"kind": "manantial",
+			"lat": 38.6592985,
+			"lon": -0.0523237,
+			"km": 13.5,
+			"dist_m": 3
+		}
+	],
+	"pois": [
+		{
+			"name": "Alt de la Penya",
+			"type": "cumbre",
+			"lat": 38.6566265,
+			"lon": -0.0343511,
+			"km": 11,
+			"dist_m": 75
+		},
+		{
+			"name": "Mirador del Forat de Bèrnia",
+			"type": "mirador",
+			"lat": 38.6553224,
+			"lon": -0.0322544,
+			"km": 11.4,
+			"dist_m": 2
+		},
+		{
+			"name": "Panxa Blanca",
+			"type": "cumbre",
+			"lat": 38.6571712,
+			"lon": -0.0356255,
+			"km": 11.7,
+			"dist_m": 107
+		},
+		{
+			"name": "Pintures rupestres de l'Ermita del Vicari",
+			"type": "patrimonio",
+			"lat": 38.657383,
+			"lon": -0.037443,
+			"km": 11.9,
+			"dist_m": 77
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +130,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-7 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-7.gpx (derivados: inicio, bbox)"
 	]
 }

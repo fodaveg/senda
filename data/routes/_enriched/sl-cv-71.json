@@ -3,8 +3,40 @@
 		"Fuente (km 0.0, a 71 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente del Lebrillico\" (km 0.4, a 1 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6564847,
+			"lon": -0.8928273,
+			"km": 0,
+			"dist_m": 71
+		},
+		{
+			"name": "Fuente del Lebrillico",
+			"kind": "manantial",
+			"lat": 39.6589284,
+			"lon": -0.8893406,
+			"km": 0.4,
+			"dist_m": 1
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de la Cruz",
+			"type": "mirador",
+			"lat": 39.6560303,
+			"lon": -0.8890944,
+			"km": 1.5,
+			"dist_m": 0
+		}
+	],
 	"shade_ratio": 0.33,
-	"alternatives": ["sl-cv-72", "sl-cv-74", "pr-cv-77"],
-	"enriched_at": "2026-06-11T19:58:26.301Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-72",
+		"sl-cv-74",
+		"pr-cv-77"
+	],
+	"enriched_at": "2026-06-20T10:13:52.483Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

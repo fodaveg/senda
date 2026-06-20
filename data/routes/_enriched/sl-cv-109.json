@@ -1,7 +1,38 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Repetidors de Segària",
+			"type": "mirador",
+			"lat": 38.8305387,
+			"lon": -0.0350002,
+			"km": 3.1,
+			"dist_m": 63
+		},
+		{
+			"name": "Mirador de Segària",
+			"type": "mirador",
+			"lat": 38.8306045,
+			"lon": -0.0360956,
+			"km": 3.2,
+			"dist_m": 4
+		},
+		{
+			"name": "Penyetes Roges",
+			"type": "cumbre",
+			"lat": 38.8266111,
+			"lon": -0.0344956,
+			"km": 3.7,
+			"dist_m": 119
+		}
+	],
 	"shade_ratio": 0.36,
-	"alternatives": ["pr-cv-415", "sl-cv-158", "pr-cv-445"],
-	"enriched_at": "2026-06-11T19:41:50.169Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-415",
+		"sl-cv-158",
+		"pr-cv-445"
+	],
+	"enriched_at": "2026-06-20T09:51:18.797Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

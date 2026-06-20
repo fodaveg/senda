@@ -1,7 +1,33 @@
 {
-	"water_points": ["Fuente (km 1.4, a 11 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 1.4, a 11 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.5396581,
+			"lon": 0.2373272,
+			"km": 1.4,
+			"dist_m": 11
+		}
+	],
+	"pois": [
+		{
+			"name": "Ermita de Santa Isabel",
+			"type": "patrimonio",
+			"lat": 40.5397001,
+			"lon": 0.2373962,
+			"km": 1.4,
+			"dist_m": 18
+		}
+	],
 	"shade_ratio": null,
-	"alternatives": ["pr-cv-296", "pr-cv-295", "pr-cv-469"],
-	"enriched_at": "2026-06-11T19:56:36.864Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-296",
+		"pr-cv-295",
+		"pr-cv-469"
+	],
+	"enriched_at": "2026-06-20T10:10:50.122Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

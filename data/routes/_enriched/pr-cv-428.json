@@ -1,7 +1,65 @@
 {
-	"water_points": ["Fuente (km 14.1, a 13 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 14.1, a 13 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9241418,
+			"lon": -0.2012289,
+			"km": 14.1,
+			"dist_m": 13
+		}
+	],
+	"pois": [
+		{
+			"name": "la Ràpita",
+			"type": "cumbre",
+			"lat": 39.9121506,
+			"lon": -0.2379788,
+			"km": 5.3,
+			"dist_m": 10
+		},
+		{
+			"name": "caseta de pedra seca",
+			"type": "refugio",
+			"lat": 39.9064961,
+			"lon": -0.2287188,
+			"km": 7.5,
+			"dist_m": 49
+		},
+		{
+			"name": "la Gorreta",
+			"type": "cumbre",
+			"lat": 39.9053914,
+			"lon": -0.2161074,
+			"km": 9.8,
+			"dist_m": 49
+		},
+		{
+			"name": "Penya Lilot",
+			"type": "cumbre",
+			"lat": 39.9086473,
+			"lon": -0.2110371,
+			"km": 10.4,
+			"dist_m": 33
+		},
+		{
+			"name": "el Solaig",
+			"type": "cumbre",
+			"lat": 39.9081332,
+			"lon": -0.2054491,
+			"km": 10.9,
+			"dist_m": 8
+		}
+	],
 	"shade_ratio": 0.05,
-	"alternatives": ["sl-cv-107", "pr-cv-361", "pr-cv-360-1"],
-	"enriched_at": "2026-06-11T18:21:41.178Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-107",
+		"pr-cv-361",
+		"pr-cv-360-1"
+	],
+	"enriched_at": "2026-06-20T09:41:57.410Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

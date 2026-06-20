@@ -5,8 +5,56 @@
 		"Manantial \"Nacimiento del Río Tuéjar\" (km 2.6, a 38 m del track; OSM, no verificado en campo)",
 		"Fuente (km 11.7, a 31 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7820172,
+			"lon": -1.039414,
+			"km": 2.3,
+			"dist_m": 21
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7825619,
+			"lon": -1.0383227,
+			"km": 2.5,
+			"dist_m": 6
+		},
+		{
+			"name": "Nacimiento del Río Tuéjar",
+			"kind": "manantial",
+			"lat": 39.7837584,
+			"lon": -1.0387881,
+			"km": 2.6,
+			"dist_m": 38
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7816874,
+			"lon": -1.0392199,
+			"km": 11.7,
+			"dist_m": 31
+		}
+	],
+	"pois": [
+		{
+			"name": "Abrigos del Corral de la Silla",
+			"type": "patrimonio",
+			"lat": 39.7901114,
+			"lon": -1.0345717,
+			"km": 3.8,
+			"dist_m": 15
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["gr-7-e37", "gr-7-e38", "pr-cv-114"],
-	"enriched_at": "2026-06-11T18:24:43.096Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-7-e37",
+		"gr-7-e38",
+		"pr-cv-114"
+	],
+	"enriched_at": "2026-06-20T09:43:11.473Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

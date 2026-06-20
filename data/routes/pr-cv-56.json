@@ -28,7 +28,32 @@
 		"Manantial \"Font del Xop\" (km 6.5, a 47 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de la Boronada\" (km 7.5, a 34 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": "Font de la Crebantada",
+			"kind": "fuente",
+			"lat": 38.7729301,
+			"lon": -0.4841163,
+			"km": 3.8,
+			"dist_m": 46
+		},
+		{
+			"name": "Font del Xop",
+			"kind": "manantial",
+			"lat": 38.7661987,
+			"lon": -0.4853066,
+			"km": 6.5,
+			"dist_m": 47
+		},
+		{
+			"name": "Font de la Boronada",
+			"kind": "manantial",
+			"lat": 38.762451,
+			"lon": -0.4798013,
+			"km": 7.5,
+			"dist_m": 34
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -54,7 +79,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-56 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-56.gpx (derivados: inicio, bbox)"
 	]
 }

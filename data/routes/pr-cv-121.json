@@ -28,8 +28,42 @@
 		"Fuente \"Fonteta del Patge\" (km 11.1, a 6 m del track; OSM, no verificado en campo)",
 		"Fuente \"Font de la Covalta\" (km 16.0, a 12 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.8149114,
+			"lon": -0.5598318,
+			"km": 7,
+			"dist_m": 14
+		},
+		{
+			"name": "Fonteta del Patge",
+			"kind": "fuente",
+			"lat": 38.8141146,
+			"lon": -0.5277706,
+			"km": 11.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de la Covalta",
+			"kind": "fuente",
+			"lat": 38.8064358,
+			"lon": -0.4995645,
+			"km": 16,
+			"dist_m": 12
+		}
+	],
+	"pois": [
+		{
+			"name": "Alto de la Covalta",
+			"type": "cumbre",
+			"lat": 38.8058723,
+			"lon": -0.4988844,
+			"km": 16,
+			"dist_m": 95
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +88,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-121 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-121.gpx (derivados: inicio, bbox)"
 	]
 }

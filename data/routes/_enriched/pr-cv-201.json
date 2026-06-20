@@ -3,8 +3,40 @@
 		"Manantial \"Font de les Piques\" (km 2.2, a 8 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font Coberta\" (km 8.8, a 43 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de les Piques",
+			"kind": "manantial",
+			"lat": 40.4800515,
+			"lon": 0.1994028,
+			"km": 2.2,
+			"dist_m": 8
+		},
+		{
+			"name": "Font Coberta",
+			"kind": "manantial",
+			"lat": 40.4694731,
+			"lon": 0.2030889,
+			"km": 8.8,
+			"dist_m": 43
+		}
+	],
+	"pois": [
+		{
+			"name": "Muntanyeta de Sant Joan",
+			"type": "cumbre",
+			"lat": 40.4691682,
+			"lon": 0.1852173,
+			"km": 0.3,
+			"dist_m": 22
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-58", "pr-cv-296", "pr-cv-295"],
-	"enriched_at": "2026-06-11T17:59:25.600Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-58",
+		"pr-cv-296",
+		"pr-cv-295"
+	],
+	"enriched_at": "2026-06-20T09:19:36.201Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

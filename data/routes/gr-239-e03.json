@@ -23,20 +23,125 @@
 		"esfuerzo": 4
 	},
 	"est_duration_min": 390,
-	"water_points": [],
-	"water_points_geo": [],
+	"water_points": [
+		"Fuente (km 0.3, a 35 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font dels vint-i-cinc dolls\" (km 0.4, a 25 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.4, a 13 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.7, a 38 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font del Lleó\" (km 1.0, a 91 m del track; OSM, no verificado en campo)",
+		"Fuente (km 1.8, a 80 m del track; OSM, no verificado en campo)",
+		"Fuente (km 2.2, a 92 m del track; OSM, no verificado en campo)",
+		"Fuente (km 5.8, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente Pura\" (km 7.1, a 44 m del track; OSM, no verificado en campo)",
+		"Fuente (km 22.4, a 95 m del track; OSM, no verificado en campo)",
+		"Fuente (km 22.7, a 9 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9896186,
+			"lon": -0.5128727,
+			"km": 0.3,
+			"dist_m": 35
+		},
+		{
+			"name": "Font dels vint-i-cinc dolls",
+			"kind": "fuente",
+			"lat": 38.988619,
+			"lon": -0.51245,
+			"km": 0.4,
+			"dist_m": 25
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9888422,
+			"lon": -0.5125007,
+			"km": 0.4,
+			"dist_m": 13
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.989188,
+			"lon": -0.5155719,
+			"km": 0.7,
+			"dist_m": 38
+		},
+		{
+			"name": "Font del Lleó",
+			"kind": "fuente",
+			"lat": 38.9900197,
+			"lon": -0.519356,
+			"km": 1,
+			"dist_m": 91
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9866111,
+			"lon": -0.5246063,
+			"km": 1.8,
+			"dist_m": 80
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.984833,
+			"lon": -0.5292632,
+			"km": 2.2,
+			"dist_m": 92
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9772088,
+			"lon": -0.5648465,
+			"km": 5.8,
+			"dist_m": 11
+		},
+		{
+			"name": "Fuente Pura",
+			"kind": "fuente",
+			"lat": 38.9722388,
+			"lon": -0.5759841,
+			"km": 7.1,
+			"dist_m": 44
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.8969579,
+			"lon": -0.6912309,
+			"km": 22.4,
+			"dist_m": 95
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.8949406,
+			"lon": -0.6919867,
+			"km": 22.7,
+			"dist_m": 9
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "gr-239-e03.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-239-e03",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-78",
+		"pr-cv-193-4",
+		"pr-cv-193-3"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.744943,
@@ -46,6 +151,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-239-e03 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-239-e03.gpx (derivados: inicio, bbox)"
 	]
 }

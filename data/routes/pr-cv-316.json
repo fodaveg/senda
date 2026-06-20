@@ -32,8 +32,82 @@
 		"Fuente (km 11.9, a 39 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de Baix\" (km 12.1, a 92 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font del Mestre",
+			"kind": "manantial",
+			"lat": 40.1794124,
+			"lon": -0.1756927,
+			"km": 7.7,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de la Presola",
+			"kind": "manantial",
+			"lat": 40.1666185,
+			"lon": -0.1574071,
+			"km": 10.4,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1572655,
+			"lon": -0.1629657,
+			"km": 11.7,
+			"dist_m": 77
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1573526,
+			"lon": -0.162077,
+			"km": 11.7,
+			"dist_m": 94
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.1571438,
+			"lon": -0.1633972,
+			"km": 11.8,
+			"dist_m": 76
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1574507,
+			"lon": -0.1643041,
+			"km": 11.9,
+			"dist_m": 39
+		},
+		{
+			"name": "Font de Baix",
+			"kind": "manantial",
+			"lat": 40.1578115,
+			"lon": -0.166824,
+			"km": 12.1,
+			"dist_m": 92
+		}
+	],
+	"pois": [
+		{
+			"name": "Piló de la Creu",
+			"type": "patrimonio",
+			"lat": 40.1834868,
+			"lon": -0.1882692,
+			"km": 5.7,
+			"dist_m": 5
+		},
+		{
+			"name": "Capelleta de la Mare de Déu del Carme",
+			"type": "patrimonio",
+			"lat": 40.156642,
+			"lon": -0.1645488,
+			"km": 11.9,
+			"dist_m": 128
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -58,7 +132,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-316 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-316.gpx (derivados: inicio, bbox)"
 	]
 }

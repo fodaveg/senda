@@ -3,8 +3,40 @@
 		"Fuente (km 0.1, a 97 m del track; OSM, no verificado en campo)",
 		"Manantial (km 0.1, a 95 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8056037,
+			"lon": -0.4091858,
+			"km": 0.1,
+			"dist_m": 97
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.8055574,
+			"lon": -0.4090798,
+			"km": 0.1,
+			"dist_m": 95
+		}
+	],
+	"pois": [
+		{
+			"name": "Alto del Azut",
+			"type": "cumbre",
+			"lat": 39.8118603,
+			"lon": -0.4057983,
+			"km": 3.3,
+			"dist_m": 40
+		}
+	],
 	"shade_ratio": null,
-	"alternatives": ["sl-cv-186", "pr-cv-320", "pr-cv-461"],
-	"enriched_at": "2026-06-11T18:32:01.100Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-186",
+		"pr-cv-320",
+		"pr-cv-461"
+	],
+	"enriched_at": "2026-06-20T09:51:48.373Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

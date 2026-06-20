@@ -1,7 +1,30 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Tossal de la Creueta",
+			"type": "cumbre",
+			"lat": 38.8910319,
+			"lon": -0.3472056,
+			"km": 0.9,
+			"dist_m": 117
+		},
+		{
+			"name": "Mirador de la Creueta",
+			"type": "mirador",
+			"lat": 38.891133,
+			"lon": -0.3470668,
+			"km": 0.9,
+			"dist_m": 124
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-84", "sl-cv-43", "pr-cv-390"],
-	"enriched_at": "2026-06-11T18:48:40.787Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-84",
+		"sl-cv-43",
+		"pr-cv-390"
+	],
+	"enriched_at": "2026-06-20T10:14:42.039Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -42,8 +42,242 @@
 		"Manantial (km 18.7, a 31 m del track; OSM, no verificado en campo)",
 		"Fuente (km 19.0, a 23 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font de Dalt",
+			"kind": "manantial",
+			"lat": 40.2923262,
+			"lon": -0.2952823,
+			"km": 0.4,
+			"dist_m": 97
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2930303,
+			"lon": -0.2974962,
+			"km": 0.6,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2929612,
+			"lon": -0.2975958,
+			"km": 0.6,
+			"dist_m": 4
+		},
+		{
+			"name": "Font de Sant Antoni",
+			"kind": "manantial",
+			"lat": 40.2916986,
+			"lon": -0.2995933,
+			"km": 0.8,
+			"dist_m": 33
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2542671,
+			"lon": -0.3437231,
+			"km": 7.2,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2539268,
+			"lon": -0.3442354,
+			"km": 7.3,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2538224,
+			"lon": -0.3444567,
+			"km": 7.3,
+			"dist_m": 13
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2536591,
+			"lon": -0.3448717,
+			"km": 7.3,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2515175,
+			"lon": -0.3526689,
+			"km": 8.1,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.2511472,
+			"lon": -0.3541096,
+			"km": 8.3,
+			"dist_m": 4
+		},
+		{
+			"name": "Font Coberta",
+			"kind": "manantial",
+			"lat": 40.2510777,
+			"lon": -0.3550583,
+			"km": 8.3,
+			"dist_m": 38
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2513449,
+			"lon": -0.3541549,
+			"km": 8.3,
+			"dist_m": 13
+		},
+		{
+			"name": "Fuente Higuera",
+			"kind": "manantial",
+			"lat": 40.2316069,
+			"lon": -0.4006574,
+			"km": 14.3,
+			"dist_m": 13
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2182169,
+			"lon": -0.4107668,
+			"km": 16.4,
+			"dist_m": 2
+		},
+		{
+			"name": "Fuente del Cura",
+			"kind": "manantial",
+			"lat": 40.2106991,
+			"lon": -0.4149925,
+			"km": 17.8,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.2047661,
+			"lon": -0.4178521,
+			"km": 18.7,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2019782,
+			"lon": -0.4176786,
+			"km": 19,
+			"dist_m": 23
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador del Raval de Sant Joan",
+			"type": "mirador",
+			"lat": 40.2924326,
+			"lon": -0.2921518,
+			"km": 0.1,
+			"dist_m": 149
+		},
+		{
+			"name": "Mirador del Castell",
+			"type": "mirador",
+			"lat": 40.2945905,
+			"lon": -0.2928516,
+			"km": 0.1,
+			"dist_m": 95
+		},
+		{
+			"name": "Portal del Forn",
+			"type": "patrimonio",
+			"lat": 40.2933408,
+			"lon": -0.2926508,
+			"km": 0.1,
+			"dist_m": 44
+		},
+		{
+			"name": "el Pedrís",
+			"type": "patrimonio",
+			"lat": 40.2938339,
+			"lon": -0.2920735,
+			"km": 0.1,
+			"dist_m": 4
+		},
+		{
+			"name": "Portal de Sant Roc",
+			"type": "patrimonio",
+			"lat": 40.2931496,
+			"lon": -0.2932539,
+			"km": 0.2,
+			"dist_m": 58
+		},
+		{
+			"name": "Peiró de Sant Antoni",
+			"type": "patrimonio",
+			"lat": 40.2928785,
+			"lon": -0.2976127,
+			"km": 0.6,
+			"dist_m": 4
+		},
+		{
+			"name": "Tossal del Calvari",
+			"type": "cumbre",
+			"lat": 40.2919642,
+			"lon": -0.2969445,
+			"km": 0.6,
+			"dist_m": 112
+		},
+		{
+			"name": "Collet de les Solanes",
+			"type": "cumbre",
+			"lat": 40.2910176,
+			"lon": -0.3051931,
+			"km": 1.4,
+			"dist_m": 77
+		},
+		{
+			"name": "Fossa del Collet",
+			"type": "patrimonio",
+			"lat": 40.2844027,
+			"lon": -0.3141779,
+			"km": 2.5,
+			"dist_m": 35
+		},
+		{
+			"name": "Mas dels Arcs",
+			"type": "patrimonio",
+			"lat": 40.2729226,
+			"lon": -0.3249349,
+			"km": 4.3,
+			"dist_m": 15
+		},
+		{
+			"name": "Mirador del Pla d'Amunt",
+			"type": "mirador",
+			"lat": 40.26793,
+			"lon": -0.3294002,
+			"km": 5.1,
+			"dist_m": 3
+		},
+		{
+			"name": "Cruz de los Caídos",
+			"type": "patrimonio",
+			"lat": 40.2021621,
+			"lon": -0.4180343,
+			"km": 19,
+			"dist_m": 13
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -68,7 +302,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e30 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e30.gpx (derivados: inicio, bbox)"
 	]
 }

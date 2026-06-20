@@ -21,7 +21,16 @@
 	"water_points": [
 		"Manantial (km 1.4, a 8 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.405643,
+			"lon": -0.5151758,
+			"km": 1.4,
+			"dist_m": 8
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -47,7 +56,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-282 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-282.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

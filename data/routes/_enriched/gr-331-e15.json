@@ -4,8 +4,72 @@
 		"Manantial \"Font del Molí\" (km 0.3, a 77 m del track; OSM, no verificado en campo)",
 		"Fuente (km 14.0, a 29 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Vila",
+			"kind": "fuente",
+			"lat": 40.4569257,
+			"lon": -0.13193,
+			"km": 0,
+			"dist_m": 33
+		},
+		{
+			"name": "Font del Molí",
+			"kind": "manantial",
+			"lat": 40.4584729,
+			"lon": -0.1345982,
+			"km": 0.3,
+			"dist_m": 77
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.4297733,
+			"lon": -0.2524491,
+			"km": 14,
+			"dist_m": 29
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador Ares del Maestrat",
+			"type": "mirador",
+			"lat": 40.4552747,
+			"lon": -0.1317411,
+			"km": 0,
+			"dist_m": 145
+		},
+		{
+			"name": "En record de les víctimes dels bombardejos de la Legió Cóndor",
+			"type": "patrimonio",
+			"lat": 40.4560077,
+			"lon": -0.1310526,
+			"km": 0,
+			"dist_m": 100
+		},
+		{
+			"name": "Alfredo Rovira Pitarch",
+			"type": "patrimonio",
+			"lat": 40.4560048,
+			"lon": -0.1310445,
+			"km": 0,
+			"dist_m": 101
+		},
+		{
+			"name": "Peiró de Sant Isidre",
+			"type": "patrimonio",
+			"lat": 40.4477558,
+			"lon": -0.209099,
+			"km": 8.9,
+			"dist_m": 31
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-45", "pr-cv-387", "sl-cv-46"],
-	"enriched_at": "2026-06-11T18:59:13.180Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-45",
+		"pr-cv-387",
+		"sl-cv-46"
+	],
+	"enriched_at": "2026-06-20T08:40:09.357Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

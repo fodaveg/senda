@@ -3,8 +3,56 @@
 		"Manantial \"Aljub de Maravilla\" (km 5.0, a 57 m del track; OSM, no verificado en campo)",
 		"Fuente (km 8.4, a 5 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Aljub de Maravilla",
+			"kind": "manantial",
+			"lat": 40.0518472,
+			"lon": -0.022294,
+			"km": 5,
+			"dist_m": 57
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0478415,
+			"lon": -0.0556244,
+			"km": 8.4,
+			"dist_m": 5
+		}
+	],
+	"pois": [
+		{
+			"name": "Santa Maria Magdalena i el Frare Antonino",
+			"type": "patrimonio",
+			"lat": 40.0335054,
+			"lon": -0.0076274,
+			"km": 0,
+			"dist_m": 13
+		},
+		{
+			"name": "Sant Jaume",
+			"type": "patrimonio",
+			"lat": 40.02905,
+			"lon": -0.0213381,
+			"km": 14.1,
+			"dist_m": 9
+		},
+		{
+			"name": "Sant Vicent Ferrer",
+			"type": "patrimonio",
+			"lat": 40.0294597,
+			"lon": -0.0144298,
+			"km": 14.7,
+			"dist_m": 3
+		}
+	],
 	"shade_ratio": 0.04,
-	"alternatives": ["gr-33", "gr-33-e02", "pr-cv-451"],
-	"enriched_at": "2026-06-11T18:15:15.451Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-33",
+		"gr-33-e02",
+		"pr-cv-451"
+	],
+	"enriched_at": "2026-06-20T09:36:16.253Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

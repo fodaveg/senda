@@ -1,7 +1,30 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Roca Encantà",
+			"type": "patrimonio",
+			"lat": 38.5210569,
+			"lon": -0.243345,
+			"km": 0.2,
+			"dist_m": 6
+		},
+		{
+			"name": "la Creu de Pedra",
+			"type": "patrimonio",
+			"lat": 38.5210284,
+			"lon": -0.2413021,
+			"km": 19.6,
+			"dist_m": 43
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-353", "pr-cv-12", "pr-cv-289"],
-	"enriched_at": "2026-06-11T19:32:23.807Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-353",
+		"pr-cv-12",
+		"pr-cv-289"
+	],
+	"enriched_at": "2026-06-20T09:42:17.671Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

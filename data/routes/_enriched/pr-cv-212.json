@@ -4,8 +4,64 @@
 		"Fuente (km 11.4, a 27 m del track; OSM, no verificado en campo)",
 		"Fuente (km 12.1, a 85 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Aljub de la Cova dels Corrals",
+			"kind": "manantial",
+			"lat": 38.5415021,
+			"lon": -0.5403283,
+			"km": 6.6,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5399547,
+			"lon": -0.5093206,
+			"km": 11.4,
+			"dist_m": 27
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5375043,
+			"lon": -0.5076898,
+			"km": 12.1,
+			"dist_m": 85
+		}
+	],
+	"pois": [
+		{
+			"name": "Penya Migjorn",
+			"type": "cumbre",
+			"lat": 38.5346195,
+			"lon": -0.5408061,
+			"km": 5.4,
+			"dist_m": 3
+		},
+		{
+			"name": "Torre Grossa",
+			"type": "patrimonio",
+			"lat": 38.5390266,
+			"lon": -0.5091931,
+			"km": 11.5,
+			"dist_m": 7
+		},
+		{
+			"name": "Església Vella",
+			"type": "patrimonio",
+			"lat": 38.5390467,
+			"lon": -0.5082236,
+			"km": 11.5,
+			"dist_m": 91
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-151", "pr-cv-270", "pr-cv-112"],
-	"enriched_at": "2026-06-11T17:59:40.204Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-151",
+		"pr-cv-270",
+		"pr-cv-112"
+	],
+	"enriched_at": "2026-06-20T09:20:02.447Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

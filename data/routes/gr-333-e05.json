@@ -31,8 +31,82 @@
 		"Fuente (km 7.3, a 46 m del track; OSM, no verificado en campo)",
 		"Fuente (km 7.3, a 78 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Era Concejo",
+			"kind": "fuente",
+			"lat": 39.963992,
+			"lon": -0.3944955,
+			"km": 0,
+			"dist_m": 27
+		},
+		{
+			"name": "Fuente El Prau",
+			"kind": "manantial",
+			"lat": 39.9607866,
+			"lon": -0.4020852,
+			"km": 0.9,
+			"dist_m": 37
+		},
+		{
+			"name": "Fuente de las Montalbanas",
+			"kind": "manantial",
+			"lat": 39.9796941,
+			"lon": -0.4389388,
+			"km": 6,
+			"dist_m": 13
+		},
+		{
+			"name": "Fuente del Cerezo",
+			"kind": "manantial",
+			"lat": 39.9856208,
+			"lon": -0.4372148,
+			"km": 6.9,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9886146,
+			"lon": -0.4386295,
+			"km": 7.3,
+			"dist_m": 46
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9887595,
+			"lon": -0.4380679,
+			"km": 7.3,
+			"dist_m": 78
+		}
+	],
+	"pois": [
+		{
+			"name": "El Cabezo",
+			"type": "cumbre",
+			"lat": 39.9616056,
+			"lon": -0.3963306,
+			"km": 0.3,
+			"dist_m": 54
+		},
+		{
+			"name": "Alto del Pinar",
+			"type": "cumbre",
+			"lat": 39.9688549,
+			"lon": -0.425224,
+			"km": 3.8,
+			"dist_m": 142
+		},
+		{
+			"name": "El Tajar",
+			"type": "cumbre",
+			"lat": 39.9749303,
+			"lon": -0.4362503,
+			"km": 5,
+			"dist_m": 100
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -57,7 +131,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e05 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-333-e05.gpx (derivados: inicio, bbox)"
 	]
 }

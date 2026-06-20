@@ -1,7 +1,30 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "la Muntanyeta",
+			"type": "cumbre",
+			"lat": 39.0420136,
+			"lon": -0.3246354,
+			"km": 3,
+			"dist_m": 95
+		},
+		{
+			"name": "Pouet del Tio Pasqualo",
+			"type": "patrimonio",
+			"lat": 39.0275271,
+			"lon": -0.3290279,
+			"km": 5.6,
+			"dist_m": 5
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-60", "sl-cv-79", "pr-cv-183"],
-	"enriched_at": "2026-06-11T18:26:44.972Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-60",
+		"sl-cv-79",
+		"pr-cv-183"
+	],
+	"enriched_at": "2026-06-20T09:45:03.210Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

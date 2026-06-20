@@ -1,7 +1,33 @@
 {
-	"water_points": ["Fuente (km 0.0, a 75 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 0.0, a 75 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0484086,
+			"lon": -0.3960343,
+			"km": 0,
+			"dist_m": 75
+		}
+	],
+	"pois": [
+		{
+			"name": "Capilla San Antonio",
+			"type": "patrimonio",
+			"lat": 40.0415223,
+			"lon": -0.3669221,
+			"km": 3.4,
+			"dist_m": 86
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["gr-333-e11", "sl-cv-70", "gr-333-e07"],
-	"enriched_at": "2026-06-11T17:45:06.696Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-333-e11",
+		"sl-cv-70",
+		"gr-333-e07"
+	],
+	"enriched_at": "2026-06-20T08:42:36.018Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

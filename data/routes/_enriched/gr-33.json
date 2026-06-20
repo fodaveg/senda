@@ -18,8 +18,272 @@
 		"Manantial \"Font Coberta\" (km 57.1, a 81 m del track; OSM, no verificado en campo)",
 		"Fuente (km 57.1, a 1 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0449192,
+			"lon": -0.0599528,
+			"km": 7.4,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0478415,
+			"lon": -0.0556244,
+			"km": 8,
+			"dist_m": 73
+		},
+		{
+			"name": "Pou de la Pererola",
+			"kind": "manantial",
+			"lat": 40.0610341,
+			"lon": -0.0607488,
+			"km": 10,
+			"dist_m": 27
+		},
+		{
+			"name": "Font de la Canal",
+			"kind": "manantial",
+			"lat": 40.0879431,
+			"lon": -0.0757172,
+			"km": 15.5,
+			"dist_m": 22
+		},
+		{
+			"name": "Font d'en Plenes",
+			"kind": "manantial",
+			"lat": 40.0991161,
+			"lon": -0.1033772,
+			"km": 20,
+			"dist_m": 35
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1573526,
+			"lon": -0.162077,
+			"km": 31.5,
+			"dist_m": 67
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1572655,
+			"lon": -0.1629657,
+			"km": 31.7,
+			"dist_m": 76
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.1571438,
+			"lon": -0.1633972,
+			"km": 31.8,
+			"dist_m": 76
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1574507,
+			"lon": -0.1643041,
+			"km": 31.8,
+			"dist_m": 34
+		},
+		{
+			"name": "Font de Baix",
+			"kind": "manantial",
+			"lat": 40.1578115,
+			"lon": -0.166824,
+			"km": 32,
+			"dist_m": 88
+		},
+		{
+			"name": "Pou del Mas de la Vall",
+			"kind": "manantial",
+			"lat": 40.1868473,
+			"lon": -0.2169175,
+			"km": 38.9,
+			"dist_m": 6
+		},
+		{
+			"name": "la Font",
+			"kind": "fuente",
+			"lat": 40.2456566,
+			"lon": -0.2875797,
+			"km": 50.3,
+			"dist_m": 30
+		},
+		{
+			"name": "Font dels Posos",
+			"kind": "manantial",
+			"lat": 40.2485263,
+			"lon": -0.2986905,
+			"km": 51.6,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2515175,
+			"lon": -0.3526689,
+			"km": 56.9,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.2511472,
+			"lon": -0.3541096,
+			"km": 57.1,
+			"dist_m": 2
+		},
+		{
+			"name": "Font Coberta",
+			"kind": "manantial",
+			"lat": 40.2510777,
+			"lon": -0.3550583,
+			"km": 57.1,
+			"dist_m": 81
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2513449,
+			"lon": -0.3541549,
+			"km": 57.1,
+			"dist_m": 1
+		}
+	],
+	"pois": [
+		{
+			"name": "Poblat Ibèric de les Forques",
+			"type": "patrimonio",
+			"lat": 40.038138,
+			"lon": -0.0607996,
+			"km": 6.4,
+			"dist_m": 124
+		},
+		{
+			"name": "Sant Miquel",
+			"type": "patrimonio",
+			"lat": 40.0938832,
+			"lon": -0.0901958,
+			"km": 17.7,
+			"dist_m": 5
+		},
+		{
+			"name": "Malpica",
+			"type": "cumbre",
+			"lat": 40.1173223,
+			"lon": -0.1217305,
+			"km": 23.8,
+			"dist_m": 127
+		},
+		{
+			"name": "Capelleta de la Mare de Déu del Carme",
+			"type": "patrimonio",
+			"lat": 40.156642,
+			"lon": -0.1645488,
+			"km": 31.8,
+			"dist_m": 126
+		},
+		{
+			"name": "el Peiró de la Vega",
+			"type": "patrimonio",
+			"lat": 40.2388932,
+			"lon": -0.2841885,
+			"km": 49.5,
+			"dist_m": 9
+		},
+		{
+			"name": "Mirador de Pau Montoliu",
+			"type": "mirador",
+			"lat": 40.2440632,
+			"lon": -0.2860928,
+			"km": 50.1,
+			"dist_m": 69
+		},
+		{
+			"name": "Mirador del Castell",
+			"type": "mirador",
+			"lat": 40.2447945,
+			"lon": -0.2860099,
+			"km": 50.2,
+			"dist_m": 116
+		},
+		{
+			"name": "L'Arxiu",
+			"type": "patrimonio",
+			"lat": 40.244597,
+			"lon": -0.2863554,
+			"km": 50.2,
+			"dist_m": 80
+		},
+		{
+			"name": "la Roca",
+			"type": "cumbre",
+			"lat": 40.2449172,
+			"lon": -0.2859563,
+			"km": 50.2,
+			"dist_m": 125
+		},
+		{
+			"name": "la Roca Penyanposos",
+			"type": "cumbre",
+			"lat": 40.2467674,
+			"lon": -0.2880639,
+			"km": 50.5,
+			"dist_m": 121
+		},
+		{
+			"name": "El Peiró de la Font",
+			"type": "patrimonio",
+			"lat": 40.2466032,
+			"lon": -0.2905046,
+			"km": 50.6,
+			"dist_m": 6
+		},
+		{
+			"name": "Tossal de Sant Cristòfol",
+			"type": "cumbre",
+			"lat": 40.2478198,
+			"lon": -0.2903025,
+			"km": 50.6,
+			"dist_m": 127
+		},
+		{
+			"name": "La Segona Creveta",
+			"type": "patrimonio",
+			"lat": 40.2465316,
+			"lon": -0.292363,
+			"km": 50.8,
+			"dist_m": 4
+		},
+		{
+			"name": "Moleta de Mor",
+			"type": "cumbre",
+			"lat": 40.2491586,
+			"lon": -0.3264892,
+			"km": 54.4,
+			"dist_m": 102
+		},
+		{
+			"name": "Capoll de la Lloma",
+			"type": "cumbre",
+			"lat": 40.2512118,
+			"lon": -0.3330284,
+			"km": 55.1,
+			"dist_m": 35
+		}
+	],
 	"shade_ratio": 0.1,
-	"alternatives": ["pr-cv-448", "pr-cv-378", "gr-33-e02"],
-	"enriched_at": "2026-06-11T17:41:26.849Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-448",
+		"pr-cv-378",
+		"gr-33-e02"
+	],
+	"enriched_at": "2026-06-20T08:37:29.828Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -5,8 +5,88 @@
 		"Manantial \"Font del Torrent\" (km 8.7, a 81 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Mas d'en Pastor\" (km 14.2, a 4 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Parc",
+			"kind": "fuente",
+			"lat": 40.3129172,
+			"lon": 0.0300679,
+			"km": 8.4,
+			"dist_m": 12
+		},
+		{
+			"name": "Font Nova",
+			"kind": "manantial",
+			"lat": 40.3121203,
+			"lon": 0.0307006,
+			"km": 8.5,
+			"dist_m": 41
+		},
+		{
+			"name": "Font del Torrent",
+			"kind": "manantial",
+			"lat": 40.3115747,
+			"lon": 0.0321708,
+			"km": 8.7,
+			"dist_m": 81
+		},
+		{
+			"name": "Font del Mas d'en Pastor",
+			"kind": "manantial",
+			"lat": 40.2862809,
+			"lon": 0.0069521,
+			"km": 14.2,
+			"dist_m": 4
+		}
+	],
+	"pois": [
+		{
+			"name": "Tossal d'en Fos",
+			"type": "cumbre",
+			"lat": 40.2814748,
+			"lon": -0.000693,
+			"km": 2.3,
+			"dist_m": 26
+		},
+		{
+			"name": "Tossal de la Bassa",
+			"type": "cumbre",
+			"lat": 40.2989234,
+			"lon": 0.0037368,
+			"km": 5.2,
+			"dist_m": 5
+		},
+		{
+			"name": "Tossal de Pastadura",
+			"type": "cumbre",
+			"lat": 40.3024985,
+			"lon": 0.0111683,
+			"km": 6,
+			"dist_m": 105
+		},
+		{
+			"name": "Morral Roig",
+			"type": "cumbre",
+			"lat": 40.3053118,
+			"lon": 0.0177348,
+			"km": 6.7,
+			"dist_m": 34
+		},
+		{
+			"name": "Peiró de les Ombries",
+			"type": "patrimonio",
+			"lat": 40.2735968,
+			"lon": -0.0052883,
+			"km": 16.3,
+			"dist_m": 16
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-350", "pr-cv-348", "sl-cv-94"],
-	"enriched_at": "2026-06-11T18:12:25.506Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-350",
+		"pr-cv-348",
+		"sl-cv-94"
+	],
+	"enriched_at": "2026-06-20T09:30:29.296Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

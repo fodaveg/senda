@@ -10,8 +10,104 @@
 		"Fuente (km 8.9, a 12 m del track; OSM, no verificado en campo)",
 		"Fuente (km 9.1, a 46 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de los Dos Caños",
+			"kind": "fuente",
+			"lat": 39.900437,
+			"lon": -0.3403491,
+			"km": 0,
+			"dist_m": 41
+		},
+		{
+			"name": "Font de Benitandús",
+			"kind": "fuente",
+			"lat": 39.9298376,
+			"lon": -0.3364666,
+			"km": 5.3,
+			"dist_m": 4
+		},
+		{
+			"name": "Fuente Los Silverios",
+			"kind": "manantial",
+			"lat": 39.9326032,
+			"lon": -0.3376992,
+			"km": 5.7,
+			"dist_m": 9
+		},
+		{
+			"name": "el Bassó de la Muntanyeta",
+			"kind": "manantial",
+			"lat": 39.950398,
+			"lon": -0.3354692,
+			"km": 8.5,
+			"dist_m": 56
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9518675,
+			"lon": -0.334239,
+			"km": 8.7,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9525185,
+			"lon": -0.333373,
+			"km": 8.8,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.952358,
+			"lon": -0.3324312,
+			"km": 8.9,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9523478,
+			"lon": -0.3324749,
+			"km": 8.9,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9509135,
+			"lon": -0.3346357,
+			"km": 9.1,
+			"dist_m": 46
+		}
+	],
+	"pois": [
+		{
+			"name": "Les Naves",
+			"type": "cumbre",
+			"lat": 39.9208644,
+			"lon": -0.3290492,
+			"km": 3.5,
+			"dist_m": 140
+		},
+		{
+			"name": "les Àguiles",
+			"type": "cumbre",
+			"lat": 39.9441742,
+			"lon": -0.3369785,
+			"km": 7.4,
+			"dist_m": 94
+		}
+	],
 	"shade_ratio": 0.24,
-	"alternatives": ["gr-36-e03", "sl-cv-29", "gr-333-e03"],
-	"enriched_at": "2026-06-11T17:55:13.625Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-36-e03",
+		"sl-cv-29",
+		"gr-333-e03"
+	],
+	"enriched_at": "2026-06-20T09:10:21.079Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

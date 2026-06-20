@@ -1,7 +1,38 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Penya de l'Aventador",
+			"type": "cumbre",
+			"lat": 38.9653058,
+			"lon": -0.4876176,
+			"km": 0.7,
+			"dist_m": 115
+		},
+		{
+			"name": "Alt del Palmeral",
+			"type": "cumbre",
+			"lat": 38.9669011,
+			"lon": -0.4809254,
+			"km": 1.3,
+			"dist_m": 6
+		},
+		{
+			"name": "Penya Blanca",
+			"type": "cumbre",
+			"lat": 38.9688799,
+			"lon": -0.4754063,
+			"km": 2,
+			"dist_m": 7
+		}
+	],
 	"shade_ratio": 0.09,
-	"alternatives": ["pr-cv-78", "pr-cv-193-3", "gr-239-e03"],
-	"enriched_at": "2026-06-11T17:58:26.994Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-78",
+		"pr-cv-193-3",
+		"gr-239-e03"
+	],
+	"enriched_at": "2026-06-20T09:19:14.899Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

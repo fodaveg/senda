@@ -29,8 +29,58 @@
 		"Manantial \"Font Nova\" (km 14.5, a 5 m del track; OSM, no verificado en campo)",
 		"Fuente (km 15.2, a 34 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0729127,
+			"lon": -0.2120608,
+			"km": 0.2,
+			"dist_m": 95
+		},
+		{
+			"name": "La fonteta",
+			"kind": "manantial",
+			"lat": 40.0957039,
+			"lon": -0.2138398,
+			"km": 11.8,
+			"dist_m": 2
+		},
+		{
+			"name": "Font Nova",
+			"kind": "manantial",
+			"lat": 40.0804938,
+			"lon": -0.2098644,
+			"km": 14.5,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0763962,
+			"lon": -0.2116773,
+			"km": 15.2,
+			"dist_m": 34
+		}
+	],
+	"pois": [
+		{
+			"name": "Castell de l'Alcalatén",
+			"type": "patrimonio",
+			"lat": 40.0925079,
+			"lon": -0.1969466,
+			"km": 6.8,
+			"dist_m": 23
+		},
+		{
+			"name": "Mina de Cabres",
+			"type": "patrimonio",
+			"lat": 40.1006081,
+			"lon": -0.1979457,
+			"km": 8.9,
+			"dist_m": 5
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +105,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-357 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-357.gpx (derivados: inicio, bbox)"
 	]
 }

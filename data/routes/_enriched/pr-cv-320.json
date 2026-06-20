@@ -1,7 +1,30 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Alto del Azud",
+			"type": "cumbre",
+			"lat": 39.8148538,
+			"lon": -0.4079777,
+			"km": 1.4,
+			"dist_m": 62
+		},
+		{
+			"name": "Mirador de la Balsa de la Dehesa",
+			"type": "mirador",
+			"lat": 39.8160933,
+			"lon": -0.327735,
+			"km": 10.9,
+			"dist_m": 9
+		}
+	],
 	"shade_ratio": 0.13,
-	"alternatives": ["sl-cv-116", "sl-cv-186", "pr-cv-461"],
-	"enriched_at": "2026-06-11T18:09:13.334Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-116",
+		"sl-cv-186",
+		"pr-cv-461"
+	],
+	"enriched_at": "2026-06-20T09:28:57.501Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

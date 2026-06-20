@@ -6,8 +6,72 @@
 		"Manantial \"Fuente de la Penya\" (km 13.3, a 4 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente Larga\" (km 16.2, a 13 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Era Concejo",
+			"kind": "fuente",
+			"lat": 39.963992,
+			"lon": -0.3944955,
+			"km": 6.3,
+			"dist_m": 17
+		},
+		{
+			"name": "Fuente El Prau",
+			"kind": "manantial",
+			"lat": 39.9607866,
+			"lon": -0.4020852,
+			"km": 7.2,
+			"dist_m": 38
+		},
+		{
+			"name": "Fuente del Tajuelo",
+			"kind": "manantial",
+			"lat": 39.9757108,
+			"lon": -0.4098406,
+			"km": 10.7,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente de la Penya",
+			"kind": "manantial",
+			"lat": 39.9885731,
+			"lon": -0.3940019,
+			"km": 13.3,
+			"dist_m": 4
+		},
+		{
+			"name": "Fuente Larga",
+			"kind": "manantial",
+			"lat": 39.9958769,
+			"lon": -0.3730697,
+			"km": 16.2,
+			"dist_m": 13
+		}
+	],
+	"pois": [
+		{
+			"name": "Alto de la Rambla",
+			"type": "cumbre",
+			"lat": 39.9725617,
+			"lon": -0.3890091,
+			"km": 4.4,
+			"dist_m": 137
+		},
+		{
+			"name": "El Cabezo",
+			"type": "cumbre",
+			"lat": 39.9616056,
+			"lon": -0.3963306,
+			"km": 6.6,
+			"dist_m": 60
+		}
+	],
 	"shade_ratio": 0.05,
-	"alternatives": ["pr-cv-398", "gr-333-e08", "pr-cv-314"],
-	"enriched_at": "2026-06-11T19:15:54.159Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-398",
+		"gr-333-e08",
+		"pr-cv-314"
+	],
+	"enriched_at": "2026-06-20T09:26:06.507Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

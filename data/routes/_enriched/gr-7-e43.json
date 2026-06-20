@@ -1,0 +1,24 @@
+{
+	"water_points": [
+		"Manantial \"Fuente del Collado\" (km 0.0, a 23 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Fuente del Collado",
+			"kind": "manantial",
+			"lat": 39.0935104,
+			"lon": -0.9204955,
+			"km": 0,
+			"dist_m": 23
+		}
+	],
+	"pois": [],
+	"shade_ratio": 0,
+	"alternatives": [
+		"pr-cv-236",
+		"pr-cv-237",
+		"pr-cv-234"
+	],
+	"enriched_at": "2026-06-20T08:49:59.160Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

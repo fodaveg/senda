@@ -3,8 +3,40 @@
 		"Fuente (km 0.1, a 54 m del track; OSM, no verificado en campo)",
 		"Manantial \"els Abeuradors\" (km 0.8, a 48 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.423084,
+			"lon": -0.2538124,
+			"km": 0.1,
+			"dist_m": 54
+		},
+		{
+			"name": "els Abeuradors",
+			"kind": "manantial",
+			"lat": 40.4180183,
+			"lon": -0.2495053,
+			"km": 0.8,
+			"dist_m": 48
+		}
+	],
+	"pois": [
+		{
+			"name": "Portal de Sant Roc",
+			"type": "patrimonio",
+			"lat": 40.4237712,
+			"lon": -0.2542424,
+			"km": 0.1,
+			"dist_m": 69
+		}
+	],
 	"shade_ratio": 0.13,
-	"alternatives": ["sl-cv-18-2", "sl-cv-18-3", "gr-331-e01"],
-	"enriched_at": "2026-06-11T19:48:28.344Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-18-2",
+		"sl-cv-18-3",
+		"gr-331-e01"
+	],
+	"enriched_at": "2026-06-20T09:59:59.592Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -3,8 +3,31 @@
 		"Manantial \"Font del Pla de les Fontetes\" (km 3.1, a 29 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de Micairent\" (km 7.2, a 19 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Pla de les Fontetes",
+			"kind": "manantial",
+			"lat": 38.8861029,
+			"lon": -0.3101323,
+			"km": 3.1,
+			"dist_m": 29
+		},
+		{
+			"name": "Font de Micairent",
+			"kind": "manantial",
+			"lat": 38.8842006,
+			"lon": -0.3266173,
+			"km": 7.2,
+			"dist_m": 19
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.21,
-	"alternatives": ["sl-cv-83", "sl-cv-84", "sl-cv-43"],
-	"enriched_at": "2026-06-11T18:17:27.212Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-83",
+		"sl-cv-84",
+		"sl-cv-43"
+	],
+	"enriched_at": "2026-06-20T09:38:21.035Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

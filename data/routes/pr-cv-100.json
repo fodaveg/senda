@@ -27,8 +27,66 @@
 		"Manantial \"Font de les Galeries\" (km 2.3, a 5 m del track; OSM, no verificado en campo)",
 		"Fuente (km 8.2, a 11 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font de les Galeries",
+			"kind": "manantial",
+			"lat": 38.936565,
+			"lon": -0.2771124,
+			"km": 2.3,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9327147,
+			"lon": -0.2590265,
+			"km": 8.2,
+			"dist_m": 11
+		}
+	],
+	"pois": [
+		{
+			"name": "Forn de Calç",
+			"type": "patrimonio",
+			"lat": 38.9364549,
+			"lon": -0.2777188,
+			"km": 2.4,
+			"dist_m": 7
+		},
+		{
+			"name": "el Picaio",
+			"type": "mirador",
+			"lat": 38.9401741,
+			"lon": -0.287217,
+			"km": 3.8,
+			"dist_m": 8
+		},
+		{
+			"name": "Alt de les Aligues",
+			"type": "cumbre",
+			"lat": 38.9453992,
+			"lon": -0.291471,
+			"km": 4.3,
+			"dist_m": 148
+		},
+		{
+			"name": "Penyo de Montoig",
+			"type": "cumbre",
+			"lat": 38.944182,
+			"lon": -0.284383,
+			"km": 4.9,
+			"dist_m": 27
+		},
+		{
+			"name": "Ceràmica a la Verge de la Salud",
+			"type": "patrimonio",
+			"lat": 38.9330904,
+			"lon": -0.2590699,
+			"km": 8.1,
+			"dist_m": 9
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +111,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-100 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-100.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -23,20 +23,35 @@
 		"esfuerzo": 1
 	},
 	"est_duration_min": 30,
-	"water_points": [],
-	"water_points_geo": [],
+	"water_points": [
+		"Manantial \"Font de la Murta\" (km 1.6, a 3 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Murta",
+			"kind": "manantial",
+			"lat": 39.1291739,
+			"lon": -0.3554613,
+			"km": 1.6,
+			"dist_m": 3
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "sl-cv-82.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/sl-cv-82",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-335",
+		"pr-cv-334",
+		"sl-cv-81"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.371740004047751,
@@ -46,6 +61,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-82 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-82.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -27,8 +27,50 @@
 		"Manantial \"Font del Pí\" (km 12.8, a 19 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Molí\" (km 14.5, a 96 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font del Pí",
+			"kind": "manantial",
+			"lat": 38.6546336,
+			"lon": -0.1941336,
+			"km": 12.8,
+			"dist_m": 19
+		},
+		{
+			"name": "Font del Molí",
+			"kind": "manantial",
+			"lat": 38.6623822,
+			"lon": -0.2078379,
+			"km": 14.5,
+			"dist_m": 96
+		}
+	],
+	"pois": [
+		{
+			"name": "Cementeri Vell",
+			"type": "patrimonio",
+			"lat": 38.6095223,
+			"lon": -0.2696475,
+			"km": 0.2,
+			"dist_m": 52
+		},
+		{
+			"name": "Penyó Roc",
+			"type": "cumbre",
+			"lat": 38.6420232,
+			"lon": -0.1871326,
+			"km": 10.9,
+			"dist_m": 96
+		},
+		{
+			"name": "Morro de la Molinera",
+			"type": "cumbre",
+			"lat": 38.6458372,
+			"lon": -0.18732,
+			"km": 11.3,
+			"dist_m": 132
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +95,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-9 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-9.gpx (derivados: inicio, bbox)"
 	]
 }

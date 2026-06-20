@@ -25,8 +25,98 @@
 		"Fuente (km 11.1, a 11 m del track; OSM, no verificado en campo)",
 		"Fuente (km 11.7, a 98 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.631719,
+			"lon": -0.2378279,
+			"km": 6.5,
+			"dist_m": 8
+		},
+		{
+			"name": "Font de la Saranyana",
+			"kind": "manantial",
+			"lat": 40.6327785,
+			"lon": -0.245655,
+			"km": 7.4,
+			"dist_m": 67
+		},
+		{
+			"name": "Font de la Vila",
+			"kind": "manantial",
+			"lat": 40.6196049,
+			"lon": -0.2717356,
+			"km": 10.8,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6175184,
+			"lon": -0.2744813,
+			"km": 11.1,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6162161,
+			"lon": -0.280057,
+			"km": 11.7,
+			"dist_m": 98
+		}
+	],
+	"pois": [
+		{
+			"name": "Peiró de Sant Pere dels Coixos",
+			"type": "patrimonio",
+			"lat": 40.6364725,
+			"lon": -0.2165714,
+			"km": 2.2,
+			"dist_m": 27
+		},
+		{
+			"name": "Collet de la Saranyana",
+			"type": "cumbre",
+			"lat": 40.6231802,
+			"lon": -0.2222007,
+			"km": 3.8,
+			"dist_m": 111
+		},
+		{
+			"name": "Peiró de Sant Pere",
+			"type": "patrimonio",
+			"lat": 40.6191921,
+			"lon": -0.2307169,
+			"km": 4.9,
+			"dist_m": 22
+		},
+		{
+			"name": "Peiró de Sant Josep",
+			"type": "patrimonio",
+			"lat": 40.6176555,
+			"lon": -0.2747601,
+			"km": 11.2,
+			"dist_m": 5
+		},
+		{
+			"name": "Peiró de Sant Gil",
+			"type": "patrimonio",
+			"lat": 40.6175702,
+			"lon": -0.2756591,
+			"km": 11.3,
+			"dist_m": 7
+		},
+		{
+			"name": "Peiró de les Canals",
+			"type": "patrimonio",
+			"lat": 40.6146268,
+			"lon": -0.2837086,
+			"km": 12,
+			"dist_m": 19
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -51,7 +141,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-117 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-117.gpx (derivados: inicio, bbox)"
 	]
 }

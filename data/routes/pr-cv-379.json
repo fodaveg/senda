@@ -26,8 +26,34 @@
 	"water_points": [
 		"Manantial \"Fuente de Santa Ana\" (km 0.4, a 5 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente de Santa Ana",
+			"kind": "manantial",
+			"lat": 39.2317661,
+			"lon": -1.059661,
+			"km": 0.4,
+			"dist_m": 5
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de la Era del Chulo",
+			"type": "mirador",
+			"lat": 39.2327321,
+			"lon": -1.059929,
+			"km": 0.5,
+			"dist_m": 5
+		},
+		{
+			"name": "Cerro Agrás",
+			"type": "cumbre",
+			"lat": 39.2395525,
+			"lon": -1.0716871,
+			"km": 3.8,
+			"dist_m": 105
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +78,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-379 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-379.gpx (derivados: inicio, bbox)"
 	]
 }

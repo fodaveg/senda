@@ -4,8 +4,39 @@
 		"Fuente (km 5.4, a 77 m del track; OSM, no verificado en campo)",
 		"Fuente (km 5.9, a 91 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente la Higuera",
+			"kind": "manantial",
+			"lat": 40.0793152,
+			"lon": -0.3641612,
+			"km": 3.8,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0866441,
+			"lon": -0.3741306,
+			"km": 5.4,
+			"dist_m": 77
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0870814,
+			"lon": -0.3713849,
+			"km": 5.9,
+			"dist_m": 91
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.7,
-	"alternatives": ["sl-cv-91", "gr-333-e12", "gr-333-e10"],
-	"enriched_at": "2026-06-11T19:51:40.065Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-91",
+		"gr-333-e12",
+		"gr-333-e10"
+	],
+	"enriched_at": "2026-06-20T10:03:26.252Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

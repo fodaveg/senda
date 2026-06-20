@@ -1,7 +1,30 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Fuente de los Siete Caños",
+			"type": "patrimonio",
+			"lat": 39.4720249,
+			"lon": -0.915533,
+			"km": 0,
+			"dist_m": 120
+		},
+		{
+			"name": "Cruz Pairal",
+			"type": "patrimonio",
+			"lat": 39.4728467,
+			"lon": -0.9145597,
+			"km": 10.7,
+			"dist_m": 3
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["gr-7-e40", "gr-238-e10", "pr-cv-300"],
-	"enriched_at": "2026-06-11T22:46:51.704Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-7-e40",
+		"gr-238-e10",
+		"pr-cv-300"
+	],
+	"enriched_at": "2026-06-20T09:44:15.289Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

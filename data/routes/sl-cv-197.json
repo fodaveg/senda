@@ -28,7 +28,32 @@
 		"Fuente (km 5.4, a 77 m del track; OSM, no verificado en campo)",
 		"Fuente (km 5.9, a 91 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente la Higuera",
+			"kind": "manantial",
+			"lat": 40.0793152,
+			"lon": -0.3641612,
+			"km": 3.8,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0866441,
+			"lon": -0.3741306,
+			"km": 5.4,
+			"dist_m": 77
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0870814,
+			"lon": -0.3713849,
+			"km": 5.9,
+			"dist_m": 91
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -54,7 +79,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-197 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-197.gpx (derivados: inicio, bbox)"
 	]
 }

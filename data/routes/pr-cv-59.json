@@ -25,7 +25,56 @@
 	"est_duration_min": 375,
 	"water_points": [],
 	"water_points_geo": [],
-	"pois": [],
+	"pois": [
+		{
+			"name": "La Copa de la Maceta",
+			"type": "cumbre",
+			"lat": 38.1026062,
+			"lon": -0.9482226,
+			"km": 5.7,
+			"dist_m": 115
+		},
+		{
+			"name": "Cruz de la Muela",
+			"type": "mirador",
+			"lat": 38.1020339,
+			"lon": -0.9515665,
+			"km": 6.3,
+			"dist_m": 6
+		},
+		{
+			"name": "Cruz de la Muela",
+			"type": "cumbre",
+			"lat": 38.1020354,
+			"lon": -0.9515658,
+			"km": 6.3,
+			"dist_m": 6
+		},
+		{
+			"name": "La Naveta",
+			"type": "cumbre",
+			"lat": 38.1056553,
+			"lon": -0.978927,
+			"km": 9.2,
+			"dist_m": 139
+		},
+		{
+			"name": "Peña de Orihuela",
+			"type": "cumbre",
+			"lat": 38.099027,
+			"lon": -0.9992364,
+			"km": 11.4,
+			"dist_m": 1
+		},
+		{
+			"name": "Cabezo Lodroño",
+			"type": "cumbre",
+			"lat": 38.0979386,
+			"lon": -0.9927799,
+			"km": 12.1,
+			"dist_m": 66
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -50,7 +99,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-59 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-59.gpx (derivados: inicio, bbox)"
 	]
 }

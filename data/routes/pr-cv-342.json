@@ -23,8 +23,50 @@
 		"Fuente (km 26.4, a 12 m del track; OSM, no verificado en campo)",
 		"Fuente (km 26.8, a 48 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente Santa o de San Pascual",
+			"kind": "manantial",
+			"lat": 38.3781574,
+			"lon": -0.686968,
+			"km": 26.4,
+			"dist_m": 25
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.3782413,
+			"lon": -0.686851,
+			"km": 26.4,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.3777847,
+			"lon": -0.6882047,
+			"km": 26.8,
+			"dist_m": 48
+		}
+	],
+	"pois": [
+		{
+			"name": "Torre Árabe de Monforte del Cid",
+			"type": "patrimonio",
+			"lat": 38.3846422,
+			"lon": -0.7284164,
+			"km": 0,
+			"dist_m": 19
+		},
+		{
+			"name": "Cid",
+			"type": "cumbre",
+			"lat": 38.4538041,
+			"lon": -0.7191452,
+			"km": 12.1,
+			"dist_m": 5
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -49,7 +91,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-342 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-342.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

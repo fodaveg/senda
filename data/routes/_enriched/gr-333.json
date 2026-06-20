@@ -72,8 +72,696 @@
 		"Manantial \"Fuente del Canónigo\" (km 95.9, a 7 m del track; OSM, no verificado en campo)",
 		"Fuente (km 104.3, a 10 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Perera",
+			"kind": "fuente",
+			"lat": 39.9489587,
+			"lon": -0.3068366,
+			"km": 0.1,
+			"dist_m": 34
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9476342,
+			"lon": -0.3071159,
+			"km": 0.2,
+			"dist_m": 78
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9465477,
+			"lon": -0.3106394,
+			"km": 0.6,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9509135,
+			"lon": -0.3346357,
+			"km": 3.5,
+			"dist_m": 49
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.952358,
+			"lon": -0.3324312,
+			"km": 3.8,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9523478,
+			"lon": -0.3324749,
+			"km": 3.8,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9525185,
+			"lon": -0.333373,
+			"km": 3.9,
+			"dist_m": 1
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9518675,
+			"lon": -0.334239,
+			"km": 4,
+			"dist_m": 3
+		},
+		{
+			"name": "el Bassó de la Muntanyeta",
+			"kind": "manantial",
+			"lat": 39.950398,
+			"lon": -0.3354692,
+			"km": 4.2,
+			"dist_m": 56
+		},
+		{
+			"name": "Fuente Los Silverios",
+			"kind": "manantial",
+			"lat": 39.9326032,
+			"lon": -0.3376992,
+			"km": 7,
+			"dist_m": 11
+		},
+		{
+			"name": "Font de Benitandús",
+			"kind": "fuente",
+			"lat": 39.9298376,
+			"lon": -0.3364666,
+			"km": 7.3,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9187018,
+			"lon": -0.3398079,
+			"km": 9.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de la Pistola",
+			"kind": "manantial",
+			"lat": 39.9157532,
+			"lon": -0.3383482,
+			"km": 9.6,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente de los Dos Caños",
+			"kind": "fuente",
+			"lat": 39.900437,
+			"lon": -0.3403491,
+			"km": 12.5,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.901244,
+			"lon": -0.3420523,
+			"km": 12.7,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9157832,
+			"lon": -0.3543602,
+			"km": 16.3,
+			"dist_m": 2
+		},
+		{
+			"name": "Fuente de San Pedro",
+			"kind": "manantial",
+			"lat": 39.9181948,
+			"lon": -0.3562437,
+			"km": 16.8,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente de Jinquer",
+			"kind": "manantial",
+			"lat": 39.9265308,
+			"lon": -0.3887696,
+			"km": 20.4,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente de la Solana",
+			"kind": "manantial",
+			"lat": 39.9327596,
+			"lon": -0.4035491,
+			"km": 22.1,
+			"dist_m": 3
+		},
+		{
+			"name": "Fuente del Baladre",
+			"kind": "manantial",
+			"lat": 39.9345852,
+			"lon": -0.4076743,
+			"km": 22.5,
+			"dist_m": 64
+		},
+		{
+			"name": "Fuente de la Era Concejo",
+			"kind": "fuente",
+			"lat": 39.963992,
+			"lon": -0.3944955,
+			"km": 29.6,
+			"dist_m": 6
+		},
+		{
+			"name": "Fuente El Prau",
+			"kind": "manantial",
+			"lat": 39.9607866,
+			"lon": -0.4020852,
+			"km": 30.6,
+			"dist_m": 37
+		},
+		{
+			"name": "Fuente de las Montalbanas",
+			"kind": "manantial",
+			"lat": 39.9796941,
+			"lon": -0.4389388,
+			"km": 35.7,
+			"dist_m": 13
+		},
+		{
+			"name": "Fuente del Cerezo",
+			"kind": "manantial",
+			"lat": 39.9856208,
+			"lon": -0.4372148,
+			"km": 36.6,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9886146,
+			"lon": -0.4386295,
+			"km": 37,
+			"dist_m": 26
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9887595,
+			"lon": -0.4380679,
+			"km": 37.1,
+			"dist_m": 13
+		},
+		{
+			"name": "Fuente Vieja",
+			"kind": "manantial",
+			"lat": 39.9889527,
+			"lon": -0.4372001,
+			"km": 37.3,
+			"dist_m": 3
+		},
+		{
+			"name": "Fuente de la Pastora",
+			"kind": "manantial",
+			"lat": 40.0067281,
+			"lon": -0.4292695,
+			"km": 39.9,
+			"dist_m": 23
+		},
+		{
+			"name": "Fuente del Río",
+			"kind": "manantial",
+			"lat": 40.0075169,
+			"lon": -0.4295764,
+			"km": 40,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente del Zuro",
+			"kind": "manantial",
+			"lat": 40.0117081,
+			"lon": -0.4295846,
+			"km": 40.8,
+			"dist_m": 33
+		},
+		{
+			"name": "Fuente la Paciencia",
+			"kind": "manantial",
+			"lat": 40.0208443,
+			"lon": -0.4248359,
+			"km": 42.3,
+			"dist_m": 12
+		},
+		{
+			"name": "Fuente del Cañar",
+			"kind": "manantial",
+			"lat": 40.0210691,
+			"lon": -0.4224492,
+			"km": 42.5,
+			"dist_m": 16
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0209989,
+			"lon": -0.4205613,
+			"km": 42.7,
+			"dist_m": 46
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0202963,
+			"lon": -0.4191609,
+			"km": 42.8,
+			"dist_m": 21
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.018784,
+			"lon": -0.417669,
+			"km": 43.1,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9999441,
+			"lon": -0.3761154,
+			"km": 49,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9983816,
+			"lon": -0.3752567,
+			"km": 49.3,
+			"dist_m": 21
+		},
+		{
+			"name": "Fuente El Turio",
+			"kind": "manantial",
+			"lat": 39.9985764,
+			"lon": -0.3744156,
+			"km": 49.3,
+			"dist_m": 16
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9990504,
+			"lon": -0.374185,
+			"km": 49.4,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9992334,
+			"lon": -0.3741208,
+			"km": 49.4,
+			"dist_m": 3
+		},
+		{
+			"name": "Fuente Rita",
+			"kind": "fuente",
+			"lat": 39.9985893,
+			"lon": -0.3743978,
+			"km": 49.4,
+			"dist_m": 17
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9992853,
+			"lon": -0.3750645,
+			"km": 49.4,
+			"dist_m": 52
+		},
+		{
+			"name": "Fuente del Castillo",
+			"kind": "manantial",
+			"lat": 40.0201712,
+			"lon": -0.3584596,
+			"km": 54.3,
+			"dist_m": 20
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.0207648,
+			"lon": -0.3576351,
+			"km": 54.4,
+			"dist_m": 19
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0251877,
+			"lon": -0.3571614,
+			"km": 55.2,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0263911,
+			"lon": -0.3563945,
+			"km": 55.5,
+			"dist_m": 4
+		},
+		{
+			"name": "Fuente de San Juan Bautista",
+			"kind": "fuente",
+			"lat": 40.0266438,
+			"lon": -0.3554948,
+			"km": 55.6,
+			"dist_m": 31
+		},
+		{
+			"name": "Fuente de la Piqueta",
+			"kind": "manantial",
+			"lat": 40.0205209,
+			"lon": -0.3698326,
+			"km": 57.6,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente del Sastre",
+			"kind": "manantial",
+			"lat": 40.0235372,
+			"lon": -0.3755069,
+			"km": 58.7,
+			"dist_m": 21
+		},
+		{
+			"name": "Fuente del Melic",
+			"kind": "manantial",
+			"lat": 40.0242175,
+			"lon": -0.3854685,
+			"km": 60,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0486118,
+			"lon": -0.3983466,
+			"km": 65.3,
+			"dist_m": 21
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0492744,
+			"lon": -0.3980506,
+			"km": 65.5,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0484086,
+			"lon": -0.3960343,
+			"km": 65.6,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.042667,
+			"lon": -0.3667239,
+			"km": 69.3,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente de los Leones",
+			"kind": "manantial",
+			"lat": 40.0434891,
+			"lon": -0.3676668,
+			"km": 69.4,
+			"dist_m": 3
+		},
+		{
+			"name": "Fuente Caliente",
+			"kind": "manantial",
+			"lat": 40.0456662,
+			"lon": -0.3655938,
+			"km": 69.9,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0544412,
+			"lon": -0.3504359,
+			"km": 72.1,
+			"dist_m": 24
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0549732,
+			"lon": -0.3495471,
+			"km": 72.2,
+			"dist_m": 14
+		},
+		{
+			"name": "Fuente de la Salud",
+			"kind": "fuente",
+			"lat": 40.0310724,
+			"lon": -0.3356557,
+			"km": 77.1,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0308623,
+			"lon": -0.3357508,
+			"km": 77.1,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0308265,
+			"lon": -0.33654,
+			"km": 77.1,
+			"dist_m": 75
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0190683,
+			"lon": -0.3155571,
+			"km": 83.7,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.018766,
+			"lon": -0.3156321,
+			"km": 83.7,
+			"dist_m": 13
+		},
+		{
+			"name": "Fuente El Cantón",
+			"kind": "manantial",
+			"lat": 40.0195256,
+			"lon": -0.3130238,
+			"km": 83.9,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.023004,
+			"lon": -0.2790892,
+			"km": 88.1,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0221709,
+			"lon": -0.2775001,
+			"km": 88.3,
+			"dist_m": 84
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0209545,
+			"lon": -0.2799086,
+			"km": 88.4,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0191561,
+			"lon": -0.2787239,
+			"km": 88.7,
+			"dist_m": 6
+		},
+		{
+			"name": "Font del Coco",
+			"kind": "manantial",
+			"lat": 40.0131707,
+			"lon": -0.2827075,
+			"km": 90.1,
+			"dist_m": 4
+		},
+		{
+			"name": "Fuente del Canónigo",
+			"kind": "manantial",
+			"lat": 39.9974069,
+			"lon": -0.3020961,
+			"km": 95.9,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9508962,
+			"lon": -0.3039466,
+			"km": 104.3,
+			"dist_m": 10
+		}
+	],
+	"pois": [
+		{
+			"name": "les Àguiles",
+			"type": "cumbre",
+			"lat": 39.9441742,
+			"lon": -0.3369785,
+			"km": 5.2,
+			"dist_m": 96
+		},
+		{
+			"name": "El Molinet",
+			"type": "patrimonio",
+			"lat": 39.9144581,
+			"lon": -0.3522081,
+			"km": 15.9,
+			"dist_m": 118
+		},
+		{
+			"name": "Nuestra Señora de la Cueva Santa",
+			"type": "patrimonio",
+			"lat": 39.9158263,
+			"lon": -0.3524798,
+			"km": 16.3,
+			"dist_m": 132
+		},
+		{
+			"name": "Jinquer",
+			"type": "patrimonio",
+			"lat": 39.9265166,
+			"lon": -0.3916841,
+			"km": 20.6,
+			"dist_m": 16
+		},
+		{
+			"name": "Castillo de Jinquer",
+			"type": "patrimonio",
+			"lat": 39.9275938,
+			"lon": -0.3944872,
+			"km": 21.1,
+			"dist_m": 58
+		},
+		{
+			"name": "El Jupillo",
+			"type": "cumbre",
+			"lat": 39.9486462,
+			"lon": -0.3874613,
+			"km": 27.4,
+			"dist_m": 62
+		},
+		{
+			"name": "El Cabezo",
+			"type": "cumbre",
+			"lat": 39.9616056,
+			"lon": -0.3963306,
+			"km": 30,
+			"dist_m": 54
+		},
+		{
+			"name": "Alto del Pinar",
+			"type": "cumbre",
+			"lat": 39.9688549,
+			"lon": -0.425224,
+			"km": 33.5,
+			"dist_m": 142
+		},
+		{
+			"name": "El Tajar",
+			"type": "cumbre",
+			"lat": 39.9749303,
+			"lon": -0.4362503,
+			"km": 34.7,
+			"dist_m": 100
+		},
+		{
+			"name": "El Castillico",
+			"type": "patrimonio",
+			"lat": 40.0087081,
+			"lon": -0.3942794,
+			"km": 46.1,
+			"dist_m": 16
+		},
+		{
+			"name": "Pilón Espadilla",
+			"type": "patrimonio",
+			"lat": 40.0265809,
+			"lon": -0.396921,
+			"km": 61.5,
+			"dist_m": 12
+		},
+		{
+			"name": "Pilón Torrechiva",
+			"type": "patrimonio",
+			"lat": 40.0294678,
+			"lon": -0.398967,
+			"km": 61.9,
+			"dist_m": 2
+		},
+		{
+			"name": "Capilla San Antonio",
+			"type": "patrimonio",
+			"lat": 40.0415223,
+			"lon": -0.3669221,
+			"km": 69.1,
+			"dist_m": 69
+		},
+		{
+			"name": "Nuestra Señora del Carmen",
+			"type": "patrimonio",
+			"lat": 40.0521753,
+			"lon": -0.3516023,
+			"km": 71.8,
+			"dist_m": 8
+		}
+	],
 	"shade_ratio": 0.06,
-	"alternatives": ["gr-333-e01", "sl-cv-142", "gr-333-e02"],
-	"enriched_at": "2026-06-11T17:45:53.608Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-333-e01",
+		"sl-cv-142",
+		"gr-333-e02"
+	],
+	"enriched_at": "2026-06-20T08:44:29.178Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

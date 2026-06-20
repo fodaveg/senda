@@ -5,8 +5,80 @@
 		"Fuente (km 9.3, a 23 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Molí Mató\" (km 9.3, a 20 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7525246,
+			"lon": -0.5483659,
+			"km": 3,
+			"dist_m": 22
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7745157,
+			"lon": -0.524713,
+			"km": 8.9,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7741352,
+			"lon": -0.529087,
+			"km": 9.3,
+			"dist_m": 23
+		},
+		{
+			"name": "Font del Molí Mató",
+			"kind": "manantial",
+			"lat": 38.7740375,
+			"lon": -0.5291358,
+			"km": 9.3,
+			"dist_m": 20
+		}
+	],
+	"pois": [
+		{
+			"name": "el Portell de Just d'Alfafara",
+			"type": "cumbre",
+			"lat": 38.7636621,
+			"lon": -0.5422889,
+			"km": 5.4,
+			"dist_m": 1
+		},
+		{
+			"name": "Portell d'Alfafara",
+			"type": "cumbre",
+			"lat": 38.7637821,
+			"lon": -0.5419759,
+			"km": 5.4,
+			"dist_m": 18
+		},
+		{
+			"name": "Tossalet del Tio Eduard",
+			"type": "cumbre",
+			"lat": 38.7654046,
+			"lon": -0.541671,
+			"km": 5.6,
+			"dist_m": 131
+		},
+		{
+			"name": "Alt de la Cava",
+			"type": "cumbre",
+			"lat": 38.7661931,
+			"lon": -0.5342672,
+			"km": 6.3,
+			"dist_m": 5
+		}
+	],
 	"shade_ratio": 0.51,
-	"alternatives": ["pr-cv-389", "gr-7-e47", "sl-cv-168"],
-	"enriched_at": "2026-06-11T18:14:28.918Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-389",
+		"gr-7-e47",
+		"sl-cv-168"
+	],
+	"enriched_at": "2026-06-20T09:34:24.753Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

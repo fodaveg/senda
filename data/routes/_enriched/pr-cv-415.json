@@ -2,8 +2,80 @@
 	"water_points": [
 		"Fuente \"Font de Català\" (km 4.8, a 1 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de Català",
+			"kind": "fuente",
+			"lat": 38.837136,
+			"lon": -0.0289439,
+			"km": 4.8,
+			"dist_m": 1
+		}
+	],
+	"pois": [
+		{
+			"name": "Punto de informacion",
+			"type": "mirador",
+			"lat": 38.841985,
+			"lon": -0.0034333,
+			"km": 1.9,
+			"dist_m": 142
+		},
+		{
+			"name": "Cim de la Penya Roja",
+			"type": "cumbre",
+			"lat": 38.844836,
+			"lon": -0.0060438,
+			"km": 2.4,
+			"dist_m": 107
+		},
+		{
+			"name": "Cim de Segària",
+			"type": "cumbre",
+			"lat": 38.8381981,
+			"lon": -0.0208651,
+			"km": 3.9,
+			"dist_m": 127
+		},
+		{
+			"name": "Repetidors de Segària",
+			"type": "mirador",
+			"lat": 38.8305387,
+			"lon": -0.0350002,
+			"km": 6.1,
+			"dist_m": 2
+		},
+		{
+			"name": "Mirador de Segària",
+			"type": "mirador",
+			"lat": 38.8306045,
+			"lon": -0.0360956,
+			"km": 6.2,
+			"dist_m": 7
+		},
+		{
+			"name": "Penyetes Roges",
+			"type": "cumbre",
+			"lat": 38.8266111,
+			"lon": -0.0344956,
+			"km": 6.8,
+			"dist_m": 122
+		},
+		{
+			"name": "Mirador de Segària",
+			"type": "mirador",
+			"lat": 38.8350532,
+			"lon": -0.0128673,
+			"km": 9.5,
+			"dist_m": 15
+		}
+	],
 	"shade_ratio": 0.28,
-	"alternatives": ["sl-cv-158", "sl-cv-161", "sl-cv-109"],
-	"enriched_at": "2026-06-11T18:20:07.296Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-158",
+		"sl-cv-161",
+		"sl-cv-109"
+	],
+	"enriched_at": "2026-06-20T09:41:11.479Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -5,8 +5,112 @@
 		"Fuente (km 2.2, a 93 m del track; OSM, no verificado en campo)",
 		"Fuente (km 2.4, a 78 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.677615,
+			"lon": -0.2730232,
+			"km": 1.9,
+			"dist_m": 98
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6784243,
+			"lon": -0.2759253,
+			"km": 2.1,
+			"dist_m": 50
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6783995,
+			"lon": -0.2769472,
+			"km": 2.2,
+			"dist_m": 93
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6780867,
+			"lon": -0.2775635,
+			"km": 2.4,
+			"dist_m": 78
+		}
+	],
+	"pois": [
+		{
+			"name": "Plaça dels Estudiants",
+			"type": "patrimonio",
+			"lat": 39.6760944,
+			"lon": -0.2803067,
+			"km": 0.2,
+			"dist_m": 74
+		},
+		{
+			"name": "Plaça del Dos de Maig",
+			"type": "patrimonio",
+			"lat": 39.6768604,
+			"lon": -0.2831876,
+			"km": 0.8,
+			"dist_m": 60
+		},
+		{
+			"name": "Plaça de la ciutadela de Sagunt",
+			"type": "patrimonio",
+			"lat": 39.6763446,
+			"lon": -0.2818811,
+			"km": 0.9,
+			"dist_m": 78
+		},
+		{
+			"name": "Plaça del Sant Ferran",
+			"type": "patrimonio",
+			"lat": 39.6756028,
+			"lon": -0.2798156,
+			"km": 1.2,
+			"dist_m": 41
+		},
+		{
+			"name": "Plaça d'armes",
+			"type": "patrimonio",
+			"lat": 39.6758828,
+			"lon": -0.2764992,
+			"km": 1.5,
+			"dist_m": 72
+		},
+		{
+			"name": "Plaça de l'Almenara",
+			"type": "patrimonio",
+			"lat": 39.6764949,
+			"lon": -0.2758659,
+			"km": 1.7,
+			"dist_m": 112
+		},
+		{
+			"name": "Tres castellets",
+			"type": "patrimonio",
+			"lat": 39.6770962,
+			"lon": -0.275885,
+			"km": 2.1,
+			"dist_m": 59
+		},
+		{
+			"name": "Plaça de la Conillera",
+			"type": "patrimonio",
+			"lat": 39.676737,
+			"lon": -0.2765862,
+			"km": 2.3,
+			"dist_m": 54
+		}
+	],
 	"shade_ratio": 0.05,
-	"alternatives": ["pr-cv-319", "pr-cv-318", "gr-10-e01"],
-	"enriched_at": "2026-06-11T18:43:11.059Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-319",
+		"pr-cv-318",
+		"gr-10-e01"
+	],
+	"enriched_at": "2026-06-20T10:06:08.876Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

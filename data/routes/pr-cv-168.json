@@ -38,8 +38,162 @@
 		"Manantial \"Font de l'Esperit Sant\" (km 30.2, a 7 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Raval\" (km 33.7, a 26 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font Vella",
+			"kind": "manantial",
+			"lat": 38.7547117,
+			"lon": -0.2775483,
+			"km": 1.6,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7570079,
+			"lon": -0.2749244,
+			"km": 2,
+			"dist_m": 37
+		},
+		{
+			"name": "Font d'Espetla",
+			"kind": "manantial",
+			"lat": 38.7479022,
+			"lon": -0.1929192,
+			"km": 15.5,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7247573,
+			"lon": -0.1943904,
+			"km": 19,
+			"dist_m": 80
+		},
+		{
+			"name": "Font del Xorro",
+			"kind": "manantial",
+			"lat": 38.7265212,
+			"lon": -0.1971756,
+			"km": 19.5,
+			"dist_m": 71
+		},
+		{
+			"name": "Font de la Retura",
+			"kind": "manantial",
+			"lat": 38.7225109,
+			"lon": -0.2189926,
+			"km": 22.9,
+			"dist_m": 3
+		},
+		{
+			"name": "Font Nova",
+			"kind": "manantial",
+			"lat": 38.7217156,
+			"lon": -0.2183158,
+			"km": 23.1,
+			"dist_m": 3
+		},
+		{
+			"name": "Font dels Olbits",
+			"kind": "manantial",
+			"lat": 38.7206216,
+			"lon": -0.227212,
+			"km": 25.3,
+			"dist_m": 21
+		},
+		{
+			"name": "Font Nova",
+			"kind": "manantial",
+			"lat": 38.730756,
+			"lon": -0.2459626,
+			"km": 28,
+			"dist_m": 36
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7309838,
+			"lon": -0.24608,
+			"km": 28,
+			"dist_m": 13
+		},
+		{
+			"name": "Font dels Noguerets",
+			"kind": "manantial",
+			"lat": 38.732427,
+			"lon": -0.2486977,
+			"km": 28.4,
+			"dist_m": 48
+		},
+		{
+			"name": "Font de l'Esperit Sant",
+			"kind": "manantial",
+			"lat": 38.7335404,
+			"lon": -0.2668657,
+			"km": 30.2,
+			"dist_m": 7
+		},
+		{
+			"name": "Font del Raval",
+			"kind": "manantial",
+			"lat": 38.7481126,
+			"lon": -0.2912868,
+			"km": 33.7,
+			"dist_m": 26
+		}
+	],
+	"pois": [
+		{
+			"name": "Penya Aledra",
+			"type": "cumbre",
+			"lat": 38.7603133,
+			"lon": -0.2367867,
+			"km": 6,
+			"dist_m": 75
+		},
+		{
+			"name": "Penya Calera",
+			"type": "cumbre",
+			"lat": 38.7594651,
+			"lon": -0.2360711,
+			"km": 6.1,
+			"dist_m": 60
+		},
+		{
+			"name": "Penya de la Cova",
+			"type": "cumbre",
+			"lat": 38.7582627,
+			"lon": -0.2359982,
+			"km": 6.1,
+			"dist_m": 64
+		},
+		{
+			"name": "Pintures Rupestres del Pla de Petracos",
+			"type": "patrimonio",
+			"lat": 38.7603702,
+			"lon": -0.1833988,
+			"km": 12.8,
+			"dist_m": 99
+		},
+		{
+			"name": "Algepsar del Sabre",
+			"type": "patrimonio",
+			"lat": 38.7253533,
+			"lon": -0.2139357,
+			"km": 21.5,
+			"dist_m": 10
+		},
+		{
+			"name": "Jaciment de la Salema",
+			"type": "patrimonio",
+			"lat": 38.7392769,
+			"lon": -0.2767072,
+			"km": 31.4,
+			"dist_m": 22
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -64,7 +218,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-168 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-168.gpx (derivados: inicio, bbox)"
 	]
 }

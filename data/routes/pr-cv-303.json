@@ -30,8 +30,74 @@
 		"Manantial \"Font de la Teula\" (km 20.4, a 6 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Garrofer\" (km 20.9, a 6 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font Nova",
+			"kind": "manantial",
+			"lat": 39.1100791,
+			"lon": -0.3437453,
+			"km": 11.7,
+			"dist_m": 44
+		},
+		{
+			"name": "Font de Tormos",
+			"kind": "manantial",
+			"lat": 39.1108137,
+			"lon": -0.334418,
+			"km": 12.9,
+			"dist_m": 34
+		},
+		{
+			"name": "Font del Barber",
+			"kind": "manantial",
+			"lat": 39.0959781,
+			"lon": -0.3083588,
+			"km": 17,
+			"dist_m": 58
+		},
+		{
+			"name": "Font de la Teula",
+			"kind": "manantial",
+			"lat": 39.1059953,
+			"lon": -0.3231741,
+			"km": 20.4,
+			"dist_m": 6
+		},
+		{
+			"name": "Font del Garrofer",
+			"kind": "manantial",
+			"lat": 39.1066847,
+			"lon": -0.3273459,
+			"km": 20.9,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Ogiva de Santa Maria",
+			"type": "patrimonio",
+			"lat": 39.1536886,
+			"lon": -0.4459362,
+			"km": 0,
+			"dist_m": 72
+		},
+		{
+			"name": "Placa del Parc d´ Arabia Saudí",
+			"type": "patrimonio",
+			"lat": 39.1523176,
+			"lon": -0.4440274,
+			"km": 0.2,
+			"dist_m": 137
+		},
+		{
+			"name": "Lorenç Giménez (contacontes)",
+			"type": "patrimonio",
+			"lat": 39.1485854,
+			"lon": -0.4435743,
+			"km": 0.5,
+			"dist_m": 79
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +122,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-303 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-303.gpx (derivados: inicio, bbox)"
 	]
 }

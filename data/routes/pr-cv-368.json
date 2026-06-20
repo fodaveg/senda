@@ -29,8 +29,50 @@
 		"Manantial \"Font de Baix\" (km 12.8, a 32 m del track; OSM, no verificado en campo)",
 		"Fuente (km 12.9, a 44 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font Centella",
+			"kind": "manantial",
+			"lat": 38.7976685,
+			"lon": -0.0947647,
+			"km": 5.4,
+			"dist_m": 12
+		},
+		{
+			"name": "Font del Regall",
+			"kind": "manantial",
+			"lat": 38.7847388,
+			"lon": -0.0935635,
+			"km": 9,
+			"dist_m": 81
+		},
+		{
+			"name": "Font de Baix",
+			"kind": "manantial",
+			"lat": 38.7807113,
+			"lon": -0.0653796,
+			"km": 12.8,
+			"dist_m": 32
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7808249,
+			"lon": -0.0642016,
+			"km": 12.9,
+			"dist_m": 44
+		}
+	],
+	"pois": [
+		{
+			"name": "Puntal de Tano",
+			"type": "cumbre",
+			"lat": 38.7913573,
+			"lon": -0.0886934,
+			"km": 3.8,
+			"dist_m": 118
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +97,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-368 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-368.gpx (derivados: inicio, bbox)"
 	]
 }

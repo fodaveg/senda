@@ -30,7 +30,48 @@
 		"Fuente (km 3.5, a 95 m del track; OSM, no verificado en campo)",
 		"Fuente (km 3.5, a 69 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": "Font de la Perera",
+			"kind": "fuente",
+			"lat": 39.9489587,
+			"lon": -0.3068366,
+			"km": 0.1,
+			"dist_m": 34
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9476342,
+			"lon": -0.3071159,
+			"km": 0.2,
+			"dist_m": 78
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9465477,
+			"lon": -0.3106394,
+			"km": 0.6,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9518675,
+			"lon": -0.334239,
+			"km": 3.5,
+			"dist_m": 95
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9509135,
+			"lon": -0.3346357,
+			"km": 3.5,
+			"dist_m": 69
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -56,7 +97,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e01 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-333-e01.gpx (derivados: inicio, bbox)"
 	]
 }

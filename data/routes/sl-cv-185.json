@@ -30,8 +30,58 @@
 		"Fuente (km 8.5, a 9 m del track; OSM, no verificado en campo)",
 		"Fuente (km 8.7, a 51 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.780133,
+			"lon": -0.1022761,
+			"km": 0,
+			"dist_m": 8
+		},
+		{
+			"name": "Font dels Caus",
+			"kind": "manantial",
+			"lat": 38.7747152,
+			"lon": -0.0665515,
+			"km": 7.8,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de les Rabosses",
+			"kind": "manantial",
+			"lat": 38.7757952,
+			"lon": -0.0659538,
+			"km": 8,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7794209,
+			"lon": -0.0650128,
+			"km": 8.5,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7808249,
+			"lon": -0.0642016,
+			"km": 8.7,
+			"dist_m": 51
+		}
+	],
+	"pois": [
+		{
+			"name": "Castell de les Atzavares",
+			"type": "patrimonio",
+			"lat": 38.7814094,
+			"lon": -0.0923278,
+			"km": 3.9,
+			"dist_m": 8
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +106,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-185 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-185.gpx (derivados: inicio, bbox)"
 	]
 }

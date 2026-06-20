@@ -29,8 +29,82 @@
 		"Manantial \"Font del Torrent\" (km 8.7, a 81 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Mas d'en Pastor\" (km 14.2, a 4 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font del Parc",
+			"kind": "fuente",
+			"lat": 40.3129172,
+			"lon": 0.0300679,
+			"km": 8.4,
+			"dist_m": 12
+		},
+		{
+			"name": "Font Nova",
+			"kind": "manantial",
+			"lat": 40.3121203,
+			"lon": 0.0307006,
+			"km": 8.5,
+			"dist_m": 41
+		},
+		{
+			"name": "Font del Torrent",
+			"kind": "manantial",
+			"lat": 40.3115747,
+			"lon": 0.0321708,
+			"km": 8.7,
+			"dist_m": 81
+		},
+		{
+			"name": "Font del Mas d'en Pastor",
+			"kind": "manantial",
+			"lat": 40.2862809,
+			"lon": 0.0069521,
+			"km": 14.2,
+			"dist_m": 4
+		}
+	],
+	"pois": [
+		{
+			"name": "Tossal d'en Fos",
+			"type": "cumbre",
+			"lat": 40.2814748,
+			"lon": -0.000693,
+			"km": 2.3,
+			"dist_m": 26
+		},
+		{
+			"name": "Tossal de la Bassa",
+			"type": "cumbre",
+			"lat": 40.2989234,
+			"lon": 0.0037368,
+			"km": 5.2,
+			"dist_m": 5
+		},
+		{
+			"name": "Tossal de Pastadura",
+			"type": "cumbre",
+			"lat": 40.3024985,
+			"lon": 0.0111683,
+			"km": 6,
+			"dist_m": 105
+		},
+		{
+			"name": "Morral Roig",
+			"type": "cumbre",
+			"lat": 40.3053118,
+			"lon": 0.0177348,
+			"km": 6.7,
+			"dist_m": 34
+		},
+		{
+			"name": "Peiró de les Ombries",
+			"type": "patrimonio",
+			"lat": 40.2735968,
+			"lon": -0.0052883,
+			"km": 16.3,
+			"dist_m": 16
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +129,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-349 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-349.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -4,8 +4,48 @@
 		"Fuente \"Fonteta del Patge\" (km 11.1, a 6 m del track; OSM, no verificado en campo)",
 		"Fuente \"Font de la Covalta\" (km 16.0, a 12 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.8149114,
+			"lon": -0.5598318,
+			"km": 7,
+			"dist_m": 14
+		},
+		{
+			"name": "Fonteta del Patge",
+			"kind": "fuente",
+			"lat": 38.8141146,
+			"lon": -0.5277706,
+			"km": 11.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de la Covalta",
+			"kind": "fuente",
+			"lat": 38.8064358,
+			"lon": -0.4995645,
+			"km": 16,
+			"dist_m": 12
+		}
+	],
+	"pois": [
+		{
+			"name": "Alto de la Covalta",
+			"type": "cumbre",
+			"lat": 38.8058723,
+			"lon": -0.4988844,
+			"km": 16,
+			"dist_m": 95
+		}
+	],
 	"shade_ratio": 0.11,
-	"alternatives": ["pr-cv-122", "gr-7-e46", "pr-cv-135"],
-	"enriched_at": "2026-06-11T17:53:31.695Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-122",
+		"gr-7-e46",
+		"pr-cv-135"
+	],
+	"enriched_at": "2026-06-20T09:03:54.663Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

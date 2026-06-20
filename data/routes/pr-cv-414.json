@@ -26,7 +26,56 @@
 		"Manantial \"Fuente del ramal\" (km 11.8, a 84 m del track; OSM, no verificado en campo)",
 		"Fuente (km 12.4, a 18 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6227523,
+			"lon": -0.9092503,
+			"km": 0.3,
+			"dist_m": 7
+		},
+		{
+			"name": "Fuente de Mosen Lucas",
+			"kind": "fuente",
+			"lat": 39.6232797,
+			"lon": -0.9095481,
+			"km": 0.5,
+			"dist_m": 1
+		},
+		{
+			"name": "Fuente Fetge",
+			"kind": "fuente",
+			"lat": 39.6316754,
+			"lon": -0.9219492,
+			"km": 3.5,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente La Palomera",
+			"kind": "manantial",
+			"lat": 39.6220257,
+			"lon": -0.9233547,
+			"km": 10.8,
+			"dist_m": 90
+		},
+		{
+			"name": "Fuente del ramal",
+			"kind": "manantial",
+			"lat": 39.6222977,
+			"lon": -0.9147702,
+			"km": 11.8,
+			"dist_m": 84
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6212205,
+			"lon": -0.9139841,
+			"km": 12.4,
+			"dist_m": 18
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -52,7 +101,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-414 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-414.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

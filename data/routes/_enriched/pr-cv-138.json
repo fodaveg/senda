@@ -10,8 +10,152 @@
 		"Manantial \"Fuente de la Pica del Pozo\" (km 9.5, a 51 m del track; OSM, no verificado en campo)",
 		"Fuente (km 9.6, a 31 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.880838,
+			"lon": -0.3059578,
+			"km": 0,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8808157,
+			"lon": -0.3070076,
+			"km": 0.1,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8812922,
+			"lon": -0.3078445,
+			"km": 0.1,
+			"dist_m": 87
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8802142,
+			"lon": -0.3071137,
+			"km": 0.2,
+			"dist_m": 10
+		},
+		{
+			"name": "Font de Castro",
+			"kind": "manantial",
+			"lat": 39.8715521,
+			"lon": -0.2986268,
+			"km": 2.1,
+			"dist_m": 24
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8505871,
+			"lon": -0.3191913,
+			"km": 9.4,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente de la Pica del Pozo",
+			"kind": "manantial",
+			"lat": 39.8495138,
+			"lon": -0.3194526,
+			"km": 9.5,
+			"dist_m": 51
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8509299,
+			"lon": -0.3201118,
+			"km": 9.5,
+			"dist_m": 86
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8492581,
+			"lon": -0.3207913,
+			"km": 9.6,
+			"dist_m": 31
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de les Eretes",
+			"type": "mirador",
+			"lat": 39.8794248,
+			"lon": -0.3042319,
+			"km": 0.6,
+			"dist_m": 1
+		},
+		{
+			"name": "Nevera de Castro",
+			"type": "patrimonio",
+			"lat": 39.8617607,
+			"lon": -0.290917,
+			"km": 4.5,
+			"dist_m": 5
+		},
+		{
+			"name": "Trinxeres",
+			"type": "patrimonio",
+			"lat": 39.8615313,
+			"lon": -0.2915668,
+			"km": 4.6,
+			"dist_m": 5
+		},
+		{
+			"name": "Nuevos hornos mineros",
+			"type": "patrimonio",
+			"lat": 39.8576252,
+			"lon": -0.3002362,
+			"km": 6.4,
+			"dist_m": 122
+		},
+		{
+			"name": "Poblado Íbero",
+			"type": "patrimonio",
+			"lat": 39.8548132,
+			"lon": -0.3049924,
+			"km": 7,
+			"dist_m": 28
+		},
+		{
+			"name": "Peña del Castellet",
+			"type": "cumbre",
+			"lat": 39.8551778,
+			"lon": -0.3050822,
+			"km": 7,
+			"dist_m": 68
+		},
+		{
+			"name": "Castillo de Chóvar",
+			"type": "patrimonio",
+			"lat": 39.8516402,
+			"lon": -0.3174049,
+			"km": 9.1,
+			"dist_m": 119
+		},
+		{
+			"name": "Punta de la Sartén",
+			"type": "mirador",
+			"lat": 39.8515862,
+			"lon": -0.3174073,
+			"km": 9.1,
+			"dist_m": 116
+		}
+	],
 	"shade_ratio": 0.26,
-	"alternatives": ["pr-cv-352", "sl-cv-101", "gr-36-e02"],
-	"enriched_at": "2026-06-11T17:55:10.490Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-352",
+		"sl-cv-101",
+		"gr-36-e02"
+	],
+	"enriched_at": "2026-06-20T09:10:17.838Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

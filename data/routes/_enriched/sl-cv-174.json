@@ -1,7 +1,30 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "La Mola",
+			"type": "patrimonio",
+			"lat": 38.4086922,
+			"lon": -0.7928793,
+			"km": 0,
+			"dist_m": 87
+		},
+		{
+			"name": "Refugio Canteros",
+			"type": "refugio",
+			"lat": 38.4038115,
+			"lon": -0.7997354,
+			"km": 0.9,
+			"dist_m": 146
+		}
+	],
 	"shade_ratio": null,
-	"alternatives": ["sl-cv-127", "pr-cv-325", "pr-cv-311"],
-	"enriched_at": "2026-06-11T22:53:22.454Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-127",
+		"pr-cv-325",
+		"pr-cv-311"
+	],
+	"enriched_at": "2026-06-20T09:58:08.701Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

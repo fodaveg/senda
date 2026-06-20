@@ -29,8 +29,50 @@
 		"Fuente (km 19.5, a 58 m del track; OSM, no verificado en campo)",
 		"Fuente (km 23.7, a 62 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.4073984,
+			"lon": -0.9518629,
+			"km": 19.3,
+			"dist_m": 71
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.4073949,
+			"lon": -0.9520387,
+			"km": 19.3,
+			"dist_m": 78
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.4058495,
+			"lon": -0.9533205,
+			"km": 19.5,
+			"dist_m": 58
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.391888,
+			"lon": -0.9896445,
+			"km": 23.7,
+			"dist_m": 62
+		}
+	],
+	"pois": [
+		{
+			"name": "Pórtico del Cementerio",
+			"type": "patrimonio",
+			"lat": 38.4660877,
+			"lon": -0.8288863,
+			"km": 3.3,
+			"dist_m": 63
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +97,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e51 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e51.gpx (derivados: inicio, bbox)"
 	]
 }

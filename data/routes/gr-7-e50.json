@@ -26,8 +26,26 @@
 	"water_points": [
 		"Fuente (km 14.9, a 33 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5331043,
+			"lon": -0.7526282,
+			"km": 14.9,
+			"dist_m": 33
+		}
+	],
+	"pois": [
+		{
+			"name": "Restos iglesia Bizantina",
+			"type": "patrimonio",
+			"lat": 38.4944868,
+			"lon": -0.7883697,
+			"km": 21.2,
+			"dist_m": 101
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e50 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e50.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -2,8 +2,32 @@
 	"water_points": [
 		"Manantial \"Font del Barranc dels Tarongers\" (km 0.3, a 7 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Barranc dels Tarongers",
+			"kind": "manantial",
+			"lat": 38.7946773,
+			"lon": -0.6103283,
+			"km": 0.3,
+			"dist_m": 7
+		}
+	],
+	"pois": [
+		{
+			"name": "Alt del Costellar",
+			"type": "cumbre",
+			"lat": 38.7927779,
+			"lon": -0.6023771,
+			"km": 9.1,
+			"dist_m": 46
+		}
+	],
 	"shade_ratio": 0.1,
-	"alternatives": ["pr-cv-121", "gr-7-e46", "pr-cv-389"],
-	"enriched_at": "2026-06-11T17:53:34.563Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-121",
+		"gr-7-e46",
+		"pr-cv-389"
+	],
+	"enriched_at": "2026-06-20T09:04:37.724Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

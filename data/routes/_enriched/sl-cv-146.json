@@ -1,7 +1,22 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Pico del Águila",
+			"type": "cumbre",
+			"lat": 38.1214361,
+			"lon": -0.9007562,
+			"km": 1.8,
+			"dist_m": 9
+		}
+	],
 	"shade_ratio": null,
-	"alternatives": ["pr-cv-59", "pr-cv-441", "pr-cv-54"],
-	"enriched_at": "2026-06-11T18:35:15.308Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-59",
+		"pr-cv-441",
+		"pr-cv-54"
+	],
+	"enriched_at": "2026-06-20T09:54:16.257Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -3,8 +3,64 @@
 		"Manantial \"Fuente Los Charcos\" (km 0.7, a 85 m del track; OSM, no verificado en campo)",
 		"Fuente (km 1.8, a 41 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente Los Charcos",
+			"kind": "manantial",
+			"lat": 39.0887306,
+			"lon": -0.7832957,
+			"km": 0.7,
+			"dist_m": 85
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0821218,
+			"lon": -0.779449,
+			"km": 1.8,
+			"dist_m": 41
+		}
+	],
+	"pois": [
+		{
+			"name": "Cueva del Carbo",
+			"type": "refugio",
+			"lat": 39.0869186,
+			"lon": -0.7802913,
+			"km": 1,
+			"dist_m": 9
+		},
+		{
+			"name": "Casa Cueva",
+			"type": "patrimonio",
+			"lat": 39.0646234,
+			"lon": -0.7830773,
+			"km": 5.4,
+			"dist_m": 58
+		},
+		{
+			"name": "Abrigo del Voro (Pinturas rupestres)",
+			"type": "patrimonio",
+			"lat": 39.0655363,
+			"lon": -0.785476,
+			"km": 5.8,
+			"dist_m": 14
+		},
+		{
+			"name": "Puntal de la Sima",
+			"type": "cumbre",
+			"lat": 39.0640216,
+			"lon": -0.7884557,
+			"km": 6.3,
+			"dist_m": 8
+		}
+	],
 	"shade_ratio": 0.01,
-	"alternatives": ["pr-cv-204", "pr-cv-235", "gr-332-e03"],
-	"enriched_at": "2026-06-11T17:59:28.660Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-204",
+		"pr-cv-235",
+		"gr-332-e03"
+	],
+	"enriched_at": "2026-06-20T09:19:40.993Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

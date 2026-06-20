@@ -29,8 +29,50 @@
 		"Manantial \"font de la Xopena\" (km 0.7, a 4 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font dels Caus\" (km 3.7, a 90 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7808249,
+			"lon": -0.0642016,
+			"km": 0,
+			"dist_m": 61
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7794209,
+			"lon": -0.0650128,
+			"km": 0.2,
+			"dist_m": 6
+		},
+		{
+			"name": "font de la Xopena",
+			"kind": "manantial",
+			"lat": 38.7762591,
+			"lon": -0.0683518,
+			"km": 0.7,
+			"dist_m": 4
+		},
+		{
+			"name": "Font dels Caus",
+			"kind": "manantial",
+			"lat": 38.7747152,
+			"lon": -0.0665515,
+			"km": 3.7,
+			"dist_m": 90
+		}
+	],
+	"pois": [
+		{
+			"name": "El Castellet",
+			"type": "cumbre",
+			"lat": 38.7719337,
+			"lon": -0.0668381,
+			"km": 2.4,
+			"dist_m": 7
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +97,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-92 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-92.gpx (derivados: inicio, bbox)"
 	]
 }

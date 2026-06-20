@@ -29,8 +29,90 @@
 		"Manantial \"Fuente de la Hoya del Hacha\" (km 49.8, a 89 m del track; OSM, no verificado en campo)",
 		"Fuente (km 63.5, a 22 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8910928,
+			"lon": -0.9614899,
+			"km": 0.3,
+			"dist_m": 12
+		},
+		{
+			"name": "Fuente de la Torre",
+			"kind": "fuente",
+			"lat": 39.9646281,
+			"lon": -1.0214514,
+			"km": 15.1,
+			"dist_m": 27
+		},
+		{
+			"name": "Fuente del Prado",
+			"kind": "manantial",
+			"lat": 39.9268792,
+			"lon": -1.1362953,
+			"km": 31.2,
+			"dist_m": 89
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9240339,
+			"lon": -1.1330934,
+			"km": 31.6,
+			"dist_m": 34
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9234716,
+			"lon": -1.1320227,
+			"km": 31.8,
+			"dist_m": 62
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8675437,
+			"lon": -1.0812205,
+			"km": 45.1,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8697571,
+			"lon": -1.0796066,
+			"km": 45.4,
+			"dist_m": 40
+		},
+		{
+			"name": "Fuente de la Hoya del Hacha",
+			"kind": "manantial",
+			"lat": 39.884449,
+			"lon": -1.0687955,
+			"km": 49.8,
+			"dist_m": 89
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.87076,
+			"lon": -0.998063,
+			"km": 63.5,
+			"dist_m": 22
+		}
+	],
+	"pois": [
+		{
+			"name": "Piedra de San Miguel",
+			"type": "cumbre",
+			"lat": 39.9773784,
+			"lon": -1.0408702,
+			"km": 18.6,
+			"dist_m": 18
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +137,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-37 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-37.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -4,8 +4,48 @@
 		"Manantial (km 6.0, a 12 m del track; OSM, no verificado en campo)",
 		"Fuente (km 6.1, a 8 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente el Picayo",
+			"kind": "manantial",
+			"lat": 40.1778284,
+			"lon": -0.4594847,
+			"km": 5.7,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.1755653,
+			"lon": -0.4592113,
+			"km": 6,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1751405,
+			"lon": -0.4603328,
+			"km": 6.1,
+			"dist_m": 8
+		}
+	],
+	"pois": [
+		{
+			"name": "Cruz de los Caídos",
+			"type": "patrimonio",
+			"lat": 40.2021621,
+			"lon": -0.4180343,
+			"km": 0,
+			"dist_m": 149
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["gr-7-e32", "pr-cv-328", "pr-cv-111-1"],
-	"enriched_at": "2026-06-11T17:48:32.541Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-7-e32",
+		"pr-cv-328",
+		"pr-cv-111-1"
+	],
+	"enriched_at": "2026-06-20T08:48:19.039Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -3,8 +3,31 @@
 		"Fuente (km 0.0, a 99 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de Bernat\" (km 4.7, a 55 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5375043,
+			"lon": -0.5076898,
+			"km": 0,
+			"dist_m": 99
+		},
+		{
+			"name": "Font de Bernat",
+			"kind": "manantial",
+			"lat": 38.5034328,
+			"lon": -0.5145671,
+			"km": 4.7,
+			"dist_m": 55
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-212", "pr-cv-112", "pr-cv-270"],
-	"enriched_at": "2026-06-11T18:35:36.862Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-212",
+		"pr-cv-112",
+		"pr-cv-270"
+	],
+	"enriched_at": "2026-06-20T09:55:53.061Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

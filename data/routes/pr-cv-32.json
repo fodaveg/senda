@@ -26,8 +26,50 @@
 	"water_points": [
 		"Fuente (km 0.0, a 33 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5190192,
+			"lon": -0.6765044,
+			"km": 0,
+			"dist_m": 33
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de Catí",
+			"type": "mirador",
+			"lat": 38.5244514,
+			"lon": -0.6816643,
+			"km": 1.5,
+			"dist_m": 12
+		},
+		{
+			"name": "Alt del Molló",
+			"type": "cumbre",
+			"lat": 38.5228603,
+			"lon": -0.6843189,
+			"km": 1.9,
+			"dist_m": 70
+		},
+		{
+			"name": "Pic del Flare",
+			"type": "cumbre",
+			"lat": 38.5213689,
+			"lon": -0.6868464,
+			"km": 2.1,
+			"dist_m": 58
+		},
+		{
+			"name": "el Pantanet",
+			"type": "mirador",
+			"lat": 38.5108986,
+			"lon": -0.7134044,
+			"km": 4.9,
+			"dist_m": 121
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +94,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-32 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-32.gpx (derivados: inicio, bbox)"
 	]
 }

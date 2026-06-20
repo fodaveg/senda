@@ -28,7 +28,32 @@
 		"Manantial \"Font de Dalt\" (km 0.6, a 3 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de la Penya Blanca\" (km 9.7, a 17 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": "Font de Baix",
+			"kind": "manantial",
+			"lat": 38.7412879,
+			"lon": -0.1133966,
+			"km": 0.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de Dalt",
+			"kind": "manantial",
+			"lat": 38.7392773,
+			"lon": -0.1177127,
+			"km": 0.6,
+			"dist_m": 3
+		},
+		{
+			"name": "Font de la Penya Blanca",
+			"kind": "manantial",
+			"lat": 38.7287387,
+			"lon": -0.1360838,
+			"km": 9.7,
+			"dist_m": 17
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -54,7 +79,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-465 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-465.gpx (derivados: inicio, bbox)"
 	]
 }

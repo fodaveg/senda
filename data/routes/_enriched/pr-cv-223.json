@@ -4,8 +4,48 @@
 		"Fuente \"Fuente El Pocillo\" (km 10.3, a 41 m del track; OSM, no verificado en campo)",
 		"Fuente \"Fuente Tío Fausto\" (km 10.5, a 6 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de Rodrigo",
+			"kind": "manantial",
+			"lat": 39.6072656,
+			"lon": -0.9160981,
+			"km": 3.4,
+			"dist_m": 21
+		},
+		{
+			"name": "Fuente El Pocillo",
+			"kind": "fuente",
+			"lat": 39.6203778,
+			"lon": -0.9080981,
+			"km": 10.3,
+			"dist_m": 41
+		},
+		{
+			"name": "Fuente Tío Fausto",
+			"kind": "fuente",
+			"lat": 39.6189174,
+			"lon": -0.9094425,
+			"km": 10.5,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador del Morroncillo",
+			"type": "mirador",
+			"lat": 39.6062821,
+			"lon": -0.9247978,
+			"km": 5.5,
+			"dist_m": 2
+		}
+	],
 	"shade_ratio": 0.06,
-	"alternatives": ["pr-cv-414", "pr-cv-77", "sl-cv-72"],
-	"enriched_at": "2026-06-11T19:10:21.986Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-414",
+		"pr-cv-77",
+		"sl-cv-72"
+	],
+	"enriched_at": "2026-06-20T09:21:15.590Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

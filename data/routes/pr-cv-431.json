@@ -29,8 +29,82 @@
 		"Fuente (km 25.8, a 4 m del track; OSM, no verificado en campo)",
 		"Manantial \"les Fonts\" (km 26.0, a 39 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font de la Parra",
+			"kind": "manantial",
+			"lat": 40.294825,
+			"lon": 0.3005483,
+			"km": 17.5,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2537573,
+			"lon": 0.288712,
+			"km": 25.6,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.2532856,
+			"lon": 0.2865861,
+			"km": 25.8,
+			"dist_m": 4
+		},
+		{
+			"name": "les Fonts",
+			"kind": "manantial",
+			"lat": 40.2511934,
+			"lon": 0.2868381,
+			"km": 26,
+			"dist_m": 39
+		}
+	],
+	"pois": [
+		{
+			"name": "gen. Milan Rastislav Stefanik",
+			"type": "patrimonio",
+			"lat": 40.2450658,
+			"lon": 0.2794023,
+			"km": 0,
+			"dist_m": 34
+		},
+		{
+			"name": "Tossal de Barra",
+			"type": "cumbre",
+			"lat": 40.265928,
+			"lon": 0.2706754,
+			"km": 3.2,
+			"dist_m": 21
+		},
+		{
+			"name": "Ebrí",
+			"type": "cumbre",
+			"lat": 40.2817425,
+			"lon": 0.2814422,
+			"km": 5.4,
+			"dist_m": 148
+		},
+		{
+			"name": "Fabuquello",
+			"type": "cumbre",
+			"lat": 40.3071517,
+			"lon": 0.2957004,
+			"km": 15.5,
+			"dist_m": 5
+		},
+		{
+			"name": "Casa de Matafigues",
+			"type": "patrimonio",
+			"lat": 40.262474,
+			"lon": 0.3015922,
+			"km": 23.7,
+			"dist_m": 103
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +127,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-431 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-431.gpx (derivados: inicio, bbox)"
 	]
 }

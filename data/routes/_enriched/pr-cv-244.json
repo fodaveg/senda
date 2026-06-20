@@ -3,8 +3,80 @@
 		"Fuente (km 0.2, a 7 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Xorret\" (km 0.4, a 36 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6460621,
+			"lon": -0.2473463,
+			"km": 0.2,
+			"dist_m": 7
+		},
+		{
+			"name": "Font del Xorret",
+			"kind": "manantial",
+			"lat": 40.6474273,
+			"lon": -0.248815,
+			"km": 0.4,
+			"dist_m": 36
+		}
+	],
+	"pois": [
+		{
+			"name": "Peiró de la Mare de Déu",
+			"type": "patrimonio",
+			"lat": 40.6437383,
+			"lon": -0.2456881,
+			"km": 0,
+			"dist_m": 140
+		},
+		{
+			"name": "Lloma dels Castellans",
+			"type": "cumbre",
+			"lat": 40.6455454,
+			"lon": -0.261554,
+			"km": 2.1,
+			"dist_m": 33
+		},
+		{
+			"name": "Observatorio Astronómico Astropunt del paraje de Santa Bárbara",
+			"type": "mirador",
+			"lat": 40.6474449,
+			"lon": -0.2649457,
+			"km": 2.5,
+			"dist_m": 16
+		},
+		{
+			"name": "Peiró de Santa Bàrbera",
+			"type": "patrimonio",
+			"lat": 40.6477082,
+			"lon": -0.266683,
+			"km": 2.6,
+			"dist_m": 4
+		},
+		{
+			"name": "Peiró de Sant Pere",
+			"type": "patrimonio",
+			"lat": 40.6504881,
+			"lon": -0.2806055,
+			"km": 3.9,
+			"dist_m": 26
+		},
+		{
+			"name": "Mola de la Todolella",
+			"type": "cumbre",
+			"lat": 40.6736072,
+			"lon": -0.2930392,
+			"km": 7.8,
+			"dist_m": 79
+		}
+	],
 	"shade_ratio": 0.1,
-	"alternatives": ["gr-331-e06", "pr-cv-228", "pr-cv-117"],
-	"enriched_at": "2026-06-11T18:02:36.916Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-331-e06",
+		"pr-cv-228",
+		"pr-cv-117"
+	],
+	"enriched_at": "2026-06-20T09:24:34.870Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

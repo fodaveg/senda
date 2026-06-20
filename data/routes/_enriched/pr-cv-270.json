@@ -5,8 +5,64 @@
 		"Manantial \"Font de la Costa\" (km 4.4, a 9 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de l'Escarrall\" (km 8.2, a 68 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5375043,
+			"lon": -0.5076898,
+			"km": 0.2,
+			"dist_m": 14
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.541046,
+			"lon": -0.5062523,
+			"km": 0.6,
+			"dist_m": 85
+		},
+		{
+			"name": "Font de la Costa",
+			"kind": "manantial",
+			"lat": 38.5718414,
+			"lon": -0.5058155,
+			"km": 4.4,
+			"dist_m": 9
+		},
+		{
+			"name": "Font de l'Escarrall",
+			"kind": "manantial",
+			"lat": 38.6012434,
+			"lon": -0.4878368,
+			"km": 8.2,
+			"dist_m": 68
+		}
+	],
+	"pois": [
+		{
+			"name": "Torre Grossa",
+			"type": "patrimonio",
+			"lat": 38.5390266,
+			"lon": -0.5091931,
+			"km": 0.4,
+			"dist_m": 147
+		},
+		{
+			"name": "Església Vella",
+			"type": "patrimonio",
+			"lat": 38.5390467,
+			"lon": -0.5082236,
+			"km": 0.4,
+			"dist_m": 66
+		}
+	],
 	"shade_ratio": 0.12,
-	"alternatives": ["pr-cv-112", "pr-cv-212", "sl-cv-151"],
-	"enriched_at": "2026-06-11T19:14:54.236Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-112",
+		"pr-cv-212",
+		"sl-cv-151"
+	],
+	"enriched_at": "2026-06-20T09:25:40.019Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

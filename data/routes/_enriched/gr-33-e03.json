@@ -3,8 +3,40 @@
 		"Manantial \"Font de la Canal\" (km 1.7, a 22 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font d'en Plenes\" (km 6.1, a 35 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Canal",
+			"kind": "manantial",
+			"lat": 40.0879431,
+			"lon": -0.0757172,
+			"km": 1.7,
+			"dist_m": 22
+		},
+		{
+			"name": "Font d'en Plenes",
+			"kind": "manantial",
+			"lat": 40.0991161,
+			"lon": -0.1033772,
+			"km": 6.1,
+			"dist_m": 35
+		}
+	],
+	"pois": [
+		{
+			"name": "Sant Miquel",
+			"type": "patrimonio",
+			"lat": 40.0938832,
+			"lon": -0.0901958,
+			"km": 3.8,
+			"dist_m": 5
+		}
+	],
 	"shade_ratio": 0.22,
-	"alternatives": ["pr-cv-460", "gr-33-e02", "pr-cv-422"],
-	"enriched_at": "2026-06-11T17:41:12.835Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-460",
+		"gr-33-e02",
+		"pr-cv-422"
+	],
+	"enriched_at": "2026-06-20T08:37:17.864Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

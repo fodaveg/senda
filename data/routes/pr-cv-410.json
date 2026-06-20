@@ -30,8 +30,98 @@
 		"Manantial (km 15.6, a 16 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font Vella\" (km 17.9, a 7 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font de Sant Vicent",
+			"kind": "manantial",
+			"lat": 40.4728207,
+			"lon": 0.0233247,
+			"km": 0.5,
+			"dist_m": 5
+		},
+		{
+			"name": "Font de l'Avellà",
+			"kind": "fuente",
+			"lat": 40.5014059,
+			"lon": 0.0013676,
+			"km": 4.8,
+			"dist_m": 74
+		},
+		{
+			"name": "Font de l'Almassà",
+			"kind": "manantial",
+			"lat": 40.4877816,
+			"lon": -0.0057327,
+			"km": 14.4,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.4840273,
+			"lon": 0.006296,
+			"km": 15.6,
+			"dist_m": 16
+		},
+		{
+			"name": "Font Vella",
+			"kind": "manantial",
+			"lat": 40.469101,
+			"lon": 0.0196099,
+			"km": 17.9,
+			"dist_m": 7
+		}
+	],
+	"pois": [
+		{
+			"name": "Església Parroquial de l'Assumpció",
+			"type": "patrimonio",
+			"lat": 40.4717284,
+			"lon": 0.0230864,
+			"km": 0.4,
+			"dist_m": 8
+		},
+		{
+			"name": "Capella de Sant Vicent",
+			"type": "patrimonio",
+			"lat": 40.4728319,
+			"lon": 0.0233127,
+			"km": 0.5,
+			"dist_m": 7
+		},
+		{
+			"name": "El Marro",
+			"type": "cumbre",
+			"lat": 40.4928665,
+			"lon": 0.0106055,
+			"km": 3.2,
+			"dist_m": 97
+		},
+		{
+			"name": "Porta de Conrony",
+			"type": "patrimonio",
+			"lat": 40.4795184,
+			"lon": -0.0258715,
+			"km": 8.8,
+			"dist_m": 18
+		},
+		{
+			"name": "Tossal de la Nevera",
+			"type": "cumbre",
+			"lat": 40.4677938,
+			"lon": -0.0299841,
+			"km": 10.2,
+			"dist_m": 1
+		},
+		{
+			"name": "Prigonet Trencat",
+			"type": "patrimonio",
+			"lat": 40.4775842,
+			"lon": 0.0154531,
+			"km": 16.6,
+			"dist_m": 4
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +146,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-410 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-410.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -1,7 +1,41 @@
 {
-	"water_points": ["Fuente (km 1.1, a 8 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 1.1, a 8 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.8700422,
+			"lon": -0.3574816,
+			"km": 1.1,
+			"dist_m": 8
+		}
+	],
+	"pois": [
+		{
+			"name": "Penyes Llúcies",
+			"type": "mirador",
+			"lat": 38.8667636,
+			"lon": -0.3467774,
+			"km": 2.6,
+			"dist_m": 2
+		},
+		{
+			"name": "Penyes Llucies",
+			"type": "mirador",
+			"lat": 38.8673063,
+			"lon": -0.3466168,
+			"km": 2.6,
+			"dist_m": 63
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["sl-cv-43", "sl-cv-84", "sl-cv-83"],
-	"enriched_at": "2026-06-11T19:54:17.714Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-43",
+		"sl-cv-84",
+		"sl-cv-83"
+	],
+	"enriched_at": "2026-06-20T10:06:23.592Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

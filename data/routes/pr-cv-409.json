@@ -26,8 +26,26 @@
 	"water_points": [
 		"Manantial \"Font Vella\" (km 0.0, a 35 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font Vella",
+			"kind": "manantial",
+			"lat": 40.469101,
+			"lon": 0.0196099,
+			"km": 0,
+			"dist_m": 35
+		}
+	],
+	"pois": [
+		{
+			"name": "Església Parroquial de l'Assumpció",
+			"type": "patrimonio",
+			"lat": 40.4717284,
+			"lon": 0.0230864,
+			"km": 0.4,
+			"dist_m": 144
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-409 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-409.gpx (derivados: inicio, bbox)"
 	]
 }

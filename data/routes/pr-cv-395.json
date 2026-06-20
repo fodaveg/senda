@@ -32,8 +32,122 @@
 		"Manantial (km 14.7, a 36 m del track; OSM, no verificado en campo)",
 		"Fuente (km 14.8, a 26 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.3596504,
+			"lon": -0.1393885,
+			"km": 2.7,
+			"dist_m": 3
+		},
+		{
+			"name": "els Xorros",
+			"kind": "manantial",
+			"lat": 40.3661735,
+			"lon": -0.1372586,
+			"km": 3.8,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de l'Ombria",
+			"kind": "manantial",
+			"lat": 40.3555519,
+			"lon": -0.1149162,
+			"km": 7.2,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.3558724,
+			"lon": -0.1137882,
+			"km": 7.3,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.3744996,
+			"lon": -0.1262314,
+			"km": 11.7,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.3786923,
+			"lon": -0.1374961,
+			"km": 14.7,
+			"dist_m": 36
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.3787067,
+			"lon": -0.1381005,
+			"km": 14.8,
+			"dist_m": 26
+		}
+	],
+	"pois": [
+		{
+			"name": "Castell d'Àsens",
+			"type": "cumbre",
+			"lat": 40.3713657,
+			"lon": -0.1422751,
+			"km": 0.8,
+			"dist_m": 149
+		},
+		{
+			"name": "Montcàtil",
+			"type": "cumbre",
+			"lat": 40.3596362,
+			"lon": -0.1399393,
+			"km": 2.6,
+			"dist_m": 8
+		},
+		{
+			"name": "Cruz de los Caídos",
+			"type": "patrimonio",
+			"lat": 40.3675266,
+			"lon": -0.138743,
+			"km": 3.9,
+			"dist_m": 127
+		},
+		{
+			"name": "Torre de la Nevera",
+			"type": "patrimonio",
+			"lat": 40.3689366,
+			"lon": -0.1368156,
+			"km": 4.2,
+			"dist_m": 63
+		},
+		{
+			"name": "Sagrada Família",
+			"type": "patrimonio",
+			"lat": 40.3780141,
+			"lon": -0.1328579,
+			"km": 14.3,
+			"dist_m": 8
+		},
+		{
+			"name": "Cruz de los Caídos",
+			"type": "patrimonio",
+			"lat": 40.3784642,
+			"lon": -0.1374213,
+			"km": 14.7,
+			"dist_m": 12
+		},
+		{
+			"name": "Peiró dels Plans",
+			"type": "patrimonio",
+			"lat": 40.3788168,
+			"lon": -0.1376412,
+			"km": 14.8,
+			"dist_m": 45
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -58,7 +172,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-395 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-395.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -28,8 +28,58 @@
 		"Manantial \"Font dels Regatxols\" (km 9.6, a 26 m del track; OSM, no verificado en campo)",
 		"Fuente \"Font de la Vila\" (km 10.9, a 10 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.4607817,
+			"lon": -0.1196698,
+			"km": 9.6,
+			"dist_m": 19
+		},
+		{
+			"name": "Font dels Regatxols",
+			"kind": "manantial",
+			"lat": 40.460867,
+			"lon": -0.1198347,
+			"km": 9.6,
+			"dist_m": 26
+		},
+		{
+			"name": "Font de la Vila",
+			"kind": "fuente",
+			"lat": 40.4569257,
+			"lon": -0.13193,
+			"km": 10.9,
+			"dist_m": 10
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador Ares del Maestrat",
+			"type": "mirador",
+			"lat": 40.4552747,
+			"lon": -0.1317411,
+			"km": 11,
+			"dist_m": 143
+		},
+		{
+			"name": "En record de les víctimes dels bombardejos de la Legió Cóndor",
+			"type": "patrimonio",
+			"lat": 40.4560077,
+			"lon": -0.1310526,
+			"km": 11,
+			"dist_m": 92
+		},
+		{
+			"name": "Alfredo Rovira Pitarch",
+			"type": "patrimonio",
+			"lat": 40.4560048,
+			"lon": -0.1310445,
+			"km": 11,
+			"dist_m": 92
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +104,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e14 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-331-e14.gpx (derivados: inicio, bbox)"
 	]
 }

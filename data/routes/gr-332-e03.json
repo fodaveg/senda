@@ -27,8 +27,42 @@
 		"Manantial (km 2.1, a 17 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente del Collado\" (km 17.7, a 20 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.1230193,
+			"lon": -0.8051802,
+			"km": 2.1,
+			"dist_m": 17
+		},
+		{
+			"name": "Fuente del Collado",
+			"kind": "manantial",
+			"lat": 39.0935104,
+			"lon": -0.9204955,
+			"km": 17.7,
+			"dist_m": 20
+		}
+	],
+	"pois": [
+		{
+			"name": "La Barchilla",
+			"type": "cumbre",
+			"lat": 39.0898722,
+			"lon": -0.9169106,
+			"km": 19,
+			"dist_m": 42
+		},
+		{
+			"name": "Pico de Caroche",
+			"type": "cumbre",
+			"lat": 39.0896288,
+			"lon": -0.9141714,
+			"km": 19.2,
+			"dist_m": 2
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +87,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-332-e03 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-332-e03.gpx (derivados: inicio, bbox)"
 	]
 }

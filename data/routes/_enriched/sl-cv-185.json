@@ -6,8 +6,64 @@
 		"Fuente (km 8.5, a 9 m del track; OSM, no verificado en campo)",
 		"Fuente (km 8.7, a 51 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.780133,
+			"lon": -0.1022761,
+			"km": 0,
+			"dist_m": 8
+		},
+		{
+			"name": "Font dels Caus",
+			"kind": "manantial",
+			"lat": 38.7747152,
+			"lon": -0.0665515,
+			"km": 7.8,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de les Rabosses",
+			"kind": "manantial",
+			"lat": 38.7757952,
+			"lon": -0.0659538,
+			"km": 8,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7794209,
+			"lon": -0.0650128,
+			"km": 8.5,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7808249,
+			"lon": -0.0642016,
+			"km": 8.7,
+			"dist_m": 51
+		}
+	],
+	"pois": [
+		{
+			"name": "Castell de les Atzavares",
+			"type": "patrimonio",
+			"lat": 38.7814094,
+			"lon": -0.0923278,
+			"km": 3.9,
+			"dist_m": 8
+		}
+	],
 	"shade_ratio": 0.3,
-	"alternatives": ["pr-cv-181", "pr-cv-147", "pr-cv-426"],
-	"enriched_at": "2026-06-11T19:49:35.956Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-181",
+		"pr-cv-147",
+		"pr-cv-426"
+	],
+	"enriched_at": "2026-06-20T10:00:12.952Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -4,8 +4,80 @@
 		"Manantial \"Fuente del Barrioso\" (km 0.0, a 94 m del track; OSM, no verificado en campo)",
 		"Fuente \"Fuente del Postiguillo\" (km 0.2, a 77 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1308665,
+			"lon": -1.3039823,
+			"km": 0,
+			"dist_m": 96
+		},
+		{
+			"name": "Fuente del Barrioso",
+			"kind": "manantial",
+			"lat": 40.1312127,
+			"lon": -1.3040067,
+			"km": 0,
+			"dist_m": 94
+		},
+		{
+			"name": "Fuente del Postiguillo",
+			"kind": "fuente",
+			"lat": 40.1305086,
+			"lon": -1.3043484,
+			"km": 0.2,
+			"dist_m": 77
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador Peña Garrate",
+			"type": "mirador",
+			"lat": 40.1309204,
+			"lon": -1.3033812,
+			"km": 0,
+			"dist_m": 146
+		},
+		{
+			"name": "Mirador de la Torreta",
+			"type": "mirador",
+			"lat": 40.1308728,
+			"lon": -1.305632,
+			"km": 0.2,
+			"dist_m": 5
+		},
+		{
+			"name": "Mirador del Moral",
+			"type": "mirador",
+			"lat": 40.1308201,
+			"lon": -1.3051252,
+			"km": 0.2,
+			"dist_m": 3
+		},
+		{
+			"name": "Corrales de la Nava",
+			"type": "patrimonio",
+			"lat": 40.1292663,
+			"lon": -1.3738865,
+			"km": 8.1,
+			"dist_m": 44
+		},
+		{
+			"name": "Cruz de los tres Reinos",
+			"type": "cumbre",
+			"lat": 40.1451882,
+			"lon": -1.4488577,
+			"km": 21.4,
+			"dist_m": 11
+		}
+	],
 	"shade_ratio": 0.04,
-	"alternatives": ["pr-cv-131-4", "pr-cv-131-3", "pr-cv-131-5"],
-	"enriched_at": "2026-06-11T17:54:22.236Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-131-4",
+		"pr-cv-131-3",
+		"pr-cv-131-5"
+	],
+	"enriched_at": "2026-06-20T09:08:23.440Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

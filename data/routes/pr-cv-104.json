@@ -31,8 +31,66 @@
 		"Fuente \"Font de l'Assut\" (km 0.4, a 83 m del track; OSM, no verificado en campo)",
 		"Fuente (km 1.3, a 46 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font d'Enmig",
+			"kind": "fuente",
+			"lat": 38.7801563,
+			"lon": -0.5155994,
+			"km": 0.1,
+			"dist_m": 75
+		},
+		{
+			"name": "la Fonteta",
+			"kind": "fuente",
+			"lat": 38.7793167,
+			"lon": -0.5154166,
+			"km": 0.1,
+			"dist_m": 83
+		},
+		{
+			"name": "Font del Molí",
+			"kind": "fuente",
+			"lat": 38.7778455,
+			"lon": -0.5156064,
+			"km": 0.3,
+			"dist_m": 88
+		},
+		{
+			"name": "Font del Raval",
+			"kind": "fuente",
+			"lat": 38.7784096,
+			"lon": -0.5164422,
+			"km": 0.3,
+			"dist_m": 23
+		},
+		{
+			"name": "Font de l'Assut",
+			"kind": "fuente",
+			"lat": 38.7776669,
+			"lon": -0.51553,
+			"km": 0.4,
+			"dist_m": 83
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7745157,
+			"lon": -0.524713,
+			"km": 1.3,
+			"dist_m": 46
+		}
+	],
+	"pois": [
+		{
+			"name": "Alt de la Cava",
+			"type": "cumbre",
+			"lat": 38.7661931,
+			"lon": -0.5342672,
+			"km": 3.8,
+			"dist_m": 88
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -57,7 +115,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-104 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-104.gpx (derivados: inicio, bbox)"
 	]
 }

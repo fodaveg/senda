@@ -29,8 +29,50 @@
 		"Manantial \"Nacimiento del Río Tuéjar\" (km 2.6, a 38 m del track; OSM, no verificado en campo)",
 		"Fuente (km 11.7, a 31 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7820172,
+			"lon": -1.039414,
+			"km": 2.3,
+			"dist_m": 21
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7825619,
+			"lon": -1.0383227,
+			"km": 2.5,
+			"dist_m": 6
+		},
+		{
+			"name": "Nacimiento del Río Tuéjar",
+			"kind": "manantial",
+			"lat": 39.7837584,
+			"lon": -1.0387881,
+			"km": 2.6,
+			"dist_m": 38
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7816874,
+			"lon": -1.0392199,
+			"km": 11.7,
+			"dist_m": 31
+		}
+	],
+	"pois": [
+		{
+			"name": "Abrigos del Corral de la Silla",
+			"type": "patrimonio",
+			"lat": 39.7901114,
+			"lon": -1.0345717,
+			"km": 3.8,
+			"dist_m": 15
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +97,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-456 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-456.gpx (derivados: inicio, bbox)"
 	]
 }

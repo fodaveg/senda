@@ -5,8 +5,80 @@
 		"Manantial (km 8.0, a 14 m del track; OSM, no verificado en campo)",
 		"Fuente (km 8.3, a 33 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6162161,
+			"lon": -0.280057,
+			"km": 0,
+			"dist_m": 93
+		},
+		{
+			"name": "Fuente de la Canaleta",
+			"kind": "manantial",
+			"lat": 40.6338305,
+			"lon": -0.3381106,
+			"km": 7.8,
+			"dist_m": 28
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.6359254,
+			"lon": -0.3393395,
+			"km": 8,
+			"dist_m": 14
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6379864,
+			"lon": -0.3395986,
+			"km": 8.3,
+			"dist_m": 33
+		}
+	],
+	"pois": [
+		{
+			"name": "Peiró de les Canals",
+			"type": "patrimonio",
+			"lat": 40.6146268,
+			"lon": -0.2837086,
+			"km": 0.4,
+			"dist_m": 18
+		},
+		{
+			"name": "Ermita de San Roque",
+			"type": "patrimonio",
+			"lat": 40.6372602,
+			"lon": -0.3403887,
+			"km": 8.2,
+			"dist_m": 7
+		},
+		{
+			"name": "Nevera Medieval",
+			"type": "patrimonio",
+			"lat": 40.6378105,
+			"lon": -0.3397369,
+			"km": 8.3,
+			"dist_m": 15
+		},
+		{
+			"name": "Cárcel Pública",
+			"type": "patrimonio",
+			"lat": 40.6377609,
+			"lon": -0.3395724,
+			"km": 8.3,
+			"dist_m": 9
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-247", "pr-cv-229", "gr-331-e06"],
-	"enriched_at": "2026-06-11T18:58:21.730Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-247",
+		"pr-cv-229",
+		"gr-331-e06"
+	],
+	"enriched_at": "2026-06-20T08:37:59.788Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

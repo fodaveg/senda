@@ -1,0 +1,113 @@
+{
+	"water_points": [
+		"Manantial (km 1.0, a 68 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font de l'Horteta\" (km 1.5, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente (km 1.5, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 1.9, a 40 m del track; OSM, no verificado en campo)",
+		"Fuente (km 1.9, a 34 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Marqués\" (km 7.0, a 26 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font del Rossinyol\" (km 10.3, a 3 m del track; OSM, no verificado en campo)",
+		"Manantial \"Font dels Xops\" (km 10.5, a 4 m del track; OSM, no verificado en campo)",
+		"Fuente \"Font Roja\" (km 10.7, a 36 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.7014568,
+			"lon": -0.4917106,
+			"km": 1,
+			"dist_m": 68
+		},
+		{
+			"name": "Font de l'Horteta",
+			"kind": "manantial",
+			"lat": 38.7041334,
+			"lon": -0.4952761,
+			"km": 1.5,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7040767,
+			"lon": -0.4952199,
+			"km": 1.5,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7015554,
+			"lon": -0.493334,
+			"km": 1.9,
+			"dist_m": 40
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7014086,
+			"lon": -0.4932513,
+			"km": 1.9,
+			"dist_m": 34
+		},
+		{
+			"name": "Font del Marqués",
+			"kind": "manantial",
+			"lat": 38.6846696,
+			"lon": -0.5337969,
+			"km": 7,
+			"dist_m": 26
+		},
+		{
+			"name": "Font del Rossinyol",
+			"kind": "manantial",
+			"lat": 38.6655617,
+			"lon": -0.5359131,
+			"km": 10.3,
+			"dist_m": 3
+		},
+		{
+			"name": "Font dels Xops",
+			"kind": "manantial",
+			"lat": 38.6654568,
+			"lon": -0.5383962,
+			"km": 10.5,
+			"dist_m": 4
+		},
+		{
+			"name": "Font Roja",
+			"kind": "fuente",
+			"lat": 38.6648971,
+			"lon": -0.5403383,
+			"km": 10.7,
+			"dist_m": 36
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador del Preventori",
+			"type": "mirador",
+			"lat": 38.7030796,
+			"lon": -0.4884787,
+			"km": 0.7,
+			"dist_m": 24
+		},
+		{
+			"name": "Molí dels Arquets",
+			"type": "patrimonio",
+			"lat": 38.6913365,
+			"lon": -0.519227,
+			"km": 4.9,
+			"dist_m": 17
+		}
+	],
+	"shade_ratio": 0.11,
+	"alternatives": [
+		"pr-cv-37",
+		"gr-7-e49",
+		"gr-7-e47"
+	],
+	"enriched_at": "2026-06-20T08:51:25.028Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -34,8 +34,90 @@
 		"Fuente (km 9.7, a 39 m del track; OSM, no verificado en campo)",
 		"Fuente (km 20.0, a 13 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7690123,
+			"lon": -0.6081408,
+			"km": 8.7,
+			"dist_m": 26
+		},
+		{
+			"name": "Font de Darrere l'Església",
+			"kind": "fuente",
+			"lat": 38.7679781,
+			"lon": -0.609012,
+			"km": 8.9,
+			"dist_m": 53
+		},
+		{
+			"name": "Font de Sant Jaume",
+			"kind": "fuente",
+			"lat": 38.7679601,
+			"lon": -0.6096353,
+			"km": 8.9,
+			"dist_m": 3
+		},
+		{
+			"name": "Font de l'Empedrat",
+			"kind": "fuente",
+			"lat": 38.7675143,
+			"lon": -0.6087438,
+			"km": 8.9,
+			"dist_m": 94
+		},
+		{
+			"name": "Font de l'Escaleta",
+			"kind": "fuente",
+			"lat": 38.7669406,
+			"lon": -0.6097753,
+			"km": 9,
+			"dist_m": 52
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7674346,
+			"lon": -0.6100771,
+			"km": 9,
+			"dist_m": 10
+		},
+		{
+			"name": "Font del Ravalet",
+			"kind": "fuente",
+			"lat": 38.766585,
+			"lon": -0.6113027,
+			"km": 9.1,
+			"dist_m": 64
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7620269,
+			"lon": -0.6101334,
+			"km": 9.7,
+			"dist_m": 39
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.7525246,
+			"lon": -0.5483659,
+			"km": 20,
+			"dist_m": 13
+		}
+	],
+	"pois": [
+		{
+			"name": "l'Excusada",
+			"type": "patrimonio",
+			"lat": 38.768546,
+			"lon": -0.6089903,
+			"km": 8.8,
+			"dist_m": 16
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -60,7 +142,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e46 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e46.gpx (derivados: inicio, bbox)"
 	]
 }

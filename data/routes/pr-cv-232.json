@@ -27,8 +27,42 @@
 		"Manantial \"El Llavaor\" (km 0.0, a 38 m del track; OSM, no verificado en campo)",
 		"Fuente \"La Font\" (km 0.1, a 98 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "El Llavaor",
+			"kind": "manantial",
+			"lat": 38.6087868,
+			"lon": -0.4203482,
+			"km": 0,
+			"dist_m": 38
+		},
+		{
+			"name": "La Font",
+			"kind": "fuente",
+			"lat": 38.6080143,
+			"lon": -0.4202525,
+			"km": 0.1,
+			"dist_m": 98
+		}
+	],
+	"pois": [
+		{
+			"name": "El Racó de Xomarra",
+			"type": "cumbre",
+			"lat": 38.6199846,
+			"lon": -0.4505843,
+			"km": 5.4,
+			"dist_m": 14
+		},
+		{
+			"name": "els Plans",
+			"type": "cumbre",
+			"lat": 38.6359381,
+			"lon": -0.4284903,
+			"km": 8.4,
+			"dist_m": 2
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +87,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-232 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-232.gpx (derivados: inicio, bbox)"
 	]
 }

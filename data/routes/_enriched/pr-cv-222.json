@@ -4,8 +4,80 @@
 		"Fuente (km 0.0, a 81 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font Arriero\" (km 0.9, a 2 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.8309135,
+			"lon": -0.4967905,
+			"km": 0,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.8316236,
+			"lon": -0.4967501,
+			"km": 0,
+			"dist_m": 81
+		},
+		{
+			"name": "Font Arriero",
+			"kind": "manantial",
+			"lat": 38.8277995,
+			"lon": -0.4886304,
+			"km": 0.9,
+			"dist_m": 2
+		}
+	],
+	"pois": [
+		{
+			"name": "Nevera de Diego",
+			"type": "patrimonio",
+			"lat": 38.824041,
+			"lon": -0.4616137,
+			"km": 4.5,
+			"dist_m": 17
+		},
+		{
+			"name": "Alt del Mig",
+			"type": "cumbre",
+			"lat": 38.8235594,
+			"lon": -0.4406902,
+			"km": 7.3,
+			"dist_m": 147
+		},
+		{
+			"name": "Alt de la Nevera",
+			"type": "cumbre",
+			"lat": 38.8310969,
+			"lon": -0.4140249,
+			"km": 10.3,
+			"dist_m": 66
+		},
+		{
+			"name": "Alt de Benicadell",
+			"type": "cumbre",
+			"lat": 38.832622,
+			"lon": -0.4063146,
+			"km": 11,
+			"dist_m": 110
+		},
+		{
+			"name": "la Capella",
+			"type": "cumbre",
+			"lat": 38.8319963,
+			"lon": -0.4076379,
+			"km": 11,
+			"dist_m": 12
+		}
+	],
 	"shade_ratio": 0.16,
-	"alternatives": ["sl-cv-118", "pr-cv-134", "pr-cv-135"],
-	"enriched_at": "2026-06-11T18:00:12.251Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-118",
+		"pr-cv-134",
+		"pr-cv-135"
+	],
+	"enriched_at": "2026-06-20T09:21:09.972Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

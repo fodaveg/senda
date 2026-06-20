@@ -26,8 +26,34 @@
 	"water_points": [
 		"Fuente (km 0.0, a 85 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.3389043,
+			"lon": -0.7698801,
+			"km": 0,
+			"dist_m": 85
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador Barranco de los Ojos",
+			"type": "mirador",
+			"lat": 38.3257451,
+			"lon": -0.7299482,
+			"km": 6.7,
+			"dist_m": 18
+		},
+		{
+			"name": "Mirador Cola del Pantano",
+			"type": "mirador",
+			"lat": 38.3265898,
+			"lon": -0.7294625,
+			"km": 6.8,
+			"dist_m": 94
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +78,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-169 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-169.gpx (derivados: inicio, bbox)"
 	]
 }

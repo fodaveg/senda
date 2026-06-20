@@ -27,8 +27,58 @@
 		"Fuente (km 4.2, a 7 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de la Murta\" (km 5.1, a 18 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6903133,
+			"lon": -0.3576253,
+			"km": 4.2,
+			"dist_m": 7
+		},
+		{
+			"name": "Font de la Murta",
+			"kind": "manantial",
+			"lat": 39.6845018,
+			"lon": -0.3603081,
+			"km": 5.1,
+			"dist_m": 18
+		}
+	],
+	"pois": [
+		{
+			"name": "Llavaner del Garbí",
+			"type": "patrimonio",
+			"lat": 39.6992173,
+			"lon": -0.3619895,
+			"km": 3,
+			"dist_m": 125
+		},
+		{
+			"name": "la Rodana",
+			"type": "cumbre",
+			"lat": 39.6903248,
+			"lon": -0.3393841,
+			"km": 10.1,
+			"dist_m": 100
+		},
+		{
+			"name": "la Buitrera",
+			"type": "cumbre",
+			"lat": 39.6937017,
+			"lon": -0.3410559,
+			"km": 10.4,
+			"dist_m": 122
+		},
+		{
+			"name": "Castillo de Albalat dels Tarongers",
+			"type": "patrimonio",
+			"lat": 39.7024626,
+			"lon": -0.3373652,
+			"km": 12.8,
+			"dist_m": 45
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +103,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-318 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-318.gpx (derivados: inicio, bbox)"
 	]
 }

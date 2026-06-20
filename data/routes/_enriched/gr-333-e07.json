@@ -10,8 +10,96 @@
 		"Fuente (km 6.4, a 50 m del track; OSM, no verificado en campo)",
 		"Fuente (km 6.4, a 52 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0202963,
+			"lon": -0.4191609,
+			"km": 0,
+			"dist_m": 99
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.018784,
+			"lon": -0.417669,
+			"km": 0.2,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9999441,
+			"lon": -0.3761154,
+			"km": 6,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9983816,
+			"lon": -0.3752567,
+			"km": 6.3,
+			"dist_m": 21
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9990504,
+			"lon": -0.374185,
+			"km": 6.4,
+			"dist_m": 35
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9992334,
+			"lon": -0.3741208,
+			"km": 6.4,
+			"dist_m": 50
+		},
+		{
+			"name": "Fuente Rita",
+			"kind": "fuente",
+			"lat": 39.9985893,
+			"lon": -0.3743978,
+			"km": 6.4,
+			"dist_m": 17
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9992853,
+			"lon": -0.3750645,
+			"km": 6.4,
+			"dist_m": 52
+		},
+		{
+			"name": "Fuente El Turio",
+			"kind": "manantial",
+			"lat": 39.9985764,
+			"lon": -0.3744156,
+			"km": 6.4,
+			"dist_m": 16
+		}
+	],
+	"pois": [
+		{
+			"name": "El Castillico",
+			"type": "patrimonio",
+			"lat": 40.0087081,
+			"lon": -0.3942794,
+			"km": 3.1,
+			"dist_m": 16
+		}
+	],
 	"shade_ratio": null,
-	"alternatives": ["gr-333-e10", "gr-333-e06", "sl-cv-103"],
-	"enriched_at": "2026-06-11T17:44:41.672Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-333-e10",
+		"gr-333-e06",
+		"sl-cv-103"
+	],
+	"enriched_at": "2026-06-20T08:42:13.000Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

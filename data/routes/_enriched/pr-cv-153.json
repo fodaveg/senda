@@ -5,8 +5,72 @@
 		"Manantial \"la Fonteta\" (km 5.8, a 5 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font del Mondúver\" (km 10.6, a 39 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Molí",
+			"kind": "manantial",
+			"lat": 39.0042153,
+			"lon": -0.2368768,
+			"km": 1.7,
+			"dist_m": 39
+		},
+		{
+			"name": "Font dels Flarets",
+			"kind": "manantial",
+			"lat": 39.01476,
+			"lon": -0.258659,
+			"km": 5.3,
+			"dist_m": 36
+		},
+		{
+			"name": "la Fonteta",
+			"kind": "manantial",
+			"lat": 39.0145152,
+			"lon": -0.263076,
+			"km": 5.8,
+			"dist_m": 5
+		},
+		{
+			"name": "Font del Mondúver",
+			"kind": "manantial",
+			"lat": 39.0083983,
+			"lon": -0.2546418,
+			"km": 10.6,
+			"dist_m": 39
+		}
+	],
+	"pois": [
+		{
+			"name": "el Mondúver",
+			"type": "cumbre",
+			"lat": 39.0090947,
+			"lon": -0.2665786,
+			"km": 8.4,
+			"dist_m": 3
+		},
+		{
+			"name": "el Picaio",
+			"type": "cumbre",
+			"lat": 39.0116018,
+			"lon": -0.2525183,
+			"km": 10.3,
+			"dist_m": 43
+		},
+		{
+			"name": "el Piló de la Bassa d'Horta",
+			"type": "cumbre",
+			"lat": 39.0056232,
+			"lon": -0.2266715,
+			"km": 14,
+			"dist_m": 84
+		}
+	],
 	"shade_ratio": 0.07,
-	"alternatives": ["pr-cv-183", "sl-cv-79", "sl-cv-80"],
-	"enriched_at": "2026-06-11T17:56:03.912Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-183",
+		"sl-cv-79",
+		"sl-cv-80"
+	],
+	"enriched_at": "2026-06-20T09:13:03.189Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

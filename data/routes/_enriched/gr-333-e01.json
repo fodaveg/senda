@@ -6,8 +6,55 @@
 		"Fuente (km 3.5, a 95 m del track; OSM, no verificado en campo)",
 		"Fuente (km 3.5, a 69 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Perera",
+			"kind": "fuente",
+			"lat": 39.9489587,
+			"lon": -0.3068366,
+			"km": 0.1,
+			"dist_m": 34
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9476342,
+			"lon": -0.3071159,
+			"km": 0.2,
+			"dist_m": 78
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9465477,
+			"lon": -0.3106394,
+			"km": 0.6,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9518675,
+			"lon": -0.334239,
+			"km": 3.5,
+			"dist_m": 95
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9509135,
+			"lon": -0.3346357,
+			"km": 3.5,
+			"dist_m": 69
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.42,
-	"alternatives": ["gr-333", "sl-cv-142", "gr-333-e02"],
-	"enriched_at": "2026-06-11T17:44:06.732Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-333",
+		"sl-cv-142",
+		"gr-333-e02"
+	],
+	"enriched_at": "2026-06-20T08:41:50.133Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

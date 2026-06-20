@@ -29,8 +29,58 @@
 		"Manantial \"Font de la Costa\" (km 4.4, a 9 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de l'Escarrall\" (km 8.2, a 68 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5375043,
+			"lon": -0.5076898,
+			"km": 0.2,
+			"dist_m": 14
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.541046,
+			"lon": -0.5062523,
+			"km": 0.6,
+			"dist_m": 85
+		},
+		{
+			"name": "Font de la Costa",
+			"kind": "manantial",
+			"lat": 38.5718414,
+			"lon": -0.5058155,
+			"km": 4.4,
+			"dist_m": 9
+		},
+		{
+			"name": "Font de l'Escarrall",
+			"kind": "manantial",
+			"lat": 38.6012434,
+			"lon": -0.4878368,
+			"km": 8.2,
+			"dist_m": 68
+		}
+	],
+	"pois": [
+		{
+			"name": "Torre Grossa",
+			"type": "patrimonio",
+			"lat": 38.5390266,
+			"lon": -0.5091931,
+			"km": 0.4,
+			"dist_m": 147
+		},
+		{
+			"name": "Església Vella",
+			"type": "patrimonio",
+			"lat": 38.5390467,
+			"lon": -0.5082236,
+			"km": 0.4,
+			"dist_m": 66
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +105,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-270 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-270.gpx (derivados: inicio, bbox)"
 	]
 }

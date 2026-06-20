@@ -4,8 +4,39 @@
 		"Manantial \"Font de Dalt\" (km 0.6, a 3 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de la Penya Blanca\" (km 9.7, a 17 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de Baix",
+			"kind": "manantial",
+			"lat": 38.7412879,
+			"lon": -0.1133966,
+			"km": 0.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de Dalt",
+			"kind": "manantial",
+			"lat": 38.7392773,
+			"lon": -0.1177127,
+			"km": 0.6,
+			"dist_m": 3
+		},
+		{
+			"name": "Font de la Penya Blanca",
+			"kind": "manantial",
+			"lat": 38.7287387,
+			"lon": -0.1360838,
+			"km": 9.7,
+			"dist_m": 17
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.2,
-	"alternatives": ["pr-cv-426", "pr-cv-158", "pr-cv-147"],
-	"enriched_at": "2026-06-11T18:25:54.929Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-426",
+		"pr-cv-158",
+		"pr-cv-147"
+	],
+	"enriched_at": "2026-06-20T09:44:27.561Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

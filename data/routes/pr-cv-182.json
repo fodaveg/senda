@@ -28,8 +28,42 @@
 		"Manantial \"Font del Cuquero\" (km 2.5, a 3 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font Roja\" (km 5.5, a 6 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font de l'Esperit Sant",
+			"kind": "manantial",
+			"lat": 38.7335404,
+			"lon": -0.2668657,
+			"km": 0.6,
+			"dist_m": 9
+		},
+		{
+			"name": "Font del Cuquero",
+			"kind": "manantial",
+			"lat": 38.7205978,
+			"lon": -0.2656034,
+			"km": 2.5,
+			"dist_m": 3
+		},
+		{
+			"name": "Font Roja",
+			"kind": "manantial",
+			"lat": 38.7138947,
+			"lon": -0.2862099,
+			"km": 5.5,
+			"dist_m": 6
+		}
+	],
+	"pois": [
+		{
+			"name": "Pla de la Casa",
+			"type": "cumbre",
+			"lat": 38.7165256,
+			"lon": -0.2746227,
+			"km": 3.9,
+			"dist_m": 93
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +88,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-182 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-182.gpx (derivados: inicio, bbox)"
 	]
 }

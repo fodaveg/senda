@@ -1,7 +1,22 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "La Creu",
+			"type": "cumbre",
+			"lat": 38.9813677,
+			"lon": -0.461612,
+			"km": 0.9,
+			"dist_m": 1
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-193-2", "pr-cv-193-1", "pr-cv-193-4"],
-	"enriched_at": "2026-06-11T17:58:23.593Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-193-2",
+		"pr-cv-193-1",
+		"pr-cv-193-4"
+	],
+	"enriched_at": "2026-06-20T09:19:05.566Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -26,8 +26,42 @@
 	"water_points": [
 		"Manantial \"Fuente de la Peña del Diablo\" (km 12.8, a 17 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Peña del Diablo",
+			"kind": "manantial",
+			"lat": 39.8858579,
+			"lon": -0.7884145,
+			"km": 12.8,
+			"dist_m": 17
+		}
+	],
+	"pois": [
+		{
+			"name": "Picacho Bigas",
+			"type": "cumbre",
+			"lat": 39.9272762,
+			"lon": -0.7394184,
+			"km": 3.4,
+			"dist_m": 120
+		},
+		{
+			"name": "Peña Elvira",
+			"type": "cumbre",
+			"lat": 39.9262203,
+			"lon": -0.754407,
+			"km": 5,
+			"dist_m": 146
+		},
+		{
+			"name": "Cerrito Güeña",
+			"type": "cumbre",
+			"lat": 39.898613,
+			"lon": -0.7645256,
+			"km": 18.4,
+			"dist_m": 38
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +86,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-273 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-273.gpx (derivados: inicio, bbox)"
 	]
 }

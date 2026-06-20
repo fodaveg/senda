@@ -2,8 +2,40 @@
 	"water_points": [
 		"Manantial \"Pozico Valentín\" (km 12.2, a 16 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Pozico Valentín",
+			"kind": "manantial",
+			"lat": 39.3760334,
+			"lon": -0.9634817,
+			"km": 12.2,
+			"dist_m": 16
+		}
+	],
+	"pois": [
+		{
+			"name": "Cerro Tabarla",
+			"type": "cumbre",
+			"lat": 39.36952,
+			"lon": -0.9554481,
+			"km": 1,
+			"dist_m": 112
+		},
+		{
+			"name": "Cerro de Tabarla",
+			"type": "cumbre",
+			"lat": 39.3621417,
+			"lon": -0.9437483,
+			"km": 2.6,
+			"dist_m": 62
+		}
+	],
 	"shade_ratio": null,
-	"alternatives": ["gr-7-e41", "sl-cv-47", "gr-238-e11"],
-	"enriched_at": "2026-06-11T19:51:55.459Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-7-e41",
+		"sl-cv-47",
+		"gr-238-e11"
+	],
+	"enriched_at": "2026-06-20T10:03:33.754Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

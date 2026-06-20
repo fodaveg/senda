@@ -7,8 +7,63 @@
 		"Manantial \"Fuente del Rebollo\" (km 5.1, a 9 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente de la Alameda\" (km 7.3, a 26 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.769285,
+			"lon": -0.5218853,
+			"km": 0,
+			"dist_m": 93
+		},
+		{
+			"name": "Fuente de los 15 Caños",
+			"kind": "fuente",
+			"lat": 39.7707489,
+			"lon": -0.5219474,
+			"km": 0.2,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7705105,
+			"lon": -0.5222786,
+			"km": 0.2,
+			"dist_m": 20
+		},
+		{
+			"name": "Fuente de la Fonf",
+			"kind": "manantial",
+			"lat": 39.7687888,
+			"lon": -0.5361422,
+			"km": 1.6,
+			"dist_m": 8
+		},
+		{
+			"name": "Fuente del Rebollo",
+			"kind": "manantial",
+			"lat": 39.7851835,
+			"lon": -0.5598678,
+			"km": 5.1,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente de la Alameda",
+			"kind": "manantial",
+			"lat": 39.7814332,
+			"lon": -0.5395361,
+			"km": 7.3,
+			"dist_m": 26
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.1,
-	"alternatives": ["gr-10-e04", "pr-cv-8", "gr-160-e05"],
-	"enriched_at": "2026-06-11T22:48:52.225Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-10-e04",
+		"pr-cv-8",
+		"gr-160-e05"
+	],
+	"enriched_at": "2026-06-20T09:53:27.924Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

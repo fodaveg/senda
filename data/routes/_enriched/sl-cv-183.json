@@ -3,8 +3,31 @@
 		"Fuente \"Font d'Orbeta\" (km 0.1, a 3 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de Dalt\" (km 0.4, a 45 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font d'Orbeta",
+			"kind": "fuente",
+			"lat": 38.7791342,
+			"lon": -0.058845,
+			"km": 0.1,
+			"dist_m": 3
+		},
+		{
+			"name": "Font de Dalt",
+			"kind": "manantial",
+			"lat": 38.7769026,
+			"lon": -0.0598989,
+			"km": 0.4,
+			"dist_m": 45
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-368", "sl-cv-92", "pr-cv-445"],
-	"enriched_at": "2026-06-11T18:39:32.309Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-368",
+		"sl-cv-92",
+		"pr-cv-445"
+	],
+	"enriched_at": "2026-06-20T10:00:08.852Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

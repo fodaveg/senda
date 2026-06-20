@@ -2,8 +2,40 @@
 	"water_points": [
 		"Manantial \"Font de la Pistola\" (km 2.6, a 10 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Pistola",
+			"kind": "manantial",
+			"lat": 39.9157532,
+			"lon": -0.3383482,
+			"km": 2.6,
+			"dist_m": 10
+		}
+	],
+	"pois": [
+		{
+			"name": "El Molinet",
+			"type": "patrimonio",
+			"lat": 39.9144581,
+			"lon": -0.3522081,
+			"km": 4.7,
+			"dist_m": 11
+		},
+		{
+			"name": "Nuestra Señora de la Cueva Santa",
+			"type": "patrimonio",
+			"lat": 39.9158263,
+			"lon": -0.3524798,
+			"km": 4.9,
+			"dist_m": 55
+		}
+	],
 	"shade_ratio": 0.05,
-	"alternatives": ["pr-cv-140", "sl-cv-29", "gr-333-e03"],
-	"enriched_at": "2026-06-11T17:46:09.829Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-140",
+		"sl-cv-29",
+		"gr-333-e03"
+	],
+	"enriched_at": "2026-06-20T08:44:39.890Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

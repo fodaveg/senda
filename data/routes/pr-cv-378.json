@@ -27,8 +27,50 @@
 		"Manantial \"Aljub de Maravilla\" (km 5.0, a 57 m del track; OSM, no verificado en campo)",
 		"Fuente (km 8.4, a 5 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Aljub de Maravilla",
+			"kind": "manantial",
+			"lat": 40.0518472,
+			"lon": -0.022294,
+			"km": 5,
+			"dist_m": 57
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0478415,
+			"lon": -0.0556244,
+			"km": 8.4,
+			"dist_m": 5
+		}
+	],
+	"pois": [
+		{
+			"name": "Santa Maria Magdalena i el Frare Antonino",
+			"type": "patrimonio",
+			"lat": 40.0335054,
+			"lon": -0.0076274,
+			"km": 0,
+			"dist_m": 13
+		},
+		{
+			"name": "Sant Jaume",
+			"type": "patrimonio",
+			"lat": 40.02905,
+			"lon": -0.0213381,
+			"km": 14.1,
+			"dist_m": 9
+		},
+		{
+			"name": "Sant Vicent Ferrer",
+			"type": "patrimonio",
+			"lat": 40.0294597,
+			"lon": -0.0144298,
+			"km": 14.7,
+			"dist_m": 3
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +95,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-378 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-378.gpx (derivados: inicio, bbox)"
 	]
 }

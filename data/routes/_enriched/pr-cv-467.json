@@ -3,8 +3,31 @@
 		"Manantial \"Fuente Royo\" (km 3.0, a 7 m del track; OSM, no verificado en campo)",
 		"Fuente (km 12.2, a 28 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente Royo",
+			"kind": "manantial",
+			"lat": 39.8880141,
+			"lon": -0.6777707,
+			"km": 3,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9004173,
+			"lon": -0.6577798,
+			"km": 12.2,
+			"dist_m": 28
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.08,
-	"alternatives": ["sl-cv-54", "gr-7-e35", "gr-231-e02"],
-	"enriched_at": "2026-06-11T18:26:01.852Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-54",
+		"gr-7-e35",
+		"gr-231-e02"
+	],
+	"enriched_at": "2026-06-20T09:44:33.459Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

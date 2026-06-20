@@ -28,7 +28,32 @@
 		"Fuente (km 0.6, a 4 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente de la Hoya del Hacha\" (km 12.4, a 8 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8675437,
+			"lon": -1.0812205,
+			"km": 0.1,
+			"dist_m": 77
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8697571,
+			"lon": -1.0796066,
+			"km": 0.6,
+			"dist_m": 4
+		},
+		{
+			"name": "Fuente de la Hoya del Hacha",
+			"kind": "manantial",
+			"lat": 39.884449,
+			"lon": -1.0687955,
+			"km": 12.4,
+			"dist_m": 8
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -54,7 +79,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-337 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-337.gpx (derivados: inicio, bbox)"
 	]
 }

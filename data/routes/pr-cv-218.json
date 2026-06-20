@@ -21,8 +21,26 @@
 	"water_points": [
 		"Fuente \"Font del Llavador\" (km 7.1, a 5 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font del Llavador",
+			"kind": "fuente",
+			"lat": 38.4857409,
+			"lon": -0.7651513,
+			"km": 7.1,
+			"dist_m": 5
+		}
+	],
+	"pois": [
+		{
+			"name": "l'Almorxoneta",
+			"type": "cumbre",
+			"lat": 38.5018183,
+			"lon": -0.7807642,
+			"km": 4.4,
+			"dist_m": 132
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -47,7 +65,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-218 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-218.gpx (derivados: desniveles, inicio, bbox)"
 	]
 }

@@ -22,8 +22,50 @@
 		"Manantial \"Font de l'Orpinell\" (km 1.7, a 2 m del track; OSM, no verificado en campo)",
 		"Fuente (km 6.9, a 15 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font de l'Orpinell",
+			"kind": "manantial",
+			"lat": 40.7059788,
+			"lon": -0.0705622,
+			"km": 1.7,
+			"dist_m": 2
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.7265909,
+			"lon": -0.0820473,
+			"km": 6.9,
+			"dist_m": 15
+		}
+	],
+	"pois": [
+		{
+			"name": "Santa Creu",
+			"type": "patrimonio",
+			"lat": 40.7230884,
+			"lon": -0.0809392,
+			"km": 6.5,
+			"dist_m": 66
+		},
+		{
+			"name": "Ermita de Sant Josep",
+			"type": "patrimonio",
+			"lat": 40.7236451,
+			"lon": -0.0820933,
+			"km": 6.6,
+			"dist_m": 31
+		},
+		{
+			"name": "Mirador de l'Esglèsia",
+			"type": "mirador",
+			"lat": 40.7270306,
+			"lon": -0.0820836,
+			"km": 7,
+			"dist_m": 31
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -48,7 +90,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-372 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-372.gpx (derivados: inicio, bbox)"
 	]
 }

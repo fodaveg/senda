@@ -3,8 +3,48 @@
 		"Manantial \"El Llavaor\" (km 0.0, a 38 m del track; OSM, no verificado en campo)",
 		"Fuente \"La Font\" (km 0.1, a 98 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "El Llavaor",
+			"kind": "manantial",
+			"lat": 38.6087868,
+			"lon": -0.4203482,
+			"km": 0,
+			"dist_m": 38
+		},
+		{
+			"name": "La Font",
+			"kind": "fuente",
+			"lat": 38.6080143,
+			"lon": -0.4202525,
+			"km": 0.1,
+			"dist_m": 98
+		}
+	],
+	"pois": [
+		{
+			"name": "El Racó de Xomarra",
+			"type": "cumbre",
+			"lat": 38.6199846,
+			"lon": -0.4505843,
+			"km": 5.4,
+			"dist_m": 14
+		},
+		{
+			"name": "els Plans",
+			"type": "cumbre",
+			"lat": 38.6359381,
+			"lon": -0.4284903,
+			"km": 8.4,
+			"dist_m": 2
+		}
+	],
 	"shade_ratio": 0.02,
-	"alternatives": ["pr-cv-20", "pr-cv-2", "sl-cv-151"],
-	"enriched_at": "2026-06-11T18:01:19.471Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-20",
+		"pr-cv-2",
+		"sl-cv-151"
+	],
+	"enriched_at": "2026-06-20T09:22:33.500Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

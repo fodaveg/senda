@@ -28,8 +28,42 @@
 		"Fuente \"Fuente del Hontanar\" (km 6.3, a 23 m del track; OSM, no verificado en campo)",
 		"Fuente (km 10.3, a 19 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6282983,
+			"lon": -1.1380825,
+			"km": 0,
+			"dist_m": 1
+		},
+		{
+			"name": "Fuente del Hontanar",
+			"kind": "fuente",
+			"lat": 39.6335359,
+			"lon": -1.1547512,
+			"km": 6.3,
+			"dist_m": 23
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6259363,
+			"lon": -1.1400054,
+			"km": 10.3,
+			"dist_m": 19
+		}
+	],
+	"pois": [
+		{
+			"name": "Santuario del Remedio",
+			"type": "patrimonio",
+			"lat": 39.6269625,
+			"lon": -1.1420111,
+			"km": 10.1,
+			"dist_m": 88
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +88,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-177-1 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-177-1.gpx (derivados: inicio, bbox)"
 	]
 }

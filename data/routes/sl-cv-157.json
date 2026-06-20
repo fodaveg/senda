@@ -28,7 +28,32 @@
 		"Fuente (km 0.3, a 18 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de Carcau\" (km 1.1, a 13 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7702016,
+			"lon": -0.2072008,
+			"km": 0,
+			"dist_m": 76
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7696985,
+			"lon": -0.2054801,
+			"km": 0.3,
+			"dist_m": 18
+		},
+		{
+			"name": "Font de Carcau",
+			"kind": "manantial",
+			"lat": 39.7714433,
+			"lon": -0.2021047,
+			"km": 1.1,
+			"dist_m": 13
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -54,7 +79,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-157 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-157.gpx (derivados: distancia, inicio, bbox)"
 	]
 }

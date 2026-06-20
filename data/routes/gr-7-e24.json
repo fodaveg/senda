@@ -27,8 +27,34 @@
 		"Fuente (km 4.4, a 4 m del track; OSM, no verificado en campo)",
 		"Fuente (km 4.5, a 52 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.7053467,
+			"lon": 0.1712214,
+			"km": 4.4,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.7056285,
+			"lon": 0.1701152,
+			"km": 4.5,
+			"dist_m": 52
+		}
+	],
+	"pois": [
+		{
+			"name": "Caseta de Ventura",
+			"type": "patrimonio",
+			"lat": 40.7263894,
+			"lon": 0.1863842,
+			"km": 0.7,
+			"dist_m": 28
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +79,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e24 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e24.gpx (derivados: inicio, bbox)"
 	]
 }

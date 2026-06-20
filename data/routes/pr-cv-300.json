@@ -23,20 +23,60 @@
 		"esfuerzo": 3
 	},
 	"est_duration_min": 270,
-	"water_points": [],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points": [
+		"Manantial \"Fuente de la Peraleja\" (km 0.0, a 55 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Peraleja",
+			"kind": "manantial",
+			"lat": 39.5529469,
+			"lon": -0.8901254,
+			"km": 0,
+			"dist_m": 55
+		}
+	],
+	"pois": [
+		{
+			"name": "Cerro del Morro",
+			"type": "cumbre",
+			"lat": 39.5472486,
+			"lon": -0.845516,
+			"km": 6.9,
+			"dist_m": 112
+		},
+		{
+			"name": "Alto de la Sima",
+			"type": "cumbre",
+			"lat": 39.5433158,
+			"lon": -0.8379545,
+			"km": 7.6,
+			"dist_m": 22
+		},
+		{
+			"name": "Alto de la Yerba",
+			"type": "cumbre",
+			"lat": 39.5406353,
+			"lon": -0.8347982,
+			"km": 8,
+			"dist_m": 123
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0,
 	"gpx": "pr-cv-300.gpx",
 	"links": {
 		"femecv": "https://senders.femecv.com/es/sendero/ver/pr-cv-300",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"pr-cv-223",
+		"pr-cv-414",
+		"gr-238-e09"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.889579011127353,
@@ -46,6 +86,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-300 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-300.gpx (derivados: inicio, bbox)"
 	]
 }

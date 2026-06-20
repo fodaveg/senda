@@ -5,8 +5,72 @@
 		"Manantial \"Font del Maset\" (km 0.9, a 19 m del track; OSM, no verificado en campo)",
 		"Manantial (km 2.5, a 24 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6460621,
+			"lon": -0.2473463,
+			"km": 0.2,
+			"dist_m": 9
+		},
+		{
+			"name": "Font del Xorret",
+			"kind": "manantial",
+			"lat": 40.6474273,
+			"lon": -0.248815,
+			"km": 0.4,
+			"dist_m": 32
+		},
+		{
+			"name": "Font del Maset",
+			"kind": "manantial",
+			"lat": 40.6505019,
+			"lon": -0.2526845,
+			"km": 0.9,
+			"dist_m": 19
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.65631,
+			"lon": -0.2676947,
+			"km": 2.5,
+			"dist_m": 24
+		}
+	],
+	"pois": [
+		{
+			"name": "Collet del Mas de Vinyals",
+			"type": "cumbre",
+			"lat": 40.6820008,
+			"lon": -0.2732581,
+			"km": 7.1,
+			"dist_m": 3
+		},
+		{
+			"name": "Castell de la Todolella",
+			"type": "patrimonio",
+			"lat": 40.647612,
+			"lon": -0.2459911,
+			"km": 12.6,
+			"dist_m": 93
+		},
+		{
+			"name": "Peiró de la Mare de Déu",
+			"type": "patrimonio",
+			"lat": 40.6437383,
+			"lon": -0.2456881,
+			"km": 13.1,
+			"dist_m": 140
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-244", "gr-331-e06", "pr-cv-117"],
-	"enriched_at": "2026-06-11T19:11:14.058Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-244",
+		"gr-331-e06",
+		"pr-cv-117"
+	],
+	"enriched_at": "2026-06-20T09:22:08.990Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -3,8 +3,48 @@
 		"Fuente (km 0.5, a 9 m del track; OSM, no verificado en campo)",
 		"Fuente (km 0.8, a 19 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.6565459,
+			"lon": 0.0252449,
+			"km": 0.5,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.6540729,
+			"lon": 0.0247499,
+			"km": 0.8,
+			"dist_m": 19
+		}
+	],
+	"pois": [
+		{
+			"name": "el Dit d'Oltà",
+			"type": "cumbre",
+			"lat": 38.6611757,
+			"lon": 0.0147044,
+			"km": 3.5,
+			"dist_m": 9
+		},
+		{
+			"name": "Finca Pastor",
+			"type": "patrimonio",
+			"lat": 38.659914,
+			"lon": 0.0100868,
+			"km": 7,
+			"dist_m": 14
+		}
+	],
 	"shade_ratio": 0.14,
-	"alternatives": ["pr-cv-7", "sl-cv-136", "pr-cv-388"],
-	"enriched_at": "2026-06-11T18:11:07.115Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-7",
+		"sl-cv-136",
+		"pr-cv-388"
+	],
+	"enriched_at": "2026-06-20T09:29:40.772Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

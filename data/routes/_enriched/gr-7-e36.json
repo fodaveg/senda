@@ -1,0 +1,87 @@
+{
+	"water_points": [
+		"Fuente (km 0.1, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente (km 1.4, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 1.5, a 24 m del track; OSM, no verificado en campo)",
+		"Manantial \"Fuente de la Porqueta\" (km 11.6, a 49 m del track; OSM, no verificado en campo)",
+		"Manantial (km 24.8, a 7 m del track; OSM, no verificado en campo)",
+		"Fuente (km 25.8, a 41 m del track; OSM, no verificado en campo)",
+		"Fuente (km 25.8, a 60 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8358366,
+			"lon": -0.813406,
+			"km": 0.1,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8376405,
+			"lon": -0.8237893,
+			"km": 1.4,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8384958,
+			"lon": -0.8248796,
+			"km": 1.5,
+			"dist_m": 24
+		},
+		{
+			"name": "Fuente de la Porqueta",
+			"kind": "manantial",
+			"lat": 39.8189655,
+			"lon": -0.9157232,
+			"km": 11.6,
+			"dist_m": 49
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.7565557,
+			"lon": -0.995962,
+			"km": 24.8,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.749192,
+			"lon": -0.9959064,
+			"km": 25.8,
+			"dist_m": 41
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7489801,
+			"lon": -0.9958613,
+			"km": 25.8,
+			"dist_m": 60
+		}
+	],
+	"pois": [
+		{
+			"name": "La Torrecilla",
+			"type": "patrimonio",
+			"lat": 39.7555854,
+			"lon": -0.9894164,
+			"km": 23.9,
+			"dist_m": 131
+		}
+	],
+	"shade_ratio": 0.11,
+	"alternatives": [
+		"gr-10-e07",
+		"pr-cv-176",
+		"pr-cv-424"
+	],
+	"enriched_at": "2026-06-20T08:49:37.308Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

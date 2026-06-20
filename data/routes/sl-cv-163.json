@@ -30,8 +30,58 @@
 		"Fuente \"Fuente las Parras\" (km 8.1, a 59 m del track; OSM, no verificado en campo)",
 		"Fuente \"Fuente la Bomba\" (km 8.4, a 69 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente de San Vicente",
+			"kind": "fuente",
+			"lat": 39.3859884,
+			"lon": -0.8144295,
+			"km": 0.1,
+			"dist_m": 23
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.4009378,
+			"lon": -0.7988002,
+			"km": 5.3,
+			"dist_m": 4
+		},
+		{
+			"name": "Fuente de la Báscula",
+			"kind": "fuente",
+			"lat": 39.3865492,
+			"lon": -0.8089233,
+			"km": 8,
+			"dist_m": 10
+		},
+		{
+			"name": "Fuente las Parras",
+			"kind": "fuente",
+			"lat": 39.3852118,
+			"lon": -0.8086885,
+			"km": 8.1,
+			"dist_m": 59
+		},
+		{
+			"name": "Fuente la Bomba",
+			"kind": "fuente",
+			"lat": 39.3848837,
+			"lon": -0.8108727,
+			"km": 8.4,
+			"dist_m": 69
+		}
+	],
+	"pois": [
+		{
+			"name": "Molino",
+			"type": "patrimonio",
+			"lat": 39.3938588,
+			"lon": -0.8015509,
+			"km": 6.7,
+			"dist_m": 39
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -56,7 +106,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-163 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-163.gpx (derivados: inicio, bbox)"
 	]
 }

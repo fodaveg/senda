@@ -38,8 +38,146 @@
 		"Fuente (km 9.6, a 28 m del track; OSM, no verificado en campo)",
 		"Fuente (km 9.7, a 50 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.2727987,
+			"lon": -0.6985217,
+			"km": 4.9,
+			"dist_m": 33
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.2707362,
+			"lon": -0.6988125,
+			"km": 5.2,
+			"dist_m": 30
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.2709175,
+			"lon": -0.6969072,
+			"km": 5.3,
+			"dist_m": 13
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.2709712,
+			"lon": -0.6959281,
+			"km": 5.3,
+			"dist_m": 95
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.2705573,
+			"lon": -0.6974399,
+			"km": 5.4,
+			"dist_m": 19
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.2699747,
+			"lon": -0.6975868,
+			"km": 5.4,
+			"dist_m": 19
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.2693135,
+			"lon": -0.6972113,
+			"km": 5.5,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.2675073,
+			"lon": -0.6978789,
+			"km": 5.7,
+			"dist_m": 96
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.266251,
+			"lon": -0.6994864,
+			"km": 6.1,
+			"dist_m": 20
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.2645227,
+			"lon": -0.7003108,
+			"km": 6.3,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.2599868,
+			"lon": -0.7016879,
+			"km": 6.8,
+			"dist_m": 71
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.2606265,
+			"lon": -0.6942386,
+			"km": 9.6,
+			"dist_m": 28
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.2613755,
+			"lon": -0.6951863,
+			"km": 9.7,
+			"dist_m": 50
+		}
+	],
+	"pois": [
+		{
+			"name": "A Charles Darwin",
+			"type": "patrimonio",
+			"lat": 38.2631018,
+			"lon": -0.6951789,
+			"km": 0,
+			"dist_m": 7
+		},
+		{
+			"name": "Ermita de la Torre dels Vaïllos",
+			"type": "patrimonio",
+			"lat": 38.2741752,
+			"lon": -0.693166,
+			"km": 3.5,
+			"dist_m": 12
+		},
+		{
+			"name": "Ernesto Martinez Riviere",
+			"type": "patrimonio",
+			"lat": 38.2703565,
+			"lon": -0.69748,
+			"km": 5.4,
+			"dist_m": 21
+		},
+		{
+			"name": "Banys Àrabs",
+			"type": "patrimonio",
+			"lat": 38.2674203,
+			"lon": -0.6961567,
+			"km": 5.6,
+			"dist_m": 133
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -64,7 +202,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-439 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-439.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -27,8 +27,42 @@
 		"Fuente (km 5.1, a 91 m del track; OSM, no verificado en campo)",
 		"Fuente (km 5.2, a 85 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.2419994,
+			"lon": -0.3163097,
+			"km": 5.1,
+			"dist_m": 91
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.2423059,
+			"lon": -0.3158893,
+			"km": 5.2,
+			"dist_m": 85
+		}
+	],
+	"pois": [
+		{
+			"name": "Sants Abdó i Senent",
+			"type": "patrimonio",
+			"lat": 39.2410939,
+			"lon": -0.3166604,
+			"km": 4.8,
+			"dist_m": 10
+		},
+		{
+			"name": "Muntanyeta dels Sants",
+			"type": "cumbre",
+			"lat": 39.242522,
+			"lon": -0.316182,
+			"km": 5.2,
+			"dist_m": 50
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +87,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-150 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-150.gpx (derivados: inicio, bbox)"
 	]
 }

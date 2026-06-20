@@ -28,8 +28,42 @@
 		"Manantial \"Font de les Covetes\" (km 9.2, a 34 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de Salvassòria\" (km 12.0, a 15 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.5399894,
+			"lon": 0.053433,
+			"km": 0,
+			"dist_m": 65
+		},
+		{
+			"name": "Font de les Covetes",
+			"kind": "manantial",
+			"lat": 40.5107122,
+			"lon": -0.0110981,
+			"km": 9.2,
+			"dist_m": 34
+		},
+		{
+			"name": "Font de Salvassòria",
+			"kind": "manantial",
+			"lat": 40.5109281,
+			"lon": -0.0353695,
+			"km": 12,
+			"dist_m": 15
+		}
+	],
+	"pois": [
+		{
+			"name": "Peiró de Baix",
+			"type": "patrimonio",
+			"lat": 40.5392699,
+			"lon": 0.056148,
+			"km": 0.2,
+			"dist_m": 13
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +88,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e13 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-331-e13.gpx (derivados: inicio, bbox)"
 	]
 }

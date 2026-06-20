@@ -37,8 +37,114 @@
 		"Fuente \"Fuente de los Dos Caños\" (km 9.0, a 3 m del track; OSM, no verificado en campo)",
 		"Fuente (km 9.2, a 9 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9509135,
+			"lon": -0.3346357,
+			"km": 0,
+			"dist_m": 49
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.952358,
+			"lon": -0.3324312,
+			"km": 0.3,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9523478,
+			"lon": -0.3324749,
+			"km": 0.3,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9525185,
+			"lon": -0.333373,
+			"km": 0.4,
+			"dist_m": 1
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9518675,
+			"lon": -0.334239,
+			"km": 0.5,
+			"dist_m": 3
+		},
+		{
+			"name": "el Bassó de la Muntanyeta",
+			"kind": "manantial",
+			"lat": 39.950398,
+			"lon": -0.3354692,
+			"km": 0.7,
+			"dist_m": 56
+		},
+		{
+			"name": "Fuente Los Silverios",
+			"kind": "manantial",
+			"lat": 39.9326032,
+			"lon": -0.3376992,
+			"km": 3.5,
+			"dist_m": 11
+		},
+		{
+			"name": "Font de Benitandús",
+			"kind": "fuente",
+			"lat": 39.9298376,
+			"lon": -0.3364666,
+			"km": 3.8,
+			"dist_m": 4
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9187018,
+			"lon": -0.3398079,
+			"km": 5.6,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de la Pistola",
+			"kind": "manantial",
+			"lat": 39.9157532,
+			"lon": -0.3383482,
+			"km": 6.1,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente de los Dos Caños",
+			"kind": "fuente",
+			"lat": 39.900437,
+			"lon": -0.3403491,
+			"km": 9,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.901244,
+			"lon": -0.3420523,
+			"km": 9.2,
+			"dist_m": 9
+		}
+	],
+	"pois": [
+		{
+			"name": "les Àguiles",
+			"type": "cumbre",
+			"lat": 39.9441742,
+			"lon": -0.3369785,
+			"km": 1.7,
+			"dist_m": 96
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -63,7 +169,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e02 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-333-e02.gpx (derivados: inicio, bbox)"
 	]
 }

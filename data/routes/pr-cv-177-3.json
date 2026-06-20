@@ -26,8 +26,42 @@
 	"water_points": [
 		"Fuente \"Fuente del Hontanar\" (km 1.7, a 23 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente del Hontanar",
+			"kind": "fuente",
+			"lat": 39.6335359,
+			"lon": -1.1547512,
+			"km": 1.7,
+			"dist_m": 23
+		}
+	],
+	"pois": [
+		{
+			"name": "Marisancho",
+			"type": "cumbre",
+			"lat": 39.6553277,
+			"lon": -1.1630231,
+			"km": 6.1,
+			"dist_m": 116
+		},
+		{
+			"name": "Cerro de la Mazorra",
+			"type": "cumbre",
+			"lat": 39.6295238,
+			"lon": -1.170272,
+			"km": 12.5,
+			"dist_m": 18
+		},
+		{
+			"name": "Casa Medina",
+			"type": "patrimonio",
+			"lat": 39.6239706,
+			"lon": -1.1626053,
+			"km": 13.9,
+			"dist_m": 85
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -52,7 +86,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-177-3 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-177-3.gpx (derivados: inicio, bbox)"
 	]
 }

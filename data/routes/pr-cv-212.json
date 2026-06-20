@@ -28,8 +28,58 @@
 		"Fuente (km 11.4, a 27 m del track; OSM, no verificado en campo)",
 		"Fuente (km 12.1, a 85 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Aljub de la Cova dels Corrals",
+			"kind": "manantial",
+			"lat": 38.5415021,
+			"lon": -0.5403283,
+			"km": 6.6,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5399547,
+			"lon": -0.5093206,
+			"km": 11.4,
+			"dist_m": 27
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.5375043,
+			"lon": -0.5076898,
+			"km": 12.1,
+			"dist_m": 85
+		}
+	],
+	"pois": [
+		{
+			"name": "Penya Migjorn",
+			"type": "cumbre",
+			"lat": 38.5346195,
+			"lon": -0.5408061,
+			"km": 5.4,
+			"dist_m": 3
+		},
+		{
+			"name": "Torre Grossa",
+			"type": "patrimonio",
+			"lat": 38.5390266,
+			"lon": -0.5091931,
+			"km": 11.5,
+			"dist_m": 7
+		},
+		{
+			"name": "Església Vella",
+			"type": "patrimonio",
+			"lat": 38.5390467,
+			"lon": -0.5082236,
+			"km": 11.5,
+			"dist_m": 91
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +104,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-212 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-212.gpx (derivados: inicio, bbox)"
 	]
 }

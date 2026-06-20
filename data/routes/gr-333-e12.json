@@ -23,8 +23,19 @@
 		"esfuerzo": 2
 	},
 	"est_duration_min": 100,
-	"water_points": [],
-	"water_points_geo": [],
+	"water_points": [
+		"Fuente (km 0.0, a 86 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0549732,
+			"lon": -0.3495471,
+			"km": 0,
+			"dist_m": 86
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -36,7 +47,11 @@
 		"femecv": "https://senders.femecv.com/es/sendero/ver/gr-333-e12",
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"sl-cv-91",
+		"sl-cv-70",
+		"gr-333-e11"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.34866102039814,
@@ -46,6 +61,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-333-e12 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-333-e12.gpx (derivados: inicio, bbox)"
 	]
 }
