@@ -19,6 +19,33 @@ export interface OsmWaterNode {
 	kind: 'fuente' | 'manantial';
 }
 
+/** Punto de agua con coordenadas y posición sobre el track (SPECS_V3 §5). */
+export interface WaterPointGeo {
+	name: string | null;
+	kind: 'fuente' | 'manantial';
+	lat: number;
+	lon: number;
+	/** km acumulado del track del punto más cercano. */
+	km: number;
+	/** Distancia al track en metros. */
+	dist_m: number;
+}
+
+export type PoiType = 'mirador' | 'cumbre' | 'patrimonio' | 'refugio' | 'otro';
+
+/** Punto de interés de OSM cercano al track (SPECS_V3 §5/§6). */
+export interface OsmPoi {
+	name: string;
+	type: PoiType;
+	lat: number;
+	lon: number;
+}
+
+export interface PoiGeo extends OsmPoi {
+	km: number;
+	dist_m: number;
+}
+
 export interface OsmWoodPolygon {
 	/** Anillo cerrado [lon, lat][]. */
 	ring: Array<[number, number]>;
@@ -32,7 +59,12 @@ interface OverpassElement {
 	geometry?: Array<{ lat: number; lon: number }>;
 }
 
-/** Consulta por bbox: fuentes/manantiales (nodos) y bosques (ways con geometría). */
+/**
+ * Consulta por bbox: fuentes/manantiales y puntos de interés (nodos) y
+ * bosques (ways con geometría). Los POIs son los tipos geolocalizables que
+ * OSM publica con fiabilidad (miradores, cumbres, patrimonio, refugios):
+ * FEMECV no ofrece POIs por el recorrido (ver SPECS_V3 §13).
+ */
 export function overpassQuery(bbox: [number, number, number, number]): string {
 	const [minLon, minLat, maxLon, maxLat] = bbox;
 	const bb = `${minLat},${minLon},${maxLat},${maxLon}`;
@@ -40,6 +72,11 @@ export function overpassQuery(bbox: [number, number, number, number]): string {
 (
 	node["amenity"="drinking_water"](${bb});
 	node["natural"="spring"](${bb});
+	node["tourism"="viewpoint"](${bb});
+	node["natural"="peak"](${bb});
+	node["tourism"="alpine_hut"](${bb});
+	node["amenity"="shelter"](${bb});
+	node["historic"](${bb});
 );
 out body;
 (
@@ -49,8 +86,18 @@ out body;
 out geom;`;
 }
 
+/** Clasifica un nodo OSM como POI por sus etiquetas, o null si no aplica. */
+function poiTypeOf(tags: Record<string, string>): PoiType | null {
+	if (tags.tourism === 'viewpoint') return 'mirador';
+	if (tags.natural === 'peak') return 'cumbre';
+	if (tags.tourism === 'alpine_hut' || tags.amenity === 'shelter') return 'refugio';
+	if (tags.historic) return 'patrimonio';
+	return null;
+}
+
 export function parseOverpass(payload: unknown): {
 	water: OsmWaterNode[];
+	pois: OsmPoi[];
 	woods: OsmWoodPolygon[];
 } {
 	const elements = (payload as { elements?: OverpassElement[] }).elements;
@@ -58,15 +105,23 @@ export function parseOverpass(payload: unknown): {
 		throw new Error('Respuesta de Overpass sin elements');
 	}
 	const water: OsmWaterNode[] = [];
+	const pois: OsmPoi[] = [];
 	const woods: OsmWoodPolygon[] = [];
 	for (const el of elements) {
 		if (el.type === 'node' && typeof el.lat === 'number' && typeof el.lon === 'number') {
-			water.push({
-				lat: el.lat,
-				lon: el.lon,
-				name: el.tags?.name ?? null,
-				kind: el.tags?.natural === 'spring' ? 'manantial' : 'fuente'
-			});
+			const tags = el.tags ?? {};
+			if (tags.amenity === 'drinking_water' || tags.natural === 'spring') {
+				water.push({
+					lat: el.lat,
+					lon: el.lon,
+					name: tags.name ?? null,
+					kind: tags.natural === 'spring' ? 'manantial' : 'fuente'
+				});
+				continue;
+			}
+			const type = poiTypeOf(tags);
+			// Un POI sin nombre no aporta (no se inventa): se omite.
+			if (type && tags.name) pois.push({ name: tags.name, type, lat: el.lat, lon: el.lon });
 		} else if (el.type === 'way' && Array.isArray(el.geometry) && el.geometry.length >= 4) {
 			const ring = el.geometry.map((p) => [p.lon, p.lat] as [number, number]);
 			const first = ring[0];
@@ -75,7 +130,7 @@ export function parseOverpass(payload: unknown): {
 			if (first[0] === last[0] && first[1] === last[1]) woods.push({ ring });
 		}
 	}
-	return { water, woods };
+	return { water, pois, woods };
 }
 
 /** Distancia mínima de un punto al track (sobre los vértices muestreados). */
@@ -118,6 +173,40 @@ export function waterPointsAlongTrack(water: OsmWaterNode[], track: Position[]):
 		});
 	}
 	return found.sort((a, b) => a.km - b.km).map((f) => f.text);
+}
+
+/** Fuentes a ≤100 m del track, con coordenadas, para pintarlas (SPECS_V3 §5). */
+export function waterPointsGeoAlongTrack(
+	water: OsmWaterNode[],
+	track: Position[]
+): WaterPointGeo[] {
+	const found: WaterPointGeo[] = [];
+	for (const node of water) {
+		const { meters, km } = minDistanceToTrack([node.lon, node.lat], track);
+		if (meters > WATER_BUFFER_M) continue;
+		found.push({
+			name: node.name,
+			kind: node.kind,
+			lat: node.lat,
+			lon: node.lon,
+			km: Math.round(km * 10) / 10,
+			dist_m: Math.round(meters)
+		});
+	}
+	return found.sort((a, b) => a.km - b.km);
+}
+
+const POI_BUFFER_M = 150;
+
+/** POIs de OSM a ≤150 m del track, con coordenadas y posición (SPECS_V3 §5). */
+export function poisAlongTrack(pois: OsmPoi[], track: Position[]): PoiGeo[] {
+	const found: PoiGeo[] = [];
+	for (const poi of pois) {
+		const { meters, km } = minDistanceToTrack([poi.lon, poi.lat], track);
+		if (meters > POI_BUFFER_M) continue;
+		found.push({ ...poi, km: Math.round(km * 10) / 10, dist_m: Math.round(meters) });
+	}
+	return found.sort((a, b) => a.km - b.km);
 }
 
 /** Ray casting punto-en-polígono sobre [lon, lat]. */

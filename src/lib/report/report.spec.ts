@@ -21,6 +21,8 @@ const route: Route = {
 	difficulty_mide: { medio: 1, itinerario: 2, desplazamiento: 2, esfuerzo: 2 },
 	est_duration_min: 130,
 	water_points: [],
+	water_points_geo: [],
+	pois: [],
 	escape_routes: [],
 	highlights: [],
 	best_season: [],

@@ -25,6 +25,8 @@ function makeRoute(overrides: Partial<Route> = {}): Route {
 		difficulty_mide: null,
 		est_duration_min: 210,
 		water_points: [],
+		water_points_geo: [],
+		pois: [],
 		escape_routes: [],
 		highlights: [],
 		best_season: [],

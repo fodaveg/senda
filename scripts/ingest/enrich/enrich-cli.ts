@@ -22,8 +22,10 @@ import {
 	nearestAlternatives,
 	overpassQuery,
 	parseOverpass,
+	poisAlongTrack,
 	shadeRatioOfTrack,
-	waterPointsAlongTrack
+	waterPointsAlongTrack,
+	waterPointsGeoAlongTrack
 } from './osm';
 
 const ROOT = path.resolve(import.meta.dirname, '../../..');
@@ -45,6 +47,17 @@ interface RouteLite {
 	id: string;
 	start: { lat: number; lon: number };
 	bbox: [number, number, number, number] | null;
+}
+
+/** ¿El enriquecido de esta ruta ya incluye el campo nuevo water_points_geo? */
+function hasGeoEnrichment(id: string): boolean {
+	const file = path.join(ENRICHED_DIR, `${id}.json`);
+	if (!fs.existsSync(file)) return false;
+	try {
+		return 'water_points_geo' in JSON.parse(fs.readFileSync(file, 'utf8'));
+	} catch {
+		return false;
+	}
 }
 
 function loadRoutes(): RouteLite[] {
@@ -84,22 +97,25 @@ async function enrichOne(route: RouteLite, all: RouteLite[]): Promise<string> {
 		});
 	}
 	if (!response.ok) throw new Error(`Overpass respondió ${response.status}`);
-	const { water, woods } = parseOverpass(await response.json());
+	const { water, pois, woods } = parseOverpass(await response.json());
 
 	const enriched = {
 		water_points: waterPointsAlongTrack(water, track),
+		water_points_geo: waterPointsGeoAlongTrack(water, track),
+		pois: poisAlongTrack(pois, track),
 		shade_ratio: shadeRatioOfTrack(woods, track),
 		alternatives: nearestAlternatives(route.id, route.start, all),
 		enriched_at: new Date().toISOString(),
 		method:
-			'OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track ' +
-			'bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)'
+			'OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs ' +
+			'(mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo ' +
+			'polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)'
 	};
 	fs.writeFileSync(
 		path.join(ENRICHED_DIR, `${route.id}.json`),
 		JSON.stringify(enriched, null, '\t') + '\n'
 	);
-	return `${enriched.water_points.length} fuentes, sombra ${enriched.shade_ratio ?? 'n/d'}, ${enriched.alternatives.length} alternativas`;
+	return `${enriched.water_points_geo.length} fuentes, ${enriched.pois.length} POIs, sombra ${enriched.shade_ratio ?? 'n/d'}, ${enriched.alternatives.length} alternativas`;
 }
 
 async function main(): Promise<void> {
@@ -113,7 +129,9 @@ async function main(): Promise<void> {
 	const all = loadRoutes();
 	let targets = explicit.length > 0 ? all.filter((r) => explicit.includes(r.id)) : all;
 	if (!force) {
-		targets = targets.filter((r) => !fs.existsSync(path.join(ENRICHED_DIR, `${r.id}.json`)));
+		// Reanudable: se salta solo lo que ya tiene el campo nuevo (water_points_geo).
+		// Así un re-enrich para añadir coordenadas/POIs reprocesa solo lo que falta.
+		targets = targets.filter((r) => !hasGeoEnrichment(r.id));
 	}
 	if (limit !== null && Number.isFinite(limit)) targets = targets.slice(0, limit);
 	console.log(`Enriqueciendo ${targets.length} rutas (de ${all.length}).`);

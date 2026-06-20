@@ -48,6 +48,30 @@ export interface RouteLinks {
  * Ruta homologada FEMECV. Dato no verificado → null (nunca inventado),
  * con la entrada correspondiente en `sources`.
  */
+/** Fuente de agua georreferenciada cerca del track (OSM, SPECS_V3 §5). */
+export interface WaterPointGeo {
+	name: string | null;
+	kind: 'fuente' | 'manantial';
+	lat: number;
+	lon: number;
+	/** km acumulado del track del punto más cercano. */
+	km: number;
+	/** Distancia al track en metros. */
+	dist_m: number;
+}
+
+export type PoiType = 'mirador' | 'cumbre' | 'patrimonio' | 'refugio' | 'otro';
+
+/** Punto de interés georreferenciado cerca del track (OSM, SPECS_V3 §5). */
+export interface Poi {
+	name: string;
+	type: PoiType;
+	lat: number;
+	lon: number;
+	km: number;
+	dist_m: number;
+}
+
 export interface Route {
 	id: string;
 	name: string;
@@ -69,6 +93,10 @@ export interface Route {
 	difficulty_mide: DifficultyMide | null;
 	est_duration_min: number | null;
 	water_points: string[];
+	/** Fuentes con coordenadas para pintarlas en el mapa (OSM, SPECS_V3 §5). */
+	water_points_geo: WaterPointGeo[];
+	/** Puntos de interés georreferenciados cerca del track (OSM, SPECS_V3 §5). */
+	pois: Poi[];
 	escape_routes: string[];
 	highlights: string[];
 	/** Meses recomendados en abreviatura es: "ene" … "dic". */

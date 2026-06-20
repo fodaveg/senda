@@ -6,7 +6,14 @@
  */
 
 import { z } from 'zod';
-import { mideSchema, MONTHS, ROUTE_STATUSES, routeSchema } from '../../src/lib/data/schema';
+import {
+	mideSchema,
+	MONTHS,
+	poiSchema,
+	ROUTE_STATUSES,
+	routeSchema,
+	waterPointGeoSchema
+} from '../../src/lib/data/schema';
 
 export { routeSchema };
 
@@ -95,6 +102,10 @@ export type CrawledData = z.infer<typeof crawledSchema>;
  */
 export const enrichedSchema = z.strictObject({
 	water_points: z.array(z.string().min(1)),
+	// .default([]) para tolerar enriquecidos antiguos (sin coords/POIs) durante
+	// el re-enrich incremental (SPECS_V3 §5).
+	water_points_geo: z.array(waterPointGeoSchema).default([]),
+	pois: z.array(poiSchema).default([]),
 	shade_ratio: z.number().min(0).max(1).nullable(),
 	alternatives: z.array(z.string()),
 	enriched_at: z.string().min(1),

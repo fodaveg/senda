@@ -37,6 +37,24 @@ export const mideSchema = z.strictObject({
 	esfuerzo: z.number().int().min(1).max(5)
 });
 
+export const waterPointGeoSchema = z.strictObject({
+	name: z.string().min(1).nullable(),
+	kind: z.enum(['fuente', 'manantial']),
+	lat: z.number().min(-90).max(90),
+	lon: z.number().min(-180).max(180),
+	km: z.number().min(0),
+	dist_m: z.number().min(0)
+});
+
+export const poiSchema = z.strictObject({
+	name: z.string().min(1),
+	type: z.enum(['mirador', 'cumbre', 'patrimonio', 'refugio', 'otro']),
+	lat: z.number().min(-90).max(90),
+	lon: z.number().min(-180).max(180),
+	km: z.number().min(0),
+	dist_m: z.number().min(0)
+});
+
 export const routeSchema = z.strictObject({
 	id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'id en kebab-case'),
 	name: z.string().min(1),
@@ -61,6 +79,10 @@ export const routeSchema = z.strictObject({
 	difficulty_mide: mideSchema.nullable(),
 	est_duration_min: z.number().positive().nullable(),
 	water_points: z.array(z.string().min(1)),
+	// .default([]) para que el catálogo ya publicado (sin estos campos) siga
+	// validando hasta que se re-ingeste con los nuevos datos (SPECS_V3 §5).
+	water_points_geo: z.array(waterPointGeoSchema).default([]),
+	pois: z.array(poiSchema).default([]),
 	escape_routes: z.array(z.string().min(1)),
 	highlights: z.array(z.string().min(1)),
 	best_season: z.array(z.enum(MONTHS)),

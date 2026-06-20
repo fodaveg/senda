@@ -3,8 +3,10 @@ import {
 	nearestAlternatives,
 	parseOverpass,
 	pointInRing,
+	poisAlongTrack,
 	shadeRatioOfTrack,
-	waterPointsAlongTrack
+	waterPointsAlongTrack,
+	waterPointsGeoAlongTrack
 } from './osm';
 import type { Position } from 'geojson';
 
@@ -60,6 +62,48 @@ describe('waterPointsAlongTrack', () => {
 		expect(points[0]).toContain('Font del Mig');
 		expect(points[0]).toContain('km 0.6');
 		expect(points[0]).toContain('no verificado en campo');
+	});
+});
+
+describe('parseOverpass: POIs', () => {
+	it('clasifica miradores, cumbres, patrimonio y refugios con nombre', () => {
+		const { pois } = parseOverpass({
+			elements: [
+				{ type: 'node', lat: 39, lon: -0.5, tags: { tourism: 'viewpoint', name: 'Mirador' } },
+				{ type: 'node', lat: 39.01, lon: -0.5, tags: { natural: 'peak', name: 'El Pico' } },
+				{ type: 'node', lat: 39.02, lon: -0.5, tags: { historic: 'castle', name: 'Castillo' } },
+				{ type: 'node', lat: 39.03, lon: -0.5, tags: { amenity: 'shelter', name: 'Refugio' } },
+				// Sin nombre: se omite (no se inventa).
+				{ type: 'node', lat: 39.04, lon: -0.5, tags: { natural: 'peak' } }
+			]
+		});
+		expect(pois.map((p) => p.type)).toEqual(['mirador', 'cumbre', 'patrimonio', 'refugio']);
+	});
+});
+
+describe('waterPointsGeoAlongTrack', () => {
+	it('devuelve coordenadas y posición de las fuentes a ≤100 m', () => {
+		const water = [
+			{ lat: 39.005, lon: -0.5, name: 'Font del Mig', kind: 'fuente' as const },
+			{ lat: 39.0, lon: -0.49, name: null, kind: 'manantial' as const } // fuera
+		];
+		const geo = waterPointsGeoAlongTrack(water, TRACK);
+		expect(geo).toHaveLength(1);
+		expect(geo[0]).toMatchObject({ name: 'Font del Mig', kind: 'fuente', lat: 39.005, lon: -0.5 });
+		expect(geo[0].dist_m).toBeLessThanOrEqual(100);
+	});
+});
+
+describe('poisAlongTrack', () => {
+	it('incluye solo POIs a ≤150 m, ordenados por km', () => {
+		const pois = [
+			{ name: 'Mirador', type: 'mirador' as const, lat: 39.003, lon: -0.5 },
+			{ name: 'Lejos', type: 'cumbre' as const, lat: 39.0, lon: -0.48 } // fuera
+		];
+		const found = poisAlongTrack(pois, TRACK);
+		expect(found).toHaveLength(1);
+		expect(found[0].name).toBe('Mirador');
+		expect(found[0].dist_m).toBeLessThanOrEqual(150);
 	});
 });
 

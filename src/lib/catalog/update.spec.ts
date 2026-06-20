@@ -19,6 +19,8 @@ const ROUTE: Route = {
 	difficulty_mide: null,
 	est_duration_min: null,
 	water_points: [],
+	water_points_geo: [],
+	pois: [],
 	escape_routes: [],
 	highlights: [],
 	best_season: [],

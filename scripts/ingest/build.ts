@@ -155,6 +155,8 @@ export function buildRoute(
 		difficulty_mide: m.difficulty_mide ?? c.difficulty_mide ?? null,
 		est_duration_min: m.est_duration_min ?? c.est_duration_min ?? null,
 		water_points: m.water_points ?? enriched?.water_points ?? [],
+		water_points_geo: enriched?.water_points_geo ?? [],
+		pois: enriched?.pois ?? [],
 		escape_routes: m.escape_routes ?? [],
 		highlights: m.highlights ?? [],
 		best_season: m.best_season ?? [],
