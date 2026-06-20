@@ -4,6 +4,9 @@
 	import { isTauri } from '@tauri-apps/api/core';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
 	import CustomGearPanel from '$lib/components/CustomGearPanel.svelte';
+	import StagesList from '$lib/components/StagesList.svelte';
+	import { routes } from '$lib/data/routes';
+	import { parentOf, stagesOf } from '$lib/data/stages';
 	import AvisosBanner from '$lib/components/AvisosBanner.svelte';
 	import RouteMarks from '$lib/components/RouteMarks.svelte';
 	import StartWindowCard from '$lib/components/StartWindowCard.svelte';
@@ -88,6 +91,11 @@
 	);
 	// Ventana ideal de inicio (SPECS_V2 §5): el horario solo afina.
 	let window = $derived(startWindow(route, selectedDay, hourlyByDate[selectedDate] ?? null));
+
+	// Relación con otras rutas: etapas (si es una GR multi-día) y padre (si esta
+	// ruta es una etapa). Derivado del catálogo, SPECS_V3 §6.
+	let stages = $derived(stagesOf(route.id, routes));
+	let parent = $derived(parentOf(route.id, routes));
 	let avisosForDate = $derived(
 		avisos && selectedDate ? avisosForRoute(avisos, route.zone, selectedDate) : []
 	);
@@ -426,12 +434,33 @@
 			<dt>Recorrido</dt>
 			<dd>{route.circular === null ? 'sin dato' : route.circular ? 'Circular' : 'Lineal'}</dd>
 			<dt>Estado</dt>
-			<dd>{route.status_detail ?? route.status}</dd>
+			<dd>
+				{#if stages.length > 0}
+					<a href="#etapas">{route.status_detail ?? route.status}</a>
+				{:else}
+					{route.status_detail ?? route.status}
+				{/if}
+			</dd>
 			{#if route.best_start_time}
 				<dt>Mejor hora de inicio</dt>
 				<dd>{route.best_start_time}</dd>
 			{/if}
 		</dl>
+
+		{#if parent}
+			<p class="parent-of">
+				Esta ruta es una etapa de
+				<a href={resolve('/ruta/[id]', { id: parent.id })}>{parent.name}</a>.
+			</p>
+		{/if}
+
+		{#if stages.length > 0}
+			<section id="etapas" class="stages-section">
+				<h3>Etapas <span class="count">({stages.length})</span></h3>
+				<p class="stages-hint">Ruta por etapas; cada una es navegable por separado.</p>
+				<StagesList {stages} />
+			</section>
+		{/if}
 
 		<h3>Cómo llegar</h3>
 		<div class="travel">
@@ -547,6 +576,23 @@
 </div>
 
 <style>
+	.stages-section {
+		margin-top: 1rem;
+	}
+	.stages-section .count {
+		font-weight: 400;
+		color: var(--muted);
+		font-size: 0.85rem;
+	}
+	.stages-hint {
+		font-size: 0.85rem;
+		color: var(--muted);
+		margin: 0 0 0.5rem;
+	}
+	.parent-of {
+		font-size: 0.9rem;
+		margin: 0.5rem 0;
+	}
 	.offline-map {
 		display: flex;
 		flex-wrap: wrap;
