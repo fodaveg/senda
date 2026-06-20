@@ -6,7 +6,7 @@
 	 * sigue en Ajustes. Persiste en localStorage y aplica el tema al instante.
 	 */
 	import { onMount } from 'svelte';
-	import { applyTheme, loadSettings, saveSettings, type Theme } from '$lib/settings';
+	import { applyTheme, loadSettings, prefersDark, saveSettings, type Theme } from '$lib/settings';
 
 	let theme = $state<Theme>('auto');
 
@@ -14,11 +14,12 @@
 		theme = loadSettings().theme;
 	});
 
-	// En oscuro, el botón ofrece volver a claro; en claro/auto, ir a oscuro.
-	let nextIsDark = $derived(theme !== 'oscuro');
+	// Aspecto EFECTIVO actual (resolviendo "auto" con el sistema): así el primer
+	// clic siempre cambia lo que se ve, no el string guardado.
+	let currentlyDark = $derived(theme === 'oscuro' || (theme === 'auto' && prefersDark()));
 
 	function toggle() {
-		const next: Theme = nextIsDark ? 'oscuro' : 'claro';
+		const next: Theme = currentlyDark ? 'claro' : 'oscuro';
 		theme = next;
 		applyTheme(next);
 		const settings = loadSettings();
@@ -31,10 +32,10 @@
 	type="button"
 	class="theme-toggle"
 	onclick={toggle}
-	aria-label={nextIsDark ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro'}
-	title={nextIsDark ? 'Modo oscuro' : 'Modo claro'}
+	aria-label={currentlyDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+	title={currentlyDark ? 'Modo claro' : 'Modo oscuro'}
 >
-	{nextIsDark ? '🌙' : '☀️'}
+	{currentlyDark ? '☀️' : '🌙'}
 </button>
 
 <style>

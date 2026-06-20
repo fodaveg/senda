@@ -109,6 +109,11 @@ export function saveSettings(settings: Settings): void {
 	localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
 }
 
+/** ¿El sistema prefiere modo oscuro? (para resolver el tema "auto"). */
+export function prefersDark(): boolean {
+	return typeof matchMedia !== 'undefined' && matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
 /** Aplica el tema al documento ("claro" fuerza modo claro para sol directo). */
 export function applyTheme(theme: Theme): void {
 	if (typeof document === 'undefined') return;

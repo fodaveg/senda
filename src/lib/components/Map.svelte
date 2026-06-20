@@ -362,9 +362,9 @@
 	.layer-switcher select {
 		padding: 0.3rem 0.5rem;
 		border-radius: 0.4rem;
-		border: 1px solid var(--border, rgba(0, 0, 0, 0.2));
-		background: var(--surface, #fff);
-		color: var(--text, #1a1a1a);
+		border: 1px solid var(--border);
+		background: var(--surface);
+		color: var(--ink);
 		font-size: 0.85rem;
 		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 		cursor: pointer;
