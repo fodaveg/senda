@@ -2,8 +2,8 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import favicon from '$lib/assets/favicon.svg';
-	import { applyTheme, loadSettings } from '$lib/settings';
-	import { applyPalette } from '$lib/theme/palettes';
+	import { loadSettings } from '$lib/settings';
+	import { applyAppearance } from '$lib/theme/schemes';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
 	let { children } = $props();
@@ -11,9 +11,14 @@
 	// Marcador para que los tests e2e esperen a la hidratación.
 	onMount(() => {
 		document.body.dataset.hydrated = 'true';
-		const settings = loadSettings();
-		applyTheme(settings.theme);
-		applyPalette(settings.palette);
+		applyAppearance(loadSettings());
+		// En modo "auto", seguir los cambios de preferencia del sistema.
+		const mq = matchMedia('(prefers-color-scheme: dark)');
+		const onChange = () => {
+			if (loadSettings().theme === 'auto') applyAppearance(loadSettings());
+		};
+		mq.addEventListener('change', onChange);
+		return () => mq.removeEventListener('change', onChange);
 	});
 </script>
 
@@ -45,8 +50,14 @@
 		--muted-strong: #444;
 		--brand: #1d3a2a;
 		--brand-strong: #1d3a2a;
+		--on-brand: #ffffff;
+		--alert-bg: #fdecea;
+		--alert-border: #b3261e;
+		--alert-ink: #7a1c16;
 		color-scheme: light;
 	}
+	/* Fallback de modo oscuro antes de que el JS aplique el esquema (evita
+	   flash). En runtime, applyAppearance fija los tokens del esquema elegido. */
 	:global(:root[data-theme='oscuro']) {
 		--bg: #141815;
 		--surface: #1e2420;
@@ -57,6 +68,10 @@
 		--muted-strong: #c3c8be;
 		--brand: #8fd3ae;
 		--brand-strong: #18241d;
+		--on-brand: #0c1a12;
+		--alert-bg: #3a1f1c;
+		--alert-border: #f08a82;
+		--alert-ink: #ffd9d5;
 		color-scheme: dark;
 	}
 	@media (prefers-color-scheme: dark) {
@@ -70,6 +85,10 @@
 			--muted-strong: #c3c8be;
 			--brand: #8fd3ae;
 			--brand-strong: #18241d;
+			--on-brand: #0c1a12;
+			--alert-bg: #3a1f1c;
+			--alert-border: #f08a82;
+			--alert-ink: #ffd9d5;
 			color-scheme: dark;
 		}
 	}

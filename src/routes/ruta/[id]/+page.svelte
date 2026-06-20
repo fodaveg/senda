@@ -653,16 +653,16 @@
 		font-size: 0.85rem;
 		padding: 0.3rem 0.7rem;
 		border-radius: 6px;
-		border: 1px solid #1d3a2a;
+		border: 1px solid var(--brand);
 		background: var(--surface);
-		color: #1d3a2a;
+		color: var(--brand);
 		cursor: pointer;
 		margin: 0.25rem 0;
 	}
 	.status-banner {
-		border: 1px solid #b3261e;
-		background: #fdecea;
-		color: #5f1410;
+		border: 1px solid var(--alert-border);
+		background: var(--alert-bg);
+		color: var(--alert-ink);
 		border-radius: 6px;
 		padding: 0.6rem 0.9rem;
 		margin: 0.5rem 0 1rem;
@@ -734,9 +734,9 @@
 		margin-top: 1rem;
 		padding: 0.5rem 1rem;
 		border-radius: 6px;
-		border: 1px solid #1d3a2a;
-		background: #1d3a2a;
-		color: #fff;
+		border: 1px solid var(--brand);
+		background: var(--brand);
+		color: var(--on-brand);
 		text-decoration: none;
 	}
 	.share-btn {
@@ -745,11 +745,11 @@
 	}
 	.emergency-btn {
 		background: var(--surface);
-		color: #1d3a2a;
+		color: var(--brand);
 		margin-left: 0.5rem;
 	}
 	.report-btn:hover {
-		background: #2a5440;
+		opacity: 0.9;
 	}
 	.loading,
 	.error {
@@ -773,9 +773,9 @@
 		font-size: 0.85rem;
 	}
 	.date-chip.selected {
-		background: #1d3a2a;
-		color: #fff;
-		border-color: #1d3a2a;
+		background: var(--brand);
+		color: var(--on-brand);
+		border-color: var(--brand);
 	}
 	.date-note {
 		font-size: 0.78rem;

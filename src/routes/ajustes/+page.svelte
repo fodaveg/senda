@@ -6,14 +6,8 @@
 	import { applyCatalogUpdate } from '$lib/catalog/store';
 	import { CatalogError, checkForCatalogUpdate } from '$lib/catalog/update';
 	import { CATALOG_URL } from '$lib/catalog/url';
-	import {
-		applyTheme,
-		DEFAULT_SETTINGS,
-		loadSettings,
-		saveSettings,
-		type Settings
-	} from '$lib/settings';
-	import { applyPalette, PALETTES } from '$lib/theme/palettes';
+	import { DEFAULT_SETTINGS, loadSettings, saveSettings, type Settings } from '$lib/settings';
+	import { applyAppearance, DARK_SCHEMES, LIGHT_SCHEMES } from '$lib/theme/schemes';
 	import { validateAemetKey, type AemetKeyCheck } from '$lib/weather/aemet';
 
 	let settings = $state<Settings>({ ...DEFAULT_SETTINGS });
@@ -252,20 +246,56 @@
 		<legend>Apariencia</legend>
 		<label>
 			Tema
-			<select bind:value={settings.theme} onchange={() => applyTheme(settings.theme)}>
+			<select bind:value={settings.theme} onchange={() => applyAppearance(settings)}>
 				<option value="auto">Automático (según el sistema)</option>
 				<option value="claro">Claro forzado (sol directo)</option>
 				<option value="oscuro">Oscuro</option>
 			</select>
 		</label>
-		<label>
-			Paleta de color
-			<select bind:value={settings.palette} onchange={() => applyPalette(settings.palette)}>
-				{#each PALETTES as palette (palette.id)}
-					<option value={palette.id}>{palette.name}</option>
-				{/each}
-			</select>
-		</label>
+
+		<p class="scheme-heading">Esquema en modo claro</p>
+		<div class="scheme-grid" role="radiogroup" aria-label="Esquema en modo claro">
+			{#each LIGHT_SCHEMES as scheme (scheme.id)}
+				<button
+					type="button"
+					class="scheme-card"
+					role="radio"
+					aria-checked={settings.schemeLight === scheme.id}
+					class:selected={settings.schemeLight === scheme.id}
+					onclick={() => {
+						settings.schemeLight = scheme.id;
+						applyAppearance(settings);
+					}}
+				>
+					<span class="swatches">
+						{#each scheme.swatches as c (c)}<span class="sw" style="background:{c}"></span>{/each}
+					</span>
+					<span class="scheme-name">{scheme.name}</span>
+				</button>
+			{/each}
+		</div>
+
+		<p class="scheme-heading">Esquema en modo oscuro</p>
+		<div class="scheme-grid" role="radiogroup" aria-label="Esquema en modo oscuro">
+			{#each DARK_SCHEMES as scheme (scheme.id)}
+				<button
+					type="button"
+					class="scheme-card"
+					role="radio"
+					aria-checked={settings.schemeDark === scheme.id}
+					class:selected={settings.schemeDark === scheme.id}
+					onclick={() => {
+						settings.schemeDark = scheme.id;
+						applyAppearance(settings);
+					}}
+				>
+					<span class="swatches">
+						{#each scheme.swatches as c (c)}<span class="sw" style="background:{c}"></span>{/each}
+					</span>
+					<span class="scheme-name">{scheme.name}</span>
+				</button>
+			{/each}
+		</div>
 	</fieldset>
 
 	<fieldset>
@@ -327,6 +357,45 @@
 		max-width: 36rem;
 		display: grid;
 		gap: 1rem;
+	}
+	.scheme-heading {
+		margin: 0.6rem 0 0.3rem;
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+	.scheme-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+		gap: 0.5rem;
+	}
+	.scheme-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		padding: 0.4rem;
+		border: 1px solid var(--border);
+		border-radius: 0.5rem;
+		background: var(--surface);
+		color: var(--ink);
+		cursor: pointer;
+		text-align: left;
+	}
+	.scheme-card.selected {
+		border-color: var(--brand);
+		outline: 2px solid var(--brand);
+	}
+	.swatches {
+		display: flex;
+		height: 1.6rem;
+		border-radius: 0.3rem;
+		overflow: hidden;
+		border: 1px solid var(--border);
+	}
+	.sw {
+		flex: 1;
+	}
+	.scheme-name {
+		font-size: 0.82rem;
 	}
 	fieldset {
 		border: 1px solid var(--border);
@@ -402,13 +471,13 @@
 		font: inherit;
 		padding: 0.5rem 1rem;
 		border-radius: 6px;
-		border: 1px solid #1d3a2a;
-		background: #1d3a2a;
-		color: #fff;
+		border: 1px solid var(--brand);
+		background: var(--brand);
+		color: var(--on-brand);
 		cursor: pointer;
 	}
 	.saved {
-		color: #2a6f4e;
+		color: var(--brand);
 		font-size: 0.9rem;
 	}
 </style>

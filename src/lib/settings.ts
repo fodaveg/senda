@@ -27,8 +27,10 @@ export type Theme = 'auto' | 'claro' | 'oscuro';
 
 export interface Settings {
 	theme: Theme;
-	/** Id de la paleta de color (SPECS_V3 §9); ver src/lib/theme/palettes.ts. */
-	palette: string;
+	/** Esquema de color para modo claro y para modo oscuro (SPECS_V3 §9);
+	 * ver src/lib/theme/schemes.ts. El toggle de modo aplica el que toque. */
+	schemeLight: string;
+	schemeDark: string;
 	aemetApiKey: string;
 	vaultDir: string;
 	/** Muestra los detalles técnicos en crudo cuando algo falla. */
@@ -51,7 +53,8 @@ export const DEFAULT_EMERGENCY: EmergencySettings = {
 
 export const DEFAULT_SETTINGS: Settings = {
 	theme: 'auto',
-	palette: 'bosque',
+	schemeLight: 'bosque-claro',
+	schemeDark: 'bosque-oscuro',
 	aemetApiKey: '',
 	vaultDir: '',
 	debugMode: false,
@@ -85,7 +88,8 @@ export function loadSettings(): Settings {
 				parsed.theme === 'claro' || parsed.theme === 'oscuro' || parsed.theme === 'auto'
 					? parsed.theme
 					: 'auto',
-			palette: typeof parsed.palette === 'string' ? parsed.palette : 'bosque',
+			schemeLight: typeof parsed.schemeLight === 'string' ? parsed.schemeLight : 'bosque-claro',
+			schemeDark: typeof parsed.schemeDark === 'string' ? parsed.schemeDark : 'bosque-oscuro',
 			aemetApiKey: typeof parsed.aemetApiKey === 'string' ? parsed.aemetApiKey : '',
 			vaultDir: typeof parsed.vaultDir === 'string' ? parsed.vaultDir : '',
 			debugMode: parsed.debugMode === true,

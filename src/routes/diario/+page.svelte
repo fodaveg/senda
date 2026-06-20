@@ -184,9 +184,9 @@
 		font: inherit;
 		padding: 0.5rem 1rem;
 		border-radius: 6px;
-		border: 1px solid #1d3a2a;
-		background: #1d3a2a;
-		color: #fff;
+		border: 1px solid var(--brand);
+		background: var(--brand);
+		color: var(--on-brand);
 		cursor: pointer;
 	}
 	button:disabled {
@@ -196,8 +196,8 @@
 	button.secondary,
 	.import {
 		background: var(--surface);
-		color: #1d3a2a;
-		border: 1px solid #1d3a2a;
+		color: var(--brand);
+		border: 1px solid var(--brand);
 		border-radius: 6px;
 		padding: 0.5rem 1rem;
 		cursor: pointer;

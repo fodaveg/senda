@@ -63,8 +63,9 @@
 		color: var(--muted);
 	}
 	.light-alert {
-		border: 1px solid #b3261e;
-		background: #fdecea;
+		border: 1px solid var(--alert-border);
+		background: var(--alert-bg);
+		color: var(--alert-ink);
 		border-radius: 6px;
 		padding: 0.5rem 0.75rem;
 		font-size: 0.9rem;
