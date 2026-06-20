@@ -149,10 +149,20 @@
 		for (const wp of list) {
 			const el = document.createElement('div');
 			el.className = 'water-dot';
-			el.title = `${wp.name ?? (wp.kind === 'manantial' ? 'Manantial' : 'Fuente')} · agua (OSM, sin verificar)`;
-			waterHandles.push(
-				new maplibregl.Marker({ element: el }).setLngLat([wp.lon, wp.lat]).addTo(mapInstance)
+			const kind = wp.kind === 'manantial' ? 'Manantial' : 'Fuente';
+			el.setAttribute('aria-label', `${kind}${wp.name ? `: ${wp.name}` : ''}`);
+			const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10 });
+			popup.setHTML(
+				`<strong>💧 ${wp.name ?? kind}</strong><br><span class="poi-pop-type">${kind} · km ${wp.km} · OSM, sin verificar</span>`
 			);
+			const marker = new maplibregl.Marker({ element: el })
+				.setLngLat([wp.lon, wp.lat])
+				.addTo(mapInstance);
+			el.addEventListener('mouseenter', () =>
+				popup.setLngLat([wp.lon, wp.lat]).addTo(mapInstance!)
+			);
+			el.addEventListener('mouseleave', () => popup.remove());
+			waterHandles.push(marker);
 		}
 	});
 

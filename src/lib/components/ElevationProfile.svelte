@@ -112,7 +112,7 @@
 					{tick.km} km
 				</text>
 			{/each}
-			<polyline points={stats.polyline} fill="none" stroke="#2a6f4e" stroke-width="2.5" />
+			<polyline points={stats.polyline} fill="none" stroke="var(--brand)" stroke-width="2.5" />
 			{#if hoverIndex !== null && points[hoverIndex]}
 				{@const hp = points[hoverIndex]}
 				{@const hx = PAD_LEFT + (hp.km / (stats.maxKm || 1)) * (W - PAD_LEFT - PAD_RIGHT)}
@@ -121,8 +121,15 @@
 					PAD_BOTTOM -
 					((hp.ele - stats.minEle) / (stats.maxEle - stats.minEle || 1)) *
 						(H - PAD_TOP - PAD_BOTTOM)}
-				<line x1={hx} y1={PAD_TOP} x2={hx} y2={H - PAD_BOTTOM} stroke="#1d3a2a" stroke-width="1" />
-				<circle cx={hx} cy={hy} r="4" fill="#1d3a2a" stroke="#fff" stroke-width="1.5" />
+				<line
+					x1={hx}
+					y1={PAD_TOP}
+					x2={hx}
+					y2={H - PAD_BOTTOM}
+					stroke="var(--brand)"
+					stroke-width="1"
+				/>
+				<circle cx={hx} cy={hy} r="4" fill="var(--brand)" stroke="#fff" stroke-width="1.5" />
 				{@const label = `km ${hp.km.toFixed(1)} · ${Math.round(hp.ele)} m`}
 				{@const boxW = label.length * 6.4 + 14}
 				{@const boxX = Math.min(Math.max(hx - boxW / 2, PAD_LEFT), W - PAD_RIGHT - boxW)}

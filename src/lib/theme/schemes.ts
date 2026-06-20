@@ -214,6 +214,27 @@ export const DARK_SCHEMES: ColorScheme[] = [
 			alertInk: '#ffe8c9'
 		},
 		swatches: ['#f0a878', '#1a140d', '#241c12', '#f0b878']
+	},
+	{
+		id: 'halloween',
+		name: 'Halloween',
+		mode: 'oscuro',
+		tokens: {
+			bg: '#160a1f',
+			surface: '#221233',
+			surfaceAlt: '#2e1944',
+			border: '#4a2d63',
+			ink: '#f3e9ff',
+			muted: '#b99fd1',
+			mutedStrong: '#d8c4ef',
+			brand: '#ff7518',
+			brandStrong: '#1a0d26',
+			onBrand: '#1a0d04',
+			alertBg: '#3a1f0a',
+			alertBorder: '#ff9d4d',
+			alertInk: '#ffe0c2'
+		},
+		swatches: ['#ff7518', '#7b2ff7', '#160a1f', '#f3e9ff']
 	}
 ];
 

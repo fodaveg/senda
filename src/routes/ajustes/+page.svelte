@@ -588,10 +588,10 @@
 	.secondary {
 		font: inherit;
 		padding: 0.45rem 0.8rem;
-		border: 1px solid #1d3a2a;
+		border: 1px solid var(--brand);
 		border-radius: 6px;
 		background: var(--surface);
-		color: #1d3a2a;
+		color: var(--brand);
 		cursor: pointer;
 	}
 	.paste-error {

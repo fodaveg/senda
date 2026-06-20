@@ -236,9 +236,9 @@
 		font: inherit;
 		padding: 0.45rem 0.9rem;
 		border-radius: 6px;
-		border: 1px solid #1d3a2a;
-		background: #1d3a2a;
-		color: #fff;
+		border: 1px solid var(--brand);
+		background: var(--brand);
+		color: var(--on-brand);
 		cursor: pointer;
 	}
 	.saved {

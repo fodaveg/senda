@@ -286,7 +286,7 @@
 		cursor: default;
 	}
 	.dice:hover:not(:disabled) {
-		border-color: #1d3a2a;
+		border-color: var(--brand);
 	}
 	.filters {
 		display: flex;
@@ -380,7 +380,7 @@
 		background: var(--surface);
 	}
 	.route-list a:hover {
-		border-color: #1d3a2a;
+		border-color: var(--brand);
 	}
 	.meta {
 		color: var(--muted);

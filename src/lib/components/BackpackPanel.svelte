@@ -151,7 +151,7 @@
 		flex-direction: column;
 	}
 	.item.enabled {
-		border-left: 4px solid #2a6f4e;
+		border-left: 4px solid var(--brand);
 	}
 	.item.enabled.alta {
 		border-left-color: #b3261e;
