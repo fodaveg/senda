@@ -48,6 +48,18 @@ export function ignBaseTileUrl(z: number, x: number, y: number): string {
 	);
 }
 
+/**
+ * URL de tile del relieve sombreado (MDT del IGN/IDEE, SPECS_V3.5 §3). WMTS
+ * GoogleMapsCompatible; CC-BY. Solo online.
+ */
+export function reliefTileUrl(z: number, x: number, y: number): string {
+	return (
+		'https://servicios.idee.es/wmts/mdt?layer=Relieve&style=default' +
+		'&tilematrixset=GoogleMapsCompatible&Service=WMTS&Request=GetTile&Version=1.0.0' +
+		`&Format=image/png&TileMatrix=${z}&TileCol=${x}&TileRow=${y}`
+	);
+}
+
 export const IGN_ATTRIBUTION =
 	'© <a href="https://www.ign.es">Instituto Geográfico Nacional de España</a> (CC-BY 4.0)';
 

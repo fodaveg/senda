@@ -12,6 +12,7 @@ import {
 	ignTileUrl,
 	ignBaseTileUrl,
 	pnoaTileUrl,
+	reliefTileUrl,
 	IGN_ATTRIBUTION,
 	PNOA_ATTRIBUTION
 } from './tiles';
@@ -58,6 +59,14 @@ export const MAP_LAYERS: MapLayer[] = [
 		maxzoom: 18,
 		offline: false,
 		tileUrl: ignBaseTileUrl
+	},
+	{
+		id: 'relieve',
+		name: 'Relieve',
+		attribution: IGN_ATTRIBUTION,
+		maxzoom: 15,
+		offline: false,
+		tileUrl: reliefTileUrl
 	}
 ];
 

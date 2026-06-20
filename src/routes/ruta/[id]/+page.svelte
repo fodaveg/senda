@@ -8,6 +8,7 @@
 	import { parentOf, stagesOf } from '$lib/data/stages';
 	import { PROVINCES, provinceOf } from '$lib/geo/province';
 	import { loadMapPrefs, saveMapPrefs } from '$lib/map/prefs';
+	import { loadWaypoints, saveWaypoints, makeWaypoint, type Waypoint } from '$lib/user/waypoints';
 	import AvisosBanner from '$lib/components/AvisosBanner.svelte';
 	import FireRiskCard from '$lib/components/FireRiskCard.svelte';
 	import { fetchFireRiskMap, FIRE_RISK_MAX_DAY } from '$lib/weather/fireRisk';
@@ -85,6 +86,23 @@
 	// Capas de datos sobre el mapa (SPECS_V3 §5): visibles por defecto.
 	let showWater = $state(true);
 	let showPois = $state(true);
+	// Waypoints propios (SPECS_V3.5 §3).
+	let waypoints = $state<Waypoint[]>([]);
+	let addWaypointMode = $state(false);
+
+	function onMapClick(lngLat: { lat: number; lon: number }) {
+		if (!addWaypointMode) return;
+		waypoints = [...waypoints, makeWaypoint(lngLat.lat, lngLat.lon, 'Punto')];
+		saveWaypoints(route.id, waypoints);
+	}
+	function updateWaypointNote(id: string, note: string) {
+		waypoints = waypoints.map((w) => (w.id === id ? { ...w, note } : w));
+		saveWaypoints(route.id, waypoints);
+	}
+	function removeWaypoint(id: string) {
+		waypoints = waypoints.filter((w) => w.id !== id);
+		saveWaypoints(route.id, waypoints);
+	}
 	let offlineTiles = $state<number | null>(null);
 	let downloadProgress = $state<string | null>(null);
 	let travelStatus = $state<string | null>(null);
@@ -251,6 +269,8 @@
 		const mapPrefs = loadMapPrefs();
 		showWater = mapPrefs.showWater;
 		showPois = mapPrefs.showPois;
+		waypoints = loadWaypoints(r.id);
+		addWaypointMode = false;
 		debugMode = settings.debugMode;
 		geojson = null;
 		profile = [];
@@ -428,6 +448,8 @@
 					pois={route.pois ?? []}
 					{showWater}
 					{showPois}
+					{waypoints}
+					{onMapClick}
 				/>
 			{:else if trackError}
 				<p class="error">No se pudo cargar el track: {trackError}</p>
@@ -457,6 +479,41 @@
 						/>
 						📍 Puntos de interés ({route.pois.length})
 					</label>
+				{/if}
+			</div>
+		{/if}
+
+		{#if geojson}
+			<div class="waypoints-tool no-print">
+				<button
+					type="button"
+					class="travel-btn"
+					class:active={addWaypointMode}
+					aria-pressed={addWaypointMode}
+					onclick={() => (addWaypointMode = !addWaypointMode)}
+				>
+					📍 {addWaypointMode ? 'Toca el mapa para añadir (terminar)' : 'Añadir punto propio'}
+				</button>
+				{#if waypoints.length > 0}
+					<ul class="waypoint-list">
+						{#each waypoints as wp (wp.id)}
+							<li>
+								<input
+									type="text"
+									value={wp.note}
+									aria-label="Nota del punto"
+									onchange={(e) =>
+										updateWaypointNote(wp.id, (e.currentTarget as HTMLInputElement).value)}
+								/>
+								<button
+									type="button"
+									class="wp-remove"
+									aria-label={`Quitar punto ${wp.note}`}
+									onclick={() => removeWaypoint(wp.id)}>×</button
+								>
+							</li>
+						{/each}
+					</ul>
 				{/if}
 			</div>
 		{/if}
@@ -705,6 +762,40 @@
 		gap: 0.25rem 1rem;
 		margin-top: 0.5rem;
 		font-size: 0.88rem;
+	}
+	.waypoints-tool {
+		margin-top: 0.5rem;
+	}
+	.travel-btn.active {
+		background: var(--brand);
+		color: var(--on-brand);
+	}
+	.waypoint-list {
+		list-style: none;
+		padding: 0;
+		margin: 0.4rem 0 0;
+		display: grid;
+		gap: 0.3rem;
+	}
+	.waypoint-list li {
+		display: flex;
+		gap: 0.4rem;
+		align-items: center;
+	}
+	.waypoint-list input {
+		flex: 1;
+		padding: 0.25rem 0.4rem;
+		border: 1px solid var(--border);
+		border-radius: 0.3rem;
+		background: var(--surface);
+		color: var(--ink);
+	}
+	.wp-remove {
+		border: none;
+		background: transparent;
+		color: var(--muted);
+		font-size: 1.1rem;
+		cursor: pointer;
 	}
 	.map-toggles label {
 		display: inline-flex;

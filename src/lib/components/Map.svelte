@@ -52,7 +52,9 @@
 		water = [],
 		pois = [],
 		showWater = true,
-		showPois = true
+		showPois = true,
+		waypoints = [],
+		onMapClick
 	}: {
 		track?: FeatureCollection | null;
 		markers?: MapMarker[];
@@ -66,6 +68,10 @@
 		pois?: Poi[];
 		showWater?: boolean;
 		showPois?: boolean;
+		/** Waypoints propios del usuario a pintar (SPECS_V3.5 §3). */
+		waypoints?: Array<{ id: string; lat: number; lon: number; note: string }>;
+		/** Clic en el mapa (lon/lat); para añadir waypoints en modo edición. */
+		onMapClick?: (lngLat: { lat: number; lon: number }) => void;
 	} = $props();
 
 	// Icono (emoji) por tipo de POI para el marcador.
@@ -94,6 +100,7 @@
 	let endpointHandles: maplibregl.Marker[] = [];
 	let waterHandles: maplibregl.Marker[] = [];
 	let poiHandles: maplibregl.Marker[] = [];
+	let waypointHandles: maplibregl.Marker[] = [];
 
 	// Marcadores reactivos: el listado filtrado cambia y el mapa le sigue.
 	$effect(() => {
@@ -191,6 +198,31 @@
 		}
 	});
 
+	// Waypoints propios del usuario (SPECS_V3.5 §3): marcador morado + nota.
+	$effect(() => {
+		const list = waypoints;
+		if (!mapReady || !mapInstance) return;
+		for (const h of waypointHandles) h.remove();
+		waypointHandles = [];
+		for (const wp of list) {
+			const el = document.createElement('div');
+			el.className = 'waypoint-dot';
+			el.textContent = '📍';
+			el.setAttribute('aria-label', wp.note || 'Waypoint');
+			if (wp.note) {
+				const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10 });
+				popup.setHTML(`<strong>${wp.note}</strong>`);
+				el.addEventListener('mouseenter', () =>
+					popup.setLngLat([wp.lon, wp.lat]).addTo(mapInstance!)
+				);
+				el.addEventListener('mouseleave', () => popup.remove());
+			}
+			waypointHandles.push(
+				new maplibregl.Marker({ element: el }).setLngLat([wp.lon, wp.lat]).addTo(mapInstance)
+			);
+		}
+	});
+
 	// Reencuadre al cambiar el bbox del resultado filtrado.
 	$effect(() => {
 		const box = bbox;
@@ -276,6 +308,7 @@
 			return;
 		}
 		map.addControl(new maplibregl.NavigationControl(), 'top-right');
+		map.on('click', (e) => onMapClick?.({ lat: e.lngLat.lat, lon: e.lngLat.lng }));
 		mapInstance = map;
 
 		map.on('load', () => {
@@ -381,6 +414,12 @@
 		line-height: 1;
 		cursor: help;
 		filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+	}
+	.map :global(.waypoint-dot) {
+		font-size: 18px;
+		line-height: 1;
+		cursor: help;
+		filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.6)) hue-rotate(260deg) saturate(1.5);
 	}
 	.map :global(.poi-pop-type) {
 		color: #555;
