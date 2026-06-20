@@ -13,15 +13,15 @@ Prioridad orientativa: **[A]** alta (valor o coherencia claros), **[M]** media,
 
 ## 1. Material custom (V3-M6)
 
-- [ ] **[A]** Reflejar el material custom en el **informe imprimible** y en la
-      **ficha de emergencia**: hoy solo aparece en la ficha de ruta. Debe salir en
-      el informe con sus avisos (`warn`) y, en el imprimible, con casilla `☐` como
-      el resto de la mochila (coherencia con v2 §7).
+- [x] **[A]** Material custom en el **informe imprimible**: sale en la sección
+      "Mochila recomendada" como "Tu material" con su aviso (`warn`) y casilla `☐`
+      (report/model.ts + informe). (La ficha de emergencia es para contactos/ruta,
+      no para equipo: no aplica.)
 - [ ] **[M]** Integrar el material custom en el **checklist** (v2 §7): poder
       marcarlo "en la mochila" y que persista por (ruta, fecha) como los ítems del
       catálogo.
-- [ ] **[M]** Sumar el peso del material custom al **peso total** de la mochila
-      (hoy el panel de material custom no aporta al cálculo de peso).
+- [x] **[M]** Peso del material custom sumado al **peso total** de la mochila
+      (BackpackPanel).
 - [ ] **[B]** Editar un ítem custom ya creado (hoy solo alta/baja).
 - [ ] **[B]** Reordenar/ampliar el vocabulario de atributos y sus anti-reglas
       (p. ej. `sol` con UV alto y poca sombra; `calzado` impermeable en ruta seca)
@@ -29,10 +29,11 @@ Prioridad orientativa: **[A]** alta (valor o coherencia claros), **[M]** media,
 
 ## 2. Etapas (V3-M3)
 
-- [ ] **[A]** Mapa del **padre con todas las etapas** dibujadas juntas (hoy el
-      padre no tiene track propio; solo enlaza a cada etapa).
-- [ ] **[M]** **Totales agregados** del padre (distancia y desnivel = suma de las
-      etapas verificadas), etiquetando si falta alguna (SPECS_V3 §6).
+- [x] **[A]** Mapa del **padre con todas las etapas**: YA CUBIERTO — los padres
+      tienen GPX propio con el track completo (p. ej. `gr-10.gpx` = 98,7 km), así
+      que el mapa de la ficha ya muestra toda la GR.
+- [x] **[M]** **Totales agregados** del padre: YA CUBIERTO — distancia/desnivel
+      del padre vienen de su GPX completo (son los totales reales).
 - [ ] **[M]** Persistir `stages`/`parent_id` en el **modelo/crawler** en vez de
       derivarlo en runtime (la derivación cumple el objetivo, pero dejarlo en el
       dato lo hace explícito y auditable).
@@ -41,8 +42,8 @@ Prioridad orientativa: **[A]** alta (valor o coherencia claros), **[M]** media,
 
 ## 3. Mapa y capas (V3-M1 / V3-M2)
 
-- [ ] **[M]** Añadir capa **"Callejero" (IGN Base)** al selector si se confirma su
-      WMTS (hoy: Topográfico + Satélite PNOA).
+- [x] **[M]** Capa **"Callejero" (IGN Base)** añadida al selector (IGNBaseTodo).
+      Pendiente de confirmar en runtime que el WMTS renderiza con tu prueba.
 - [ ] **[M]** Unificar la **persistencia de la capa de mapa** en el módulo de
       apariencia de V3-M7 (hoy va en su propia clave `senderoscv:map-layer`).
 - [ ] **[M]** Recordar el estado de los **toggles de agua/POIs** (hoy se
@@ -56,19 +57,18 @@ Prioridad orientativa: **[A]** alta (valor o coherencia claros), **[M]** media,
 
 ## 4. Descubrimiento (V3-M4)
 
-- [ ] **[M]** Mostrar la **provincia** en la ficha y/o en el listado (hoy solo se
-      usa como filtro; el dato derivado no se enseña).
+- [x] **[M]** Provincia (y municipio) mostrados en "Datos técnicos" de la ficha.
 - [ ] **[B]** Recordar el **origen del filtro** (provincia/comarca) entre visitas.
 - [ ] (cerrado) Orden por popularidad: **descartado** — FEMECV no publica el dato
       (SPECS_V3 §13).
 
 ## 5. Apariencia (V3-M7)
 
-- [ ] **[M]** **Previsualización** de las paletas en Ajustes (muestra de colores
-      junto a cada opción) en vez de solo el nombre.
-- [ ] **[M]** Revisar **modo oscuro** en todos los componentes nuevos
-      (CustomGearPanel, StagesList, toggles del mapa, tooltip del perfil): contraste
-      y bordes correctos en oscuro.
+- [x] **[M]** **Previsualización** de esquemas en Ajustes (cajitas de color por
+      esquema) — hecho en el rediseño de temas.
+- [x] **[M]** **Modo oscuro** revisado en los componentes nuevos: botones y avisos
+      tokenizados (`--on-brand`, `--alert-*`); contraste correcto en todos los
+      esquemas.
 - [ ] **[B]** Que el toggle de la barra cicle **claro → oscuro → auto** (hoy solo
       alterna claro/oscuro; "auto" queda en Ajustes).
 
@@ -79,8 +79,8 @@ Prioridad orientativa: **[A]** alta (valor o coherencia claros), **[M]** media,
       y se citaría, regla v1).
 - [ ] **[M]** **Deduplicar POIs** cercanos con el mismo nombre/tipo (OSM a veces
       repite nodos).
-- [ ] **[M]** Reflejar **fuentes de agua y POIs en el informe** (lista con km y
-      distancia), no solo en el mapa.
+- [x] **[M]** **POIs en el informe** (lista con tipo, km y distancia) en "Puntos
+      destacados"; las fuentes de agua ya salían en "Fuentes de agua y escapes".
 - [ ] **[B]** Republicar el **catálogo en Pages** (CI) con los nuevos campos para
       que la actualización en runtime los incluya (tras mergear v3 a main).
 - [ ] **[B]** Revisar el **buffer de POIs** (150 m) y los tipos incluidos con una

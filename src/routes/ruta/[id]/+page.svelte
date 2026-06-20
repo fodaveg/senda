@@ -6,6 +6,7 @@
 	import StagesList from '$lib/components/StagesList.svelte';
 	import { routes } from '$lib/data/routes';
 	import { parentOf, stagesOf } from '$lib/data/stages';
+	import { PROVINCES, provinceOf } from '$lib/geo/province';
 	import AvisosBanner from '$lib/components/AvisosBanner.svelte';
 	import FireRiskCard from '$lib/components/FireRiskCard.svelte';
 	import { fetchFireRiskMap, FIRE_RISK_MAX_DAY } from '$lib/weather/fireRisk';
@@ -119,6 +120,9 @@
 	// ruta es una etapa). Derivado del catálogo, SPECS_V3 §6.
 	let stages = $derived(stagesOf(route.id, routes));
 	let parent = $derived(parentOf(route.id, routes));
+	let provinceLabel = $derived(
+		PROVINCES.find((p) => p.id === provinceOf(route.zone))?.label ?? null
+	);
 	let avisosForDate = $derived(
 		avisos && selectedDate ? avisosForRoute(avisos, route.zone, selectedDate) : []
 	);
@@ -512,6 +516,14 @@
 	<section class="data-col">
 		<h2>Datos técnicos</h2>
 		<dl>
+			{#if route.municipality}
+				<dt>Municipio</dt>
+				<dd>{route.municipality}</dd>
+			{/if}
+			{#if provinceLabel}
+				<dt>Provincia</dt>
+				<dd>{provinceLabel}</dd>
+			{/if}
 			<dt>Distancia</dt>
 			<dd>{formatKm(route.distance_km)}</dd>
 			<dt>Desnivel</dt>

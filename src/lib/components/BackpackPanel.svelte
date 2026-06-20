@@ -23,7 +23,10 @@
 	let indeterminate = $derived(decisions.filter((d) => d.status === 'indeterminate'));
 	let disabled = $derived(decisions.filter((d) => d.status === 'disabled'));
 
-	let totalWeightG = $derived(enabled.reduce((sum, d) => sum + (d.item.weight_g ?? 0), 0));
+	let totalWeightG = $derived(
+		enabled.reduce((sum, d) => sum + (d.item.weight_g ?? 0), 0) +
+			customDecisions.reduce((sum, d) => sum + (d.item.weight_g ?? 0), 0)
+	);
 </script>
 
 <div class="backpack">

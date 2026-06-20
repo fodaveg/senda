@@ -6,7 +6,8 @@
 	import { gearItems, gearRules } from '$lib/data/gear';
 	import { routeById } from '$lib/data/routes';
 	import { wildlifeForZone } from '$lib/data/wildlife';
-	import { evaluateGear } from '$lib/engine';
+	import { evaluateGear, evaluateCustomGear, ATTRIBUTE_WARNING_RULES } from '$lib/engine';
+	import { loadCustomGear } from '$lib/user/customGear';
 	import { startWindow } from '$lib/engine/startWindow';
 	import { buildReportModel, type ReportModel } from '$lib/report/model';
 	import { renderMarkdown, reportFilename } from '$lib/report/markdown';
@@ -32,6 +33,13 @@
 		if (!ready || !date) return null;
 		const weather = forecast?.find((d) => d.date === date) ?? null;
 		const decisions = evaluateGear(route, weather, seasonForDate(date), gearItems, gearRules);
+		const customDecisions = evaluateCustomGear(
+			route,
+			weather,
+			seasonForDate(date),
+			loadCustomGear().items,
+			ATTRIBUTE_WARNING_RULES
+		);
 		const alternatives = route.alternatives
 			.map((id) => routeById(id))
 			.filter((r) => r !== undefined)
@@ -41,6 +49,7 @@
 			date,
 			weather,
 			decisions,
+			customDecisions,
 			wildlife: wildlifeForZone(route.zone),
 			alternatives,
 			startWindow: startWindow(route, weather, hourly),

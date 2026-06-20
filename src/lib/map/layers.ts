@@ -8,7 +8,13 @@
  * Módulo puro y testeable: no toca el DOM ni MapLibre.
  */
 
-import { ignTileUrl, pnoaTileUrl, IGN_ATTRIBUTION, PNOA_ATTRIBUTION } from './tiles';
+import {
+	ignTileUrl,
+	ignBaseTileUrl,
+	pnoaTileUrl,
+	IGN_ATTRIBUTION,
+	PNOA_ATTRIBUTION
+} from './tiles';
 
 export interface MapLayer {
 	/** Identificador estable (se persiste y se usa en la URL `ign://<id>/…`). */
@@ -44,6 +50,14 @@ export const MAP_LAYERS: MapLayer[] = [
 		maxzoom: 19,
 		offline: false,
 		tileUrl: pnoaTileUrl
+	},
+	{
+		id: 'base',
+		name: 'Callejero',
+		attribution: IGN_ATTRIBUTION,
+		maxzoom: 18,
+		offline: false,
+		tileUrl: ignBaseTileUrl
 	}
 ];
 

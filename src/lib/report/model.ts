@@ -5,7 +5,7 @@
  * nunca inventado.
  */
 
-import type { GearDecision, Route, WeatherDay, WildlifeZone } from '$lib/types';
+import type { CustomGearDecision, GearDecision, Route, WeatherDay, WildlifeZone } from '$lib/types';
 import { minutesToHhMm, type StartWindow } from '$lib/engine/startWindow';
 import type { Aviso } from '$lib/weather/avisos';
 import { formatDuration, formatKm, formatMeters } from '$lib/format';
@@ -17,6 +17,8 @@ export interface ReportInput {
 	/** null = sin pronóstico al generar (offline o fuera de ventana). */
 	weather: WeatherDay | null;
 	decisions: GearDecision[];
+	/** Material propio del usuario evaluado (SPECS_V3 §4), si lo hay. */
+	customDecisions?: CustomGearDecision[];
 	/** Ficha de fauna de la zona, si existe. */
 	wildlife: WildlifeZone | null;
 	/** Rutas alternativas resueltas (id → nombre). */
@@ -199,16 +201,35 @@ export function buildReportModel(input: ReportInput): ReportModel {
 		gearBlocks.push({ kind: 'paragraph', text: 'Puedes dejarlo:' });
 		gearBlocks.push({ kind: 'list', items: disabled.map((d) => gearLine(d, checked)) });
 	}
+	const custom = input.customDecisions ?? [];
+	if (custom.length > 0) {
+		gearBlocks.push({ kind: 'paragraph', text: 'Tu material:' });
+		gearBlocks.push({
+			kind: 'list',
+			items: custom.map((d) => {
+				const box = checked?.includes(d.item.id) ? '☑' : '☐';
+				const text =
+					d.status === 'warn' && d.reason ? `${d.item.name} — ⚠️ ${d.reason}` : d.item.name;
+				return `${box} ${text}`;
+			})
+		});
+	}
 	sections.push({ title: 'Mochila recomendada', blocks: gearBlocks });
 
-	// Puntos destacados
-	sections.push({
-		title: 'Puntos destacados',
-		blocks:
-			route.highlights.length > 0
-				? [{ kind: 'list', items: route.highlights }]
-				: [{ kind: 'paragraph', text: SIN_DATO }]
-	});
+	// Puntos destacados (highlights verificados + POIs de OSM cercanos al track)
+	const highlightBlocks: ReportBlock[] = [];
+	if (route.highlights.length > 0) {
+		highlightBlocks.push({ kind: 'list', items: route.highlights });
+	}
+	if (route.pois.length > 0) {
+		highlightBlocks.push({ kind: 'paragraph', text: 'Puntos de interés cercanos (OSM):' });
+		highlightBlocks.push({
+			kind: 'list',
+			items: route.pois.map((p) => `${p.name} — ${p.type} (km ${p.km}, a ${p.dist_m} m)`)
+		});
+	}
+	if (highlightBlocks.length === 0) highlightBlocks.push({ kind: 'paragraph', text: SIN_DATO });
+	sections.push({ title: 'Puntos destacados', blocks: highlightBlocks });
 
 	// Fuentes de agua y escapes
 	const waterBlocks: ReportBlock[] = [];

@@ -9,5 +9,5 @@ test('la ficha ofrece el selector de capas del mapa', async ({ page }) => {
 	await expect(page).toHaveURL(/\/ruta\/pr-cv-77/);
 	const layerSelect = page.getByLabel('Capa del mapa');
 	await expect(layerSelect).toBeVisible();
-	await expect(layerSelect.locator('option')).toHaveText(['Topográfico', 'Satélite']);
+	await expect(layerSelect.locator('option')).toHaveText(['Topográfico', 'Satélite', 'Callejero']);
 });

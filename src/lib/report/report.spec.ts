@@ -118,6 +118,30 @@ describe('buildReportModel + renderMarkdown', () => {
 		expect(md).toContain('Botiquín — Equipo base: siempre en la mochila');
 	});
 
+	it('incluye el material propio del usuario con su aviso', () => {
+		const withCustom = renderMarkdown(
+			buildReportModel(
+				inputWith({
+					customDecisions: [
+						{
+							item: {
+								id: 'calc',
+								name: 'Calcetines impermeables',
+								category: 'ropa',
+								weight_g: 90,
+								attributes: ['abrigo']
+							},
+							status: 'warn',
+							reason: 'Prenda de abrigo con calor'
+						}
+					]
+				})
+			)
+		);
+		expect(withCustom).toContain('Tu material:');
+		expect(withCustom).toContain('Calcetines impermeables — ⚠️ Prenda de abrigo con calor');
+	});
+
 	it('sin fauna verificada lo dice, sin inventar especies', () => {
 		expect(md).toContain('Sin ficha de fauna verificada');
 		expect(md).not.toContain('oso');

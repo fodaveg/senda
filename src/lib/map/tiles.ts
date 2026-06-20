@@ -36,6 +36,18 @@ export function pnoaTileUrl(z: number, x: number, y: number): string {
 	);
 }
 
+/**
+ * URL de tile del callejero IGN Base (capa "Callejero", SPECS_V3). Mismo WMTS
+ * GoogleMapsCompatible; CC-BY 4.0. Solo online.
+ */
+export function ignBaseTileUrl(z: number, x: number, y: number): string {
+	return (
+		'https://www.ign.es/wmts/ign-base?layer=IGNBaseTodo&style=default' +
+		'&tilematrixset=GoogleMapsCompatible&Service=WMTS&Request=GetTile&Version=1.0.0' +
+		`&Format=image/jpeg&TileMatrix=${z}&TileCol=${x}&TileRow=${y}`
+	);
+}
+
 export const IGN_ATTRIBUTION =
 	'© <a href="https://www.ign.es">Instituto Geográfico Nacional de España</a> (CC-BY 4.0)';
 
