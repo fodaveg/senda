@@ -1,15 +1,18 @@
 <script lang="ts">
-	import type { GearDecision } from '$lib/types';
+	import type { CustomGearDecision, GearDecision } from '$lib/types';
 
 	let {
 		decisions,
 		checked = null,
-		onToggle = null
+		onToggle = null,
+		customDecisions = []
 	}: {
 		decisions: GearDecision[];
 		/** Checklist de preparación (SPECS_V2 §7); null = sin checklist. */
 		checked?: ReadonlySet<string> | null;
 		onToggle?: ((itemId: string) => void) | null;
+		/** Material propio del usuario evaluado (SPECS_V3 §4); se gestiona en Ajustes. */
+		customDecisions?: CustomGearDecision[];
 	} = $props();
 
 	let enabled = $derived(
@@ -101,6 +104,23 @@
 			</ul>
 		</section>
 	{/if}
+
+	{#if customDecisions.length > 0}
+		<section>
+			<h3>Tu material <span class="count">({customDecisions.length})</span></h3>
+			<ul>
+				{#each customDecisions as d (d.item.id)}
+					<li class="item custom" class:warn={d.status === 'warn'}>
+						<span class="name">{d.item.name}</span>
+						{#if d.status === 'warn' && d.reason}
+							<span class="reason warn-reason">⚠️ {d.reason}</span>
+						{/if}
+					</li>
+				{/each}
+			</ul>
+			<p class="custom-hint">Gestiona tu material en Ajustes → Mi material.</p>
+		</section>
+	{/if}
 </div>
 
 <style>
@@ -142,6 +162,20 @@
 	}
 	.item.disabled {
 		opacity: 0.55;
+	}
+	.item.custom {
+		border-left: 4px solid var(--brand);
+	}
+	.item.custom.warn {
+		border-left-color: var(--alert-border);
+	}
+	.warn-reason {
+		color: var(--alert-ink);
+	}
+	.custom-hint {
+		font-size: 0.78rem;
+		color: var(--muted);
+		margin: 0.35rem 0 0;
 	}
 	.item.disabled .name {
 		text-decoration: line-through;

@@ -9,6 +9,16 @@
 	import { DEFAULT_SETTINGS, loadSettings, saveSettings, type Settings } from '$lib/settings';
 	import { applyAppearance, DARK_SCHEMES, LIGHT_SCHEMES } from '$lib/theme/schemes';
 	import { validateAemetKey, type AemetKeyCheck } from '$lib/weather/aemet';
+	import { ATTRIBUTE_LABELS, GEAR_ATTRIBUTES } from '$lib/engine';
+	import type { GearAttribute } from '$lib/types';
+	import {
+		addCustomItem,
+		emptyCustomGearData,
+		loadCustomGear,
+		removeCustomItem,
+		saveCustomGear,
+		type CustomGearData
+	} from '$lib/user/customGear';
 
 	let settings = $state<Settings>({ ...DEFAULT_SETTINGS });
 	let saved = $state(false);
@@ -31,8 +41,40 @@
 	let catalogStatus = $state<string | null>(null);
 	let updating = $state(false);
 
+	// Mi material (SPECS_V3 §4): se gestiona aquí y aparece en cada ficha.
+	let gear = $state<CustomGearData>(emptyCustomGearData());
+	let gName = $state('');
+	let gCategory = $state('otros');
+	let gWeight = $state('');
+	let gAttrs = $state<GearAttribute[]>([]);
+	const GEAR_CATEGORIES = ['ropa', 'calzado', 'agua', 'seguridad', 'otros'];
+
+	function toggleGearAttr(a: GearAttribute) {
+		gAttrs = gAttrs.includes(a) ? gAttrs.filter((x) => x !== a) : [...gAttrs, a];
+	}
+	function addGear() {
+		const name = gName.trim();
+		if (!name) return;
+		const grams = gWeight.trim() === '' ? null : Number(gWeight.replace(',', '.'));
+		gear = addCustomItem(gear, {
+			name,
+			category: gCategory,
+			weight_g: grams !== null && Number.isFinite(grams) && grams >= 0 ? grams : null,
+			attributes: gAttrs
+		});
+		saveCustomGear(gear);
+		gName = '';
+		gWeight = '';
+		gAttrs = [];
+	}
+	function removeGear(id: string) {
+		gear = removeCustomItem(gear, id);
+		saveCustomGear(gear);
+	}
+
 	onMount(async () => {
 		settings = loadSettings();
+		gear = loadCustomGear();
 		if (settings.origin) {
 			originLat = String(settings.origin.lat);
 			originLon = String(settings.origin.lon);
@@ -299,6 +341,62 @@
 	</fieldset>
 
 	<fieldset>
+		<legend>Mi material</legend>
+		<p class="help">
+			Objetos propios que se añaden a la mochila de cada ruta. Marca atributos (opcional) para que
+			la app pueda avisarte si no son adecuados según la meteo (p. ej. abrigo en ruta calurosa).
+		</p>
+		{#if gear.items.length > 0}
+			<ul class="gear-list">
+				{#each gear.items as item (item.id)}
+					<li>
+						<span class="gear-name">{item.name}</span>
+						{#if item.attributes.length > 0}
+							<span class="gear-attrs">
+								{item.attributes.map((a) => ATTRIBUTE_LABELS[a]).join(' · ')}
+							</span>
+						{/if}
+						<button
+							type="button"
+							class="secondary gear-remove"
+							aria-label={`Quitar ${item.name}`}
+							onclick={() => removeGear(item.id)}>Quitar</button
+						>
+					</li>
+				{/each}
+			</ul>
+		{/if}
+		<div class="gear-form">
+			<label>
+				Nombre
+				<input type="text" bind:value={gName} placeholder="Calcetines impermeables" />
+			</label>
+			<label>
+				Categoría
+				<select bind:value={gCategory}>
+					{#each GEAR_CATEGORIES as c (c)}<option value={c}>{c}</option>{/each}
+				</select>
+			</label>
+			<label>
+				Peso (g)
+				<input type="text" inputmode="numeric" bind:value={gWeight} placeholder="90" />
+			</label>
+		</div>
+		<fieldset class="gear-attrs-pick">
+			<legend>Atributos (opcional)</legend>
+			{#each GEAR_ATTRIBUTES as a (a)}
+				<label class="chip">
+					<input type="checkbox" checked={gAttrs.includes(a)} onchange={() => toggleGearAttr(a)} />
+					{ATTRIBUTE_LABELS[a]}
+				</label>
+			{/each}
+		</fieldset>
+		<button type="button" class="secondary" disabled={gName.trim() === ''} onclick={addGear}>
+			Añadir material
+		</button>
+	</fieldset>
+
+	<fieldset>
 		<legend>Datos de emergencia (opcionales)</legend>
 		<p class="help">
 			Se incluyen solo en la ficha de emergencia que generes para tus contactos (ficha de cada ruta
@@ -396,6 +494,62 @@
 	}
 	.scheme-name {
 		font-size: 0.82rem;
+	}
+	.gear-list {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 0.6rem;
+		display: grid;
+		gap: 0.35rem;
+	}
+	.gear-list li {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		border: 1px solid var(--border);
+		border-radius: 0.4rem;
+		padding: 0.35rem 0.6rem;
+		background: var(--surface);
+	}
+	.gear-name {
+		font-weight: 600;
+	}
+	.gear-attrs {
+		font-size: 0.8rem;
+		color: var(--muted);
+	}
+	.gear-remove {
+		margin-left: auto;
+		font-size: 0.8rem;
+		padding: 0.2rem 0.6rem;
+	}
+	.gear-form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	.gear-form label {
+		display: flex;
+		flex-direction: column;
+		font-size: 0.8rem;
+		gap: 0.15rem;
+	}
+	.gear-attrs-pick {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.3rem 0.8rem;
+		margin: 0.5rem 0;
+	}
+	.gear-attrs-pick legend {
+		font-size: 0.82rem;
+		padding: 0;
+	}
+	.chip {
+		font-size: 0.82rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
 	}
 	fieldset {
 		border: 1px solid var(--border);

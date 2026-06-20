@@ -3,7 +3,6 @@
 	import { resolve } from '$app/paths';
 	import { isTauri } from '@tauri-apps/api/core';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
-	import CustomGearPanel from '$lib/components/CustomGearPanel.svelte';
 	import StagesList from '$lib/components/StagesList.svelte';
 	import { routes } from '$lib/data/routes';
 	import { parentOf, stagesOf } from '$lib/data/stages';
@@ -17,7 +16,9 @@
 	import { gearItems, gearRules } from '$lib/data/gear';
 	import { loadTrackXml } from '$lib/data/tracks';
 	import { wildlifeForZone } from '$lib/data/wildlife';
-	import { evaluateGear } from '$lib/engine';
+	import { evaluateGear, evaluateCustomGear, ATTRIBUTE_WARNING_RULES } from '$lib/engine';
+	import { loadCustomGear } from '$lib/user/customGear';
+	import type { CustomGearItem } from '$lib/types';
 	import { startWindow } from '$lib/engine/startWindow';
 	import { gpxToGeoJSON, trackPositions } from '$lib/geo/gpx';
 	import { elevationProfile, type ProfilePoint } from '$lib/geo/profile';
@@ -90,6 +91,20 @@
 	let decisions = $derived(
 		selectedDate
 			? evaluateGear(route, selectedDay, seasonForDate(selectedDate), gearItems, gearRules)
+			: []
+	);
+	// Material propio del usuario (se gestiona en Ajustes): se evalúa y se muestra
+	// integrado en la lista de la mochila (SPECS_V3 §4).
+	let customItems = $state<CustomGearItem[]>([]);
+	let customDecisions = $derived(
+		selectedDate
+			? evaluateCustomGear(
+					route,
+					selectedDay,
+					seasonForDate(selectedDate),
+					customItems,
+					ATTRIBUTE_WARNING_RULES
+				)
 			: []
 	);
 	// Ventana ideal de inicio (SPECS_V2 §5): el horario solo afina.
@@ -183,6 +198,7 @@
 
 	async function loadRouteData(r: typeof route, token: number) {
 		const settings = loadSettings();
+		customItems = loadCustomGear().items;
 		debugMode = settings.debugMode;
 		geojson = null;
 		profile = [];
@@ -440,8 +456,12 @@
 		<StartWindowCard {window} manualHint={route.best_start_time} />
 
 		<h2>Mochila recomendada</h2>
-		<BackpackPanel {decisions} checked={checkedItems} onToggle={toggleChecklistItem} />
-		<CustomGearPanel {route} weather={selectedDay} season={seasonForDate(selectedDate)} />
+		<BackpackPanel
+			{decisions}
+			checked={checkedItems}
+			onToggle={toggleChecklistItem}
+			{customDecisions}
+		/>
 	</section>
 
 	<section class="data-col">
