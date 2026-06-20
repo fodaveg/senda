@@ -7,6 +7,8 @@
 	import { routes } from '$lib/data/routes';
 	import { parentOf, stagesOf } from '$lib/data/stages';
 	import AvisosBanner from '$lib/components/AvisosBanner.svelte';
+	import FireRiskCard from '$lib/components/FireRiskCard.svelte';
+	import { fetchFireRiskMap, FIRE_RISK_MAX_DAY } from '$lib/weather/fireRisk';
 	import RouteMarks from '$lib/components/RouteMarks.svelte';
 	import StartWindowCard from '$lib/components/StartWindowCard.svelte';
 	import StatusBadge from '$lib/components/StatusBadge.svelte';
@@ -63,6 +65,9 @@
 	let debugMode = $state(false);
 	let hourlyByDate = $state<Record<string, HourlyPoint[]>>({});
 	let avisos = $state<Aviso[] | null>(null);
+	// Riesgo de incendio (AEMET): URL del mapa oficial del día seleccionado.
+	let fireRiskMapUrl = $state<string | null>(null);
+	let fireRiskLoading = $state(false);
 	let travel = $state<{ estimate: DrivingEstimate; from: string } | null>(null);
 	// Coordenadas del origen (habitual o GPS) para enlazar indicaciones con
 	// punto de partida, no solo destino (SPECS_V3 §7).
@@ -194,6 +199,41 @@
 	let loadToken = 0;
 	$effect(() => {
 		void loadRouteData(route, ++loadToken);
+	});
+
+	/** Días desde hoy hasta la fecha YYYY-MM-DD (0 = hoy). */
+	function dayOffsetFromToday(date: string): number {
+		const today = new Date();
+		today.setHours(0, 0, 0, 0);
+		const target = new Date(`${date}T00:00`);
+		return Math.round((target.getTime() - today.getTime()) / 86_400_000);
+	}
+
+	// Mapa de riesgo de incendio (AEMET) para la fecha elegida; se recarga al
+	// cambiar de fecha. Requiere api key; degrada en silencio si falla.
+	$effect(() => {
+		const date = selectedDate;
+		const apiKey = loadSettings().aemetApiKey;
+		fireRiskMapUrl = null;
+		if (!date || !apiKey) return;
+		const offset = dayOffsetFromToday(date);
+		if (offset < 0 || offset > FIRE_RISK_MAX_DAY) return;
+		fireRiskLoading = true;
+		let cancelled = false;
+		fetchFireRiskMap(apiKey, offset)
+			.then((url) => {
+				if (!cancelled) fireRiskMapUrl = url;
+			})
+			.catch((e) => {
+				// Sin mapa confirmado no se afirma nada; detalle en consola.
+				console.error('AEMET incendios:', e);
+			})
+			.finally(() => {
+				if (!cancelled) fireRiskLoading = false;
+			});
+		return () => {
+			cancelled = true;
+		};
 	});
 
 	async function loadRouteData(r: typeof route, token: number) {
@@ -443,6 +483,11 @@
 			<p class="date-note">Pronóstico disponible solo hasta 7 días vista.</p>
 		{/if}
 		<AvisosBanner avisos={avisosForDate} />
+		<FireRiskCard
+			imageUrl={fireRiskMapUrl}
+			loading={fireRiskLoading}
+			dayLabel={dateLabel(selectedDate)}
+		/>
 		<WeatherCard
 			day={selectedDay}
 			loading={weatherLoading}
