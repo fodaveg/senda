@@ -1,7 +1,33 @@
 {
-	"water_points": ["Fuente (km 13.9, a 31 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 13.9, a 31 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8513956,
+			"lon": -0.7146516,
+			"km": 13.9,
+			"dist_m": 31
+		}
+	],
+	"pois": [
+		{
+			"name": "Cerro de la Rodena",
+			"type": "cumbre",
+			"lat": 39.8355634,
+			"lon": -0.6737557,
+			"km": 9,
+			"dist_m": 36
+		}
+	],
 	"shade_ratio": 0.12,
-	"alternatives": ["pr-cv-467", "pr-cv-178", "pr-cv-105"],
-	"enriched_at": "2026-06-11T17:34:40.752Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-467",
+		"pr-cv-178",
+		"pr-cv-105"
+	],
+	"enriched_at": "2026-06-20T08:16:48.527Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

@@ -5,8 +5,47 @@
 		"Manantial \"Fuente de la Fonf\" (km 1.6, a 9 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente del Hontanar\" (km 17.5, a 9 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de los 15 Caños",
+			"kind": "fuente",
+			"lat": 39.7707489,
+			"lon": -0.5219474,
+			"km": 0.1,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7705105,
+			"lon": -0.5222786,
+			"km": 0.1,
+			"dist_m": 24
+		},
+		{
+			"name": "Fuente de la Fonf",
+			"kind": "manantial",
+			"lat": 39.7687888,
+			"lon": -0.5361422,
+			"km": 1.6,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente del Hontanar",
+			"kind": "manantial",
+			"lat": 39.834091,
+			"lon": -0.6131106,
+			"km": 17.5,
+			"dist_m": 9
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.14,
-	"alternatives": ["sl-cv-129", "pr-cv-8", "gr-160-e05"],
-	"enriched_at": "2026-06-11T17:34:37.458Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-129",
+		"pr-cv-8",
+		"gr-160-e05"
+	],
+	"enriched_at": "2026-06-20T08:16:05.924Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

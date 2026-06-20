@@ -1,7 +1,24 @@
 {
-	"water_points": ["Fuente (km 9.6, a 90 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 9.6, a 90 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6705071,
+			"lon": -1.3358301,
+			"km": 9.6,
+			"dist_m": 90
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-293", "pr-cv-310", "gr-238-e04"],
-	"enriched_at": "2026-06-11T18:54:19.260Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-293",
+		"pr-cv-310",
+		"gr-238-e04"
+	],
+	"enriched_at": "2026-06-20T08:24:32.090Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

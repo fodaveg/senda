@@ -62,7 +62,22 @@ deja registrado cualquier bloqueo.
 
 ## Bloqueos / notas
 
-### V3-M2 (capas de datos en el mapa) — BLOQUEADO por datos (decisión del usuario)
+### V3-M2 — DESBLOQUEADO e implementado (decisión del usuario 2026-06-20: "relanza el enrich e investiga POIs")
+
+- **POIs:** confirmado que FEMECV NO publica POIs geolocalizados por el recorrido
+  (ni waypoints en GPX, ni puntos con coords/imagen en la ficha). Fuente elegida:
+  **OSM** (miradores, cumbres, patrimonio, refugios; nombre+tipo, **sin imágenes**).
+- **Pipeline:** `enrich` captura `water_points_geo` (coords de fuentes) y `pois`
+  (OSM ≤150 m); modelo/zod/merge actualizados; arg-parsing del enrich arreglado
+  (un id explícito ya no se ignoraba); enrich reanudable por campo nuevo.
+- **UI:** marcadores de agua (azul) y POIs (icono por tipo + popup al hover) en el
+  mapa, con toggles bajo el mapa (visibles por defecto). Tests: enrich.spec,
+  map-data.e2e.
+- **Datos:** re-enrich COMPLETO en curso (background). Al terminar: `npm run ingest
+  -- --lenient` y commitear el delta. (En el commit inicial ~34/585 rutas traen
+  datos reales; el resto, arrays vacíos hasta completar el enrich.)
+
+(histórico del bloqueo, ya resuelto:)
 
 Investigación §13 (2026-06-19):
 

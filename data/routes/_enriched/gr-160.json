@@ -21,8 +21,248 @@
 		"Fuente (km 62.3, a 15 m del track; OSM, no verificado en campo)",
 		"Fuente (km 62.3, a 84 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1084846,
+			"lon": -0.6010428,
+			"km": 2.3,
+			"dist_m": 83
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1049026,
+			"lon": -0.5928636,
+			"km": 3.4,
+			"dist_m": 27
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1046691,
+			"lon": -0.5908837,
+			"km": 3.6,
+			"dist_m": 3
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1032616,
+			"lon": -0.591389,
+			"km": 3.8,
+			"dist_m": 14
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0652447,
+			"lon": -0.5275055,
+			"km": 17.5,
+			"dist_m": 15
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0658013,
+			"lon": -0.5269059,
+			"km": 17.6,
+			"dist_m": 27
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0690223,
+			"lon": -0.5241648,
+			"km": 18,
+			"dist_m": 68
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0681908,
+			"lon": -0.5229208,
+			"km": 18.1,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente la Carrera",
+			"kind": "manantial",
+			"lat": 40.0448191,
+			"lon": -0.5256103,
+			"km": 21.7,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente Bajo Castillo",
+			"kind": "fuente",
+			"lat": 40.0369314,
+			"lon": -0.5529172,
+			"km": 25.3,
+			"dist_m": 7
+		},
+		{
+			"name": "Agua",
+			"kind": "manantial",
+			"lat": 40.0370188,
+			"lon": -0.5527611,
+			"km": 25.3,
+			"dist_m": 11
+		},
+		{
+			"name": "Fuente La Tejería",
+			"kind": "fuente",
+			"lat": 40.0351798,
+			"lon": -0.5632863,
+			"km": 26.4,
+			"dist_m": 22
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9483666,
+			"lon": -0.5661602,
+			"km": 45.1,
+			"dist_m": 19
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9481477,
+			"lon": -0.5674593,
+			"km": 45.1,
+			"dist_m": 52
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9478472,
+			"lon": -0.5657714,
+			"km": 45.2,
+			"dist_m": 12
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9481738,
+			"lon": -0.5646246,
+			"km": 45.3,
+			"dist_m": 86
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.916073,
+			"lon": -0.5729993,
+			"km": 51.2,
+			"dist_m": 84
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9061649,
+			"lon": -0.5587648,
+			"km": 53,
+			"dist_m": 29
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8528043,
+			"lon": -0.5171966,
+			"km": 62.3,
+			"dist_m": 15
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8520544,
+			"lon": -0.517487,
+			"km": 62.3,
+			"dist_m": 84
+		}
+	],
+	"pois": [
+		{
+			"name": "Peña de Giberte",
+			"type": "cumbre",
+			"lat": 40.0611756,
+			"lon": -0.5776428,
+			"km": 10.2,
+			"dist_m": 134
+		},
+		{
+			"name": "Buzón",
+			"type": "patrimonio",
+			"lat": 40.0650981,
+			"lon": -0.5457109,
+			"km": 14.2,
+			"dist_m": 3
+		},
+		{
+			"name": "Cerro Pachón",
+			"type": "cumbre",
+			"lat": 40.0345836,
+			"lon": -0.5877919,
+			"km": 28.8,
+			"dist_m": 133
+		},
+		{
+			"name": "Alto Pino Rey",
+			"type": "cumbre",
+			"lat": 40.0285659,
+			"lon": -0.6017343,
+			"km": 31.3,
+			"dist_m": 33
+		},
+		{
+			"name": "Arco del Hospital",
+			"type": "patrimonio",
+			"lat": 39.9123474,
+			"lon": -0.5714343,
+			"km": 51.7,
+			"dist_m": 16
+		},
+		{
+			"name": "Portal de San Juan",
+			"type": "patrimonio",
+			"lat": 39.9114952,
+			"lon": -0.5711134,
+			"km": 51.8,
+			"dist_m": 109
+		},
+		{
+			"name": "Nido ametralladora del Verdejo",
+			"type": "patrimonio",
+			"lat": 39.9011319,
+			"lon": -0.5601209,
+			"km": 53.7,
+			"dist_m": 42
+		},
+		{
+			"name": "Mirador del Regajo",
+			"type": "mirador",
+			"lat": 39.8863353,
+			"lon": -0.5215945,
+			"km": 58,
+			"dist_m": 5
+		},
+		{
+			"name": "Torre de Altomira",
+			"type": "patrimonio",
+			"lat": 39.8731099,
+			"lon": -0.5090928,
+			"km": 59.9,
+			"dist_m": 113
+		}
+	],
 	"shade_ratio": 0.21,
-	"alternatives": ["gr-160-e01", "sl-cv-57", "gr-160-e02"],
-	"enriched_at": "2026-06-11T18:51:48.735Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-160-e01",
+		"sl-cv-57",
+		"gr-160-e02"
+	],
+	"enriched_at": "2026-06-20T08:19:53.328Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

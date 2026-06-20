@@ -6,8 +6,96 @@
 		"Fuente (km 14.3, a 96 m del track; OSM, no verificado en campo)",
 		"Fuente (km 19.1, a 16 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9662015,
+			"lon": -0.1817041,
+			"km": 0.5,
+			"dist_m": 71
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9434598,
+			"lon": -0.1818764,
+			"km": 3.3,
+			"dist_m": 96
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9325535,
+			"lon": -0.254527,
+			"km": 13.3,
+			"dist_m": 13
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9327147,
+			"lon": -0.2590265,
+			"km": 14.3,
+			"dist_m": 96
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9169435,
+			"lon": -0.284887,
+			"km": 19.1,
+			"dist_m": 16
+		}
+	],
+	"pois": [
+		{
+			"name": "Locomotora",
+			"type": "patrimonio",
+			"lat": 38.9697723,
+			"lon": -0.1787121,
+			"km": 0,
+			"dist_m": 106
+		},
+		{
+			"name": "Rei Jaume I",
+			"type": "patrimonio",
+			"lat": 38.966432,
+			"lon": -0.1816534,
+			"km": 0.4,
+			"dist_m": 61
+		},
+		{
+			"name": "Alfarerìa romana",
+			"type": "patrimonio",
+			"lat": 38.9391138,
+			"lon": -0.1868598,
+			"km": 3.9,
+			"dist_m": 105
+		},
+		{
+			"name": "Acueducto de Vistabella",
+			"type": "patrimonio",
+			"lat": 38.9308065,
+			"lon": -0.2053284,
+			"km": 6.7,
+			"dist_m": 147
+		},
+		{
+			"name": "Ceràmica a la Verge de la Salud",
+			"type": "patrimonio",
+			"lat": 38.9330904,
+			"lon": -0.2590699,
+			"km": 14.3,
+			"dist_m": 130
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["gr-236", "pr-cv-153", "sl-cv-60"],
-	"enriched_at": "2026-06-11T18:52:33.419Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-236",
+		"pr-cv-153",
+		"sl-cv-60"
+	],
+	"enriched_at": "2026-06-20T08:20:45.647Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

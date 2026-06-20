@@ -124,7 +124,9 @@ async function main(): Promise<void> {
 	const force = args.includes('--force');
 	const limitIndex = args.indexOf('--limit');
 	const limit = limitIndex !== -1 ? Number(args[limitIndex + 1]) : null;
-	const explicit = args.filter((a, i) => !a.startsWith('--') && i !== limitIndex + 1);
+	const explicit = args.filter(
+		(a, i) => !a.startsWith('--') && (limitIndex === -1 || i !== limitIndex + 1)
+	);
 
 	const all = loadRoutes();
 	let targets = explicit.length > 0 ? all.filter((r) => explicit.includes(r.id)) : all;

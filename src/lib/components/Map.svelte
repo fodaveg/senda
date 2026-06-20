@@ -33,6 +33,7 @@
 	import { onMount } from 'svelte';
 	import type { FeatureCollection } from 'geojson';
 	import type { StyleSpecification } from 'maplibre-gl';
+	import type { Poi, WaterPointGeo } from '$lib/types';
 
 	export interface MapMarker {
 		id: string;
@@ -46,7 +47,11 @@
 		markers = [],
 		bbox = null,
 		onMarkerClick,
-		highlight = null
+		highlight = null,
+		water = [],
+		pois = [],
+		showWater = true,
+		showPois = true
 	}: {
 		track?: FeatureCollection | null;
 		markers?: MapMarker[];
@@ -54,7 +59,29 @@
 		onMarkerClick?: (id: string) => void;
 		/** Punto resaltado [lon, lat] (hover del perfil de elevación). */
 		highlight?: [number, number] | null;
+		/** Fuentes de agua a pintar (SPECS_V3 §5). */
+		water?: WaterPointGeo[];
+		/** Puntos de interés a pintar (SPECS_V3 §5). */
+		pois?: Poi[];
+		showWater?: boolean;
+		showPois?: boolean;
 	} = $props();
+
+	// Icono (emoji) por tipo de POI para el marcador.
+	const POI_ICON: Record<Poi['type'], string> = {
+		mirador: '🔭',
+		cumbre: '⛰️',
+		patrimonio: '🏛️',
+		refugio: '🏠',
+		otro: '📍'
+	};
+	const POI_LABEL: Record<Poi['type'], string> = {
+		mirador: 'Mirador',
+		cumbre: 'Cumbre',
+		patrimonio: 'Patrimonio',
+		refugio: 'Refugio',
+		otro: 'Punto de interés'
+	};
 
 	// Clave de persistencia de la capa elegida (preferencia local; la gestión
 	// completa de apariencia llega en V3-M7).
@@ -68,6 +95,8 @@
 	let mapReady = $state(false);
 	let markerHandles: maplibregl.Marker[] = [];
 	let endpointHandles: maplibregl.Marker[] = [];
+	let waterHandles: maplibregl.Marker[] = [];
+	let poiHandles: maplibregl.Marker[] = [];
 
 	// Marcadores reactivos: el listado filtrado cambia y el mapa le sigue.
 	$effect(() => {
@@ -106,6 +135,52 @@
 			const end = new maplibregl.Marker({ color: '#c1121f' }).setLngLat(ep.end).addTo(mapInstance);
 			end.getElement().setAttribute('title', 'Fin');
 			endpointHandles.push(end);
+		}
+	});
+
+	// Fuentes de agua (SPECS_V3 §5): marcador azul por fuente; toggle showWater.
+	$effect(() => {
+		const list = water;
+		const show = showWater;
+		if (!mapReady || !mapInstance) return;
+		for (const h of waterHandles) h.remove();
+		waterHandles = [];
+		if (!show) return;
+		for (const wp of list) {
+			const el = document.createElement('div');
+			el.className = 'water-dot';
+			el.title = `${wp.name ?? (wp.kind === 'manantial' ? 'Manantial' : 'Fuente')} · agua (OSM, sin verificar)`;
+			waterHandles.push(
+				new maplibregl.Marker({ element: el }).setLngLat([wp.lon, wp.lat]).addTo(mapInstance)
+			);
+		}
+	});
+
+	// Puntos de interés (SPECS_V3 §5): marcador con icono + popup al hover.
+	$effect(() => {
+		const list = pois;
+		const show = showPois;
+		if (!mapReady || !mapInstance) return;
+		for (const h of poiHandles) h.remove();
+		poiHandles = [];
+		if (!show) return;
+		for (const poi of list) {
+			const el = document.createElement('div');
+			el.className = 'poi-dot';
+			el.textContent = POI_ICON[poi.type];
+			el.setAttribute('aria-label', `${POI_LABEL[poi.type]}: ${poi.name}`);
+			const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 12 });
+			popup.setHTML(
+				`<strong>${poi.name}</strong><br><span class="poi-pop-type">${POI_LABEL[poi.type]} · km ${poi.km} (OSM)</span>`
+			);
+			const marker = new maplibregl.Marker({ element: el })
+				.setLngLat([poi.lon, poi.lat])
+				.addTo(mapInstance);
+			el.addEventListener('mouseenter', () =>
+				popup.setLngLat([poi.lon, poi.lat]).addTo(mapInstance!)
+			);
+			el.addEventListener('mouseleave', () => popup.remove());
+			poiHandles.push(marker);
 		}
 	});
 
@@ -293,6 +368,25 @@
 		font-size: 0.85rem;
 		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 		cursor: pointer;
+	}
+	.map :global(.water-dot) {
+		width: 13px;
+		height: 13px;
+		border-radius: 50%;
+		background: #1e88e5;
+		border: 2px solid #fff;
+		box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+		cursor: help;
+	}
+	.map :global(.poi-dot) {
+		font-size: 17px;
+		line-height: 1;
+		cursor: help;
+		filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+	}
+	.map :global(.poi-pop-type) {
+		color: #555;
+		font-size: 0.8rem;
 	}
 	.sr-only {
 		position: absolute;

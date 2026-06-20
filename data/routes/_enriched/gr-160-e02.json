@@ -6,8 +6,72 @@
 		"Fuente (km 14.2, a 86 m del track; OSM, no verificado en campo)",
 		"Fuente (km 14.2, a 68 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1032616,
+			"lon": -0.591389,
+			"km": 0,
+			"dist_m": 14
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0652447,
+			"lon": -0.5275055,
+			"km": 13.7,
+			"dist_m": 15
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0658013,
+			"lon": -0.5269059,
+			"km": 13.8,
+			"dist_m": 27
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0681908,
+			"lon": -0.5229208,
+			"km": 14.2,
+			"dist_m": 86
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0690223,
+			"lon": -0.5241648,
+			"km": 14.2,
+			"dist_m": 68
+		}
+	],
+	"pois": [
+		{
+			"name": "Peña de Giberte",
+			"type": "cumbre",
+			"lat": 40.0611756,
+			"lon": -0.5776428,
+			"km": 6.5,
+			"dist_m": 134
+		},
+		{
+			"name": "Buzón",
+			"type": "patrimonio",
+			"lat": 40.0650981,
+			"lon": -0.5457109,
+			"km": 10.4,
+			"dist_m": 3
+		}
+	],
 	"shade_ratio": 0.6,
-	"alternatives": ["sl-cv-57", "gr-160-e01", "gr-160"],
-	"enriched_at": "2026-06-11T18:51:11.696Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-57",
+		"gr-160-e01",
+		"gr-160"
+	],
+	"enriched_at": "2026-06-20T08:18:37.991Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

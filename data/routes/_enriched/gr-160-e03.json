@@ -8,8 +8,88 @@
 		"Fuente \"Fuente La Tejería\" (km 8.4, a 22 m del track; OSM, no verificado en campo)",
 		"Fuente (km 26.8, a 66 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0690223,
+			"lon": -0.5241648,
+			"km": 0,
+			"dist_m": 68
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0681908,
+			"lon": -0.5229208,
+			"km": 0.1,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente la Carrera",
+			"kind": "manantial",
+			"lat": 40.0448191,
+			"lon": -0.5256103,
+			"km": 3.7,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente Bajo Castillo",
+			"kind": "fuente",
+			"lat": 40.0369314,
+			"lon": -0.5529172,
+			"km": 7.3,
+			"dist_m": 7
+		},
+		{
+			"name": "Agua",
+			"kind": "manantial",
+			"lat": 40.0370188,
+			"lon": -0.5527611,
+			"km": 7.3,
+			"dist_m": 11
+		},
+		{
+			"name": "Fuente La Tejería",
+			"kind": "fuente",
+			"lat": 40.0351798,
+			"lon": -0.5632863,
+			"km": 8.4,
+			"dist_m": 22
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9481477,
+			"lon": -0.5674593,
+			"km": 26.8,
+			"dist_m": 66
+		}
+	],
+	"pois": [
+		{
+			"name": "Cerro Pachón",
+			"type": "cumbre",
+			"lat": 40.0345836,
+			"lon": -0.5877919,
+			"km": 10.8,
+			"dist_m": 133
+		},
+		{
+			"name": "Alto Pino Rey",
+			"type": "cumbre",
+			"lat": 40.0285659,
+			"lon": -0.6017343,
+			"km": 13.3,
+			"dist_m": 33
+		}
+	],
 	"shade_ratio": 0.01,
-	"alternatives": ["sl-cv-104", "gr-7-e33", "sl-cv-105"],
-	"enriched_at": "2026-06-11T17:35:28.484Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-104",
+		"gr-7-e33",
+		"sl-cv-105"
+	],
+	"enriched_at": "2026-06-20T08:18:47.407Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

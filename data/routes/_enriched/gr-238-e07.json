@@ -3,8 +3,40 @@
 		"Manantial (km 4.5, a 38 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente del Pocillo\" (km 15.7, a 19 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.6000556,
+			"lon": -1.1106706,
+			"km": 4.5,
+			"dist_m": 38
+		},
+		{
+			"name": "Fuente del Pocillo",
+			"kind": "manantial",
+			"lat": 39.5955839,
+			"lon": -1.0629928,
+			"km": 15.7,
+			"dist_m": 19
+		}
+	],
+	"pois": [
+		{
+			"name": "Carbonero",
+			"type": "cumbre",
+			"lat": 39.6204524,
+			"lon": -1.1371996,
+			"km": 0.5,
+			"dist_m": 11
+		}
+	],
 	"shade_ratio": 0.03,
-	"alternatives": ["pr-cv-177-2", "pr-cv-177-1", "pr-cv-177-3"],
-	"enriched_at": "2026-06-11T17:38:31.223Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-177-2",
+		"pr-cv-177-1",
+		"pr-cv-177-3"
+	],
+	"enriched_at": "2026-06-20T08:25:42.083Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

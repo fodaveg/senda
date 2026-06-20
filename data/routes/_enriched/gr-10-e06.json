@@ -5,8 +5,64 @@
 		"Fuente \"Fuente del Señor\" (km 11.8, a 22 m del track; OSM, no verificado en campo)",
 		"Fuente (km 14.9, a 47 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8513956,
+			"lon": -0.7146516,
+			"km": 0,
+			"dist_m": 30
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8496866,
+			"lon": -0.7179852,
+			"km": 0.4,
+			"dist_m": 78
+		},
+		{
+			"name": "Fuente del Señor",
+			"kind": "fuente",
+			"lat": 39.8556978,
+			"lon": -0.7939585,
+			"km": 11.8,
+			"dist_m": 22
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8358366,
+			"lon": -0.813406,
+			"km": 14.9,
+			"dist_m": 47
+		}
+	],
+	"pois": [
+		{
+			"name": "Lomica de en Medio",
+			"type": "cumbre",
+			"lat": 39.842421,
+			"lon": -0.7364966,
+			"km": 3.4,
+			"dist_m": 93
+		},
+		{
+			"name": "Bellida",
+			"type": "cumbre",
+			"lat": 39.8485969,
+			"lon": -0.7401262,
+			"km": 4.2,
+			"dist_m": 90
+		}
+	],
 	"shade_ratio": 0.06,
-	"alternatives": ["sl-cv-53", "sl-cv-55", "pr-cv-105"],
-	"enriched_at": "2026-06-11T17:34:51.776Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-53",
+		"sl-cv-55",
+		"pr-cv-105"
+	],
+	"enriched_at": "2026-06-20T08:16:51.480Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

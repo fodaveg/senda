@@ -21,6 +21,42 @@
 	"water_points": [
 		"Fuente (km 23.3, a 49 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6259363,
+			"lon": -1.1400054,
+			"km": 23.3,
+			"dist_m": 49
+		}
+	],
+	"pois": [
+		{
+			"name": "Marisancho",
+			"type": "cumbre",
+			"lat": 39.6553277,
+			"lon": -1.1630231,
+			"km": 13.1,
+			"dist_m": 139
+		},
+		{
+			"name": "Casa Medina",
+			"type": "patrimonio",
+			"lat": 39.6239706,
+			"lon": -1.1626053,
+			"km": 20.6,
+			"dist_m": 84
+		},
+		{
+			"name": "Santuario del Remedio",
+			"type": "patrimonio",
+			"lat": 39.6269625,
+			"lon": -1.1420111,
+			"km": 23.1,
+			"dist_m": 90
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -45,7 +81,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-238-e06 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-238-e06.gpx (derivados: inicio, bbox)"
 	]
 }

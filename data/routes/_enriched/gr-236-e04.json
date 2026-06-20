@@ -6,8 +6,144 @@
 		"Fuente (km 17.3, a 20 m del track; OSM, no verificado en campo)",
 		"Fuente (km 17.5, a 70 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.1004114,
+			"lon": -0.3688909,
+			"km": 0,
+			"dist_m": 42
+		},
+		{
+			"name": "Font Nova",
+			"kind": "manantial",
+			"lat": 39.1100791,
+			"lon": -0.3437453,
+			"km": 5.5,
+			"dist_m": 29
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.15108,
+			"lon": -0.4370169,
+			"km": 16.9,
+			"dist_m": 34
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.151753,
+			"lon": -0.4412752,
+			"km": 17.3,
+			"dist_m": 20
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.152155,
+			"lon": -0.4432696,
+			"km": 17.5,
+			"dist_m": 70
+		}
+	],
+	"pois": [
+		{
+			"name": "Muntanyeta de Sant Salvador",
+			"type": "cumbre",
+			"lat": 39.1525691,
+			"lon": -0.4186231,
+			"km": 14.9,
+			"dist_m": 19
+		},
+		{
+			"name": "Monument a les Falles",
+			"type": "patrimonio",
+			"lat": 39.1505293,
+			"lon": -0.4368822,
+			"km": 16.9,
+			"dist_m": 87
+		},
+		{
+			"name": "Casalicis del Pont de Sant Bernat",
+			"type": "patrimonio",
+			"lat": 39.1510611,
+			"lon": -0.4379021,
+			"km": 17,
+			"dist_m": 56
+		},
+		{
+			"name": "Panel cerámico San Isidro Labrador",
+			"type": "patrimonio",
+			"lat": 39.1523033,
+			"lon": -0.4394132,
+			"km": 17.2,
+			"dist_m": 74
+		},
+		{
+			"name": "Centre Històric de la Vila",
+			"type": "patrimonio",
+			"lat": 39.152018,
+			"lon": -0.440846,
+			"km": 17.3,
+			"dist_m": 29
+		},
+		{
+			"name": "Monument als gossos i gats abandonats",
+			"type": "patrimonio",
+			"lat": 39.1517363,
+			"lon": -0.4402661,
+			"km": 17.3,
+			"dist_m": 4
+		},
+		{
+			"name": "Retaule de la mort de Jaume I",
+			"type": "patrimonio",
+			"lat": 39.1516851,
+			"lon": -0.440262,
+			"km": 17.3,
+			"dist_m": 9
+		},
+		{
+			"name": "Placa de la Constitució de1837",
+			"type": "patrimonio",
+			"lat": 39.1513971,
+			"lon": -0.4406989,
+			"km": 17.3,
+			"dist_m": 53
+		},
+		{
+			"name": "En memòria de la primera falla d´Alzira",
+			"type": "patrimonio",
+			"lat": 39.1522905,
+			"lon": -0.4406049,
+			"km": 17.3,
+			"dist_m": 65
+		},
+		{
+			"name": "Placa del Parc d´ Arabia Saudí",
+			"type": "patrimonio",
+			"lat": 39.1523176,
+			"lon": -0.4440274,
+			"km": 17.6,
+			"dist_m": 67
+		},
+		{
+			"name": "Ogiva de Santa Maria",
+			"type": "patrimonio",
+			"lat": 39.1536886,
+			"lon": -0.4459362,
+			"km": 17.8,
+			"dist_m": 13
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-304", "sl-cv-81", "pr-cv-334"],
-	"enriched_at": "2026-06-11T17:37:11.059Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-304",
+		"sl-cv-81",
+		"pr-cv-334"
+	],
+	"enriched_at": "2026-06-20T08:23:14.616Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

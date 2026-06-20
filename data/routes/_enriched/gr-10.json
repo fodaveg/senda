@@ -26,8 +26,288 @@
 		"Fuente (km 91.9, a 47 m del track; OSM, no verificado en campo)",
 		"Fuente (km 97.2, a 4 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font del Campaner",
+			"kind": "manantial",
+			"lat": 39.6729588,
+			"lon": -0.3706119,
+			"km": 11.2,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6811158,
+			"lon": -0.3733771,
+			"km": 12.4,
+			"dist_m": 85
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6816552,
+			"lon": -0.3742757,
+			"km": 12.5,
+			"dist_m": 4
+		},
+		{
+			"name": "Font de Sant Josep",
+			"kind": "manantial",
+			"lat": 39.6818892,
+			"lon": -0.376336,
+			"km": 12.6,
+			"dist_m": 65
+		},
+		{
+			"name": "Font del Catxorro",
+			"kind": "manantial",
+			"lat": 39.6997093,
+			"lon": -0.386094,
+			"km": 17.7,
+			"dist_m": 19
+		},
+		{
+			"name": "Font de Barraix",
+			"kind": "fuente",
+			"lat": 39.6982837,
+			"lon": -0.3943749,
+			"km": 18.6,
+			"dist_m": 9
+		},
+		{
+			"name": "Font de l'Ombria",
+			"kind": "manantial",
+			"lat": 39.692749,
+			"lon": -0.4137949,
+			"km": 20.8,
+			"dist_m": 73
+		},
+		{
+			"name": "Font de la Salut",
+			"kind": "manantial",
+			"lat": 39.6876361,
+			"lon": -0.4273819,
+			"km": 22.9,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6943165,
+			"lon": -0.4247958,
+			"km": 23.9,
+			"dist_m": 52
+		},
+		{
+			"name": "Font de Sant Antoni",
+			"kind": "manantial",
+			"lat": 39.6955486,
+			"lon": -0.4245635,
+			"km": 24,
+			"dist_m": 29
+		},
+		{
+			"name": "Font de Marianet",
+			"kind": "manantial",
+			"lat": 39.6957257,
+			"lon": -0.4258963,
+			"km": 24.1,
+			"dist_m": 5
+		},
+		{
+			"name": "Font de la Prunera",
+			"kind": "manantial",
+			"lat": 39.7043445,
+			"lon": -0.4387701,
+			"km": 27,
+			"dist_m": 1
+		},
+		{
+			"name": "Font del Mugró",
+			"kind": "manantial",
+			"lat": 39.7064935,
+			"lon": -0.4447894,
+			"km": 28.2,
+			"dist_m": 19
+		},
+		{
+			"name": "Font del Llentiscle",
+			"kind": "manantial",
+			"lat": 39.7124759,
+			"lon": -0.4518959,
+			"km": 29.4,
+			"dist_m": 8
+		},
+		{
+			"name": "Font del Poll",
+			"kind": "manantial",
+			"lat": 39.7155861,
+			"lon": -0.4644704,
+			"km": 31,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente de Tristán",
+			"kind": "manantial",
+			"lat": 39.7352788,
+			"lon": -0.480763,
+			"km": 34.9,
+			"dist_m": 25
+		},
+		{
+			"name": "Fuente de los 15 Caños",
+			"kind": "fuente",
+			"lat": 39.7707489,
+			"lon": -0.5219474,
+			"km": 43.4,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.7705105,
+			"lon": -0.5222786,
+			"km": 43.4,
+			"dist_m": 24
+		},
+		{
+			"name": "Fuente de la Fonf",
+			"kind": "manantial",
+			"lat": 39.7687888,
+			"lon": -0.5361422,
+			"km": 44.9,
+			"dist_m": 9
+		},
+		{
+			"name": "Fuente del Hontanar",
+			"kind": "manantial",
+			"lat": 39.834091,
+			"lon": -0.6131106,
+			"km": 60.8,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8513956,
+			"lon": -0.7146516,
+			"km": 77,
+			"dist_m": 30
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8496866,
+			"lon": -0.7179852,
+			"km": 77.3,
+			"dist_m": 78
+		},
+		{
+			"name": "Fuente del Señor",
+			"kind": "fuente",
+			"lat": 39.8556978,
+			"lon": -0.7939585,
+			"km": 88.8,
+			"dist_m": 22
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8358366,
+			"lon": -0.813406,
+			"km": 91.9,
+			"dist_m": 47
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8669585,
+			"lon": -0.8083908,
+			"km": 97.2,
+			"dist_m": 4
+		}
+	],
+	"pois": [
+		{
+			"name": "Pic de l'Àguila",
+			"type": "cumbre",
+			"lat": 39.6681345,
+			"lon": -0.3611245,
+			"km": 9.6,
+			"dist_m": 96
+		},
+		{
+			"name": "Castell de Segart",
+			"type": "patrimonio",
+			"lat": 39.6838983,
+			"lon": -0.3725149,
+			"km": 12.8,
+			"dist_m": 126
+		},
+		{
+			"name": "el Bord",
+			"type": "cumbre",
+			"lat": 39.68829,
+			"lon": -0.3799256,
+			"km": 14.9,
+			"dist_m": 32
+		},
+		{
+			"name": "Pico de Tristán",
+			"type": "cumbre",
+			"lat": 39.7358925,
+			"lon": -0.4738021,
+			"km": 34.2,
+			"dist_m": 103
+		},
+		{
+			"name": "la Buitrera",
+			"type": "cumbre",
+			"lat": 39.7722546,
+			"lon": -0.5107276,
+			"km": 41.7,
+			"dist_m": 54
+		},
+		{
+			"name": "Cerro de la Rodena",
+			"type": "cumbre",
+			"lat": 39.8355634,
+			"lon": -0.6737557,
+			"km": 72,
+			"dist_m": 36
+		},
+		{
+			"name": "Lomica de en Medio",
+			"type": "cumbre",
+			"lat": 39.842421,
+			"lon": -0.7364966,
+			"km": 80.3,
+			"dist_m": 93
+		},
+		{
+			"name": "Bellida",
+			"type": "cumbre",
+			"lat": 39.8485969,
+			"lon": -0.7401262,
+			"km": 81.2,
+			"dist_m": 90
+		},
+		{
+			"name": "Refugio Bardés",
+			"type": "refugio",
+			"lat": 39.8672077,
+			"lon": -0.808912,
+			"km": 97,
+			"dist_m": 23
+		}
+	],
 	"shade_ratio": 0.07,
-	"alternatives": ["gr-10-e01", "sl-cv-42", "pr-cv-319"],
-	"enriched_at": "2026-06-11T17:35:03.813Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-10-e01",
+		"sl-cv-42",
+		"pr-cv-319"
+	],
+	"enriched_at": "2026-06-20T08:17:41.764Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

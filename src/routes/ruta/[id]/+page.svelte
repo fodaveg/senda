@@ -68,6 +68,9 @@
 	let travelOrigin = $state<{ lat: number; lon: number } | null>(null);
 	let checkedItems = new SvelteSet<string>();
 	let profileHover = $state<[number, number] | null>(null);
+	// Capas de datos sobre el mapa (SPECS_V3 §5): visibles por defecto.
+	let showWater = $state(true);
+	let showPois = $state(true);
 	let offlineTiles = $state<number | null>(null);
 	let downloadProgress = $state<string | null>(null);
 	let travelStatus = $state<string | null>(null);
@@ -349,13 +352,38 @@
 	<section class="map-col">
 		<div class="map-wrap">
 			{#if geojson}
-				<Map track={geojson} bbox={route.bbox} highlight={profileHover} />
+				<Map
+					track={geojson}
+					bbox={route.bbox}
+					highlight={profileHover}
+					water={route.water_points_geo ?? []}
+					pois={route.pois ?? []}
+					{showWater}
+					{showPois}
+				/>
 			{:else if trackError}
 				<p class="error">No se pudo cargar el track: {trackError}</p>
 			{:else}
 				<p class="loading">Cargando track…</p>
 			{/if}
 		</div>
+
+		{#if (route.water_points_geo ?? []).length > 0 || (route.pois ?? []).length > 0}
+			<div class="map-toggles no-print">
+				{#if (route.water_points_geo ?? []).length > 0}
+					<label>
+						<input type="checkbox" bind:checked={showWater} />
+						💧 Fuentes ({route.water_points_geo.length})
+					</label>
+				{/if}
+				{#if (route.pois ?? []).length > 0}
+					<label>
+						<input type="checkbox" bind:checked={showPois} />
+						📍 Puntos de interés ({route.pois.length})
+					</label>
+				{/if}
+			</div>
+		{/if}
 
 		{#if route.bbox}
 			<div class="offline-map no-print">
@@ -576,6 +604,19 @@
 </div>
 
 <style>
+	.map-toggles {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1rem;
+		margin-top: 0.5rem;
+		font-size: 0.88rem;
+	}
+	.map-toggles label {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
+		cursor: pointer;
+	}
 	.stages-section {
 		margin-top: 1rem;
 	}

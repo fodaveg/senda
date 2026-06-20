@@ -38,6 +38,330 @@
 		"Fuente (km 75.8, a 20 m del track; OSM, no verificado en campo)",
 		"Fuente (km 76.0, a 70 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9662015,
+			"lon": -0.1817041,
+			"km": 0.5,
+			"dist_m": 71
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9434598,
+			"lon": -0.1818764,
+			"km": 3.3,
+			"dist_m": 96
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9325535,
+			"lon": -0.254527,
+			"km": 13.3,
+			"dist_m": 13
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9327147,
+			"lon": -0.2590265,
+			"km": 14.3,
+			"dist_m": 96
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9169435,
+			"lon": -0.284887,
+			"km": 19.1,
+			"dist_m": 16
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9432453,
+			"lon": -0.3546041,
+			"km": 28.8,
+			"dist_m": 57
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.9832073,
+			"lon": -0.3404739,
+			"km": 36.5,
+			"dist_m": 12
+		},
+		{
+			"name": "Font del Gamelló",
+			"kind": "manantial",
+			"lat": 39.0114401,
+			"lon": -0.3103839,
+			"km": 42.2,
+			"dist_m": 68
+		},
+		{
+			"name": "Font de la Betina",
+			"kind": "fuente",
+			"lat": 39.0107723,
+			"lon": -0.3071313,
+			"km": 42.6,
+			"dist_m": 22
+		},
+		{
+			"name": "Font del Teular",
+			"kind": "fuente",
+			"lat": 39.0104152,
+			"lon": -0.3061416,
+			"km": 42.6,
+			"dist_m": 89
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0415802,
+			"lon": -0.3075273,
+			"km": 48,
+			"dist_m": 20
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.0418705,
+			"lon": -0.3073954,
+			"km": 48,
+			"dist_m": 38
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.042311,
+			"lon": -0.3086614,
+			"km": 48.1,
+			"dist_m": 57
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.1004114,
+			"lon": -0.3688909,
+			"km": 58.5,
+			"dist_m": 34
+		},
+		{
+			"name": "Font Nova",
+			"kind": "manantial",
+			"lat": 39.1100791,
+			"lon": -0.3437453,
+			"km": 64,
+			"dist_m": 29
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.15108,
+			"lon": -0.4370169,
+			"km": 75.5,
+			"dist_m": 34
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.151753,
+			"lon": -0.4412752,
+			"km": 75.8,
+			"dist_m": 20
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.152155,
+			"lon": -0.4432696,
+			"km": 76,
+			"dist_m": 70
+		}
+	],
+	"pois": [
+		{
+			"name": "Locomotora",
+			"type": "patrimonio",
+			"lat": 38.9697723,
+			"lon": -0.1787121,
+			"km": 0,
+			"dist_m": 106
+		},
+		{
+			"name": "Rei Jaume I",
+			"type": "patrimonio",
+			"lat": 38.966432,
+			"lon": -0.1816534,
+			"km": 0.4,
+			"dist_m": 61
+		},
+		{
+			"name": "Alfarerìa romana",
+			"type": "patrimonio",
+			"lat": 38.9391138,
+			"lon": -0.1868598,
+			"km": 3.9,
+			"dist_m": 105
+		},
+		{
+			"name": "Acueducto de Vistabella",
+			"type": "patrimonio",
+			"lat": 38.9308065,
+			"lon": -0.2053284,
+			"km": 6.7,
+			"dist_m": 147
+		},
+		{
+			"name": "Ceràmica a la Verge de la Salud",
+			"type": "patrimonio",
+			"lat": 38.9330904,
+			"lon": -0.2590699,
+			"km": 14.3,
+			"dist_m": 130
+		},
+		{
+			"name": "Ermita de la Mare de Deú de la Consolació",
+			"type": "patrimonio",
+			"lat": 38.9502712,
+			"lon": -0.3556789,
+			"km": 29.7,
+			"dist_m": 49
+		},
+		{
+			"name": "Convent del Corpus Christi",
+			"type": "patrimonio",
+			"lat": 38.9524556,
+			"lon": -0.3552596,
+			"km": 29.9,
+			"dist_m": 43
+		},
+		{
+			"name": "Tossal de la Creu",
+			"type": "cumbre",
+			"lat": 38.9796705,
+			"lon": -0.3513062,
+			"km": 35,
+			"dist_m": 33
+		},
+		{
+			"name": "Penya del Romaní",
+			"type": "cumbre",
+			"lat": 38.9889552,
+			"lon": -0.3340463,
+			"km": 37.8,
+			"dist_m": 135
+		},
+		{
+			"name": "Mirador de la Visteta",
+			"type": "mirador",
+			"lat": 39.0254296,
+			"lon": -0.308587,
+			"km": 45.4,
+			"dist_m": 30
+		},
+		{
+			"name": "Tarima del rio",
+			"type": "mirador",
+			"lat": 39.0424482,
+			"lon": -0.3084083,
+			"km": 48.1,
+			"dist_m": 49
+		},
+		{
+			"name": "Muntanyeta de Sant Salvador",
+			"type": "cumbre",
+			"lat": 39.1525691,
+			"lon": -0.4186231,
+			"km": 73.4,
+			"dist_m": 19
+		},
+		{
+			"name": "Casalicis del Pont de Sant Bernat",
+			"type": "patrimonio",
+			"lat": 39.1510611,
+			"lon": -0.4379021,
+			"km": 75.5,
+			"dist_m": 56
+		},
+		{
+			"name": "Monument a les Falles",
+			"type": "patrimonio",
+			"lat": 39.1505293,
+			"lon": -0.4368822,
+			"km": 75.5,
+			"dist_m": 87
+		},
+		{
+			"name": "Panel cerámico San Isidro Labrador",
+			"type": "patrimonio",
+			"lat": 39.1523033,
+			"lon": -0.4394132,
+			"km": 75.7,
+			"dist_m": 74
+		},
+		{
+			"name": "Centre Històric de la Vila",
+			"type": "patrimonio",
+			"lat": 39.152018,
+			"lon": -0.440846,
+			"km": 75.8,
+			"dist_m": 29
+		},
+		{
+			"name": "Monument als gossos i gats abandonats",
+			"type": "patrimonio",
+			"lat": 39.1517363,
+			"lon": -0.4402661,
+			"km": 75.8,
+			"dist_m": 4
+		},
+		{
+			"name": "Retaule de la mort de Jaume I",
+			"type": "patrimonio",
+			"lat": 39.1516851,
+			"lon": -0.440262,
+			"km": 75.8,
+			"dist_m": 9
+		},
+		{
+			"name": "Placa de la Constitució de1837",
+			"type": "patrimonio",
+			"lat": 39.1513971,
+			"lon": -0.4406989,
+			"km": 75.8,
+			"dist_m": 53
+		},
+		{
+			"name": "En memòria de la primera falla d´Alzira",
+			"type": "patrimonio",
+			"lat": 39.1522905,
+			"lon": -0.4406049,
+			"km": 75.8,
+			"dist_m": 65
+		},
+		{
+			"name": "Placa del Parc d´ Arabia Saudí",
+			"type": "patrimonio",
+			"lat": 39.1523176,
+			"lon": -0.4440274,
+			"km": 76.1,
+			"dist_m": 67
+		},
+		{
+			"name": "Ogiva de Santa Maria",
+			"type": "patrimonio",
+			"lat": 39.1536886,
+			"lon": -0.4459362,
+			"km": 76.3,
+			"dist_m": 13
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -62,7 +386,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-236 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-236.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -22,6 +22,34 @@
 		"Manantial (km 4.5, a 38 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente del Pocillo\" (km 15.7, a 19 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 39.6000556,
+			"lon": -1.1106706,
+			"km": 4.5,
+			"dist_m": 38
+		},
+		{
+			"name": "Fuente del Pocillo",
+			"kind": "manantial",
+			"lat": 39.5955839,
+			"lon": -1.0629928,
+			"km": 15.7,
+			"dist_m": 19
+		}
+	],
+	"pois": [
+		{
+			"name": "Carbonero",
+			"type": "cumbre",
+			"lat": 39.6204524,
+			"lon": -1.1371996,
+			"km": 0.5,
+			"dist_m": 11
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -46,7 +74,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-238-e07 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-238-e07.gpx (derivados: inicio, bbox)"
 	]
 }

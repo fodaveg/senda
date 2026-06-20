@@ -25,6 +25,98 @@
 		"Manantial \"Fuente de los Arcos\" (km 19.0, a 51 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente Los Cloticos\" (km 22.3, a 31 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de Chorra",
+			"kind": "manantial",
+			"lat": 39.9122225,
+			"lon": -0.5742381,
+			"km": 0.2,
+			"dist_m": 72
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9129453,
+			"lon": -0.5770515,
+			"km": 0.5,
+			"dist_m": 79
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.9004173,
+			"lon": -0.6577798,
+			"km": 11.8,
+			"dist_m": 89
+		},
+		{
+			"name": "Fuente de los Arcos",
+			"kind": "manantial",
+			"lat": 39.909964,
+			"lon": -0.7108635,
+			"km": 19,
+			"dist_m": 51
+		},
+		{
+			"name": "Fuente Los Cloticos",
+			"kind": "manantial",
+			"lat": 39.925672,
+			"lon": -0.7341816,
+			"km": 22.3,
+			"dist_m": 31
+		}
+	],
+	"pois": [
+		{
+			"name": "Arco del Hospital",
+			"type": "patrimonio",
+			"lat": 39.9123474,
+			"lon": -0.5714343,
+			"km": 0,
+			"dist_m": 112
+		},
+		{
+			"name": "Trincheras de la Guerra Civil",
+			"type": "patrimonio",
+			"lat": 39.9121213,
+			"lon": -0.5784442,
+			"km": 0.5,
+			"dist_m": 109
+		},
+		{
+			"name": "Cova del Sargal",
+			"type": "patrimonio",
+			"lat": 39.913024,
+			"lon": -0.5932592,
+			"km": 2,
+			"dist_m": 113
+		},
+		{
+			"name": "La fabrica de la luz",
+			"type": "patrimonio",
+			"lat": 39.9052056,
+			"lon": -0.5974192,
+			"km": 2.8,
+			"dist_m": 134
+		},
+		{
+			"name": "Peña del Calvo",
+			"type": "cumbre",
+			"lat": 39.9503014,
+			"lon": -0.7405731,
+			"km": 26.9,
+			"dist_m": 142
+		},
+		{
+			"name": "Cruz de los Caídos",
+			"type": "patrimonio",
+			"lat": 39.9826084,
+			"lon": -0.7487258,
+			"km": 31.9,
+			"dist_m": 107
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -49,7 +141,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-231 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-231.gpx (derivados: inicio, bbox)"
 	]
 }

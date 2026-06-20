@@ -4,8 +4,39 @@
 		"Fuente (km 5.5, a 66 m del track; OSM, no verificado en campo)",
 		"Fuente \"Fuente de Mosen Lucas\" (km 5.5, a 14 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fte. Del Cerro Negro",
+			"kind": "manantial",
+			"lat": 39.631399,
+			"lon": -0.9050404,
+			"km": 3.7,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.6227523,
+			"lon": -0.9092503,
+			"km": 5.5,
+			"dist_m": 66
+		},
+		{
+			"name": "Fuente de Mosen Lucas",
+			"kind": "fuente",
+			"lat": 39.6232797,
+			"lon": -0.9095481,
+			"km": 5.5,
+			"dist_m": 14
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.11,
-	"alternatives": ["sl-cv-74", "sl-cv-72", "sl-cv-71"],
-	"enriched_at": "2026-06-11T19:38:49.977Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-74",
+		"sl-cv-72",
+		"sl-cv-71"
+	],
+	"enriched_at": "2026-06-20T08:28:25.553Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

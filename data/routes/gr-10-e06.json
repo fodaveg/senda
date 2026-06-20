@@ -29,6 +29,58 @@
 		"Fuente \"Fuente del Señor\" (km 11.8, a 22 m del track; OSM, no verificado en campo)",
 		"Fuente (km 14.9, a 47 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8513956,
+			"lon": -0.7146516,
+			"km": 0,
+			"dist_m": 30
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8496866,
+			"lon": -0.7179852,
+			"km": 0.4,
+			"dist_m": 78
+		},
+		{
+			"name": "Fuente del Señor",
+			"kind": "fuente",
+			"lat": 39.8556978,
+			"lon": -0.7939585,
+			"km": 11.8,
+			"dist_m": 22
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8358366,
+			"lon": -0.813406,
+			"km": 14.9,
+			"dist_m": 47
+		}
+	],
+	"pois": [
+		{
+			"name": "Lomica de en Medio",
+			"type": "cumbre",
+			"lat": 39.842421,
+			"lon": -0.7364966,
+			"km": 3.4,
+			"dist_m": 93
+		},
+		{
+			"name": "Bellida",
+			"type": "cumbre",
+			"lat": 39.8485969,
+			"lon": -0.7401262,
+			"km": 4.2,
+			"dist_m": 90
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -53,7 +105,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-10-e06 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-10-e06.gpx (derivados: inicio, bbox)"
 	]
 }
