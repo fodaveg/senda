@@ -3,8 +3,48 @@
 		"Manantial \"Font de la Penya de l'Hedra\" (km 2.7, a 64 m del track; OSM, no verificado en campo)",
 		"Manantial \"Font de Ferri\" (km 4.0, a 3 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Penya de l'Hedra",
+			"kind": "manantial",
+			"lat": 38.8729951,
+			"lon": -0.3270686,
+			"km": 2.7,
+			"dist_m": 64
+		},
+		{
+			"name": "Font de Ferri",
+			"kind": "manantial",
+			"lat": 38.8819323,
+			"lon": -0.3343014,
+			"km": 4,
+			"dist_m": 3
+		}
+	],
+	"pois": [
+		{
+			"name": "Penya de l'Heura",
+			"type": "cumbre",
+			"lat": 38.8754644,
+			"lon": -0.3324414,
+			"km": 2.1,
+			"dist_m": 116
+		},
+		{
+			"name": "Forn de calç",
+			"type": "patrimonio",
+			"lat": 38.874549,
+			"lon": -0.3284005,
+			"km": 2.9,
+			"dist_m": 8
+		}
+	],
 	"shade_ratio": 0.64,
-	"alternatives": ["sl-cv-84", "sl-cv-83", "sl-cv-44"],
-	"enriched_at": "2026-06-11T18:43:15.344Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-84",
+		"sl-cv-83",
+		"sl-cv-44"
+	],
+	"enriched_at": "2026-06-20T10:26:05.772Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

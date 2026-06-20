@@ -1,7 +1,57 @@
 {
-	"water_points": ["Fuente (km 0.3, a 1 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 0.3, a 1 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8016415,
+			"lon": -0.4121187,
+			"km": 0.3,
+			"dist_m": 1
+		}
+	],
+	"pois": [
+		{
+			"name": "Alto de la Fuente",
+			"type": "patrimonio",
+			"lat": 39.8012963,
+			"lon": -0.4113376,
+			"km": 0.4,
+			"dist_m": 66
+		},
+		{
+			"name": "Monte de la Rochina",
+			"type": "cumbre",
+			"lat": 39.7938747,
+			"lon": -0.3924357,
+			"km": 3.3,
+			"dist_m": 120
+		},
+		{
+			"name": "Pueblo Ibero de la Rochina",
+			"type": "patrimonio",
+			"lat": 39.7929493,
+			"lon": -0.3951854,
+			"km": 3.5,
+			"dist_m": 40
+		},
+		{
+			"name": "Alto de los Moros",
+			"type": "cumbre",
+			"lat": 39.7928546,
+			"lon": -0.3950256,
+			"km": 3.5,
+			"dist_m": 24
+		}
+	],
 	"shade_ratio": null,
-	"alternatives": ["sl-cv-116", "pr-cv-320", "pr-cv-461"],
-	"enriched_at": "2026-06-11T19:49:42.529Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-116",
+		"pr-cv-320",
+		"pr-cv-461"
+	],
+	"enriched_at": "2026-06-20T10:24:52.866Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

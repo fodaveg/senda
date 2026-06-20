@@ -10,8 +10,104 @@
 		"Fuente (km 20.4, a 27 m del track; OSM, no verificado en campo)",
 		"Fuente (km 20.4, a 100 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.7056285,
+			"lon": 0.1701152,
+			"km": 0,
+			"dist_m": 54
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.7053467,
+			"lon": 0.1712214,
+			"km": 0.1,
+			"dist_m": 38
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.6791711,
+			"lon": 0.1206582,
+			"km": 6.2,
+			"dist_m": 5
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6796906,
+			"lon": 0.1202439,
+			"km": 6.4,
+			"dist_m": 33
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6798589,
+			"lon": 0.1187227,
+			"km": 6.6,
+			"dist_m": 5
+		},
+		{
+			"name": "Font de la Gatellera",
+			"kind": "manantial",
+			"lat": 40.618561,
+			"lon": 0.0497887,
+			"km": 17.9,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6032969,
+			"lon": 0.0462376,
+			"km": 20.4,
+			"dist_m": 27
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6029115,
+			"lon": 0.0469821,
+			"km": 20.4,
+			"dist_m": 100
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.6028505,
+			"lon": 0.0455741,
+			"km": 20.4,
+			"dist_m": 56
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de la Placeta",
+			"type": "mirador",
+			"lat": 40.6028629,
+			"lon": 0.04626,
+			"km": 20.4,
+			"dist_m": 56
+		},
+		{
+			"name": "el Portal",
+			"type": "patrimonio",
+			"lat": 40.60302,
+			"lon": 0.0460313,
+			"km": 20.4,
+			"dist_m": 32
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["gr-7-e24", "gr-7", "gr-331-e11"],
-	"enriched_at": "2026-06-11T19:03:10.098Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-7-e24",
+		"gr-7",
+		"gr-331-e11"
+	],
+	"enriched_at": "2026-06-20T10:20:19.495Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

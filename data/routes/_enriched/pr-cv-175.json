@@ -1,7 +1,41 @@
 {
-	"water_points": ["Fuente (km 8.6, a 7 m del track; OSM, no verificado en campo)"],
+	"water_points": [
+		"Fuente (km 8.6, a 7 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.5388073,
+			"lon": -0.617958,
+			"km": 8.6,
+			"dist_m": 7
+		}
+	],
+	"pois": [
+		{
+			"name": "la Rodana del Pic",
+			"type": "cumbre",
+			"lat": 39.54181,
+			"lon": -0.6077768,
+			"km": 5,
+			"dist_m": 16
+		},
+		{
+			"name": "La Rodana",
+			"type": "cumbre",
+			"lat": 39.5429235,
+			"lon": -0.6264416,
+			"km": 11,
+			"dist_m": 2
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-301", "sl-cv-125", "sl-cv-78"],
-	"enriched_at": "2026-06-11T17:57:16.605Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-301",
+		"sl-cv-125",
+		"sl-cv-78"
+	],
+	"enriched_at": "2026-06-20T10:28:43.802Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

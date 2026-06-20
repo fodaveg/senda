@@ -3,8 +3,56 @@
 		"Fuente \"Font de la Vila\" (km 0.0, a 30 m del track; OSM, no verificado en campo)",
 		"Manantial (km 2.5, a 14 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de la Vila",
+			"kind": "fuente",
+			"lat": 40.4569257,
+			"lon": -0.13193,
+			"km": 0,
+			"dist_m": 30
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 40.4499289,
+			"lon": -0.1260341,
+			"km": 2.5,
+			"dist_m": 14
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador Ares del Maestrat",
+			"type": "mirador",
+			"lat": 40.4552747,
+			"lon": -0.1317411,
+			"km": 5.4,
+			"dist_m": 87
+		},
+		{
+			"name": "En record de les víctimes dels bombardejos de la Legió Cóndor",
+			"type": "patrimonio",
+			"lat": 40.4560077,
+			"lon": -0.1310526,
+			"km": 5.5,
+			"dist_m": 11
+		},
+		{
+			"name": "Alfredo Rovira Pitarch",
+			"type": "patrimonio",
+			"lat": 40.4560048,
+			"lon": -0.1310445,
+			"km": 5.5,
+			"dist_m": 12
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["gr-331-e15", "pr-cv-387", "sl-cv-46"],
-	"enriched_at": "2026-06-11T19:54:24.409Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-331-e15",
+		"pr-cv-387",
+		"sl-cv-46"
+	],
+	"enriched_at": "2026-06-20T10:29:31.783Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

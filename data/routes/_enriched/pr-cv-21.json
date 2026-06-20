@@ -10,8 +10,87 @@
 		"Manantial \"Font de l'Espinal\" (km 8.0, a 6 m del track; OSM, no verificado en campo)",
 		"Manantial (km 8.0, a 9 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de Partegat",
+			"kind": "manantial",
+			"lat": 38.6573244,
+			"lon": -0.241888,
+			"km": 0,
+			"dist_m": 28
+		},
+		{
+			"name": "Font Vella",
+			"kind": "manantial",
+			"lat": 38.6541601,
+			"lon": -0.2437289,
+			"km": 0.7,
+			"dist_m": 16
+		},
+		{
+			"name": "Fonteta de Giner",
+			"kind": "manantial",
+			"lat": 38.6555729,
+			"lon": -0.2498905,
+			"km": 1.3,
+			"dist_m": 9
+		},
+		{
+			"name": "Font de l'Anouer",
+			"kind": "manantial",
+			"lat": 38.6546786,
+			"lon": -0.2545867,
+			"km": 1.8,
+			"dist_m": 1
+		},
+		{
+			"name": "Font de Forata",
+			"kind": "manantial",
+			"lat": 38.6532137,
+			"lon": -0.2628302,
+			"km": 2.6,
+			"dist_m": 31
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.6621795,
+			"lon": -0.2903534,
+			"km": 6.1,
+			"dist_m": 6
+		},
+		{
+			"name": "Font de l'Arbre",
+			"kind": "manantial",
+			"lat": 38.6623478,
+			"lon": -0.2904302,
+			"km": 6.1,
+			"dist_m": 26
+		},
+		{
+			"name": "Font de l'Espinal",
+			"kind": "manantial",
+			"lat": 38.6592332,
+			"lon": -0.3084262,
+			"km": 8,
+			"dist_m": 6
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 38.6593185,
+			"lon": -0.3084782,
+			"km": 8,
+			"dist_m": 9
+		}
+	],
+	"pois": [],
 	"shade_ratio": 0.19,
-	"alternatives": ["pr-cv-464", "pr-cv-198", "pr-cv-9"],
-	"enriched_at": "2026-06-11T17:59:37.777Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-464",
+		"pr-cv-198",
+		"pr-cv-9"
+	],
+	"enriched_at": "2026-06-20T10:22:20.579Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

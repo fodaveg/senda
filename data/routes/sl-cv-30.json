@@ -27,7 +27,24 @@
 		"Fuente (km 0.2, a 10 m del track; OSM, no verificado en campo)",
 		"Fuente (km 0.5, a 12 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8675437,
+			"lon": -1.0812205,
+			"km": 0.2,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 39.8697571,
+			"lon": -1.0796066,
+			"km": 0.5,
+			"dist_m": 12
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -53,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-30 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-30.gpx (derivados: inicio, bbox)"
 	]
 }

@@ -1,7 +1,22 @@
 {
 	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Tossal Gros",
+			"type": "cumbre",
+			"lat": 38.7597441,
+			"lon": -0.0504292,
+			"km": 3.4,
+			"dist_m": 2
+		}
+	],
 	"shade_ratio": 0,
-	"alternatives": ["pr-cv-158", "pr-cv-425", "pr-cv-426"],
-	"enriched_at": "2026-06-11T19:51:25.529Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-158",
+		"pr-cv-425",
+		"pr-cv-426"
+	],
+	"enriched_at": "2026-06-20T10:24:58.345Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

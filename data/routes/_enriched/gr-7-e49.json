@@ -4,8 +4,72 @@
 		"Fuente (km 0.2, a 9 m del track; OSM, no verificado en campo)",
 		"Fuente (km 13.9, a 13 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font Roja",
+			"kind": "fuente",
+			"lat": 38.6648971,
+			"lon": -0.5403383,
+			"km": 0,
+			"dist_m": 24
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.6642017,
+			"lon": -0.5390523,
+			"km": 0.2,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.6322745,
+			"lon": -0.6518809,
+			"km": 13.9,
+			"dist_m": 13
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de la Mina",
+			"type": "mirador",
+			"lat": 38.6643072,
+			"lon": -0.5420955,
+			"km": 0.4,
+			"dist_m": 46
+		},
+		{
+			"name": "Mirador de Pilatos",
+			"type": "mirador",
+			"lat": 38.6614006,
+			"lon": -0.5529299,
+			"km": 1.6,
+			"dist_m": 27
+		},
+		{
+			"name": "Cabeç Ras",
+			"type": "cumbre",
+			"lat": 38.6580912,
+			"lon": -0.5669305,
+			"km": 3.2,
+			"dist_m": 131
+		},
+		{
+			"name": "el Pilar de Ximo",
+			"type": "cumbre",
+			"lat": 38.657723,
+			"lon": -0.5762565,
+			"km": 4.1,
+			"dist_m": 54
+		}
+	],
 	"shade_ratio": 0.05,
-	"alternatives": ["pr-cv-26", "pr-cv-170", "pr-cv-127"],
-	"enriched_at": "2026-06-11T19:05:32.627Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-26",
+		"pr-cv-170",
+		"pr-cv-127"
+	],
+	"enriched_at": "2026-06-20T10:21:04.939Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

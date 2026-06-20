@@ -3,8 +3,56 @@
 		"Manantial \"Font de Sant Miquel\" (km 0.0, a 28 m del track; OSM, no verificado en campo)",
 		"Fuente (km 16.6, a 57 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Font de Sant Miquel",
+			"kind": "manantial",
+			"lat": 40.4633804,
+			"lon": -0.3096076,
+			"km": 0,
+			"dist_m": 28
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.4297733,
+			"lon": -0.2524491,
+			"km": 16.6,
+			"dist_m": 57
+		}
+	],
+	"pois": [
+		{
+			"name": "Tossalet del Pou de la Vila",
+			"type": "cumbre",
+			"lat": 40.4627876,
+			"lon": -0.2558324,
+			"km": 6.1,
+			"dist_m": 13
+		},
+		{
+			"name": "Peiró de Sant Pere",
+			"type": "patrimonio",
+			"lat": 40.4609502,
+			"lon": -0.2481156,
+			"km": 6.8,
+			"dist_m": 5
+		},
+		{
+			"name": "Peiró de Sant Isidre",
+			"type": "patrimonio",
+			"lat": 40.4477558,
+			"lon": -0.209099,
+			"km": 11.5,
+			"dist_m": 35
+		}
+	],
 	"shade_ratio": 0.12,
-	"alternatives": ["sl-cv-18-1", "sl-cv-130", "gr-331"],
-	"enriched_at": "2026-06-11T18:18:44.011Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"sl-cv-18-1",
+		"sl-cv-130",
+		"gr-331"
+	],
+	"enriched_at": "2026-06-20T10:23:18.609Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

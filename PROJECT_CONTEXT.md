@@ -35,11 +35,9 @@ material custom y aviso `warn` · M7 apariencia (toggle de tema + paletas).
 
 ## Prioridades actuales
 
-1. Terminar el **re-enrich completo** de agua/POIs (en curso) → `npm run ingest
--- --lenient` → commitear el dato completo en `v3`.
-2. **Backlog de pulido** ([SPECS_V3_PULIDO.md](SPECS_V3_PULIDO.md)), prioridad
+1. **Backlog de pulido** ([SPECS_V3_PULIDO.md](SPECS_V3_PULIDO.md)), prioridad
    [A] primero.
-3. Validar `v3` y **mergear a `main`** (la CI publica a Pages).
+2. Validar `v3` y **mergear a `main`** (la CI publica a Pages).
 
 ## Bloqueos
 
@@ -49,8 +47,8 @@ material custom y aviso `warn` · M7 apariencia (toggle de tema + paletas).
 
 ## Áreas activas
 
-- Datos: re-enrich OSM (agua/POIs) — proceso en background.
-- Pulido de v3 (ver backlog).
+- Pulido de v3 (ver backlog). El re-enrich OSM (agua/POIs, **585/585**) está
+  completado y commiteado.
 
 ## Documentación
 

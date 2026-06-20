@@ -4,8 +4,56 @@
 		"Fuente (km 7.9, a 12 m del track; OSM, no verificado en campo)",
 		"Fuente (km 7.9, a 45 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0172831,
+			"lon": -0.6532586,
+			"km": 7.5,
+			"dist_m": 16
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0214477,
+			"lon": -0.6533228,
+			"km": 7.9,
+			"dist_m": 45
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0204857,
+			"lon": -0.6538175,
+			"km": 7.9,
+			"dist_m": 12
+		}
+	],
+	"pois": [
+		{
+			"name": "Cova Cerdaña",
+			"type": "patrimonio",
+			"lat": 40.0000177,
+			"lon": -0.6121347,
+			"km": 1.9,
+			"dist_m": 8
+		},
+		{
+			"name": "Corrales de la Cerdaña",
+			"type": "patrimonio",
+			"lat": 40.0078447,
+			"lon": -0.6273611,
+			"km": 4.5,
+			"dist_m": 32
+		}
+	],
 	"shade_ratio": 0.03,
-	"alternatives": ["gr-7-e34", "gr-160-e04", "sl-cv-105"],
-	"enriched_at": "2026-06-11T18:28:55.594Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"gr-7-e34",
+		"gr-160-e04",
+		"sl-cv-105"
+	],
+	"enriched_at": "2026-06-20T10:24:02.403Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

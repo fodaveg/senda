@@ -27,7 +27,24 @@
 		"Manantial \"Fuente de la Mota\" (km 0.2, a 13 m del track; OSM, no verificado en campo)",
 		"Manantial \"Fuente Lucena\" (km 3.3, a 6 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Mota",
+			"kind": "manantial",
+			"lat": 38.9735331,
+			"lon": -0.6833919,
+			"km": 0.2,
+			"dist_m": 13
+		},
+		{
+			"name": "Fuente Lucena",
+			"kind": "manantial",
+			"lat": 38.9824671,
+			"lon": -0.6689894,
+			"km": 3.3,
+			"dist_m": 6
+		}
+	],
 	"pois": [],
 	"escape_routes": [],
 	"highlights": [],
@@ -53,7 +70,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-6 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-6.gpx (derivados: inicio, bbox)"
 	]
 }

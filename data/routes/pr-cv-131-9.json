@@ -29,8 +29,50 @@
 		"Manantial \"Fuente la Cueva\" (km 9.3, a 11 m del track; OSM, no verificado en campo)",
 		"Fuente (km 19.7, a 83 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Fuente del Enebro",
+			"kind": "manantial",
+			"lat": 40.0343348,
+			"lon": -1.1945428,
+			"km": 0.9,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0682433,
+			"lon": -1.1760094,
+			"km": 6.9,
+			"dist_m": 11
+		},
+		{
+			"name": "Fuente la Cueva",
+			"kind": "manantial",
+			"lat": 40.084463,
+			"lon": -1.1864294,
+			"km": 9.3,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1199632,
+			"lon": -1.2568751,
+			"km": 19.7,
+			"dist_m": 83
+		}
+	],
+	"pois": [
+		{
+			"name": "Molino Los Cuchillos",
+			"type": "patrimonio",
+			"lat": 40.0524165,
+			"lon": -1.1971273,
+			"km": 3.6,
+			"dist_m": 10
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -55,7 +97,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-131-9 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-131-9.gpx (derivados: inicio, bbox)"
 	]
 }

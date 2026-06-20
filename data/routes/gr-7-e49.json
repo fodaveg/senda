@@ -28,8 +28,66 @@
 		"Fuente (km 0.2, a 9 m del track; OSM, no verificado en campo)",
 		"Fuente (km 13.9, a 13 m del track; OSM, no verificado en campo)"
 	],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points_geo": [
+		{
+			"name": "Font Roja",
+			"kind": "fuente",
+			"lat": 38.6648971,
+			"lon": -0.5403383,
+			"km": 0,
+			"dist_m": 24
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.6642017,
+			"lon": -0.5390523,
+			"km": 0.2,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.6322745,
+			"lon": -0.6518809,
+			"km": 13.9,
+			"dist_m": 13
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador de la Mina",
+			"type": "mirador",
+			"lat": 38.6643072,
+			"lon": -0.5420955,
+			"km": 0.4,
+			"dist_m": 46
+		},
+		{
+			"name": "Mirador de Pilatos",
+			"type": "mirador",
+			"lat": 38.6614006,
+			"lon": -0.5529299,
+			"km": 1.6,
+			"dist_m": 27
+		},
+		{
+			"name": "Cabeç Ras",
+			"type": "cumbre",
+			"lat": 38.6580912,
+			"lon": -0.5669305,
+			"km": 3.2,
+			"dist_m": 131
+		},
+		{
+			"name": "el Pilar de Ximo",
+			"type": "cumbre",
+			"lat": 38.657723,
+			"lon": -0.5762565,
+			"km": 4.1,
+			"dist_m": 54
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
@@ -54,7 +112,7 @@
 	],
 	"sources": [
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e49 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
-		"OSM Overpass (enrich 2026-06-11): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
+		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e49.gpx (derivados: inicio, bbox)"
 	]
 }

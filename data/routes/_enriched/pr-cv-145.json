@@ -6,8 +6,80 @@
 		"Fuente \"Sa Font d'Enmig\" (km 13.0, a 7 m del track; OSM, no verificado en campo)",
 		"Fuente (km 13.6, a 15 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente Beniplá",
+			"kind": "manantial",
+			"lat": 38.6980834,
+			"lon": -0.1081252,
+			"km": 0.6,
+			"dist_m": 9
+		},
+		{
+			"name": "Font des Olbis",
+			"kind": "manantial",
+			"lat": 38.7170506,
+			"lon": -0.1056965,
+			"km": 6.8,
+			"dist_m": 23
+		},
+		{
+			"name": "Font de Benissalim",
+			"kind": "manantial",
+			"lat": 38.7020126,
+			"lon": -0.1006095,
+			"km": 12.1,
+			"dist_m": 3
+		},
+		{
+			"name": "Sa Font d'Enmig",
+			"kind": "fuente",
+			"lat": 38.6951415,
+			"lon": -0.1021526,
+			"km": 13,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 38.6951499,
+			"lon": -0.1035093,
+			"km": 13.6,
+			"dist_m": 15
+		}
+	],
+	"pois": [
+		{
+			"name": "Mirador Barranc Tancat",
+			"type": "mirador",
+			"lat": 38.6990474,
+			"lon": -0.1170424,
+			"km": 1.8,
+			"dist_m": 56
+		},
+		{
+			"name": "As Pou",
+			"type": "mirador",
+			"lat": 38.709503,
+			"lon": -0.1092705,
+			"km": 5.3,
+			"dist_m": 75
+		},
+		{
+			"name": "Monument als Repobladors Mallorquins",
+			"type": "patrimonio",
+			"lat": 38.6948966,
+			"lon": -0.1034162,
+			"km": 13.5,
+			"dist_m": 11
+		}
+	],
 	"shade_ratio": 0.07,
-	"alternatives": ["pr-cv-146", "pr-cv-48", "pr-cv-465"],
-	"enriched_at": "2026-06-11T17:55:17.771Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-146",
+		"pr-cv-48",
+		"pr-cv-465"
+	],
+	"enriched_at": "2026-06-20T10:21:28.499Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

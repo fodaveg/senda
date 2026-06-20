@@ -5,8 +5,56 @@
 		"Manantial \"Fuente la Cueva\" (km 9.3, a 11 m del track; OSM, no verificado en campo)",
 		"Fuente (km 19.7, a 83 m del track; OSM, no verificado en campo)"
 	],
+	"water_points_geo": [
+		{
+			"name": "Fuente del Enebro",
+			"kind": "manantial",
+			"lat": 40.0343348,
+			"lon": -1.1945428,
+			"km": 0.9,
+			"dist_m": 7
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.0682433,
+			"lon": -1.1760094,
+			"km": 6.9,
+			"dist_m": 11
+		},
+		{
+			"name": "Fuente la Cueva",
+			"kind": "manantial",
+			"lat": 40.084463,
+			"lon": -1.1864294,
+			"km": 9.3,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 40.1199632,
+			"lon": -1.2568751,
+			"km": 19.7,
+			"dist_m": 83
+		}
+	],
+	"pois": [
+		{
+			"name": "Molino Los Cuchillos",
+			"type": "patrimonio",
+			"lat": 40.0524165,
+			"lon": -1.1971273,
+			"km": 3.6,
+			"dist_m": 10
+		}
+	],
 	"shade_ratio": 0.07,
-	"alternatives": ["pr-cv-131-8", "sl-cv-169", "pr-cv-323"],
-	"enriched_at": "2026-06-11T17:55:00.510Z",
-	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+	"alternatives": [
+		"pr-cv-131-8",
+		"sl-cv-169",
+		"pr-cv-323"
+	],
+	"enriched_at": "2026-06-20T10:21:14.029Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

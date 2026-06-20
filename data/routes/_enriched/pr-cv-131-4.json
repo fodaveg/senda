@@ -1,22 +1,13 @@
 {
 	"water_points": [],
 	"water_points_geo": [],
-	"pois": [
-		{
-			"name": "Creu del Portitxol",
-			"type": "mirador",
-			"lat": 38.7564675,
-			"lon": 0.2189913,
-			"km": 0,
-			"dist_m": 4
-		}
-	],
-	"shade_ratio": 0,
+	"pois": [],
+	"shade_ratio": 0.11,
 	"alternatives": [
-		"sl-cv-98",
-		"pr-cv-354",
-		"pr-cv-355"
+		"pr-cv-131-3",
+		"pr-cv-131-1",
+		"pr-cv-131-5"
 	],
-	"enriched_at": "2026-06-20T10:28:10.017Z",
+	"enriched_at": "2026-06-20T10:21:10.938Z",
 	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }
