@@ -8,6 +8,9 @@ workflow:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    # Temporal: pipelines también en v3 para poder testear el despliegue antes
+    # de mergear a main.
+    - if: '$CI_COMMIT_BRANCH == "v3"'
     - if: '$CI_COMMIT_TAG'
 
 variables:
@@ -62,6 +65,10 @@ pages:
   stage: deploy
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    # Temporal: desplegar v3 para testearlo en la URL de Pages. La última
+    # pipeline que publica gana; mientras se trabaje en v3, v3 estará en vivo.
+    # Revertir (dejar solo la rama por defecto) al mergear v3 a main.
+    - if: '$CI_COMMIT_BRANCH == "v3"'
   # Solo depende de lint y tests: el build (pesado) de Tauri Linux no debe
   # bloquear ni retrasar la publicación de la web.
   needs:
