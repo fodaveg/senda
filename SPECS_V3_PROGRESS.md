@@ -41,7 +41,7 @@ deja registrado cualquier bloqueo.
 - [ ] V3-M3 — Etapas: crawl relación + modelo + StagesList + "Ver Etapas" funcional
 - [~] V3-M4 — Descubrimiento: [x] fix "Cómo llegar" (enlace OSM con from+to); [x] filtro por provincia (derivada de comarca en `src/lib/geo/province.ts`, sin re-crawl; selector en el listado); [ ] orden por popularidad — PENDIENTE de investigar si FEMECV expone el dato (§13). Tests: travel.e2e, province.e2e, province.spec, filters.spec.
 - [x] V3-M5 — Perfil de elevación: relleno bicolor (terreno bajo la curva / cielo encima) + tooltip con caja de contraste fijo (oscura + texto blanco), legible en cualquier tema. En `ElevationProfile.svelte`. Test: profile.e2e.
-- [ ] V3-M6 — Mochila custom: atributos + estado `warn` + checklist/informe + formato anonimizable
+- [x] V3-M6 — Mochila custom: motor `evaluateCustomGear` con estado `warn` (anti-reglas por atributo, fail-safe) en `src/lib/engine`; persistencia versionada con zod + export/import en `src/lib/user/customGear.ts`; UI `CustomGearPanel.svelte` (alta/baja + avisos) en la ficha. Tests: customGear.spec (motor), customGear.spec (datos), custom-gear.e2e. PENDIENTE menor: reflejar el material custom en el informe imprimible y en el checklist (ahora solo en la ficha).
 - [x] V3-M7 — Apariencia: toggle rápido claro/oscuro en la barra (`ThemeToggle.svelte`) + paletas de color curadas (`src/lib/theme/palettes.ts`, aplicadas con CSS `light-dark()`, una fuente de verdad) elegibles en Ajustes; `palette` añadido a settings. Tests: palettes.spec, theme.e2e.
 
 ## Investigaciones pendientes (SPECS_V3.md §13, criterio de salida)

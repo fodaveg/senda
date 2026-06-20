@@ -3,6 +3,7 @@
 	import { resolve } from '$app/paths';
 	import { isTauri } from '@tauri-apps/api/core';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
+	import CustomGearPanel from '$lib/components/CustomGearPanel.svelte';
 	import AvisosBanner from '$lib/components/AvisosBanner.svelte';
 	import RouteMarks from '$lib/components/RouteMarks.svelte';
 	import StartWindowCard from '$lib/components/StartWindowCard.svelte';
@@ -404,6 +405,7 @@
 
 		<h2>Mochila recomendada</h2>
 		<BackpackPanel {decisions} checked={checkedItems} onToggle={toggleChecklistItem} />
+		<CustomGearPanel {route} weather={selectedDay} season={seasonForDate(selectedDate)} />
 	</section>
 
 	<section class="data-col">
