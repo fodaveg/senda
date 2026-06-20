@@ -7,6 +7,7 @@
 	import { routes } from '$lib/data/routes';
 	import { parentOf, stagesOf } from '$lib/data/stages';
 	import { PROVINCES, provinceOf } from '$lib/geo/province';
+	import { loadMapPrefs, saveMapPrefs } from '$lib/map/prefs';
 	import AvisosBanner from '$lib/components/AvisosBanner.svelte';
 	import FireRiskCard from '$lib/components/FireRiskCard.svelte';
 	import { fetchFireRiskMap, FIRE_RISK_MAX_DAY } from '$lib/weather/fireRisk';
@@ -205,23 +206,16 @@
 		void loadRouteData(route, ++loadToken);
 	});
 
-	/** Días desde hoy hasta la fecha YYYY-MM-DD (0 = hoy). */
-	function dayOffsetFromToday(date: string): number {
-		const today = new Date();
-		today.setHours(0, 0, 0, 0);
-		const target = new Date(`${date}T00:00`);
-		return Math.round((target.getTime() - today.getTime()) / 86_400_000);
-	}
-
 	// Mapa de riesgo de incendio (AEMET) para la fecha elegida; se recarga al
-	// cambiar de fecha. Requiere api key; degrada en silencio si falla.
+	// cambiar de fecha. Requiere api key; degrada en silencio si falla. El
+	// offset de día se obtiene de la ventana de fechas (dates[0] = hoy), sin
+	// instanciar Date.
 	$effect(() => {
 		const date = selectedDate;
+		const offset = dates.indexOf(date);
 		const apiKey = loadSettings().aemetApiKey;
 		fireRiskMapUrl = null;
-		if (!date || !apiKey) return;
-		const offset = dayOffsetFromToday(date);
-		if (offset < 0 || offset > FIRE_RISK_MAX_DAY) return;
+		if (!date || !apiKey || offset < 0 || offset > FIRE_RISK_MAX_DAY) return;
 		fireRiskLoading = true;
 		let cancelled = false;
 		fetchFireRiskMap(apiKey, offset)
@@ -243,6 +237,9 @@
 	async function loadRouteData(r: typeof route, token: number) {
 		const settings = loadSettings();
 		customItems = loadCustomGear().items;
+		const mapPrefs = loadMapPrefs();
+		showWater = mapPrefs.showWater;
+		showPois = mapPrefs.showPois;
 		debugMode = settings.debugMode;
 		geojson = null;
 		profile = [];
@@ -432,13 +429,21 @@
 			<div class="map-toggles no-print">
 				{#if (route.water_points_geo ?? []).length > 0}
 					<label>
-						<input type="checkbox" bind:checked={showWater} />
+						<input
+							type="checkbox"
+							bind:checked={showWater}
+							onchange={() => saveMapPrefs({ ...loadMapPrefs(), showWater })}
+						/>
 						💧 Fuentes ({route.water_points_geo.length})
 					</label>
 				{/if}
 				{#if (route.pois ?? []).length > 0}
 					<label>
-						<input type="checkbox" bind:checked={showPois} />
+						<input
+							type="checkbox"
+							bind:checked={showPois}
+							onchange={() => saveMapPrefs({ ...loadMapPrefs(), showPois })}
+						/>
 						📍 Puntos de interés ({route.pois.length})
 					</label>
 				{/if}

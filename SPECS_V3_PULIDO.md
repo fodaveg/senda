@@ -44,10 +44,9 @@ Prioridad orientativa: **[A]** alta (valor o coherencia claros), **[M]** media,
 
 - [x] **[M]** Capa **"Callejero" (IGN Base)** añadida al selector (IGNBaseTodo).
       Pendiente de confirmar en runtime que el WMTS renderiza con tu prueba.
-- [ ] **[M]** Unificar la **persistencia de la capa de mapa** en el módulo de
-      apariencia de V3-M7 (hoy va en su propia clave `senderoscv:map-layer`).
-- [ ] **[M]** Recordar el estado de los **toggles de agua/POIs** (hoy se
-      reinician a "visibles" en cada visita).
+- [x] **[M]** Preferencias de mapa unificadas en `src/lib/map/prefs.ts`
+      (`senderoscv:map-prefs`): capa base + toggles de agua/POIs, recordados entre
+      visitas.
 - [ ] **[B]** **Agrupar marcadores** (clustering) cuando haya muchos POIs/fuentes
       muy juntos.
 - [ ] **[B]** Popup de POI con **distancia al track** además del km, y accesible

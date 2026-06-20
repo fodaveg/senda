@@ -29,6 +29,7 @@
 <script lang="ts">
 	import 'maplibre-gl/dist/maplibre-gl.css';
 	import { DEFAULT_LAYER_ID, MAP_LAYERS } from '$lib/map/layers';
+	import { loadMapPrefs, saveMapPrefs } from '$lib/map/prefs';
 	import { trackEndpoints } from '$lib/map/track';
 	import { onMount } from 'svelte';
 	import type { FeatureCollection } from 'geojson';
@@ -82,10 +83,6 @@
 		refugio: 'Refugio',
 		otro: 'Punto de interés'
 	};
-
-	// Clave de persistencia de la capa elegida (preferencia local; la gestión
-	// completa de apariencia llega en V3-M7).
-	const LAYER_STORAGE_KEY = 'senderoscv:map-layer';
 
 	let container: HTMLDivElement;
 	let mapFailed = $state(false);
@@ -258,20 +255,11 @@
 				);
 			}
 		}
-		try {
-			localStorage.setItem(LAYER_STORAGE_KEY, activeLayer);
-		} catch {
-			// localStorage no disponible: la capa simplemente no se recuerda.
-		}
+		saveMapPrefs({ ...loadMapPrefs(), layer: activeLayer });
 	}
 
 	onMount(() => {
-		try {
-			const saved = localStorage.getItem(LAYER_STORAGE_KEY);
-			if (saved) activeLayer = getLayer(saved).id;
-		} catch {
-			// sin persistencia: se usa la capa por defecto
-		}
+		activeLayer = getLayer(loadMapPrefs().layer).id;
 
 		let map: maplibregl.Map;
 		try {
