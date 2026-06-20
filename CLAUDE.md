@@ -14,7 +14,8 @@ Lee en este orden y **para en cuanto tengas lo necesario**:
 3. **Búsqueda** (Grep/Glob) de los archivos implicados en la tarea.
 4. **Solo si la tarea lo exige**, lee **secciones concretas** de las specs.
 
-⚠️ Las specs (`SPEC.md`, `SPECS_V2.md`, `SPECS_V3.md`) **NO se leen enteras por
+⚠️ Las specs (`SPEC.md`, `SPECS_V2.md`, `SPECS_V3.md`, `SPECS_V4.md` —plan de la
+v4, aún no implementada) **NO se leen enteras por
 defecto**: son largas y en su mayoría histórico/justificación. Úsalas como
 referencia puntual (una sección concreta) cuando la tarea lo pida.
 
