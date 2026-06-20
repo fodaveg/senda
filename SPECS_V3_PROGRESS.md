@@ -74,7 +74,7 @@ deja registrado cualquier bloqueo.
   mapa, con toggles bajo el mapa (visibles por defecto). Tests: enrich.spec,
   map-data.e2e.
 - **Datos:** re-enrich COMPLETO en curso (background). Al terminar: `npm run ingest
-  -- --lenient` y commitear el delta. (En el commit inicial ~34/585 rutas traen
+-- --lenient` y commitear el delta. (En el commit inicial ~34/585 rutas traen
   datos reales; el resto, arrays vacíos hasta completar el enrich.)
 
 (histórico del bloqueo, ya resuelto:)
