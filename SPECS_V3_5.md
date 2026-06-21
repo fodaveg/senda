@@ -92,6 +92,10 @@ inicia**.
 
 ## 8. Milestones (orden propuesto, de menor a mayor riesgo)
 
+**Estado: M1–M7 COMPLETADOS** (rama `v3`, todo en verde). Único pendiente
+anotado: "rutas que enlazan" (M5) requiere coordenadas de fin en el modelo
+(re-ingesta) para no inventar enlaces.
+
 Cada uno termina con tests en verde y un commit; no se avanza con tests en rojo.
 
 1. **V3.5-M1 — Mochila cuantificada**: litros de agua + calorías (puro) en panel e
