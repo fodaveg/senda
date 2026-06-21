@@ -421,8 +421,30 @@
 		filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.6)) hue-rotate(260deg) saturate(1.5);
 	}
 	.map :global(.poi-pop-type) {
-		color: #555;
+		color: var(--muted);
 		font-size: 0.8rem;
+	}
+	/* El popup de MapLibre trae fondo blanco fijo: lo atamos al tema para que en
+	   modo oscuro no quede texto claro sobre blanco. */
+	.map :global(.maplibregl-popup-content) {
+		background: var(--surface);
+		color: var(--ink);
+		border: 1px solid var(--border);
+		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+	}
+	/* La "flecha" del bocadillo es un triángulo cuyo lado coloreado depende del
+	   anclaje; igualamos ese lado al fondo del popup. */
+	.map :global([class*='maplibregl-popup-anchor-top'] .maplibregl-popup-tip) {
+		border-bottom-color: var(--surface);
+	}
+	.map :global([class*='maplibregl-popup-anchor-bottom'] .maplibregl-popup-tip) {
+		border-top-color: var(--surface);
+	}
+	.map :global(.maplibregl-popup-anchor-left .maplibregl-popup-tip) {
+		border-right-color: var(--surface);
+	}
+	.map :global(.maplibregl-popup-anchor-right .maplibregl-popup-tip) {
+		border-left-color: var(--surface);
 	}
 	.sr-only {
 		position: absolute;
