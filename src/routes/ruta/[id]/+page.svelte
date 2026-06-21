@@ -49,7 +49,7 @@
 		fetchAemetForecastCached,
 		type AemetDay
 	} from '$lib/weather/aemet';
-	import { dateLabel, forecastDates, seasonForDate } from '$lib/weather/dates';
+	import { bestForecastDay, dateLabel, forecastDates, seasonForDate } from '$lib/weather/dates';
 	import { avisosForRoute, fetchAvisosCapCached, type Aviso } from '$lib/weather/avisos';
 	import { fetchOpenMeteoHourly, type HourlyPoint } from '$lib/weather/hourly';
 	import { fetchOpenMeteoForecast } from '$lib/weather/openmeteo';
@@ -153,6 +153,8 @@
 	let provinceLabel = $derived(
 		PROVINCES.find((p) => p.id === provinceOf(route.zone))?.label ?? null
 	);
+	// Mejor día previsto para esta ruta (SPECS_V3.5 §5).
+	let bestDay = $derived(bestForecastDay(forecast ?? []));
 	let avisosForDate = $derived(
 		avisos && selectedDate ? avisosForRoute(avisos, route.zone, selectedDate) : []
 	);
@@ -550,6 +552,14 @@
 					</button>
 				{/each}
 			</div>
+			{#if bestDay && bestDay !== selectedDate}
+				<p class="best-day">
+					Mejor día previsto: <strong>{dateLabel(bestDay)}</strong>
+					<button type="button" class="link-btn" onclick={() => (selectedDate = bestDay)}
+						>elegir</button
+					>
+				</p>
+			{/if}
 			<p class="date-note">Pronóstico disponible solo hasta 7 días vista.</p>
 		{/if}
 		<AvisosBanner avisos={avisosForDate} />
@@ -955,6 +965,20 @@
 		background: var(--brand);
 		color: var(--on-brand);
 		border-color: var(--brand);
+	}
+	.best-day {
+		font-size: 0.85rem;
+		margin: 0.25rem 0 0;
+	}
+	.link-btn {
+		font: inherit;
+		font-size: 0.85rem;
+		background: none;
+		border: none;
+		color: var(--brand);
+		text-decoration: underline;
+		cursor: pointer;
+		padding: 0;
 	}
 	.date-note {
 		font-size: 0.78rem;

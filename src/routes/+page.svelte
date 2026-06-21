@@ -198,6 +198,12 @@
 			<option value="todas">Todas (incl. deshabilitadas)</option>
 		</select>
 	</label>
+	<label class="check">
+		<input type="checkbox" bind:checked={filters.withWater} /> Con agua
+	</label>
+	<label class="check">
+		<input type="checkbox" bind:checked={filters.highShade} /> Alta sombra
+	</label>
 </fieldset>
 
 <div class="map-wrap">
@@ -301,6 +307,11 @@
 	.filter-group {
 		display: flex;
 		gap: 0.75rem;
+	}
+	.filters .check {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
 	}
 	.map-wrap {
 		position: relative;

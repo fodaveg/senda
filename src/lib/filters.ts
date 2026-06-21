@@ -17,11 +17,20 @@ export interface RouteFilters {
 	/** null = indiferente. */
 	circular: boolean | null;
 	/**
+	 * Filtros "apto para" (SPECS_V3.5 §5): positivos, exigen el dato CONOCIDO
+	 * (a diferencia de los límites de arriba, aquí dato desconocido = no cumple).
+	 */
+	withWater: boolean;
+	highShade: boolean;
+	/**
 	 * SPECS_V2 §6: null = por defecto (todas salvo deshabilitadas);
 	 * 'todas' = incluye también las deshabilitadas; un estado = solo ese.
 	 */
 	status: RouteStatus | 'todas' | null;
 }
+
+/** Umbral de "alta sombra" (proporción de sombra estimada). */
+const HIGH_SHADE = 0.4;
 
 export const EMPTY_FILTERS: RouteFilters = {
 	types: [],
@@ -30,6 +39,8 @@ export const EMPTY_FILTERS: RouteFilters = {
 	zone: null,
 	province: null,
 	circular: null,
+	withWater: false,
+	highShade: false,
 	status: null
 };
 
@@ -54,6 +65,11 @@ export function applyFilters(routes: Route[], filters: RouteFilters): Route[] {
 			if (prov !== null && prov !== filters.province) return false;
 		}
 		if (filters.circular !== null && route.circular !== null && route.circular !== filters.circular)
+			return false;
+		// "Apto para" (positivos): exigen el dato conocido que cumple.
+		if (filters.withWater && route.water_points.length === 0 && route.water_points_geo.length === 0)
+			return false;
+		if (filters.highShade && !(route.shade_ratio !== null && route.shade_ratio >= HIGH_SHADE))
 			return false;
 		// El estado nunca es null en la ruta; las deshabilitadas por FEMECV se
 		// excluyen por defecto y solo aparecen pidiéndolo explícitamente.

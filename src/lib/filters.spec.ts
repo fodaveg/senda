@@ -106,6 +106,27 @@ describe('filtro por provincia (SPECS_V3 §7)', () => {
 	});
 });
 
+describe('filtros "apto para" (SPECS_V3.5 §5)', () => {
+	const ROUTES_APTO = [
+		route({ id: 'con-agua', water_points: ['Fuente'] }),
+		route({ id: 'con-sombra', shade_ratio: 0.6 }),
+		route({ id: 'pelada', shade_ratio: 0.1 }),
+		route({ id: 'sin-dato' })
+	];
+
+	it('"con agua" exige fuentes conocidas', () => {
+		expect(
+			applyFilters(ROUTES_APTO, { ...EMPTY_FILTERS, withWater: true }).map((r) => r.id)
+		).toEqual(['con-agua']);
+	});
+
+	it('"alta sombra" exige shade_ratio conocido y alto', () => {
+		expect(
+			applyFilters(ROUTES_APTO, { ...EMPTY_FILTERS, highShade: true }).map((r) => r.id)
+		).toEqual(['con-sombra']);
+	});
+});
+
 describe('filtro de estado (SPECS_V2 §6)', () => {
 	const WITH_STATUS = [
 		...ROUTES,

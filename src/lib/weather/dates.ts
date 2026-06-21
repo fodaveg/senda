@@ -2,7 +2,7 @@
  * Fechas del selector (hoy + 7 días) y estación del año. Puro, sin UI.
  */
 
-import type { Season } from '$lib/types';
+import type { Season, WeatherDay } from '$lib/types';
 import { FORECAST_DAYS } from './openmeteo';
 
 /** Fecha local YYYY-MM-DD (sin sorpresas de UTC). */
@@ -29,6 +29,23 @@ export function seasonForDate(date: string): Season {
 	if (month <= 5) return 'primavera';
 	if (month <= 8) return 'verano';
 	return 'otoño';
+}
+
+/**
+ * "Mejor día" para una ruta dentro del pronóstico (SPECS_V3.5 §5): penaliza la
+ * probabilidad de lluvia y el alejamiento de una temperatura agradable (~18 °C,
+ * con extra por calor). Devuelve la fecha de menor penalización, o null si no
+ * hay pronóstico. Puro; es una sugerencia, no una garantía.
+ */
+export function bestForecastDay(days: WeatherDay[]): string | null {
+	if (days.length === 0) return null;
+	const score = (d: WeatherDay): number => {
+		const rain = d.precipitation_probability_max; // 0–100
+		const heat = Math.max(0, d.temperature_2m_max - 24) * 4; // penaliza calor
+		const cold = Math.max(0, 8 - d.temperature_2m_min) * 2; // penaliza frío
+		return rain + heat + cold;
+	};
+	return days.reduce((best, d) => (score(d) < score(best) ? d : best)).date;
 }
 
 /** Etiqueta corta para el selector: "sáb 14 jun". */

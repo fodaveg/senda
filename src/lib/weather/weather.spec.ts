@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { fetchOpenMeteoForecast, normalizeOpenMeteo, openMeteoUrl } from './openmeteo';
-import { forecastDates, isoDate, seasonForDate } from './dates';
+import { bestForecastDay, forecastDates, isoDate, seasonForDate } from './dates';
+import type { WeatherDay } from '$lib/types';
 
 function payloadOf(days: number, overrides: Partial<Record<string, unknown[]>> = {}) {
 	const fill = (v: unknown) => Array.from({ length: days }, () => v);
@@ -92,5 +93,34 @@ describe('fechas y estación', () => {
 		expect(seasonForDate('2026-06-10')).toBe('verano');
 		expect(seasonForDate('2026-09-01')).toBe('otoño');
 		expect(seasonForDate('2026-12-01')).toBe('invierno');
+	});
+});
+
+describe('bestForecastDay', () => {
+	const day = (date: string, rain: number, tmax: number, tmin = 14): WeatherDay => ({
+		date,
+		temperature_2m_max: tmax,
+		temperature_2m_min: tmin,
+		precipitation_probability_max: rain,
+		precipitation_sum: 0,
+		uv_index_max: 6,
+		wind_speed_10m_max: 10,
+		sunrise: `${date}T06:30`,
+		sunset: `${date}T21:25`,
+		source: 'open-meteo',
+		fetched_at: `${date}T05:00:00Z`
+	});
+
+	it('elige el día con menos lluvia y temperatura más agradable', () => {
+		const days = [
+			day('2026-06-10', 80, 22), // muy lluvioso
+			day('2026-06-11', 5, 20), // ideal
+			day('2026-06-12', 10, 36) // calor extremo
+		];
+		expect(bestForecastDay(days)).toBe('2026-06-11');
+	});
+
+	it('null sin pronóstico', () => {
+		expect(bestForecastDay([])).toBeNull();
 	});
 });
