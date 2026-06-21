@@ -4,14 +4,15 @@ Fotografía **breve y actual** del proyecto. Mantener compacto: al cerrar una
 tarea, actualizar el estado, no acumular histórico (el detalle vive en
 `SPECS_V3_PROGRESS.md` y en el historial de git).
 
-_Actualizado: 2026-06-20._
+_Actualizado: 2026-06-22._
 
 ## Estado actual
 
 - **v1** (M1–M7) y **v2** (V2-M1…M8) completas y en uso local.
-- **v3**: sus **7 milestones están implementados** en la rama **`v3`**, pendiente
-  de validar y mergear a `main`.
-- `main` = web desplegada en GitLab Pages (dominio único, servida en la raíz).
+- **v3**: sus **7 milestones están implementados y ya mergeados a `main`**
+  (la rama `v3` queda como histórico). v3.5 también integrada en `main`.
+- `main` = web desplegada en GitLab Pages (dominio único, servida en la raíz);
+  el trabajo actual va **directo sobre `main`**.
 
 ## v3 — qué incluye (referencia: SPECS_V3.md)
 
@@ -37,7 +38,7 @@ material custom y aviso `warn` · M7 apariencia (toggle de tema + paletas).
 
 1. **Backlog de pulido** ([SPECS_V3_PULIDO.md](SPECS_V3_PULIDO.md)), prioridad
    [A] primero.
-2. Validar `v3` y **mergear a `main`** (la CI publica a Pages).
+2. (Hecho) `v3` validada y **mergeada a `main`**; la CI publica a Pages en cada push.
 
 ## Bloqueos
 
