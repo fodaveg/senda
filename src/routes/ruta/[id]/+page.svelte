@@ -17,6 +17,7 @@
 	import StatusBadge from '$lib/components/StatusBadge.svelte';
 	import ElevationProfile from '$lib/components/ElevationProfile.svelte';
 	import Map from '$lib/components/Map.svelte';
+	import LiveTracking from '$lib/components/LiveTracking.svelte';
 	import WeatherCard from '$lib/components/WeatherCard.svelte';
 	import { gearItems, gearRules } from '$lib/data/gear';
 	import { loadTrackXml } from '$lib/data/tracks';
@@ -155,6 +156,8 @@
 	);
 	// Mejor día previsto para esta ruta (SPECS_V3.5 §5).
 	let bestDay = $derived(bestForecastDay(forecast ?? []));
+	// Posiciones del track para "en ruta" (SPECS_V3.5 §6).
+	let trackPos = $derived(geojson ? trackPositions(geojson) : []);
 	let avisosForDate = $derived(
 		avisos && selectedDate ? avisosForRoute(avisos, route.zone, selectedDate) : []
 	);
@@ -525,6 +528,10 @@
 				{/if}
 				{#if downloadProgress}<span class="travel-hint" role="status">{downloadProgress}</span>{/if}
 			</div>
+		{/if}
+
+		{#if geojson}
+			<LiveTracking {trackPos} sunsetIso={selectedDay?.sunset ?? null} routeName={route.name} />
 		{/if}
 
 		<h2>Perfil de elevación</h2>
