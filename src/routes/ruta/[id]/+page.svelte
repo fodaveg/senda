@@ -415,7 +415,7 @@
 </script>
 
 <svelte:head>
-	<title>{route.name} — Senderos CV</title>
+	<title>{route.name} — Senda</title>
 </svelte:head>
 
 <nav class="breadcrumb"><a href={resolve('/')}>← Todas las rutas</a></nav>

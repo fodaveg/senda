@@ -1,4 +1,4 @@
-# Senderos CV
+# Senda
 
 App autocontenida (Linux, macOS y web) con las rutas oficiales de senderismo de la Comunitat Valenciana (senderos homologados FEMECV), recomendación de equipo de mochila condicionada por ruta y meteorología, y generación de informes Markdown (Obsidian) e imprimibles.
 

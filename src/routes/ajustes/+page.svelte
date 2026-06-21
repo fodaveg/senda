@@ -230,7 +230,7 @@
 </script>
 
 <svelte:head>
-	<title>Ajustes — Senderos CV</title>
+	<title>Ajustes — Senda</title>
 </svelte:head>
 
 <h1>Ajustes</h1>
@@ -550,11 +550,12 @@
 	}
 	.scheme-card.selected {
 		border-color: var(--brand);
-		outline: 2px solid var(--brand);
+		box-shadow: 0 0 0 2px var(--brand);
 	}
 	.swatches {
 		display: flex;
-		height: 1.6rem;
+		flex: 1;
+		min-height: 2rem;
 		border-radius: 0.3rem;
 		overflow: hidden;
 		border: 1px solid var(--border);

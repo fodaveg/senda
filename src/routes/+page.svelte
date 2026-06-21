@@ -94,7 +94,7 @@
 </script>
 
 <svelte:head>
-	<title>Senderos CV — rutas homologadas</title>
+	<title>Senda — rutas homologadas</title>
 </svelte:head>
 
 <h1>Rutas</h1>

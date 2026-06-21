@@ -28,7 +28,7 @@
 </svelte:head>
 
 <header>
-	<a href={resolve('/')} class="brand">Senderos CV</a>
+	<a href={resolve('/')} class="brand">Senda</a>
 	<span class="tagline">Senderos homologados FEMECV de la Comunitat Valenciana</span>
 	<a href={resolve('/diario')} class="nav-link">Diario</a>
 	<a href={resolve('/ajustes')} class="nav-link">Ajustes</a>

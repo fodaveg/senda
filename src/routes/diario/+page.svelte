@@ -65,7 +65,7 @@
 </script>
 
 <svelte:head>
-	<title>Diario — Senderos CV</title>
+	<title>Diario — Senda</title>
 </svelte:head>
 
 <h1>Diario de salidas</h1>

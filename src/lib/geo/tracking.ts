@@ -99,7 +99,7 @@ export function toGpx(points: RecordedPoint[], name: string): string {
 		.join('\n');
 	return (
 		'<?xml version="1.0" encoding="UTF-8"?>\n' +
-		'<gpx version="1.1" creator="Senderos CV" xmlns="http://www.topografix.com/GPX/1/1">\n' +
+		'<gpx version="1.1" creator="Senda" xmlns="http://www.topografix.com/GPX/1/1">\n' +
 		`<trk><name>${esc(name)}</name><trkseg>\n${pts}\n</trkseg></trk>\n</gpx>\n`
 	);
 }
