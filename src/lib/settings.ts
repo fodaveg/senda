@@ -31,6 +31,8 @@ export interface Settings {
 	 * ver src/lib/theme/schemes.ts. El toggle de modo aplica el que toque. */
 	schemeLight: string;
 	schemeDark: string;
+	/** Escala del tamaño de texto (SPECS_V3.5 §7); 1 = normal. */
+	textScale: number;
 	/** Peso del usuario en kg (opcional, para estimar calorías; SPECS_V3.5 §1). */
 	weightKg: number | null;
 	aemetApiKey: string;
@@ -57,6 +59,7 @@ export const DEFAULT_SETTINGS: Settings = {
 	theme: 'auto',
 	schemeLight: 'bosque-claro',
 	schemeDark: 'bosque-oscuro',
+	textScale: 1,
 	weightKg: null,
 	aemetApiKey: '',
 	vaultDir: '',
@@ -93,6 +96,10 @@ export function loadSettings(): Settings {
 					: 'auto',
 			schemeLight: typeof parsed.schemeLight === 'string' ? parsed.schemeLight : 'bosque-claro',
 			schemeDark: typeof parsed.schemeDark === 'string' ? parsed.schemeDark : 'bosque-oscuro',
+			textScale:
+				typeof parsed.textScale === 'number' && parsed.textScale >= 0.8 && parsed.textScale <= 1.6
+					? parsed.textScale
+					: 1,
 			weightKg: typeof parsed.weightKg === 'number' && parsed.weightKg > 0 ? parsed.weightKg : null,
 			aemetApiKey: typeof parsed.aemetApiKey === 'string' ? parsed.aemetApiKey : '',
 			vaultDir: typeof parsed.vaultDir === 'string' ? parsed.vaultDir : '',
@@ -120,6 +127,12 @@ export function saveSettings(settings: Settings): void {
 /** ¿El sistema prefiere modo oscuro? (para resolver el tema "auto"). */
 export function prefersDark(): boolean {
 	return typeof matchMedia !== 'undefined' && matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+/** Aplica la escala de texto al documento (SPECS_V3.5 §7). */
+export function applyTextScale(scale: number): void {
+	if (typeof document === 'undefined') return;
+	document.documentElement.style.fontSize = scale === 1 ? '' : `${Math.round(scale * 100)}%`;
 }
 
 /** Aplica el tema al documento ("claro" fuerza modo claro para sol directo). */

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { buildReportModel, type ReportInput } from './model';
-import { renderMarkdown, reportFilename } from './markdown';
+import { renderMarkdown, reportFilename, reportSpeechText } from './markdown';
 import { evaluateGear } from '$lib/engine';
 import type { GearItem, GearRule, Route, WeatherDay, WildlifeZone } from '$lib/types';
 
@@ -116,6 +116,13 @@ describe('buildReportModel + renderMarkdown', () => {
 	it('la mochila incluye razones interpoladas', () => {
 		expect(md).toContain('Poncho — Probabilidad de lluvia 40%');
 		expect(md).toContain('Botiquín — Equipo base: siempre en la mochila');
+	});
+
+	it('reportSpeechText da texto plano sin casillas ni cabeceras markdown', () => {
+		const speech = reportSpeechText(buildReportModel(inputWith()));
+		expect(speech).toContain('PR-CV');
+		expect(speech).not.toContain('☐');
+		expect(speech).not.toContain('##');
 	});
 
 	it('incluye agua y energía estimadas en la mochila', () => {

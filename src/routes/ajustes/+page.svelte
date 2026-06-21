@@ -6,7 +6,13 @@
 	import { applyCatalogUpdate } from '$lib/catalog/store';
 	import { CatalogError, checkForCatalogUpdate } from '$lib/catalog/update';
 	import { CATALOG_URL } from '$lib/catalog/url';
-	import { DEFAULT_SETTINGS, loadSettings, saveSettings, type Settings } from '$lib/settings';
+	import {
+		applyTextScale,
+		DEFAULT_SETTINGS,
+		loadSettings,
+		saveSettings,
+		type Settings
+	} from '$lib/settings';
 	import { applyAppearance, DARK_SCHEMES, LIGHT_SCHEMES } from '$lib/theme/schemes';
 	import { validateAemetKey, type AemetKeyCheck } from '$lib/weather/aemet';
 	import { ATTRIBUTE_LABELS, GEAR_ATTRIBUTES } from '$lib/engine';
@@ -325,6 +331,14 @@
 				<option value="auto">Automático (según el sistema)</option>
 				<option value="claro">Claro forzado (sol directo)</option>
 				<option value="oscuro">Oscuro</option>
+			</select>
+		</label>
+		<label>
+			Tamaño de texto
+			<select bind:value={settings.textScale} onchange={() => applyTextScale(settings.textScale)}>
+				<option value={1}>Normal</option>
+				<option value={1.15}>Grande</option>
+				<option value={1.3}>Muy grande</option>
 			</select>
 		</label>
 

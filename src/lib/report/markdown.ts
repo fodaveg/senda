@@ -32,3 +32,24 @@ export function renderMarkdown(model: ReportModel): string {
 export function reportFilename(routeId: string, date: string): string {
 	return `informe-${routeId}-${date}.md`;
 }
+
+/** Texto plano legible en voz alta (SPECS_V3.5 §7): sin marcas ni casillas. */
+export function reportSpeechText(model: ReportModel): string {
+	const parts: string[] = [model.title];
+	for (const section of model.sections) {
+		parts.push(`${section.title}.`);
+		for (const block of section.blocks) {
+			if (block.kind === 'paragraph') parts.push(block.text);
+			else if (block.kind === 'list') parts.push(block.items.join('. '));
+			else if (block.kind === 'fields')
+				parts.push(block.fields.map((f) => `${f.label}: ${f.value}`).join('. '));
+		}
+	}
+	// Quita casillas/emojis que se leerían mal (sin clase de caracteres para no
+	// mezclar emojis compuestos).
+	let text = parts.join('. ');
+	for (const ch of ['☐', '☑', '⚠️', '🔥', '💧', '📍', '🏅', '🔒', '🆘', '▶', '⏹', '☀', '🌙']) {
+		text = text.split(ch).join('');
+	}
+	return text.replace(/\s{2,}/g, ' ').trim();
+}

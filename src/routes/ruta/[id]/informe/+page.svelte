@@ -16,7 +16,8 @@
 	import { loadCustomGear } from '$lib/user/customGear';
 	import { startWindow } from '$lib/engine/startWindow';
 	import { buildReportModel, type ReportModel } from '$lib/report/model';
-	import { renderMarkdown, reportFilename } from '$lib/report/markdown';
+	import { renderMarkdown, reportFilename, reportSpeechText } from '$lib/report/markdown';
+	import { isSpeechSupported, speak, stopSpeaking } from '$lib/voice';
 	import { loadSettings } from '$lib/settings';
 	import { loadChecklist } from '$lib/user/checklist';
 	import { forecastDates, seasonForDate } from '$lib/weather/dates';
@@ -135,6 +136,10 @@
 	<div class="no-print actions">
 		<button onclick={downloadMarkdown}>Descargar .md</button>
 		<button onclick={() => window.print()}>Imprimir</button>
+		{#if isSpeechSupported() && model}
+			<button class="secondary" onclick={() => speak(reportSpeechText(model))}>🔊 Leer</button>
+			<button class="secondary" onclick={stopSpeaking}>⏹ Parar</button>
+		{/if}
 		{#if isTauri()}
 			<button onclick={saveInTauri}>Guardar como…</button>
 		{/if}

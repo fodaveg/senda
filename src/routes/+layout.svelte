@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import favicon from '$lib/assets/favicon.svg';
-	import { loadSettings } from '$lib/settings';
+	import { applyTextScale, loadSettings } from '$lib/settings';
 	import { applyAppearance } from '$lib/theme/schemes';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
@@ -12,6 +12,7 @@
 	onMount(() => {
 		document.body.dataset.hydrated = 'true';
 		applyAppearance(loadSettings());
+		applyTextScale(loadSettings().textScale);
 		// En modo "auto", seguir los cambios de preferencia del sistema.
 		const mq = matchMedia('(prefers-color-scheme: dark)');
 		const onChange = () => {
