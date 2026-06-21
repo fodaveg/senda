@@ -92,9 +92,8 @@ inicia**.
 
 ## 8. Milestones (orden propuesto, de menor a mayor riesgo)
 
-**Estado: M1–M7 COMPLETADOS** (rama `v3`, todo en verde). Único pendiente
-anotado: "rutas que enlazan" (M5) requiere coordenadas de fin en el modelo
-(re-ingesta) para no inventar enlaces.
+**Estado: M1–M7 COMPLETADOS** (rama `v3`, todo en verde), incluida "rutas que
+enlazan" (se añadió `Route.end` por re-ingesta para derivar enlaces reales).
 
 Cada uno termina con tests en verde y un commit; no se avanza con tests en rojo.
 
