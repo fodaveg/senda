@@ -6,6 +6,7 @@
 	import StagesList from '$lib/components/StagesList.svelte';
 	import { routes } from '$lib/data/routes';
 	import { parentOf, stagesOf } from '$lib/data/stages';
+	import { linkedRoutes } from '$lib/data/links';
 	import { PROVINCES, provinceOf } from '$lib/geo/province';
 	import { loadMapPrefs, saveMapPrefs } from '$lib/map/prefs';
 	import { loadWaypoints, saveWaypoints, makeWaypoint, type Waypoint } from '$lib/user/waypoints';
@@ -151,6 +152,8 @@
 	// ruta es una etapa). Derivado del catálogo, SPECS_V3 §6.
 	let stages = $derived(stagesOf(route.id, routes));
 	let parent = $derived(parentOf(route.id, routes));
+	// Rutas que enlazan por proximidad de extremos (SPECS_V3.5 §5).
+	let links = $derived(linkedRoutes(route, routes));
 	let provinceLabel = $derived(
 		PROVINCES.find((p) => p.id === provinceOf(route.zone))?.label ?? null
 	);
@@ -652,6 +655,18 @@
 			</section>
 		{/if}
 
+		{#if links.length > 0}
+			<section class="stages-section">
+				<h3>Enlaza con <span class="count">({links.length})</span></h3>
+				<p class="stages-hint">Rutas cuyo inicio o fin está cerca del de esta (encadenables).</p>
+				<ul class="links-list">
+					{#each links as l (l.id)}
+						<li><a href={resolve('/ruta/[id]', { id: l.id })}>{l.name}</a></li>
+					{/each}
+				</ul>
+			</section>
+		{/if}
+
 		<h3>Cómo llegar</h3>
 		<div class="travel">
 			{#if travel}
@@ -815,6 +830,13 @@
 	}
 	.stages-section {
 		margin-top: 1rem;
+	}
+	.links-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		gap: 0.25rem;
 	}
 	.stages-section .count {
 		font-weight: 400;

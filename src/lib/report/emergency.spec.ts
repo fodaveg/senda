@@ -18,6 +18,7 @@ const ROUTE: Route = {
 	zone: 'serranos',
 	aemet_municipio: null,
 	start: { lat: 39.65448, lon: -0.88923, name: 'Plaza de la Baronia' },
+	end: null,
 	distance_km: 5.5,
 	ascent_m: 415,
 	descent_m: 290,

@@ -16,6 +16,8 @@ export interface GpxSummary {
 	ascent_m: number | null;
 	descent_m: number | null;
 	start: { lat: number; lon: number };
+	/** Último punto del track (para enlazar rutas, SPECS_V3.5 §5). */
+	end: { lat: number; lon: number };
 	bbox: [number, number, number, number];
 	/** true si el track termina a menos de CIRCULAR_MAX_GAP_M del inicio. */
 	circular: boolean;
@@ -95,6 +97,7 @@ export function parseGpx(xml: string, label = 'gpx'): GpxSummary {
 		ascent_m: hasElevation ? Math.round(ascent) : null,
 		descent_m: hasElevation ? Math.round(descent) : null,
 		start: { lat: first[1], lon: first[0] },
+		end: { lat: last[1], lon: last[0] },
 		bbox: [minLon, minLat, maxLon, maxLat],
 		circular:
 			haversineMeters(first as [number, number], last as [number, number]) <= CIRCULAR_MAX_GAP_M,

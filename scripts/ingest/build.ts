@@ -148,6 +148,7 @@ export function buildRoute(
 			lon: m.start?.lon ?? summary.start.lon,
 			name: m.start?.name ?? c.start_name ?? null
 		},
+		end: summary.end,
 		distance_km: m.distance_km ?? c.distance_km ?? summary.distance_km,
 		ascent_m: m.ascent_m ?? c.ascent_m ?? summary.ascent_m,
 		descent_m: m.descent_m ?? c.descent_m ?? summary.descent_m,

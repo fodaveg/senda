@@ -12,6 +12,7 @@ const ROUTE: Route = {
 	zone: 'serranos',
 	aemet_municipio: null,
 	start: { lat: 39.6, lon: -0.9, name: null },
+	end: null,
 	distance_km: 5.5,
 	ascent_m: 100,
 	descent_m: 100,

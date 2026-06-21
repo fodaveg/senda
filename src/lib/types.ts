@@ -86,6 +86,8 @@ export interface Route {
 	/** Código INE de 5 dígitos del municipio (para AEMET OpenData). */
 	aemet_municipio: string | null;
 	start: RouteStart;
+	/** Punto final del track (para enlazar rutas, SPECS_V3.5 §5); null si no se derivó. */
+	end: { lat: number; lon: number } | null;
 	distance_km: number;
 	ascent_m: number | null;
 	descent_m: number | null;

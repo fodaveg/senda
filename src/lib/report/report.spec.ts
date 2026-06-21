@@ -14,6 +14,7 @@ const route: Route = {
 	zone: null,
 	aemet_municipio: null,
 	start: { lat: 39.65, lon: -0.89, name: 'Chulilla' },
+	end: null,
 	distance_km: 5.5,
 	ascent_m: 415,
 	descent_m: 290,

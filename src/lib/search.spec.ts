@@ -13,6 +13,7 @@ function route(overrides: Partial<Route>): Route {
 		zone: null,
 		aemet_municipio: null,
 		start: { lat: 39, lon: -0.5, name: null },
+		end: null,
 		distance_km: 10,
 		ascent_m: null,
 		descent_m: null,

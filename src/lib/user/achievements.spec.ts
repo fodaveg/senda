@@ -14,6 +14,7 @@ function route(id: string, zone: string | null, type: Route['type'] = 'PR'): Rou
 		zone,
 		aemet_municipio: null,
 		start: { lat: 39, lon: -0.5, name: null },
+		end: null,
 		distance_km: 60,
 		ascent_m: 2000,
 		descent_m: 2000,

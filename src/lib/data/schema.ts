@@ -72,6 +72,11 @@ export const routeSchema = z.strictObject({
 		lon: z.number().min(-180).max(180),
 		name: z.string().min(1).nullable()
 	}),
+	// .default(null) para que el catálogo ya publicado (sin este campo) valide.
+	end: z
+		.strictObject({ lat: z.number().min(-90).max(90), lon: z.number().min(-180).max(180) })
+		.nullable()
+		.default(null),
 	distance_km: z.number().positive(),
 	ascent_m: z.number().min(0).nullable(),
 	descent_m: z.number().min(0).nullable(),
