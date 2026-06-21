@@ -50,6 +50,14 @@ material custom y aviso `warn` · M7 apariencia (toggle de tema + paletas).
 
 - Pulido de v3 (ver backlog). El re-enrich OSM (agua/POIs, **585/585**) está
   completado y commiteado.
+- **Pulido reciente (post-merge, jun-2026)**: app renombrada a **"Senda"**;
+  marcadores de agua con icono 💧/🚰; popup de mapa tematizado (oscuro legible);
+  galería de esquemas con tarjetas uniformes; reset global `box-sizing` que
+  corrige inputs desbordados. Todo en `main` y publicado.
+- **Escritorio (Tauri)**: `npm run tauri build -- --bundles dmg` genera
+  `Senda_0.1.0_aarch64.dmg` (productName "Senda"); se renombra a `senda.dmg` a
+  mano. Requiere **Node 22 de nvm** (el Node por defecto del sistema rompe el CLI
+  de Tauri por el binario nativo).
 
 ## Documentación
 

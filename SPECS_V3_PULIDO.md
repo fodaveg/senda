@@ -47,6 +47,11 @@ Prioridad orientativa: **[A]** alta (valor o coherencia claros), **[M]** media,
 - [x] **[M]** Preferencias de mapa unificadas en `src/lib/map/prefs.ts`
       (`senderoscv:map-prefs`): capa base + toggles de agua/POIs, recordados entre
       visitas.
+- [x] **[A]** Marcadores de **agua con icono** (💧 manantial / 🚰 fuente) en vez
+      del punto azul (coherente con los POI).
+- [x] **[A]** **Popup de POI/agua tematizado**: `.maplibregl-popup-content` y la
+      flecha (tip) usan `--surface`/`--ink`/`--border`. Antes en modo oscuro el
+      título claro salía sobre fondo blanco fijo (ilegible).
 - [ ] **[B]** **Agrupar marcadores** (clustering) cuando haya muchos POIs/fuentes
       muy juntos.
 - [ ] **[B]** Popup de POI con **distancia al track** además del km, y accesible
@@ -65,6 +70,10 @@ Prioridad orientativa: **[A]** alta (valor o coherencia claros), **[M]** media,
 
 - [x] **[M]** **Previsualización** de esquemas en Ajustes (cajitas de color por
       esquema) — hecho en el rediseño de temas.
+- [x] **[A]** **Tarjetas de esquema de tamaño uniforme** (174×88 px): el
+      `<button>` quedaba a ancho de contenido (`justify-self: start`) → `width:100%`
+      para llenar la celda 1fr; swatch de altura fija y nombre con espacio para 2
+      líneas. Verificado midiendo el DOM en runtime.
 - [x] **[M]** **Modo oscuro** revisado en los componentes nuevos: botones y avisos
       tokenizados (`--on-brand`, `--alert-*`); contraste correcto en todos los
       esquemas.
@@ -91,6 +100,9 @@ Prioridad orientativa: **[A]** alta (valor o coherencia claros), **[M]** media,
       (MapLibre pesa). Carga diferida del mapa donde no se use.
 - [ ] **[M]** **i18n** preparada (textos centralizados; valencià como primer
       candidato) — pendiente declarado desde v2 §13.
+- [x] **[M]** Reset global **`box-sizing: border-box`** (`+layout.svelte`):
+      `padding`+`border` cuentan dentro del ancho. Corrige inputs que se salían de
+      su caja (p. ej. lat/long en Ajustes) sin tocar cada componente.
 - [ ] **[B]** Tests e2e de **regresión visual** o de oscuro para los componentes
       nuevos.
 - [ ] **[B]** Revisar **accesibilidad** de los marcadores del mapa (foco,
@@ -100,8 +112,8 @@ Prioridad orientativa: **[A]** alta (valor o coherencia claros), **[M]** media,
 
 ## Notas
 
-- Todo lo anterior va sobre la rama `v3`; `main` (web desplegada) no se toca hasta
-  mergear. El estado y las decisiones vivas están en
-  [SPECS_V3_PROGRESS.md](SPECS_V3_PROGRESS.md).
+- **v3 ya está mergeada en `main`**: el pulido va **directo sobre `main`** (web
+  desplegada en GitLab Pages), cada push publica. El estado y las decisiones vivas
+  están en [SPECS_V3_PROGRESS.md](SPECS_V3_PROGRESS.md).
 - Lo grande aplazado (cuentas, OTP, analítica central) NO está aquí: es **v4**
   (requiere backend), ver [SPECS_V3.md](SPECS_V3.md) §11.
