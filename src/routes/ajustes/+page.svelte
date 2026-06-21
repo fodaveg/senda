@@ -539,6 +539,9 @@
 	.scheme-card {
 		display: flex;
 		flex-direction: column;
+		/* Llena la celda del grid: sin esto el <button> queda a su ancho de
+		   contenido (justify-self: start) y cada tarjeta mide distinto. */
+		width: 100%;
 		gap: 0.35rem;
 		padding: 0.4rem;
 		border: 1px solid var(--border);
@@ -653,6 +656,10 @@
 		padding: 0.45rem 0.6rem;
 		border: 1px solid var(--border);
 		border-radius: 6px;
+		/* Deja que el input encoja a su contenedor (label/flex) en vez de
+		   mantener su ancho intrínseco y desbordar la caja. */
+		width: 100%;
+		min-width: 0;
 	}
 	.key-row {
 		display: flex;
