@@ -554,8 +554,7 @@
 	}
 	.swatches {
 		display: flex;
-		flex: 1;
-		min-height: 2rem;
+		height: 2.25rem;
 		border-radius: 0.3rem;
 		overflow: hidden;
 		border: 1px solid var(--border);
@@ -565,6 +564,12 @@
 	}
 	.scheme-name {
 		font-size: 0.82rem;
+		line-height: 1.2;
+		/* Reserva dos líneas para que todas las tarjetas midan igual aunque el
+		   nombre ocupe dos renglones (p. ej. "Alto contraste (sol)"). */
+		min-height: 2.4em;
+		display: flex;
+		align-items: center;
 	}
 	.gear-list {
 		list-style: none;

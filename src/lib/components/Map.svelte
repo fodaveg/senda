@@ -153,6 +153,8 @@
 		for (const wp of list) {
 			const el = document.createElement('div');
 			el.className = 'water-dot';
+			// Icono según el tipo: gota para manantial natural, grifo para fuente.
+			el.textContent = wp.kind === 'manantial' ? '💧' : '🚰';
 			const kind = wp.kind === 'manantial' ? 'Manantial' : 'Fuente';
 			el.setAttribute('aria-label', `${kind}${wp.name ? `: ${wp.name}` : ''}`);
 			const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10 });
@@ -401,13 +403,10 @@
 		cursor: pointer;
 	}
 	.map :global(.water-dot) {
-		width: 13px;
-		height: 13px;
-		border-radius: 50%;
-		background: #1e88e5;
-		border: 2px solid #fff;
-		box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+		font-size: 17px;
+		line-height: 1;
 		cursor: help;
+		filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
 	}
 	.map :global(.poi-dot) {
 		font-size: 17px;

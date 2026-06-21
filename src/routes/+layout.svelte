@@ -93,6 +93,13 @@
 			color-scheme: dark;
 		}
 	}
+	:global(*),
+	:global(*::before),
+	:global(*::after) {
+		/* El padding y el borde cuentan dentro del ancho declarado: evita que
+		   inputs y tarjetas se desborden de su contenedor. */
+		box-sizing: border-box;
+	}
 	:global(body) {
 		margin: 0;
 		font-family:
