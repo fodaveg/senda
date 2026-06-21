@@ -27,6 +27,9 @@ test('registrar una salida alimenta el diario y sus estadísticas', async ({ pag
 	await expect(page.getByText('1 salidas (1 rutas)')).toBeVisible();
 	await expect(page.getByText('5.5 km acumulados')).toBeVisible();
 	await expect(page.getByText('mañana fresquita')).toBeVisible();
+	// V3.5-M4: logros y progreso por comarca.
+	await expect(page.getByRole('heading', { name: 'Logros' })).toBeVisible();
+	await expect(page.getByRole('heading', { name: /Progreso por comarca/ })).toBeVisible();
 });
 
 test('la copia de seguridad exporta JSON válido del esquema', async ({ page }) => {

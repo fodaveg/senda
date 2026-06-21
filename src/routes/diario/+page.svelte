@@ -11,6 +11,7 @@
 		type UserData
 	} from '$lib/user/marks';
 	import { diaryMarkdown, diaryStats } from '$lib/user/stats';
+	import { achievements, comarcaProgress } from '$lib/user/achievements';
 
 	let { data } = $props();
 
@@ -22,6 +23,8 @@
 	});
 
 	let stats = $derived(diaryStats(userData, data.routes));
+	let logros = $derived(achievements(userData, data.routes));
+	let comarcas = $derived(comarcaProgress(userData, data.routes));
 
 	function download(filename: string, content: string, type: string) {
 		const blob = new Blob([content], { type });
@@ -106,6 +109,28 @@
 		{/if}
 	</div>
 
+	<h2>Logros</h2>
+	<ul class="achievements">
+		{#each logros as a (a.id)}
+			<li class:done={a.achieved}>{a.achieved ? '🏅' : '🔒'} {a.label}</li>
+		{/each}
+	</ul>
+
+	<h2>
+		Progreso por comarca <span class="sub">({comarcas.completed}/{comarcas.total} completas)</span>
+	</h2>
+	<ul class="comarcas">
+		{#each comarcas.perComarca as c (c.zone)}
+			<li class:complete={c.total > 0 && c.done === c.total}>
+				<span class="zname">{c.zone}</span>
+				<span class="cbar"
+					><span class="cfill" style="width:{(c.done / c.total) * 100}%"></span></span
+				>
+				<span class="cnum">{c.done}/{c.total}</span>
+			</li>
+		{/each}
+	</ul>
+
 	<h2>Salidas</h2>
 	<ul class="outings">
 		{#each stats.outings as outing (outing.routeId + outing.date + (outing.notes ?? ''))}
@@ -139,6 +164,63 @@
 
 <style>
 	.empty {
+		color: var(--muted);
+	}
+	.sub {
+		font-weight: 400;
+		color: var(--muted);
+		font-size: 0.85rem;
+	}
+	.achievements {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+	.achievements li {
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		padding: 0.25rem 0.7rem;
+		font-size: 0.85rem;
+		opacity: 0.55;
+	}
+	.achievements li.done {
+		opacity: 1;
+		border-color: var(--brand);
+		color: var(--brand);
+		font-weight: 600;
+	}
+	.comarcas {
+		list-style: none;
+		padding: 0;
+		display: grid;
+		gap: 0.3rem;
+	}
+	.comarcas li {
+		display: grid;
+		grid-template-columns: 9rem 1fr 3rem;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.85rem;
+	}
+	.comarcas li.complete .zname {
+		font-weight: 600;
+		color: var(--brand);
+	}
+	.cbar {
+		height: 0.5rem;
+		background: var(--surface-alt);
+		border-radius: 999px;
+		overflow: hidden;
+	}
+	.cfill {
+		display: block;
+		height: 100%;
+		background: var(--brand);
+	}
+	.cnum {
+		text-align: right;
 		color: var(--muted);
 	}
 	.totals {
