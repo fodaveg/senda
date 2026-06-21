@@ -39,8 +39,9 @@
 	import { SvelteSet } from 'svelte/reactivity';
 	import { loadChecklist, saveChecklist } from '$lib/user/checklist';
 	import { wikilocSearchUrl } from '$lib/wikiloc';
-	import { deleteByPrefix, getStoredBinary, storeBinary } from '$lib/catalog/store';
-	import { ignTileUrl, tileListForBbox, tileStoreKey } from '$lib/map/tiles';
+	import { deleteByPrefix, getStoredBinary } from '$lib/catalog/store';
+	import { tileListForBbox, tileStoreKey } from '$lib/map/tiles';
+	import { downloadTilesForBbox } from '$lib/map/offline';
 	import {
 		AemetAuthError,
 		AemetRateLimitError,
@@ -171,21 +172,13 @@
 
 	async function downloadOfflineMap() {
 		if (!route.bbox) return;
-		const tiles = tileListForBbox(route.bbox);
-		downloadProgress = `Descargando 0/${tiles.length} tiles…`;
-		let done = 0;
+		downloadProgress = 'Descargando mapa…';
 		try {
-			for (const tile of tiles) {
-				if ((await getStoredBinary(tileStoreKey(tile))) === null) {
-					const response = await fetch(ignTileUrl(tile.z, tile.x, tile.y));
-					if (!response.ok) throw new Error(`IGN respondió ${response.status}`);
-					await storeBinary(tileStoreKey(tile), await response.arrayBuffer());
-				}
-				done++;
-				if (done % 20 === 0) downloadProgress = `Descargando ${done}/${tiles.length} tiles…`;
-			}
+			const total = await downloadTilesForBbox(route.bbox, (done, t) => {
+				if (done % 20 === 0 || done === t) downloadProgress = `Descargando ${done}/${t} tiles…`;
+			});
 			offlineTiles = 1;
-			downloadProgress = `Mapa offline listo (${tiles.length} tiles, IGN CC-BY).`;
+			downloadProgress = `Mapa offline listo (${total} tiles, IGN CC-BY).`;
 		} catch (e) {
 			console.error('Mapa offline:', e);
 			downloadProgress =

@@ -11,6 +11,9 @@
 	import { validateAemetKey, type AemetKeyCheck } from '$lib/weather/aemet';
 	import { ATTRIBUTE_LABELS, GEAR_ATTRIBUTES } from '$lib/engine';
 	import type { GearAttribute } from '$lib/types';
+	import { routeById } from '$lib/data/routes';
+	import { loadUserData } from '$lib/user/marks';
+	import { downloadTilesForBbox } from '$lib/map/offline';
 	import {
 		addCustomItem,
 		emptyCustomGearData,
@@ -70,6 +73,36 @@
 	function removeGear(id: string) {
 		gear = removeCustomItem(gear, id);
 		saveCustomGear(gear);
+	}
+
+	// Descarga offline por lote (SPECS_V3.5 §3): mapas de las rutas "quiero hacer".
+	let batchStatus = $state<string | null>(null);
+	let batching = $state(false);
+	async function downloadOfflineBatch() {
+		const marks = loadUserData().marks;
+		const targets = Object.entries(marks)
+			.filter(([, m]) => m.quiero_hacer)
+			.map(([id]) => routeById(id))
+			.filter((r) => r !== undefined && r.bbox !== null);
+		if (targets.length === 0) {
+			batchStatus = 'No tienes rutas marcadas "quiero hacer" con mapa disponible.';
+			return;
+		}
+		batching = true;
+		let ok = 0;
+		try {
+			for (const [i, r] of targets.entries()) {
+				batchStatus = `Descargando ${i + 1}/${targets.length}: ${r!.name}…`;
+				await downloadTilesForBbox(r!.bbox!);
+				ok++;
+			}
+			batchStatus = `Listo: ${ok}/${targets.length} mapas descargados (IGN CC-BY).`;
+		} catch (e) {
+			console.error('Descarga por lote:', e);
+			batchStatus = `Interrumpida tras ${ok}/${targets.length} (sin conexión o IGN caído); reintenta.`;
+		} finally {
+			batching = false;
+		}
 	}
 
 	onMount(async () => {
@@ -405,6 +438,18 @@
 		<button type="button" class="secondary" disabled={gName.trim() === ''} onclick={addGear}>
 			Añadir material
 		</button>
+	</fieldset>
+
+	<fieldset>
+		<legend>Mapas offline</legend>
+		<p class="help">
+			Descarga de golpe los mapas (tiles del IGN) de tus rutas marcadas "quiero hacer", para
+			llevarlas sin cobertura. Cada ruta respeta el tope de tiles por cortesía con el IGN.
+		</p>
+		<button type="button" class="secondary" disabled={batching} onclick={downloadOfflineBatch}>
+			{batching ? 'Descargando…' : 'Descargar mapas de mis rutas "quiero hacer"'}
+		</button>
+		{#if batchStatus}<p class="help" role="status">{batchStatus}</p>{/if}
 	</fieldset>
 
 	<fieldset>
