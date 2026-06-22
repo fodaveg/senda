@@ -100,6 +100,34 @@
 	// Zoom actual: dispara el reclustering de marcadores al acercar/alejar.
 	let mapZoom = $state(7);
 	let markerHandles: maplibregl.Marker[] = [];
+
+	/** Hace un elemento de marcador accesible por teclado (foco + Enter/Espacio). */
+	function makeActivable(el: HTMLElement, label: string, action: () => void): void {
+		el.tabIndex = 0;
+		el.setAttribute('role', 'button');
+		el.setAttribute('aria-label', label);
+		el.addEventListener('keydown', (e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				action();
+			}
+		});
+	}
+
+	/** Muestra un popup también con el foco (teclado), no solo al pasar el ratón. */
+	function popupOnHoverAndFocus(
+		el: HTMLElement,
+		popup: maplibregl.Popup,
+		lngLat: [number, number]
+	): void {
+		el.tabIndex = 0;
+		const show = () => popup.setLngLat(lngLat).addTo(mapInstance!);
+		const hide = () => popup.remove();
+		el.addEventListener('mouseenter', show);
+		el.addEventListener('mouseleave', hide);
+		el.addEventListener('focus', show);
+		el.addEventListener('blur', hide);
+	}
 	let endpointHandles: maplibregl.Marker[] = [];
 	let waterHandles: maplibregl.Marker[] = [];
 	let poiHandles: maplibregl.Marker[] = [];
@@ -120,27 +148,31 @@
 				const m = new maplibregl.Marker({ color: '#c1121f' })
 					.setLngLat([marker.lon, marker.lat])
 					.addTo(mapInstance!);
-				m.getElement().setAttribute('title', marker.name);
-				m.getElement().style.cursor = 'pointer';
-				m.getElement().addEventListener('click', (e) => {
+				const el = m.getElement();
+				el.setAttribute('title', marker.name);
+				el.style.cursor = 'pointer';
+				const open = () => onMarkerClick?.(marker.id);
+				el.addEventListener('click', (e) => {
 					e.stopPropagation();
-					onMarkerClick?.(marker.id);
+					open();
 				});
+				makeActivable(el, `Ruta: ${marker.name}`, open);
 				return m;
 			}
 			const el = document.createElement('div');
 			el.className = 'cluster-dot';
 			el.textContent = String(cluster.members.length);
 			el.setAttribute('title', `${cluster.members.length} rutas en esta zona`);
-			el.setAttribute('role', 'button');
-			el.setAttribute('aria-label', `${cluster.members.length} rutas agrupadas; acercar`);
 			const m = new maplibregl.Marker({ element: el })
 				.setLngLat([cluster.lon, cluster.lat])
 				.addTo(mapInstance!);
+			const zoomIn = () =>
+				mapInstance!.easeTo({ center: [cluster.lon, cluster.lat], zoom: Math.min(zoom + 2, 16) });
 			el.addEventListener('click', (e) => {
 				e.stopPropagation();
-				mapInstance!.easeTo({ center: [cluster.lon, cluster.lat], zoom: Math.min(zoom + 2, 16) });
+				zoomIn();
 			});
+			makeActivable(el, `${cluster.members.length} rutas agrupadas; acercar`, zoomIn);
 			return m;
 		});
 	});
@@ -188,10 +220,7 @@
 			const marker = new maplibregl.Marker({ element: el })
 				.setLngLat([wp.lon, wp.lat])
 				.addTo(mapInstance);
-			el.addEventListener('mouseenter', () =>
-				popup.setLngLat([wp.lon, wp.lat]).addTo(mapInstance!)
-			);
-			el.addEventListener('mouseleave', () => popup.remove());
+			popupOnHoverAndFocus(el, popup, [wp.lon, wp.lat]);
 			waterHandles.push(marker);
 		}
 	});
@@ -216,10 +245,7 @@
 			const marker = new maplibregl.Marker({ element: el })
 				.setLngLat([poi.lon, poi.lat])
 				.addTo(mapInstance);
-			el.addEventListener('mouseenter', () =>
-				popup.setLngLat([poi.lon, poi.lat]).addTo(mapInstance!)
-			);
-			el.addEventListener('mouseleave', () => popup.remove());
+			popupOnHoverAndFocus(el, popup, [poi.lon, poi.lat]);
 			poiHandles.push(marker);
 		}
 	});
@@ -238,10 +264,7 @@
 			if (wp.note) {
 				const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10 });
 				popup.setHTML(`<strong>${wp.note}</strong>`);
-				el.addEventListener('mouseenter', () =>
-					popup.setLngLat([wp.lon, wp.lat]).addTo(mapInstance!)
-				);
-				el.addEventListener('mouseleave', () => popup.remove());
+				popupOnHoverAndFocus(el, popup, [wp.lon, wp.lat]);
 			}
 			waypointHandles.push(
 				new maplibregl.Marker({ element: el }).setLngLat([wp.lon, wp.lat]).addTo(mapInstance)
@@ -440,6 +463,12 @@
 		line-height: 1;
 		cursor: help;
 		filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+	}
+	/* Foco visible por teclado en cualquier marcador accesible. */
+	.map :global(.maplibregl-marker:focus-visible) {
+		outline: 3px solid #1d6fe0;
+		outline-offset: 2px;
+		border-radius: 4px;
 	}
 	.map :global(.cluster-dot) {
 		display: flex;
