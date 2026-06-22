@@ -160,7 +160,18 @@ Tras M6 (varios solapan). Cada uno pequeño, green + commit:
 Cuando elijas un default conservador por falta de validación, anótalo aquí (y en
 `SPECS_V4_PROGRESS.md`) para que el usuario lo revise:
 
-- (vacío al empezar)
+- **A6 sin modal explícito (M4.2c)**: la "subida de datos locales al primer
+  login" se resuelve con la **fusión automática no destructiva** del
+  `SyncedRepository` (LWW por elemento: sube lo local-nuevo, baja lo remoto-nuevo,
+  nunca sobreescribe). Se descartó un modal "¿subir tus datos?" porque su rama
+  "no" dejaría una sesión iniciada sin sincronizar (estado confuso) y la fusión
+  ya cumple el requisito. Revisar si se prefiere un aviso informativo.
+- **Profiles/emergencia no se sincroniza aún (M4.2)**: las preferencias
+  (`preferences`) llevan TODO `Settings` (incluida la ficha de emergencia que
+  vive dentro de `settings.emergency`). La tabla `profiles` queda sin usar; si se
+  quiere separar datos personales de ajustes, es trabajo futuro (M3-pendiente).
+- **Sincronización multi-dispositivo real sin validar**: los tests usan un
+  `RemoteStore` mock. El smoke test contra Supabase real requiere al usuario.
 
 ---
 

@@ -137,11 +137,34 @@ versionada que no pierde datos** y la UI funcionando igual.
 
 Verde: lint, check, **272 unit**, **48 e2e**, build OK.
 
+## V4-M4.2 — COMPLETO (RemoteStore + SyncedRepository + cableado, §B2/§A6)
+
+Sincronización offline-first completa, con backend Supabase real disponible y
+tests contra `RemoteStore` mockeado (la validación multi-dispositivo real queda
+para el usuario). Tres sub-commits:
+
+- **M4.2a (núcleo)**: `sync/records.ts` (conversores puros local↔registros por
+  tabla, round-trips testeados), `sync/remote.ts` (interfaz `RemoteStore`),
+  `user/syncedRepository.ts` (implementa `UserDataRepository`: local instantáneo
+  + pull→`merge.ts`→aplica/empuja en segundo plano; **cola offline** persistida;
+  estado synced/syncing/pending/offline; flush al evento `online`). El sellado de
+  `updated_at` de ajustes se movió a la capa de repositorio (`stampSettings`)
+  para no romper el LWW al aplicar fusiones remotas.
+- **M4.2b (Supabase)**: `sync/supabaseRemote.ts` (mapea las 5 tablas, inyecta
+  `user_id` desde la sesión, **zod** a lo que baja, errores propagados para
+  reintentar). `supabase/client.ts`: cliente compartido (un solo GoTrue, misma
+  sesión que auth). `coerceSettings()` como validación de límite reutilizada.
+- **M4.2c (cableado)**: `user/sessionRepository.ts` (`SwitchableRepository`:
+  instancia única provista por el layout, conmuta local↔sincronizado según la
+  sesión). `SyncIndicator.svelte` en la cabecera. **§A6**: al primer login la
+  fusión es automática y no destructiva (sube lo local, baja lo de otros
+  dispositivos); no hay modal de "subir tus datos" porque la fusión LWW ya lo
+  garantiza sin sobreescribir (ver DECISIONES).
+
+Verde: lint, check, **282 unit**, **48 e2e**, build OK.
+
 ## Pendiente
 
-- `SyncedRepository` que use `merge.ts` contra Supabase; cola offline; indicador
-  de sync (§B2). Se provee en el layout raíz cuando hay sesión.
-- UI de cuentas/backoffice (§B1), migración de datos locales → cuenta (§A6).
 - Analítica opt-in + vista de tendencias (§B3, §11).
 - Preparación de escala (§B6): índice ligero + carga perezosa del catálogo +
   code-splitting del mapa. (UI de descubrimiento NO se rediseña hasta v5/v6.)
