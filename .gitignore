@@ -3,6 +3,8 @@ node_modules
 # Tauri
 src-tauri/target
 src-tauri/gen
+# Bundles de escritorio (se regeneran con `tauri build`)
+*.dmg
 
 # Output
 .output
