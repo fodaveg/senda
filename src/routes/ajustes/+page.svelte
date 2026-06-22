@@ -13,6 +13,8 @@
 	import type { GearAttribute } from '$lib/types';
 	import { routeById } from '$lib/data/routes';
 	import { getUserRepository } from '$lib/user/context';
+	import { getAnalytics } from '$lib/analytics/context';
+	import { gearEvent } from '$lib/analytics/events';
 	import { downloadTilesForBbox } from '$lib/map/offline';
 	import {
 		addCustomItem,
@@ -23,6 +25,7 @@
 	} from '$lib/user/customGear';
 
 	const repo = getUserRepository();
+	const analytics = getAnalytics();
 
 	let settings = $state<Settings>({ ...DEFAULT_SETTINGS });
 	let saved = $state(false);
@@ -68,6 +71,8 @@
 			attributes: gAttrs
 		});
 		repo.saveCustomGear(gear);
+		// Analítica anónima opt-in: material añadido (solo el nombre normalizado).
+		analytics.track(gearEvent(name));
 		gName = '';
 		gWeight = '';
 		gAttrs = [];
@@ -499,6 +504,22 @@
 			<input type="number" min="30" step="15" bind:value={settings.emergency.alarmMarginMin} />
 		</label>
 	</fieldset>
+
+	{#if analytics.enabled}
+		<fieldset>
+			<legend>Privacidad y analítica</legend>
+			<p class="help">
+				Puedes contribuir con estadísticas <strong>anónimas</strong> (rutas marcadas como favoritas o
+				completadas y material añadido) que ayudan a mejorar la app y alimentan la página de tendencias.
+				No se envían datos personales ni se asocian a tu cuenta, y solo se publican agregados cuando hay
+				suficientes personas. Desactivado por defecto; puedes cambiarlo cuando quieras.
+			</p>
+			<label class="check">
+				<input type="checkbox" bind:checked={settings.analyticsOptIn} />
+				Enviar analítica anónima
+			</label>
+		</fieldset>
+	{/if}
 
 	<fieldset>
 		<legend>Diagnóstico</legend>

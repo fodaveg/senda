@@ -46,6 +46,12 @@ export interface Settings {
 	vaultDir: string;
 	/** Muestra los detalles técnicos en crudo cuando algo falla. */
 	debugMode: boolean;
+	/**
+	 * Consentimiento (opt-in, RGPD) para enviar analítica **anónima** al backend
+	 * (SPECS_V4 §B3/§11). Por defecto **desactivado**: no se recopila nada hasta
+	 * que el usuario lo active explícitamente. Sin sesión, no se envía nunca.
+	 */
+	analyticsOptIn: boolean;
 	/** Origen habitual para el tiempo de viaje (SPECS_V2 §6). */
 	origin: OriginSetting | null;
 	emergency: EmergencySettings;
@@ -75,6 +81,7 @@ export const DEFAULT_SETTINGS: Settings = {
 	aemetApiKey: '',
 	vaultDir: '',
 	debugMode: false,
+	analyticsOptIn: false,
 	origin: null,
 	emergency: { ...DEFAULT_EMERGENCY }
 };
@@ -117,6 +124,7 @@ export function coerceSettings(raw: unknown): Settings {
 		aemetApiKey: typeof parsed.aemetApiKey === 'string' ? parsed.aemetApiKey : '',
 		vaultDir: typeof parsed.vaultDir === 'string' ? parsed.vaultDir : '',
 		debugMode: parsed.debugMode === true,
+		analyticsOptIn: parsed.analyticsOptIn === true,
 		origin: validOrigin,
 		emergency: {
 			name: str(e.name),

@@ -9,6 +9,8 @@
 	import { provideAuth } from '$lib/auth/context';
 	import { backendConfig } from '$lib/config';
 	import { createSupabaseRemoteStore } from '$lib/sync/supabaseRemote';
+	import { buildAnalytics, provideAnalytics } from '$lib/analytics/context';
+	import { get } from 'svelte/store';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import AccountNav from '$lib/components/AccountNav.svelte';
 	import SyncIndicator from '$lib/components/SyncIndicator.svelte';
@@ -24,6 +26,16 @@
 	// Módulo de auth compartido (SPECS_V4 §A3). Deshabilitado si no hay backend
 	// configurado: la app sigue funcionando 100% en local.
 	const auth = provideAuth();
+
+	// Analítica anónima opt-in (SPECS_V4 §B3/§11): solo se envía si el usuario dio
+	// su consentimiento en Ajustes Y hay sesión iniciada.
+	provideAnalytics(
+		buildAnalytics({
+			canSend: () =>
+				repo.loadSettings().analyticsOptIn &&
+				(auth.session ? get(auth.session).status === 'authenticated' : false)
+		})
+	);
 
 	// Marcador para que los tests e2e esperen a la hidratación.
 	onMount(() => {
@@ -64,6 +76,9 @@
 	<a href={resolve('/')} class="brand">Senda</a>
 	<span class="tagline">Senderos homologados FEMECV de la Comunitat Valenciana</span>
 	<a href={resolve('/diario')} class="nav-link">Diario</a>
+	{#if auth.enabled}
+		<a href={resolve('/tendencias')} class="nav-link">Tendencias</a>
+	{/if}
 	<a href={resolve('/ajustes')} class="nav-link">Ajustes</a>
 	{#if auth.enabled && auth.session}
 		<SyncIndicator status={repo.status} />

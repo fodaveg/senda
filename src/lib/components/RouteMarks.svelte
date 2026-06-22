@@ -12,10 +12,13 @@
 		type UserData
 	} from '$lib/user/marks';
 	import { getUserRepository } from '$lib/user/context';
+	import { getAnalytics } from '$lib/analytics/context';
+	import { routeEvent } from '$lib/analytics/events';
 
 	let { routeId }: { routeId: string } = $props();
 
 	const repo = getUserRepository();
+	const analytics = getAnalytics();
 
 	const MARK_LABELS: Record<ToggleMark, { off: string; on: string }> = {
 		favorita: { off: '☆ Favorita', on: '★ Favorita' },
@@ -41,7 +44,10 @@
 	}
 
 	function toggle(mark: ToggleMark) {
+		const willBeOn = !marks[mark];
 		persist(withToggledMark(userData, routeId, mark));
+		// Analítica anónima opt-in: solo al marcar (no al desmarcar) una favorita.
+		if (willBeOn && mark === 'favorita') analytics.track(routeEvent('favorita', routeId));
 	}
 
 	function registerOuting() {
@@ -54,6 +60,8 @@
 		);
 		showOutingForm = false;
 		outingNotes = '';
+		// Analítica anónima opt-in: ruta completada (sin fecha ni notas, solo el id).
+		analytics.track(routeEvent('completada', routeId));
 	}
 
 	function removeOuting(outingId: string) {

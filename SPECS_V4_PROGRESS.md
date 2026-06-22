@@ -146,10 +146,10 @@ para el usuario). Tres sub-commits:
 - **M4.2a (núcleo)**: `sync/records.ts` (conversores puros local↔registros por
   tabla, round-trips testeados), `sync/remote.ts` (interfaz `RemoteStore`),
   `user/syncedRepository.ts` (implementa `UserDataRepository`: local instantáneo
-  + pull→`merge.ts`→aplica/empuja en segundo plano; **cola offline** persistida;
-  estado synced/syncing/pending/offline; flush al evento `online`). El sellado de
-  `updated_at` de ajustes se movió a la capa de repositorio (`stampSettings`)
-  para no romper el LWW al aplicar fusiones remotas.
+  - pull→`merge.ts`→aplica/empuja en segundo plano; **cola offline** persistida;
+    estado synced/syncing/pending/offline; flush al evento `online`). El sellado de
+    `updated_at` de ajustes se movió a la capa de repositorio (`stampSettings`)
+    para no romper el LWW al aplicar fusiones remotas.
 - **M4.2b (Supabase)**: `sync/supabaseRemote.ts` (mapea las 5 tablas, inyecta
   `user_id` desde la sesión, **zod** a lo que baja, errores propagados para
   reintentar). `supabase/client.ts`: cliente compartido (un solo GoTrue, misma
@@ -163,9 +163,28 @@ para el usuario). Tres sub-commits:
 
 Verde: lint, check, **282 unit**, **48 e2e**, build OK.
 
+## V4-M5 — COMPLETO (analítica anónima opt-in + tendencias, §B3/§11)
+
+- `src/lib/analytics/`: `types.ts` (contrato `AnalyticsClient`), `events.ts`
+  (constructores puros `routeEvent`/`gearEvent` + `isValidEvent` con zod, espejo
+  del `check` del servidor: objeto con `route_id` o `name`, **sin** PII),
+  `supabaseAnalytics.ts` (insert en `analytics_events` + lectura de
+  `trending_routes`/`trending_gear` con zod), `context.ts` (gating: solo envía
+  con **opt-in + sesión** y evento válido; fire-and-forget, nunca rompe la UI).
+- **Toggle opt-in en Ajustes** ("Privacidad y analítica"), **desactivado por
+  defecto**, con explicación RGPD; solo visible si hay backend.
+- Eventos disparados: favorita (al marcar), completada (al registrar salida) en
+  `RouteMarks`; material (al añadir) en Ajustes.
+- **Página `/tendencias`** (enlace en cabecera si hay backend): rankings con
+  estado vacío elegante (k-anonimato `n>=5` → vacío hasta que haya uso) y
+  degradación (sin backend / error). Nombres de ruta desde el catálogo.
+- Tests con cliente mockeado (forma de eventos, anti-PII, gating). Añadido
+  `analyticsOptIn` a `Settings` (sincroniza vía preferences).
+
+Verde: lint, check, **289 unit**, **48 e2e**, build OK.
+
 ## Pendiente
 
-- Analítica opt-in + vista de tendencias (§B3, §11).
 - Preparación de escala (§B6): índice ligero + carga perezosa del catálogo +
   code-splitting del mapa. (UI de descubrimiento NO se rediseña hasta v5/v6.)
 
