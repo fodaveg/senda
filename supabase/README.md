@@ -26,20 +26,23 @@ aunque haya pocas cuentas.
 
 1. Crear proyecto en https://supabase.com (plan Free, región **Central EU /
    Frankfurt**).
-2. SQL Editor → pegar y ejecutar `supabase/schema.sql`.
+2. SQL Editor → pegar y ejecutar `supabase/schema.sql`. El script es
+   **re-ejecutable** (puedes pegarlo de nuevo sin que aborte) e incluye los
+   `grant` y el k-anonimato de los rankings ya revisados en auditoría.
 3. Authentication → activar Email (y, opcional, TOTP para el OTP reforzado).
-4. Copiar **Project URL** y **anon key** y exponerlas como variables públicas de
-   build:
+4. Copiar **Project URL** y **anon key** (Project Settings → API). Pasárselas a
+   Claude / exponerlas como variables públicas de build:
    ```
    PUBLIC_SUPABASE_URL=...
    PUBLIC_SUPABASE_ANON_KEY=...
    ```
    (En GitLab CI: Settings → CI/CD → Variables.) Mientras no estén, la app no
-   ofrece login y sigue en modo local (`src/lib/config.ts`).
-5. Instalar el SDK (`@supabase/supabase-js`) e implementar el adaptador de
-   `AuthClient` (`src/lib/auth/`) y el repositorio sincronizado (pendiente, ver
-   SPECS_V4 §A1/§A3). Hasta ese paso no se añade la dependencia, para no engordar
-   el bundle de una función que es un "por si acaso".
+   ofrece login y sigue en modo local (`src/lib/config.ts`). La `anon key` es
+   pública por diseño: la seguridad vive en las políticas RLS.
+5. Con esas dos claves, se implementa el resto de V4-M2: instalar el SDK
+   (`@supabase/supabase-js`, cargado por **import dinámico** para no engordar el
+   bundle), el adaptador de `AuthClient` (`src/lib/auth/`) y el store de sesión.
+   El repositorio sincronizado es ya V4-M4 (§A1/§B2).
 
 ## Pendiente antes de hacerlo público (no bloquea el desarrollo)
 

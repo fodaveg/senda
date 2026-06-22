@@ -3,8 +3,10 @@
 -- persona solo ve y escribe SUS filas (incluido el dueño del proyecto). RLS en
 -- "deny por defecto": ninguna tabla es accesible sin una política explícita.
 --
--- Aplicar en el SQL Editor del proyecto Supabase (gratis). Idempotente-ish:
--- usa "if not exists" donde se puede.
+-- Aplicar en el SQL Editor del proyecto Supabase (gratis). El script es
+-- RE-EJECUTABLE de forma segura: usa "if not exists" en tablas/índices y
+-- "drop ... if exists" antes de políticas y constraints (que no admiten
+-- "if not exists"). Puedes pegarlo varias veces sin que aborte.
 
 -- ─── Datos de usuario (sincronización, SPECS_V4 §B2) ────────────────────────
 -- Todas llevan user_id (= auth.uid()) y updated_at para la fusión LWW (§A2),
@@ -63,6 +65,12 @@ create table if not exists profiles (
   updated_at    timestamptz not null default now()
 );
 
+-- Límite de tamaño de datos personales (evita abuso de almacenamiento en la
+-- propia fila; el usuario solo puede escribir la suya). [auditoría B2]
+alter table profiles drop constraint if exists personal_data_size;
+alter table profiles add constraint personal_data_size
+  check (pg_column_size(personal_data) < 16384);
+
 -- ─── RLS: cada usuario, solo lo suyo ────────────────────────────────────────
 alter table route_marks enable row level security;
 alter table outings     enable row level security;
@@ -73,23 +81,37 @@ alter table profiles    enable row level security;
 
 -- Política única por tabla: el dueño de la fila (auth.uid() = user_id) puede
 -- todo; el resto, nada. (Repetir el patrón para cada tabla.)
+-- "drop policy if exists" hace el script re-ejecutable [auditoría A1].
+drop policy if exists "own rows" on route_marks;
 create policy "own rows" on route_marks for all
   using (auth.uid() = user_id) with check (auth.uid() = user_id);
+drop policy if exists "own rows" on outings;
 create policy "own rows" on outings for all
   using (auth.uid() = user_id) with check (auth.uid() = user_id);
+drop policy if exists "own rows" on checklists;
 create policy "own rows" on checklists for all
   using (auth.uid() = user_id) with check (auth.uid() = user_id);
+drop policy if exists "own rows" on custom_gear;
 create policy "own rows" on custom_gear for all
   using (auth.uid() = user_id) with check (auth.uid() = user_id);
+drop policy if exists "own rows" on preferences;
 create policy "own rows" on preferences for all
   using (auth.uid() = user_id) with check (auth.uid() = user_id);
+drop policy if exists "own rows" on profiles;
 create policy "own rows" on profiles for all
   using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- Privilegios de tabla para el rol "authenticated". RLS filtra filas, pero
+-- PostgREST exige además el privilegio de tabla; lo declaramos explícito para no
+-- depender de los default privileges del entorno [auditoría A2].
+grant select, insert, update, delete
+  on route_marks, outings, checklists, custom_gear, preferences, profiles
+  to authenticated;
 
 -- ─── Analítica ANÓNIMA y opt-in (SPECS_V4 §B3, §11) ─────────────────────────
 -- Sin user_id: eventos no reidentificables. Solo-inserción para usuarios
 -- autenticados; NADIE puede leer filas crudas (privacidad). Los rankings se
--- sirven desde una vista agregada (abajo).
+-- sirven desde vistas agregadas con k-anonimato (abajo).
 create table if not exists analytics_events (
   id         bigint generated always as identity primary key,
   kind       text not null check (kind in ('favorita','completada','material')),
@@ -98,14 +120,53 @@ create table if not exists analytics_events (
   payload    jsonb not null,
   created_at timestamptz not null default now()
 );
+
+-- El payload debe ser un objeto con la clave esperada y SIN PII: barrera de BD
+-- contra que un cliente manipulado almacene datos personales [auditoría M1].
+alter table analytics_events drop constraint if exists payload_shape;
+alter table analytics_events add constraint payload_shape check (
+  jsonb_typeof(payload) = 'object'
+  and (payload ? 'route_id' or payload ? 'name')
+  and not (payload ? 'user_id' or payload ? 'email')
+);
+
+-- Índice para la agregación de los rankings [auditoría M3].
+create index if not exists analytics_events_kind_route_idx
+  on analytics_events (kind, (payload->>'route_id'));
+
 alter table analytics_events enable row level security;
+drop policy if exists "insert only, authenticated" on analytics_events;
 create policy "insert only, authenticated" on analytics_events for insert
   to authenticated with check (true);
 -- (sin policy de select → nadie lee filas crudas)
+grant insert on analytics_events to authenticated;
+-- La columna "id generated always as identity" usa una secuencia; "authenticated"
+-- necesita permiso sobre ella para poder insertar [auditoría A2].
+grant usage, select on sequence analytics_events_id_seq to authenticated;
 
--- Ranking agregado, legible por cualquiera (no expone eventos individuales).
-create or replace view trending_routes as
+-- Rankings agregados, legibles por cualquiera (no exponen eventos individuales).
+-- "security_invoker = off": la vista corre como owner para poder agregar
+-- saltándose el RLS de analytics_events; lo fijamos explícito en vez de confiar
+-- en el default [auditoría C1]. "having n >= 5": k-anonimato, no se publica un
+-- ranking hasta que hay suficientes eventos para que no se pueda reidentificar
+-- (umbral ajustable) [auditoría C3].
+create or replace view trending_routes
+  with (security_invoker = off) as
   select payload->>'route_id' as route_id, kind, count(*) as n
   from analytics_events
   where kind in ('favorita','completada')
-  group by 1, 2;
+  group by 1, 2
+  having count(*) >= 5;
+
+-- Material más llevado (simétrico; alimenta qué añadir al catálogo por defecto).
+create or replace view trending_gear
+  with (security_invoker = off) as
+  select payload->>'name' as name, count(*) as n
+  from analytics_events
+  where kind = 'material'
+  group by 1
+  having count(*) >= 5;
+
+-- Las vistas necesitan GRANT explícito para ser legibles vía PostgREST por los
+-- roles del cliente [auditoría C2].
+grant select on trending_routes, trending_gear to anon, authenticated;
