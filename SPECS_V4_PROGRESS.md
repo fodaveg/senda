@@ -206,10 +206,28 @@ Verde: lint, check, **289 unit**, **48 e2e**, build OK.
 
 Verde: lint, check, **296 unit**, **48 e2e**, build sin aviso de chunk.
 
+## Pulido v3 (PRE-C de SPECS_V5) — COMPLETO (4 de 5)
+
+Cada uno un commit pequeño en verde:
+
+- **Editar material custom**: `updateCustomItem` + modo edición en Ajustes.
+- **Toggle de tema cíclico**: claro → oscuro → automático.
+- **Recordar el filtro geográfico**: `discoverPrefs.ts` persiste provincia/comarca
+  entre visitas.
+- **A11y de marcadores del mapa**: foco + teclado (Enter/Espacio) + `aria-label`
+  en pines y clústeres; popups de agua/POI/waypoint también con el foco (no solo
+  hover); `outline` de foco visible.
+- **(Deferido) Dedup de POIs / persistir stages-parent_id en la ingesta**: es
+  pipeline manual (`scripts/`), no runtime; rehacerlo a ciegas arriesga corromper
+  los 585 datasets y podría requerir recrawl. Anotado en BLOQUEOS del plan.
+
+Verde: lint, check, **300 unit**, **48 e2e**, build OK.
+
 ## Pendiente
 
-- Pulido v3 (PRE-C de SPECS_V5): editar material custom, toggle de tema cíclico,
-  recordar el origen del filtro, accesibilidad de marcadores del mapa.
+- Validación real multi-dispositivo de la sincronización (necesita 2 sesiones del
+  usuario) y config del proyecto Supabase (ver M3-pendiente y BLOQUEOS).
+- Dedup de POIs / stages en la ingesta (deferido, ver arriba).
 
 ## Notas
 

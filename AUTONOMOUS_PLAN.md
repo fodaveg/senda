@@ -186,6 +186,59 @@ Cuando elijas un default conservador por falta de validación, anótalo aquí (y
 
 ---
 
-## RESUMEN DE LA TANDA (rellenar al acabar)
+## RESUMEN DE LA TANDA (2026-06-22)
 
-- (pendiente)
+Tanda autónoma completada **en verde de principio a fin** (rama `v4`, sin push ni
+merge). Green gate final: **lint, check, 300 unit, 48 e2e, build sin avisos**.
+Referencia inicial era 270 unit / 48 e2e → ahora 300 / 48.
+
+### Milestones cerrados (commits en `v4`)
+
+- **V4-M4.1** `56b8f96` — Esquemas locales sincronizables: `id`/`updated_at`/
+  tombstones en marks/outings/customGear/checklist + `updated_at` en settings,
+  con migración v1→v2 sin pérdida; consumidores filtran tombstones (`liveOutings`/
+  `liveCustomItems`). Helper `sync/clock.ts`.
+- **V4-M4.2** `d848cea`, `a5875e7`, `24c063c`, `fa85613` (docs) — Sincronización:
+  `sync/records.ts` (conversores puros), `sync/remote.ts` (RemoteStore),
+  `user/syncedRepository.ts` (offline-first + cola offline + estado de sync),
+  `sync/supabaseRemote.ts` (zod), `supabase/client.ts` (cliente compartido),
+  `user/sessionRepository.ts` (SwitchableRepository), `SyncIndicator.svelte`,
+  cableado en `+layout`. §A6 = fusión automática no destructiva.
+- **V4-M5** `dc9e710` — Analítica anónima opt-in (`src/lib/analytics/`, gating
+  opt-in+sesión, zod anti-PII), toggle RGPD en Ajustes (off por defecto), página
+  `/tendencias` con estado vacío y degradación.
+- **V4-M6** (5 commits `6f7a54f`, `84657ac`, `336644c`, `cb8d3d4`, `9b95444` +
+  docs `…`) — Escala: code-splitting del mapa (LazyMap), índice ligero del
+  catálogo (RouteSummary), virtualización por `content-visibility`, índice de
+  búsqueda precomputado, clustering de marcadores por zoom.
+- **Pulido v3** `e163225`, `0bc5d02`, `cf0aadc`, `0a50f69` — Editar material
+  custom; toggle de tema cíclico; recordar filtro provincia/comarca; a11y de
+  marcadores.
+
+### A medias / deferido
+
+- **Dedup de POIs / persistir stages-parent_id (ingesta)**: deferido. Es pipeline
+  manual no-runtime; rehacerlo a ciegas arriesga los 585 datasets y podría
+  requerir recrawl con red. → BLOQUEOS.
+
+### DECISIONES / ASUNCIONES tomadas (revisar)
+
+- **A6 sin modal**: la subida de datos al primer login se resuelve con la fusión
+  LWW automática (no destructiva); no se añadió modal "¿subir tus datos?".
+- **Profiles/emergencia no se sincroniza por separado**: las preferencias llevan
+  todo `Settings` (incluye `emergency`); la tabla `profiles` queda sin usar.
+- **`chunkSizeWarningLimit: 1500`**: para no marcar el chunk de maplibre (diferido)
+  ni el bundle de prerender (build-time). Los chunks de app reales son ~50 kB.
+- **Stamping de `updated_at` de settings** movido a la capa de repositorio
+  (`stampSettings`) para no romper el LWW al aplicar fusiones remotas.
+
+### BLOQUEOS que necesitan al usuario
+
+- **Validación real multi-dispositivo** de la sincronización (2 sesiones / 2
+  dispositivos). Los tests usan `RemoteStore` mock.
+- **Config del proyecto Supabase**: Site URL, reactivar confirmación de email,
+  TOTP, borrar usuarios de prueba (ver M3-pendiente).
+- **RPC de borrado de cuenta (RGPD)**, OTP/reset por correo, web push: requieren
+  dashboard/correo/dispositivo del usuario.
+- **Dedup de POIs / stages en la ingesta**: ver arriba.
+- **Push a remoto / merge a `main`**: no hecho (por diseño de la tanda).
