@@ -7,6 +7,7 @@
 	import { emptyUserData, isDone, type ToggleMark, type UserData } from '$lib/user/marks';
 	import { getUserRepository } from '$lib/user/context';
 	import { applyFilters, EMPTY_FILTERS, type RouteFilters } from '$lib/filters';
+	import { loadDiscoverPrefs, saveDiscoverPrefs } from '$lib/discoverPrefs';
 	import { PROVINCES } from '$lib/geo/province';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
 	import { haversineMeters } from '$lib/geo/distance';
@@ -28,9 +29,21 @@
 
 	let userData = $state<UserData>(emptyUserData());
 	let origin = $state<OriginSetting | null>(null);
+	// Se recuerda el filtro geográfico (provincia/comarca) entre visitas (pulido v3).
+	let prefsLoaded = $state(false);
 	onMount(() => {
 		userData = repo.loadMarks();
 		origin = repo.loadSettings().origin;
+		const prefs = loadDiscoverPrefs();
+		filters.province = prefs.province;
+		filters.zone = prefs.zone;
+		prefsLoaded = true;
+	});
+
+	// Persiste el filtro geográfico cuando cambia (tras restaurarlo al montar).
+	$effect(() => {
+		const prefs = { province: filters.province, zone: filters.zone };
+		if (prefsLoaded) saveDiscoverPrefs(prefs);
 	});
 	let sortBy = $state<'nombre' | 'cercania'>('nombre');
 
