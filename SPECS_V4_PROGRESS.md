@@ -81,11 +81,33 @@ proyecto → mejor en M3 con la UI, o un usuario de prueba puntual).
 6.14.17 y **corrompe el árbol** al instalar (deja `@tauri-apps/api` UNMET). `npm
 run` funciona con cualquiera, pero `npm install` NO con el del sistema.
 
+## V4-M3 — CASI COMPLETO (cuentas/UI: B1, B5)
+
+- `provideAuth` cableado en `+layout`: inicializa la sesión persistida al arrancar
+  (sin red → anónima). `AccountNav` en la cabecera (Entrar / Cuenta), solo si hay
+  backend.
+- `src/lib/components/AccountPanel.svelte`: login / crear cuenta / recuperar
+  contraseña + backoffice (email, cerrar sesión, cambiar contraseña). Errores del
+  backend traducidos a **español** por `AuthError.kind`.
+- `src/routes/cuenta/+page.svelte`: si no hay backend, lo dice (la app sigue 100%
+  local); si lo hay, monta el panel.
+- `updatePassword` añadido a `AuthClient` + adaptador.
+- **e2e con GoTrue simulado** (`tests/account.e2e.ts`, page.route sobre
+  `**/auth/v1/**`): login feliz → backoffice; credenciales inválidas → error en
+  español. No toca el backend real.
+- Verificado: `$env/dynamic/public` SÍ funciona en adapter-static (las vars van a
+  `build/_app/env.js`), así que el backend queda habilitado en producción.
+
+Verde: lint, check, **269 unit**, **48 e2e**, build OK.
+
+**Pendiente de M3 (a completar)**: OTP/TOTP; **borrar cuenta** (RGPD) requiere
+función de servidor/RPC (el cliente no puede borrar su propio usuario de
+`auth.users`); exportar cuenta; datos personales de emergencia sincronizados;
+flujo de "restablecer contraseña" desde el enlace del correo (deep-link/ruta de
+callback). **Validar un login interactivo real** (crea usuario en el proyecto).
+
 ## Pendiente
 
-- **V4-M3 (Cuentas/UI)**: wiring de `provideAuth` en el layout, formularios de
-  registro/login/recuperación, OTP, backoffice, indicador de sesión. Validar el
-  login real aquí.
 - Añadir `updated_at`/tombstones a los esquemas locales (migración versionada),
   necesarios para que `merge.ts` opere sobre los datos reales (§A2/M4).
 - `SyncedRepository` que use `merge.ts` contra Supabase; cola offline; indicador

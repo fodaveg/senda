@@ -18,6 +18,7 @@ function fakeClient(overrides: Partial<AuthClient> = {}): AuthClient {
 		signOut: vi.fn(async () => {}),
 		currentSession: vi.fn(async () => null),
 		requestPasswordReset: vi.fn(async () => {}),
+		updatePassword: vi.fn(async () => {}),
 		verifyOtp: vi.fn(async () => SESSION),
 		...overrides
 	};

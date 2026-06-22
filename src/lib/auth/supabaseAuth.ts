@@ -112,6 +112,11 @@ export function createSupabaseAuthClient(config: BackendConfig): AuthClient {
 			const { error } = await net(() => sb.auth.resetPasswordForEmail(email));
 			if (error) throw toAuthError(error);
 		},
+		async updatePassword(newPassword) {
+			const sb = await client();
+			const { error } = await net(() => sb.auth.updateUser({ password: newPassword }));
+			if (error) throw toAuthError(error);
+		},
 		async verifyOtp(email, code) {
 			const sb = await client();
 			const { data, error } = await net(() =>

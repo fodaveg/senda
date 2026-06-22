@@ -45,6 +45,8 @@ export interface AuthClient {
 	signOut(): Promise<void>;
 	currentSession(): Promise<Session | null>;
 	requestPasswordReset(email: string): Promise<void>;
+	/** Cambia la contraseña del usuario con sesión activa. */
+	updatePassword(newPassword: string): Promise<void>;
 	/**
 	 * OTP opcional (código por correo) para login/verificación reforzada. Necesita
 	 * el email al que se envió el código.

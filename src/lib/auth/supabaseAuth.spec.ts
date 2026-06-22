@@ -14,7 +14,8 @@ const auth = vi.hoisted(() => ({
 	getSession: vi.fn(),
 	signOut: vi.fn(),
 	verifyOtp: vi.fn(),
-	resetPasswordForEmail: vi.fn()
+	resetPasswordForEmail: vi.fn(),
+	updateUser: vi.fn()
 }));
 vi.mock('@supabase/supabase-js', () => ({ createClient: () => ({ auth }) }));
 
@@ -87,5 +88,18 @@ describe('createSupabaseAuthClient', () => {
 		auth.signOut.mockResolvedValue({ error: { message: 'boom', status: 500 } });
 		const client = createSupabaseAuthClient(config);
 		await expect(client.signOut()).rejects.toBeInstanceOf(AuthError);
+	});
+
+	it('updatePassword llama a updateUser y propaga el error', async () => {
+		auth.updateUser.mockResolvedValue({ data: { user: null }, error: null });
+		const client = createSupabaseAuthClient(config);
+		await client.updatePassword('nuevaclave');
+		expect(auth.updateUser).toHaveBeenCalledWith({ password: 'nuevaclave' });
+
+		auth.updateUser.mockResolvedValue({
+			data: { user: null },
+			error: { message: 'x', status: 401 }
+		});
+		await expect(client.updatePassword('otra')).rejects.toBeInstanceOf(AuthError);
 	});
 });

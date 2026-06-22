@@ -53,7 +53,7 @@ GPX                     data/gpx/*.gpx
 | `lib/report`           | Modelo de informe + Markdown (Obsidian) + ficha de emergencia                                                                             |
 | `lib/theme`/`settings` | Paletas de color y ajustes locales (tema, origen, api key AEMET)                                                                          |
 | `lib/components`       | UI reutilizable (mapa, paneles, perfil, badges)                                                                                           |
-| `routes`               | Páginas: listado+mapa, ficha de ruta, ajustes, diario                                                                                     |
+| `routes`               | Páginas: listado+mapa, ficha de ruta, ajustes, diario, cuenta                                                                             |
 | `scripts/ingest`       | Crawler FEMECV, enrich OSM, build (merge+validación) — manual, offline                                                                    |
 
 ## Límites arquitectónicos

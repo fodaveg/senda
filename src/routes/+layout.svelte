@@ -5,7 +5,9 @@
 	import { applyTextScale } from '$lib/settings';
 	import { applyAppearance } from '$lib/theme/schemes';
 	import { provideUserRepository } from '$lib/user/context';
+	import { provideAuth } from '$lib/auth/context';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+	import AccountNav from '$lib/components/AccountNav.svelte';
 
 	let { children } = $props();
 
@@ -13,9 +15,15 @@
 	// Hoy es local; al añadir la cuenta se proveerá aquí el SyncedRepository.
 	const repo = provideUserRepository();
 
+	// Módulo de auth compartido (SPECS_V4 §A3). Deshabilitado si no hay backend
+	// configurado: la app sigue funcionando 100% en local.
+	const auth = provideAuth();
+
 	// Marcador para que los tests e2e esperen a la hidratación.
 	onMount(() => {
 		document.body.dataset.hydrated = 'true';
+		// Carga la sesión persistida (si hay backend). Sin red → queda anónima.
+		if (auth.enabled) void auth.session?.init();
 		applyAppearance(repo.loadSettings());
 		applyTextScale(repo.loadSettings().textScale);
 		// En modo "auto", seguir los cambios de preferencia del sistema.
@@ -37,6 +45,9 @@
 	<span class="tagline">Senderos homologados FEMECV de la Comunitat Valenciana</span>
 	<a href={resolve('/diario')} class="nav-link">Diario</a>
 	<a href={resolve('/ajustes')} class="nav-link">Ajustes</a>
+	{#if auth.enabled && auth.session}
+		<AccountNav session={auth.session} />
+	{/if}
 	<ThemeToggle />
 </header>
 
