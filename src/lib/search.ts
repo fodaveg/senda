@@ -7,6 +7,9 @@
 
 import type { Route } from '$lib/types';
 
+/** Campos m\u00ednimos que necesita la b\u00fasqueda (los cumple `Route` y `RouteSummary`). */
+export type SearchableRoute = Pick<Route, 'id' | 'name' | 'municipality' | 'zone' | 'highlights'>;
+
 export function normalizeText(text: string): string {
 	return text
 		.normalize('NFD')
@@ -14,7 +17,7 @@ export function normalizeText(text: string): string {
 		.toLowerCase();
 }
 
-function haystack(route: Route): string {
+function haystack(route: SearchableRoute): string {
 	return normalizeText(
 		[route.id, route.name, route.municipality, route.zone, ...route.highlights]
 			.filter((part): part is string => Boolean(part))
@@ -24,9 +27,10 @@ function haystack(route: Route): string {
 
 /**
  * Todos los términos de la consulta deben aparecer (AND). Consulta vacía
- * devuelve todas las rutas.
+ * devuelve todas las rutas. Genérico: opera igual sobre rutas completas o sobre
+ * el índice ligero (`RouteSummary`).
  */
-export function searchRoutes(routes: Route[], query: string): Route[] {
+export function searchRoutes<T extends SearchableRoute>(routes: T[], query: string): T[] {
 	const terms = normalizeText(query).split(/\s+/).filter(Boolean);
 	if (terms.length === 0) return routes;
 	return routes.filter((route) => {

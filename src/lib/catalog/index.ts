@@ -6,6 +6,7 @@
 
 import { routes as seedRoutes, routeById as seedRouteById } from '$lib/data/routes';
 import type { Route } from '$lib/types';
+import { toRouteSummary, type RouteSummary } from '$lib/data/summary';
 import { getStoredManifest, getStoredRoutesJson, type StoredManifest } from './store';
 
 let cachedStored: { version: number; routes: Route[] } | null = null;
@@ -28,6 +29,15 @@ async function storedRoutes(): Promise<Route[] | null> {
 
 export async function getRoutes(): Promise<Route[]> {
 	return (await storedRoutes()) ?? seedRoutes;
+}
+
+/**
+ * Índice ligero del catálogo (SPECS_V4 §B6) para el descubrimiento: mismas rutas
+ * que `getRoutes` pero solo los campos del listado/mapa. La ficha completa se
+ * obtiene con `getRouteById` al abrir cada ruta.
+ */
+export async function getRouteSummaries(): Promise<RouteSummary[]> {
+	return (await getRoutes()).map(toRouteSummary);
 }
 
 export async function getRouteById(id: string): Promise<Route | undefined> {

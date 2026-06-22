@@ -6,6 +6,20 @@
 import type { Route, RouteStatus, RouteType } from '$lib/types';
 import { provinceOf, type Province } from '$lib/geo/province';
 
+/** Campos mínimos que necesitan los filtros (los cumple `Route` y `RouteSummary`). */
+export type FilterableRoute = Pick<
+	Route,
+	| 'type'
+	| 'distance_km'
+	| 'ascent_m'
+	| 'zone'
+	| 'circular'
+	| 'water_points'
+	| 'water_points_geo'
+	| 'shade_ratio'
+	| 'status'
+>;
+
 export interface RouteFilters {
 	/** Tipos incluidos; vacío = todos. */
 	types: RouteType[];
@@ -48,7 +62,7 @@ export const EMPTY_FILTERS: RouteFilters = {
  * Un campo null en la ruta nunca la excluye por un filtro de ese campo:
  * dato desconocido ≠ dato que incumple (coherente con el fail-safe del motor).
  */
-export function applyFilters(routes: Route[], filters: RouteFilters): Route[] {
+export function applyFilters<T extends FilterableRoute>(routes: T[], filters: RouteFilters): T[] {
 	return routes.filter((route) => {
 		if (filters.types.length > 0 && !filters.types.includes(route.type)) return false;
 		if (filters.maxDistanceKm !== null && route.distance_km > filters.maxDistanceKm) return false;
