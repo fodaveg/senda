@@ -183,10 +183,33 @@ Verde: lint, check, **282 unit**, **48 e2e**, build OK.
 
 Verde: lint, check, **289 unit**, **48 e2e**, build OK.
 
+## V4-M6 — COMPLETO (preparación de escala, §B6) — 5 commits independientes
+
+1. **Code-splitting del mapa**: `LazyMap.svelte` carga `Map.svelte`/maplibre por
+   import dinámico → chunk asíncrono fuera del bundle inicial. `chunkSizeWarningLimit`
+   subido a 1500 (vendor diferido + bundle de prerender, no código de arranque).
+2. **Índice ligero del catálogo**: `RouteSummary` + `getRouteSummaries`; la home
+   carga solo los campos del listado/mapa (menor payload de hidratación) y la ficha
+   completa se carga bajo demanda. `search`/`filters` ahora genéricos sobre
+   interfaces mínimas (operan sobre `Route` o `RouteSummary`).
+3. **Virtualización del listado**: por `content-visibility: auto` +
+   `contain-intrinsic-size` (el navegador omite render/layout de filas fuera de
+   pantalla pero mantiene el DOM; no rompe búsqueda/anclas/scroll, a diferencia de
+   sacar nodos del DOM).
+4. **Índice de búsqueda precomputado**: `buildSearchIndex`/`searchIndex`; el
+   `haystack` normalizado se calcula una vez, no por pulsación.
+5. **Clustering de marcadores**: `map/cluster.ts` (rejilla por zoom, pura y
+   testeada) + `Map.svelte` agrupa marcadores; grupo de 1 = pin normal, clúster =
+   conteo (clic acerca y separa).
+
+(UI de descubrimiento NO se rediseña hasta v5/v6.)
+
+Verde: lint, check, **296 unit**, **48 e2e**, build sin aviso de chunk.
+
 ## Pendiente
 
-- Preparación de escala (§B6): índice ligero + carga perezosa del catálogo +
-  code-splitting del mapa. (UI de descubrimiento NO se rediseña hasta v5/v6.)
+- Pulido v3 (PRE-C de SPECS_V5): editar material custom, toggle de tema cíclico,
+  recordar el origen del filtro, accesibilidad de marcadores del mapa.
 
 ## Notas
 
