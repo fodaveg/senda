@@ -132,12 +132,19 @@ export function loadSettings(): Settings {
 	}
 }
 
+/**
+ * Persiste los ajustes **verbatim** (sin tocar `updated_at`). El sellado de la
+ * marca de tiempo vive en la capa de repositorio (un guardado del usuario sella
+ * `updated_at`; aplicar un resultado de fusión remoto NO debe re-sellarlo, o el
+ * LWW quedaría siempre ganado por el local). Ver `stampSettings`.
+ */
 export function saveSettings(settings: Settings): void {
-	// Cada guardado estampa `updated_at` (singleton sincronizable, LWW).
-	localStorage.setItem(
-		STORAGE_KEY,
-		JSON.stringify({ ...settings, updated_at: new Date().toISOString() })
-	);
+	localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+}
+
+/** Devuelve una copia con `updated_at` = ahora (cambio iniciado por el usuario). */
+export function stampSettings(settings: Settings): Settings {
+	return { ...settings, updated_at: new Date().toISOString() };
 }
 
 /** ¿El sistema prefiere modo oscuro? (para resolver el tema "auto"). */

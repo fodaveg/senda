@@ -16,7 +16,7 @@ import {
 	saveChecklist as saveChecklistData
 } from './checklist';
 import { loadCustomGear, saveCustomGear, type CustomGearData } from './customGear';
-import { loadSettings, saveSettings, type Settings } from '$lib/settings';
+import { loadSettings, saveSettings, stampSettings, type Settings } from '$lib/settings';
 import type { UserDataRepository } from './repository';
 
 /** Prefijo común de todas las claves de usuario en localStorage. */
@@ -65,7 +65,8 @@ export class LocalRepository implements UserDataRepository {
 		return loadSettings();
 	}
 	saveSettings(settings: Settings): void {
-		saveSettings(settings);
+		// Un guardado del usuario sella `updated_at` (singleton sincronizable).
+		saveSettings(stampSettings(settings));
 		this.#notify();
 	}
 

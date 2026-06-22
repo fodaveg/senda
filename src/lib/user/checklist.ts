@@ -87,3 +87,22 @@ export function saveChecklist(routeId: string, date: string, checked: Set<string
 	data.checks[key] = { items: [...checked].sort(), updated_at: nowIso() };
 	localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
+
+/** Entrada de checklist con su clave `(ruta|fecha)`, para la sincronización. */
+export interface ChecklistRow extends ChecklistEntry {
+	key: string;
+}
+
+/** Todas las entradas (con su clave) — usado por la capa de sincronización. */
+export function loadAllChecklists(): ChecklistRow[] {
+	const { checks } = loadData();
+	return Object.entries(checks).map(([key, e]) => ({ key, ...e }));
+}
+
+/** Reemplaza el almacén de checklists **verbatim** (aplicar fusión remota). */
+export function replaceAllChecklists(rows: ChecklistRow[]): void {
+	if (typeof localStorage === 'undefined') return;
+	const checks: Record<string, ChecklistEntry> = {};
+	for (const { key, items, updated_at } of rows) checks[key] = { items, updated_at };
+	localStorage.setItem(STORAGE_KEY, JSON.stringify({ schema: SCHEMA, checks }));
+}
