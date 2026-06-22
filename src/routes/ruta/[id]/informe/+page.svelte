@@ -13,13 +13,11 @@
 		waterEstimate,
 		energyEstimate
 	} from '$lib/engine';
-	import { loadCustomGear } from '$lib/user/customGear';
 	import { startWindow } from '$lib/engine/startWindow';
 	import { buildReportModel, type ReportModel } from '$lib/report/model';
 	import { renderMarkdown, reportFilename, reportSpeechText } from '$lib/report/markdown';
 	import { isSpeechSupported, speak, stopSpeaking } from '$lib/voice';
-	import { loadSettings } from '$lib/settings';
-	import { loadChecklist } from '$lib/user/checklist';
+	import { getUserRepository } from '$lib/user/context';
 	import { forecastDates, seasonForDate } from '$lib/weather/dates';
 	import { avisosForRoute, fetchAvisosCapCached, type Aviso } from '$lib/weather/avisos';
 	import { fetchOpenMeteoHourly, type HourlyPoint } from '$lib/weather/hourly';
@@ -27,6 +25,7 @@
 	import type { WeatherDay } from '$lib/types';
 
 	let { data } = $props();
+	const repo = getUserRepository();
 	let route = $derived(data.route);
 
 	let date = $state('');
@@ -44,7 +43,7 @@
 			route,
 			weather,
 			seasonForDate(date),
-			loadCustomGear().items,
+			repo.loadCustomGear().items,
 			ATTRIBUTE_WARNING_RULES
 		);
 		const alternatives = route.alternatives
@@ -58,12 +57,12 @@
 			decisions,
 			customDecisions,
 			hydration: waterEstimate(route, weather),
-			energy: energyEstimate(route, loadSettings().weightKg ?? undefined),
+			energy: energyEstimate(route, repo.loadSettings().weightKg ?? undefined),
 			wildlife: wildlifeForZone(route.zone),
 			alternatives,
 			startWindow: startWindow(route, weather, hourly),
 			avisos: avisos ? avisosForRoute(avisos, route.zone, date) : null,
-			checkedItems: [...loadChecklist(route.id, date)]
+			checkedItems: [...repo.loadChecklist(route.id, date)]
 		});
 	});
 
@@ -89,7 +88,7 @@
 		} catch (e) {
 			console.error('Open-Meteo horario:', e);
 		}
-		const { aemetApiKey } = loadSettings();
+		const { aemetApiKey } = repo.loadSettings();
 		if (aemetApiKey) {
 			try {
 				avisos = await fetchAvisosCapCached(aemetApiKey);
@@ -113,7 +112,7 @@
 		const { save } = await import('@tauri-apps/plugin-dialog');
 		const { writeTextFile } = await import('@tauri-apps/plugin-fs');
 		// Carpeta del vault configurada en /ajustes, si existe.
-		const { vaultDir } = loadSettings();
+		const { vaultDir } = repo.loadSettings();
 		const path = await save({
 			defaultPath: vaultDir ? `${vaultDir}/${filename}` : filename,
 			filters: [{ name: 'Markdown', extensions: ['md'] }]

@@ -2,8 +2,9 @@
 
 Estado de la v4. Fuente de verdad para retomar. Mantener compacto.
 
-_Rama: `v4` (sobre `v3`). La v4 es un "por si acaso": no se hace pública hasta que
-el proyecto demuestre ser estable y útil._
+_Rama: `v4` (rebasada sobre `main`, que ya incluye v3 + v3.5 + "Senda"). La v4 es
+un "por si acaso": no se hace pública hasta que el proyecto demuestre ser estable
+y útil. Se mergea a `main` por milestone validado (cada push a `main` publica)._
 
 ## Decisiones acordadas (2026-06-21)
 
@@ -22,27 +23,35 @@ el proyecto demuestre ser estable y útil._
 - **Licencias**: revisar (FEMECV / IGN CC-BY / OSM ODbL) **antes de publicar**; no
   bloquea el desarrollo. Anotado.
 
-## Construido (cimentación, sin servidor, sin dependencias nuevas)
+## V4-M1 — COMPLETO (refactor de datos A1+A2, sin backend, invisible)
+
+A2 (fusión) ya estaba; A1 (repositorio) se ha completado en esta sesión:
 
 - `src/lib/user/sync/merge.ts` (+ spec): fusión offline-first pura (LWW por
-  elemento, tombstones, singleton) — el núcleo de la futura sincronización.
+  elemento, tombstones, singleton) — el núcleo de la futura sincronización. **[A2]**
+- `src/lib/user/repository.ts`: interfaz `UserDataRepository` (load/save por
+  dominio + `subscribe`). `load`/`save` **síncronos** (offline-first). **[A1]**
+- `src/lib/user/localRepository.ts` (+ spec): `LocalRepository`, el
+  comportamiento de v3 detrás de la interfaz; `subscribe` vía evento `storage`.
+- `src/lib/user/context.ts`: `provideUserRepository`/`getUserRepository` (contexto
+  Svelte; fallback a un `LocalRepository` por defecto). El layout raíz lo provee.
+- **Migrados los ~10 consumidores** (`+layout`, `RouteMarks`, `ThemeToggle`,
+  `diario`, home, `ajustes`, `ruta/[id]`, `informe`, `emergencia`): ya no tocan
+  localStorage directamente, usan `repo.*`.
 - `src/lib/auth/types.ts`: contrato `AuthClient` + tipos de sesión/errores.
-- `src/lib/config.ts`: lee `PUBLIC_SUPABASE_*`; sin env → backend deshabilitado
-  (modo local). Verificado que el build estático no se rompe.
-- `supabase/schema.sql`: tablas + RLS + analítica anónima.
-- `supabase/README.md`: pasos de activación a coste 0 + aislamiento + licencias.
+- `src/lib/config.ts`: lee `PUBLIC_SUPABASE_*`; sin env → backend deshabilitado.
+- `supabase/schema.sql` + `README.md`: tablas + RLS + analítica anónima + pasos.
 
-Verde: lint, check, 217 unit, 41 e2e, build OK.
+Verde: lint, check, **252 unit**, **46 e2e**, build OK.
 
 ## Pendiente (se hace al ACTIVAR el backend; necesita el proyecto Supabase free)
 
 - Adaptador `AuthClient` real (Supabase) + store de sesión (§A3); añadir entonces
   `@supabase/supabase-js` (no antes, para no engordar el bundle).
-- Repositorio de datos de usuario (§A1) y migración de los módulos de
-  `src/lib/user/` para usarlo; añadir `updated_at`/tombstones a los esquemas
-  locales (migración versionada).
+- Añadir `updated_at`/tombstones a los esquemas locales (migración versionada),
+  necesarios para que `merge.ts` opere sobre los datos reales (§A2/M4).
 - `SyncedRepository` que use `merge.ts` contra Supabase; cola offline; indicador
-  de sync (§B2).
+  de sync (§B2). Se provee en el layout raíz cuando hay sesión.
 - UI de cuentas/backoffice (§B1), migración de datos locales → cuenta (§A6).
 - Analítica opt-in + vista de tendencias (§B3, §11).
 - Preparación de escala (§B6): índice ligero + carga perezosa del catálogo +

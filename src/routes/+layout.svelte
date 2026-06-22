@@ -2,21 +2,26 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import favicon from '$lib/assets/favicon.svg';
-	import { applyTextScale, loadSettings } from '$lib/settings';
+	import { applyTextScale } from '$lib/settings';
 	import { applyAppearance } from '$lib/theme/schemes';
+	import { provideUserRepository } from '$lib/user/context';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
 	let { children } = $props();
 
+	// Repositorio de datos de usuario compartido por toda la app (SPECS_V4 §A1).
+	// Hoy es local; al añadir la cuenta se proveerá aquí el SyncedRepository.
+	const repo = provideUserRepository();
+
 	// Marcador para que los tests e2e esperen a la hidratación.
 	onMount(() => {
 		document.body.dataset.hydrated = 'true';
-		applyAppearance(loadSettings());
-		applyTextScale(loadSettings().textScale);
+		applyAppearance(repo.loadSettings());
+		applyTextScale(repo.loadSettings().textScale);
 		// En modo "auto", seguir los cambios de preferencia del sistema.
 		const mq = matchMedia('(prefers-color-scheme: dark)');
 		const onChange = () => {
-			if (loadSettings().theme === 'auto') applyAppearance(loadSettings());
+			if (repo.loadSettings().theme === 'auto') applyAppearance(repo.loadSettings());
 		};
 		mq.addEventListener('change', onChange);
 		return () => mq.removeEventListener('change', onChange);

@@ -11,13 +11,15 @@
 		type EmergencyInput
 	} from '$lib/report/emergency';
 	import { renderMarkdown } from '$lib/report/markdown';
-	import { DEFAULT_EMERGENCY, loadSettings, type EmergencySettings } from '$lib/settings';
+	import { DEFAULT_EMERGENCY, type EmergencySettings } from '$lib/settings';
 	import { forecastDates } from '$lib/weather/dates';
 	import { avisosForRoute, fetchAvisosCapCached, type Aviso } from '$lib/weather/avisos';
 	import { fetchOpenMeteoForecast } from '$lib/weather/openmeteo';
+	import { getUserRepository } from '$lib/user/context';
 	import type { WeatherDay } from '$lib/types';
 
 	let { data } = $props();
+	const repo = getUserRepository();
 	let route = $derived(data.route);
 
 	let date = $state('');
@@ -54,7 +56,7 @@
 		const dates = forecastDates();
 		const requested = page.url.searchParams.get('fecha');
 		date = requested && dates.includes(requested) ? requested : dates[0];
-		person = loadSettings().emergency;
+		person = repo.loadSettings().emergency;
 		try {
 			forecast = await fetchOpenMeteoForecast(route.start.lat, route.start.lon);
 		} catch (e) {
@@ -64,7 +66,7 @@
 		const day = forecast?.find((d) => d.date === date) ?? null;
 		const window = startWindow(route, day, null);
 		if (window && !window.lightAlert) startHhMm = minutesToHhMm(window.startMin);
-		const { aemetApiKey } = loadSettings();
+		const { aemetApiKey } = repo.loadSettings();
 		if (aemetApiKey) {
 			try {
 				avisos = await fetchAvisosCapCached(aemetApiKey);
@@ -107,7 +109,7 @@
 	async function saveInTauri() {
 		const { save } = await import('@tauri-apps/plugin-dialog');
 		const { writeTextFile } = await import('@tauri-apps/plugin-fs');
-		const { vaultDir } = loadSettings();
+		const { vaultDir } = repo.loadSettings();
 		const path = await save({
 			defaultPath: vaultDir ? `${vaultDir}/${filename}` : filename,
 			filters: [{ name: 'Markdown', extensions: ['md'] }]

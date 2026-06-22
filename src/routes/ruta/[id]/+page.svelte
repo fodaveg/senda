@@ -30,16 +30,14 @@
 		waterEstimate,
 		energyEstimate
 	} from '$lib/engine';
-	import { loadCustomGear } from '$lib/user/customGear';
 	import type { CustomGearItem } from '$lib/types';
 	import { startWindow } from '$lib/engine/startWindow';
 	import { gpxToGeoJSON, trackPositions } from '$lib/geo/gpx';
 	import { elevationProfile, type ProfilePoint } from '$lib/geo/profile';
 	import { fetchDrivingEstimateCached, type DrivingEstimate } from '$lib/geo/routing';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
-	import { loadSettings } from '$lib/settings';
 	import { SvelteSet } from 'svelte/reactivity';
-	import { loadChecklist, saveChecklist } from '$lib/user/checklist';
+	import { getUserRepository } from '$lib/user/context';
 	import { wikilocSearchUrl } from '$lib/wikiloc';
 	import { deleteByPrefix, getStoredBinary } from '$lib/catalog/store';
 	import { tileListForBbox, tileStoreKey } from '$lib/map/tiles';
@@ -59,6 +57,7 @@
 	import type { WeatherDay } from '$lib/types';
 
 	let { data } = $props();
+	const repo = getUserRepository();
 	let route = $derived(data.route);
 	let wildlife = $derived(wildlifeForZone(route.zone));
 
@@ -203,7 +202,7 @@
 	// Checklist de preparación por (ruta, fecha) (SPECS_V2 §7).
 	$effect(() => {
 		if (selectedDate) {
-			const stored = loadChecklist(route.id, selectedDate);
+			const stored = repo.loadChecklist(route.id, selectedDate);
 			checkedItems.clear();
 			for (const id of stored) checkedItems.add(id);
 		}
@@ -212,7 +211,7 @@
 	function toggleChecklistItem(itemId: string) {
 		if (checkedItems.has(itemId)) checkedItems.delete(itemId);
 		else checkedItems.add(itemId);
-		saveChecklist(route.id, selectedDate, new Set(checkedItems));
+		repo.saveChecklist(route.id, selectedDate, new Set(checkedItems));
 	}
 
 	// Pronóstico horario por fecha seleccionada, con caché en memoria.
@@ -242,7 +241,7 @@
 	$effect(() => {
 		const date = selectedDate;
 		const offset = dates.indexOf(date);
-		const apiKey = loadSettings().aemetApiKey;
+		const apiKey = repo.loadSettings().aemetApiKey;
 		fireRiskMapUrl = null;
 		if (!date || !apiKey || offset < 0 || offset > FIRE_RISK_MAX_DAY) return;
 		fireRiskLoading = true;
@@ -264,9 +263,9 @@
 	});
 
 	async function loadRouteData(r: typeof route, token: number) {
-		const settings = loadSettings();
+		const settings = repo.loadSettings();
 		userWeight = settings.weightKg;
-		customItems = loadCustomGear().items;
+		customItems = repo.loadCustomGear().items;
 		const mapPrefs = loadMapPrefs();
 		showWater = mapPrefs.showWater;
 		showPois = mapPrefs.showPois;

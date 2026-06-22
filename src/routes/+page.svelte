@@ -4,19 +4,14 @@
 	import { resolve } from '$app/paths';
 	import Map from '$lib/components/Map.svelte';
 	import StatusBadge from '$lib/components/StatusBadge.svelte';
-	import {
-		emptyUserData,
-		isDone,
-		loadUserData,
-		type ToggleMark,
-		type UserData
-	} from '$lib/user/marks';
+	import { emptyUserData, isDone, type ToggleMark, type UserData } from '$lib/user/marks';
+	import { getUserRepository } from '$lib/user/context';
 	import { applyFilters, EMPTY_FILTERS, type RouteFilters } from '$lib/filters';
 	import { PROVINCES } from '$lib/geo/province';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
 	import { haversineMeters } from '$lib/geo/distance';
 	import { searchRoutes } from '$lib/search';
-	import { loadSettings, type OriginSetting } from '$lib/settings';
+	import { type OriginSetting } from '$lib/settings';
 	import { STATUS_FILTER_OPTIONS, STATUS_LABELS } from '$lib/status';
 	import type { RouteType } from '$lib/types';
 
@@ -29,11 +24,13 @@
 	let query = $state('');
 
 	// Marcas de usuario como filtro (SPECS_V2 §6/§8).
+	const repo = getUserRepository();
+
 	let userData = $state<UserData>(emptyUserData());
 	let origin = $state<OriginSetting | null>(null);
 	onMount(() => {
-		userData = loadUserData();
-		origin = loadSettings().origin;
+		userData = repo.loadMarks();
+		origin = repo.loadSettings().origin;
 	});
 	let sortBy = $state<'nombre' | 'cercania'>('nombre');
 

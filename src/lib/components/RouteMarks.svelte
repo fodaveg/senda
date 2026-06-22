@@ -3,8 +3,6 @@
 	import {
 		emptyUserData,
 		isDone,
-		loadUserData,
-		saveUserData,
 		TOGGLE_MARKS,
 		withOuting,
 		withoutOuting,
@@ -12,8 +10,11 @@
 		type ToggleMark,
 		type UserData
 	} from '$lib/user/marks';
+	import { getUserRepository } from '$lib/user/context';
 
 	let { routeId }: { routeId: string } = $props();
+
+	const repo = getUserRepository();
 
 	const MARK_LABELS: Record<ToggleMark, { off: string; on: string }> = {
 		favorita: { off: '☆ Favorita', on: '★ Favorita' },
@@ -27,14 +28,14 @@
 	let outingNotes = $state('');
 
 	onMount(() => {
-		userData = loadUserData();
+		userData = repo.loadMarks();
 	});
 
 	let marks = $derived(userData.marks[routeId] ?? {});
 
 	function persist(next: UserData) {
 		userData = next;
-		saveUserData(next);
+		repo.saveMarks(next);
 	}
 
 	function toggle(mark: ToggleMark) {

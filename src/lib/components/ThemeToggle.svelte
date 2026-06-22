@@ -6,13 +6,16 @@
 	 * sigue en Ajustes. Persiste en localStorage y aplica el tema al instante.
 	 */
 	import { onMount } from 'svelte';
-	import { loadSettings, prefersDark, saveSettings, type Theme } from '$lib/settings';
+	import { prefersDark, type Theme } from '$lib/settings';
 	import { applyAppearance } from '$lib/theme/schemes';
+	import { getUserRepository } from '$lib/user/context';
+
+	const repo = getUserRepository();
 
 	let theme = $state<Theme>('auto');
 
 	onMount(() => {
-		theme = loadSettings().theme;
+		theme = repo.loadSettings().theme;
 	});
 
 	// Aspecto EFECTIVO actual (resolviendo "auto" con el sistema): así el primer
@@ -22,9 +25,9 @@
 	function toggle() {
 		const next: Theme = currentlyDark ? 'claro' : 'oscuro';
 		theme = next;
-		const settings = loadSettings();
+		const settings = repo.loadSettings();
 		settings.theme = next;
-		saveSettings(settings);
+		repo.saveSettings(settings);
 		applyAppearance(settings); // aplica el esquema del nuevo modo
 	}
 </script>

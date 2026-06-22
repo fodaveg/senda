@@ -4,22 +4,23 @@
 	import {
 		emptyUserData,
 		exportUserData,
-		loadUserData,
 		parseUserDataImport,
-		saveUserData,
 		UserImportError,
 		type UserData
 	} from '$lib/user/marks';
 	import { diaryMarkdown, diaryStats } from '$lib/user/stats';
 	import { achievements, comarcaProgress } from '$lib/user/achievements';
+	import { getUserRepository } from '$lib/user/context';
 
 	let { data } = $props();
+
+	const repo = getUserRepository();
 
 	let userData = $state<UserData>(emptyUserData());
 	let importMessage = $state<string | null>(null);
 
 	onMount(() => {
-		userData = loadUserData();
+		userData = repo.loadMarks();
 	});
 
 	let stats = $derived(diaryStats(userData, data.routes));
@@ -53,7 +54,7 @@
 		if (!file) return;
 		try {
 			const imported = parseUserDataImport(await file.text());
-			saveUserData(imported);
+			repo.saveMarks(imported);
 			userData = imported;
 			importMessage = 'Copia de seguridad importada.';
 		} catch (e) {

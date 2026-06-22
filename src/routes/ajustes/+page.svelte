@@ -6,28 +6,22 @@
 	import { applyCatalogUpdate } from '$lib/catalog/store';
 	import { CatalogError, checkForCatalogUpdate } from '$lib/catalog/update';
 	import { CATALOG_URL } from '$lib/catalog/url';
-	import {
-		applyTextScale,
-		DEFAULT_SETTINGS,
-		loadSettings,
-		saveSettings,
-		type Settings
-	} from '$lib/settings';
+	import { applyTextScale, DEFAULT_SETTINGS, type Settings } from '$lib/settings';
 	import { applyAppearance, DARK_SCHEMES, LIGHT_SCHEMES } from '$lib/theme/schemes';
 	import { validateAemetKey, type AemetKeyCheck } from '$lib/weather/aemet';
 	import { ATTRIBUTE_LABELS, GEAR_ATTRIBUTES } from '$lib/engine';
 	import type { GearAttribute } from '$lib/types';
 	import { routeById } from '$lib/data/routes';
-	import { loadUserData } from '$lib/user/marks';
+	import { getUserRepository } from '$lib/user/context';
 	import { downloadTilesForBbox } from '$lib/map/offline';
 	import {
 		addCustomItem,
 		emptyCustomGearData,
-		loadCustomGear,
 		removeCustomItem,
-		saveCustomGear,
 		type CustomGearData
 	} from '$lib/user/customGear';
+
+	const repo = getUserRepository();
 
 	let settings = $state<Settings>({ ...DEFAULT_SETTINGS });
 	let saved = $state(false);
@@ -71,21 +65,21 @@
 			weight_g: grams !== null && Number.isFinite(grams) && grams >= 0 ? grams : null,
 			attributes: gAttrs
 		});
-		saveCustomGear(gear);
+		repo.saveCustomGear(gear);
 		gName = '';
 		gWeight = '';
 		gAttrs = [];
 	}
 	function removeGear(id: string) {
 		gear = removeCustomItem(gear, id);
-		saveCustomGear(gear);
+		repo.saveCustomGear(gear);
 	}
 
 	// Descarga offline por lote (SPECS_V3.5 §3): mapas de las rutas "quiero hacer".
 	let batchStatus = $state<string | null>(null);
 	let batching = $state(false);
 	async function downloadOfflineBatch() {
-		const marks = loadUserData().marks;
+		const marks = repo.loadMarks().marks;
 		const targets = Object.entries(marks)
 			.filter(([, m]) => m.quiero_hacer)
 			.map(([id]) => routeById(id))
@@ -112,8 +106,8 @@
 	}
 
 	onMount(async () => {
-		settings = loadSettings();
-		gear = loadCustomGear();
+		settings = repo.loadSettings();
+		gear = repo.loadCustomGear();
 		if (settings.origin) {
 			originLat = String(settings.origin.lat);
 			originLon = String(settings.origin.lon);
@@ -214,7 +208,7 @@
 			originLat.trim() && originLon.trim() && Number.isFinite(lat) && Number.isFinite(lon)
 				? { lat, lon, label: originLabel.trim() || 'Origen' }
 				: null;
-		saveSettings(settings);
+		repo.saveSettings(settings);
 		saved = true;
 		setTimeout(() => (saved = false), 2500);
 		if (settings.aemetApiKey) {
