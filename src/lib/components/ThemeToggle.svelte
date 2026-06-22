@@ -1,16 +1,21 @@
 <script lang="ts">
 	/**
-	 * Conmutador rápido de tema en la barra superior (SPECS_V3 §9). Atajo del
-	 * ajuste `theme` ya existente: alterna claro↔oscuro de forma explícita (si
-	 * estaba en "auto", pasa a oscuro). La elección completa (incluido "auto")
-	 * sigue en Ajustes. Persiste en localStorage y aplica el tema al instante.
+	 * Conmutador de tema en la barra superior (SPECS_V3 §9, pulido v3). Cicla entre
+	 * los tres modos: **claro → oscuro → automático → claro…**. Atajo del ajuste
+	 * `theme`; la galería de esquemas por modo sigue en Ajustes. Persiste en
+	 * localStorage y aplica el tema al instante. "Automático" sigue la preferencia
+	 * del sistema.
 	 */
 	import { onMount } from 'svelte';
-	import { prefersDark, type Theme } from '$lib/settings';
+	import type { Theme } from '$lib/settings';
 	import { applyAppearance } from '$lib/theme/schemes';
 	import { getUserRepository } from '$lib/user/context';
 
 	const repo = getUserRepository();
+
+	const ORDER: Theme[] = ['claro', 'oscuro', 'auto'];
+	const ICON: Record<Theme, string> = { claro: '☀️', oscuro: '🌙', auto: '🌗' };
+	const LABEL: Record<Theme, string> = { claro: 'claro', oscuro: 'oscuro', auto: 'automático' };
 
 	let theme = $state<Theme>('auto');
 
@@ -18,32 +23,33 @@
 		theme = repo.loadSettings().theme;
 	});
 
-	// Aspecto EFECTIVO actual (resolviendo "auto" con el sistema): así el primer
-	// clic siempre cambia lo que se ve, no el string guardado.
-	let currentlyDark = $derived(theme === 'oscuro' || (theme === 'auto' && prefersDark()));
-
-	function toggle() {
-		const next: Theme = currentlyDark ? 'claro' : 'oscuro';
+	/** Avanza al siguiente modo del ciclo y lo persiste/aplica. */
+	function cycle() {
+		const next = ORDER[(ORDER.indexOf(theme) + 1) % ORDER.length];
 		theme = next;
 		const settings = repo.loadSettings();
 		settings.theme = next;
 		repo.saveSettings(settings);
-		applyAppearance(settings); // aplica el esquema del nuevo modo
+		applyAppearance(settings);
 	}
 </script>
 
 <button
 	type="button"
 	class="theme-toggle"
-	onclick={toggle}
-	aria-label={currentlyDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-	title={currentlyDark ? 'Modo claro' : 'Modo oscuro'}
+	onclick={cycle}
+	aria-label="Cambiar modo de color"
+	title={`Tema: ${LABEL[theme]} (clic para cambiar)`}
 >
-	{currentlyDark ? '☀️' : '🌙'}
+	<span aria-hidden="true">{ICON[theme]}</span>
+	<span class="mode">{LABEL[theme]}</span>
 </button>
 
 <style>
 	.theme-toggle {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
 		background: transparent;
 		border: 1px solid rgba(255, 255, 255, 0.5);
 		color: #fff;
@@ -55,5 +61,14 @@
 	}
 	.theme-toggle:hover {
 		background: rgba(255, 255, 255, 0.14);
+	}
+	.mode {
+		font-size: 0.75rem;
+		text-transform: capitalize;
+	}
+	@media (max-width: 30rem) {
+		.mode {
+			display: none;
+		}
 	}
 </style>

@@ -3,15 +3,23 @@ import { expect, test } from '@playwright/test';
 // V3-M7 (rediseño): toggle de modo en la barra + galería de esquemas por modo
 // en Ajustes, con previsualización y aplicación a toda la app.
 
-test('el toggle de la barra cambia a oscuro y persiste', async ({ page }) => {
+test('el toggle de la barra cicla claro→oscuro→auto y persiste', async ({ page }) => {
 	await page.goto('/');
 	await page.locator('body[data-hydrated]').waitFor();
-	await page.getByRole('button', { name: 'Cambiar a modo oscuro' }).click();
+	const toggle = page.getByRole('button', { name: 'Cambiar modo de color' });
+	// Por defecto el tema es "auto"; el ciclo lleva auto → claro → oscuro → auto.
+	await toggle.click();
+	await expect(page.locator('html')).toHaveAttribute('data-theme', 'claro');
+	await toggle.click();
 	await expect(page.locator('html')).toHaveAttribute('data-theme', 'oscuro');
+	// Persiste el modo oscuro tras recargar.
 	await page.reload();
 	await page.locator('body[data-hydrated]').waitFor();
 	await expect(page.locator('html')).toHaveAttribute('data-theme', 'oscuro');
-	await expect(page.getByRole('button', { name: 'Cambiar a modo claro' })).toBeVisible();
+	// Una vuelta más vuelve a "automático" (el modo efectivo lo resuelve el sistema,
+	// así que se comprueba por el estado guardado que refleja el título del botón).
+	await toggle.click();
+	await expect(toggle).toHaveAttribute('title', /autom[áa]tico/);
 });
 
 test('elegir un esquema de modo oscuro lo aplica a toda la app y persiste', async ({ page }) => {
