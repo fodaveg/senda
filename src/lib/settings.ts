@@ -79,54 +79,63 @@ export const DEFAULT_SETTINGS: Settings = {
 	emergency: { ...DEFAULT_EMERGENCY }
 };
 
+/**
+ * Normaliza un objeto crudo a `Settings` válidos, campo a campo (tolerante: lo
+ * desconocido cae a su valor por defecto). Es la validación de límite tanto de
+ * localStorage como de lo que baja del backend (preferencias sincronizadas).
+ */
+export function coerceSettings(raw: unknown): Settings {
+	const parsed = (raw && typeof raw === 'object' ? raw : {}) as Partial<Settings>;
+	const origin = parsed.origin;
+	const validOrigin =
+		origin &&
+		typeof origin === 'object' &&
+		typeof origin.lat === 'number' &&
+		origin.lat >= -90 &&
+		origin.lat <= 90 &&
+		typeof origin.lon === 'number' &&
+		origin.lon >= -180 &&
+		origin.lon <= 180 &&
+		typeof origin.label === 'string'
+			? { lat: origin.lat, lon: origin.lon, label: origin.label }
+			: null;
+	const e = (parsed.emergency ?? {}) as Partial<EmergencySettings>;
+	const str = (v: unknown) => (typeof v === 'string' ? v : '');
+	return {
+		updated_at: typeof parsed.updated_at === 'string' ? parsed.updated_at : EPOCH,
+		theme:
+			parsed.theme === 'claro' || parsed.theme === 'oscuro' || parsed.theme === 'auto'
+				? parsed.theme
+				: 'auto',
+		schemeLight: typeof parsed.schemeLight === 'string' ? parsed.schemeLight : 'bosque-claro',
+		schemeDark: typeof parsed.schemeDark === 'string' ? parsed.schemeDark : 'bosque-oscuro',
+		textScale:
+			typeof parsed.textScale === 'number' && parsed.textScale >= 0.8 && parsed.textScale <= 1.6
+				? parsed.textScale
+				: 1,
+		weightKg: typeof parsed.weightKg === 'number' && parsed.weightKg > 0 ? parsed.weightKg : null,
+		aemetApiKey: typeof parsed.aemetApiKey === 'string' ? parsed.aemetApiKey : '',
+		vaultDir: typeof parsed.vaultDir === 'string' ? parsed.vaultDir : '',
+		debugMode: parsed.debugMode === true,
+		origin: validOrigin,
+		emergency: {
+			name: str(e.name),
+			phone: str(e.phone),
+			medical: str(e.medical),
+			vehicle: str(e.vehicle),
+			clothing: str(e.clothing),
+			alarmMarginMin:
+				typeof e.alarmMarginMin === 'number' && e.alarmMarginMin > 0 ? e.alarmMarginMin : 120
+		}
+	};
+}
+
 export function loadSettings(): Settings {
 	if (typeof localStorage === 'undefined') return { ...DEFAULT_SETTINGS };
 	try {
 		const raw = localStorage.getItem(STORAGE_KEY);
 		if (!raw) return { ...DEFAULT_SETTINGS };
-		const parsed = JSON.parse(raw) as Partial<Settings>;
-		const origin = parsed.origin;
-		const validOrigin =
-			origin &&
-			typeof origin === 'object' &&
-			typeof origin.lat === 'number' &&
-			origin.lat >= -90 &&
-			origin.lat <= 90 &&
-			typeof origin.lon === 'number' &&
-			origin.lon >= -180 &&
-			origin.lon <= 180 &&
-			typeof origin.label === 'string'
-				? { lat: origin.lat, lon: origin.lon, label: origin.label }
-				: null;
-		const e = (parsed.emergency ?? {}) as Partial<EmergencySettings>;
-		const str = (v: unknown) => (typeof v === 'string' ? v : '');
-		return {
-			updated_at: typeof parsed.updated_at === 'string' ? parsed.updated_at : EPOCH,
-			theme:
-				parsed.theme === 'claro' || parsed.theme === 'oscuro' || parsed.theme === 'auto'
-					? parsed.theme
-					: 'auto',
-			schemeLight: typeof parsed.schemeLight === 'string' ? parsed.schemeLight : 'bosque-claro',
-			schemeDark: typeof parsed.schemeDark === 'string' ? parsed.schemeDark : 'bosque-oscuro',
-			textScale:
-				typeof parsed.textScale === 'number' && parsed.textScale >= 0.8 && parsed.textScale <= 1.6
-					? parsed.textScale
-					: 1,
-			weightKg: typeof parsed.weightKg === 'number' && parsed.weightKg > 0 ? parsed.weightKg : null,
-			aemetApiKey: typeof parsed.aemetApiKey === 'string' ? parsed.aemetApiKey : '',
-			vaultDir: typeof parsed.vaultDir === 'string' ? parsed.vaultDir : '',
-			debugMode: parsed.debugMode === true,
-			origin: validOrigin,
-			emergency: {
-				name: str(e.name),
-				phone: str(e.phone),
-				medical: str(e.medical),
-				vehicle: str(e.vehicle),
-				clothing: str(e.clothing),
-				alarmMarginMin:
-					typeof e.alarmMarginMin === 'number' && e.alarmMarginMin > 0 ? e.alarmMarginMin : 120
-			}
-		};
+		return coerceSettings(JSON.parse(raw));
 	} catch {
 		return { ...DEFAULT_SETTINGS };
 	}

@@ -12,12 +12,9 @@
  * ya en uso, rate-limit o red sin leer cadenas del proveedor.
  */
 
-import type {
-	AuthError as SbAuthError,
-	Session as SbSession,
-	SupabaseClient
-} from '@supabase/supabase-js';
+import type { AuthError as SbAuthError, Session as SbSession } from '@supabase/supabase-js';
 import type { BackendConfig } from '$lib/config';
+import { getSupabaseClient } from '$lib/supabase/client';
 import { AuthError, type AuthClient, type AuthErrorKind, type Session } from './types';
 
 /** Traduce la sesión del SDK a nuestro tipo `Session` (epoch ms). */
@@ -54,21 +51,7 @@ function toAuthError(error: SbAuthError): AuthError {
  * de forma perezosa (import dinámico memoizado) en el primer uso.
  */
 export function createSupabaseAuthClient(config: BackendConfig): AuthClient {
-	let clientPromise: Promise<SupabaseClient> | null = null;
-
-	function client(): Promise<SupabaseClient> {
-		if (!clientPromise) {
-			clientPromise = import('@supabase/supabase-js').then(({ createClient }) =>
-				createClient(config.url, config.anonKey, {
-					// Sesión persistente con refresco automático del token (§A3,
-					// "mantener conectado"). En Tauri el almacenamiento seguro se
-					// abordará al integrar el deep-link (§A7).
-					auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
-				})
-			);
-		}
-		return clientPromise;
-	}
+	const client = () => getSupabaseClient(config);
 
 	/** Envuelve una llamada del SDK convirtiendo un fallo de red (excepción) en
 	 *  `AuthError('network')`. La comprobación del `{ error }` del proveedor la
