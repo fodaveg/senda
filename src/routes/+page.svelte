@@ -375,6 +375,15 @@
 		display: grid;
 		gap: 0.5rem;
 	}
+	.route-list li {
+		/* Virtualización por CSS (SPECS_V4 §B6): el navegador omite el render y el
+		   layout de las filas fuera de pantalla con ~600 rutas, pero el nodo sigue
+		   en el DOM (búsqueda, anclas y scroll funcionan igual). `contain-intrinsic-
+		   size` reserva la altura aproximada de cada fila para que la barra de
+		   scroll no salte. */
+		content-visibility: auto;
+		contain-intrinsic-size: auto 52px;
+	}
 	.route-list a {
 		display: flex;
 		flex-wrap: wrap;

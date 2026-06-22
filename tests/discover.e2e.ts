@@ -13,9 +13,15 @@ test('el buscador filtra por municipio sin acentos', async ({ page }) => {
 test('el filtro de estado muestra solo homologadas y el badge se ve', async ({ page }) => {
 	await page.goto('/');
 	await page.locator('body[data-hydrated]').waitFor();
-	const total = await page.locator('.route-list li').count();
+	// El listado se renderiza de forma incremental (SPECS_V4 §B6), así que el total
+	// se lee de la etiqueta de conteo ("N de M rutas"), no contando los <li>.
+	const countOf = async () => {
+		const text = (await page.locator('p.count').textContent()) ?? '';
+		return Number(text.match(/^(\d+)/)?.[1] ?? '0');
+	};
+	const total = await countOf();
 	await page.getByLabel('Estado').selectOption('homologado');
-	const filtered = await page.locator('.route-list li').count();
+	const filtered = await countOf();
 	expect(filtered).toBeGreaterThan(0);
 	expect(filtered).toBeLessThan(total);
 	await expect(page.locator('.route-list li').first().getByText('Homologada')).toBeVisible();

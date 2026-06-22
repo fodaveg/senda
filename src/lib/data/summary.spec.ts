@@ -20,9 +20,11 @@ function route(): Route {
 		circular: true,
 		difficulty_mide: null,
 		est_duration_min: 240,
-		water_points: [{ name: 'Font Roja', km: 3 }],
-		water_points_geo: [{ name: 'Font Roja', lat: 38.7, lon: -0.47, km: 3, kind: 'fuente' }],
-		pois: [{ name: 'Mirador', type: 'mirador', lat: 38.7, lon: -0.47, km: 2 }],
+		water_points: ['Font Roja (km 3)'],
+		water_points_geo: [
+			{ name: 'Font Roja', lat: 38.7, lon: -0.47, km: 3, dist_m: 5, kind: 'fuente' }
+		],
+		pois: [{ name: 'Mirador', type: 'mirador', lat: 38.7, lon: -0.47, km: 2, dist_m: 8 }],
 		escape_routes: [],
 		highlights: ['cumbre'],
 		best_season: [],
