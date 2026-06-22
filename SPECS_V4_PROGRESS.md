@@ -44,12 +44,13 @@ A2 (fusión) ya estaba; A1 (repositorio) se ha completado en esta sesión:
 
 Verde: lint, check, **252 unit**, **46 e2e**, build OK.
 
-## V4-M2 — EN CURSO (backend y auth: A3, A4, A5)
+## V4-M2 — CASI COMPLETO (backend y auth: A3, A4, A5)
 
-Decisión (2026-06-22): el **usuario crea el proyecto Supabase free (UE/Frankfurt)
-primero** y pasa `PUBLIC_SUPABASE_URL` + `PUBLIC_SUPABASE_ANON_KEY`; entonces se
-implementa el adaptador contra el backend real (probando login de verdad). El SDK
-se cargará por **import dinámico** (code-split) para no engordar el bundle.
+El usuario creó el proyecto Supabase free (UE/Frankfurt, id `vxqbcqhoisvotybfsstn`),
+ejecutó `schema.sql` sin errores y pasó la `anon/publishable key`. Smoke test REST
+OK (vista pública legible, tablas protegidas devuelven vacío a anónimos, Auth
+health 200). Falta solo validar un **login interactivo real** (crea usuario en su
+proyecto → mejor en M3 con la UI, o un usuario de prueba puntual).
 
 - **A5 — Esquema endurecido y auditado** (`supabase/schema.sql`): tras auditoría
   de seguridad (opus) se corrigieron, antes de ir a producción: vista con
@@ -59,16 +60,32 @@ se cargará por **import dinámico** (code-split) para no engordar el bundle.
   tabla y de secuencia para `authenticated`; `drop ... if exists` en políticas y
   constraints → script **re-ejecutable**; índice de agregación; vista
   `trending_gear`. RLS por usuario y solo-inserción de analytics ya estaban bien.
-- **A4 — Config** (`src/lib/config.ts`): ya lee `PUBLIC_SUPABASE_*` (dynamic env);
-  sin claves → modo local. Hecho en M1 parcial.
-- **A3 — Pendiente de las claves**: instalar `@supabase/supabase-js` (import
-  dinámico), adaptador `AuthClient` Supabase, store de sesión Svelte, contexto
-  auth, tests con cliente mock, green gate.
+- **A4 — Config** (`src/lib/config.ts`): lee `PUBLIC_SUPABASE_*` (dynamic env);
+  sin claves → modo local. Las claves viven en `.env` local (gitignored) y, en CI,
+  como variables; nunca en el repo.
+- **A3 — HECHO**: `@supabase/supabase-js` instalado y cargado por **import
+  dinámico** (code-split: no entra en el bundle inicial). Implementado:
+  - `src/lib/auth/supabaseAuth.ts`: adaptador `AuthClient` (signUp/signIn/signOut/
+    currentSession/requestPasswordReset/verifyOtp), mapeo de sesión y errores
+    **tipados** (`invalid_credentials`/`email_taken`/`rate_limit`/`network`).
+  - `src/lib/auth/session.ts`: store de sesión Svelte (loading/anonymous/
+    authenticated) con degradación elegante (sin red → anónimo).
+  - `src/lib/auth/context.ts`: `provideAuth`/`getAuth` (contexto Svelte);
+    deshabilitado si no hay backend.
+  - Tests con SDK y cliente mockeados (16 nuevos). Green gate: lint, check,
+    **268 unit**, **46 e2e**, build OK.
+  - Pendiente menor: refinar firma `verifyOtp(email, code)` y `signUp` → `Session
+| null` (confirmación por correo) ya aplicado en `types.ts`.
 
-## Pendiente (se hace al ACTIVAR el backend; necesita el proyecto Supabase free)
+⚠️ **Entorno**: usar **npm de nvm** (`nvm use 22`, npm 10+). El npm del sistema es
+6.14.17 y **corrompe el árbol** al instalar (deja `@tauri-apps/api` UNMET). `npm
+run` funciona con cualquiera, pero `npm install` NO con el del sistema.
 
-- **[A3, esperando claves del usuario]** Adaptador `AuthClient` real (Supabase) +
-  store de sesión; añadir entonces `@supabase/supabase-js` por import dinámico.
+## Pendiente
+
+- **V4-M3 (Cuentas/UI)**: wiring de `provideAuth` en el layout, formularios de
+  registro/login/recuperación, OTP, backoffice, indicador de sesión. Validar el
+  login real aquí.
 - Añadir `updated_at`/tombstones a los esquemas locales (migración versionada),
   necesarios para que `merge.ts` opere sobre los datos reales (§A2/M4).
 - `SyncedRepository` que use `merge.ts` contra Supabase; cola offline; indicador

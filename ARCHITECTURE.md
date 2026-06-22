@@ -40,20 +40,21 @@ GPX                     data/gpx/*.gpx
 
 ## Módulos y responsabilidades
 
-| Módulo                 | Responsabilidad                                                                                                                 |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `lib/engine`           | Motor de mochila puro: reglas, material custom (`warn`), ventana de inicio                                                      |
-| `lib/weather`          | Clientes meteo (Open-Meteo/AEMET, horaria, avisos CAP) + normalización                                                          |
-| `lib/geo`              | Distancia haversine, GPX→GeoJSON, perfil de elevación, OSRM, provincia                                                          |
-| `lib/map`              | Catálogo de capas IGN, URLs de tiles, extremos del track (pins)                                                                 |
-| `lib/data`             | Carga estática de rutas, schema zod, tracks, etapas, gear, fauna                                                                |
-| `lib/user`             | Marcas, diario/estadísticas, checklist, material custom (localStorage) tras `UserDataRepository` (v4 §A1) + fusión `sync/merge` |
-| `lib/catalog`          | Actualización del catálogo en runtime (manifest, almacén, deltas)                                                               |
-| `lib/report`           | Modelo de informe + Markdown (Obsidian) + ficha de emergencia                                                                   |
-| `lib/theme`/`settings` | Paletas de color y ajustes locales (tema, origen, api key AEMET)                                                                |
-| `lib/components`       | UI reutilizable (mapa, paneles, perfil, badges)                                                                                 |
-| `routes`               | Páginas: listado+mapa, ficha de ruta, ajustes, diario                                                                           |
-| `scripts/ingest`       | Crawler FEMECV, enrich OSM, build (merge+validación) — manual, offline                                                          |
+| Módulo                 | Responsabilidad                                                                                                                           |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `lib/engine`           | Motor de mochila puro: reglas, material custom (`warn`), ventana de inicio                                                                |
+| `lib/weather`          | Clientes meteo (Open-Meteo/AEMET, horaria, avisos CAP) + normalización                                                                    |
+| `lib/geo`              | Distancia haversine, GPX→GeoJSON, perfil de elevación, OSRM, provincia                                                                    |
+| `lib/map`              | Catálogo de capas IGN, URLs de tiles, extremos del track (pins)                                                                           |
+| `lib/data`             | Carga estática de rutas, schema zod, tracks, etapas, gear, fauna                                                                          |
+| `lib/user`             | Marcas, diario/estadísticas, checklist, material custom (localStorage) tras `UserDataRepository` (v4 §A1) + fusión `sync/merge`           |
+| `lib/auth`             | Auth opcional (v4 §A3): contrato `AuthClient`, adaptador Supabase (import dinámico), store de sesión, contexto. Deshabilitado sin backend |
+| `lib/catalog`          | Actualización del catálogo en runtime (manifest, almacén, deltas)                                                                         |
+| `lib/report`           | Modelo de informe + Markdown (Obsidian) + ficha de emergencia                                                                             |
+| `lib/theme`/`settings` | Paletas de color y ajustes locales (tema, origen, api key AEMET)                                                                          |
+| `lib/components`       | UI reutilizable (mapa, paneles, perfil, badges)                                                                                           |
+| `routes`               | Páginas: listado+mapa, ficha de ruta, ajustes, diario                                                                                     |
+| `scripts/ingest`       | Crawler FEMECV, enrich OSM, build (merge+validación) — manual, offline                                                                    |
 
 ## Límites arquitectónicos
 

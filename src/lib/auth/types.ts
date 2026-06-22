@@ -35,11 +35,19 @@ export class AuthError extends Error {
 
 /** Contrato que implementará el adaptador del proveedor (p. ej. Supabase). */
 export interface AuthClient {
-	signUp(email: string, password: string): Promise<Session>;
+	/**
+	 * Registra al usuario. Devuelve la sesión si el proveedor inicia sesión al
+	 * instante, o `null` si exige **confirmación por correo** antes de poder
+	 * entrar (estado válido, no error).
+	 */
+	signUp(email: string, password: string): Promise<Session | null>;
 	signIn(email: string, password: string): Promise<Session>;
 	signOut(): Promise<void>;
 	currentSession(): Promise<Session | null>;
 	requestPasswordReset(email: string): Promise<void>;
-	/** OTP opcional (TOTP o código por correo) para login reforzado. */
-	verifyOtp(code: string): Promise<Session>;
+	/**
+	 * OTP opcional (código por correo) para login/verificación reforzada. Necesita
+	 * el email al que se envió el código.
+	 */
+	verifyOtp(email: string, code: string): Promise<Session>;
 }
