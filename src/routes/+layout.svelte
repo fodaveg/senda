@@ -5,15 +5,21 @@
 	import { applyTextScale } from '$lib/settings';
 	import { applyAppearance } from '$lib/theme/schemes';
 	import { provideUserRepository } from '$lib/user/context';
+	import { SwitchableRepository } from '$lib/user/sessionRepository';
 	import { provideAuth } from '$lib/auth/context';
+	import { backendConfig } from '$lib/config';
+	import { createSupabaseRemoteStore } from '$lib/sync/supabaseRemote';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import AccountNav from '$lib/components/AccountNav.svelte';
+	import SyncIndicator from '$lib/components/SyncIndicator.svelte';
 
 	let { children } = $props();
 
-	// Repositorio de datos de usuario compartido por toda la app (SPECS_V4 §A1).
-	// Hoy es local; al añadir la cuenta se proveerá aquí el SyncedRepository.
-	const repo = provideUserRepository();
+	// Repositorio de datos de usuario compartido por toda la app (SPECS_V4 §A1/§B2).
+	// Instancia estable y conmutable: local por defecto, sincronizada con la cuenta
+	// cuando hay sesión (la fusión local↔remoto es no destructiva, §A6).
+	const repo = new SwitchableRepository();
+	provideUserRepository(repo);
 
 	// Módulo de auth compartido (SPECS_V4 §A3). Deshabilitado si no hay backend
 	// configurado: la app sigue funcionando 100% en local.
@@ -24,6 +30,17 @@
 		document.body.dataset.hydrated = 'true';
 		// Carga la sesión persistida (si hay backend). Sin red → queda anónima.
 		if (auth.enabled) void auth.session?.init();
+		// Conmuta el repositorio según la sesión: autenticado → sincroniza con la
+		// cuenta; anónimo → modo local (datos intactos). (SPECS_V4 §B2)
+		let unsubSession: (() => void) | undefined;
+		const config = backendConfig();
+		if (auth.enabled && auth.session && config) {
+			const remote = createSupabaseRemoteStore(config);
+			unsubSession = auth.session.subscribe((s) => {
+				if (s.status === 'authenticated') repo.useSynced(remote);
+				else if (s.status === 'anonymous') repo.useLocal();
+			});
+		}
 		applyAppearance(repo.loadSettings());
 		applyTextScale(repo.loadSettings().textScale);
 		// En modo "auto", seguir los cambios de preferencia del sistema.
@@ -32,7 +49,10 @@
 			if (repo.loadSettings().theme === 'auto') applyAppearance(repo.loadSettings());
 		};
 		mq.addEventListener('change', onChange);
-		return () => mq.removeEventListener('change', onChange);
+		return () => {
+			mq.removeEventListener('change', onChange);
+			unsubSession?.();
+		};
 	});
 </script>
 
@@ -46,6 +66,7 @@
 	<a href={resolve('/diario')} class="nav-link">Diario</a>
 	<a href={resolve('/ajustes')} class="nav-link">Ajustes</a>
 	{#if auth.enabled && auth.session}
+		<SyncIndicator status={repo.status} />
 		<AccountNav session={auth.session} />
 	{/if}
 	<ThemeToggle />

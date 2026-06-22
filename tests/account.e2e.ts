@@ -21,6 +21,9 @@ test('login con backend simulado: entra y muestra el backoffice', async ({ page 
 		if (url.includes('/token')) return route.fulfill({ json: SESSION });
 		return route.fulfill({ json: SESSION.user });
 	});
+	// Tras el login, el repositorio conmuta a sincronizado (§B2) y consulta las
+	// tablas; se simula el REST de datos para no tocar el backend real.
+	await page.route('**/rest/v1/**', (route) => route.fulfill({ json: [] }));
 
 	await page.goto('/cuenta');
 	await page.locator('body[data-hydrated]').waitFor();
