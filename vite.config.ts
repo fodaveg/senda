@@ -23,6 +23,16 @@ export default defineConfig({
 			}
 		})
 	],
+	build: {
+		// Dos chunks grandes son inherentes y NO son código de app que se sirva en
+		// el arranque: (1) `maplibre-gl` (~1 MB), una librería que no se puede
+		// trocear más y que desde V4-M6 se carga por import dinámico (LazyMap.svelte)
+		// en su propio chunk **asíncrono**, fuera del bundle inicial; (2) el bundle
+		// del servidor de prerender, que empaqueta el catálogo para generar el HTML
+		// en build y no se envía al usuario. Subimos el umbral del aviso para no
+		// marcarlos, sin ocultar chunks de app reales (que rondan los ~50 kB).
+		chunkSizeWarningLimit: 1500
+	},
 	test: {
 		expect: { requireAssertions: true },
 		projects: [

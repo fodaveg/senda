@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
-	import Map from '$lib/components/Map.svelte';
+	import Map from '$lib/components/LazyMap.svelte';
 	import StatusBadge from '$lib/components/StatusBadge.svelte';
 	import { emptyUserData, isDone, type ToggleMark, type UserData } from '$lib/user/marks';
 	import { getUserRepository } from '$lib/user/context';

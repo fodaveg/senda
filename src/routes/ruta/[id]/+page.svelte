@@ -17,7 +17,7 @@
 	import StartWindowCard from '$lib/components/StartWindowCard.svelte';
 	import StatusBadge from '$lib/components/StatusBadge.svelte';
 	import ElevationProfile from '$lib/components/ElevationProfile.svelte';
-	import Map from '$lib/components/Map.svelte';
+	import Map from '$lib/components/LazyMap.svelte';
 	import LiveTracking from '$lib/components/LiveTracking.svelte';
 	import WeatherCard from '$lib/components/WeatherCard.svelte';
 	import { gearItems, gearRules } from '$lib/data/gear';
