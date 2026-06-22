@@ -44,9 +44,20 @@ aunque haya pocas cuentas.
    bundle), el adaptador de `AuthClient` (`src/lib/auth/`) y el store de sesión.
    El repositorio sincronizado es ya V4-M4 (§A1/§B2).
 
+## Borrado de cuenta (RGPD) — paso manual aparte
+
+El cliente no puede borrar su propio usuario de `auth.users` desde el SDK; se
+expone como una función RPC `security definer` que solo borra al usuario que la
+invoca. Está en **`supabase/delete_account.sql`** y **hay que ejecutarla a mano**
+en el SQL Editor (no la aplica nadie automáticamente). Al borrar `auth.users`, los
+datos del usuario caen en cascada en todas las tablas. **Mientras no se ejecute,
+la app no debe ofrecer "borrar cuenta"** (la RPC no existiría). Una vez desplegada,
+se cablea desde el cliente con `rpc('delete_account')`.
+
 ## Pendiente antes de hacerlo público (no bloquea el desarrollo)
 
 - **Licencias**: revisar la redistribución de los datos (FEMECV, IGN CC-BY, OSM
   ODbL) y publicar atribución/uso conforme. Anotado en SPECS_V4.
 - **RGPD**: política de privacidad, consentimiento de analítica, export/borrado de
-  cuenta (ya contemplados en el diseño).
+  cuenta (export ya cubierto por la exportación local; borrado = `delete_account.sql`,
+  pendiente de ejecutar).
