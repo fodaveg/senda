@@ -35,6 +35,7 @@ function classify(error: SbAuthError): AuthErrorKind {
 	const status = error.status ?? 0;
 	const msg = error.message.toLowerCase();
 	if (status === 429) return 'rate_limit';
+	if (msg.includes('email not confirmed')) return 'email_not_confirmed';
 	if (msg.includes('already registered') || msg.includes('already been registered')) {
 		return 'email_taken';
 	}

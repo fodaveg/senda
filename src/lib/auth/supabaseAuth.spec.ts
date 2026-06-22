@@ -48,6 +48,17 @@ describe('createSupabaseAuthClient', () => {
 		});
 	});
 
+	it('email sin confirmar → AuthError email_not_confirmed', async () => {
+		auth.signInWithPassword.mockResolvedValue({
+			data: { session: null },
+			error: { message: 'Email not confirmed', status: 400 }
+		});
+		const client = createSupabaseAuthClient(config);
+		await expect(client.signIn('a@b.com', 'pw')).rejects.toMatchObject({
+			kind: 'email_not_confirmed'
+		});
+	});
+
 	it('signUp con confirmación por correo → null', async () => {
 		auth.signUp.mockResolvedValue({ data: { session: null }, error: null });
 		const client = createSupabaseAuthClient(config);

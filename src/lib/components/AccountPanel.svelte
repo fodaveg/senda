@@ -35,6 +35,8 @@
 			switch (e.kind) {
 				case 'invalid_credentials':
 					return 'Email o contraseña incorrectos.';
+				case 'email_not_confirmed':
+					return 'Confirma tu correo antes de entrar: te enviamos un enlace al registrarte.';
 				case 'email_taken':
 					return 'Ese email ya tiene cuenta. Inicia sesión.';
 				case 'rate_limit':

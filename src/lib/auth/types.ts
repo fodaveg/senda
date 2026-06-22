@@ -18,6 +18,7 @@ export interface Session {
 
 export type AuthErrorKind =
 	| 'invalid_credentials'
+	| 'email_not_confirmed'
 	| 'email_taken'
 	| 'rate_limit'
 	| 'network'
