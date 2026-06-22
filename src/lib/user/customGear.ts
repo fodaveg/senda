@@ -127,6 +127,30 @@ export function addCustomItem(
 	return { ...data, items: [...data.items, item] };
 }
 
+/** Edita un ítem existente por id (puro); actualiza `updated_at` para sincronizar. */
+export function updateCustomItem(
+	data: CustomGearData,
+	id: string,
+	input: NewCustomItem,
+	now: string = nowIso()
+): CustomGearData {
+	return {
+		...data,
+		items: data.items.map((i) =>
+			i.id === id
+				? {
+						...i,
+						name: input.name,
+						category: input.category,
+						weight_g: input.weight_g,
+						attributes: input.attributes,
+						updated_at: now
+					}
+				: i
+		)
+	};
+}
+
 /** Borra un ítem por id como tombstone (`deleted`), para propagar el borrado. */
 export function removeCustomItem(
 	data: CustomGearData,

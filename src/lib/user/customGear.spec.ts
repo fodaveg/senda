@@ -8,6 +8,7 @@ import {
 	migrateCustomGear,
 	parseCustomGearImport,
 	removeCustomItem,
+	updateCustomItem,
 	CustomGearImportError
 } from './customGear';
 
@@ -29,6 +30,28 @@ describe('material custom: mutaciones', () => {
 		d = addCustomItem(d, { name: 'Guantes', category: 'ropa', weight_g: null, attributes: [] });
 		d = addCustomItem(d, { name: 'Guantes', category: 'ropa', weight_g: null, attributes: [] });
 		expect(d.items.map((i) => i.id)).toEqual(['guantes', 'guantes-2']);
+	});
+
+	it('edita un ítem por id conservando id y refrescando updated_at', () => {
+		let d = addCustomItem(
+			emptyCustomGearData(),
+			{ name: 'Gorro', category: 'ropa', weight_g: 30, attributes: ['abrigo'] },
+			'2026-06-01T00:00:00.000Z'
+		);
+		d = updateCustomItem(
+			d,
+			'gorro',
+			{ name: 'Gorro de lana', category: 'ropa', weight_g: 45, attributes: ['abrigo', 'aislante'] },
+			'2026-06-22T00:00:00.000Z'
+		);
+		expect(d.items).toHaveLength(1);
+		expect(d.items[0]).toMatchObject({
+			id: 'gorro',
+			name: 'Gorro de lana',
+			weight_g: 45,
+			attributes: ['abrigo', 'aislante'],
+			updated_at: '2026-06-22T00:00:00.000Z'
+		});
 	});
 
 	it('elimina por id como tombstone (deja de mostrarse, se conserva para sync)', () => {

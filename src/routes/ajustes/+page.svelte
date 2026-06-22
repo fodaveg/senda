@@ -21,6 +21,7 @@
 		emptyCustomGearData,
 		liveCustomItems,
 		removeCustomItem,
+		updateCustomItem,
 		type CustomGearData
 	} from '$lib/user/customGear';
 
@@ -55,31 +56,54 @@
 	let gCategory = $state('otros');
 	let gWeight = $state('');
 	let gAttrs = $state<GearAttribute[]>([]);
+	// id del ítem en edición (null = alta de uno nuevo).
+	let gEditingId = $state<string | null>(null);
 	const GEAR_CATEGORIES = ['ropa', 'calzado', 'agua', 'seguridad', 'otros'];
 
 	function toggleGearAttr(a: GearAttribute) {
 		gAttrs = gAttrs.includes(a) ? gAttrs.filter((x) => x !== a) : [...gAttrs, a];
 	}
-	function addGear() {
+	function resetGearForm() {
+		gEditingId = null;
+		gName = '';
+		gCategory = 'otros';
+		gWeight = '';
+		gAttrs = [];
+	}
+	/** Carga un ítem en el formulario para editarlo. */
+	function editGear(id: string) {
+		const item = gear.items.find((i) => i.id === id);
+		if (!item) return;
+		gEditingId = id;
+		gName = item.name;
+		gCategory = item.category;
+		gWeight = item.weight_g === null ? '' : String(item.weight_g);
+		gAttrs = [...item.attributes];
+	}
+	function saveGear() {
 		const name = gName.trim();
 		if (!name) return;
 		const grams = gWeight.trim() === '' ? null : Number(gWeight.replace(',', '.'));
-		gear = addCustomItem(gear, {
+		const input = {
 			name,
 			category: gCategory,
 			weight_g: grams !== null && Number.isFinite(grams) && grams >= 0 ? grams : null,
 			attributes: gAttrs
-		});
+		};
+		if (gEditingId) {
+			gear = updateCustomItem(gear, gEditingId, input);
+		} else {
+			gear = addCustomItem(gear, input);
+			// Analítica anónima opt-in: material añadido (solo al dar de alta).
+			analytics.track(gearEvent(name));
+		}
 		repo.saveCustomGear(gear);
-		// Analítica anónima opt-in: material añadido (solo el nombre normalizado).
-		analytics.track(gearEvent(name));
-		gName = '';
-		gWeight = '';
-		gAttrs = [];
+		resetGearForm();
 	}
 	function removeGear(id: string) {
 		gear = removeCustomItem(gear, id);
 		repo.saveCustomGear(gear);
+		if (gEditingId === id) resetGearForm();
 	}
 
 	// Descarga offline por lote (SPECS_V3.5 §3): mapas de las rutas "quiero hacer".
@@ -417,6 +441,12 @@
 						{/if}
 						<button
 							type="button"
+							class="secondary gear-edit"
+							aria-label={`Editar ${item.name}`}
+							onclick={() => editGear(item.id)}>Editar</button
+						>
+						<button
+							type="button"
 							class="secondary gear-remove"
 							aria-label={`Quitar ${item.name}`}
 							onclick={() => removeGear(item.id)}>Quitar</button
@@ -450,9 +480,14 @@
 				</label>
 			{/each}
 		</fieldset>
-		<button type="button" class="secondary" disabled={gName.trim() === ''} onclick={addGear}>
-			Añadir material
-		</button>
+		<div class="gear-actions">
+			<button type="button" class="secondary" disabled={gName.trim() === ''} onclick={saveGear}>
+				{gEditingId ? 'Guardar cambios' : 'Añadir material'}
+			</button>
+			{#if gEditingId}
+				<button type="button" class="secondary" onclick={resetGearForm}>Cancelar</button>
+			{/if}
+		</div>
 	</fieldset>
 
 	<fieldset>
