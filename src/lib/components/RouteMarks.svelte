@@ -3,6 +3,7 @@
 	import {
 		emptyUserData,
 		isDone,
+		liveOutings,
 		TOGGLE_MARKS,
 		withOuting,
 		withoutOuting,
@@ -32,6 +33,7 @@
 	});
 
 	let marks = $derived(userData.marks[routeId] ?? {});
+	let outings = $derived(liveOutings(marks));
 
 	function persist(next: UserData) {
 		userData = next;
@@ -54,8 +56,8 @@
 		outingNotes = '';
 	}
 
-	function removeOuting(index: number) {
-		persist(withoutOuting(userData, routeId, index));
+	function removeOuting(outingId: string) {
+		persist(withoutOuting(userData, routeId, outingId));
 	}
 </script>
 
@@ -75,7 +77,7 @@
 		class:active={isDone(marks)}
 		onclick={() => (showOutingForm = !showOutingForm)}
 	>
-		{isDone(marks) ? `Hecha ×${marks.outings!.length}` : 'Registrar salida'}
+		{isDone(marks) ? `Hecha ×${outings.length}` : 'Registrar salida'}
 	</button>
 </div>
 
@@ -97,12 +99,14 @@
 		</label>
 		<button type="submit">Guardar salida</button>
 	</form>
-	{#if (marks.outings?.length ?? 0) > 0}
+	{#if outings.length > 0}
 		<ul class="outings">
-			{#each marks.outings ?? [] as outing, index (outing.date + index)}
+			{#each outings as outing (outing.id)}
 				<li>
 					{outing.date}{outing.notes ? ` — ${outing.notes}` : ''}
-					<button type="button" class="remove" onclick={() => removeOuting(index)}> Borrar </button>
+					<button type="button" class="remove" onclick={() => removeOuting(outing.id)}>
+						Borrar
+					</button>
 				</li>
 			{/each}
 		</ul>

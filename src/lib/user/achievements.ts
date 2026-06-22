@@ -5,13 +5,13 @@
  */
 
 import type { Route } from '$lib/types';
-import type { UserData } from './marks';
+import { liveOutings, type UserData } from './marks';
 
-/** Ids de rutas con al menos una salida registrada. */
+/** Ids de rutas con al menos una salida registrada (viva). */
 function doneRouteIds(data: UserData): Set<string> {
 	const done = new Set<string>();
 	for (const [id, marks] of Object.entries(data.marks)) {
-		if ((marks.outings?.length ?? 0) > 0) done.add(id);
+		if (liveOutings(marks).length > 0) done.add(id);
 	}
 	return done;
 }
@@ -67,7 +67,7 @@ export function achievements(data: UserData, routes: Route[]): Achievement[] {
 	let km = 0;
 	let ascent = 0;
 	for (const [id, marks] of Object.entries(data.marks)) {
-		const n = marks.outings?.length ?? 0;
+		const n = liveOutings(marks).length;
 		outings += n;
 		if (n > 0) {
 			const r = byId.get(id);

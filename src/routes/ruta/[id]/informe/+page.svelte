@@ -18,6 +18,7 @@
 	import { renderMarkdown, reportFilename, reportSpeechText } from '$lib/report/markdown';
 	import { isSpeechSupported, speak, stopSpeaking } from '$lib/voice';
 	import { getUserRepository } from '$lib/user/context';
+	import { liveCustomItems } from '$lib/user/customGear';
 	import { forecastDates, seasonForDate } from '$lib/weather/dates';
 	import { avisosForRoute, fetchAvisosCapCached, type Aviso } from '$lib/weather/avisos';
 	import { fetchOpenMeteoHourly, type HourlyPoint } from '$lib/weather/hourly';
@@ -43,7 +44,7 @@
 			route,
 			weather,
 			seasonForDate(date),
-			repo.loadCustomGear().items,
+			liveCustomItems(repo.loadCustomGear()),
 			ATTRIBUTE_WARNING_RULES
 		);
 		const alternatives = route.alternatives

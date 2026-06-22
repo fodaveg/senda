@@ -5,7 +5,7 @@
  */
 
 import type { Route } from '$lib/types';
-import { type UserData } from './marks';
+import { liveOutings, type UserData } from './marks';
 
 export interface OutingEntry {
 	routeId: string;
@@ -45,7 +45,7 @@ export function diaryStats(data: UserData, routes: Route[]): DiaryStats {
 
 	for (const [routeId, marks] of Object.entries(data.marks)) {
 		const route = byId.get(routeId) ?? null;
-		for (const outing of marks.outings ?? []) {
+		for (const outing of liveOutings(marks)) {
 			distinct.add(routeId);
 			outings.push({
 				routeId,

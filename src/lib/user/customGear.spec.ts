@@ -1,8 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import {
 	addCustomItem,
+	customGearDataSchema,
 	emptyCustomGearData,
 	exportCustomGear,
+	liveCustomItems,
+	migrateCustomGear,
 	parseCustomGearImport,
 	removeCustomItem,
 	CustomGearImportError
@@ -28,7 +31,7 @@ describe('material custom: mutaciones', () => {
 		expect(d.items.map((i) => i.id)).toEqual(['guantes', 'guantes-2']);
 	});
 
-	it('elimina por id', () => {
+	it('elimina por id como tombstone (deja de mostrarse, se conserva para sync)', () => {
 		let d = addCustomItem(emptyCustomGearData(), {
 			name: 'Gorro',
 			category: 'ropa',
@@ -36,7 +39,24 @@ describe('material custom: mutaciones', () => {
 			attributes: ['abrigo']
 		});
 		d = removeCustomItem(d, 'gorro');
-		expect(d.items).toHaveLength(0);
+		expect(liveCustomItems(d)).toHaveLength(0);
+		expect(d.items).toHaveLength(1);
+		expect(d.items[0].deleted).toBe(true);
+	});
+
+	it('migra v1→v2 backfilleando updated_at sin perder ítems', () => {
+		const v1 = {
+			schema: 1,
+			items: [
+				{ id: 'gorro', name: 'Gorro', category: 'ropa', weight_g: 30, attributes: ['abrigo'] }
+			]
+		};
+		const migrated = customGearDataSchema.parse(migrateCustomGear(v1, '2026-06-22T10:00:00.000Z'));
+		expect(migrated.schema).toBe(2);
+		expect(migrated.items[0]).toMatchObject({
+			id: 'gorro',
+			updated_at: '2026-06-22T10:00:00.000Z'
+		});
 	});
 });
 

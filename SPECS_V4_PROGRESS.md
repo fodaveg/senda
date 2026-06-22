@@ -106,10 +106,39 @@ función de servidor/RPC (el cliente no puede borrar su propio usuario de
 flujo de "restablecer contraseña" desde el enlace del correo (deep-link/ruta de
 callback). **Validar un login interactivo real** (crea usuario en el proyecto).
 
+## V4-M4.1 — COMPLETO (esquemas locales sincronizables, invisible, sin red)
+
+Base para la sincronización: cada dominio de `src/lib/user/` lleva ya los campos
+que `merge.ts` necesita (`id`/`updated_at`/tombstone `deleted`), con **migración
+versionada que no pierde datos** y la UI funcionando igual.
+
+- `src/lib/user/sync/clock.ts`: helpers compartidos `nowIso()` (marca de tiempo
+  ISO para LWW) y `newId()` (`crypto.randomUUID` con fallback). Las mutaciones
+  reciben `now`/`id` como parámetros opcionales (tests deterministas).
+- `marks.ts` (**v2**): cada conjunto de marcas por ruta tiene `updated_at`
+  (último toggle) y cada salida es un registro sincronizable (`id` +
+  `updated_at` + `deleted`). **Borrar una salida es un tombstone** (no se elimina
+  del array); `liveOutings()` filtra las vivas. `migrateUserData` backfillea ids
+  y `updated_at` de v1. Consumidores actualizados: `RouteMarks.svelte` (borrado
+  por id), `stats.ts`, `achievements.ts`.
+- `customGear.ts` (**v2**): ítems con `updated_at` + tombstone `deleted`;
+  `removeCustomItem` ahora es tombstone; `liveCustomItems()` filtra. Consumidores:
+  ficha de ruta, informe y `ajustes` usan `liveCustomItems`. `migrateCustomGear`
+  backfillea v1.
+- `checklist.ts` (**v2**): cada entrada `(ruta, fecha)` es `{ items, updated_at }`;
+  vaciar guarda lista vacía con `updated_at` (el desmarcado se propaga). Migra v1
+  (`Record<key,string[]>`). API `Set<string>` intacta.
+- `settings.ts`: singleton con `updated_at` (para `mergeSingleton`); `saveSettings`
+  lo estampa en cada guardado; ajustes antiguos se backfillean a fecha cero
+  (`EPOCH`) para que cualquier cambio/dato remoto real prevalezca.
+- Tests de migración v1→v2 (marcas y material) sin pérdida + tombstones; specs
+  existentes actualizadas al nuevo contrato. **El `LocalRepository` y la UI se
+  comportan igual.**
+
+Verde: lint, check, **272 unit**, **48 e2e**, build OK.
+
 ## Pendiente
 
-- Añadir `updated_at`/tombstones a los esquemas locales (migración versionada),
-  necesarios para que `merge.ts` opere sobre los datos reales (§A2/M4).
 - `SyncedRepository` que use `merge.ts` contra Supabase; cola offline; indicador
   de sync (§B2). Se provee en el layout raíz cuando hay sesión.
 - UI de cuentas/backoffice (§B1), migración de datos locales → cuenta (§A6).

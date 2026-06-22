@@ -17,6 +17,7 @@
 	import {
 		addCustomItem,
 		emptyCustomGearData,
+		liveCustomItems,
 		removeCustomItem,
 		type CustomGearData
 	} from '$lib/user/customGear';
@@ -46,6 +47,7 @@
 
 	// Mi material (SPECS_V3 §4): se gestiona aquí y aparece en cada ficha.
 	let gear = $state<CustomGearData>(emptyCustomGearData());
+	let gearItems = $derived(liveCustomItems(gear));
 	let gName = $state('');
 	let gCategory = $state('otros');
 	let gWeight = $state('');
@@ -398,9 +400,9 @@
 			Objetos propios que se añaden a la mochila de cada ruta. Marca atributos (opcional) para que
 			la app pueda avisarte si no son adecuados según la meteo (p. ej. abrigo en ruta calurosa).
 		</p>
-		{#if gear.items.length > 0}
+		{#if gearItems.length > 0}
 			<ul class="gear-list">
-				{#each gear.items as item (item.id)}
+				{#each gearItems as item (item.id)}
 					<li>
 						<span class="gear-name">{item.name}</span>
 						{#if item.attributes.length > 0}

@@ -64,18 +64,28 @@ describe('LocalRepository', () => {
 		const gear = {
 			...emptyCustomGearData(),
 			items: [
-				{ id: 'silbato', name: 'Silbato', category: 'seguridad', weight_g: 10, attributes: [] }
+				{
+					id: 'silbato',
+					name: 'Silbato',
+					category: 'seguridad',
+					weight_g: 10,
+					attributes: [],
+					updated_at: '2026-06-22T10:00:00.000Z'
+				}
 			]
 		};
 		repo.saveCustomGear(gear);
 		expect(repo.loadCustomGear()).toEqual(gear);
 	});
 
-	it('hace round-trip de los ajustes', () => {
+	it('hace round-trip de los ajustes y estampa updated_at al guardar', () => {
 		const repo = new LocalRepository();
 		const settings = { ...DEFAULT_SETTINGS, theme: 'oscuro' as const, weightKg: 72 };
 		repo.saveSettings(settings);
-		expect(repo.loadSettings()).toEqual(settings);
+		const loaded = repo.loadSettings();
+		// `saveSettings` sella la marca de tiempo (singleton sincronizable).
+		expect(loaded.updated_at).not.toBe(DEFAULT_SETTINGS.updated_at);
+		expect({ ...loaded, updated_at: settings.updated_at }).toEqual(settings);
 	});
 
 	it('notifica a los suscriptores en cada guardado y respeta la baja', () => {

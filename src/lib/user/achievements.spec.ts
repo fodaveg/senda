@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { achievements, comarcaProgress } from './achievements';
-import type { UserData } from './marks';
+import { emptyUserData, USER_SCHEMA_VERSION, type UserData } from './marks';
 import type { Route } from '$lib/types';
 
 function route(id: string, zone: string | null, type: Route['type'] = 'PR'): Route {
@@ -47,8 +47,11 @@ const ROUTES = [
 
 function withOutings(ids: string[]): UserData {
 	const marks: UserData['marks'] = {};
-	for (const id of ids) marks[id] = { outings: [{ date: '2026-05-01' }] };
-	return { schema: 1, marks };
+	for (const id of ids)
+		marks[id] = {
+			outings: [{ id: `${id}-o1`, date: '2026-05-01', updated_at: '2026-05-01T00:00:00.000Z' }]
+		};
+	return { schema: USER_SCHEMA_VERSION, marks };
 }
 
 describe('comarcaProgress', () => {
@@ -76,6 +79,6 @@ describe('achievements', () => {
 	});
 
 	it('sin salidas, ningún logro', () => {
-		expect(achievements({ schema: 1, marks: {} }, ROUTES).every((a) => !a.achieved)).toBe(true);
+		expect(achievements(emptyUserData(), ROUTES).every((a) => !a.achieved)).toBe(true);
 	});
 });

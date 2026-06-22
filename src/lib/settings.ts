@@ -26,6 +26,13 @@ export interface EmergencySettings {
 export type Theme = 'auto' | 'claro' | 'oscuro';
 
 export interface Settings {
+	/**
+	 * ISO 8601 del último cambio de los ajustes (SPECS_V4 §A2). Es un singleton
+	 * sincronizable: la fusión usa `mergeSingleton` (LWW). Se backfillea a una
+	 * fecha cero al cargar ajustes antiguos para que cualquier cambio explícito o
+	 * el dato remoto real prevalezca.
+	 */
+	updated_at: string;
 	theme: Theme;
 	/** Esquema de color para modo claro y para modo oscuro (SPECS_V3 §9);
 	 * ver src/lib/theme/schemes.ts. El toggle de modo aplica el que toque. */
@@ -46,6 +53,9 @@ export interface Settings {
 
 const STORAGE_KEY = 'senderos-cv:settings';
 
+/** Fecha cero para ajustes sin `updated_at` previo (cualquier dato real gana). */
+const EPOCH = '1970-01-01T00:00:00.000Z';
+
 export const DEFAULT_EMERGENCY: EmergencySettings = {
 	name: '',
 	phone: '',
@@ -56,6 +66,7 @@ export const DEFAULT_EMERGENCY: EmergencySettings = {
 };
 
 export const DEFAULT_SETTINGS: Settings = {
+	updated_at: EPOCH,
 	theme: 'auto',
 	schemeLight: 'bosque-claro',
 	schemeDark: 'bosque-oscuro',
@@ -90,6 +101,7 @@ export function loadSettings(): Settings {
 		const e = (parsed.emergency ?? {}) as Partial<EmergencySettings>;
 		const str = (v: unknown) => (typeof v === 'string' ? v : '');
 		return {
+			updated_at: typeof parsed.updated_at === 'string' ? parsed.updated_at : EPOCH,
 			theme:
 				parsed.theme === 'claro' || parsed.theme === 'oscuro' || parsed.theme === 'auto'
 					? parsed.theme
@@ -121,7 +133,11 @@ export function loadSettings(): Settings {
 }
 
 export function saveSettings(settings: Settings): void {
-	localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+	// Cada guardado estampa `updated_at` (singleton sincronizable, LWW).
+	localStorage.setItem(
+		STORAGE_KEY,
+		JSON.stringify({ ...settings, updated_at: new Date().toISOString() })
+	);
 }
 
 /** ¿El sistema prefiere modo oscuro? (para resolver el tema "auto"). */

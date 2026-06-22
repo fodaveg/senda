@@ -2,8 +2,11 @@ import { describe, expect, it } from 'vitest';
 import {
 	emptyUserData,
 	isDone,
+	liveOutings,
+	migrateUserData,
 	parseUserDataImport,
 	UserImportError,
+	userDataSchema,
 	withOuting,
 	withoutOuting,
 	withToggledMark
@@ -63,9 +66,44 @@ describe('marcas de usuario', () => {
 		data = withOuting(data, 'pr-1', { date: '2026-01-10' });
 		data = withOuting(data, 'pr-1', { date: '2026-03-05', notes: 'con niebla' });
 		expect(isDone(data.marks['pr-1'])).toBe(true);
-		expect(data.marks['pr-1'].outings!.map((o) => o.date)).toEqual(['2026-03-05', '2026-01-10']);
-		data = withoutOuting(data, 'pr-1', 0);
-		expect(data.marks['pr-1'].outings).toHaveLength(1);
+		expect(liveOutings(data.marks['pr-1']).map((o) => o.date)).toEqual([
+			'2026-03-05',
+			'2026-01-10'
+		]);
+		// Borrar una salida es un tombstone: deja de contar pero el registro
+		// permanece (con `deleted`) para propagar el borrado en la sincronización.
+		const first = liveOutings(data.marks['pr-1'])[0];
+		data = withoutOuting(data, 'pr-1', first.id);
+		expect(liveOutings(data.marks['pr-1'])).toHaveLength(1);
+		expect(data.marks['pr-1'].outings).toHaveLength(2);
+		expect(data.marks['pr-1'].outings!.find((o) => o.id === first.id)!.deleted).toBe(true);
+	});
+
+	it('migra v1→v2 sin pérdida: backfillea ids y updated_at de marcas y salidas', () => {
+		const v1 = {
+			schema: 1,
+			marks: {
+				'pr-1': {
+					favorita: true,
+					outings: [{ date: '2026-01-10' }, { date: '2026-03-05', notes: 'con niebla' }]
+				}
+			}
+		};
+		const migrated = userDataSchema.parse(migrateUserData(v1, '2026-06-22T10:00:00.000Z'));
+		expect(migrated.schema).toBe(2);
+		const marks = migrated.marks['pr-1'];
+		expect(marks.favorita).toBe(true);
+		expect(marks.updated_at).toBe('2026-06-22T10:00:00.000Z');
+		expect(marks.outings).toHaveLength(2);
+		// Cada salida conserva su fecha/notas y gana id + updated_at.
+		expect(marks.outings!.map((o) => o.date)).toEqual(['2026-01-10', '2026-03-05']);
+		expect(marks.outings![1].notes).toBe('con niebla');
+		for (const o of marks.outings!) {
+			expect(o.id).toBeTruthy();
+			expect(o.updated_at).toBe('2026-06-22T10:00:00.000Z');
+		}
+		// Los ids son distintos entre salidas.
+		expect(marks.outings![0].id).not.toBe(marks.outings![1].id);
 	});
 
 	it('la importación valida con zod y rechaza copias corruptas enteras', () => {

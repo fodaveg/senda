@@ -31,6 +31,7 @@
 		energyEstimate
 	} from '$lib/engine';
 	import type { CustomGearItem } from '$lib/types';
+	import { liveCustomItems } from '$lib/user/customGear';
 	import { startWindow } from '$lib/engine/startWindow';
 	import { gpxToGeoJSON, trackPositions } from '$lib/geo/gpx';
 	import { elevationProfile, type ProfilePoint } from '$lib/geo/profile';
@@ -265,7 +266,7 @@
 	async function loadRouteData(r: typeof route, token: number) {
 		const settings = repo.loadSettings();
 		userWeight = settings.weightKg;
-		customItems = repo.loadCustomGear().items;
+		customItems = liveCustomItems(repo.loadCustomGear());
 		const mapPrefs = loadMapPrefs();
 		showWater = mapPrefs.showWater;
 		showPois = mapPrefs.showPois;
