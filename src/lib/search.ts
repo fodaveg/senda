@@ -25,16 +25,38 @@ function haystack(route: SearchableRoute): string {
 	);
 }
 
+/** Entrada del índice de búsqueda: la ruta y su `haystack` ya normalizado. */
+export interface SearchIndexEntry<T> {
+	route: T;
+	haystack: string;
+}
+
+/**
+ * Precomputa el índice de búsqueda (SPECS_V4 §B6): normaliza el `haystack` de
+ * cada ruta **una sola vez**. Así, con ~600 rutas, cada pulsación del buscador
+ * no vuelve a normalizar todo el catálogo (la normalización NFD es lo caro);
+ * solo compara cadenas ya preparadas.
+ */
+export function buildSearchIndex<T extends SearchableRoute>(routes: T[]): SearchIndexEntry<T>[] {
+	return routes.map((route) => ({ route, haystack: haystack(route) }));
+}
+
+/** Filtra un índice ya construido por los términos de la consulta (AND). */
+export function searchIndex<T>(index: SearchIndexEntry<T>[], query: string): T[] {
+	const terms = normalizeText(query).split(/\s+/).filter(Boolean);
+	if (terms.length === 0) return index.map((e) => e.route);
+	return index
+		.filter((entry) => terms.every((term) => entry.haystack.includes(term)))
+		.map((entry) => entry.route);
+}
+
 /**
  * Todos los términos de la consulta deben aparecer (AND). Consulta vacía
  * devuelve todas las rutas. Genérico: opera igual sobre rutas completas o sobre
- * el índice ligero (`RouteSummary`).
+ * el índice ligero (`RouteSummary`). Conveniencia que construye el índice y
+ * busca de una vez; para búsquedas repetidas (un buscador en vivo), reusa
+ * `buildSearchIndex` + `searchIndex`.
  */
 export function searchRoutes<T extends SearchableRoute>(routes: T[], query: string): T[] {
-	const terms = normalizeText(query).split(/\s+/).filter(Boolean);
-	if (terms.length === 0) return routes;
-	return routes.filter((route) => {
-		const hay = haystack(route);
-		return terms.every((term) => hay.includes(term));
-	});
+	return searchIndex(buildSearchIndex(routes), query);
 }

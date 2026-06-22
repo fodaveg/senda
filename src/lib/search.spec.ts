@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { normalizeText, searchRoutes } from './search';
+import { buildSearchIndex, normalizeText, searchIndex, searchRoutes } from './search';
 import type { Route } from './types';
 
 function route(overrides: Partial<Route>): Route {
@@ -66,6 +66,18 @@ describe('searchRoutes', () => {
 	it('varios términos = AND', () => {
 		expect(searchRoutes(ROUTES, 'cv chulilla').map((r) => r.id)).toEqual(['pr-cv-77']);
 		expect(searchRoutes(ROUTES, 'chulilla moraig')).toHaveLength(0);
+	});
+});
+
+describe('índice de búsqueda precomputado', () => {
+	it('da el mismo resultado que searchRoutes y solo normaliza una vez', () => {
+		const index = buildSearchIndex(ROUTES);
+		expect(index).toHaveLength(3);
+		// El haystack ya viene normalizado (sin acentos ni mayúsculas).
+		expect(index.every((e) => e.haystack === e.haystack.toLowerCase())).toBe(true);
+		expect(searchIndex(index, 'chulilla').map((r) => r.id)).toEqual(['pr-cv-77']);
+		expect(searchIndex(index, 'cañon turia').map((r) => r.id)).toEqual(['gr-7']);
+		expect(searchIndex(index, '')).toHaveLength(3);
 	});
 });
 

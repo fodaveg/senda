@@ -10,7 +10,7 @@
 	import { PROVINCES } from '$lib/geo/province';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
 	import { haversineMeters } from '$lib/geo/distance';
-	import { searchRoutes } from '$lib/search';
+	import { buildSearchIndex, searchIndex } from '$lib/search';
 	import { type OriginSetting } from '$lib/settings';
 	import { STATUS_FILTER_OPTIONS, STATUS_LABELS } from '$lib/status';
 	import type { RouteType } from '$lib/types';
@@ -43,8 +43,12 @@
 	});
 	let markFilter = $state<ToggleMark | 'hecha' | null>(null);
 
+	// Índice de búsqueda precomputado (SPECS_V4 §B6): se reconstruye solo cuando
+	// cambia el catálogo, no en cada pulsación del buscador.
+	let searchIdx = $derived(buildSearchIndex(routes));
+
 	let filtered = $derived.by(() => {
-		const result = applyFilters(searchRoutes(routes, query), filters).filter((route) => {
+		const result = applyFilters(searchIndex(searchIdx, query), filters).filter((route) => {
 			if (markFilter === null) return true;
 			const marks = userData.marks[route.id];
 			return markFilter === 'hecha' ? isDone(marks) : Boolean(marks?.[markFilter]);
