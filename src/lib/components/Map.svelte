@@ -31,6 +31,7 @@
 	import { DEFAULT_LAYER_ID, MAP_LAYERS } from '$lib/map/layers';
 	import { loadMapPrefs, saveMapPrefs } from '$lib/map/prefs';
 	import { trackEndpoints } from '$lib/map/track';
+	import { clusterMarkers } from '$lib/map/cluster';
 	import { onMount } from 'svelte';
 	import type { FeatureCollection } from 'geojson';
 	import type { StyleSpecification } from 'maplibre-gl';
@@ -96,26 +97,49 @@
 	let highlightMarker: maplibregl.Marker | null = null;
 	let mapInstance: maplibregl.Map | null = null;
 	let mapReady = $state(false);
+	// Zoom actual: dispara el reclustering de marcadores al acercar/alejar.
+	let mapZoom = $state(7);
 	let markerHandles: maplibregl.Marker[] = [];
 	let endpointHandles: maplibregl.Marker[] = [];
 	let waterHandles: maplibregl.Marker[] = [];
 	let poiHandles: maplibregl.Marker[] = [];
 	let waypointHandles: maplibregl.Marker[] = [];
 
-	// Marcadores reactivos: el listado filtrado cambia y el mapa le sigue.
+	// Marcadores reactivos con clustering (SPECS_V4 §B6): el listado filtrado
+	// cambia y el mapa le sigue; los inicios próximos se agrupan según el zoom
+	// (recalculado al hacer zoom). Un grupo de un solo miembro es un pin normal
+	// (clic → mini-ficha); un clúster muestra el conteo (clic → acerca y separa).
 	$effect(() => {
 		const list = markers;
+		const zoom = mapZoom;
 		if (!mapReady || !mapInstance) return;
 		for (const handle of markerHandles) handle.remove();
-		markerHandles = list.map((marker) => {
-			const m = new maplibregl.Marker({ color: '#c1121f' })
-				.setLngLat([marker.lon, marker.lat])
+		markerHandles = clusterMarkers(list, zoom).map((cluster) => {
+			if (cluster.members.length === 1) {
+				const marker = cluster.members[0];
+				const m = new maplibregl.Marker({ color: '#c1121f' })
+					.setLngLat([marker.lon, marker.lat])
+					.addTo(mapInstance!);
+				m.getElement().setAttribute('title', marker.name);
+				m.getElement().style.cursor = 'pointer';
+				m.getElement().addEventListener('click', (e) => {
+					e.stopPropagation();
+					onMarkerClick?.(marker.id);
+				});
+				return m;
+			}
+			const el = document.createElement('div');
+			el.className = 'cluster-dot';
+			el.textContent = String(cluster.members.length);
+			el.setAttribute('title', `${cluster.members.length} rutas en esta zona`);
+			el.setAttribute('role', 'button');
+			el.setAttribute('aria-label', `${cluster.members.length} rutas agrupadas; acercar`);
+			const m = new maplibregl.Marker({ element: el })
+				.setLngLat([cluster.lon, cluster.lat])
 				.addTo(mapInstance!);
-			m.getElement().setAttribute('title', marker.name);
-			m.getElement().style.cursor = 'pointer';
-			m.getElement().addEventListener('click', (e) => {
+			el.addEventListener('click', (e) => {
 				e.stopPropagation();
-				onMarkerClick?.(marker.id);
+				mapInstance!.easeTo({ center: [cluster.lon, cluster.lat], zoom: Math.min(zoom + 2, 16) });
 			});
 			return m;
 		});
@@ -311,6 +335,8 @@
 		}
 		map.addControl(new maplibregl.NavigationControl(), 'top-right');
 		map.on('click', (e) => onMapClick?.({ lat: e.lngLat.lat, lon: e.lngLat.lng }));
+		// El reclustering sigue el zoom (zoomend evita recalcular en cada frame).
+		map.on('zoomend', () => (mapZoom = map.getZoom()));
 		mapInstance = map;
 
 		map.on('load', () => {
@@ -344,6 +370,7 @@
 		if (bbox) {
 			map.fitBounds(bbox, { padding: 48, animate: false });
 		}
+		mapZoom = map.getZoom();
 		mapReady = true;
 
 		return () => {
@@ -413,6 +440,22 @@
 		line-height: 1;
 		cursor: help;
 		filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+	}
+	.map :global(.cluster-dot) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 30px;
+		height: 30px;
+		padding: 0 6px;
+		border-radius: 999px;
+		background: #1d3a2a;
+		color: #fff;
+		font-size: 0.85rem;
+		font-weight: 700;
+		border: 2px solid #fff;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+		cursor: pointer;
 	}
 	.map :global(.waypoint-dot) {
 		font-size: 18px;
