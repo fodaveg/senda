@@ -63,7 +63,7 @@ material custom y aviso `warn` · M7 apariencia (toggle de tema + paletas).
 
 - **Permanente**: `CLAUDE.md`, `ARCHITECTURE.md`.
 - **Specs (referencia puntual, no leer enteras)**: `SPEC.md` (v1), `SPECS_V2.md`
-  (v2), `SPECS_V3.md` (deltas v3), `SPECS_V4.md` (plan de la v4: cuentas + backend,
-  aún sin implementar; incluye recomendación de hosting).
+  (v2), `SPECS_V3.md` (deltas v3), `SPECS_V4.md` (plan de la v4: cuentas + backend),
+  `SPECS_V5.md` (exploratorio: deuda heredada + ideas de v5, sin plan cerrado).
 - **Vivo v3**: `SPECS_V3_PROGRESS.md` (progreso/decisiones detalladas),
   `SPECS_V3_PULIDO.md` (backlog de pulido).
