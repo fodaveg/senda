@@ -1,5 +1,13 @@
 # SPECS V6 — Senda: **solo interfaz gráfica (UX/UI)**
 
+> **Progreso (2026-06-28): v6 IMPLEMENTADA en la rama `v6`** (desde `v4`; sin
+> push ni merge). Los 6 milestones cerrados en verde — sistema de diseño +
+> fuentes auto-alojadas, armazón revestido + barra inferior móvil, ficha modular
+> (variante B / pestañas móvil), descubrimiento (variante A: chips + mapa
+> pegajoso), móvil (conmutador Lista/Mapa) y a11y/perf (skip-link, reduce-motion,
+> i18n centralizado del armazón, skeletons). Tests: 312 unit, 49 e2e. Detalle,
+> decisiones y pendientes en **AUTONOMOUS_PLAN_V6.md → RESUMEN DE LA TANDA**.
+
 Documento de intención de la versión 6. **Premisa del usuario (2026-06-27):**
 desde la v1, cada versión ha metido **más datos y más funciones** (mapa, meteo,
 mochila, etapas, POIs, agua, diario, logros, cuentas, sync, analítica…), y la
