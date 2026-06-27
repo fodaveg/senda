@@ -6,6 +6,22 @@
 		<meta name="text-scale" content="scale" />
 		<meta name="theme-color" content="#1d3a2a" />
 		<link rel="manifest" href="%sveltekit.assets%/manifest.webmanifest" />
+		<!-- Tipografía auto-alojada (offline-first); ver static/fonts/fonts.css. -->
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/source-sans-3-latin.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/libre-franklin-latin.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link rel="stylesheet" href="%sveltekit.assets%/fonts/fonts.css" />
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

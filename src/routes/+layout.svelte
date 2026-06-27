@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import '$lib/styles/tokens.css';
 	import { resolve } from '$app/paths';
 	import favicon from '$lib/assets/favicon.svg';
 	import { applyTextScale } from '$lib/settings';
@@ -175,12 +176,8 @@
 	}
 	:global(body) {
 		margin: 0;
-		font-family:
-			system-ui,
-			-apple-system,
-			'Segoe UI',
-			Roboto,
-			sans-serif;
+		/* La familia tipográfica la fijan los tokens del sistema (tokens.css);
+		   aquí solo color/fondo para no competir con la cascada. */
 		color: var(--ink);
 		background: var(--bg);
 	}

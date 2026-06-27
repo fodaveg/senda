@@ -169,10 +169,14 @@ export function prefersDark(): boolean {
 	return typeof matchMedia !== 'undefined' && matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
-/** Aplica la escala de texto al documento (SPECS_V3.5 §7). */
+/** Aplica la escala de texto al documento (SPECS_V3.5 §7). Fija tanto el
+ * `font-size` raíz (para la UI basada en `rem`) como la variable `--scale` que
+ * usan los tokens tipográficos del sistema de diseño v6 (`calc(px * --scale)`),
+ * de modo que ambos mecanismos escalan por igual sin doble escalado. */
 export function applyTextScale(scale: number): void {
 	if (typeof document === 'undefined') return;
 	document.documentElement.style.fontSize = scale === 1 ? '' : `${Math.round(scale * 100)}%`;
+	document.documentElement.style.setProperty('--scale', String(scale));
 }
 
 /** Aplica el tema al documento ("claro" fuerza modo claro para sol directo). */

@@ -1,0 +1,134 @@
+/*
+ * Sistema de diseño de Senda (v6) — tokens globales.
+ *
+ * Solo lo **común a todos los temas/esquemas**: tipografía, escala tipográfica,
+ * espaciado, radios, sombras, contenedores, badges de tipo (GR/PR/SL) y los
+ * tokens semánticos *derivados* del esquema activo (vía `color-mix`), de modo
+ * que los 9 esquemas reales (src/lib/theme/schemes.ts) funcionan sin tocar nada
+ * aquí. Los tokens de color base (--bg, --surface, --brand…) los fija
+ * `applyScheme` en runtime; el fallback anti-flash vive en +layout.svelte.
+ *
+ * Valores tomados del handoff de diseño (design_handoff_senda_v6/README.md).
+ */
+
+:root {
+	/* Familias tipográficas (auto-alojadas; ver static/fonts/fonts.css). */
+	--font-head: 'Libre Franklin', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	--font-body: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	--font-mono: ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Consolas, monospace;
+
+	/* Escala de texto del usuario (0.8–1.6); la fija applyTextScale. */
+	--scale: 1;
+
+	/* Escala tipográfica — px * --scale para que la escala no rompa el layout. */
+	--text-xs: calc(11.5px * var(--scale));
+	--text-sm: calc(13px * var(--scale));
+	--text-base: calc(15px * var(--scale));
+	--text-md: calc(17px * var(--scale));
+	--text-lg: calc(20px * var(--scale));
+	--text-xl: calc(25px * var(--scale));
+	--text-2xl: calc(32px * var(--scale));
+	--text-3xl: calc(42px * var(--scale));
+
+	/* Espaciado (fijo; no escala con el texto). */
+	--space-1: 4px;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--space-5: 24px;
+	--space-6: 32px;
+	--space-7: 48px;
+	--space-8: 64px;
+
+	/* Radios. */
+	--radius-sm: 6px;
+	--radius-md: 10px;
+	--radius-lg: 14px;
+	--radius-pill: 999px;
+
+	/* Sombras (alfas mayores en oscuro, más abajo). */
+	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+	--shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+	--shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.16);
+
+	/* Contenedores. */
+	--container-wide: 1200px;
+	--container-read: 720px;
+	--container-mobile: 390px;
+
+	/* Badges de tipo (mismo color en claro/oscuro — contraste AA verificado). */
+	--type-gr-bg: #b3261e;
+	--type-gr-ink: #ffffff;
+	--type-pr-bg: #b8860b;
+	--type-pr-ink: #1a1a1a;
+	--type-sl-bg: #2a6f4e;
+	--type-sl-ink: #ffffff;
+
+	/* Estados semánticos (modo claro). */
+	--ok: #2a6f4e;
+	--warn: #b8860b;
+	--danger: #b3261e;
+	--on-danger: #ffffff;
+
+	/* Objetivo táctil mínimo (a11y). */
+	--touch-min: 44px;
+}
+
+/* Estados semánticos (modo oscuro): el JS fija data-theme="oscuro". */
+:root[data-theme='oscuro'] {
+	--ok: #5fb487;
+	--warn: #d6a93f;
+	--danger: #f2766c;
+	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+	--shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+	--shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+@media (prefers-color-scheme: dark) {
+	:root[data-theme='auto'] {
+		--ok: #5fb487;
+		--warn: #d6a93f;
+		--danger: #f2766c;
+		--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+		--shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+		--shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
+	}
+}
+
+/*
+ * Tokens DERIVADOS del esquema activo. `color-mix` se reevalúa con los valores
+ * de --brand/--surface/--alert-border vigentes, así que estos tokens se adaptan
+ * solos a cualquiera de los 9 esquemas. "soft" = fondo tenue para badges/banners.
+ */
+:root {
+	--brand-soft: color-mix(in srgb, var(--brand) 14%, var(--surface));
+	--brand-line: color-mix(in srgb, var(--brand) 30%, var(--border));
+	--alert-soft: color-mix(in srgb, var(--alert-border) 14%, var(--surface));
+	--ok-soft: color-mix(in srgb, var(--ok) 14%, var(--surface));
+	--warn-soft: color-mix(in srgb, var(--warn) 16%, var(--surface));
+	--danger-soft: color-mix(in srgb, var(--danger) 14%, var(--surface));
+	/* Anillo de foco visible (a11y). */
+	--ring: color-mix(in srgb, var(--brand) 45%, transparent);
+}
+
+/* Tipografía base de la app. */
+body {
+	font-family: var(--font-body);
+	font-size: var(--text-base);
+	line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-head);
+	line-height: 1.2;
+}
+
+/* Foco visible y coherente en todo lo interactivo (a11y / WCAG). */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 3px var(--ring);
+	border-radius: var(--radius-sm);
+}
