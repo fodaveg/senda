@@ -6,7 +6,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { get } from 'svelte/store';
 import { createSessionStore } from './session';
-import { AuthError, type AuthClient, type Session } from './types';
+import { AuthError, type AuthClient, type AuthEvent, type Session } from './types';
 
 const SESSION: Session = { user: { id: 'u1', email: 'a@b.com' }, expiresAt: 1000 };
 
@@ -21,6 +21,7 @@ function fakeClient(overrides: Partial<AuthClient> = {}): AuthClient {
 		updatePassword: vi.fn(async () => {}),
 		verifyOtp: vi.fn(async () => SESSION),
 		deleteAccount: vi.fn(async () => {}),
+		onAuthEvent: vi.fn(() => () => {}),
 		...overrides
 	};
 }
@@ -34,7 +35,12 @@ describe('createSessionStore', () => {
 	it('init con sesión persistida → authenticated', async () => {
 		const store = createSessionStore(fakeClient({ currentSession: vi.fn(async () => SESSION) }));
 		await store.init();
-		expect(get(store)).toEqual({ status: 'authenticated', user: SESSION.user, session: SESSION });
+		expect(get(store)).toEqual({
+			status: 'authenticated',
+			user: SESSION.user,
+			session: SESSION,
+			recovery: false
+		});
 	});
 
 	it('init sin sesión → anonymous', async () => {
@@ -77,6 +83,22 @@ describe('createSessionStore', () => {
 		await store.deleteAccount();
 		expect(del).toHaveBeenCalled();
 		expect(get(store).status).toBe('anonymous');
+	});
+
+	it('un evento password_recovery activa el modo recuperación y completeRecovery lo cierra', () => {
+		let emit: (e: AuthEvent) => void = () => {};
+		const store = createSessionStore(
+			fakeClient({
+				onAuthEvent: vi.fn((cb: (e: AuthEvent) => void) => {
+					emit = cb;
+					return () => {};
+				})
+			})
+		);
+		emit('password_recovery');
+		expect(get(store).recovery).toBe(true);
+		store.completeRecovery();
+		expect(get(store).recovery).toBe(false);
 	});
 
 	it('signUp con confirmación pendiente (null) no autentica y devuelve null', async () => {

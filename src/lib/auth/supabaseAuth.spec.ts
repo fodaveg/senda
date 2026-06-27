@@ -15,7 +15,11 @@ const auth = vi.hoisted(() => ({
 	signOut: vi.fn(),
 	verifyOtp: vi.fn(),
 	resetPasswordForEmail: vi.fn(),
-	updateUser: vi.fn()
+	updateUser: vi.fn(),
+	onAuthStateChange: vi.fn((cb?: (event: string) => void) => {
+		void cb;
+		return { data: { subscription: { unsubscribe: vi.fn() } } };
+	})
 }));
 const rpc = vi.hoisted(() => vi.fn());
 vi.mock('@supabase/supabase-js', () => ({ createClient: () => ({ auth, rpc }) }));
@@ -129,5 +133,23 @@ describe('createSupabaseAuthClient', () => {
 		rpc.mockResolvedValue({ data: null, error: { message: 'function does not exist' } });
 		const client = createSupabaseAuthClient(config);
 		await expect(client.deleteAccount()).rejects.toBeInstanceOf(AuthError);
+	});
+
+	it('onAuthEvent traduce los eventos del SDK y filtra los desconocidos', async () => {
+		let sdkCb: (event: string) => void = () => {};
+		auth.onAuthStateChange.mockImplementation((cb?: (event: string) => void) => {
+			if (cb) sdkCb = cb;
+			return { data: { subscription: { unsubscribe: vi.fn() } } };
+		});
+		const client = createSupabaseAuthClient(config);
+		const events: string[] = [];
+		const unsub = client.onAuthEvent((e) => events.push(e));
+		// La suscripción se monta tras resolver el cliente (import dinámico).
+		await new Promise((r) => setTimeout(r, 0));
+		sdkCb('PASSWORD_RECOVERY');
+		sdkCb('UNKNOWN_EVENT');
+		sdkCb('SIGNED_OUT');
+		expect(events).toEqual(['password_recovery', 'signed_out']);
+		unsub();
 	});
 });

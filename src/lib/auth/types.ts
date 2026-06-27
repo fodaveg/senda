@@ -16,6 +16,13 @@ export interface Session {
 	expiresAt: number;
 }
 
+/**
+ * Eventos de autenticación que emite el proveedor. `password_recovery` indica que
+ * el usuario llegó desde el enlace de "restablecer contraseña" del correo (el SDK
+ * ya estableció una sesión de recuperación): la app debe pedirle la nueva clave.
+ */
+export type AuthEvent = 'signed_in' | 'signed_out' | 'password_recovery' | 'token_refreshed';
+
 export type AuthErrorKind =
 	| 'invalid_credentials'
 	| 'email_not_confirmed'
@@ -59,4 +66,9 @@ export interface AuthClient {
 	 * está, el proveedor devuelve error y se propaga como `AuthError`.
 	 */
 	deleteAccount(): Promise<void>;
+	/**
+	 * Suscribe a los eventos de auth del proveedor (recuperación de contraseña,
+	 * inicio/cierre de sesión, refresco de token). Devuelve la función de baja.
+	 */
+	onAuthEvent(listener: (event: AuthEvent) => void): () => void;
 }

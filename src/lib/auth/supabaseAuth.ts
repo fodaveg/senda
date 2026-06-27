@@ -15,7 +15,29 @@
 import type { AuthError as SbAuthError, Session as SbSession } from '@supabase/supabase-js';
 import type { BackendConfig } from '$lib/config';
 import { getSupabaseClient } from '$lib/supabase/client';
-import { AuthError, type AuthClient, type AuthErrorKind, type Session } from './types';
+import {
+	AuthError,
+	type AuthClient,
+	type AuthErrorKind,
+	type AuthEvent,
+	type Session
+} from './types';
+
+/** Traduce el nombre de evento del SDK a nuestro tipo estable (o null si no nos interesa). */
+function mapAuthEvent(event: string): AuthEvent | null {
+	switch (event) {
+		case 'PASSWORD_RECOVERY':
+			return 'password_recovery';
+		case 'SIGNED_IN':
+			return 'signed_in';
+		case 'SIGNED_OUT':
+			return 'signed_out';
+		case 'TOKEN_REFRESHED':
+			return 'token_refreshed';
+		default:
+			return null;
+	}
+}
 
 /** Traduce la sesión del SDK a nuestro tipo `Session` (epoch ms). */
 function mapSession(session: SbSession | null): Session | null {
@@ -93,7 +115,12 @@ export function createSupabaseAuthClient(config: BackendConfig): AuthClient {
 		},
 		async requestPasswordReset(email) {
 			const sb = await client();
-			const { error } = await net(() => sb.auth.resetPasswordForEmail(email));
+			// El enlace del correo vuelve a /cuenta, donde la app pide la nueva clave.
+			// (Hay que tener ese origen en las "Redirect URLs" del proyecto Supabase.)
+			const redirectTo = typeof location !== 'undefined' ? `${location.origin}/cuenta` : undefined;
+			const { error } = await net(() =>
+				sb.auth.resetPasswordForEmail(email, redirectTo ? { redirectTo } : undefined)
+			);
 			if (error) throw toAuthError(error);
 		},
 		async updatePassword(newPassword) {
@@ -120,6 +147,24 @@ export function createSupabaseAuthClient(config: BackendConfig): AuthClient {
 			if (error) throw new AuthError('unknown', error.message);
 			// Tras borrar el usuario, cerramos la sesión local (token ya inválido).
 			await net(() => sb.auth.signOut());
+		},
+		onAuthEvent(listener) {
+			// El cliente es perezoso (import dinámico); montamos la suscripción cuando
+			// esté listo y devolvemos una baja que funciona aunque aún no lo esté.
+			let unsubscribe = () => {};
+			let cancelled = false;
+			void client().then((sb) => {
+				if (cancelled) return;
+				const { data } = sb.auth.onAuthStateChange((event) => {
+					const mapped = mapAuthEvent(event);
+					if (mapped) listener(mapped);
+				});
+				unsubscribe = () => data.subscription.unsubscribe();
+			});
+			return () => {
+				cancelled = true;
+				unsubscribe();
+			};
 		}
 	};
 }

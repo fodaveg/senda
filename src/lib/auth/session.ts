@@ -18,6 +18,11 @@ export interface SessionState {
 	status: SessionStatus;
 	user: AuthUser | null;
 	session: Session | null;
+	/**
+	 * El usuario llegó desde el enlace de "restablecer contraseña" del correo: la
+	 * UI debe pedirle una nueva contraseña antes de seguir (SPECS_V4 §A7).
+	 */
+	recovery: boolean;
 }
 
 export interface SessionStore extends Readable<SessionState> {
@@ -29,21 +34,37 @@ export interface SessionStore extends Readable<SessionState> {
 	signOut(): Promise<void>;
 	/** Borra la cuenta en el servidor y vuelve a estado anónimo (datos locales intactos). */
 	deleteAccount(): Promise<void>;
+	/** Cierra el modo recuperación tras fijar la nueva contraseña. */
+	completeRecovery(): void;
 }
 
-const ANON: SessionState = { status: 'anonymous', user: null, session: null };
+const ANON: SessionState = { status: 'anonymous', user: null, session: null, recovery: false };
 
 /** Crea el store a partir de un `AuthClient`. Una instancia por sesión de app. */
 export function createSessionStore(client: AuthClient): SessionStore {
-	const { subscribe, set } = writable<SessionState>({
+	const { subscribe, set, update } = writable<SessionState>({
 		status: 'loading',
 		user: null,
-		session: null
+		session: null,
+		recovery: false
 	});
 
-	function apply(session: Session | null): void {
-		set(session ? { status: 'authenticated', user: session.user, session } : ANON);
+	function apply(session: Session | null, recovery = false): void {
+		set(session ? { status: 'authenticated', user: session.user, session, recovery } : { ...ANON });
 	}
+
+	// Detecta el enlace de recuperación de contraseña del correo: el SDK procesa el
+	// token de la URL y emite `password_recovery`; activamos el modo recuperación.
+	client.onAuthEvent((event) => {
+		if (event !== 'password_recovery') return;
+		update((s) => ({ ...s, recovery: true }));
+		void client
+			.currentSession()
+			.then((session) => {
+				if (session) set({ status: 'authenticated', user: session.user, session, recovery: true });
+			})
+			.catch(() => {});
+	});
 
 	return {
 		subscribe,
@@ -72,6 +93,9 @@ export function createSessionStore(client: AuthClient): SessionStore {
 			// La sesión deja de existir; el repositorio volverá a modo local al pasar
 			// a anónimo (los datos locales no se tocan).
 			set(ANON);
+		},
+		completeRecovery() {
+			update((s) => ({ ...s, recovery: false }));
 		}
 	};
 }

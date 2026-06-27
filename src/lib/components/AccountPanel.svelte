@@ -99,6 +99,22 @@
 		}
 	}
 
+	/** Fija la nueva contraseña tras llegar del enlace de recuperación del correo. */
+	async function recoverPassword() {
+		reset();
+		busy = true;
+		try {
+			await client.updatePassword(newPassword);
+			newPassword = '';
+			session.completeRecovery();
+			notice = 'Contraseña actualizada. Ya puedes usar tu cuenta.';
+		} catch (e) {
+			error = messageFor(e);
+		} finally {
+			busy = false;
+		}
+	}
+
 	async function signOut() {
 		reset();
 		busy = true;
@@ -128,7 +144,31 @@
 	}
 </script>
 
-{#if $session.status === 'authenticated'}
+{#if $session.recovery}
+	<section class="panel">
+		<h2>Nueva contraseña</h2>
+		<p class="who">Has llegado desde el enlace de recuperación. Elige una contraseña nueva.</p>
+		<form
+			class="form"
+			onsubmit={(e) => {
+				e.preventDefault();
+				recoverPassword();
+			}}
+		>
+			<label>
+				Nueva contraseña
+				<input
+					type="password"
+					bind:value={newPassword}
+					minlength="6"
+					required
+					autocomplete="new-password"
+				/>
+			</label>
+			<button type="submit" disabled={busy || newPassword.length < 6}> Guardar contraseña </button>
+		</form>
+	</section>
+{:else if $session.status === 'authenticated'}
 	<section class="panel">
 		<h2>Tu cuenta</h2>
 		<p class="who">
