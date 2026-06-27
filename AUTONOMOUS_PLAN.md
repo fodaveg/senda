@@ -242,3 +242,35 @@ Referencia inicial era 270 unit / 48 e2e → ahora 300 / 48.
   dashboard/correo/dispositivo del usuario.
 - **Dedup de POIs / stages en la ingesta**: ver arriba.
 - **Push a remoto / merge a `main`**: no hecho (por diseño de la tanda).
+
+---
+
+## SEGUNDA TANDA (2026-06-27) — backend validado en vivo + cierre de M3 + dev
+
+Tras validar la sincronización en vivo (login real, RLS, sync multi-dispositivo),
+el usuario pidió "todos los caminos + que no quede nada pendiente". Hecho, en verde
+(lint, check, **307 unit**, **48 e2e**, build sin avisos), commiteado en `v4` sin
+push ni merge:
+
+- `dd84c20` — **Borrar cuenta (RGPD)**: `deleteAccount` (RPC `delete_account`) +
+  UI con confirmación; e2e con puerto configurable (`PLAYWRIGHT_PORT`).
+- `ad06079` — **Reset de contraseña por enlace**: `onAuthEvent`, estado
+  `recovery`, formulario de nueva contraseña.
+- `246a1d8` — **OTP por correo**: `requestOtp`/`verifyOtp` + modo en `AccountPanel`.
+- `0174b80` — **Arreglo `npm run dev`**: el virtual `$service-worker` (Vite 8) no
+  exporta `base`; se deriva de `import.meta.env.BASE_URL`.
+- `supabase/delete_account.sql` + docs (commit anterior) — RGPD, pendiente de
+  ejecutar por el usuario.
+- Docs: cierre de M3, checklist pre-merge en `SPECS_V4_PROGRESS.md`.
+
+**Hallazgo de auditoría**: la relación **stages/parent_id ya se deriva en runtime**
+(`src/lib/data/stages.ts`, sin recrawl), así que esa mitad del ítem de ingesta no
+hace falta. Queda solo el **dedup de POIs**, que mutaría los 585 datasets (diff
+enorme no revisable, riesgo de tirar POIs legítimos, valor bajo) → se mantiene
+**deferido para revisión del usuario**.
+
+**Nada implementable-sin-usuario-y-seguro queda pendiente.** Lo que falta necesita
+al usuario: validar el correo (confirmación/reset/OTP), config del dashboard
+Supabase (Site URL, reactivar confirmación, plantilla OTP, ejecutar el SQL,
+borrar usuarios de prueba), licencias/privacidad, dedup de POIs (revisión del
+dato), y el push/merge a `main`.
