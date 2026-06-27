@@ -56,6 +56,8 @@
 		if (prefsLoaded) saveDiscoverPrefs(prefs);
 	});
 	let sortBy = $state<'nombre' | 'cercania'>('nombre');
+	// Conmutador Lista ↔ Mapa (solo móvil): en escritorio se ven las dos columnas.
+	let mobileView = $state<'lista' | 'mapa'>('lista');
 
 	// Mini-ficha flotante al pulsar un pin del mapa (previsualización).
 	let preview = $state<(typeof routes)[number] | null>(null);
@@ -313,7 +315,22 @@
 	</fieldset>
 {/if}
 
-<div class="discover">
+<div class="view-toggle" role="group" aria-label="Ver lista o mapa">
+	<button
+		type="button"
+		class:active={mobileView === 'lista'}
+		aria-pressed={mobileView === 'lista'}
+		onclick={() => (mobileView = 'lista')}>Lista</button
+	>
+	<button
+		type="button"
+		class:active={mobileView === 'mapa'}
+		aria-pressed={mobileView === 'mapa'}
+		onclick={() => (mobileView = 'mapa')}>Mapa</button
+	>
+</div>
+
+<div class="discover" data-view={mobileView}>
 	<div class="results-col">
 		<p class="count">{filtered.length} de {routes.length} rutas</p>
 
@@ -512,16 +529,68 @@
 		border-radius: var(--radius-md);
 		overflow: hidden;
 	}
+	/* Conmutador Lista/Mapa: oculto en escritorio (se ven ambas columnas). */
+	.view-toggle {
+		display: none;
+	}
 	@media (max-width: 720px) {
+		.view-toggle {
+			display: flex;
+			gap: 2px;
+			margin-bottom: var(--space-3);
+			border: 1px solid var(--border);
+			border-radius: var(--radius-pill);
+			padding: 3px;
+			width: fit-content;
+		}
+		.view-toggle button {
+			font: inherit;
+			font-size: var(--text-sm);
+			font-weight: 600;
+			padding: var(--space-2) var(--space-4);
+			min-height: 40px;
+			border: none;
+			background: transparent;
+			color: var(--muted-strong, var(--muted));
+			border-radius: var(--radius-pill);
+			cursor: pointer;
+		}
+		.view-toggle button.active {
+			background: var(--brand);
+			color: var(--on-brand);
+		}
+		.search-row {
+			flex-wrap: wrap;
+		}
+		.search {
+			min-width: 12rem;
+		}
 		.discover {
 			grid-template-columns: 1fr;
 		}
 		.map-col {
 			position: static;
-			order: -1;
 		}
 		.map-wrap {
-			height: 320px;
+			height: calc(100dvh - 220px);
+			min-height: 320px;
+		}
+		/* Solo se muestra la vista activa en móvil (ambas siguen en el DOM). */
+		.discover[data-view='lista'] .map-col {
+			display: none;
+		}
+		.discover[data-view='mapa'] .results-col {
+			display: none;
+		}
+		/* Densidad táctil de los filtros en móvil. */
+		.filters select {
+			min-height: var(--touch-min);
+		}
+		.filters .check,
+		.filter-group label {
+			min-height: var(--touch-min);
+			display: inline-flex;
+			align-items: center;
 		}
 	}
 

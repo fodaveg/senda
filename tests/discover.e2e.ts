@@ -92,6 +92,23 @@ test('tema oscuro y claro forzado se aplican desde ajustes', async ({ page }) =>
 	await expect(page.locator('html')).toHaveAttribute('data-theme', 'oscuro');
 });
 
+test('en móvil, el conmutador Lista/Mapa alterna entre las dos vistas', async ({ page }) => {
+	// V6-M5: en pantallas pequeñas solo se ve una vista a la vez.
+	await page.setViewportSize({ width: 390, height: 800 });
+	await page.goto('/');
+	await page.locator('body[data-hydrated]').waitFor();
+	// Por defecto, la lista visible y el mapa oculto.
+	await expect(page.locator('.route-list')).toBeVisible();
+	await expect(page.locator('.map-wrap')).toBeHidden();
+	// Cambiar a "Mapa" oculta la lista y muestra el mapa.
+	await page.getByRole('button', { name: 'Mapa', exact: true }).click();
+	await expect(page.locator('.map-wrap')).toBeVisible();
+	await expect(page.locator('.route-list')).toBeHidden();
+	// Y volver a "Lista" la restaura.
+	await page.getByRole('button', { name: 'Lista', exact: true }).click();
+	await expect(page.locator('.route-list')).toBeVisible();
+});
+
 test('el enlace de búsqueda en Wikiloc aparece en toda ficha', async ({ page }) => {
 	await page.goto('/ruta/pr-cv-77');
 	const link = page.getByRole('link', { name: 'Buscar esta ruta en Wikiloc' });
