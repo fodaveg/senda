@@ -31,6 +31,8 @@ export interface SessionStore extends Readable<SessionState> {
 	signIn(email: string, password: string): Promise<void>;
 	/** Devuelve la sesión, o `null` si el registro requiere confirmar el correo. */
 	signUp(email: string, password: string): Promise<Session | null>;
+	/** Verifica el código OTP recibido por correo e inicia sesión. */
+	verifyOtp(email: string, code: string): Promise<void>;
 	signOut(): Promise<void>;
 	/** Borra la cuenta en el servidor y vuelve a estado anónimo (datos locales intactos). */
 	deleteAccount(): Promise<void>;
@@ -83,6 +85,9 @@ export function createSessionStore(client: AuthClient): SessionStore {
 			const session = await client.signUp(email, password);
 			if (session) apply(session);
 			return session;
+		},
+		async verifyOtp(email, code) {
+			apply(await client.verifyOtp(email, code));
 		},
 		async signOut() {
 			await client.signOut();

@@ -56,6 +56,11 @@ export interface AuthClient {
 	/** Cambia la contraseña del usuario con sesión activa. */
 	updatePassword(newPassword: string): Promise<void>;
 	/**
+	 * Envía un código OTP de un solo uso al correo para entrar sin contraseña.
+	 * (Requiere que la plantilla de email del proyecto incluya el código `{{ .Token }}`.)
+	 */
+	requestOtp(email: string): Promise<void>;
+	/**
 	 * OTP opcional (código por correo) para login/verificación reforzada. Necesita
 	 * el email al que se envió el código.
 	 */

@@ -14,6 +14,7 @@ const auth = vi.hoisted(() => ({
 	getSession: vi.fn(),
 	signOut: vi.fn(),
 	verifyOtp: vi.fn(),
+	signInWithOtp: vi.fn(),
 	resetPasswordForEmail: vi.fn(),
 	updateUser: vi.fn(),
 	onAuthStateChange: vi.fn((cb?: (event: string) => void) => {
@@ -133,6 +134,18 @@ describe('createSupabaseAuthClient', () => {
 		rpc.mockResolvedValue({ data: null, error: { message: 'function does not exist' } });
 		const client = createSupabaseAuthClient(config);
 		await expect(client.deleteAccount()).rejects.toBeInstanceOf(AuthError);
+	});
+
+	it('requestOtp pide el código sin crear usuario y propaga el error', async () => {
+		auth.signInWithOtp.mockResolvedValue({ data: {}, error: null });
+		const client = createSupabaseAuthClient(config);
+		await client.requestOtp('a@b.com');
+		expect(auth.signInWithOtp).toHaveBeenCalledWith({
+			email: 'a@b.com',
+			options: { shouldCreateUser: false }
+		});
+		auth.signInWithOtp.mockResolvedValue({ data: {}, error: { message: 'x', status: 429 } });
+		await expect(client.requestOtp('a@b.com')).rejects.toMatchObject({ kind: 'rate_limit' });
 	});
 
 	it('onAuthEvent traduce los eventos del SDK y filtra los desconocidos', async () => {

@@ -14,11 +14,12 @@
 
 	let { session, client }: { session: SessionStore; client: AuthClient } = $props();
 
-	type Mode = 'login' | 'register' | 'reset';
+	type Mode = 'login' | 'register' | 'reset' | 'otp';
 	const SUBMIT_LABEL: Record<Mode, string> = {
 		login: 'Entrar',
 		register: 'Crear cuenta',
-		reset: 'Enviar instrucciones'
+		reset: 'Enviar instrucciones',
+		otp: 'Enviar código'
 	};
 
 	let mode = $state<Mode>('login');
@@ -30,6 +31,9 @@
 	let notice = $state<string | null>(null);
 	// Borrado de cuenta en dos pasos (evita borrados accidentales).
 	let confirmingDelete = $state(false);
+	// OTP (código por correo): paso 1 enviar código, paso 2 verificarlo.
+	let otpCode = $state('');
+	let otpSent = $state(false);
 
 	/** Traduce el error tipado del backend a un mensaje claro en español. */
 	function messageFor(e: unknown): string {
@@ -59,6 +63,8 @@
 
 	function switchMode(next: Mode) {
 		mode = next;
+		otpSent = false;
+		otpCode = '';
 		reset();
 	}
 
@@ -72,10 +78,19 @@
 				const result = await session.signUp(email.trim(), password);
 				// null = el proyecto exige confirmar el correo antes de entrar.
 				if (!result) notice = 'Te hemos enviado un correo para confirmar la cuenta.';
-			} else {
+			} else if (mode === 'reset') {
 				await client.requestPasswordReset(email.trim());
 				notice =
 					'Si ese email tiene cuenta, te enviamos instrucciones para restablecer la contraseña.';
+			} else {
+				// OTP: primero se envía el código; luego se verifica para entrar.
+				if (!otpSent) {
+					await client.requestOtp(email.trim());
+					otpSent = true;
+					notice = 'Te hemos enviado un código por correo. Introdúcelo para entrar.';
+				} else {
+					await session.verifyOtp(email.trim(), otpCode.trim());
+				}
 			}
 			password = '';
 		} catch (e) {
@@ -259,9 +274,9 @@
 		>
 			<label>
 				Email
-				<input type="email" bind:value={email} required autocomplete="email" />
+				<input type="email" bind:value={email} required autocomplete="email" readonly={otpSent} />
 			</label>
-			{#if mode !== 'reset'}
+			{#if mode === 'login' || mode === 'register'}
 				<label>
 					Contraseña
 					<input
@@ -273,15 +288,43 @@
 					/>
 				</label>
 			{/if}
-			<button type="submit" disabled={busy}>{SUBMIT_LABEL[mode]}</button>
+			{#if mode === 'otp' && otpSent}
+				<label>
+					Código
+					<input
+						type="text"
+						inputmode="numeric"
+						autocomplete="one-time-code"
+						bind:value={otpCode}
+						required
+						placeholder="123456"
+					/>
+				</label>
+			{/if}
+			<button type="submit" disabled={busy}>
+				{mode === 'otp' && otpSent ? 'Entrar' : SUBMIT_LABEL[mode]}
+			</button>
 		</form>
 
 		{#if mode === 'login'}
-			<button type="button" class="link" onclick={() => switchMode('reset')}>
-				¿Olvidaste la contraseña?
-			</button>
+			<div class="alt-actions">
+				<button type="button" class="link" onclick={() => switchMode('otp')}>
+					Recibir un código por email
+				</button>
+				<button type="button" class="link" onclick={() => switchMode('reset')}>
+					¿Olvidaste la contraseña?
+				</button>
+			</div>
 		{:else if mode === 'reset'}
 			<p class="hint">Introduce tu email y te enviaremos un enlace para restablecerla.</p>
+			<button type="button" class="link" onclick={() => switchMode('login')}>
+				← Volver a entrar
+			</button>
+		{:else if mode === 'otp'}
+			<p class="hint">
+				Te enviamos un código de un solo uso al correo (sin contraseña). Funciona con cuentas ya
+				registradas.
+			</p>
 			<button type="button" class="link" onclick={() => switchMode('login')}>
 				← Volver a entrar
 			</button>
@@ -376,6 +419,12 @@
 	.hint {
 		font-size: 0.85rem;
 		color: var(--muted);
+	}
+	.alt-actions {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		align-items: start;
 	}
 	.error {
 		color: var(--alert-ink, #7a1c16);

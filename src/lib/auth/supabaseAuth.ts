@@ -128,6 +128,14 @@ export function createSupabaseAuthClient(config: BackendConfig): AuthClient {
 			const { error } = await net(() => sb.auth.updateUser({ password: newPassword }));
 			if (error) throw toAuthError(error);
 		},
+		async requestOtp(email) {
+			const sb = await client();
+			// shouldCreateUser:false → el OTP solo entra a cuentas existentes, no las crea.
+			const { error } = await net(() =>
+				sb.auth.signInWithOtp({ email, options: { shouldCreateUser: false } })
+			);
+			if (error) throw toAuthError(error);
+		},
 		async verifyOtp(email, code) {
 			const sb = await client();
 			const { data, error } = await net(() =>

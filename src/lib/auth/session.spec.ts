@@ -19,6 +19,7 @@ function fakeClient(overrides: Partial<AuthClient> = {}): AuthClient {
 		currentSession: vi.fn(async () => null),
 		requestPasswordReset: vi.fn(async () => {}),
 		updatePassword: vi.fn(async () => {}),
+		requestOtp: vi.fn(async () => {}),
 		verifyOtp: vi.fn(async () => SESSION),
 		deleteAccount: vi.fn(async () => {}),
 		onAuthEvent: vi.fn(() => () => {}),
@@ -72,6 +73,13 @@ describe('createSessionStore', () => {
 		await store.init();
 		await store.signOut();
 		expect(get(store).status).toBe('anonymous');
+	});
+
+	it('verifyOtp autentica con el código', async () => {
+		const store = createSessionStore(fakeClient());
+		await store.verifyOtp('a@b.com', '123456');
+		expect(get(store).status).toBe('authenticated');
+		expect(get(store).user).toEqual(SESSION.user);
 	});
 
 	it('deleteAccount borra en el servidor y vuelve a anónimo', async () => {
