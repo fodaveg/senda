@@ -10,35 +10,37 @@
 </span>
 
 <style>
+	/* Tonos derivados de los tokens del sistema (v6): funciona en los 9 esquemas
+	   y en claro/oscuro, sin colores fijos. */
 	.badge {
 		display: inline-block;
-		font-size: 0.7rem;
+		font-size: var(--text-xs);
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.03em;
-		padding: 0.1rem 0.45rem;
-		border-radius: 999px;
+		padding: 2px var(--space-2);
+		border-radius: var(--radius-pill);
 		border: 1px solid transparent;
 		white-space: nowrap;
 	}
 	.ok {
-		background: #e3f1e9;
-		color: #1d5c3c;
-		border-color: #bcdcc9;
+		background: var(--ok-soft);
+		color: var(--ok);
+		border-color: color-mix(in srgb, var(--ok) 30%, transparent);
 	}
 	.warn {
-		background: #fdf3e0;
-		color: #8a5a00;
-		border-color: #f0ddb5;
+		background: var(--warn-soft);
+		color: var(--warn);
+		border-color: color-mix(in srgb, var(--warn) 30%, transparent);
 	}
 	.neutral {
-		background: #efede6;
-		color: var(--muted);
-		border-color: #dcd8cc;
+		background: var(--surface-alt);
+		color: var(--muted-strong, var(--muted));
+		border-color: var(--border);
 	}
 	.danger {
-		background: #fdecea;
-		color: #b3261e;
-		border-color: #f3c2be;
+		background: var(--danger-soft);
+		color: var(--danger);
+		border-color: color-mix(in srgb, var(--danger) 30%, transparent);
 	}
 </style>

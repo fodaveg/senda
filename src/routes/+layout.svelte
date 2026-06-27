@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import '$lib/styles/tokens.css';
 	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 	import favicon from '$lib/assets/favicon.svg';
 	import { applyTextScale } from '$lib/settings';
 	import { applyAppearance } from '$lib/theme/schemes';
@@ -67,6 +68,17 @@
 			unsubSession?.();
 		};
 	});
+
+	// Marca el enlace activo en la navegación (cabecera y barra inferior móvil).
+	// Para "/" exige coincidencia exacta; para el resto, prefijo de ruta.
+	function isActive(path: string): boolean {
+		const here = page.url.pathname.replace(/\/$/, '') || '/';
+		const target = path.replace(/\/$/, '') || '/';
+		return target === '/' ? here === '/' : here === target || here.startsWith(target + '/');
+	}
+
+	// Estado del menú "Más" de la barra inferior (móvil).
+	let moreOpen = $state(false);
 </script>
 
 <svelte:head>
@@ -76,16 +88,35 @@
 <header>
 	<a href={resolve('/')} class="brand">Senda</a>
 	<span class="tagline">Senderos homologados FEMECV de la Comunitat Valenciana</span>
-	<a href={resolve('/diario')} class="nav-link">Diario</a>
-	{#if auth.enabled}
-		<a href={resolve('/tendencias')} class="nav-link">Tendencias</a>
-	{/if}
-	<a href={resolve('/ajustes')} class="nav-link">Ajustes</a>
-	{#if auth.enabled && auth.session}
-		<SyncIndicator status={repo.status} />
-		<AccountNav session={auth.session} />
-	{/if}
-	<ThemeToggle />
+	<nav class="primary-nav" aria-label="Principal">
+		<a href={resolve('/')} class="nav-link" aria-current={isActive('/') ? 'page' : undefined}
+			>Descubrir</a
+		>
+		<a
+			href={resolve('/diario')}
+			class="nav-link"
+			aria-current={isActive('/diario') ? 'page' : undefined}>Diario</a
+		>
+		{#if auth.enabled}
+			<a
+				href={resolve('/tendencias')}
+				class="nav-link"
+				aria-current={isActive('/tendencias') ? 'page' : undefined}>Tendencias</a
+			>
+		{/if}
+		<a
+			href={resolve('/ajustes')}
+			class="nav-link"
+			aria-current={isActive('/ajustes') ? 'page' : undefined}>Ajustes</a
+		>
+	</nav>
+	<div class="header-right">
+		{#if auth.enabled && auth.session}
+			<SyncIndicator status={repo.status} />
+			<AccountNav session={auth.session} />
+		{/if}
+		<ThemeToggle />
+	</div>
 </header>
 
 <main>
@@ -97,18 +128,52 @@
 	<a href={resolve('/creditos')}>Créditos y licencias</a>
 </footer>
 
+<!-- Barra de navegación inferior (solo móvil): acceso a las tres áreas
+     principales + menú "Más" para el resto. En escritorio queda oculta. -->
+<nav class="bottom-nav" aria-label="Navegación móvil">
+	<a href={resolve('/')} class="bn-item" aria-current={isActive('/') ? 'page' : undefined}>
+		<span class="bn-ic" aria-hidden="true">🧭</span><span class="bn-label">Descubrir</span>
+	</a>
+	<a
+		href={resolve('/diario')}
+		class="bn-item"
+		aria-current={isActive('/diario') ? 'page' : undefined}
+	>
+		<span class="bn-ic" aria-hidden="true">📔</span><span class="bn-label">Diario</span>
+	</a>
+	<a
+		href={resolve('/ajustes')}
+		class="bn-item"
+		aria-current={isActive('/ajustes') ? 'page' : undefined}
+	>
+		<span class="bn-ic" aria-hidden="true">⚙️</span><span class="bn-label">Ajustes</span>
+	</a>
+	<details class="more" bind:open={moreOpen}>
+		<summary class="bn-item">
+			<span class="bn-ic" aria-hidden="true">⋯</span><span class="bn-label">Más</span>
+		</summary>
+		<div class="more-sheet">
+			{#if auth.enabled}
+				<a href={resolve('/tendencias')} onclick={() => (moreOpen = false)}>Tendencias</a>
+				<a href={resolve('/cuenta')} onclick={() => (moreOpen = false)}>Cuenta</a>
+			{/if}
+			<a href={resolve('/creditos')} onclick={() => (moreOpen = false)}>Créditos y licencias</a>
+		</div>
+	</details>
+</nav>
+
 <style>
 	footer {
-		max-width: 64rem;
-		margin: 1rem auto 0;
-		padding: 0.75rem 1rem 1.5rem;
+		max-width: var(--container-wide);
+		margin: var(--space-5) auto 0;
+		padding: var(--space-3) var(--space-4) var(--space-6);
 		border-top: 1px solid var(--border);
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.5rem 1rem;
+		gap: var(--space-2) var(--space-4);
 		justify-content: space-between;
 		align-items: baseline;
-		font-size: 0.8rem;
+		font-size: var(--text-xs);
 		color: var(--muted);
 	}
 	footer a {
@@ -183,31 +248,147 @@
 	}
 	header {
 		display: flex;
-		align-items: baseline;
-		gap: 0.75rem;
+		align-items: center;
+		gap: var(--space-3) var(--space-4);
 		flex-wrap: wrap;
-		padding: 0.75rem 1rem;
+		padding: var(--space-3) var(--space-4);
 		background: var(--brand-strong, #1d3a2a);
 		color: #fff;
 	}
 	.brand {
 		color: #fff;
 		text-decoration: none;
-		font-weight: 700;
-		font-size: 1.2rem;
+		font-family: var(--font-head);
+		font-weight: 800;
+		font-size: var(--text-lg);
+		letter-spacing: 0.01em;
 	}
 	.tagline {
-		font-size: 0.85rem;
-		color: #cfe3d6;
+		font-size: var(--text-sm);
+		color: color-mix(in srgb, #fff 78%, transparent);
 		flex: 1;
+		min-width: 0;
+	}
+	.primary-nav {
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
+	}
+	.header-right {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
 	}
 	.nav-link {
-		color: #cfe3d6;
-		font-size: 0.9rem;
+		color: color-mix(in srgb, #fff 82%, transparent);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		text-decoration: none;
+		padding: var(--space-2) var(--space-3);
+		border-radius: var(--radius-md);
+		white-space: nowrap;
+	}
+	.nav-link:hover {
+		color: #fff;
+		background: color-mix(in srgb, #fff 14%, transparent);
+	}
+	.nav-link[aria-current='page'] {
+		color: #fff;
+		background: color-mix(in srgb, #fff 18%, transparent);
 	}
 	main {
-		max-width: 64rem;
+		max-width: var(--container-wide);
 		margin: 0 auto;
-		padding: 1rem;
+		padding: var(--space-4);
+	}
+
+	/* ── Barra inferior móvil ───────────────────────────────────────────── */
+	.bottom-nav {
+		display: none;
+	}
+	@media (max-width: 720px) {
+		/* La navegación principal se mueve a la barra inferior. */
+		.primary-nav {
+			display: none;
+		}
+		.tagline {
+			display: none;
+		}
+		main {
+			/* Espacio para que la barra inferior fija no tape el contenido. */
+			padding-bottom: calc(64px + var(--space-4));
+		}
+		footer {
+			margin-bottom: 64px;
+		}
+		.bottom-nav {
+			display: flex;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 50;
+			background: var(--surface);
+			border-top: 1px solid var(--border);
+			box-shadow: var(--shadow-md);
+			padding-bottom: env(safe-area-inset-bottom, 0);
+		}
+		.bn-item {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 2px;
+			min-height: 56px;
+			padding: var(--space-1);
+			color: var(--muted);
+			text-decoration: none;
+			font-size: var(--text-xs);
+			font-weight: 600;
+			cursor: pointer;
+			list-style: none;
+		}
+		.bn-item::-webkit-details-marker {
+			display: none;
+		}
+		.bn-ic {
+			font-size: var(--text-md);
+			line-height: 1;
+		}
+		.bn-item[aria-current='page'] {
+			color: var(--brand);
+		}
+		.more {
+			position: relative;
+			flex: 1;
+			display: flex;
+		}
+		.more[open] > summary .bn-label {
+			color: var(--brand);
+		}
+		.more-sheet {
+			position: absolute;
+			bottom: 100%;
+			right: var(--space-2);
+			margin-bottom: var(--space-2);
+			background: var(--surface);
+			border: 1px solid var(--border);
+			border-radius: var(--radius-md);
+			box-shadow: var(--shadow-lg);
+			display: flex;
+			flex-direction: column;
+			min-width: 180px;
+			overflow: hidden;
+		}
+		.more-sheet a {
+			padding: var(--space-3) var(--space-4);
+			color: var(--ink);
+			text-decoration: none;
+			font-size: var(--text-sm);
+		}
+		.more-sheet a:hover {
+			background: var(--surface-alt);
+		}
 	}
 </style>
