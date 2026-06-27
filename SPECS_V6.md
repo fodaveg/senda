@@ -11,6 +11,19 @@ acumulan demasiada información sin una jerarquía clara.
 > se entienda y se use mejor. Cero fuentes nuevas, cero backend nuevo, cero
 > features nuevas. Si una idea aporta datos/función, es v5, no v6.
 
+## Visión de producto (del usuario, 2026-06-27)
+
+El corazón de Senda es la **exploración y la preparación** de rutas (descubrir,
+decidir, planificar y llevar la mochila lista) — **no** la navegación en vivo. El
+**"modo en ruta" (V5-2) es un nice-to-have** y, cuando llegue, se optimizará
+**para móvil**, no para escritorio. Por tanto la v6 prioriza:
+
+1. **Descubrimiento** excelente y **escalable** (preparado para multi-federación).
+2. **Ficha de ruta = banco de preparación** claro y modular (mochila, agua, meteo,
+   etapas, informe, emergencia, checklist).
+3. "En ruta" queda como **patrón secundario mobile-first** reservado, sin
+   condicionar el diseño de escritorio.
+
 ## Por qué v6 antes (o después) de v5
 
 - La **idea estrella de v5 (V5-1, multi-federación)** _multiplica_ los datos
