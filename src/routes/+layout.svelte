@@ -3,6 +3,7 @@
 	import '$lib/styles/tokens.css';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
+	import { ui } from '$lib/i18n';
 	import favicon from '$lib/assets/favicon.svg';
 	import { applyTextScale } from '$lib/settings';
 	import { applyAppearance } from '$lib/theme/schemes';
@@ -85,29 +86,31 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<a href="#contenido" class="skip-link">{ui.nav.skipToContent}</a>
+
 <header>
-	<a href={resolve('/')} class="brand">Senda</a>
-	<span class="tagline">Senderos homologados FEMECV de la Comunitat Valenciana</span>
+	<a href={resolve('/')} class="brand">{ui.nav.brand}</a>
+	<span class="tagline">{ui.nav.tagline}</span>
 	<nav class="primary-nav" aria-label="Principal">
 		<a href={resolve('/')} class="nav-link" aria-current={isActive('/') ? 'page' : undefined}
-			>Descubrir</a
+			>{ui.nav.discover}</a
 		>
 		<a
 			href={resolve('/diario')}
 			class="nav-link"
-			aria-current={isActive('/diario') ? 'page' : undefined}>Diario</a
+			aria-current={isActive('/diario') ? 'page' : undefined}>{ui.nav.journal}</a
 		>
 		{#if auth.enabled}
 			<a
 				href={resolve('/tendencias')}
 				class="nav-link"
-				aria-current={isActive('/tendencias') ? 'page' : undefined}>Tendencias</a
+				aria-current={isActive('/tendencias') ? 'page' : undefined}>{ui.nav.trends}</a
 			>
 		{/if}
 		<a
 			href={resolve('/ajustes')}
 			class="nav-link"
-			aria-current={isActive('/ajustes') ? 'page' : undefined}>Ajustes</a
+			aria-current={isActive('/ajustes') ? 'page' : undefined}>{ui.nav.settings}</a
 		>
 	</nav>
 	<div class="header-right">
@@ -119,45 +122,45 @@
 	</div>
 </header>
 
-<main>
+<main id="contenido">
 	{@render children()}
 </main>
 
 <footer>
-	<span> Datos: FEMECV · IGN (CC BY 4.0) · © OpenStreetMap (ODbL) · Open-Meteo/AEMET. </span>
-	<a href={resolve('/creditos')}>Créditos y licencias</a>
+	<span>{ui.footer.data}</span>
+	<a href={resolve('/creditos')}>{ui.nav.credits}</a>
 </footer>
 
 <!-- Barra de navegación inferior (solo móvil): acceso a las tres áreas
      principales + menú "Más" para el resto. En escritorio queda oculta. -->
 <nav class="bottom-nav" aria-label="Navegación móvil">
 	<a href={resolve('/')} class="bn-item" aria-current={isActive('/') ? 'page' : undefined}>
-		<span class="bn-ic" aria-hidden="true">🧭</span><span class="bn-label">Descubrir</span>
+		<span class="bn-ic" aria-hidden="true">🧭</span><span class="bn-label">{ui.nav.discover}</span>
 	</a>
 	<a
 		href={resolve('/diario')}
 		class="bn-item"
 		aria-current={isActive('/diario') ? 'page' : undefined}
 	>
-		<span class="bn-ic" aria-hidden="true">📔</span><span class="bn-label">Diario</span>
+		<span class="bn-ic" aria-hidden="true">📔</span><span class="bn-label">{ui.nav.journal}</span>
 	</a>
 	<a
 		href={resolve('/ajustes')}
 		class="bn-item"
 		aria-current={isActive('/ajustes') ? 'page' : undefined}
 	>
-		<span class="bn-ic" aria-hidden="true">⚙️</span><span class="bn-label">Ajustes</span>
+		<span class="bn-ic" aria-hidden="true">⚙️</span><span class="bn-label">{ui.nav.settings}</span>
 	</a>
 	<details class="more" bind:open={moreOpen}>
 		<summary class="bn-item">
-			<span class="bn-ic" aria-hidden="true">⋯</span><span class="bn-label">Más</span>
+			<span class="bn-ic" aria-hidden="true">⋯</span><span class="bn-label">{ui.nav.more}</span>
 		</summary>
 		<div class="more-sheet">
 			{#if auth.enabled}
-				<a href={resolve('/tendencias')} onclick={() => (moreOpen = false)}>Tendencias</a>
-				<a href={resolve('/cuenta')} onclick={() => (moreOpen = false)}>Cuenta</a>
+				<a href={resolve('/tendencias')} onclick={() => (moreOpen = false)}>{ui.nav.trends}</a>
+				<a href={resolve('/cuenta')} onclick={() => (moreOpen = false)}>{ui.nav.account}</a>
 			{/if}
-			<a href={resolve('/creditos')} onclick={() => (moreOpen = false)}>Créditos y licencias</a>
+			<a href={resolve('/creditos')} onclick={() => (moreOpen = false)}>{ui.nav.credits}</a>
 		</div>
 	</details>
 </nav>
@@ -178,6 +181,24 @@
 	}
 	footer a {
 		color: var(--brand);
+	}
+	/* Enlace "saltar al contenido": oculto hasta recibir foco por teclado (a11y). */
+	.skip-link {
+		position: absolute;
+		left: var(--space-2);
+		top: -3rem;
+		z-index: 100;
+		background: var(--surface);
+		color: var(--brand);
+		border: 1px solid var(--brand);
+		border-radius: var(--radius-md);
+		padding: var(--space-2) var(--space-3);
+		font-weight: 600;
+		text-decoration: none;
+		transition: top 0.15s ease;
+	}
+	.skip-link:focus {
+		top: var(--space-2);
 	}
 	:global(:root) {
 		/* Tema claro (por defecto y "claro forzado" para sol directo). */

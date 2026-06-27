@@ -132,3 +132,24 @@ h6 {
 	box-shadow: 0 0 0 3px var(--ring);
 	border-radius: var(--radius-sm);
 }
+
+/* Desplazamiento suave para anclas internas (índice de la ficha, etc.). */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Respeto global a "reducir movimiento" (a11y): neutraliza animaciones,
+   transiciones y el scroll suave para quien lo pide en su sistema. */
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+}

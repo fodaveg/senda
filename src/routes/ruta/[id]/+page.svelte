@@ -3,7 +3,7 @@
 	import { resolve } from '$app/paths';
 	import { isTauri } from '@tauri-apps/api/core';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
-	import { Banner } from '$lib/components/ui';
+	import { Banner, Skeleton } from '$lib/components/ui';
 	import StagesList from '$lib/components/StagesList.svelte';
 	import { routes } from '$lib/data/routes';
 	import { parentOf, stagesOf } from '$lib/data/stages';
@@ -431,7 +431,11 @@
 		activeSection = id;
 		// En escritorio las secciones están apiladas → desplaza a su ancla; en
 		// móvil basta con conmutar el panel visible (lo hace data-active vía CSS).
-		document.getElementById(`sec-${id}`)?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+		// Respeta "reducir movimiento" (a11y): sin animación si así se pide.
+		const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+		document
+			.getElementById(`sec-${id}`)
+			?.scrollIntoView({ block: 'start', behavior: reduce ? 'auto' : 'smooth' });
 	}
 
 	// Recomendación de decisión del día (panel Resumen). Heurística ligera que
@@ -649,7 +653,7 @@
 				{:else if trackError}
 					<p class="error">No se pudo cargar el track: {trackError}</p>
 				{:else}
-					<p class="loading">Cargando track…</p>
+					<Skeleton shape="block" height="100%" />
 				{/if}
 			</div>
 
@@ -741,7 +745,7 @@
 					}}
 				/>
 			{:else}
-				<p class="loading">Cargando perfil…</p>
+				<Skeleton shape="block" height="120px" />
 			{/if}
 		</section>
 
@@ -1234,11 +1238,8 @@
 	.report-btn:hover {
 		opacity: 0.9;
 	}
-	.loading,
 	.error {
 		padding: 1rem;
-	}
-	.error {
 		color: var(--danger);
 	}
 	.date-picker {
