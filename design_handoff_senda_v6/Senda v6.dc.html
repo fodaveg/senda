@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  :root,[data-theme="light"]{
+    --bg:#fbfaf7; --surface:#ffffff; --surface-alt:#f4f2ec; --border:#d8d4c8;
+    --text:#1a1a1a; --muted:#555555; --brand:#1d3a2a; --on-brand:#ffffff; --alert:#b3261e;
+    --brand-soft:rgba(29,58,42,.07); --brand-line:rgba(29,58,42,.18); --ring:rgba(29,58,42,.45);
+    --gr:#b3261e; --pr:#b8860b; --sl:#2a6f4e; --gr-soft:rgba(179,38,30,.10); --pr-soft:rgba(184,134,11,.14); --sl-soft:rgba(42,111,78,.12);
+    --ok:#2a6f4e; --warn:#b8860b; --ok-soft:rgba(42,111,78,.12); --warn-soft:rgba(184,134,11,.14); --alert-soft:rgba(179,38,30,.10);
+    --shadow-sm:0 1px 2px rgba(40,38,30,.08); --shadow-md:0 4px 16px rgba(40,38,30,.10); --shadow-lg:0 16px 40px rgba(40,38,30,.16);
+    --skel:#ece9e1; --skel-hi:#f6f4ee; --map:#e7e9e0; --map-line:#cdd2c3; --map-water:#cfe0e6;
+  }
+  [data-theme="dark"]{
+    --bg:#141815; --surface:#1e2420; --surface-alt:#252c27; --border:#3a423b;
+    --text:#e8e6df; --muted:#a9aea5; --brand:#8fd3ae; --on-brand:#0c1a12; --alert:#f2766c;
+    --brand-soft:rgba(143,211,174,.12); --brand-line:rgba(143,211,174,.22); --ring:rgba(143,211,174,.5);
+    --gr:#e06a62; --pr:#d6a93f; --sl:#5fb487; --gr-soft:rgba(224,106,98,.16); --pr-soft:rgba(214,169,63,.16); --sl-soft:rgba(95,180,135,.16);
+    --ok:#5fb487; --warn:#d6a93f; --ok-soft:rgba(95,180,135,.16); --warn-soft:rgba(214,169,63,.16); --alert-soft:rgba(242,118,108,.14);
+    --shadow-sm:0 1px 2px rgba(0,0,0,.35); --shadow-md:0 4px 16px rgba(0,0,0,.45); --shadow-lg:0 16px 40px rgba(0,0,0,.55);
+    --skel:#262d28; --skel-hi:#2f372f; --map:#1b211d; --map-line:#2c342d; --map-water:#1f2e33;
+  }
+  :root{
+    --scale:1;
+    --t-xs:calc(11.5px*var(--scale)); --t-sm:calc(13px*var(--scale)); --t-base:calc(15px*var(--scale));
+    --t-md:calc(17px*var(--scale)); --t-lg:calc(20px*var(--scale)); --t-xl:calc(25px*var(--scale));
+    --t-2xl:calc(32px*var(--scale)); --t-3xl:calc(42px*var(--scale));
+  }
+  @keyframes sd-shimmer{0%{background-position:-380px 0}100%{background-position:380px 0}}
+  @keyframes sd-spin{to{transform:rotate(360deg)}}
+  @keyframes sd-pulse{0%,100%{opacity:1}50%{opacity:.45}}
+  ::selection{background:var(--brand-soft)}
+</style>
+</helmet>
+
+<div data-theme="{{ theme }}" style="{{ rootStyle }}">
+
+  <header style="position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--border)">
+    <div style="max-width:1320px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:10px;margin-right:4px">
+        <div style="width:30px;height:30px;border-radius:9px;background:var(--brand);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm)">
+          <div style="width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:11px solid var(--on-brand)"></div>
+        </div>
+        <div style="line-height:1">
+          <div style="font-family:'Libre Franklin';font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--text)">Senda</div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--muted);text-transform:uppercase">Sistema v6</div>
+        </div>
+      </div>
+
+      <nav style="display:flex;gap:2px;background:var(--surface-alt);border:1px solid var(--border);border-radius:11px;padding:3px">
+        <button onClick="{{ onNavSis }}" style="{{ seg.navSis }}">Sistema</button>
+        <button onClick="{{ onNavDisc }}" style="{{ seg.navDisc }}">Descubrimiento</button>
+        <button onClick="{{ onNavFicha }}" style="{{ seg.navFicha }}">Ficha de ruta</button>
+        <button onClick="{{ onNavDiario }}" style="{{ seg.navDiario }}">Diario &amp; Ajustes</button>
+      </nav>
+
+      <div style="flex:1"></div>
+
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:var(--t-xs);font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em">A</span>
+        <input type="range" min="0.8" max="1.6" step="0.1" value="{{ scale }}" onInput="{{ onScale }}" aria-label="Escala de texto" style="width:84px;accent-color:var(--brand);cursor:pointer">
+        <span style="font-size:var(--t-md);font-weight:800;color:var(--muted)">A</span>
+        <span style="min-width:34px;font-size:var(--t-xs);font-weight:700;color:var(--brand);font-variant-numeric:tabular-nums">{{ scaleLabel }}</span>
+      </div>
+
+      <div style="display:flex;gap:2px;background:var(--surface-alt);border:1px solid var(--border);border-radius:10px;padding:3px">
+        <button onClick="{{ onDevDesk }}" style="{{ seg.devDesk }}">Escritorio</button>
+        <button onClick="{{ onDevMob }}" style="{{ seg.devMob }}">Móvil</button>
+      </div>
+
+      <div style="display:flex;gap:2px;background:var(--surface-alt);border:1px solid var(--border);border-radius:10px;padding:3px">
+        <button onClick="{{ onThemeLight }}" style="{{ seg.themeLight }}">Claro</button>
+        <button onClick="{{ onThemeDark }}" style="{{ seg.themeDark }}">Oscuro</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="max-width:1320px;margin:0 auto;padding:0 22px 120px">
+
+    <sc-if value="{{ showSistema }}" hint-placeholder-val="{{ true }}">
+      <section style="padding-top:34px">
+
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:6px">
+    <div>
+      <div style="font-size:var(--t-xs);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)">Entregable A</div>
+      <h1 style="margin:6px 0 0;font-family:'Libre Franklin';font-weight:800;font-size:var(--t-3xl);letter-spacing:-.02em;line-height:1.04">Sistema de diseño</h1>
+      <p style="margin:10px 0 0;max-width:62ch;color:var(--muted);font-size:var(--t-md);line-height:1.55">Paleta «bosque», tipografía de máxima legibilidad y una librería de componentes con estados. Todo responde a los conmutadores de tema, dispositivo y escala de texto de la barra superior.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;display:flex;align-items:baseline;gap:12px">
+    <div style="font-size:var(--t-xs);font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">01 — Color</div>
+    <div style="flex:1;height:1px;background:var(--border)"></div>
+  </div>
+  <div style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:18px">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Modo claro</div>
+      <div style="margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+        <div><div style="height:46px;border-radius:9px;background:#fbfaf7;border:1px solid #d8d4c8"></div><div style="margin-top:6px;font-size:var(--t-xs);font-weight:700">Fondo</div><div style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">#fbfaf7</div></div>
+        <div><div style="height:46px;border-radius:9px;background:#ffffff;border:1px solid #d8d4c8"></div><div style="margin-top:6px;font-size:var(--t-xs);font-weight:700">Superficie</div><div style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">#ffffff</div></div>
+        <div><div style="height:46px;border-radius:9px;background:#f4f2ec;border:1px solid #d8d4c8"></div><div style="margin-top:6px;font-size:var(--t-xs);font-weight:700">Superf. alt</div><div style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">#f4f2ec</div></div>
+        <div><div style="height:46px;border-radius:9px;background:#1d3a2a"></div><div style="margin-top:6px;font-size:var(--t-xs);font-weight:700">Marca</div><div style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">#1d3a2a</div></div>
+        <div><div style="height:46px;border-radius:9px;background:#1a1a1a"></div><div style="margin-top:6px;font-size:var(--t-xs);font-weight:700">Texto</div><div style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">#1a1a1a</div></div>
+        <div><div style="height:46px;border-radius:9px;background:#b3261e"></div><div style="margin-top:6px;font-size:var(--t-xs);font-weight:700">Alerta</div><div style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">#b3261e</div></div>
+      </div>
+    </div>
+    <div style="background:#141815;border:1px solid #3a423b;border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);color:#e8e6df">Modo oscuro</div>
+      <div style="margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+        <div><div style="height:46px;border-radius:9px;background:#141815;border:1px solid #3a423b"></div><div style="margin-top:6px;font-size:var(--t-xs);font-weight:700;color:#e8e6df">Fondo</div><div style="font-size:var(--t-xs);color:#a9aea5;font-family:ui-monospace,monospace">#141815</div></div>
+        <div><div style="height:46px;border-radius:9px;background:#1e2420;border:1px solid #3a423b"></div><div style="margin-top:6px;font-size:var(--t-xs);font-weight:700;color:#e8e6df">Superficie</div><div style="font-size:var(--t-xs);color:#a9aea5;font-family:ui-monospace,monospace">#1e2420</div></div>
+        <div><div style="height:46px;border-radius:9px;background:#252c27;border:1px solid #3a423b"></div><div style="margin-top:6px;font-size:var(--t-xs);font-weight:700;color:#e8e6df">Superf. alt</div><div style="font-size:var(--t-xs);color:#a9aea5;font-family:ui-monospace,monospace">#252c27</div></div>
+        <div><div style="height:46px;border-radius:9px;background:#8fd3ae"></div><div style="margin-top:6px;font-size:var(--t-xs);font-weight:700;color:#e8e6df">Marca</div><div style="font-size:var(--t-xs);color:#a9aea5;font-family:ui-monospace,monospace">#8fd3ae</div></div>
+        <div><div style="height:46px;border-radius:9px;background:#e8e6df"></div><div style="margin-top:6px;font-size:var(--t-xs);font-weight:700;color:#e8e6df">Texto</div><div style="font-size:var(--t-xs);color:#a9aea5;font-family:ui-monospace,monospace">#e8e6df</div></div>
+        <div><div style="height:46px;border-radius:9px;background:#f2766c"></div><div style="margin-top:6px;font-size:var(--t-xs);font-weight:700;color:#e8e6df">Alerta</div><div style="font-size:var(--t-xs);color:#a9aea5;font-family:ui-monospace,monospace">#f2766c</div></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:14px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+    <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Badges de tipo &amp; estado · paridad de contraste AA</div>
+    <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+      <span style="display:inline-flex;align-items:center;font-weight:800;font-size:var(--t-xs);letter-spacing:.04em;padding:4px 9px;border-radius:6px;background:#b3261e;color:#fff">GR</span>
+      <span style="display:inline-flex;align-items:center;font-weight:800;font-size:var(--t-xs);letter-spacing:.04em;padding:4px 9px;border-radius:6px;background:#b8860b;color:#1a1a1a">PR</span>
+      <span style="display:inline-flex;align-items:center;font-weight:800;font-size:var(--t-xs);letter-spacing:.04em;padding:4px 9px;border-radius:6px;background:#2a6f4e;color:#fff">SL</span>
+      <span style="width:1px;height:22px;background:var(--border);margin:0 4px"></span>
+      <span style="display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:var(--t-xs);padding:4px 10px;border-radius:999px;background:var(--ok-soft);color:var(--ok)"><span style="width:6px;height:6px;border-radius:50%;background:currentColor"></span>Homologado</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:var(--t-xs);padding:4px 10px;border-radius:999px;background:var(--warn-soft);color:var(--warn)">Sin verificar</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:var(--t-xs);padding:4px 10px;border-radius:999px;background:var(--surface-alt);color:var(--muted)">Deshabilitado</span>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;display:flex;align-items:baseline;gap:12px">
+    <div style="font-size:var(--t-xs);font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">02 — Tipografía</div>
+    <div style="flex:1;height:1px;background:var(--border)"></div>
+  </div>
+  <div style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:18px">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-3xl);letter-spacing:-.02em;line-height:1">Aitana</span><span style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">42 · 800</span></div>
+      <div style="margin-top:14px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-2xl);letter-spacing:-.01em;line-height:1">Penyagolosa</span><span style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">32 · 700</span></div>
+      <div style="margin-top:14px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-lg);line-height:1">Serra de Mariola</span><span style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">20 · 700</span></div>
+      <div style="margin-top:16px;font-size:var(--t-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Titulares — Libre Franklin</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:var(--t-md);font-weight:600">Cuerpo destacado</span><span style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">17 · 600</span></div>
+      <p style="margin:10px 0 0;font-size:var(--t-base);line-height:1.6;color:var(--text)">Ruta circular de dificultad media por el Parc Natural. Se recomienda calzado de montaña y al menos 1,5 L de agua por persona.</p>
+      <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:var(--t-sm);color:var(--muted)">Texto tenue · metadatos</span><span style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">13 · 400</span></div>
+      <div style="margin-top:16px;font-size:var(--t-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Texto — Source Sans 3</div>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;display:flex;align-items:baseline;gap:12px">
+    <div style="font-size:var(--t-xs);font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">03 — Espaciado · Radios · Elevación · Contenedores</div>
+    <div style="flex:1;height:1px;background:var(--border)"></div>
+  </div>
+  <div style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Escala de espaciado</div>
+      <div style="display:flex;flex-direction:column;gap:9px">
+        <div style="display:flex;align-items:center;gap:10px"><div style="height:12px;width:4px;background:var(--brand);border-radius:2px"></div><span style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">4</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><div style="height:12px;width:8px;background:var(--brand);border-radius:2px"></div><span style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">8</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><div style="height:12px;width:16px;background:var(--brand);border-radius:2px"></div><span style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">16</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><div style="height:12px;width:24px;background:var(--brand);border-radius:2px"></div><span style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">24</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><div style="height:12px;width:32px;background:var(--brand);border-radius:2px"></div><span style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">32</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><div style="height:12px;width:48px;background:var(--brand);border-radius:2px"></div><span style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">48</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><div style="height:12px;width:64px;background:var(--brand);border-radius:2px"></div><span style="font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">64</span></div>
+      </div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Radios</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <div style="text-align:center"><div style="width:54px;height:54px;background:var(--brand-soft);border:1.5px solid var(--brand-line);border-radius:6px"></div><div style="margin-top:6px;font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">6</div></div>
+        <div style="text-align:center"><div style="width:54px;height:54px;background:var(--brand-soft);border:1.5px solid var(--brand-line);border-radius:10px"></div><div style="margin-top:6px;font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">10</div></div>
+        <div style="text-align:center"><div style="width:54px;height:54px;background:var(--brand-soft);border:1.5px solid var(--brand-line);border-radius:14px"></div><div style="margin-top:6px;font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">14</div></div>
+        <div style="text-align:center"><div style="width:54px;height:54px;background:var(--brand-soft);border:1.5px solid var(--brand-line);border-radius:999px"></div><div style="margin-top:6px;font-size:var(--t-xs);color:var(--muted);font-family:ui-monospace,monospace">pill</div></div>
+      </div>
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin:22px 0 14px">Elevación</div>
+      <div style="display:flex;gap:14px">
+        <div style="flex:1;height:46px;background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;font-size:var(--t-xs);color:var(--muted)">sm</div>
+        <div style="flex:1;height:46px;background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center;font-size:var(--t-xs);color:var(--muted)">md</div>
+        <div style="flex:1;height:46px;background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow-lg);display:flex;align-items:center;justify-content:center;font-size:var(--t-xs);color:var(--muted)">lg</div>
+      </div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Anchos de contenedor</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div><div style="height:10px;width:100%;background:var(--brand);border-radius:3px"></div><div style="margin-top:5px;font-size:var(--t-xs);color:var(--muted)">Ancho · <span style="font-family:ui-monospace,monospace">1200</span> px — descubrimiento, sistema</div></div>
+        <div><div style="height:10px;width:62%;background:var(--brand-line);border-radius:3px"></div><div style="margin-top:5px;font-size:var(--t-xs);color:var(--muted)">Lectura · <span style="font-family:ui-monospace,monospace">720</span> px — ficha, informes</div></div>
+        <div><div style="height:10px;width:33%;background:var(--border);border-radius:3px"></div><div style="margin-top:5px;font-size:var(--t-xs);color:var(--muted)">Móvil · <span style="font-family:ui-monospace,monospace">390</span> px — PWA en mano</div></div>
+      </div>
+      <div style="margin-top:18px;padding:12px;border-radius:10px;background:var(--brand-soft);font-size:var(--t-xs);line-height:1.5;color:var(--text)">La escala de texto (0.8×–1.6×) multiplica todos los tamaños vía <span style="font-family:ui-monospace,monospace">--scale</span>; los contenedores fluyen y no se rompen.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:44px;display:flex;align-items:baseline;gap:12px">
+    <div style="font-size:var(--t-xs);font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">04 — Componentes</div>
+    <div style="flex:1;height:1px;background:var(--border)"></div>
+  </div>
+
+  <div style="margin-top:18px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm);overflow-x:auto">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Botón</div><div style="font-size:var(--t-xs);color:var(--muted)">primario · secundario · fantasma · peligro</div></div>
+    <div style="display:grid;grid-template-columns:108px repeat(5,minmax(96px,1fr));gap:14px 12px;align-items:center;min-width:680px">
+      <div></div>
+      <div style="font-size:var(--t-xs);font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Normal</div>
+      <div style="font-size:var(--t-xs);font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Hover</div>
+      <div style="font-size:var(--t-xs);font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Foco</div>
+      <div style="font-size:var(--t-xs);font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Deshab.</div>
+      <div style="font-size:var(--t-xs);font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Cargando</div>
+
+      <div style="font-size:var(--t-sm);font-weight:700">Primario</div>
+      <button style="padding:9px 15px;border-radius:10px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;transition:all .15s" style-hover="box-shadow:var(--shadow-md);transform:translateY(-1px)" style-focus="outline:none;box-shadow:0 0 0 3px var(--ring)">Guardar ruta</button>
+      <button style="padding:9px 15px;border-radius:10px;border:1px solid transparent;background:color-mix(in srgb,var(--brand) 86%,#000);color:var(--on-brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;box-shadow:var(--shadow-md)">Guardar ruta</button>
+      <button style="padding:9px 15px;border-radius:10px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;box-shadow:0 0 0 3px var(--ring)">Guardar ruta</button>
+      <button disabled style="padding:9px 15px;border-radius:10px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;opacity:.4;cursor:not-allowed">Guardar ruta</button>
+      <button style="padding:9px 15px;border-radius:10px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;display:inline-flex;align-items:center;gap:8px"><span style="width:13px;height:13px;border-radius:50%;border:2px solid color-mix(in srgb,var(--on-brand) 35%,transparent);border-top-color:var(--on-brand);animation:sd-spin .7s linear infinite"></span>Guardando</button>
+
+      <div style="font-size:var(--t-sm);font-weight:700">Secundario</div>
+      <button style="padding:9px 15px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;transition:all .15s" style-hover="background:var(--surface-alt);box-shadow:var(--shadow-sm)" style-focus="outline:none;box-shadow:0 0 0 3px var(--ring)">Compartir</button>
+      <button style="padding:9px 15px;border-radius:10px;border:1px solid var(--border);background:var(--surface-alt);color:var(--text);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;box-shadow:var(--shadow-sm)">Compartir</button>
+      <button style="padding:9px 15px;border-radius:10px;border:1px solid var(--brand-line);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;box-shadow:0 0 0 3px var(--ring)">Compartir</button>
+      <button disabled style="padding:9px 15px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-sm);font-family:inherit;opacity:.4;cursor:not-allowed">Compartir</button>
+      <button style="padding:9px 15px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--muted);font-weight:700;font-size:var(--t-sm);font-family:inherit;display:inline-flex;align-items:center;gap:8px"><span style="width:13px;height:13px;border-radius:50%;border:2px solid var(--border);border-top-color:var(--brand);animation:sd-spin .7s linear infinite"></span>Cargando</button>
+
+      <div style="font-size:var(--t-sm);font-weight:700">Fantasma</div>
+      <button style="padding:9px 13px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;transition:all .15s" style-hover="background:var(--brand-soft)" style-focus="outline:none;box-shadow:0 0 0 3px var(--ring)">Ver en mapa</button>
+      <button style="padding:9px 13px;border-radius:10px;border:1px solid transparent;background:var(--brand-soft);color:var(--brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer">Ver en mapa</button>
+      <button style="padding:9px 13px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;box-shadow:0 0 0 3px var(--ring)">Ver en mapa</button>
+      <button disabled style="padding:9px 13px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;opacity:.38;cursor:not-allowed">Ver en mapa</button>
+      <button style="padding:9px 13px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--muted);font-weight:700;font-size:var(--t-sm);font-family:inherit;display:inline-flex;align-items:center;gap:8px"><span style="width:13px;height:13px;border-radius:50%;border:2px solid var(--border);border-top-color:var(--brand);animation:sd-spin .7s linear infinite"></span></button>
+
+      <div style="font-size:var(--t-sm);font-weight:700">Peligro</div>
+      <button style="padding:9px 15px;border-radius:10px;border:1px solid transparent;background:#b3261e;color:#fff;font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;transition:all .15s" style-hover="box-shadow:var(--shadow-md);transform:translateY(-1px)" style-focus="outline:none;box-shadow:0 0 0 3px rgba(179,38,30,.4)">Eliminar</button>
+      <button style="padding:9px 15px;border-radius:10px;border:1px solid transparent;background:#9c1f18;color:#fff;font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;box-shadow:var(--shadow-md)">Eliminar</button>
+      <button style="padding:9px 15px;border-radius:10px;border:1px solid transparent;background:#b3261e;color:#fff;font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;box-shadow:0 0 0 3px rgba(179,38,30,.4)">Eliminar</button>
+      <button disabled style="padding:9px 15px;border-radius:10px;border:1px solid transparent;background:#b3261e;color:#fff;font-weight:700;font-size:var(--t-sm);font-family:inherit;opacity:.4;cursor:not-allowed">Eliminar</button>
+      <button style="padding:9px 15px;border-radius:10px;border:1px solid transparent;background:#b3261e;color:#fff;font-weight:700;font-size:var(--t-sm);font-family:inherit;display:inline-flex;align-items:center;gap:8px"><span style="width:13px;height:13px;border-radius:50%;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;animation:sd-spin .7s linear infinite"></span>Borrando</button>
+    </div>
+  </div>
+
+  <div style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px">
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Tarjeta &amp; Sección con cabecera</div>
+      <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;background:var(--surface-alt);border-bottom:1px solid var(--border)">
+          <div style="display:flex;align-items:center;gap:9px"><span style="width:7px;height:7px;border-radius:50%;background:var(--brand)"></span><span style="font-weight:700;font-size:var(--t-sm)">Agua en ruta</span></div>
+          <button style="border:none;background:transparent;color:var(--brand);font-weight:700;font-size:var(--t-xs);cursor:pointer;font-family:inherit">Editar</button>
+        </div>
+        <div style="padding:14px">
+          <div style="font-size:var(--t-sm);color:var(--muted);line-height:1.5">2 fuentes verificadas · 1 sin verificar. Última revisión hace 8 días.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Campo de formulario</div>
+      <label style="display:block;font-size:var(--t-xs);font-weight:700;color:var(--muted);margin-bottom:5px">Nombre de la salida</label>
+      <input value="Penyagolosa por Sant Joan" readonly style="width:100%;padding:10px 12px;border-radius:9px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:var(--t-sm);font-family:inherit" style-focus="outline:none;border-color:var(--brand-line);box-shadow:0 0 0 3px var(--ring)">
+      <div style="display:flex;gap:10px;margin-top:12px">
+        <div style="flex:1"><label style="display:block;font-size:var(--t-xs);font-weight:700;color:var(--muted);margin-bottom:5px">Personas</label><div style="display:flex;align-items:center;border:1px solid var(--border);border-radius:9px;overflow:hidden"><button style="width:34px;height:38px;border:none;background:var(--surface-alt);color:var(--text);font-size:var(--t-md);cursor:pointer;font-family:inherit">−</button><span style="flex:1;text-align:center;font-size:var(--t-sm);font-weight:700">2</span><button style="width:34px;height:38px;border:none;background:var(--surface-alt);color:var(--text);font-size:var(--t-md);cursor:pointer;font-family:inherit">+</button></div></div>
+        <div style="flex:1"><label style="display:block;font-size:var(--t-xs);font-weight:700;color:var(--muted);margin-bottom:5px">Dificultad</label><div style="position:relative"><select style="appearance:none;width:100%;padding:10px 30px 10px 12px;border-radius:9px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:var(--t-sm);font-family:inherit;cursor:pointer"><option>Media</option><option>Baja</option><option>Alta</option></select><span style="position:absolute;right:11px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:10px">▼</span></div></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px">
+        <label style="display:flex;align-items:center;gap:9px;font-size:var(--t-sm);cursor:pointer"><span style="width:20px;height:20px;border-radius:6px;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:var(--on-brand);font-size:12px;font-weight:800">✓</span>Solo con agua</label>
+        <label style="display:flex;align-items:center;gap:9px;font-size:var(--t-sm);cursor:pointer">Sincronizar<span style="width:38px;height:22px;border-radius:999px;background:var(--brand);position:relative;flex:none"><span style="position:absolute;top:2px;right:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:var(--shadow-sm)"></span></span></label>
+      </div>
+      <div style="margin-top:14px">
+        <label style="display:block;font-size:var(--t-xs);font-weight:700;color:var(--alert);margin-bottom:5px">Distancia (km)</label>
+        <input value="−4" readonly style="width:100%;padding:10px 12px;border-radius:9px;border:1.5px solid var(--alert);background:var(--alert-soft);color:var(--text);font-size:var(--t-sm);font-family:inherit">
+        <div style="margin-top:5px;font-size:var(--t-xs);color:var(--alert);font-weight:600">La distancia debe ser mayor que 0.</div>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Chip de filtro &amp; panel</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <button style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer">Circular<span style="opacity:.8;font-size:13px">✕</span></button>
+        <button style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer">&lt; 12 km<span style="opacity:.8;font-size:13px">✕</span></button>
+        <button style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer" style-hover="border-color:var(--brand-line);background:var(--brand-soft)">Con agua</button>
+        <button style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer" style-hover="border-color:var(--brand-line);background:var(--brand-soft)">Alta sombra</button>
+      </div>
+      <div style="margin-top:14px;border:1px solid var(--border);border-radius:11px;overflow:hidden">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:11px 13px;background:var(--surface-alt);cursor:pointer"><span style="font-weight:700;font-size:var(--t-sm)">Dificultad &amp; desnivel</span><span style="color:var(--muted);font-size:11px">▾</span></div>
+        <div style="padding:13px;display:flex;flex-direction:column;gap:9px">
+          <label style="display:flex;align-items:center;gap:9px;font-size:var(--t-sm);cursor:pointer"><span style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--brand);background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:var(--on-brand);font-size:11px;font-weight:800">✓</span>Baja</label>
+          <label style="display:flex;align-items:center;gap:9px;font-size:var(--t-sm);cursor:pointer;color:var(--muted)"><span style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border)"></span>Media</label>
+          <label style="display:flex;align-items:center;gap:9px;font-size:var(--t-sm);cursor:pointer;color:var(--muted)"><span style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border)"></span>Alta</label>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Navegación por secciones</div>
+      <div style="display:flex;gap:2px;background:var(--surface-alt);border:1px solid var(--border);border-radius:11px;padding:3px;margin-bottom:16px">
+        <button style="flex:1;padding:8px;border:none;border-radius:8px;background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-xs);box-shadow:var(--shadow-sm);font-family:inherit;cursor:pointer">Resumen</button>
+        <button style="flex:1;padding:8px;border:none;border-radius:8px;background:transparent;color:var(--muted);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer">Mapa</button>
+        <button style="flex:1;padding:8px;border:none;border-radius:8px;background:transparent;color:var(--muted);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer">Meteo</button>
+      </div>
+      <div style="display:flex;gap:22px;border-bottom:1px solid var(--border)">
+        <span style="padding:0 0 10px;font-weight:700;font-size:var(--t-sm);color:var(--text);box-shadow:inset 0 -2px 0 var(--brand)">Preparación</span>
+        <span style="padding:0 0 10px;font-weight:600;font-size:var(--t-sm);color:var(--muted)">Etapas</span>
+        <span style="padding:0 0 10px;font-weight:600;font-size:var(--t-sm);color:var(--muted)">Acciones</span>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Indicador de sincronización</div>
+      <div style="display:flex;flex-direction:column;gap:9px">
+        <div style="display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:9px;background:var(--ok-soft)"><span style="width:8px;height:8px;border-radius:50%;background:var(--ok)"></span><span style="font-size:var(--t-sm);font-weight:600;color:var(--text)">Sincronizado · hace 2 min</span></div>
+        <div style="display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:9px;background:var(--warn-soft)"><span style="width:8px;height:8px;border-radius:50%;background:var(--warn);animation:sd-pulse 1.4s infinite"></span><span style="font-size:var(--t-sm);font-weight:600;color:var(--text)">Pendiente · 3 cambios por subir</span></div>
+        <div style="display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:9px;background:var(--surface-alt)"><span style="width:8px;height:8px;border-radius:50%;background:var(--muted)"></span><span style="font-size:var(--t-sm);font-weight:600;color:var(--muted)">Sin conexión · guardado local</span></div>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Banner / aviso</div>
+      <div style="display:flex;gap:11px;padding:13px;border-radius:11px;background:var(--brand-soft);border:1px solid var(--brand-line);margin-bottom:11px"><span style="font-size:var(--t-md);line-height:1;color:var(--brand)">ⓘ</span><div><div style="font-weight:700;font-size:var(--t-sm)">Datos descargados para offline</div><div style="font-size:var(--t-xs);color:var(--muted);margin-top:2px">12 rutas y mapas disponibles sin conexión.</div></div></div>
+      <div style="display:flex;gap:11px;padding:13px;border-radius:11px;background:var(--alert-soft);border:1px solid color-mix(in srgb,var(--alert) 40%,transparent)"><span style="font-size:var(--t-md);line-height:1;color:var(--alert)">⚠</span><div><div style="font-weight:700;font-size:var(--t-sm);color:var(--text)">Aviso de la FEMECV</div><div style="font-size:var(--t-xs);color:var(--muted);margin-top:2px">Tramo PR-CV 147 cerrado por obras hasta julio.</div></div></div>
+    </div>
+  </div>
+
+  <div style="margin-top:18px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+    <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Fila de listado de ruta</div>
+    <div style="display:flex;align-items:center;gap:16px;padding:13px;border:1px solid var(--border);border-radius:12px" style-hover="border-color:var(--brand-line);box-shadow:var(--shadow-sm)">
+      <div style="width:64px;height:64px;border-radius:10px;flex:none;background:repeating-linear-gradient(135deg,var(--map) 0 9px,var(--map-line) 9px 10px);display:flex;align-items:flex-end;padding:6px;font-size:9px;color:var(--muted);font-family:ui-monospace,monospace">miniatura</div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="display:inline-flex;font-weight:800;font-size:var(--t-xs);padding:3px 7px;border-radius:6px;background:#b8860b;color:#1a1a1a">PR-CV 147</span><span style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md)">Barranc de l'Infern</span><span style="display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:var(--t-xs);padding:3px 9px;border-radius:999px;background:var(--ok-soft);color:var(--ok)"><span style="width:5px;height:5px;border-radius:50%;background:currentColor"></span>Homologado</span></div>
+        <div style="margin-top:6px;display:flex;gap:16px;font-size:var(--t-sm);color:var(--muted);flex-wrap:wrap"><span><strong style="color:var(--text)">14,2</strong> km</span><span><strong style="color:var(--text)">+980</strong> m</span><span><strong style="color:var(--text)">5 h 30</strong></span><span>Circular · La Vall de Laguar</span></div>
+      </div>
+      <button style="border:none;background:transparent;color:var(--brand);font-size:var(--t-lg);cursor:pointer;flex:none" aria-label="Favorito">♥</button>
+      <button style="padding:9px 14px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;flex:none" style-hover="background:var(--surface-alt)">Ver ficha</button>
+    </div>
+  </div>
+
+  <div style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Controles de mapa</div>
+      <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
+        <div>
+          <div style="font-size:var(--t-xs);font-weight:700;color:var(--muted);margin-bottom:7px">Selector de capas</div>
+          <div style="display:inline-flex;flex-direction:column;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-sm)">
+            <button style="padding:9px 14px;border:none;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-xs);text-align:left;font-family:inherit;cursor:pointer">Relieve</button>
+            <button style="padding:9px 14px;border:none;border-top:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:600;font-size:var(--t-xs);text-align:left;font-family:inherit;cursor:pointer">Satélite</button>
+            <button style="padding:9px 14px;border:none;border-top:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:600;font-size:var(--t-xs);text-align:left;font-family:inherit;cursor:pointer">Topográfico</button>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:var(--t-xs);font-weight:700;color:var(--muted);margin-bottom:7px">Clúster (conteo)</div>
+          <div style="display:flex;gap:12px;align-items:center">
+            <span style="width:50px;height:50px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--t-base);box-shadow:0 0 0 6px var(--brand-soft)">38</span>
+            <span style="width:38px;height:38px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--t-sm);box-shadow:0 0 0 5px var(--brand-soft)">7</span>
+            <span style="width:18px;height:18px;border-radius:50%;background:var(--brand);border:3px solid var(--surface);box-shadow:var(--shadow-sm)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Mini-ficha de previsualización</div>
+      <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-md);max-width:260px">
+        <div style="height:78px;background:repeating-linear-gradient(120deg,var(--map) 0 11px,var(--map-line) 11px 12px);position:relative"><span style="position:absolute;left:10px;top:9px;display:inline-flex;font-weight:800;font-size:var(--t-xs);padding:3px 7px;border-radius:6px;background:#b3261e;color:#fff">GR-7</span></div>
+        <div style="padding:12px">
+          <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-sm)">Els Ports — Refugi Font Ferrera</div>
+          <div style="margin-top:5px;display:flex;gap:12px;font-size:var(--t-xs);color:var(--muted)"><span><strong style="color:var(--text)">22 km</strong></span><span><strong style="color:var(--text)">+1 240 m</strong></span></div>
+          <button style="margin-top:10px;width:100%;padding:8px;border-radius:8px;border:none;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer">Abrir ficha</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Estado vacío</div>
+      <div style="text-align:center;padding:22px 14px;border:1.5px dashed var(--border);border-radius:12px">
+        <div style="width:48px;height:48px;margin:0 auto;border-radius:14px;background:var(--surface-alt);display:flex;align-items:center;justify-content:center"><div style="width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:13px solid var(--muted)"></div></div>
+        <div style="margin-top:12px;font-weight:700;font-size:var(--t-sm)">Sin rutas que coincidan</div>
+        <div style="margin-top:4px;font-size:var(--t-xs);color:var(--muted);line-height:1.5">Prueba a quitar algún filtro o ampliar la distancia.</div>
+        <button style="margin-top:12px;padding:8px 14px;border-radius:9px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer" style-hover="background:var(--surface-alt)">Limpiar filtros</button>
+      </div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+      <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base);margin-bottom:14px">Skeleton de carga</div>
+      <div style="display:flex;align-items:center;gap:14px;padding:13px;border:1px solid var(--border);border-radius:12px">
+        <div style="width:60px;height:60px;border-radius:10px;flex:none;background:linear-gradient(90deg,var(--skel) 25%,var(--skel-hi) 37%,var(--skel) 63%);background-size:400px 100%;animation:sd-shimmer 1.4s infinite linear"></div>
+        <div style="flex:1">
+          <div style="height:13px;width:62%;border-radius:6px;background:linear-gradient(90deg,var(--skel) 25%,var(--skel-hi) 37%,var(--skel) 63%);background-size:400px 100%;animation:sd-shimmer 1.4s infinite linear"></div>
+          <div style="height:11px;width:88%;margin-top:9px;border-radius:6px;background:linear-gradient(90deg,var(--skel) 25%,var(--skel-hi) 37%,var(--skel) 63%);background-size:400px 100%;animation:sd-shimmer 1.4s infinite linear"></div>
+          <div style="height:11px;width:40%;margin-top:9px;border-radius:6px;background:linear-gradient(90deg,var(--skel) 25%,var(--skel-hi) 37%,var(--skel) 63%);background-size:400px 100%;animation:sd-shimmer 1.4s infinite linear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+    </sc-if>
+
+    <sc-if value="{{ showDisc }}" hint-placeholder-val="{{ false }}">
+      <section style="padding-top:34px">
+
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap">
+          <div>
+            <div style="font-size:var(--t-xs);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)">Entregable B · Pantalla 1</div>
+            <h1 style="margin:6px 0 0;font-family:'Libre Franklin';font-weight:800;font-size:var(--t-3xl);letter-spacing:-.02em;line-height:1.04">Descubrimiento</h1>
+            <p style="margin:9px 0 0;max-width:60ch;color:var(--muted);font-size:var(--t-base);line-height:1.55">Buscar, filtrar por facetas y decidir. Dos enfoques de filtrado que escalan de 600 a miles de rutas multi-federación.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start">
+            <span style="font-size:var(--t-xs);font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em">Variante de filtros</span>
+            <div style="display:flex;gap:2px;background:var(--surface-alt);border:1px solid var(--border);border-radius:11px;padding:3px">
+              <button onClick="{{ onDiscA }}" style="{{ seg.discA }}">A · Chips quitables</button>
+              <button onClick="{{ onDiscB }}" style="{{ seg.discB }}">B · Panel jerárquico</button>
+            </div>
+          </div>
+        </div>
+
+        <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:22px">
+
+            <sc-if value="{{ showDiscA }}" hint-placeholder-val="{{ true }}">
+              <div>
+                <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+                  <div style="flex:1;min-width:240px;display:flex;align-items:center;gap:10px;padding:11px 15px;border:1px solid var(--border);border-radius:12px;background:var(--surface);box-shadow:var(--shadow-sm)">
+                    <span style="color:var(--muted);font-size:var(--t-md)">⌕</span>
+                    <span style="color:var(--muted);font-size:var(--t-base)">Buscar ruta, cima, paraje o municipio…</span>
+                  </div>
+                  <div style="position:relative">
+                    <select style="appearance:none;padding:11px 34px 11px 14px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:var(--t-sm);font-weight:600;font-family:inherit;cursor:pointer;box-shadow:var(--shadow-sm)"><option>Orden: cercanía</option><option>Orden: nombre</option><option>Orden: desnivel</option></select>
+                    <span style="position:absolute;right:13px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:10px">▼</span>
+                  </div>
+                  <button style="display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:12px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;box-shadow:var(--shadow-sm)" style-hover="box-shadow:var(--shadow-md);transform:translateY(-1px)">⚄ Ruta al azar</button>
+                </div>
+
+                <div style="margin-top:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+                  <span style="font-size:var(--t-sm);font-weight:700;color:var(--text)">612 rutas</span>
+                  <span style="width:1px;height:16px;background:var(--border)"></span>
+                  <button style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer">Circular <span style="opacity:.85">✕</span></button>
+                  <button style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer">&lt; 16 km <span style="opacity:.85">✕</span></button>
+                  <button style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer">Con agua <span style="opacity:.85">✕</span></button>
+                  <button style="display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer" style-hover="border-color:var(--brand-line);background:var(--brand-soft)">＋ Más filtros</button>
+                  <button style="margin-left:auto;border:none;background:transparent;color:var(--muted);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer;text-decoration:underline">Limpiar</button>
+                </div>
+
+                <div style="margin-top:16px;display:grid;grid-template-columns:1.25fr 1fr;gap:18px;align-items:start">
+                  <div style="display:flex;flex-direction:column;gap:10px">
+                    <sc-for list="{{ routes }}" as="r" hint-placeholder-count="5">
+                      <div style="display:flex;align-items:center;gap:14px;padding:13px;border:1px solid var(--border);border-radius:13px;background:var(--surface);cursor:pointer;transition:all .14s" style-hover="border-color:var(--brand-line);box-shadow:var(--shadow-sm)">
+                        <div style="width:58px;height:58px;border-radius:10px;flex:none;background:repeating-linear-gradient(135deg,var(--map) 0 8px,var(--map-line) 8px 9px)"></div>
+                        <div style="flex:1;min-width:0">
+                          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+                            <span style="display:inline-flex;font-weight:800;font-size:var(--t-xs);padding:3px 7px;border-radius:6px;background:{{ r.bg }};color:{{ r.fg }}">{{ r.badge }}</span>
+                            <span style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md);letter-spacing:-.01em">{{ r.name }}</span>
+                          </div>
+                          <div style="margin-top:5px;display:flex;gap:14px;font-size:var(--t-sm);color:var(--muted);flex-wrap:wrap"><span><strong style="color:var(--text)">{{ r.km }}</strong> km</span><span><strong style="color:var(--text)">{{ r.asc }}</strong> m</span><span>{{ r.dur }}</span><span>{{ r.forma }} · {{ r.lugar }}</span></div>
+                          <div style="margin-top:6px;font-size:var(--t-xs);color:var(--muted)">Fuente: {{ r.fuente }}</div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex:none">
+                          <span style="display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:var(--t-xs);padding:3px 9px;border-radius:999px;background:{{ r.eBg }};color:{{ r.eFg }}"><span style="width:5px;height:5px;border-radius:50%;background:currentColor"></span>{{ r.estadoTxt }}</span>
+                          <span style="color:var(--brand);font-size:var(--t-lg);cursor:pointer">♡</span>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+
+                  <div style="position:sticky;top:96px;height:600px;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);background-color:var(--map);background-image:repeating-linear-gradient(56deg,transparent 0 26px,var(--map-line) 26px 27px),repeating-linear-gradient(122deg,transparent 0 34px,var(--map-line) 34px 35px)">
+                    <div style="position:absolute;width:200px;height:120px;border-radius:50%;left:-30px;bottom:60px;background:var(--map-water);filter:blur(2px);opacity:.85"></div>
+                    <svg viewBox="0 0 420 600" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><polyline points="60,520 120,430 150,380 220,360 260,280 300,250 340,160 360,90" fill="none" stroke="var(--brand)" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round" opacity="0.85"></polyline></svg>
+                    <div style="position:absolute;top:14px;right:14px;display:flex;flex-direction:column;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-md);background:var(--surface)">
+                      <button style="padding:8px 13px;border:none;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-xs);text-align:left;font-family:inherit;cursor:pointer">Relieve</button>
+                      <button style="padding:8px 13px;border:none;border-top:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:600;font-size:var(--t-xs);text-align:left;font-family:inherit;cursor:pointer">Satélite</button>
+                    </div>
+                    <span style="position:absolute;left:78px;top:300px;width:46px;height:46px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--t-base);box-shadow:0 0 0 6px var(--brand-soft)">38</span>
+                    <span style="position:absolute;left:250px;top:150px;width:36px;height:36px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--t-sm);box-shadow:0 0 0 5px var(--brand-soft)">12</span>
+                    <span style="position:absolute;left:300px;top:380px;width:18px;height:18px;border-radius:50%;background:var(--brand);border:3px solid var(--surface);box-shadow:var(--shadow-sm)"></span>
+                    <span style="position:absolute;left:150px;top:430px;width:22px;height:22px;border-radius:50%;background:#b3261e;border:3px solid var(--surface);box-shadow:var(--shadow-md)"></span>
+                    <div style="position:absolute;left:14px;bottom:14px;width:248px;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--surface)">
+                      <div style="padding:11px 13px">
+                        <div style="display:flex;align-items:center;gap:7px"><span style="display:inline-flex;font-weight:800;font-size:var(--t-xs);padding:2px 6px;border-radius:5px;background:#b8860b;color:#1a1a1a">PR-CV 147</span><span style="display:inline-flex;align-items:center;gap:4px;font-weight:700;font-size:10px;padding:2px 7px;border-radius:999px;background:var(--ok-soft);color:var(--ok)">Homologado</span></div>
+                        <div style="margin-top:6px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-sm)">Barranc de l'Infern</div>
+                        <div style="margin-top:4px;display:flex;gap:12px;font-size:var(--t-xs);color:var(--muted)"><span><strong style="color:var(--text)">14,2 km</strong></span><span><strong style="color:var(--text)">+980 m</strong></span><span>5 h 30</span></div>
+                        <button style="margin-top:9px;width:100%;padding:8px;border-radius:8px;border:none;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer">Abrir ficha</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top:14px;padding:11px 14px;border-radius:11px;background:var(--surface-alt);border:1px solid var(--border);font-size:var(--t-xs);color:var(--muted);line-height:1.5"><strong style="color:var(--text)">Variante A — chips quitables.</strong> Óptima hoy: filtros activos siempre visibles y descartables en un toque. El botón «Más filtros» abre el panel colapsable completo (tipo, marcas, provincia/comarca, estado, con agua, alta sombra).</div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ showDiscB }}" hint-placeholder-val="{{ false }}">
+              <div style="display:grid;grid-template-columns:262px 1fr 360px;gap:18px;align-items:start">
+                <aside style="position:sticky;top:96px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:var(--shadow-sm);overflow:hidden">
+                  <div style="padding:13px 15px;border-bottom:1px solid var(--border)">
+                    <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-sm)">Explorar</div>
+                    <div style="margin-top:8px;display:flex;align-items:center;gap:5px;flex-wrap:wrap;font-size:var(--t-xs);color:var(--muted)"><span style="color:var(--brand);font-weight:700">FEMECV</span><span>›</span><span style="color:var(--brand);font-weight:700">València</span><span>›</span><span style="color:var(--brand);font-weight:700">Camp de Túria</span></div>
+                  </div>
+                  <div style="max-height:540px;overflow:auto">
+                    <sc-for list="{{ facets }}" as="g" hint-placeholder-count="4">
+                      <div style="border-bottom:1px solid var(--border)">
+                        <div style="display:flex;align-items:center;justify-content:space-between;padding:11px 15px;cursor:pointer"><span style="font-weight:700;font-size:var(--t-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)">{{ g.name }}</span><span style="color:var(--muted);font-size:10px">▾</span></div>
+                        <div style="padding:0 15px 12px;display:flex;flex-direction:column;gap:8px">
+                          <sc-for list="{{ g.kids }}" as="k" hint-placeholder-count="3">
+                            <label style="display:flex;align-items:center;gap:9px;font-size:var(--t-sm);cursor:pointer">
+                              <span style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border);flex:none"></span>
+                              <span style="flex:1;color:var(--text)">{{ k.t }}</span>
+                              <span style="font-size:var(--t-xs);color:var(--muted);font-variant-numeric:tabular-nums">{{ k.n }}</span>
+                            </label>
+                          </sc-for>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </aside>
+
+                <div>
+                  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px">
+                    <div style="flex:1;min-width:180px;display:flex;align-items:center;gap:9px;padding:10px 14px;border:1px solid var(--border);border-radius:11px;background:var(--surface);box-shadow:var(--shadow-sm)"><span style="color:var(--muted)">⌕</span><span style="color:var(--muted);font-size:var(--t-sm)">Buscar en 27 rutas…</span></div>
+                    <button style="display:inline-flex;align-items:center;gap:7px;padding:10px 14px;border-radius:11px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer">⚄ Al azar</button>
+                  </div>
+                  <div style="font-size:var(--t-sm);color:var(--muted);margin-bottom:12px"><strong style="color:var(--text)">27 rutas</strong> en Camp de Túria</div>
+                  <div style="display:flex;flex-direction:column;gap:10px">
+                    <sc-for list="{{ routes }}" as="r" hint-placeholder-count="4">
+                      <div style="display:flex;align-items:center;gap:13px;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--surface);cursor:pointer;transition:all .14s" style-hover="border-color:var(--brand-line);box-shadow:var(--shadow-sm)">
+                        <div style="flex:1;min-width:0">
+                          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="display:inline-flex;font-weight:800;font-size:var(--t-xs);padding:3px 7px;border-radius:6px;background:{{ r.bg }};color:{{ r.fg }}">{{ r.badge }}</span><span style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">{{ r.name }}</span></div>
+                          <div style="margin-top:5px;display:flex;gap:13px;font-size:var(--t-sm);color:var(--muted);flex-wrap:wrap"><span><strong style="color:var(--text)">{{ r.km }}</strong> km</span><span><strong style="color:var(--text)">{{ r.asc }}</strong> m</span><span>{{ r.dur }}</span></div>
+                        </div>
+                        <span style="display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:var(--t-xs);padding:3px 9px;border-radius:999px;background:{{ r.eBg }};color:{{ r.eFg }};flex:none">{{ r.estadoTxt }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+
+                <div style="position:sticky;top:96px;height:600px;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);background-color:var(--map);background-image:repeating-linear-gradient(56deg,transparent 0 26px,var(--map-line) 26px 27px),repeating-linear-gradient(122deg,transparent 0 34px,var(--map-line) 34px 35px)">
+                  <div style="position:absolute;width:170px;height:110px;border-radius:50%;right:-20px;top:80px;background:var(--map-water);filter:blur(2px);opacity:.85"></div>
+                  <span style="position:absolute;left:120px;top:240px;width:42px;height:42px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--t-sm);box-shadow:0 0 0 5px var(--brand-soft)">27</span>
+                  <span style="position:absolute;left:240px;top:380px;width:18px;height:18px;border-radius:50%;background:var(--brand);border:3px solid var(--surface)"></span>
+                  <span style="position:absolute;left:200px;top:140px;width:18px;height:18px;border-radius:50%;background:var(--brand);border:3px solid var(--surface)"></span>
+                  <div style="position:absolute;left:12px;bottom:12px;right:12px;padding:10px 13px;border:1px solid var(--border);border-radius:11px;background:var(--surface);box-shadow:var(--shadow-md);font-size:var(--t-xs);color:var(--muted)">Mostrando el territorio filtrado. Toca un clúster para acercar.</div>
+                </div>
+              </div>
+              <div style="margin-top:14px;padding:11px 14px;border-radius:11px;background:var(--surface-alt);border:1px solid var(--border);font-size:var(--t-xs);color:var(--muted);line-height:1.5"><strong style="color:var(--text)">Variante B — panel jerárquico.</strong> Pensada para miles de rutas: la barra lateral navega la jerarquía <strong style="color:var(--text)">federación → territorio → provincia → comarca → tipo → dificultad</strong> con conteos por faceta. Crecer a nuevas federaciones añade ramas sin rehacer la pantalla.</div>
+            </sc-if>
+
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:22px;display:flex;justify-content:center">
+            <div style="width:392px;border:1px solid var(--border);border-radius:34px;background:var(--bg);box-shadow:var(--shadow-lg);overflow:hidden;position:relative">
+              <div style="height:30px;display:flex;align-items:center;justify-content:center"><div style="width:120px;height:6px;border-radius:99px;background:var(--border)"></div></div>
+              <div style="padding:4px 18px 14px">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-xl);letter-spacing:-.02em">Descubrir</div>
+                  <span style="display:inline-flex;align-items:center;gap:6px;font-size:var(--t-xs);font-weight:700;color:var(--muted);padding:5px 10px;border-radius:999px;background:var(--surface-alt)"><span style="width:7px;height:7px;border-radius:50%;background:var(--ok)"></span>Offline</span>
+                </div>
+                <div style="margin-top:12px;display:flex;align-items:center;gap:9px;padding:11px 14px;border:1px solid var(--border);border-radius:12px;background:var(--surface)"><span style="color:var(--muted)">⌕</span><span style="color:var(--muted);font-size:var(--t-sm)">Buscar ruta o paraje…</span></div>
+
+                <sc-if value="{{ showDiscA }}" hint-placeholder-val="{{ true }}">
+                  <div style="margin-top:12px;display:flex;gap:8px;overflow-x:auto;padding-bottom:3px">
+                    <button style="white-space:nowrap;display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:999px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-xs);font-family:inherit;flex:none">Circular ✕</button>
+                    <button style="white-space:nowrap;display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:999px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-xs);font-family:inherit;flex:none">Con agua ✕</button>
+                    <button style="white-space:nowrap;display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-xs);font-family:inherit;flex:none">⚙ Filtros</button>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ showDiscB }}" hint-placeholder-val="{{ false }}">
+                  <div style="margin-top:12px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:var(--t-xs)"><span style="font-weight:700;color:var(--brand);padding:5px 9px;border-radius:999px;background:var(--brand-soft)">FEMECV</span><span style="color:var(--muted)">›</span><span style="font-weight:700;color:var(--brand);padding:5px 9px;border-radius:999px;background:var(--brand-soft)">València</span><span style="color:var(--muted)">›</span><button style="border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-xs);padding:5px 10px;border-radius:999px;font-family:inherit">⚙ Refinar</button></div>
+                </sc-if>
+
+                <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--surface-alt);border:1px solid var(--border);border-radius:11px;padding:3px">
+                  <button onClick="{{ onMvLista }}" style="{{ seg.mvLista }}">Lista</button>
+                  <button onClick="{{ onMvMapa }}" style="{{ seg.mvMapa }}">Mapa</button>
+                </div>
+                <div style="margin-top:10px;font-size:var(--t-xs);color:var(--muted)"><strong style="color:var(--text)">612 rutas</strong> · ordenado por cercanía</div>
+
+                <sc-if value="{{ showMvLista }}" hint-placeholder-val="{{ true }}">
+                  <div style="margin-top:10px;display:flex;flex-direction:column;gap:9px">
+                    <sc-for list="{{ routes }}" as="r" hint-placeholder-count="4">
+                      <div style="display:flex;align-items:center;gap:11px;padding:11px;border:1px solid var(--border);border-radius:12px;background:var(--surface)">
+                        <div style="width:48px;height:48px;border-radius:9px;flex:none;background:repeating-linear-gradient(135deg,var(--map) 0 7px,var(--map-line) 7px 8px)"></div>
+                        <div style="flex:1;min-width:0">
+                          <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-flex;font-weight:800;font-size:10px;padding:2px 6px;border-radius:5px;background:{{ r.bg }};color:{{ r.fg }}">{{ r.badge }}</span><span style="display:inline-flex;align-items:center;gap:4px;font-weight:700;font-size:10px;padding:2px 7px;border-radius:999px;background:{{ r.eBg }};color:{{ r.eFg }}">{{ r.estadoTxt }}</span></div>
+                          <div style="margin-top:4px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-sm);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.name }}</div>
+                          <div style="margin-top:3px;display:flex;gap:11px;font-size:var(--t-xs);color:var(--muted)"><span><strong style="color:var(--text)">{{ r.km }}</strong> km</span><span><strong style="color:var(--text)">{{ r.asc }}</strong> m</span><span>{{ r.dur }}</span></div>
+                        </div>
+                        <span style="color:var(--brand);font-size:var(--t-md);flex:none">♡</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ showMvMapa }}" hint-placeholder-val="{{ false }}">
+                  <div style="margin-top:10px;height:420px;border:1px solid var(--border);border-radius:14px;overflow:hidden;position:relative;background-color:var(--map);background-image:repeating-linear-gradient(56deg,transparent 0 24px,var(--map-line) 24px 25px),repeating-linear-gradient(122deg,transparent 0 30px,var(--map-line) 30px 31px)">
+                    <div style="position:absolute;width:150px;height:90px;border-radius:50%;left:-30px;top:60px;background:var(--map-water);filter:blur(2px);opacity:.85"></div>
+                    <span style="position:absolute;left:90px;top:150px;width:42px;height:42px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--t-sm);box-shadow:0 0 0 5px var(--brand-soft)">24</span>
+                    <span style="position:absolute;left:220px;top:100px;width:32px;height:32px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--t-xs);box-shadow:0 0 0 4px var(--brand-soft)">8</span>
+                    <span style="position:absolute;left:180px;top:250px;width:20px;height:20px;border-radius:50%;background:#b3261e;border:3px solid var(--surface);box-shadow:var(--shadow-md)"></span>
+                    <div style="position:absolute;left:12px;right:12px;bottom:12px;border:1px solid var(--border);border-radius:13px;background:var(--surface);box-shadow:var(--shadow-lg);padding:12px">
+                      <div style="display:flex;align-items:center;gap:7px"><span style="display:inline-flex;font-weight:800;font-size:10px;padding:2px 6px;border-radius:5px;background:#b3261e;color:#fff">GR-10</span><span style="display:inline-flex;align-items:center;gap:4px;font-weight:700;font-size:10px;padding:2px 7px;border-radius:999px;background:var(--warn-soft);color:var(--warn)">Sin verificar</span></div>
+                      <div style="margin-top:5px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-sm)">Serra Calderona — Pic del Garbí</div>
+                      <div style="margin-top:4px;font-size:var(--t-xs);color:var(--muted)"><strong style="color:var(--text)">16,5 km</strong> · +690 m · Fuente: OSM · sin verificar</div>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+
+              <div style="position:absolute;right:16px;bottom:78px;width:50px;height:50px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-size:var(--t-lg);box-shadow:var(--shadow-lg)">⚄</div>
+              <div style="display:flex;border-top:1px solid var(--border);background:var(--surface)">
+                <div style="flex:1;text-align:center;padding:11px 0 16px"><div style="font-size:var(--t-md);color:var(--brand)">⌕</div><div style="font-size:10px;font-weight:700;color:var(--brand)">Descubrir</div></div>
+                <div style="flex:1;text-align:center;padding:11px 0 16px"><div style="font-size:var(--t-md);color:var(--muted)">▤</div><div style="font-size:10px;font-weight:600;color:var(--muted)">Diario</div></div>
+                <div style="flex:1;text-align:center;padding:11px 0 16px"><div style="font-size:var(--t-md);color:var(--muted)">☰</div><div style="font-size:10px;font-weight:600;color:var(--muted)">Ajustes</div></div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ showFicha }}" hint-placeholder-val="{{ false }}">
+      <section style="padding-top:34px">
+
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:18px">
+          <div>
+            <div style="font-size:var(--t-xs);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)">Entregable B · Pantalla 2</div>
+            <h1 style="margin:6px 0 0;font-family:'Libre Franklin';font-weight:800;font-size:var(--t-3xl);letter-spacing:-.02em;line-height:1.04">Ficha de ruta</h1>
+            <p style="margin:9px 0 0;max-width:60ch;color:var(--muted);font-size:var(--t-base);line-height:1.55">Un «banco de preparación»: cabecera fija con el resumen y secciones modulares. Dos organizaciones de la información.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start">
+            <span style="font-size:var(--t-xs);font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em">Variante de organización</span>
+            <div style="display:flex;gap:2px;background:var(--surface-alt);border:1px solid var(--border);border-radius:11px;padding:3px">
+              <button onClick="{{ onFichaA }}" style="{{ seg.fichaA }}">A · Pestañas</button>
+              <button onClick="{{ onFichaB }}" style="{{ seg.fichaB }}">B · Tablero modular</button>
+            </div>
+          </div>
+        </div>
+
+        <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="position:sticky;top:57px;z-index:30;background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-md);padding:18px 20px">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap">
+                <div style="min-width:0">
+                  <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap">
+                    <span style="display:inline-flex;font-weight:800;font-size:var(--t-xs);padding:3px 8px;border-radius:6px;background:#b8860b;color:#1a1a1a">PR-CV 49</span>
+                    <span style="display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:var(--t-xs);padding:3px 10px;border-radius:999px;background:var(--ok-soft);color:var(--ok)"><span style="width:5px;height:5px;border-radius:50%;background:currentColor"></span>Homologado · FEMECV</span>
+                  </div>
+                  <h2 style="margin:9px 0 0;font-family:'Libre Franklin';font-weight:800;font-size:var(--t-2xl);letter-spacing:-.02em;line-height:1.05">Penyagolosa per Sant Joan</h2>
+                  <div style="margin-top:10px;display:flex;gap:22px;flex-wrap:wrap">
+                    <div><div style="font-size:var(--t-xs);color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em">Distancia</div><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-lg)">11,8 km</div></div>
+                    <div><div style="font-size:var(--t-xs);color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em">Desnivel +</div><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-lg)">760 m</div></div>
+                    <div><div style="font-size:var(--t-xs);color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em">Duración</div><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-lg)">4 h 30</div></div>
+                    <div><div style="font-size:var(--t-xs);color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em">Forma</div><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-lg)">Lineal</div></div>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end">
+                  <div style="display:flex;gap:8px">
+                    <button title="Favorita" style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--brand);font-size:var(--t-md);cursor:pointer" style-hover="background:var(--brand-soft)">♡</button>
+                    <button title="Quiero hacer" style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:var(--t-md);cursor:pointer" style-hover="background:var(--surface-alt)">✓</button>
+                    <button title="Registrar salida" style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:var(--t-md);cursor:pointer" style-hover="background:var(--surface-alt)">⌖</button>
+                    <button style="padding:0 16px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-sm);cursor:pointer;font-family:inherit" style-hover="background:var(--surface-alt)">Ficha de emergencia</button>
+                    <button style="padding:0 16px;height:40px;border-radius:10px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-sm);cursor:pointer;font-family:inherit;box-shadow:var(--shadow-sm)" style-hover="box-shadow:var(--shadow-md);transform:translateY(-1px)">Generar informe</button>
+                  </div>
+                  <div style="display:inline-flex;align-items:center;gap:6px;font-size:var(--t-xs);color:var(--muted);padding:4px 10px;border-radius:999px;border:1px dashed var(--border)">⛰ «Iniciar ruta» — reservado para móvil (futuro)</div>
+                </div>
+              </div>
+            </div>
+
+            <sc-if value="{{ showFichaA }}" hint-placeholder-val="{{ true }}">
+              <div>
+                <div style="display:flex;gap:26px;border-bottom:1px solid var(--border);margin:18px 2px 0;overflow-x:auto">
+                  <button onClick="{{ onTabResumen }}" style="{{ tab.resumen }}">Resumen</button>
+                  <button onClick="{{ onTabMapa }}" style="{{ tab.mapa }}">Mapa y perfil</button>
+                  <button onClick="{{ onTabPrep }}" style="{{ tab.prep }}">Preparación</button>
+                  <button onClick="{{ onTabMeteo }}" style="{{ tab.meteo }}">Meteo</button>
+                  <button onClick="{{ onTabAcc }}" style="{{ tab.acc }}">Acciones</button>
+                </div>
+
+                <div style="margin-top:20px">
+                  <sc-if value="{{ showTabResumen }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:start">
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
+                        <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md)">Sobre la ruta</div>
+                        <p style="margin:10px 0 0;font-size:var(--t-base);line-height:1.6;color:var(--text)">Ascensión clásica al techo de Castelló (1 813 m) desde Sant Joan de Penyagolosa. Sendero bien señalizado, fuerte en el tramo final. Sombra escasa por encima de Lluïsos: salir temprano en verano.</p>
+                        <div style="margin-top:14px;font-size:var(--t-xs);color:var(--muted)">Traza y señalización: <strong style="color:var(--text)">FEMECV oficial</strong> · Puntos de interés: <strong style="color:var(--text)">OSM · sin verificar</strong></div>
+                      </div>
+                      <div style="background:var(--warn-soft);border:1px dashed color-mix(in srgb,var(--warn) 50%,transparent);border-radius:14px;padding:18px">
+                        <div style="display:flex;align-items:center;gap:8px"><span style="font-weight:800;font-size:var(--t-xs);letter-spacing:.06em;text-transform:uppercase;color:var(--warn)">Reportes de la comunidad — sin verificar</span></div>
+                        <div style="margin-top:6px;font-size:var(--t-xs);color:var(--muted)">Función futura. No proviene de la FEMECV.</div>
+                        <div style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
+                          <div style="font-size:var(--t-sm);color:var(--text);line-height:1.45">«Tramo embarrado tras las lluvias del fin de semana.» <span style="color:var(--muted)">— hace 3 días</span></div>
+                          <div style="font-size:var(--t-sm);color:var(--text);line-height:1.45">«La font de Lluïsos baja con poco caudal.» <span style="color:var(--muted)">— hace 9 días</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </sc-if>
+
+                  <sc-if value="{{ showTabMapa }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:grid;grid-template-columns:1fr;gap:18px">
+                      <div style="height:300px;border:1px solid var(--border);border-radius:14px;overflow:hidden;position:relative;box-shadow:var(--shadow-sm);background-color:var(--map);background-image:repeating-linear-gradient(56deg,transparent 0 28px,var(--map-line) 28px 29px),repeating-linear-gradient(122deg,transparent 0 36px,var(--map-line) 36px 37px)">
+                        <svg viewBox="0 0 1000 300" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><polyline points="120,250 260,210 360,200 520,150 650,120 800,70" fill="none" stroke="var(--brand)" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"></polyline></svg>
+                        <span style="position:absolute;left:108px;top:238px;width:16px;height:16px;border-radius:50%;background:var(--brand);border:3px solid var(--surface)"></span>
+                        <span style="position:absolute;left:790px;top:58px;width:18px;height:18px;border-radius:50%;background:#b3261e;border:3px solid var(--surface);box-shadow:var(--shadow-md)"></span>
+                        <div style="position:absolute;top:13px;right:13px;display:flex;flex-direction:column;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-md);background:var(--surface)"><button style="padding:7px 12px;border:none;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer">Topográfico</button></div>
+                      </div>
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                        <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md)">Perfil de elevación</div><div style="font-size:var(--t-xs);color:var(--muted)">1 060 m → 1 813 m</div></div>
+                        <svg viewBox="0 0 1000 150" preserveAspectRatio="none" style="width:100%;height:130px;margin-top:10px;display:block"><polygon points="0,150 0,120 140,118 280,96 430,98 560,60 700,52 850,24 1000,16 1000,150" fill="var(--brand-soft)"></polygon><polyline points="0,120 140,118 280,96 430,98 560,60 700,52 850,24 1000,16" fill="none" stroke="var(--brand)" stroke-width="2.5"></polyline></svg>
+                      </div>
+                    </div>
+                  </sc-if>
+
+                  <sc-if value="{{ showTabPrep }}" hint-placeholder-val="{{ true }}">
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:18px;align-items:start">
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-sm);overflow:hidden">
+                        <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border)"><span style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Mochila</span><span style="font-size:var(--t-xs);color:var(--muted)">8 / 11</span></div>
+                        <div style="padding:14px 16px;display:flex;flex-direction:column;gap:14px">
+                          <sc-for list="{{ mochila }}" as="grp" hint-placeholder-count="3">
+                            <div>
+                              <div style="font-size:var(--t-xs);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px">{{ grp.g }}</div>
+                              <div style="display:flex;flex-direction:column;gap:8px">
+                                <sc-for list="{{ grp.items }}" as="it" hint-placeholder-count="3">
+                                  <label style="display:flex;align-items:center;gap:9px;font-size:var(--t-sm);cursor:pointer"><sc-if value="{{ it.on }}" hint-placeholder-val="{{ true }}"><span style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--brand);background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:var(--on-brand);font-size:11px;font-weight:800;flex:none">✓</span></sc-if><sc-if value="{{ it.off }}" hint-placeholder-val="{{ false }}"><span style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border);flex:none"></span></sc-if><span style="color:var(--text)">{{ it.t }}</span></label>
+                                </sc-for>
+                              </div>
+                            </div>
+                          </sc-for>
+                        </div>
+                      </div>
+
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-sm);overflow:hidden">
+                        <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border)"><span style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Agua en ruta</span><span style="font-size:var(--t-xs);color:var(--muted)">2 puntos</span></div>
+                        <div style="padding:14px 16px;display:flex;flex-direction:column;gap:12px">
+                          <sc-for list="{{ agua }}" as="w" hint-placeholder-count="2">
+                            <div style="display:flex;align-items:flex-start;gap:11px">
+                              <span style="width:30px;height:30px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--brand-soft);color:var(--brand);font-size:var(--t-base)">💧</span>
+                              <div style="flex:1;min-width:0">
+                                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-weight:700;font-size:var(--t-sm)">{{ w.t }}</span><span style="font-size:var(--t-xs);color:var(--muted)">{{ w.km }}</span></div>
+                                <div style="margin-top:3px;font-size:var(--t-xs);color:var(--muted)">{{ w.estado }} · Fuente: {{ w.fuente }}</div>
+                              </div>
+                            </div>
+                          </sc-for>
+                          <div style="font-size:var(--t-xs);color:var(--muted);line-height:1.5;padding-top:4px;border-top:1px solid var(--border)">Lleva 2 L: el segundo punto no está verificado.</div>
+                        </div>
+                      </div>
+
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-sm);overflow:hidden">
+                        <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border)"><span style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Etapas</span><span style="font-size:var(--t-xs);color:var(--muted)">3 tramos</span></div>
+                        <div>
+                          <sc-for list="{{ etapas }}" as="e" hint-placeholder-count="3">
+                            <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border)">
+                              <span style="width:26px;height:26px;border-radius:50%;flex:none;background:var(--brand-soft);color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--t-xs)">{{ e.n }}</span>
+                              <div style="flex:1;min-width:0">
+                                <div style="font-weight:700;font-size:var(--t-sm);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ e.de }} → {{ e.a }}</div>
+                                <div style="margin-top:2px;font-size:var(--t-xs);color:var(--muted)">{{ e.km }} km · {{ e.asc }} m · {{ e.t }}</div>
+                              </div>
+                            </div>
+                          </sc-for>
+                        </div>
+                      </div>
+                    </div>
+                  </sc-if>
+
+                  <sc-if value="{{ showTabMeteo }}" hint-placeholder-val="{{ false }}">
+                    <div>
+                      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+                        <sc-for list="{{ meteo }}" as="m" hint-placeholder-count="3">
+                          <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm);text-align:center">
+                            <div style="font-weight:700;font-size:var(--t-sm);color:var(--muted)">{{ m.d }}</div>
+                            <div style="font-size:34px;line-height:1.2;margin:6px 0">{{ m.ic }}</div>
+                            <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-lg)">{{ m.max }} <span style="color:var(--muted);font-weight:600">/ {{ m.min }}</span></div>
+                            <div style="margin-top:8px;font-size:var(--t-xs);color:var(--muted)">Viento {{ m.v }} · Lluvia {{ m.p }}</div>
+                          </div>
+                        </sc-for>
+                      </div>
+                      <div style="margin-top:14px;display:flex;gap:11px;padding:13px 15px;border-radius:12px;background:var(--alert-soft);border:1px solid color-mix(in srgb,var(--alert) 40%,transparent)"><span style="color:var(--alert);font-size:var(--t-md)">⚠</span><div style="font-size:var(--t-sm);color:var(--text)"><strong>Domingo:</strong> viento fuerte y 70% de lluvia en cota alta. Valora posponer la cima.</div></div>
+                      <div style="margin-top:10px;font-size:var(--t-xs);color:var(--muted)">Predicción AEMET · descargada para offline hace 2 h.</div>
+                    </div>
+                  </sc-if>
+
+                  <sc-if value="{{ showTabAcc }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)"><div style="font-size:var(--t-lg)">📄</div><div style="margin-top:8px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Generar informe</div><div style="margin-top:3px;font-size:var(--t-xs);color:var(--muted)">PDF con mapa, perfil, etapas y mochila.</div></div>
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)"><div style="font-size:var(--t-lg)">🆘</div><div style="margin-top:8px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Ficha de emergencia</div><div style="margin-top:3px;font-size:var(--t-xs);color:var(--muted)">Coordenadas de escape y teléfonos 112.</div></div>
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)"><div style="font-size:var(--t-lg)">⬇</div><div style="margin-top:8px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Exportar GPX / KML</div><div style="margin-top:3px;font-size:var(--t-xs);color:var(--muted)">Traza FEMECV oficial para tu GPS.</div></div>
+                      <div style="background:var(--brand-soft);border:1px dashed var(--brand-line);border-radius:14px;padding:18px"><div style="font-size:var(--t-lg);color:var(--brand)">⛰</div><div style="margin-top:8px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Iniciar ruta</div><div style="margin-top:3px;font-size:var(--t-xs);color:var(--muted)">Acción primaria futura (navegación en vivo, móvil).</div></div>
+                    </div>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ showFichaB }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:18px;display:grid;grid-template-columns:204px 1fr;gap:20px;align-items:start">
+                <aside style="position:sticky;top:200px;display:flex;flex-direction:column;gap:3px">
+                  <div style="font-size:var(--t-xs);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:6px 12px">Secciones</div>
+                  <div style="padding:9px 12px;border-radius:9px;background:var(--brand-soft);color:var(--brand);font-weight:700;font-size:var(--t-sm)">Resumen</div>
+                  <div style="padding:9px 12px;border-radius:9px;color:var(--text);font-weight:600;font-size:var(--t-sm)">Mapa y perfil</div>
+                  <div style="padding:9px 12px;border-radius:9px;color:var(--text);font-weight:600;font-size:var(--t-sm)">Preparación</div>
+                  <div style="padding:9px 12px;border-radius:9px;color:var(--text);font-weight:600;font-size:var(--t-sm)">Meteo</div>
+                  <div style="padding:9px 12px;border-radius:9px;color:var(--text);font-weight:600;font-size:var(--t-sm)">Comunidad</div>
+                  <div style="padding:9px 12px;border-radius:9px;color:var(--text);font-weight:600;font-size:var(--t-sm)">Acciones</div>
+                </aside>
+                <div style="display:flex;flex-direction:column;gap:16px">
+                  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
+                    <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md)">Resumen</div>
+                    <p style="margin:9px 0 0;font-size:var(--t-base);line-height:1.6;color:var(--text)">Ascensión al techo de Castelló (1 813 m) desde Sant Joan de Penyagolosa. Bien señalizada; sombra escasa en el tramo final.</p>
+                    <div style="margin-top:12px;font-size:var(--t-xs);color:var(--muted)">Traza: <strong style="color:var(--text)">FEMECV oficial</strong> · POIs: <strong style="color:var(--text)">OSM · sin verificar</strong></div>
+                  </div>
+                  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
+                    <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md)">Mapa y perfil</div><span style="font-size:var(--t-xs);color:var(--muted)">1 060 → 1 813 m</span></div>
+                    <div style="margin-top:12px;height:170px;border:1px solid var(--border);border-radius:11px;position:relative;overflow:hidden;background-color:var(--map);background-image:repeating-linear-gradient(56deg,transparent 0 26px,var(--map-line) 26px 27px),repeating-linear-gradient(122deg,transparent 0 34px,var(--map-line) 34px 35px)"><svg viewBox="0 0 1000 170" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><polyline points="120,140 320,120 560,80 760,50 880,30" fill="none" stroke="var(--brand)" stroke-width="3" stroke-dasharray="2 8"></polyline></svg></div>
+                    <svg viewBox="0 0 1000 90" preserveAspectRatio="none" style="width:100%;height:80px;margin-top:10px;display:block"><polygon points="0,90 0,70 280,56 560,34 760,22 1000,10 1000,90" fill="var(--brand-soft)"></polygon><polyline points="0,70 280,56 560,34 760,22 1000,10" fill="none" stroke="var(--brand)" stroke-width="2.5"></polyline></svg>
+                  </div>
+                  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
+                    <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md);margin-bottom:14px">Preparación</div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+                      <div>
+                        <div style="display:flex;justify-content:space-between;font-size:var(--t-sm);font-weight:700;margin-bottom:7px"><span>Mochila</span><span style="color:var(--muted)">8 / 11</span></div>
+                        <div style="height:8px;border-radius:99px;background:var(--surface-alt);overflow:hidden"><div style="width:73%;height:100%;background:var(--brand)"></div></div>
+                        <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+                          <div style="display:flex;align-items:center;gap:11px"><span style="width:28px;height:28px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--brand-soft);color:var(--brand)">💧</span><div style="font-size:var(--t-sm)"><strong>Font de la Pegunta</strong> <span style="color:var(--muted)">· km 4,2 · Potable · FEMECV</span></div></div>
+                          <div style="display:flex;align-items:center;gap:11px"><span style="width:28px;height:28px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--warn-soft);color:var(--warn)">💧</span><div style="font-size:var(--t-sm)"><strong>Bassa dels Llacs</strong> <span style="color:var(--muted)">· km 8,1 · OSM sin verificar</span></div></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div style="font-size:var(--t-sm);font-weight:700;margin-bottom:9px">Etapas</div>
+                        <div style="display:flex;flex-direction:column;gap:8px">
+                          <sc-for list="{{ etapas }}" as="e" hint-placeholder-count="3">
+                            <div style="display:flex;align-items:center;gap:10px"><span style="width:22px;height:22px;border-radius:50%;flex:none;background:var(--brand-soft);color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px">{{ e.n }}</span><div style="font-size:var(--t-xs);color:var(--text)"><strong>{{ e.de }} → {{ e.a }}</strong> <span style="color:var(--muted)">{{ e.km }} km · {{ e.t }}</span></div></div>
+                          </sc-for>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
+                    <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md);margin-bottom:12px">Meteo</div>
+                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+                      <sc-for list="{{ meteo }}" as="m" hint-placeholder-count="3">
+                        <div style="text-align:center;padding:12px;border:1px solid var(--border);border-radius:11px"><div style="font-size:var(--t-xs);font-weight:700;color:var(--muted)">{{ m.d }}</div><div style="font-size:26px;margin:3px 0">{{ m.ic }}</div><div style="font-weight:700;font-size:var(--t-sm)">{{ m.max }} / {{ m.min }}</div></div>
+                      </sc-for>
+                    </div>
+                  </div>
+                  <div style="background:var(--warn-soft);border:1px dashed color-mix(in srgb,var(--warn) 50%,transparent);border-radius:14px;padding:20px">
+                    <span style="font-weight:800;font-size:var(--t-xs);letter-spacing:.06em;text-transform:uppercase;color:var(--warn)">Comunidad — sin verificar</span>
+                    <div style="margin-top:10px;font-size:var(--t-sm);color:var(--text);line-height:1.5">«Tramo embarrado tras las lluvias.» <span style="color:var(--muted)">— hace 3 días</span></div>
+                    <div style="margin-top:6px;font-size:var(--t-xs);color:var(--muted)">Función futura. No proviene de la FEMECV.</div>
+                  </div>
+                  <div style="display:flex;gap:12px;flex-wrap:wrap">
+                    <button style="padding:11px 17px;border-radius:11px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer">Generar informe</button>
+                    <button style="padding:11px 17px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer">Ficha de emergencia</button>
+                    <button style="padding:11px 17px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer">Exportar GPX</button>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;justify-content:center">
+            <div style="width:392px;border:1px solid var(--border);border-radius:34px;background:var(--bg);box-shadow:var(--shadow-lg);overflow:hidden;position:relative">
+              <div style="position:sticky;top:0;z-index:5;background:var(--surface);border-bottom:1px solid var(--border);padding:14px 18px 12px">
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="display:inline-flex;font-weight:800;font-size:10px;padding:2px 7px;border-radius:5px;background:#b8860b;color:#1a1a1a">PR-CV 49</span><span style="display:inline-flex;align-items:center;gap:4px;font-weight:700;font-size:10px;padding:2px 8px;border-radius:999px;background:var(--ok-soft);color:var(--ok)">Homologado</span></div>
+                <div style="margin-top:7px;font-family:'Libre Franklin';font-weight:800;font-size:var(--t-lg);letter-spacing:-.01em;line-height:1.1">Penyagolosa per Sant Joan</div>
+                <div style="margin-top:8px;display:flex;gap:16px"><span style="font-size:var(--t-xs);color:var(--muted)"><strong style="color:var(--text);font-size:var(--t-sm)">11,8</strong> km</span><span style="font-size:var(--t-xs);color:var(--muted)"><strong style="color:var(--text);font-size:var(--t-sm)">+760</strong> m</span><span style="font-size:var(--t-xs);color:var(--muted)"><strong style="color:var(--text);font-size:var(--t-sm)">4 h 30</strong></span></div>
+                <div style="margin-top:11px;display:flex;gap:20px;border-bottom:1px solid var(--border);overflow-x:auto;padding-bottom:1px"><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Resumen</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Mapa</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:700;color:var(--text);white-space:nowrap;box-shadow:inset 0 -2px 0 var(--brand)">Preparación</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Meteo</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Acciones</span></div>
+              </div>
+              <div style="padding:14px 18px 16px;display:flex;flex-direction:column;gap:12px">
+                <div style="border:1px solid var(--border);border-radius:13px;background:var(--surface);overflow:hidden">
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--border)"><span style="font-weight:700;font-size:var(--t-sm)">Mochila</span><span style="font-size:var(--t-xs);color:var(--muted)">8 / 11</span></div>
+                  <div style="padding:12px 14px;display:flex;flex-direction:column;gap:9px">
+                    <label style="display:flex;align-items:center;gap:9px;font-size:var(--t-sm)"><span style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--brand);background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:var(--on-brand);font-size:11px;font-weight:800">✓</span>2 L de agua</label>
+                    <label style="display:flex;align-items:center;gap:9px;font-size:var(--t-sm)"><span style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--brand);background:var(--brand);display:inline-flex;align-items:center;justify-content:center;color:var(--on-brand);font-size:11px;font-weight:800">✓</span>Mapa offline + GPS</label>
+                    <label style="display:flex;align-items:center;gap:9px;font-size:var(--t-sm);color:var(--muted)"><span style="width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border)"></span>Frontal</label>
+                  </div>
+                </div>
+                <div style="border:1px solid var(--border);border-radius:13px;background:var(--surface);padding:12px 14px">
+                  <div style="font-weight:700;font-size:var(--t-sm);margin-bottom:9px">Agua en ruta</div>
+                  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="width:26px;height:26px;border-radius:7px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--brand-soft);color:var(--brand)">💧</span><div style="font-size:var(--t-xs)"><strong>Font de la Pegunta</strong><span style="color:var(--muted)"> · Potable · FEMECV</span></div></div>
+                  <div style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:26px;border-radius:7px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--warn-soft);color:var(--warn)">💧</span><div style="font-size:var(--t-xs)"><strong>Bassa dels Llacs</strong><span style="color:var(--muted)"> · OSM sin verificar</span></div></div>
+                </div>
+                <div style="border:1px dashed color-mix(in srgb,var(--warn) 50%,transparent);border-radius:13px;background:var(--warn-soft);padding:12px 14px">
+                  <span style="font-weight:800;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--warn)">Comunidad — sin verificar</span>
+                  <div style="margin-top:7px;font-size:var(--t-xs);color:var(--text)">«Tramo embarrado tras las lluvias.» — hace 3 días</div>
+                </div>
+              </div>
+              <div style="position:sticky;bottom:0;background:var(--surface);border-top:1px solid var(--border);padding:12px 18px 16px;display:flex;gap:10px;align-items:center">
+                <button style="width:46px;height:46px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--brand);font-size:var(--t-md);flex:none">♡</button>
+                <button style="flex:1;height:46px;border-radius:12px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:800;font-size:var(--t-base);font-family:inherit">⛰ Iniciar ruta</button>
+              </div>
+            </div>
+          </div>
+          <div style="max-width:392px;margin:12px auto 0;text-align:center;font-size:var(--t-xs);color:var(--muted)">«Iniciar ruta» queda reservada como acción primaria futura (navegación en vivo).</div>
+        </sc-if>
+
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ showDiario }}" hint-placeholder-val="{{ false }}">
+      <section style="padding-top:34px">
+
+        <div style="margin-bottom:18px">
+          <div style="font-size:var(--t-xs);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)">Entregable B · Pantalla 3</div>
+          <h1 style="margin:6px 0 0;font-family:'Libre Franklin';font-weight:800;font-size:var(--t-3xl);letter-spacing:-.02em;line-height:1.04">Diario &amp; Ajustes</h1>
+          <p style="margin:9px 0 0;max-width:60ch;color:var(--muted);font-size:var(--t-base);line-height:1.55">Versión resumida: progreso personal y configuración, con estados de sincronización y error reales.</p>
+        </div>
+
+        <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+          <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:start">
+
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+                <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:var(--shadow-sm)"><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-2xl);letter-spacing:-.02em">38</div><div style="margin-top:2px;font-size:var(--t-xs);color:var(--muted);font-weight:600">Rutas hechas</div></div>
+                <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:var(--shadow-sm)"><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-2xl);letter-spacing:-.02em">412<span style="font-size:var(--t-md);color:var(--muted)"> km</span></div><div style="margin-top:2px;font-size:var(--t-xs);color:var(--muted);font-weight:600">Distancia</div></div>
+                <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:var(--shadow-sm)"><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-2xl);letter-spacing:-.02em">18,2<span style="font-size:var(--t-md);color:var(--muted)"> km</span></div><div style="margin-top:2px;font-size:var(--t-xs);color:var(--muted);font-weight:600">Desnivel +</div></div>
+                <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:var(--shadow-sm)"><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-2xl);letter-spacing:-.02em">24</div><div style="margin-top:2px;font-size:var(--t-xs);color:var(--muted);font-weight:600">Días en monte</div></div>
+              </div>
+
+              <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md);margin-bottom:14px">Logros</div>
+                <div style="display:flex;gap:18px;flex-wrap:wrap">
+                  <div style="text-align:center;width:78px"><div style="width:56px;height:56px;margin:0 auto;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 0 0 5px var(--brand-soft)">⛰</div><div style="margin-top:7px;font-size:var(--t-xs);font-weight:700;line-height:1.2">3 000+</div><div style="font-size:10px;color:var(--muted)">Conseguido</div></div>
+                  <div style="text-align:center;width:78px"><div style="width:56px;height:56px;margin:0 auto;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 0 0 5px var(--brand-soft)">💧</div><div style="margin-top:7px;font-size:var(--t-xs);font-weight:700;line-height:1.2">Sin recargar</div><div style="font-size:10px;color:var(--muted)">Conseguido</div></div>
+                  <div style="text-align:center;width:78px"><div style="width:56px;height:56px;margin:0 auto;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 0 0 5px var(--brand-soft)">🌙</div><div style="margin-top:7px;font-size:var(--t-xs);font-weight:700;line-height:1.2">Nocturna</div><div style="font-size:10px;color:var(--muted)">Conseguido</div></div>
+                  <div style="text-align:center;width:78px"><div style="width:56px;height:56px;margin:0 auto;border-radius:50%;background:var(--surface-alt);border:1.5px dashed var(--border);color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:24px">🏔</div><div style="margin-top:7px;font-size:var(--t-xs);font-weight:700;line-height:1.2;color:var(--muted)">Penyagolosa</div><div style="font-size:10px;color:var(--muted)">Bloqueado</div></div>
+                  <div style="text-align:center;width:78px"><div style="width:56px;height:56px;margin:0 auto;border-radius:50%;background:var(--surface-alt);border:1.5px dashed var(--border);color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:24px">🧭</div><div style="margin-top:7px;font-size:var(--t-xs);font-weight:700;line-height:1.2;color:var(--muted)">50 rutas</div><div style="font-size:10px;color:var(--muted)">38 / 50</div></div>
+                </div>
+              </div>
+
+              <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md);margin-bottom:16px">Progreso por comarca</div>
+                <div style="display:flex;flex-direction:column;gap:14px">
+                  <div><div style="display:flex;justify-content:space-between;font-size:var(--t-sm);margin-bottom:5px"><span style="font-weight:600">L'Alcalatén</span><span style="color:var(--muted)">9 / 12</span></div><div style="height:8px;border-radius:99px;background:var(--surface-alt);overflow:hidden"><div style="width:75%;height:100%;background:var(--brand)"></div></div></div>
+                  <div><div style="display:flex;justify-content:space-between;font-size:var(--t-sm);margin-bottom:5px"><span style="font-weight:600">La Vall de Laguar</span><span style="color:var(--muted)">6 / 14</span></div><div style="height:8px;border-radius:99px;background:var(--surface-alt);overflow:hidden"><div style="width:43%;height:100%;background:var(--brand)"></div></div></div>
+                  <div><div style="display:flex;justify-content:space-between;font-size:var(--t-sm);margin-bottom:5px"><span style="font-weight:600">Els Ports</span><span style="color:var(--muted)">4 / 18</span></div><div style="height:8px;border-radius:99px;background:var(--surface-alt);overflow:hidden"><div style="width:22%;height:100%;background:var(--brand)"></div></div></div>
+                </div>
+              </div>
+
+              <div style="display:flex;gap:11px;padding:14px 16px;border-radius:13px;background:var(--alert-soft);border:1px solid color-mix(in srgb,var(--alert) 38%,transparent);align-items:center">
+                <span style="color:var(--alert);font-size:var(--t-lg)">⚠</span>
+                <div style="flex:1"><div style="font-weight:700;font-size:var(--t-sm)">No se pudo sincronizar el diario</div><div style="font-size:var(--t-xs);color:var(--muted)">Sin conexión. Tus salidas se han guardado en el dispositivo.</div></div>
+                <button style="padding:8px 15px;border-radius:9px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer;flex:none" style-hover="background:var(--surface-alt)">↻ Reintentar</button>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md);margin-bottom:14px">Apariencia</div>
+                <div style="font-size:var(--t-xs);font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px">Tema</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--surface-alt);border:1px solid var(--border);border-radius:10px;padding:3px;margin-bottom:14px">
+                  <button onClick="{{ onThemeLight }}" style="{{ seg.themeLight }}">Claro</button>
+                  <button onClick="{{ onThemeDark }}" style="{{ seg.themeDark }}">Oscuro</button>
+                  <button style="padding:7px;border:none;border-radius:8px;background:transparent;color:var(--muted);font-weight:700;font-size:13px;font-family:inherit;cursor:pointer">Auto</button>
+                </div>
+                <div style="font-size:var(--t-xs);font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px">Esquema de color</div>
+                <div style="display:flex;gap:10px;margin-bottom:14px">
+                  <div style="text-align:center"><div style="width:42px;height:42px;border-radius:10px;background:#1d3a2a;box-shadow:0 0 0 2px var(--brand),0 0 0 4px var(--surface)"></div><div style="margin-top:5px;font-size:10px;font-weight:700">Bosque</div></div>
+                  <div style="text-align:center"><div style="width:42px;height:42px;border-radius:10px;background:#3a4a55;border:1px solid var(--border)"></div><div style="margin-top:5px;font-size:10px;color:var(--muted)">Roca</div></div>
+                  <div style="text-align:center"><div style="width:42px;height:42px;border-radius:10px;background:#1f5566;border:1px solid var(--border)"></div><div style="margin-top:5px;font-size:10px;color:var(--muted)">Mar</div></div>
+                  <div style="text-align:center"><div style="width:42px;height:42px;border-radius:10px;background:#000;border:1px solid var(--border)"></div><div style="margin-top:5px;font-size:10px;color:var(--muted)">Alto contraste</div></div>
+                </div>
+                <div style="display:flex;justify-content:space-between;font-size:var(--t-xs);font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px"><span>Escala de texto</span><span style="color:var(--brand)">{{ scaleLabel }}</span></div>
+                <div style="display:flex;align-items:center;gap:10px"><span style="font-size:13px;font-weight:700;color:var(--muted)">A</span><input type="range" min="0.8" max="1.6" step="0.1" value="{{ scale }}" onInput="{{ onScale }}" style="flex:1;accent-color:var(--brand)"><span style="font-size:var(--t-lg);font-weight:800;color:var(--muted)">A</span></div>
+              </div>
+
+              <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md)">Material propio</div><button style="border:none;background:transparent;color:var(--brand);font-weight:700;font-size:var(--t-sm);cursor:pointer;font-family:inherit">＋ Añadir</button></div>
+                <div style="display:flex;flex-direction:column;gap:9px">
+                  <div style="display:flex;align-items:center;gap:11px;font-size:var(--t-sm)"><span style="width:30px;height:30px;border-radius:8px;flex:none;background:var(--surface-alt);display:flex;align-items:center;justify-content:center">🎒</span><span style="flex:1">Mochila 30 L</span><span style="color:var(--muted);font-size:var(--t-xs)">Por defecto</span></div>
+                  <div style="display:flex;align-items:center;gap:11px;font-size:var(--t-sm)"><span style="width:30px;height:30px;border-radius:8px;flex:none;background:var(--surface-alt);display:flex;align-items:center;justify-content:center">⛺</span><span style="flex:1">Tienda 1,4 kg</span></div>
+                  <div style="display:flex;align-items:center;gap:11px;font-size:var(--t-sm)"><span style="width:30px;height:30px;border-radius:8px;flex:none;background:var(--surface-alt);display:flex;align-items:center;justify-content:center">🥾</span><span style="flex:1">Botas Gore-Tex</span></div>
+                </div>
+              </div>
+
+              <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md);margin-bottom:14px">Cuenta</div>
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><div style="width:42px;height:42px;border-radius:50%;flex:none;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--t-md)">A</div><div><div style="font-weight:700;font-size:var(--t-sm)">Aitana Ferrer</div><div style="font-size:var(--t-xs);color:var(--muted)">aitana@correu.cat</div></div></div>
+                <div style="display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:9px;background:var(--surface-alt);margin-bottom:12px"><span style="width:8px;height:8px;border-radius:50%;background:var(--muted)"></span><span style="font-size:var(--t-sm);font-weight:600;color:var(--muted)">Sin conexión · 3 cambios pendientes de subir</span></div>
+                <button style="width:100%;padding:10px;border-radius:9px;border:1px solid var(--border);background:var(--surface);color:var(--alert);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer" style-hover="background:var(--alert-soft)">Cerrar sesión</button>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;justify-content:center">
+            <div style="width:392px;border:1px solid var(--border);border-radius:34px;background:var(--bg);box-shadow:var(--shadow-lg);overflow:hidden">
+              <div style="height:30px;display:flex;align-items:center;justify-content:center"><div style="width:120px;height:6px;border-radius:99px;background:var(--border)"></div></div>
+              <div style="padding:4px 18px 16px">
+                <div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-xl);letter-spacing:-.02em">Diario</div>
+                <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:11px">
+                  <div style="background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:14px"><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-xl)">38</div><div style="font-size:var(--t-xs);color:var(--muted);font-weight:600">Rutas hechas</div></div>
+                  <div style="background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:14px"><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-xl)">412<span style="font-size:var(--t-sm);color:var(--muted)"> km</span></div><div style="font-size:var(--t-xs);color:var(--muted);font-weight:600">Distancia</div></div>
+                  <div style="background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:14px"><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-xl)">18,2<span style="font-size:var(--t-sm);color:var(--muted)"> km</span></div><div style="font-size:var(--t-xs);color:var(--muted);font-weight:600">Desnivel +</div></div>
+                  <div style="background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:14px"><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-xl)">24</div><div style="font-size:var(--t-xs);color:var(--muted);font-weight:600">Días en monte</div></div>
+                </div>
+                <div style="margin-top:14px;background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:14px">
+                  <div style="font-weight:700;font-size:var(--t-sm);margin-bottom:12px">Logros</div>
+                  <div style="display:flex;gap:14px;justify-content:space-between">
+                    <div style="text-align:center"><div style="width:50px;height:50px;margin:0 auto;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 0 4px var(--brand-soft)">⛰</div><div style="margin-top:6px;font-size:10px;font-weight:700">3 000+</div></div>
+                    <div style="text-align:center"><div style="width:50px;height:50px;margin:0 auto;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 0 4px var(--brand-soft)">💧</div><div style="margin-top:6px;font-size:10px;font-weight:700">Sin recargar</div></div>
+                    <div style="text-align:center"><div style="width:50px;height:50px;margin:0 auto;border-radius:50%;background:var(--surface-alt);border:1.5px dashed var(--border);color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:22px">🏔</div><div style="margin-top:6px;font-size:10px;color:var(--muted)">Penyagolosa</div></div>
+                    <div style="text-align:center"><div style="width:50px;height:50px;margin:0 auto;border-radius:50%;background:var(--surface-alt);border:1.5px dashed var(--border);color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:22px">🧭</div><div style="margin-top:6px;font-size:10px;color:var(--muted)">38/50</div></div>
+                  </div>
+                </div>
+                <div style="margin-top:14px;background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:14px">
+                  <div style="font-weight:700;font-size:var(--t-sm);margin-bottom:12px">Progreso por comarca</div>
+                  <div style="display:flex;flex-direction:column;gap:11px">
+                    <div><div style="display:flex;justify-content:space-between;font-size:var(--t-xs);margin-bottom:4px"><span style="font-weight:600">L'Alcalatén</span><span style="color:var(--muted)">9 / 12</span></div><div style="height:7px;border-radius:99px;background:var(--surface-alt);overflow:hidden"><div style="width:75%;height:100%;background:var(--brand)"></div></div></div>
+                    <div><div style="display:flex;justify-content:space-between;font-size:var(--t-xs);margin-bottom:4px"><span style="font-weight:600">La Vall de Laguar</span><span style="color:var(--muted)">6 / 14</span></div><div style="height:7px;border-radius:99px;background:var(--surface-alt);overflow:hidden"><div style="width:43%;height:100%;background:var(--brand)"></div></div></div>
+                  </div>
+                </div>
+                <div style="margin-top:14px;display:flex;gap:10px;padding:12px 14px;border-radius:12px;background:var(--alert-soft);border:1px solid color-mix(in srgb,var(--alert) 38%,transparent);align-items:center">
+                  <span style="color:var(--alert)">⚠</span><div style="flex:1;font-size:var(--t-xs);color:var(--text)"><strong>Sin conexión.</strong> Guardado local.</div><button style="padding:7px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-xs);font-family:inherit">↻</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+      </section>
+    </sc-if>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { theme:'light', device:'desktop', section:'sistema', scale:1, discVar:'A', fichaVar:'A', filtersOpen:true, mobileView:'lista', sync:'ok', fichaTab:'prep' };
+  set(k,v){ this.setState({[k]:v}); }
+  renderVals(){
+    const s=this.state;
+    const segBase={padding:'7px 13px',fontSize:'13px',fontWeight:700,border:'none',background:'transparent',color:'var(--muted)',borderRadius:'8px',cursor:'pointer',fontFamily:'inherit',whiteSpace:'nowrap',lineHeight:1.15,transition:'all .15s'};
+    const segOn={...segBase,background:'var(--surface)',color:'var(--text)',boxShadow:'var(--shadow-sm)'};
+    const sg=(on)=> on?segOn:segBase;
+    const tbBase={padding:'0 2px 12px',border:'none',background:'transparent',fontFamily:'inherit',cursor:'pointer',fontSize:'var(--t-sm)',fontWeight:600,color:'var(--muted)',whiteSpace:'nowrap',boxShadow:'inset 0 -2px 0 transparent'};
+    const tb=(on)=> on?{...tbBase,color:'var(--text)',fontWeight:700,boxShadow:'inset 0 -2px 0 var(--brand)'}:tbBase;
+    return {
+      theme:s.theme, scale:s.scale, scaleLabel:s.scale.toFixed(1)+'×',
+      discVar:s.discVar, fichaVar:s.fichaVar, filtersOpen:s.filtersOpen, mobileView:s.mobileView, sync:s.sync,
+      isDesktop:s.device==='desktop', isMobile:s.device==='mobile',
+      showSistema:s.section==='sistema', showDisc:s.section==='descubrimiento', showFicha:s.section==='ficha', showDiario:s.section==='diario',
+      showDiscA:s.discVar==='A', showDiscB:s.discVar==='B', showFichaA:s.fichaVar==='A', showFichaB:s.fichaVar==='B',
+      showMvLista:s.mobileView==='lista', showMvMapa:s.mobileView==='mapa',
+      routes:[
+        {badge:'GR-7',bg:'#b3261e',fg:'#fff',name:"Els Ports — Refugi Font Ferrera",km:'22,0',asc:'+1 240',dur:'8 h 10',forma:'Lineal',lugar:'Castelló · Els Ports',eBg:'var(--ok-soft)',eFg:'var(--ok)',estadoTxt:'Homologado',fuente:'FEMECV oficial'},
+        {badge:'PR-CV 147',bg:'#b8860b',fg:'#1a1a1a',name:"Barranc de l'Infern",km:'14,2',asc:'+980',dur:'5 h 30',forma:'Circular',lugar:'Alacant · La Vall de Laguar',eBg:'var(--ok-soft)',eFg:'var(--ok)',estadoTxt:'Homologado',fuente:'FEMECV oficial'},
+        {badge:'SL-CV 89',bg:'#2a6f4e',fg:'#fff',name:"Font Roja — El Menejador",km:'8,4',asc:'+420',dur:'3 h 00',forma:'Circular',lugar:'Alacant · L\u2019Alcoià',eBg:'var(--ok-soft)',eFg:'var(--ok)',estadoTxt:'Homologado',fuente:'FEMECV oficial'},
+        {badge:'PR-CV 49',bg:'#b8860b',fg:'#1a1a1a',name:"Penyagolosa per Sant Joan",km:'11,8',asc:'+760',dur:'4 h 30',forma:'Lineal',lugar:'Castelló · L\u2019Alcalatén',eBg:'var(--ok-soft)',eFg:'var(--ok)',estadoTxt:'Homologado',fuente:'FEMECV oficial'},
+        {badge:'GR-10',bg:'#b3261e',fg:'#fff',name:"Serra Calderona — Pic del Garbí",km:'16,5',asc:'+690',dur:'6 h 00',forma:'Circular',lugar:'València · Camp de Túria',eBg:'var(--warn-soft)',eFg:'var(--warn)',estadoTxt:'Sin verificar',fuente:'OSM · sin verificar'},
+        {badge:'SL-CV 56',bg:'#2a6f4e',fg:'#fff',name:"Les Fonts de l\u2019Algar",km:'5,2',asc:'+180',dur:'2 h 00',forma:'Circular',lugar:'Alacant · Marina Baixa',eBg:'var(--ok-soft)',eFg:'var(--ok)',estadoTxt:'Homologado',fuente:'FEMECV oficial'},
+      ],
+      facets:[
+        {name:'Federación',open:true,kids:[{t:'FEMECV',n:612,on:true},{t:'FEDME (estatal)',n:0,on:false}]},
+        {name:'Territorio · Provincia',open:true,kids:[{t:'Castelló',n:188,on:false},{t:'València',n:206,on:true},{t:'Alacant',n:218,on:false}]},
+        {name:'Comarca',open:true,kids:[{t:'La Vall de Laguar',n:14,on:false},{t:'L\u2019Alcoià',n:31,on:false},{t:'Camp de Túria',n:27,on:true}]},
+        {name:'Tipo de sendero',open:false,kids:[{t:'GR · Gran Recorrido',n:42,on:false},{t:'PR · Pequeño Recorrido',n:319,on:false},{t:'SL · Sendero Local',n:251,on:false}]},
+      ],
+      rootStyle:{minHeight:'100vh',background:'var(--bg)',color:'var(--text)',fontFamily:"'Source Sans 3',system-ui,sans-serif",'--scale':String(s.scale)},
+      seg:{
+        themeLight:sg(s.theme==='light'), themeDark:sg(s.theme==='dark'),
+        devDesk:sg(s.device==='desktop'), devMob:sg(s.device==='mobile'),
+        navSis:sg(s.section==='sistema'), navDisc:sg(s.section==='descubrimiento'), navFicha:sg(s.section==='ficha'), navDiario:sg(s.section==='diario'),
+        discA:sg(s.discVar==='A'), discB:sg(s.discVar==='B'), fichaA:sg(s.fichaVar==='A'), fichaB:sg(s.fichaVar==='B'),
+        mvLista:sg(s.mobileView==='lista'), mvMapa:sg(s.mobileView==='mapa'),
+      },
+      onThemeLight:()=>this.set('theme','light'), onThemeDark:()=>this.set('theme','dark'),
+      onDevDesk:()=>this.set('device','desktop'), onDevMob:()=>this.set('device','mobile'),
+      onNavSis:()=>this.set('section','sistema'), onNavDisc:()=>this.set('section','descubrimiento'),
+      onNavFicha:()=>this.set('section','ficha'), onNavDiario:()=>this.set('section','diario'),
+      onDiscA:()=>this.set('discVar','A'), onDiscB:()=>this.set('discVar','B'),
+      onFichaA:()=>this.set('fichaVar','A'), onFichaB:()=>this.set('fichaVar','B'),
+      onMvLista:()=>this.set('mobileView','lista'), onMvMapa:()=>this.set('mobileView','mapa'),
+      onScale:(e)=>this.set('scale', parseFloat(e.target.value)),
+      onSyncOk:()=>this.set('sync','ok'), onSyncPend:()=>this.set('sync','pend'), onSyncOff:()=>this.set('sync','off'),
+      fichaTab:s.fichaTab,
+      showTabResumen:s.fichaTab==='resumen', showTabMapa:s.fichaTab==='mapa', showTabPrep:s.fichaTab==='prep', showTabMeteo:s.fichaTab==='meteo', showTabAcc:s.fichaTab==='acc',
+      tab:{
+        resumen:tb(s.fichaTab==='resumen'), mapa:tb(s.fichaTab==='mapa'), prep:tb(s.fichaTab==='prep'), meteo:tb(s.fichaTab==='meteo'), acc:tb(s.fichaTab==='acc'),
+      },
+      onTabResumen:()=>this.set('fichaTab','resumen'), onTabMapa:()=>this.set('fichaTab','mapa'), onTabPrep:()=>this.set('fichaTab','prep'), onTabMeteo:()=>this.set('fichaTab','meteo'), onTabAcc:()=>this.set('fichaTab','acc'),
+      etapas:[
+        {n:'1',de:'Vistabella',a:'Font de la Pegunta',km:'4,2',asc:'+260',t:'1 h 20',agua:true},
+        {n:'2',de:'Font de la Pegunta',a:'Lluïsos',km:'3,6',asc:'+340',t:'1 h 30',agua:false},
+        {n:'3',de:'Lluïsos',a:'Cim del Penyagolosa',km:'4,0',asc:'+160',t:'1 h 40',agua:false},
+      ],
+      mochila:[
+        {g:'Esencial',items:[{t:'Botas de montaña',on:true},{t:'2 L agua',on:true},{t:'Mapa offline + GPS',on:true},{t:'Frontal',off:true}]},
+        {g:'Seguridad',items:[{t:'Botiquín básico',on:true},{t:'Manta térmica',off:true},{t:'Silbato',on:true}]},
+        {g:'Según meteo',items:[{t:'Cortavientos',on:true},{t:'Gorra + crema solar',on:true}]},
+      ],
+      agua:[
+        {t:'Font de la Pegunta',km:'km 4,2',estado:'Potable',ok:true,fuente:'FEMECV oficial'},
+        {t:'Bassa dels Llacs',km:'km 8,1',estado:'No potable',ok:false,fuente:'OSM · sin verificar'},
+      ],
+      meteo:[
+        {d:'Hoy',ic:'☀',max:'18°',min:'7°',v:'12 km/h',p:'0%'},
+        {d:'Sáb',ic:'⛅',max:'16°',min:'6°',v:'20 km/h',p:'10%'},
+        {d:'Dom',ic:'🌧',max:'12°',min:'4°',v:'34 km/h',p:'70%'},
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

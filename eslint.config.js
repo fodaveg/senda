@@ -10,6 +10,9 @@ const gitignorePath = path.resolve(import.meta.dirname, '.gitignore');
 
 export default defineConfig(
 	includeIgnoreFile(gitignorePath),
+	// Handoff de diseño de Claude Design: referencia visual, no código del producto.
+	// Se conserva en git (no en .gitignore), pero no se lintea ni entra en el build.
+	{ ignores: ['design_handoff_senda_v6/**'] },
 	js.configs.recommended,
 	ts.configs.recommended,
 	svelte.configs.recommended,

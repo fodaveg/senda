@@ -212,3 +212,56 @@ Poco, comparado con v5: **decisiones de diseño** (elegir entre propuestas de IA
 estilo en V6-M1/M2) y, si quieres, una referencia de estética/marca. No requiere
 backend, permisos, ni datos nuevos. Se puede ejecutar en gran parte de forma
 autónoma con validaciones de diseño puntuales.
+
+---
+
+## Handoff de diseño recibido (2026-06-28)
+
+Claude Design entregó `design_handoff_senda_v6/` (alta fidelidad: tokens,
+tipografía, componentes con estados y 3 pantallas con variantes). Se conserva en
+git como **referencia visual**; excluido de prettier/eslint y del build (no es
+código del producto). Fuentes: **Libre Franklin + Source Sans 3** → se
+**auto-alojan** (offline-first), no desde CDN.
+
+### Variantes (anotadas; la alternativa se puede pedir según evolucione la v5)
+
+El handoff trae dos variantes por pantalla. **Se implementa primero:**
+
+- **Descubrimiento → variante A** (chips de filtro quitables + panel "Más
+  filtros"). La **variante B** (rail jerárquico federación→…→dificultad, 3
+  columnas) queda **reservada**: es la natural cuando llegue la **multi-federación
+  (V5-1)**; se puede pedir su implementación entonces sin rehacer la pantalla.
+- **Ficha de ruta → variante B** (tablero modular con índice lateral pegajoso) en
+  escritorio + **pestañas** en móvil. La **variante A** (solo pestañas) queda
+  reservada como alternativa.
+
+### Huecos detectados (paridad): features sin sitio explícito en el handoff
+
+El diseño cubre mochila, agua, etapas, meteo (3 días + aviso de cota), informe,
+emergencia y el bloque futuro de comunidad. **No tiene slot** para features que
+**ya existen** y que la v6 debe conservar:
+
+- **Ventana ideal de inicio** (a qué hora salir) — info de decisión.
+- **Estimación de energía/calorías**.
+- **Cómo llegar al inicio** (acceso/aparcamiento, OSRM).
+- **Fauna** de la zona y **riesgo de incendio forestal**.
+- **Meteo por horas** y **avisos CAP de AEMET** (el diseño solo muestra 3 días).
+- **Descarga de mapa offline** y **lectura por voz** del informe (→ Acciones).
+
+**Recomendación (a confirmar/pasar a Design):** enriquecer el **"Resumen"** de la
+ficha como un **panel de decisión** (meteo de un vistazo + ventana de inicio +
+riesgo de incendio + acceso + go/no-go), ya que el producto va de **decidir**.
+Si se quiere diseñado, pedir a Design una variante de Resumen enriquecido y un
+módulo "Condiciones y seguridad"; si no, se ubican estos elementos dentro de las
+secciones existentes durante la implementación (no bloquea).
+
+### Esquemas de color — sin dependencia de Design
+
+Los **9 esquemas reales** ya viven en el código (`src/lib/theme/schemes.ts`):
+claro = Bosque/Mar/Atardecer/Alto contraste; oscuro = Bosque/Noche azul/Carbón/
+Ámbar nocturno/Halloween. (La lista del handoff —Bosque/Roca/Mar/Alto contraste—
+era **ilustrativa**.) Los **tokens nuevos** del sistema (p. ej. `brand-soft`,
+`brand-line`, `alert-soft`, `ok`/`warn`) se **derivan del esquema activo** (vía
+`color-mix`/alfas) para que **todos los esquemas** funcionen con el nuevo sistema;
+lo global (escala tipográfica, espaciado, radios, sombras, badges GR/PR/SL) es
+común. **No hace falta pedir nada a Design sobre los esquemas.**
