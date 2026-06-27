@@ -34,7 +34,7 @@ test('el dado abre una ruta del resultado filtrado', async ({ page }) => {
 	await page.locator('.route-list li').first().waitFor();
 	await page.getByRole('button', { name: 'Ruta al azar' }).click();
 	await expect(page).toHaveURL(/\/ruta\/[a-z0-9-]+/);
-	await expect(page.getByRole('heading', { name: 'Datos técnicos' })).toBeVisible();
+	await expect(page.getByRole('heading', { name: 'Datos clave' })).toBeVisible();
 });
 
 test('la ficha muestra el estado oficial y la nota de reservas', async ({ page }) => {

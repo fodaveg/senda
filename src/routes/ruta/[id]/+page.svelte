@@ -3,6 +3,7 @@
 	import { resolve } from '$app/paths';
 	import { isTauri } from '@tauri-apps/api/core';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
+	import { Banner } from '$lib/components/ui';
 	import StagesList from '$lib/components/StagesList.svelte';
 	import { routes } from '$lib/data/routes';
 	import { parentOf, stagesOf } from '$lib/data/stages';
@@ -412,6 +413,57 @@
 		desplazamiento: 'Desplazamiento',
 		esfuerzo: 'Esfuerzo'
 	};
+
+	// ── Navegación interna de la ficha (v6, variante B + pestañas móvil) ──────
+	// Tablero modular: índice lateral pegajoso en escritorio (todas las secciones
+	// apiladas y visibles) y pestañas que conmutan el panel en móvil.
+	const FICHA_SECTIONS = [
+		{ id: 'resumen', label: 'Resumen', icon: '📋' },
+		{ id: 'mapa', label: 'Mapa y perfil', icon: '🗺️' },
+		{ id: 'preparacion', label: 'Preparación', icon: '🎒' },
+		{ id: 'seguridad', label: 'Condiciones y seguridad', icon: '⚠️' },
+		{ id: 'meteo', label: 'Meteo', icon: '🌤️' },
+		{ id: 'acciones', label: 'Acciones', icon: '⚡' },
+		{ id: 'comunidad', label: 'Comunidad', icon: '💬' }
+	];
+	let activeSection = $state('resumen');
+	function goToSection(id: string) {
+		activeSection = id;
+		// En escritorio las secciones están apiladas → desplaza a su ancla; en
+		// móvil basta con conmutar el panel visible (lo hace data-active vía CSS).
+		document.getElementById(`sec-${id}`)?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+	}
+
+	// Recomendación de decisión del día (panel Resumen). Heurística ligera que
+	// SOLO presenta datos ya existentes (estado FEMECV, avisos, pronóstico); no
+	// inventa nada. Sin pronóstico → no se muestra (degradación elegante).
+	let recommendation = $derived.by(() => {
+		if (route.status === 'deshabilitado')
+			return {
+				tone: 'alert' as const,
+				label: 'No recomendado',
+				reason: 'Ruta deshabilitada por FEMECV.'
+			};
+		if (avisosForDate.length > 0)
+			return {
+				tone: 'warn' as const,
+				label: 'Precaución',
+				reason: 'Hay avisos meteorológicos vigentes para la fecha elegida.'
+			};
+		if (selectedDay && selectedDay.precipitation_probability_max >= 60)
+			return {
+				tone: 'warn' as const,
+				label: 'Precaución',
+				reason: 'Alta probabilidad de lluvia para la fecha elegida.'
+			};
+		if (selectedDay)
+			return {
+				tone: 'ok' as const,
+				label: 'Adelante',
+				reason: 'Sin avisos y buena previsión para la fecha elegida.'
+			};
+		return null;
+	});
 </script>
 
 <svelte:head>
@@ -420,364 +472,472 @@
 
 <nav class="breadcrumb"><a href={resolve('/')}>← Todas las rutas</a></nav>
 
-<h1>{route.name} <StatusBadge status={route.status} detail={route.status_detail} /></h1>
+<header class="ficha-head">
+	<h1>{route.name} <StatusBadge status={route.status} detail={route.status_detail} /></h1>
 
-{#if route.status === 'deshabilitado'}
-	<div class="status-banner" role="alert">
-		<strong>Ruta deshabilitada por FEMECV</strong> — no recorrer.
-		{#if route.status_detail}Estado oficial: "{route.status_detail}".{/if}
-	</div>
-{:else if route.status === 'con_reservas'}
-	<p class="status-note">
-		{route.status_detail === 'Control de calidad negativo'
-			? 'El último control de calidad fue negativo: la señalización puede ser deficiente.'
-			: 'Sin control de calidad reciente: la señalización y el mantenimiento pueden haber variado desde la homologación.'}
-	</p>
-{/if}
-
-<RouteMarks routeId={route.id} />
-
-<div class="detail-grid">
-	<section class="map-col">
-		<div class="map-wrap">
-			{#if geojson}
-				<Map
-					track={geojson}
-					bbox={route.bbox}
-					highlight={profileHover}
-					water={route.water_points_geo ?? []}
-					pois={route.pois ?? []}
-					{showWater}
-					{showPois}
-					{waypoints}
-					{onMapClick}
-				/>
-			{:else if trackError}
-				<p class="error">No se pudo cargar el track: {trackError}</p>
-			{:else}
-				<p class="loading">Cargando track…</p>
-			{/if}
+	{#if route.status === 'deshabilitado'}
+		<div class="status-banner" role="alert">
+			<strong>Ruta deshabilitada por FEMECV</strong> — no recorrer.
+			{#if route.status_detail}Estado oficial: "{route.status_detail}".{/if}
 		</div>
+	{:else if route.status === 'con_reservas'}
+		<p class="status-note">
+			{route.status_detail === 'Control de calidad negativo'
+				? 'El último control de calidad fue negativo: la señalización puede ser deficiente.'
+				: 'Sin control de calidad reciente: la señalización y el mantenimiento pueden haber variado desde la homologación.'}
+		</p>
+	{/if}
 
-		{#if (route.water_points_geo ?? []).length > 0 || (route.pois ?? []).length > 0}
-			<div class="map-toggles no-print">
-				{#if (route.water_points_geo ?? []).length > 0}
-					<label>
-						<input
-							type="checkbox"
-							bind:checked={showWater}
-							onchange={() => saveMapPrefs({ ...loadMapPrefs(), showWater })}
-						/>
-						💧 Fuentes ({route.water_points_geo.length})
-					</label>
-				{/if}
-				{#if (route.pois ?? []).length > 0}
-					<label>
-						<input
-							type="checkbox"
-							bind:checked={showPois}
-							onchange={() => saveMapPrefs({ ...loadMapPrefs(), showPois })}
-						/>
-						📍 Puntos de interés ({route.pois.length})
-					</label>
-				{/if}
-			</div>
-		{/if}
+	<RouteMarks routeId={route.id} />
+</header>
 
-		{#if geojson}
-			<div class="waypoints-tool no-print">
-				<button
-					type="button"
-					class="travel-btn"
-					class:active={addWaypointMode}
-					aria-pressed={addWaypointMode}
-					onclick={() => (addWaypointMode = !addWaypointMode)}
+<div class="ficha">
+	<!-- Índice modular (variante B): pegajoso en escritorio, pestañas en móvil. -->
+	<nav class="ficha-index" aria-label="Secciones de la ruta">
+		{#each FICHA_SECTIONS as s (s.id)}
+			<button
+				type="button"
+				class="fi-item"
+				class:active={activeSection === s.id}
+				aria-current={activeSection === s.id ? 'page' : undefined}
+				onclick={() => goToSection(s.id)}
+			>
+				<span class="fi-ic" aria-hidden="true">{s.icon}</span><span class="fi-label">{s.label}</span
 				>
-					📍 {addWaypointMode ? 'Toca el mapa para añadir (terminar)' : 'Añadir punto propio'}
-				</button>
-				{#if waypoints.length > 0}
-					<ul class="waypoint-list">
-						{#each waypoints as wp (wp.id)}
-							<li>
-								<input
-									type="text"
-									value={wp.note}
-									aria-label="Nota del punto"
-									onchange={(e) =>
-										updateWaypointNote(wp.id, (e.currentTarget as HTMLInputElement).value)}
-								/>
-								<button
-									type="button"
-									class="wp-remove"
-									aria-label={`Quitar punto ${wp.note}`}
-									onclick={() => removeWaypoint(wp.id)}>×</button
-								>
-							</li>
-						{/each}
-					</ul>
+			</button>
+		{/each}
+	</nav>
+
+	<div class="ficha-panels">
+		<!-- ── Resumen: panel de decisión ──────────────────────────────────── -->
+		<section
+			id="sec-resumen"
+			class="fsec"
+			data-active={activeSection === 'resumen'}
+			aria-label="Resumen"
+		>
+			<h2 class="fsec-title">Resumen</h2>
+
+			{#if recommendation}
+				<Banner
+					tone={recommendation.tone}
+					role={recommendation.tone === 'alert' ? 'alert' : 'status'}
+					icon={recommendation.tone === 'alert'
+						? '🔴'
+						: recommendation.tone === 'warn'
+							? '⚠️'
+							: '✅'}
+					title={recommendation.label}
+				>
+					{recommendation.reason}
+				</Banner>
+			{/if}
+
+			<h3>Datos clave</h3>
+			<dl>
+				{#if route.municipality}
+					<dt>Municipio</dt>
+					<dd>{route.municipality}</dd>
 				{/if}
-			</div>
-		{/if}
-
-		{#if route.bbox}
-			<div class="offline-map no-print">
-				<button type="button" class="travel-btn" onclick={downloadOfflineMap}>
-					{offlineTiles ? 'Actualizar mapa offline' : 'Descargar mapa de esta ruta (IGN)'}
-				</button>
-				{#if offlineTiles}
-					<button type="button" class="travel-btn" onclick={deleteOfflineMap}>
-						Borrar tiles descargados
-					</button>
+				{#if provinceLabel}
+					<dt>Provincia</dt>
+					<dd>{provinceLabel}</dd>
 				{/if}
-				{#if downloadProgress}<span class="travel-hint" role="status">{downloadProgress}</span>{/if}
-			</div>
-		{/if}
+				<dt>Distancia</dt>
+				<dd>{formatKm(route.distance_km)}</dd>
+				<dt>Desnivel</dt>
+				<dd>
+					{route.ascent_m !== null ? `+${formatMeters(route.ascent_m)}` : 'sin dato'}
+					/
+					{route.descent_m !== null ? `−${formatMeters(route.descent_m)}` : 'sin dato'}
+				</dd>
+				<dt>Tiempo estimado</dt>
+				<dd>
+					{route.est_duration_min !== null ? formatDuration(route.est_duration_min) : 'sin dato'}
+				</dd>
+				<dt>Recorrido</dt>
+				<dd>{route.circular === null ? 'sin dato' : route.circular ? 'Circular' : 'Lineal'}</dd>
+				<dt>Estado</dt>
+				<dd>
+					{#if stages.length > 0}
+						<a href="#etapas">{route.status_detail ?? route.status}</a>
+					{:else}
+						{route.status_detail ?? route.status}
+					{/if}
+				</dd>
+				{#if route.best_start_time}
+					<dt>Mejor hora de inicio</dt>
+					<dd>{route.best_start_time}</dd>
+				{/if}
+			</dl>
 
-		{#if geojson}
-			<LiveTracking {trackPos} sunsetIso={selectedDay?.sunset ?? null} routeName={route.name} />
-		{/if}
-
-		<h2>Perfil de elevación</h2>
-		{#if profile.length > 0 || trackError}
-			<ElevationProfile
-				points={profile}
-				onHover={(index) => {
-					profileHover = index === null ? null : [profile[index].lon, profile[index].lat];
-				}}
-			/>
-		{:else}
-			<p class="loading">Cargando perfil…</p>
-		{/if}
-
-		<h2>Meteorología prevista</h2>
-		{#if dates.length > 0}
-			<div class="date-picker" role="group" aria-label="Fecha de la salida">
-				{#each dates as date (date)}
-					<button
-						class="date-chip"
-						class:selected={date === selectedDate}
-						onclick={() => (selectedDate = date)}
-					>
-						{dateLabel(date)}
-					</button>
-				{/each}
-			</div>
-			{#if bestDay && bestDay !== selectedDate}
-				<p class="best-day">
-					Mejor día previsto: <strong>{dateLabel(bestDay)}</strong>
-					<button type="button" class="link-btn" onclick={() => (selectedDate = bestDay)}
-						>elegir</button
-					>
+			{#if parent}
+				<p class="parent-of">
+					Esta ruta es una etapa de
+					<a href={resolve('/ruta/[id]', { id: parent.id })}>{parent.name}</a>.
 				</p>
 			{/if}
-			<p class="date-note">Pronóstico disponible solo hasta 7 días vista.</p>
-		{/if}
-		<AvisosBanner avisos={avisosForDate} />
-		<FireRiskCard
-			imageUrl={fireRiskMapUrl}
-			loading={fireRiskLoading}
-			dayLabel={dateLabel(selectedDate)}
-		/>
-		<WeatherCard
-			day={selectedDay}
-			loading={weatherLoading}
-			aemet={selectedAemet}
-			{discrepancies}
-			{aemetNote}
-			error={debugMode ? weatherDetail : null}
-		/>
 
-		<h2>Mejor momento para empezar</h2>
-		<StartWindowCard {window} manualHint={route.best_start_time} />
+			<h3>Mejor momento para empezar</h3>
+			<StartWindowCard {window} manualHint={route.best_start_time} />
 
-		<h2>Mochila recomendada</h2>
-		<BackpackPanel
-			{decisions}
-			checked={checkedItems}
-			onToggle={toggleChecklistItem}
-			{customDecisions}
-			{hydration}
-			{energy}
-		/>
-	</section>
-
-	<section class="data-col">
-		<h2>Datos técnicos</h2>
-		<dl>
-			{#if route.municipality}
-				<dt>Municipio</dt>
-				<dd>{route.municipality}</dd>
-			{/if}
-			{#if provinceLabel}
-				<dt>Provincia</dt>
-				<dd>{provinceLabel}</dd>
-			{/if}
-			<dt>Distancia</dt>
-			<dd>{formatKm(route.distance_km)}</dd>
-			<dt>Desnivel</dt>
-			<dd>
-				{route.ascent_m !== null ? `+${formatMeters(route.ascent_m)}` : 'sin dato'}
-				/
-				{route.descent_m !== null ? `−${formatMeters(route.descent_m)}` : 'sin dato'}
-			</dd>
-			<dt>Tiempo estimado</dt>
-			<dd>
-				{route.est_duration_min !== null ? formatDuration(route.est_duration_min) : 'sin dato'}
-			</dd>
-			<dt>Recorrido</dt>
-			<dd>{route.circular === null ? 'sin dato' : route.circular ? 'Circular' : 'Lineal'}</dd>
-			<dt>Estado</dt>
-			<dd>
-				{#if stages.length > 0}
-					<a href="#etapas">{route.status_detail ?? route.status}</a>
+			<h3>Cómo llegar</h3>
+			<div class="travel">
+				{#if travel}
+					<p>
+						En coche desde {travel.from}:
+						<strong>{formatDuration(travel.estimate.durationMin)}</strong>
+						({formatKm(travel.estimate.distanceKm)}) — estimación OSRM.
+					</p>
 				{:else}
-					{route.status_detail ?? route.status}
+					<p class="travel-hint">
+						Configura tu origen habitual en Ajustes o usa tu posición para estimar el viaje.
+					</p>
 				{/if}
-			</dd>
-			{#if route.best_start_time}
-				<dt>Mejor hora de inicio</dt>
-				<dd>{route.best_start_time}</dd>
-			{/if}
-		</dl>
+				<button type="button" class="travel-btn" onclick={travelFromHere}>
+					Desde mi posición actual
+				</button>
+				{#if travelStatus}<p class="travel-hint" role="status">{travelStatus}</p>{/if}
+				<p class="travel-hint">
+					<a
+						href={travelOrigin
+							? `https://www.openstreetmap.org/directions?from=${travelOrigin.lat}%2C${travelOrigin.lon}&to=${route.start.lat}%2C${route.start.lon}`
+							: `https://www.openstreetmap.org/directions?to=${route.start.lat}%2C${route.start.lon}`}
+						rel="external">Indicaciones en OpenStreetMap</a
+					>
+				</p>
+			</div>
 
-		{#if parent}
-			<p class="parent-of">
-				Esta ruta es una etapa de
-				<a href={resolve('/ruta/[id]', { id: parent.id })}>{parent.name}</a>.
-			</p>
-		{/if}
-
-		{#if stages.length > 0}
-			<section id="etapas" class="stages-section">
-				<h3>Etapas <span class="count">({stages.length})</span></h3>
-				<p class="stages-hint">Ruta por etapas; cada una es navegable por separado.</p>
-				<StagesList {stages} />
-			</section>
-		{/if}
-
-		{#if links.length > 0}
-			<section class="stages-section">
-				<h3>Enlaza con <span class="count">({links.length})</span></h3>
-				<p class="stages-hint">Rutas cuyo inicio o fin está cerca del de esta (encadenables).</p>
-				<ul class="links-list">
-					{#each links as l (l.id)}
-						<li><a href={resolve('/ruta/[id]', { id: l.id })}>{l.name}</a></li>
+			{#if route.difficulty_mide}
+				<h3>MIDE</h3>
+				<ul class="mide">
+					{#each Object.entries(route.difficulty_mide) as [key, value] (key)}
+						<li><span>{MIDE_LABELS[key] ?? key}</span><strong>{value}</strong></li>
 					{/each}
 				</ul>
-			</section>
-		{/if}
+			{/if}
 
-		<h3>Cómo llegar</h3>
-		<div class="travel">
-			{#if travel}
-				<p>
-					En coche desde {travel.from}:
-					<strong>{formatDuration(travel.estimate.durationMin)}</strong>
-					({formatKm(travel.estimate.distanceKm)}) — estimación OSRM.
-				</p>
+			{#if route.highlights.length > 0}
+				<h3>Puntos destacados</h3>
+				<ul>
+					{#each route.highlights as highlight (highlight)}<li>{highlight}</li>{/each}
+				</ul>
+			{/if}
+		</section>
+
+		<!-- ── Mapa y perfil ───────────────────────────────────────────────── -->
+		<section
+			id="sec-mapa"
+			class="fsec"
+			data-active={activeSection === 'mapa'}
+			aria-label="Mapa y perfil"
+		>
+			<h2 class="fsec-title">Mapa y perfil</h2>
+			<div class="map-wrap">
+				{#if geojson}
+					<Map
+						track={geojson}
+						bbox={route.bbox}
+						highlight={profileHover}
+						water={route.water_points_geo ?? []}
+						pois={route.pois ?? []}
+						{showWater}
+						{showPois}
+						{waypoints}
+						{onMapClick}
+					/>
+				{:else if trackError}
+					<p class="error">No se pudo cargar el track: {trackError}</p>
+				{:else}
+					<p class="loading">Cargando track…</p>
+				{/if}
+			</div>
+
+			{#if (route.water_points_geo ?? []).length > 0 || (route.pois ?? []).length > 0}
+				<div class="map-toggles no-print">
+					{#if (route.water_points_geo ?? []).length > 0}
+						<label>
+							<input
+								type="checkbox"
+								bind:checked={showWater}
+								onchange={() => saveMapPrefs({ ...loadMapPrefs(), showWater })}
+							/>
+							💧 Fuentes ({route.water_points_geo.length})
+						</label>
+					{/if}
+					{#if (route.pois ?? []).length > 0}
+						<label>
+							<input
+								type="checkbox"
+								bind:checked={showPois}
+								onchange={() => saveMapPrefs({ ...loadMapPrefs(), showPois })}
+							/>
+							📍 Puntos de interés ({route.pois.length})
+						</label>
+					{/if}
+				</div>
+			{/if}
+
+			{#if geojson}
+				<div class="waypoints-tool no-print">
+					<button
+						type="button"
+						class="travel-btn"
+						class:active={addWaypointMode}
+						aria-pressed={addWaypointMode}
+						onclick={() => (addWaypointMode = !addWaypointMode)}
+					>
+						📍 {addWaypointMode ? 'Toca el mapa para añadir (terminar)' : 'Añadir punto propio'}
+					</button>
+					{#if waypoints.length > 0}
+						<ul class="waypoint-list">
+							{#each waypoints as wp (wp.id)}
+								<li>
+									<input
+										type="text"
+										value={wp.note}
+										aria-label="Nota del punto"
+										onchange={(e) =>
+											updateWaypointNote(wp.id, (e.currentTarget as HTMLInputElement).value)}
+									/>
+									<button
+										type="button"
+										class="wp-remove"
+										aria-label={`Quitar punto ${wp.note}`}
+										onclick={() => removeWaypoint(wp.id)}>×</button
+									>
+								</li>
+							{/each}
+						</ul>
+					{/if}
+				</div>
+			{/if}
+
+			{#if route.bbox}
+				<div class="offline-map no-print">
+					<button type="button" class="travel-btn" onclick={downloadOfflineMap}>
+						{offlineTiles ? 'Actualizar mapa offline' : 'Descargar mapa de esta ruta (IGN)'}
+					</button>
+					{#if offlineTiles}
+						<button type="button" class="travel-btn" onclick={deleteOfflineMap}>
+							Borrar tiles descargados
+						</button>
+					{/if}
+					{#if downloadProgress}<span class="travel-hint" role="status">{downloadProgress}</span
+						>{/if}
+				</div>
+			{/if}
+
+			{#if geojson}
+				<LiveTracking {trackPos} sunsetIso={selectedDay?.sunset ?? null} routeName={route.name} />
+			{/if}
+
+			<h3>Perfil de elevación</h3>
+			{#if profile.length > 0 || trackError}
+				<ElevationProfile
+					points={profile}
+					onHover={(index) => {
+						profileHover = index === null ? null : [profile[index].lon, profile[index].lat];
+					}}
+				/>
 			{:else}
-				<p class="travel-hint">
-					Configura tu origen habitual en Ajustes o usa tu posición para estimar el viaje.
-				</p>
+				<p class="loading">Cargando perfil…</p>
 			{/if}
-			<button type="button" class="travel-btn" onclick={travelFromHere}>
-				Desde mi posición actual
-			</button>
-			{#if travelStatus}<p class="travel-hint" role="status">{travelStatus}</p>{/if}
-			<p class="travel-hint">
-				<a
-					href={travelOrigin
-						? `https://www.openstreetmap.org/directions?from=${travelOrigin.lat}%2C${travelOrigin.lon}&to=${route.start.lat}%2C${route.start.lon}`
-						: `https://www.openstreetmap.org/directions?to=${route.start.lat}%2C${route.start.lon}`}
-					rel="external">Indicaciones en OpenStreetMap</a
-				>
+		</section>
+
+		<!-- ── Preparación ─────────────────────────────────────────────────── -->
+		<section
+			id="sec-preparacion"
+			class="fsec"
+			data-active={activeSection === 'preparacion'}
+			aria-label="Preparación"
+		>
+			<h2 class="fsec-title">Preparación</h2>
+
+			<h3>Mochila recomendada</h3>
+			<BackpackPanel
+				{decisions}
+				checked={checkedItems}
+				onToggle={toggleChecklistItem}
+				{customDecisions}
+				{hydration}
+				{energy}
+			/>
+
+			{#if route.water_points.length > 0}
+				<h3>Fuentes de agua</h3>
+				<ul>
+					{#each route.water_points as point (point)}<li>{point}</li>{/each}
+				</ul>
+			{/if}
+
+			{#if stages.length > 0}
+				<section id="etapas" class="stages-section">
+					<h3>Etapas <span class="count">({stages.length})</span></h3>
+					<p class="stages-hint">Ruta por etapas; cada una es navegable por separado.</p>
+					<StagesList {stages} />
+				</section>
+			{/if}
+
+			{#if links.length > 0}
+				<section class="stages-section">
+					<h3>Enlaza con <span class="count">({links.length})</span></h3>
+					<p class="stages-hint">Rutas cuyo inicio o fin está cerca del de esta (encadenables).</p>
+					<ul class="links-list">
+						{#each links as l (l.id)}
+							<li><a href={resolve('/ruta/[id]', { id: l.id })}>{l.name}</a></li>
+						{/each}
+					</ul>
+				</section>
+			{/if}
+		</section>
+
+		<!-- ── Condiciones y seguridad ─────────────────────────────────────── -->
+		<section
+			id="sec-seguridad"
+			class="fsec"
+			data-active={activeSection === 'seguridad'}
+			aria-label="Condiciones y seguridad"
+		>
+			<h2 class="fsec-title">Condiciones y seguridad</h2>
+
+			<AvisosBanner avisos={avisosForDate} />
+			<FireRiskCard
+				imageUrl={fireRiskMapUrl}
+				loading={fireRiskLoading}
+				dayLabel={dateLabel(selectedDate)}
+			/>
+
+			{#if wildlife}
+				<h3>Fauna y seguridad ({wildlife.name})</h3>
+				<ul>
+					{#each wildlife.wildlife as w (w.species)}
+						<li><strong>{w.species}</strong> (riesgo {w.risk}): {w.advice}</li>
+					{/each}
+				</ul>
+				{#if wildlife.other_risks.length > 0}
+					<p class="other-risks">Otros riesgos: {wildlife.other_risks.join('; ')}.</p>
+				{/if}
+			{/if}
+
+			{#if route.escape_routes.length > 0}
+				<h3>Escapes</h3>
+				<ul>
+					{#each route.escape_routes as escape (escape)}<li>{escape}</li>{/each}
+				</ul>
+			{/if}
+
+			{#if route.notes_rain}
+				<h3>Si llueve</h3>
+				<p>{route.notes_rain}</p>
+			{/if}
+
+			<p class="emergency-reminder">
+				En emergencia llama al <strong>112</strong>. Genera la
+				<button type="button" class="link-btn" onclick={() => goToSection('acciones')}
+					>ficha de emergencia</button
+				> antes de salir.
 			</p>
-		</div>
+		</section>
 
-		{#if route.difficulty_mide}
-			<h3>MIDE</h3>
-			<ul class="mide">
-				{#each Object.entries(route.difficulty_mide) as [key, value] (key)}
-					<li><span>{MIDE_LABELS[key] ?? key}</span><strong>{value}</strong></li>
-				{/each}
-			</ul>
-		{/if}
-
-		{#if route.water_points.length > 0}
-			<h3>Fuentes de agua</h3>
-			<ul>
-				{#each route.water_points as point (point)}<li>{point}</li>{/each}
-			</ul>
-		{/if}
-
-		{#if route.escape_routes.length > 0}
-			<h3>Escapes</h3>
-			<ul>
-				{#each route.escape_routes as escape (escape)}<li>{escape}</li>{/each}
-			</ul>
-		{/if}
-
-		{#if route.highlights.length > 0}
-			<h3>Puntos destacados</h3>
-			<ul>
-				{#each route.highlights as highlight (highlight)}<li>{highlight}</li>{/each}
-			</ul>
-		{/if}
-
-		{#if route.notes_rain}
-			<h3>Si llueve</h3>
-			<p>{route.notes_rain}</p>
-		{/if}
-
-		{#if wildlife}
-			<h3>Fauna y seguridad ({wildlife.name})</h3>
-			<ul>
-				{#each wildlife.wildlife as w (w.species)}
-					<li><strong>{w.species}</strong> (riesgo {w.risk}): {w.advice}</li>
-				{/each}
-			</ul>
-			{#if wildlife.other_risks.length > 0}
-				<p class="other-risks">Otros riesgos: {wildlife.other_risks.join('; ')}.</p>
+		<!-- ── Meteo ───────────────────────────────────────────────────────── -->
+		<section id="sec-meteo" class="fsec" data-active={activeSection === 'meteo'} aria-label="Meteo">
+			<h2 class="fsec-title">Meteorología prevista</h2>
+			{#if dates.length > 0}
+				<div class="date-picker" role="group" aria-label="Fecha de la salida">
+					{#each dates as date (date)}
+						<button
+							class="date-chip"
+							class:selected={date === selectedDate}
+							onclick={() => (selectedDate = date)}
+						>
+							{dateLabel(date)}
+						</button>
+					{/each}
+				</div>
+				{#if bestDay && bestDay !== selectedDate}
+					<p class="best-day">
+						Mejor día previsto: <strong>{dateLabel(bestDay)}</strong>
+						<button type="button" class="link-btn" onclick={() => (selectedDate = bestDay)}
+							>elegir</button
+						>
+					</p>
+				{/if}
+				<p class="date-note">Pronóstico disponible solo hasta 7 días vista.</p>
 			{/if}
-		{/if}
+			<WeatherCard
+				day={selectedDay}
+				loading={weatherLoading}
+				aemet={selectedAemet}
+				{discrepancies}
+				{aemetNote}
+				error={debugMode ? weatherDetail : null}
+			/>
+		</section>
 
-		<h3>Enlaces</h3>
-		<ul>
-			{#if route.links.femecv}
-				<li><a href={route.links.femecv} rel="external">Ficha FEMECV</a></li>
+		<!-- ── Acciones ────────────────────────────────────────────────────── -->
+		<section
+			id="sec-acciones"
+			class="fsec"
+			data-active={activeSection === 'acciones'}
+			aria-label="Acciones"
+		>
+			<h2 class="fsec-title">Acciones</h2>
+
+			{#if selectedDate}
+				<div class="actions-row">
+					<!-- eslint-disable svelte/no-navigation-without-resolve -- base construida con resolve(); la regla no contempla añadir query string -->
+					<a
+						class="report-btn"
+						href={resolve('/ruta/[id]/informe', { id: route.id }) + `?fecha=${selectedDate}`}
+					>
+						Generar informe
+					</a>
+					<a
+						class="report-btn emergency-btn"
+						href={resolve('/ruta/[id]/emergencia', { id: route.id }) + `?fecha=${selectedDate}`}
+					>
+						Ficha de emergencia
+					</a>
+					<button type="button" class="report-btn emergency-btn share-btn" onclick={shareRoute}>
+						Compartir
+					</button>
+					<!-- eslint-enable svelte/no-navigation-without-resolve -->
+				</div>
+				{#if shareMessage}<p class="travel-hint" role="status">{shareMessage}</p>{/if}
 			{/if}
-			{#if route.links.wikiloc}
-				<li><a href={route.links.wikiloc} rel="external">Wikiloc (enlace de la ficha)</a></li>
-			{/if}
-			<li><a href={wikilocSearchUrl(route)} rel="external">Buscar esta ruta en Wikiloc</a></li>
-		</ul>
 
-		{#if selectedDate}
-			<!-- eslint-disable svelte/no-navigation-without-resolve -- base construida con resolve(); la regla no contempla añadir query string -->
-			<a
-				class="report-btn"
-				href={resolve('/ruta/[id]/informe', { id: route.id }) + `?fecha=${selectedDate}`}
-			>
-				Generar informe
-			</a>
-			<a
-				class="report-btn emergency-btn"
-				href={resolve('/ruta/[id]/emergencia', { id: route.id }) + `?fecha=${selectedDate}`}
-			>
-				Ficha de emergencia
-			</a>
-			<button type="button" class="report-btn emergency-btn share-btn" onclick={shareRoute}>
-				Compartir
-			</button>
-			{#if shareMessage}<p class="travel-hint" role="status">{shareMessage}</p>{/if}
-			<!-- eslint-enable svelte/no-navigation-without-resolve -->
-		{/if}
+			<h3>Enlaces</h3>
+			<ul>
+				{#if route.links.femecv}
+					<li><a href={route.links.femecv} rel="external">Ficha FEMECV</a></li>
+				{/if}
+				{#if route.links.wikiloc}
+					<li><a href={route.links.wikiloc} rel="external">Wikiloc (enlace de la ficha)</a></li>
+				{/if}
+				<li><a href={wikilocSearchUrl(route)} rel="external">Buscar esta ruta en Wikiloc</a></li>
+			</ul>
 
-		<h3>Fuentes</h3>
-		<ul class="sources">
-			{#each route.sources as source (source)}<li>{source}</li>{/each}
-		</ul>
-	</section>
+			<h3>Fuentes</h3>
+			<ul class="sources">
+				{#each route.sources as source (source)}<li>{source}</li>{/each}
+			</ul>
+		</section>
+
+		<!-- ── Comunidad (función futura, sin verificar) ───────────────────── -->
+		<section
+			id="sec-comunidad"
+			class="fsec"
+			data-active={activeSection === 'comunidad'}
+			aria-label="Comunidad"
+		>
+			<h2 class="fsec-title">Comunidad</h2>
+			<Banner tone="info" icon="💬" title="Reportes de la comunidad — sin verificar">
+				Próximamente: partes de estado, valoraciones y fotos de otros senderistas. Esta información
+				no procede de FEMECV y se mostrará siempre claramente etiquetada como sin verificar.
+			</Banner>
+		</section>
+	</div>
 </div>
 
 <style>
@@ -886,21 +1046,128 @@
 		margin: 0.5rem 0 1rem;
 	}
 	.status-note {
-		color: #8a5a00;
+		color: var(--warn);
 		font-size: 0.9rem;
 		margin: 0.25rem 0 1rem;
 	}
 	.breadcrumb {
 		margin: 0.5rem 0;
 	}
-	.detail-grid {
-		display: grid;
-		grid-template-columns: 3fr 2fr;
-		gap: 1.5rem;
+	.ficha-head {
+		margin-bottom: var(--space-4);
 	}
-	@media (max-width: 760px) {
-		.detail-grid {
+	.ficha-head h1 {
+		font-size: var(--text-2xl);
+		margin: 0 0 var(--space-2);
+	}
+	/* Variante B: índice lateral pegajoso + secciones apiladas (escritorio). */
+	.ficha {
+		display: grid;
+		grid-template-columns: 232px minmax(0, 1fr);
+		gap: var(--space-5);
+		align-items: start;
+	}
+	.ficha-index {
+		position: sticky;
+		top: var(--space-4);
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+	}
+	.fi-item {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		text-align: left;
+		padding: var(--space-2) var(--space-3);
+		border: none;
+		background: transparent;
+		color: var(--muted-strong, var(--muted));
+		font: inherit;
+		font-size: var(--text-sm);
+		font-weight: 600;
+		border-radius: var(--radius-md);
+		cursor: pointer;
+		min-height: 40px;
+	}
+	.fi-item:hover {
+		background: var(--surface-alt);
+		color: var(--ink);
+	}
+	.fi-item.active {
+		background: var(--brand-soft);
+		color: var(--brand);
+	}
+	.fi-ic {
+		font-size: var(--text-md);
+		line-height: 1;
+	}
+	.ficha-panels {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-5);
+		min-width: 0;
+	}
+	.fsec {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4);
+		scroll-margin-top: var(--space-4);
+	}
+	.fsec-title {
+		font-size: var(--text-xl);
+		font-weight: 700;
+		margin: 0 0 var(--space-3);
+	}
+	.fsec h3 {
+		font-size: var(--text-md);
+		margin: var(--space-4) 0 var(--space-2);
+	}
+	.fsec h3:first-of-type {
+		margin-top: var(--space-2);
+	}
+	.actions-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		align-items: center;
+	}
+	.emergency-reminder {
+		margin: var(--space-4) 0 0;
+		padding: var(--space-3);
+		border-radius: var(--radius-md);
+		background: var(--alert-soft, var(--alert-bg));
+		border: 1px solid var(--alert-border);
+		font-size: var(--text-sm);
+	}
+	/* En móvil el índice pasa a pestañas horizontales y solo se ve el panel
+	   activo (las secciones siguen en el DOM para no perder funcionalidad). */
+	@media (max-width: 720px) {
+		.ficha {
 			grid-template-columns: 1fr;
+			gap: var(--space-3);
+		}
+		.ficha-index {
+			position: sticky;
+			top: 0;
+			z-index: 10;
+			flex-direction: row;
+			overflow-x: auto;
+			background: var(--bg);
+			padding: var(--space-2) 0;
+			border-bottom: 1px solid var(--border);
+			scrollbar-width: thin;
+		}
+		.fi-item {
+			flex-direction: column;
+			gap: 2px;
+			white-space: nowrap;
+			font-size: var(--text-xs);
+			text-align: center;
+		}
+		.fsec[data-active='false'] {
+			display: none;
 		}
 	}
 	.map-wrap {
@@ -949,7 +1216,6 @@
 	}
 	.report-btn {
 		display: inline-block;
-		margin-top: 1rem;
 		padding: 0.5rem 1rem;
 		border-radius: 6px;
 		border: 1px solid var(--brand);
@@ -964,7 +1230,6 @@
 	.emergency-btn {
 		background: var(--surface);
 		color: var(--brand);
-		margin-left: 0.5rem;
 	}
 	.report-btn:hover {
 		opacity: 0.9;
@@ -974,7 +1239,7 @@
 		padding: 1rem;
 	}
 	.error {
-		color: #b3261e;
+		color: var(--danger);
 	}
 	.date-picker {
 		display: flex;

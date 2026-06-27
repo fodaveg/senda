@@ -26,7 +26,7 @@ test('el detalle de una ruta muestra los datos técnicos y el perfil', async ({ 
 	await page.getByRole('link', { name: /PR-CV 77/ }).click();
 	await expect(page).toHaveURL(/\/ruta\/pr-cv-77/);
 	await expect(page.locator('h1')).toContainText('PR-CV 77');
-	await expect(page.getByRole('heading', { name: 'Datos técnicos' })).toBeVisible();
+	await expect(page.getByRole('heading', { name: 'Datos clave' })).toBeVisible();
 	await expect(page.getByText('5,5 km').first()).toBeVisible();
 	await expect(page.getByRole('figure')).toBeVisible();
 });
