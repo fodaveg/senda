@@ -106,6 +106,48 @@ función de servidor/RPC (el cliente no puede borrar su propio usuario de
 flujo de "restablecer contraseña" desde el enlace del correo (deep-link/ruta de
 callback). **Validar un login interactivo real** (crea usuario en el proyecto).
 
+## V4-M3 — COMPLETADO el resto (2026-06-27, backend validado en vivo)
+
+Tras validar la sincronización en vivo (login real + RLS + sync OK), se cerró lo
+que quedaba de M3, todo con tests mock (el correo real lo valida el usuario):
+
+- **Borrar cuenta (RGPD)**: `AuthClient.deleteAccount` → RPC `delete_account`
+  (SQL en `supabase/delete_account.sql`, security definer; pendiente de ejecutar
+  en el proyecto) + cierre de sesión; UI con confirmación en dos pasos en el
+  backoffice; degradación elegante si la RPC no está desplegada.
+- **Restablecer contraseña por enlace de correo**: `AuthClient.onAuthEvent`
+  (traduce `onAuthStateChange`), `requestPasswordReset` con `redirectTo=/cuenta`,
+  estado `recovery` en el store y formulario de nueva contraseña en `AccountPanel`.
+- **OTP (código por correo)**: `requestOtp`/`verifyOtp` + modo "Recibir un código
+  por email" en `AccountPanel` (requiere plantilla de email con `{{ .Token }}`).
+- **Validado en vivo**: signup+signin reales, RLS, y la **sincronización
+  multi-dispositivo** funcionan (el usuario lo confirmó). Falta solo validar el
+  correo (confirmación/reset/OTP), que depende del proveedor de email.
+
+## Arreglo: `npm run dev` (Vite 8 + service worker)
+
+El módulo virtual `$service-worker` en dev con Vite 8 no exporta `base` (sí
+`build`/`files`/`version`), así que `import { base }` rompía el SW y, en cascada,
+la hidratación. Se deriva `base` de `import.meta.env.BASE_URL`. (En dev, un
+adblocker puede bloquear `/src/lib/analytics/*` por el nombre → usar incógnito.)
+
+## Pre-merge / pre-publicación — checklist (decisiones/acciones del usuario)
+
+Antes de mergear `v4` a `main` (cada push a `main` publica) conviene:
+
+1. **Backend Supabase**: ejecutar `supabase/delete_account.sql`; fijar **Site URL**
+   y **Redirect URLs** al dominio real; **reactivar "Confirm email"**; (opcional)
+   plantilla de email con `{{ .Token }}` para OTP y TOTP; borrar usuarios de prueba.
+2. **Variables públicas en CI** (`PUBLIC_SUPABASE_URL`/`ANON_KEY`) si se quiere el
+   backend activo en producción; sin ellas, la app sigue 100% local.
+3. **Licencias / atribución** (decisión del usuario, no redactado como definitivo):
+   consolidar atribución de **FEMECV**, **IGN (CC-BY)** y **OSM (ODbL)** —hoy está
+   repartida (mapa=IGN; POIs/agua etiquetados "(OSM)"; enlaces FEMECV/Wikiloc)— en
+   una página "Acerca de / Licencias", y revisar la **política de privacidad** y el
+   consentimiento de analítica.
+4. **Validar el correo** (confirmación/reset/OTP) con un email que no pre-escanee
+   los enlaces.
+
 ## V4-M4.1 — COMPLETO (esquemas locales sincronizables, invisible, sin red)
 
 Base para la sincronización: cada dominio de `src/lib/user/` lleva ya los campos
