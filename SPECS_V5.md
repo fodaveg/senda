@@ -54,11 +54,17 @@ datos), M2 (backend + auth), M3 núcleo (UI de cuentas). Falta:
 
 ## PRE-B. Legal y publicación (bloquea hacer público, no el desarrollo)
 
-- **Licencias/atribución** de los datos redistribuidos: **FEMECV**, **IGN
-  CC-BY**, **OSM ODbL**. Revisar y publicar atribución conforme antes de abrir la
-  app a terceros.
+- **Licencias/atribución** de los datos redistribuidos: ✅ **hecho en v4**
+  (2026-06-27): página `/creditos` + pie con atribución consolidada de **FEMECV**,
+  **IGN CC-BY**, **OSM ODbL**, **Open-Meteo/AEMET** y **OSRM**; el mapa ya atribuía
+  al IGN/PNOA en su control. Revisar exactitud antes de publicar.
 - **RGPD**: política de privacidad, aviso de cookies/almacenamiento,
   consentimiento de analítica, export/borrado de cuenta (parte ya diseñado).
+  _Pendiente (decisión del usuario)._
+
+> **Nota:** la **deuda de UX** que se intuía aquí se ha separado en su propio
+> documento: **[SPECS_V6.md](SPECS_V6.md)** (v6 = solo interfaz/UX, sin datos ni
+> funciones nuevas). Ver allí la relación v6↔v5.
 
 ## PRE-C. Pulido v3 aún abierto (de SPECS_V3_PULIDO.md)
 

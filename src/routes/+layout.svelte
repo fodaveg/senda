@@ -91,7 +91,28 @@
 	{@render children()}
 </main>
 
+<footer>
+	<span> Datos: FEMECV · IGN (CC BY 4.0) · © OpenStreetMap (ODbL) · Open-Meteo/AEMET. </span>
+	<a href={resolve('/creditos')}>Créditos y licencias</a>
+</footer>
+
 <style>
+	footer {
+		max-width: 64rem;
+		margin: 1rem auto 0;
+		padding: 0.75rem 1rem 1.5rem;
+		border-top: 1px solid var(--border);
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1rem;
+		justify-content: space-between;
+		align-items: baseline;
+		font-size: 0.8rem;
+		color: var(--muted);
+	}
+	footer a {
+		color: var(--brand);
+	}
 	:global(:root) {
 		/* Tema claro (por defecto y "claro forzado" para sol directo). */
 		--bg: #fbfaf7;
