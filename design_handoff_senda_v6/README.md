@@ -124,19 +124,44 @@ distancia, desnivel, duración, forma) y acciones: favorita (♡), quiero hacer 
 salida (⌖), **Ficha de emergencia**, **Generar informe**. Se reserva visualmente la acción
 primaria futura **"Iniciar ruta"** (navegación en vivo, móvil).
 
-- **Variante A — Pestañas:** Resumen · Mapa y perfil · Preparación · Meteo · Acciones. La
-  pestaña activa cambia el panel (estado `fichaTab`, por defecto `Preparación`).
+- **Variante A — Pestañas:** Resumen · Mapa y perfil · Preparación · **Condiciones y
+  seguridad** · Meteo · Acciones. La pestaña activa cambia el panel (estado `fichaTab`, por
+  defecto **`Resumen`**).
 - **Variante B — Tablero modular:** índice lateral sticky + columna con todas las secciones
-  apiladas (Resumen, Mapa y perfil, Preparación, Meteo, Comunidad, Acciones).
+  apiladas (Resumen, Mapa y perfil, Preparación, Condiciones y seguridad, Meteo, Comunidad,
+  Acciones).
+
+**Resumen = panel de decisión** (vista por defecto, responde "¿hago esta ruta hoy y a qué
+hora?"):
+- **Recomendación** con color semántico: Adelante (verde) / Precaución (ámbar) / No recomendado
+  (rojo), con motivo.
+- **Meteo de un vistazo** del día (máx/mín, prob. lluvia, viento, cielo) + enlace a Meteo.
+- **Ventana ideal de inicio** (franja horaria recomendada, con barra gráfica ideal/evitar).
+- **Riesgo de incendio forestal** (nivel + nota, color semántico; Generalitat · orientativo).
+- **Avisos AEMET/CAP** vigentes (banner de alerta con caducidad; estado vacío "sin más avisos").
+- **Cómo llegar** (aparcamiento + tiempo desde el origen + enlace saliente "Cómo llegar ↗";
+  acceso OSM · sin verificar).
+- **Datos clave** (distancia, desnivel, duración, tipo, estado, fuente) coherentes con la cabecera.
+- **Acceso rápido a Mochila** (8/11 con barra) + CTA a Preparación.
+- Tira inferior **"Comunidad — sin verificar"** (función futura, no FEMECV).
+
+**Condiciones y seguridad** (pestaña + módulo del índice): meteo resumen con enlace a la vista
+completa · **avisos AEMET/CAP vigentes** con caducidad · **riesgo de incendio** · **fauna de la
+zona** (etiquetada *orientativo*, fuente comunitaria sin verificar) · **rutas de escape / puntos
+de salida** (OSM · sin verificar) · recordatorio de **emergencias 112 / ficha de emergencia**.
 
 Módulos de **Preparación**: **Mochila** (checklist agrupada con progreso 8/11), **Agua en ruta**
-(puntos con potable/no + fuente por punto), **Etapas** (tramos con km/desnivel/tiempo).
-**Meteo**: 3 días + aviso de cota alta (predicción AEMET, descargada offline). Hay un bloque
+(puntos con potable/no + fuente por punto), **Etapas** (tramos con km/desnivel/tiempo) y
+**Agua y energía** (estimación orientativa: ~2,1 L y ~2 400 kcal según distancia/desnivel/clima).
+**Meteo**: conmutador **3 días / por horas** (predicción AEMET, descargada offline) + aviso de
+cota alta. **Acciones**: generar informe, ficha de emergencia, exportar GPX/KML, **descargar mapa
+offline**, **leer informe por voz**, e "Iniciar ruta" (reservada, futura). Hay un bloque
 claramente separado **"Reportes de la comunidad — sin verificar"** (función futura, no FEMECV) y
-**atribución por dato** (traza FEMECV oficial vs. POIs OSM sin verificar).
+**atribución por dato** (traza FEMECV oficial vs. POIs OSM sin verificar; meteo/avisos AEMET).
 
-Móvil: cabecera sticky compacta + tira de pestañas + barra inferior fija con la primaria
-**"Iniciar ruta"** (reservada).
+Móvil: cabecera sticky compacta + tira de pestañas (incl. Seguridad) + **banner de recomendación
+del día** (decisión) + tarjeta compacta de Condiciones y seguridad + barra inferior fija con la
+primaria **"Iniciar ruta"** (reservada).
 
 ### 3. Diario & Ajustes (resumido)
 - **Diario:** 4 estadísticas (rutas, distancia, desnivel, días), **logros** (conseguidos vs.
@@ -171,9 +196,10 @@ Catálogo en la sección **Sistema** del HTML, con todos los estados:
 
 ## State Management (en el prototipo)
 `theme` (light/dark), `device` (desktop/mobile), `section`, `scale` (0.8–1.6),
-`discVar` (A/B), `fichaVar` (A/B), `fichaTab` (resumen/mapa/prep/meteo/acc),
-`mobileView` (lista/mapa), `sync` (ok/pend/off). Datos de ejemplo (rutas, facetas, etapas,
-mochila, agua, meteo) están en la clase lógica del `.dc.html`.
+`discVar` (A/B), `fichaVar` (A/B), `fichaTab` (resumen/mapa/prep/**seg**/meteo/acc; por defecto
+`resumen`), `meteoView` (dias/horas), `mobileView` (lista/mapa), `sync` (ok/pend/off). Datos de
+ejemplo (rutas, facetas, etapas, mochila, agua, meteo, **meteoHoras**) están en la clase lógica
+del `.dc.html`.
 
 ## Accesibilidad (requisito)
 WCAG **AA** en claro y oscuro, foco visible, navegable por teclado, objetivos táctiles ≥44px, y

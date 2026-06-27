@@ -678,25 +678,94 @@
                   <button onClick="{{ onTabResumen }}" style="{{ tab.resumen }}">Resumen</button>
                   <button onClick="{{ onTabMapa }}" style="{{ tab.mapa }}">Mapa y perfil</button>
                   <button onClick="{{ onTabPrep }}" style="{{ tab.prep }}">Preparación</button>
+                  <button onClick="{{ onTabSeg }}" style="{{ tab.seg }}">Condiciones y seguridad</button>
                   <button onClick="{{ onTabMeteo }}" style="{{ tab.meteo }}">Meteo</button>
                   <button onClick="{{ onTabAcc }}" style="{{ tab.acc }}">Acciones</button>
                 </div>
 
                 <div style="margin-top:20px">
-                  <sc-if value="{{ showTabResumen }}" hint-placeholder-val="{{ false }}">
-                    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:start">
-                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
-                        <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md)">Sobre la ruta</div>
-                        <p style="margin:10px 0 0;font-size:var(--t-base);line-height:1.6;color:var(--text)">Ascensión clásica al techo de Castelló (1 813 m) desde Sant Joan de Penyagolosa. Sendero bien señalizado, fuerte en el tramo final. Sombra escasa por encima de Lluïsos: salir temprano en verano.</p>
-                        <div style="margin-top:14px;font-size:var(--t-xs);color:var(--muted)">Traza y señalización: <strong style="color:var(--text)">FEMECV oficial</strong> · Puntos de interés: <strong style="color:var(--text)">OSM · sin verificar</strong></div>
-                      </div>
-                      <div style="background:var(--warn-soft);border:1px dashed color-mix(in srgb,var(--warn) 50%,transparent);border-radius:14px;padding:18px">
-                        <div style="display:flex;align-items:center;gap:8px"><span style="font-weight:800;font-size:var(--t-xs);letter-spacing:.06em;text-transform:uppercase;color:var(--warn)">Reportes de la comunidad — sin verificar</span></div>
-                        <div style="margin-top:6px;font-size:var(--t-xs);color:var(--muted)">Función futura. No proviene de la FEMECV.</div>
-                        <div style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
-                          <div style="font-size:var(--t-sm);color:var(--text);line-height:1.45">«Tramo embarrado tras las lluvias del fin de semana.» <span style="color:var(--muted)">— hace 3 días</span></div>
-                          <div style="font-size:var(--t-sm);color:var(--text);line-height:1.45">«La font de Lluïsos baja con poco caudal.» <span style="color:var(--muted)">— hace 9 días</span></div>
+                  <sc-if value="{{ showTabResumen }}" hint-placeholder-val="{{ true }}">
+                    <div style="display:flex;flex-direction:column;gap:16px">
+
+                      <div style="border:1px solid color-mix(in srgb,var(--warn) 45%,transparent);background:var(--warn-soft);border-radius:16px;padding:18px 20px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
+                        <span style="width:48px;height:48px;border-radius:13px;flex:none;background:var(--warn);color:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:24px">⚠</span>
+                        <div style="flex:1;min-width:220px">
+                          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-weight:800;font-size:var(--t-xs);letter-spacing:.05em;text-transform:uppercase;color:#1a1a1a;background:var(--warn);padding:3px 10px;border-radius:999px">Precaución</span><span style="font-size:var(--t-xs);font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Recomendación de hoy</span></div>
+                          <div style="margin-top:8px;font-family:'Libre Franklin';font-weight:800;font-size:var(--t-lg);letter-spacing:-.01em">Viable si sales temprano</div>
+                          <p style="margin:5px 0 0;font-size:var(--t-sm);line-height:1.5;color:var(--text)">Viento creciente desde las 15h en cota alta y aviso amarillo vigente. Completa la cima antes del mediodía y vigila el cambio del domingo (70% lluvia).</p>
+                          <div style="margin-top:12px;display:flex;gap:7px;flex-wrap:wrap"><span style="font-size:var(--t-xs);font-weight:700;padding:4px 10px;border-radius:999px;background:var(--surface);color:var(--muted);opacity:.6">Adelante</span><span style="font-size:var(--t-xs);font-weight:800;padding:4px 10px;border-radius:999px;background:#1a1a1a;color:var(--warn)">Precaución</span><span style="font-size:var(--t-xs);font-weight:700;padding:4px 10px;border-radius:999px;background:var(--surface);color:var(--muted);opacity:.6">No recomendado</span></div>
                         </div>
+                      </div>
+
+                      <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:16px;align-items:start">
+                        <div style="display:flex;flex-direction:column;gap:16px">
+                          <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                            <div style="display:flex;align-items:center;justify-content:space-between"><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Meteo de un vistazo · Hoy</div><button onClick="{{ onTabMeteo }}" style="border:none;background:transparent;color:var(--brand);font-weight:700;font-size:var(--t-xs);cursor:pointer;font-family:inherit">Ver completa →</button></div>
+                            <div style="margin-top:14px;display:flex;gap:14px;flex-wrap:wrap">
+                              <div style="flex:1;min-width:90px"><div style="font-size:28px;line-height:1">☀</div><div style="margin-top:6px;font-size:var(--t-xs);color:var(--muted);font-weight:600">Despejado</div></div>
+                              <div style="flex:1;min-width:70px"><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-lg)">18° <span style="color:var(--muted);font-weight:600">/ 7°</span></div><div style="margin-top:2px;font-size:var(--t-xs);color:var(--muted)">Máx / mín</div></div>
+                              <div style="flex:1;min-width:70px"><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-lg)">0%</div><div style="margin-top:2px;font-size:var(--t-xs);color:var(--muted)">Prob. lluvia</div></div>
+                              <div style="flex:1;min-width:80px"><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-lg)">12 <span style="font-size:var(--t-sm);color:var(--muted)">km/h</span></div><div style="margin-top:2px;font-size:var(--t-xs);color:var(--muted)">Viento</div></div>
+                            </div>
+                            <div style="margin-top:12px;font-size:var(--t-xs);color:var(--muted)">Predicción AEMET · descargada para offline hace 2 h.</div>
+                          </div>
+
+                          <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                            <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Ventana ideal de inicio</div>
+                            <div style="margin-top:8px;display:flex;align-items:baseline;gap:10px"><span style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-xl);color:var(--ok)">06:30 – 08:30</span><span style="font-size:var(--t-xs);color:var(--muted)">para hacer cima con luz y sin viento</span></div>
+                            <div style="margin-top:14px;position:relative;height:12px;border-radius:99px;background:var(--surface-alt);overflow:hidden"><span style="position:absolute;left:4%;width:30%;top:0;bottom:0;background:var(--ok)"></span><span style="position:absolute;left:75%;width:25%;top:0;bottom:0;background:var(--warn)"></span></div>
+                            <div style="margin-top:5px;display:flex;justify-content:space-between;font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums"><span>06h</span><span>09h</span><span>12h</span><span>15h</span><span>18h</span></div>
+                            <div style="margin-top:10px;font-size:var(--t-xs);color:var(--muted)"><span style="display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--ok);vertical-align:-1px"></span> Franja ideal · <span style="display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--warn);vertical-align:-1px"></span> Evitar la cima por viento</div>
+                          </div>
+
+                          <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                            <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Cómo llegar al inicio</div>
+                            <div style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
+                              <div style="display:flex;align-items:flex-start;gap:11px"><span style="width:30px;height:30px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--surface-alt)">🅿</span><div style="font-size:var(--t-sm)"><strong>Sant Joan de Penyagolosa</strong><div style="font-size:var(--t-xs);color:var(--muted)">Aparcamiento gratuito (~30 plazas). Se llena en festivos.</div></div></div>
+                              <div style="display:flex;align-items:flex-start;gap:11px"><span style="width:30px;height:30px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--surface-alt)">🚗</span><div style="font-size:var(--t-sm)"><strong>1 h 40</strong> desde València<div style="font-size:var(--t-xs);color:var(--muted)">96 km · último tramo por pista asfaltada estrecha.</div></div></div>
+                            </div>
+                            <button style="margin-top:12px;padding:8px 14px;border-radius:9px;border:1px solid var(--border);background:var(--surface);color:var(--brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer" style-hover="background:var(--brand-soft)">Cómo llegar ↗</button>
+                            <div style="margin-top:10px;font-size:var(--t-xs);color:var(--muted)">Acceso y aparcamiento: <strong style="color:var(--text)">OSM · sin verificar</strong></div>
+                          </div>
+                        </div>
+
+                        <div style="display:flex;flex-direction:column;gap:16px">
+                          <div style="background:var(--alert-soft);border:1px solid color-mix(in srgb,var(--alert) 40%,transparent);border-radius:14px;padding:16px">
+                            <div style="font-size:var(--t-xs);font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--alert)">Avisos AEMET / CAP</div>
+                            <div style="margin-top:10px;display:flex;gap:9px;align-items:flex-start"><span style="color:var(--alert);font-size:var(--t-md)">⚠</span><div style="font-size:var(--t-sm);color:var(--text);line-height:1.45"><strong>Aviso amarillo por viento</strong><div style="font-size:var(--t-xs);color:var(--muted)">Rachas de 70 km/h en cota alta · válido hasta hoy 22:00.</div></div></div>
+                            <div style="margin-top:9px;font-size:var(--t-xs);color:var(--muted)">Sin más avisos vigentes en la zona.</div>
+                          </div>
+
+                          <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:var(--shadow-sm)">
+                            <div style="font-size:var(--t-xs);font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)">Riesgo de incendio forestal</div>
+                            <div style="margin-top:9px;display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:var(--t-sm);padding:5px 12px;border-radius:999px;background:var(--warn-soft);color:var(--warn)"><span style="width:8px;height:8px;border-radius:50%;background:currentColor"></span>Nivel 2 · Moderado</div>
+                            <div style="margin-top:9px;font-size:var(--t-xs);color:var(--muted);line-height:1.5">No se permiten hogueras ni barbacoas. Preemergencia nivel 1.</div>
+                            <div style="margin-top:7px;font-size:var(--t-xs);color:var(--muted)">Generalitat Valenciana · orientativo</div>
+                          </div>
+
+                          <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:var(--shadow-sm)">
+                            <div style="font-size:var(--t-xs);font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Datos clave</div>
+                            <div style="display:flex;flex-direction:column;gap:7px;font-size:var(--t-sm)">
+                              <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">Distancia</span><strong>11,8 km</strong></div>
+                              <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">Desnivel +</span><strong>760 m</strong></div>
+                              <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">Duración</span><strong>4 h 30</strong></div>
+                              <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">Tipo</span><strong>PR-CV · Lineal</strong></div>
+                              <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">Estado</span><strong style="color:var(--ok)">Homologado</strong></div>
+                              <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">Fuente</span><strong>FEMECV oficial</strong></div>
+                            </div>
+                          </div>
+
+                          <div style="background:var(--brand-soft);border:1px solid var(--brand-line);border-radius:14px;padding:16px">
+                            <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Mochila</span><span style="font-weight:700;font-size:var(--t-sm);color:var(--brand)">8 / 11</span></div>
+                            <div style="margin-top:9px;height:8px;border-radius:99px;background:var(--surface);overflow:hidden"><div style="width:73%;height:100%;background:var(--brand)"></div></div>
+                            <button onClick="{{ onTabPrep }}" style="margin-top:12px;width:100%;padding:9px;border-radius:9px;border:none;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer">Ir a Preparación →</button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div style="background:var(--warn-soft);border:1px dashed color-mix(in srgb,var(--warn) 50%,transparent);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+                        <span style="font-weight:800;font-size:var(--t-xs);letter-spacing:.06em;text-transform:uppercase;color:var(--warn);flex:none">Comunidad — sin verificar</span>
+                        <span style="font-size:var(--t-sm);color:var(--text);flex:1;min-width:200px">«Tramo embarrado tras las lluvias.» <span style="color:var(--muted)">— hace 3 días · función futura, no proviene de la FEMECV.</span></span>
                       </div>
                     </div>
                   </sc-if>
@@ -716,8 +785,8 @@
                     </div>
                   </sc-if>
 
-                  <sc-if value="{{ showTabPrep }}" hint-placeholder-val="{{ true }}">
-                    <div style="display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:18px;align-items:start">
+                  <sc-if value="{{ showTabPrep }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:18px;align-items:start">
                       <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-sm);overflow:hidden">
                         <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border)"><span style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Mochila</span><span style="font-size:var(--t-xs);color:var(--muted)">8 / 11</span></div>
                         <div style="padding:14px 16px;display:flex;flex-direction:column;gap:14px">
@@ -764,21 +833,103 @@
                           </sc-for>
                         </div>
                       </div>
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-sm);overflow:hidden">
+                        <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border)"><span style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Agua y energía</span><span style="font-size:var(--t-xs);color:var(--muted)">Estimado</span></div>
+                        <div style="padding:16px;display:flex;flex-direction:column;gap:14px">
+                          <div style="display:flex;align-items:center;gap:12px"><span style="width:38px;height:38px;border-radius:10px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--brand-soft);color:var(--brand);font-size:var(--t-lg)">💧</span><div><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-lg)">2,1 L</div><div style="font-size:var(--t-xs);color:var(--muted)">Agua recomendada</div></div></div>
+                          <div style="display:flex;align-items:center;gap:12px"><span style="width:38px;height:38px;border-radius:10px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--warn-soft);color:var(--warn);font-size:var(--t-lg)">⚡</span><div><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-lg)">~2 400 kcal</div><div style="font-size:var(--t-xs);color:var(--muted)">Gasto energético</div></div></div>
+                          <div style="font-size:var(--t-xs);color:var(--muted);line-height:1.5;padding-top:4px;border-top:1px solid var(--border)">Orientativo para 1 persona a ritmo medio, según distancia, desnivel y temperatura. Ajusta en Ajustes › Material.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </sc-if>
+
+                  <sc-if value="{{ showTabSeg }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start">
+                      <div style="display:flex;flex-direction:column;gap:16px">
+                        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                          <div style="display:flex;align-items:center;justify-content:space-between"><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Meteo</div><button onClick="{{ onTabMeteo }}" style="border:none;background:transparent;color:var(--brand);font-weight:700;font-size:var(--t-xs);cursor:pointer;font-family:inherit">Por días y horas →</button></div>
+                          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+                            <div style="flex:1;min-width:80px;text-align:center;padding:10px;border:1px solid var(--border);border-radius:10px"><div style="font-size:var(--t-xs);font-weight:700;color:var(--muted)">Hoy</div><div style="font-size:22px;margin:2px 0">☀</div><div style="font-weight:700;font-size:var(--t-sm)">18°/7°</div></div>
+                            <div style="flex:1;min-width:80px;text-align:center;padding:10px;border:1px solid var(--border);border-radius:10px"><div style="font-size:var(--t-xs);font-weight:700;color:var(--muted)">Sáb</div><div style="font-size:22px;margin:2px 0">⛅</div><div style="font-weight:700;font-size:var(--t-sm)">16°/6°</div></div>
+                            <div style="flex:1;min-width:80px;text-align:center;padding:10px;border:1px solid color-mix(in srgb,var(--alert) 35%,var(--border));border-radius:10px;background:var(--alert-soft)"><div style="font-size:var(--t-xs);font-weight:700;color:var(--muted)">Dom</div><div style="font-size:22px;margin:2px 0">🌧</div><div style="font-weight:700;font-size:var(--t-sm)">12°/4°</div></div>
+                          </div>
+                          <div style="margin-top:10px;font-size:var(--t-xs);color:var(--muted)">AEMET · descargada offline hace 2 h.</div>
+                        </div>
+
+                        <div style="background:var(--alert-soft);border:1px solid color-mix(in srgb,var(--alert) 40%,transparent);border-radius:14px;padding:18px">
+                          <div style="font-size:var(--t-xs);font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--alert)">Avisos AEMET / CAP vigentes</div>
+                          <div style="margin-top:11px;display:flex;gap:9px;align-items:flex-start"><span style="color:var(--alert);font-size:var(--t-md)">⚠</span><div style="font-size:var(--t-sm);color:var(--text);line-height:1.45"><strong>Aviso amarillo por viento</strong><div style="font-size:var(--t-xs);color:var(--muted)">Rachas de 70 km/h en cota alta · válido hasta <strong style="color:var(--text)">hoy 22:00</strong>.</div></div></div>
+                          <div style="margin-top:10px;font-size:var(--t-xs);color:var(--muted)">Sin avisos de lluvia, nieve o tormenta vigentes.</div>
+                        </div>
+
+                        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                          <div style="font-size:var(--t-xs);font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)">Riesgo de incendio forestal</div>
+                          <div style="margin-top:9px;display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:var(--t-sm);padding:5px 12px;border-radius:999px;background:var(--warn-soft);color:var(--warn)"><span style="width:8px;height:8px;border-radius:50%;background:currentColor"></span>Nivel 2 · Moderado</div>
+                          <div style="margin-top:9px;font-size:var(--t-xs);color:var(--muted);line-height:1.5">No se permiten hogueras ni barbacoas. Preemergencia nivel 1 por viento.</div>
+                          <div style="margin-top:7px;font-size:var(--t-xs);color:var(--muted)">Generalitat Valenciana · orientativo</div>
+                        </div>
+                      </div>
+
+                      <div style="display:flex;flex-direction:column;gap:16px">
+                        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                          <div style="display:flex;align-items:center;gap:8px"><span style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Fauna de la zona</span><span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--warn-soft);color:var(--warn)">Orientativo</span></div>
+                          <div style="margin-top:12px;display:flex;flex-direction:column;gap:9px;font-size:var(--t-sm)">
+                            <div style="display:flex;align-items:flex-start;gap:10px"><span style="flex:none">🐐</span><div>Cabra montés y muflones <span style="color:var(--muted)">— no te acerques en época de cría.</span></div></div>
+                            <div style="display:flex;align-items:flex-start;gap:10px"><span style="flex:none">🐗</span><div>Jabalí <span style="color:var(--muted)">— crepuscular; mantén distancia.</span></div></div>
+                            <div style="display:flex;align-items:flex-start;gap:10px"><span style="flex:none">🐍</span><div>Víbora hocicuda <span style="color:var(--muted)">— rara; pisa fuerte entre piedras.</span></div></div>
+                          </div>
+                          <div style="margin-top:10px;font-size:var(--t-xs);color:var(--muted)">Lista no exhaustiva. Fuente comunitaria · sin verificar.</div>
+                        </div>
+
+                        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)">
+                          <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Rutas de escape</div>
+                          <div style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
+                            <div style="display:flex;align-items:flex-start;gap:11px"><span style="width:26px;height:26px;border-radius:50%;flex:none;background:var(--ok-soft);color:var(--ok);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--t-xs)">A</span><div style="font-size:var(--t-sm)"><strong>km 4,2 · Font de la Pegunta</strong><div style="font-size:var(--t-xs);color:var(--muted)">Pista forestal a Vistabella · ~20 min de bajada.</div></div></div>
+                            <div style="display:flex;align-items:flex-start;gap:11px"><span style="width:26px;height:26px;border-radius:50%;flex:none;background:var(--ok-soft);color:var(--ok);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--t-xs)">B</span><div style="font-size:var(--t-sm)"><strong>km 8,0 · Collado de Lluïsos</strong><div style="font-size:var(--t-xs);color:var(--muted)">Desvío a Xodos · ~45 min.</div></div></div>
+                          </div>
+                          <div style="margin-top:10px;font-size:var(--t-xs);color:var(--muted)">Trazas de escape: OSM · sin verificar.</div>
+                        </div>
+
+                        <div style="background:#b3261e;border-radius:14px;padding:18px;color:#fff">
+                          <div style="display:flex;align-items:center;gap:10px"><span style="font-size:var(--t-lg)">🆘</span><div><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-base)">Emergencias · 112</div><div style="font-size:var(--t-xs);opacity:.85">Cobertura irregular sobre Lluïsos. Lleva el móvil cargado.</div></div></div>
+                          <button style="margin-top:13px;width:100%;padding:10px;border-radius:9px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);color:#fff;font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer">Abrir ficha de emergencia</button>
+                        </div>
+                      </div>
                     </div>
                   </sc-if>
 
                   <sc-if value="{{ showTabMeteo }}" hint-placeholder-val="{{ false }}">
                     <div>
-                      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
-                        <sc-for list="{{ meteo }}" as="m" hint-placeholder-count="3">
-                          <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm);text-align:center">
-                            <div style="font-weight:700;font-size:var(--t-sm);color:var(--muted)">{{ m.d }}</div>
-                            <div style="font-size:34px;line-height:1.2;margin:6px 0">{{ m.ic }}</div>
-                            <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-lg)">{{ m.max }} <span style="color:var(--muted);font-weight:600">/ {{ m.min }}</span></div>
-                            <div style="margin-top:8px;font-size:var(--t-xs);color:var(--muted)">Viento {{ m.v }} · Lluvia {{ m.p }}</div>
-                          </div>
-                        </sc-for>
+                      <div style="display:flex;gap:2px;background:var(--surface-alt);border:1px solid var(--border);border-radius:11px;padding:3px;width:fit-content;margin-bottom:16px">
+                        <button onClick="{{ onMeteoDias }}" style="{{ segMeteoDias }}">3 días</button>
+                        <button onClick="{{ onMeteoHoras }}" style="{{ segMeteoHoras }}">Por horas · hoy</button>
                       </div>
+                      <sc-if value="{{ showMeteoDias }}" hint-placeholder-val="{{ true }}">
+                        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+                          <sc-for list="{{ meteo }}" as="m" hint-placeholder-count="3">
+                            <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm);text-align:center">
+                              <div style="font-weight:700;font-size:var(--t-sm);color:var(--muted)">{{ m.d }}</div>
+                              <div style="font-size:34px;line-height:1.2;margin:6px 0">{{ m.ic }}</div>
+                              <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-lg)">{{ m.max }} <span style="color:var(--muted);font-weight:600">/ {{ m.min }}</span></div>
+                              <div style="margin-top:8px;font-size:var(--t-xs);color:var(--muted)">Viento {{ m.v }} · Lluvia {{ m.p }}</div>
+                            </div>
+                          </sc-for>
+                        </div>
+                      </sc-if>
+                      <sc-if value="{{ showMeteoHoras }}" hint-placeholder-val="{{ false }}">
+                        <div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:4px">
+                          <sc-for list="{{ meteoHoras }}" as="hh" hint-placeholder-count="6">
+                            <div style="flex:none;width:96px;text-align:center;padding:14px 8px;border:1px solid var(--border);border-radius:12px;background:var(--surface);box-shadow:var(--shadow-sm)">
+                              <div style="font-size:var(--t-xs);font-weight:700;color:var(--muted)">{{ hh.h }}</div>
+                              <div style="font-size:24px;margin:6px 0">{{ hh.ic }}</div>
+                              <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md)">{{ hh.t }}</div>
+                              <div style="margin-top:7px;font-size:10px;color:var(--muted)">Lluvia {{ hh.p }}</div>
+                              <div style="font-size:10px;color:var(--muted)">Viento {{ hh.v }}</div>
+                            </div>
+                          </sc-for>
+                        </div>
+                      </sc-if>
                       <div style="margin-top:14px;display:flex;gap:11px;padding:13px 15px;border-radius:12px;background:var(--alert-soft);border:1px solid color-mix(in srgb,var(--alert) 40%,transparent)"><span style="color:var(--alert);font-size:var(--t-md)">⚠</span><div style="font-size:var(--t-sm);color:var(--text)"><strong>Domingo:</strong> viento fuerte y 70% de lluvia en cota alta. Valora posponer la cima.</div></div>
                       <div style="margin-top:10px;font-size:var(--t-xs);color:var(--muted)">Predicción AEMET · descargada para offline hace 2 h.</div>
                     </div>
@@ -789,6 +940,8 @@
                       <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)"><div style="font-size:var(--t-lg)">📄</div><div style="margin-top:8px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Generar informe</div><div style="margin-top:3px;font-size:var(--t-xs);color:var(--muted)">PDF con mapa, perfil, etapas y mochila.</div></div>
                       <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)"><div style="font-size:var(--t-lg)">🆘</div><div style="margin-top:8px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Ficha de emergencia</div><div style="margin-top:3px;font-size:var(--t-xs);color:var(--muted)">Coordenadas de escape y teléfonos 112.</div></div>
                       <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)"><div style="font-size:var(--t-lg)">⬇</div><div style="margin-top:8px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Exportar GPX / KML</div><div style="margin-top:3px;font-size:var(--t-xs);color:var(--muted)">Traza FEMECV oficial para tu GPS.</div></div>
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)"><div style="font-size:var(--t-lg)">🗺</div><div style="margin-top:8px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Descargar mapa offline</div><div style="margin-top:3px;font-size:var(--t-xs);color:var(--muted)">Tiles + traza para usar sin cobertura. ~38 MB.</div></div>
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)"><div style="font-size:var(--t-lg)">🔊</div><div style="margin-top:8px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Leer informe por voz</div><div style="margin-top:3px;font-size:var(--t-xs);color:var(--muted)">Resumen, meteo y avisos en audio antes de salir.</div></div>
                       <div style="background:var(--brand-soft);border:1px dashed var(--brand-line);border-radius:14px;padding:18px"><div style="font-size:var(--t-lg);color:var(--brand)">⛰</div><div style="margin-top:8px;font-family:'Libre Franklin';font-weight:700;font-size:var(--t-base)">Iniciar ruta</div><div style="margin-top:3px;font-size:var(--t-xs);color:var(--muted)">Acción primaria futura (navegación en vivo, móvil).</div></div>
                     </div>
                   </sc-if>
@@ -803,15 +956,23 @@
                   <div style="padding:9px 12px;border-radius:9px;background:var(--brand-soft);color:var(--brand);font-weight:700;font-size:var(--t-sm)">Resumen</div>
                   <div style="padding:9px 12px;border-radius:9px;color:var(--text);font-weight:600;font-size:var(--t-sm)">Mapa y perfil</div>
                   <div style="padding:9px 12px;border-radius:9px;color:var(--text);font-weight:600;font-size:var(--t-sm)">Preparación</div>
+                  <div style="padding:9px 12px;border-radius:9px;color:var(--text);font-weight:600;font-size:var(--t-sm)">Condiciones y seguridad</div>
                   <div style="padding:9px 12px;border-radius:9px;color:var(--text);font-weight:600;font-size:var(--t-sm)">Meteo</div>
                   <div style="padding:9px 12px;border-radius:9px;color:var(--text);font-weight:600;font-size:var(--t-sm)">Comunidad</div>
                   <div style="padding:9px 12px;border-radius:9px;color:var(--text);font-weight:600;font-size:var(--t-sm)">Acciones</div>
                 </aside>
                 <div style="display:flex;flex-direction:column;gap:16px">
                   <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
-                    <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md)">Resumen</div>
-                    <p style="margin:9px 0 0;font-size:var(--t-base);line-height:1.6;color:var(--text)">Ascensión al techo de Castelló (1 813 m) desde Sant Joan de Penyagolosa. Bien señalizada; sombra escasa en el tramo final.</p>
-                    <div style="margin-top:12px;font-size:var(--t-xs);color:var(--muted)">Traza: <strong style="color:var(--text)">FEMECV oficial</strong> · POIs: <strong style="color:var(--text)">OSM · sin verificar</strong></div>
+                    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap"><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md)">Resumen</div><span style="display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:var(--t-xs);letter-spacing:.04em;text-transform:uppercase;color:#1a1a1a;background:var(--warn);padding:4px 11px;border-radius:999px">⚠ Precaución</span></div>
+                    <div style="margin-top:12px;padding:13px 15px;border-radius:12px;background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 40%,transparent);font-size:var(--t-sm);color:var(--text);line-height:1.5"><strong>Viable si sales temprano.</strong> Haz cima antes del mediodía: viento creciente desde las 15h y aviso amarillo vigente.</div>
+                    <div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px">
+                      <div style="padding:11px 13px;border:1px solid var(--border);border-radius:11px"><div style="font-size:var(--t-xs);color:var(--muted);font-weight:700">Meteo hoy</div><div style="margin-top:3px;font-size:var(--t-sm);font-weight:700">☀ 18°/7° · 0%</div></div>
+                      <div style="padding:11px 13px;border:1px solid var(--border);border-radius:11px"><div style="font-size:var(--t-xs);color:var(--muted);font-weight:700">Ventana ideal</div><div style="margin-top:3px;font-size:var(--t-sm);font-weight:700;color:var(--ok)">06:30 – 08:30</div></div>
+                      <div style="padding:11px 13px;border:1px solid var(--border);border-radius:11px"><div style="font-size:var(--t-xs);color:var(--muted);font-weight:700">Incendio</div><div style="margin-top:3px;font-size:var(--t-sm);font-weight:700;color:var(--warn)">Nivel 2 · Moderado</div></div>
+                      <div style="padding:11px 13px;border:1px solid var(--border);border-radius:11px"><div style="font-size:var(--t-xs);color:var(--muted);font-weight:700">Cómo llegar</div><div style="margin-top:3px;font-size:var(--t-sm);font-weight:700">1 h 40 · València</div></div>
+                    </div>
+                    <p style="margin:14px 0 0;font-size:var(--t-sm);line-height:1.55;color:var(--text)">Ascensión al techo de Castelló (1 813 m) desde Sant Joan de Penyagolosa. Bien señalizada; sombra escasa en el tramo final.</p>
+                    <div style="margin-top:10px;font-size:var(--t-xs);color:var(--muted)">Traza: <strong style="color:var(--text)">FEMECV oficial</strong> · POIs: <strong style="color:var(--text)">OSM · sin verificar</strong></div>
                   </div>
                   <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
                     <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md)">Mapa y perfil</div><span style="font-size:var(--t-xs);color:var(--muted)">1 060 → 1 813 m</span></div>
@@ -838,6 +999,21 @@
                         </div>
                       </div>
                     </div>
+                    <div style="margin-top:16px;display:flex;gap:22px;flex-wrap:wrap;padding-top:14px;border-top:1px solid var(--border)">
+                      <div style="display:flex;align-items:center;gap:10px"><span style="width:32px;height:32px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--brand-soft);color:var(--brand)">💧</span><div><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-md)">2,1 L</div><div style="font-size:var(--t-xs);color:var(--muted)">Agua estimada</div></div></div>
+                      <div style="display:flex;align-items:center;gap:10px"><span style="width:32px;height:32px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--warn-soft);color:var(--warn)">⚡</span><div><div style="font-family:'Libre Franklin';font-weight:800;font-size:var(--t-md)">~2 400 kcal</div><div style="font-size:var(--t-xs);color:var(--muted)">Gasto energético</div></div></div>
+                      <div style="font-size:var(--t-xs);color:var(--muted);align-self:center;max-width:220px;line-height:1.4">Orientativo para 1 persona a ritmo medio.</div>
+                    </div>
+                  </div>
+                  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
+                    <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md);margin-bottom:14px">Condiciones y seguridad</div>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(214px,1fr));gap:14px">
+                      <div style="padding:13px;border:1px solid color-mix(in srgb,var(--alert) 35%,var(--border));border-radius:11px;background:var(--alert-soft)"><div style="font-size:var(--t-xs);font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--alert)">Avisos AEMET / CAP</div><div style="margin-top:7px;font-size:var(--t-sm);font-weight:700">Aviso amarillo · viento</div><div style="font-size:var(--t-xs);color:var(--muted)">Hasta hoy 22:00 · rachas 70 km/h.</div></div>
+                      <div style="padding:13px;border:1px solid var(--border);border-radius:11px"><div style="font-size:var(--t-xs);font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)">Incendio forestal</div><div style="margin-top:7px;font-size:var(--t-sm);font-weight:700;color:var(--warn)">Nivel 2 · Moderado</div><div style="font-size:var(--t-xs);color:var(--muted)">Sin hogueras · Generalitat, orientativo.</div></div>
+                      <div style="padding:13px;border:1px solid var(--border);border-radius:11px"><div style="font-size:var(--t-xs);font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)">Rutas de escape</div><div style="margin-top:7px;font-size:var(--t-sm)">km 4,2 → Vistabella (20 min)</div><div style="font-size:var(--t-xs);color:var(--muted)">km 8,0 → Xodos (45 min) · OSM s/v</div></div>
+                      <div style="padding:13px;border:1px solid var(--border);border-radius:11px"><div style="font-size:var(--t-xs);font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)">Fauna <span style="color:var(--warn)">· orientativo</span></div><div style="margin-top:7px;font-size:var(--t-sm)">Cabra montés, jabalí, víbora hocicuda (rara).</div></div>
+                    </div>
+                    <div style="margin-top:12px;display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:11px;background:#b3261e;color:#fff"><span>🆘</span><span style="font-size:var(--t-sm);font-weight:700;flex:1">Emergencias 112 · cobertura irregular sobre Lluïsos</span><button style="padding:6px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);color:#fff;font-weight:700;font-size:var(--t-xs);font-family:inherit;cursor:pointer">Ficha de emergencia</button></div>
                   </div>
                   <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)">
                     <div style="font-family:'Libre Franklin';font-weight:700;font-size:var(--t-md);margin-bottom:12px">Meteo</div>
@@ -856,6 +1032,8 @@
                     <button style="padding:11px 17px;border-radius:11px;border:1px solid transparent;background:var(--brand);color:var(--on-brand);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer">Generar informe</button>
                     <button style="padding:11px 17px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer">Ficha de emergencia</button>
                     <button style="padding:11px 17px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer">Exportar GPX</button>
+                    <button style="padding:11px 17px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer">Descargar mapa offline</button>
+                    <button style="padding:11px 17px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:var(--t-sm);font-family:inherit;cursor:pointer">Leer informe por voz</button>
                   </div>
                 </div>
               </div>
@@ -870,9 +1048,15 @@
                 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="display:inline-flex;font-weight:800;font-size:10px;padding:2px 7px;border-radius:5px;background:#b8860b;color:#1a1a1a">PR-CV 49</span><span style="display:inline-flex;align-items:center;gap:4px;font-weight:700;font-size:10px;padding:2px 8px;border-radius:999px;background:var(--ok-soft);color:var(--ok)">Homologado</span></div>
                 <div style="margin-top:7px;font-family:'Libre Franklin';font-weight:800;font-size:var(--t-lg);letter-spacing:-.01em;line-height:1.1">Penyagolosa per Sant Joan</div>
                 <div style="margin-top:8px;display:flex;gap:16px"><span style="font-size:var(--t-xs);color:var(--muted)"><strong style="color:var(--text);font-size:var(--t-sm)">11,8</strong> km</span><span style="font-size:var(--t-xs);color:var(--muted)"><strong style="color:var(--text);font-size:var(--t-sm)">+760</strong> m</span><span style="font-size:var(--t-xs);color:var(--muted)"><strong style="color:var(--text);font-size:var(--t-sm)">4 h 30</strong></span></div>
-                <div style="margin-top:11px;display:flex;gap:20px;border-bottom:1px solid var(--border);overflow-x:auto;padding-bottom:1px"><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Resumen</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Mapa</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:700;color:var(--text);white-space:nowrap;box-shadow:inset 0 -2px 0 var(--brand)">Preparación</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Meteo</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Acciones</span></div>
+                <div style="margin-top:11px;display:flex;gap:20px;border-bottom:1px solid var(--border);overflow-x:auto;padding-bottom:1px"><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Resumen</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Mapa</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:700;color:var(--text);white-space:nowrap;box-shadow:inset 0 -2px 0 var(--brand)">Preparación</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Seguridad</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Meteo</span><span style="padding-bottom:9px;font-size:var(--t-xs);font-weight:600;color:var(--muted);white-space:nowrap">Acciones</span></div>
               </div>
               <div style="padding:14px 18px 16px;display:flex;flex-direction:column;gap:12px">
+                <div style="border:1px solid color-mix(in srgb,var(--warn) 45%,transparent);background:var(--warn-soft);border-radius:13px;padding:13px 14px">
+                  <div style="display:flex;align-items:center;gap:8px"><span style="font-weight:800;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:#1a1a1a;background:var(--warn);padding:3px 9px;border-radius:999px">⚠ Precaución</span><span style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Recomendación de hoy</span></div>
+                  <div style="margin-top:8px;font-family:'Libre Franklin';font-weight:800;font-size:var(--t-base)">Viable si sales temprano</div>
+                  <div style="margin-top:3px;font-size:var(--t-xs);color:var(--text);line-height:1.45">Haz cima antes del mediodía: viento desde las 15h y aviso amarillo vigente.</div>
+                  <div style="margin-top:10px;display:flex;gap:7px;flex-wrap:wrap"><span style="font-size:10px;font-weight:700;padding:4px 9px;border-radius:999px;background:var(--surface);color:var(--text)">☀ 18°/7°</span><span style="font-size:10px;font-weight:700;padding:4px 9px;border-radius:999px;background:var(--surface);color:var(--ok)">Salir 06:30–08:30</span><span style="font-size:10px;font-weight:700;padding:4px 9px;border-radius:999px;background:var(--surface);color:var(--warn)">Incendio N2</span></div>
+                </div>
                 <div style="border:1px solid var(--border);border-radius:13px;background:var(--surface);overflow:hidden">
                   <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--border)"><span style="font-weight:700;font-size:var(--t-sm)">Mochila</span><span style="font-size:var(--t-xs);color:var(--muted)">8 / 11</span></div>
                   <div style="padding:12px 14px;display:flex;flex-direction:column;gap:9px">
@@ -885,6 +1069,15 @@
                   <div style="font-weight:700;font-size:var(--t-sm);margin-bottom:9px">Agua en ruta</div>
                   <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="width:26px;height:26px;border-radius:7px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--brand-soft);color:var(--brand)">💧</span><div style="font-size:var(--t-xs)"><strong>Font de la Pegunta</strong><span style="color:var(--muted)"> · Potable · FEMECV</span></div></div>
                   <div style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:26px;border-radius:7px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--warn-soft);color:var(--warn)">💧</span><div style="font-size:var(--t-xs)"><strong>Bassa dels Llacs</strong><span style="color:var(--muted)"> · OSM sin verificar</span></div></div>
+                </div>
+                <div style="border:1px solid var(--border);border-radius:13px;background:var(--surface);padding:12px 14px">
+                  <div style="font-weight:700;font-size:var(--t-sm);margin-bottom:9px">Condiciones y seguridad</div>
+                  <div style="display:flex;flex-direction:column;gap:8px;font-size:var(--t-xs)">
+                    <div style="display:flex;gap:8px"><span style="color:var(--alert);flex:none">⚠</span><div><strong>Aviso amarillo viento</strong> <span style="color:var(--muted)">· AEMET · hasta 22:00</span></div></div>
+                    <div style="display:flex;gap:8px"><span style="color:var(--warn);flex:none">🔥</span><div>Incendio <strong>Nivel 2 · Moderado</strong> <span style="color:var(--muted)">· orientativo</span></div></div>
+                    <div style="display:flex;gap:8px"><span style="flex:none">🚪</span><div>Escape: km 4,2 → Vistabella (20 min)</div></div>
+                    <div style="display:flex;gap:8px"><span style="flex:none">🆘</span><div>Emergencias <strong>112</strong> · cobertura irregular</div></div>
+                  </div>
                 </div>
                 <div style="border:1px dashed color-mix(in srgb,var(--warn) 50%,transparent);border-radius:13px;background:var(--warn-soft);padding:12px 14px">
                   <span style="font-weight:800;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--warn)">Comunidad — sin verificar</span>
@@ -1033,7 +1226,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { theme:'light', device:'desktop', section:'sistema', scale:1, discVar:'A', fichaVar:'A', filtersOpen:true, mobileView:'lista', sync:'ok', fichaTab:'prep' };
+  state = { theme:'light', device:'desktop', section:'sistema', scale:1, discVar:'A', fichaVar:'A', filtersOpen:true, mobileView:'lista', sync:'ok', fichaTab:'resumen', meteoView:'dias' };
   set(k,v){ this.setState({[k]:v}); }
   renderVals(){
     const s=this.state;
@@ -1081,11 +1274,14 @@ class Component extends DCLogic {
       onScale:(e)=>this.set('scale', parseFloat(e.target.value)),
       onSyncOk:()=>this.set('sync','ok'), onSyncPend:()=>this.set('sync','pend'), onSyncOff:()=>this.set('sync','off'),
       fichaTab:s.fichaTab,
-      showTabResumen:s.fichaTab==='resumen', showTabMapa:s.fichaTab==='mapa', showTabPrep:s.fichaTab==='prep', showTabMeteo:s.fichaTab==='meteo', showTabAcc:s.fichaTab==='acc',
+      showTabResumen:s.fichaTab==='resumen', showTabMapa:s.fichaTab==='mapa', showTabPrep:s.fichaTab==='prep', showTabSeg:s.fichaTab==='seg', showTabMeteo:s.fichaTab==='meteo', showTabAcc:s.fichaTab==='acc',
+      meteoView:s.meteoView, showMeteoDias:s.meteoView==='dias', showMeteoHoras:s.meteoView==='horas',
+      segMeteoDias:sg(s.meteoView==='dias'), segMeteoHoras:sg(s.meteoView==='horas'),
+      onMeteoDias:()=>this.set('meteoView','dias'), onMeteoHoras:()=>this.set('meteoView','horas'),
       tab:{
-        resumen:tb(s.fichaTab==='resumen'), mapa:tb(s.fichaTab==='mapa'), prep:tb(s.fichaTab==='prep'), meteo:tb(s.fichaTab==='meteo'), acc:tb(s.fichaTab==='acc'),
+        resumen:tb(s.fichaTab==='resumen'), mapa:tb(s.fichaTab==='mapa'), prep:tb(s.fichaTab==='prep'), seg:tb(s.fichaTab==='seg'), meteo:tb(s.fichaTab==='meteo'), acc:tb(s.fichaTab==='acc'),
       },
-      onTabResumen:()=>this.set('fichaTab','resumen'), onTabMapa:()=>this.set('fichaTab','mapa'), onTabPrep:()=>this.set('fichaTab','prep'), onTabMeteo:()=>this.set('fichaTab','meteo'), onTabAcc:()=>this.set('fichaTab','acc'),
+      onTabResumen:()=>this.set('fichaTab','resumen'), onTabMapa:()=>this.set('fichaTab','mapa'), onTabPrep:()=>this.set('fichaTab','prep'), onTabSeg:()=>this.set('fichaTab','seg'), onTabMeteo:()=>this.set('fichaTab','meteo'), onTabAcc:()=>this.set('fichaTab','acc'),
       etapas:[
         {n:'1',de:'Vistabella',a:'Font de la Pegunta',km:'4,2',asc:'+260',t:'1 h 20',agua:true},
         {n:'2',de:'Font de la Pegunta',a:'Lluïsos',km:'3,6',asc:'+340',t:'1 h 30',agua:false},
@@ -1104,6 +1300,14 @@ class Component extends DCLogic {
         {d:'Hoy',ic:'☀',max:'18°',min:'7°',v:'12 km/h',p:'0%'},
         {d:'Sáb',ic:'⛅',max:'16°',min:'6°',v:'20 km/h',p:'10%'},
         {d:'Dom',ic:'🌧',max:'12°',min:'4°',v:'34 km/h',p:'70%'},
+      ],
+      meteoHoras:[
+        {h:'07h',ic:'☀',t:'8°',p:'0%',v:'8'},
+        {h:'09h',ic:'☀',t:'12°',p:'0%',v:'10'},
+        {h:'11h',ic:'🌤',t:'15°',p:'5%',v:'14'},
+        {h:'13h',ic:'⛅',t:'17°',p:'10%',v:'18'},
+        {h:'15h',ic:'⛅',t:'18°',p:'15%',v:'22'},
+        {h:'17h',ic:'🌥',t:'15°',p:'20%',v:'20'},
       ],
     };
   }
