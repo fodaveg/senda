@@ -28,6 +28,8 @@
 	let busy = $state(false);
 	let error = $state<string | null>(null);
 	let notice = $state<string | null>(null);
+	// Borrado de cuenta en dos pasos (evita borrados accidentales).
+	let confirmingDelete = $state(false);
 
 	/** Traduce el error tipado del backend a un mensaje claro en español. */
 	function messageFor(e: unknown): string {
@@ -108,6 +110,22 @@
 			busy = false;
 		}
 	}
+
+	async function deleteAccount() {
+		reset();
+		busy = true;
+		try {
+			await session.deleteAccount();
+			confirmingDelete = false;
+			// Tras borrar, la sesión pasa a anónima y la app vuelve a modo local con
+			// tus datos intactos en este dispositivo.
+			notice = 'Cuenta borrada. Tus datos siguen en este dispositivo, solo en local.';
+		} catch (e) {
+			error = messageFor(e);
+		} finally {
+			busy = false;
+		}
+	}
 </script>
 
 {#if $session.status === 'authenticated'}
@@ -140,6 +158,34 @@
 			</label>
 			<button type="submit" disabled={busy || newPassword.length < 6}>Cambiar contraseña</button>
 		</form>
+
+		<div class="danger">
+			<h3>Borrar cuenta</h3>
+			<p class="hint">
+				Borra tu cuenta y todos tus datos sincronizados en la nube. Lo que tengas en este
+				dispositivo se conserva en local. Esta acción no se puede deshacer.
+			</p>
+			{#if confirmingDelete}
+				<p class="confirm-q">¿Seguro que quieres borrar tu cuenta?</p>
+				<div class="danger-actions">
+					<button type="button" class="danger-btn" onclick={deleteAccount} disabled={busy}>
+						Sí, borrar mi cuenta
+					</button>
+					<button
+						type="button"
+						class="secondary"
+						onclick={() => (confirmingDelete = false)}
+						disabled={busy}
+					>
+						Cancelar
+					</button>
+				</div>
+			{:else}
+				<button type="button" class="danger-btn" onclick={() => (confirmingDelete = true)}>
+					Borrar cuenta
+				</button>
+			{/if}
+		</div>
 	</section>
 {:else}
 	<section class="panel">
@@ -304,5 +350,37 @@
 		color: #2a6f4e;
 		font-size: 0.9rem;
 		max-width: 26rem;
+	}
+	.danger {
+		margin-top: 1.5rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--border);
+	}
+	.danger h3 {
+		margin: 0 0 0.25rem;
+		font-size: 1rem;
+		color: var(--alert-border, #b3261e);
+	}
+	.confirm-q {
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+	.danger-actions {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+	.danger-btn {
+		font: inherit;
+		padding: 0.5rem 1rem;
+		border-radius: 6px;
+		border: 1px solid var(--alert-border, #b3261e);
+		background: var(--alert-border, #b3261e);
+		color: #fff;
+		cursor: pointer;
+	}
+	.danger-btn:disabled {
+		opacity: 0.5;
+		cursor: default;
 	}
 </style>

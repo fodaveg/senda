@@ -17,7 +17,8 @@ const auth = vi.hoisted(() => ({
 	resetPasswordForEmail: vi.fn(),
 	updateUser: vi.fn()
 }));
-vi.mock('@supabase/supabase-js', () => ({ createClient: () => ({ auth }) }));
+const rpc = vi.hoisted(() => vi.fn());
+vi.mock('@supabase/supabase-js', () => ({ createClient: () => ({ auth, rpc }) }));
 
 import { createSupabaseAuthClient } from './supabaseAuth';
 
@@ -27,6 +28,7 @@ const SB_SESSION = { user: { id: 'u1', email: 'a@b.com' }, expires_at: 2 };
 
 beforeEach(() => {
 	for (const fn of Object.values(auth)) fn.mockReset();
+	rpc.mockReset();
 });
 
 describe('createSupabaseAuthClient', () => {
@@ -112,5 +114,20 @@ describe('createSupabaseAuthClient', () => {
 			error: { message: 'x', status: 401 }
 		});
 		await expect(client.updatePassword('otra')).rejects.toBeInstanceOf(AuthError);
+	});
+
+	it('deleteAccount invoca la RPC delete_account y cierra sesión', async () => {
+		rpc.mockResolvedValue({ data: null, error: null });
+		auth.signOut.mockResolvedValue({ error: null });
+		const client = createSupabaseAuthClient(config);
+		await client.deleteAccount();
+		expect(rpc).toHaveBeenCalledWith('delete_account');
+		expect(auth.signOut).toHaveBeenCalled();
+	});
+
+	it('deleteAccount propaga el error de la RPC (p. ej. no desplegada)', async () => {
+		rpc.mockResolvedValue({ data: null, error: { message: 'function does not exist' } });
+		const client = createSupabaseAuthClient(config);
+		await expect(client.deleteAccount()).rejects.toBeInstanceOf(AuthError);
 	});
 });

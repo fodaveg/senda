@@ -27,6 +27,8 @@ export interface SessionStore extends Readable<SessionState> {
 	/** Devuelve la sesión, o `null` si el registro requiere confirmar el correo. */
 	signUp(email: string, password: string): Promise<Session | null>;
 	signOut(): Promise<void>;
+	/** Borra la cuenta en el servidor y vuelve a estado anónimo (datos locales intactos). */
+	deleteAccount(): Promise<void>;
 }
 
 const ANON: SessionState = { status: 'anonymous', user: null, session: null };
@@ -63,6 +65,12 @@ export function createSessionStore(client: AuthClient): SessionStore {
 		},
 		async signOut() {
 			await client.signOut();
+			set(ANON);
+		},
+		async deleteAccount() {
+			await client.deleteAccount();
+			// La sesión deja de existir; el repositorio volverá a modo local al pasar
+			// a anónimo (los datos locales no se tocan).
 			set(ANON);
 		}
 	};

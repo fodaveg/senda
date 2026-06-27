@@ -53,4 +53,10 @@ export interface AuthClient {
 	 * el email al que se envió el código.
 	 */
 	verifyOtp(email: string, code: string): Promise<Session>;
+	/**
+	 * Borra la cuenta del usuario con sesión (RGPD / derecho al olvido). Requiere
+	 * la RPC `delete_account` desplegada en el servidor (ver `supabase/`); si no
+	 * está, el proveedor devuelve error y se propaga como `AuthError`.
+	 */
+	deleteAccount(): Promise<void>;
 }

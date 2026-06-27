@@ -110,6 +110,16 @@ export function createSupabaseAuthClient(config: BackendConfig): AuthClient {
 			const session = mapSession(data.session);
 			if (!session) throw new AuthError('unknown', 'OTP verificado sin sesión devuelta.');
 			return session;
+		},
+		async deleteAccount() {
+			const sb = await client();
+			// La RPC `delete_account` (security definer) borra solo al usuario que la
+			// invoca; el resto de sus datos cae en cascada. Si no está desplegada, el
+			// proveedor devuelve error y lo propagamos tipado.
+			const { error } = await net(async () => await sb.rpc('delete_account'));
+			if (error) throw new AuthError('unknown', error.message);
+			// Tras borrar el usuario, cerramos la sesión local (token ya inválido).
+			await net(() => sb.auth.signOut());
 		}
 	};
 }
