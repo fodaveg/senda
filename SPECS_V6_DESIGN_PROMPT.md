@@ -107,3 +107,59 @@ Soporta **varios esquemas de color** (variantes de la marca) y **escala de texto
 
 Sistema de diseño (tokens + componentes) y diseños de pantalla **anotados**,
 **responsive** (escritorio + móvil) y en **modo claro y oscuro**.
+
+---
+
+# Prompt 2 — Iteración de la Ficha de ruta (Resumen enriquecido + Condiciones y seguridad)
+
+> Pégalo en el **mismo proyecto** de Claude Design (continúa el diseño de Senda v6).
+
+---
+
+Continúa el diseño de **Senda v6** que ya hiciste (mismo **sistema de diseño,
+tokens, componentes y variantes**; claro/oscuro; escritorio/móvil; español; WCAG
+AA; offline-first; etiquetar lo no oficial como "sin verificar"). Revisa la
+**Ficha de ruta**: su vista por defecto se queda corta para **decidir**. Añade lo
+siguiente.
+
+## 1) "Resumen" enriquecido = panel de decisión
+
+La vista **Resumen** debe ser lo primero y responder de un vistazo: _"¿hago esta
+ruta hoy y a qué hora?"_. Incluye, con jerarquía clara:
+
+- **Recomendación go / precaución / no-go** (etiqueta con color semántico) según
+  las condiciones.
+- **Meteo de un vistazo** del día elegido (máx/mín, prob. de lluvia, viento,
+  cielo) con enlace a la sección de meteo completa.
+- **Ventana ideal de inicio** (franja horaria recomendada para salir).
+- **Riesgo de incendio forestal** (nivel + nota breve, con su color).
+- **Avisos AEMET/CAP** vigentes (banner de alerta si los hay; estado vacío si no).
+- **Cómo llegar al inicio** (acceso/aparcamiento + tiempo estimado desde el origen
+  del usuario; enlace saliente "Cómo llegar").
+- **Datos clave** (distancia, desnivel, duración, tipo, estado, fuente), coherente
+  con la cabecera fija.
+- **Accesos rápidos**: estado de la mochila (p. ej. 8/11) con CTA a _Preparación_.
+
+## 2) Módulo nuevo "Condiciones y seguridad"
+
+Una sección (en el índice modular **y** como pestaña) que agrupe la seguridad:
+
+- **Meteo** por días + **por horas** del día elegido.
+- **Avisos AEMET/CAP** (vigentes, con caducidad).
+- **Riesgo de incendio forestal**.
+- **Fauna** de la zona (qué puedes encontrar / precauciones), etiquetada como
+  orientativa.
+- **Rutas de escape / puntos de salida** si existen.
+- Recordatorio de la **ficha de emergencia / 112**.
+
+## 3) Ajustes a módulos existentes (para no perder funciones)
+
+- **Preparación**: añade un bloque de **estimación de agua y de energía/calorías**
+  (junto a Mochila / Agua / Etapas).
+- **Acciones**: añade **descargar mapa offline** y **leer informe por voz**,
+  además de generar informe y ficha de emergencia.
+- **Meteo**: que soporte la vista **por horas** además de los 3 días.
+
+Mantén las **dos variantes** donde apliquen, los **estados** (vacío, error con
+reintento, carga/skeleton) y la **atribución por fuente** (FEMECV oficial vs.
+OSM/AEMET orientativo). No inventes datos: lo no verificado va etiquetado.
