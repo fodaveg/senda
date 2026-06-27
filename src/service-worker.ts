@@ -17,9 +17,16 @@
  *   interceptan — su fallo lo gestiona la propia app con estados vacíos.
  */
 
-import { base, build, files, version } from '$service-worker';
+import { build, files, version } from '$service-worker';
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
+
+// Ruta base del sitio sin barra final ('' en la raíz, '/sub' bajo subdirectorio).
+// Se deriva de `import.meta.env.BASE_URL` (Vite la sustituye por el literal en
+// build y dev) en vez de importar `base` de `$service-worker`: ese export falta
+// en el módulo virtual de `$service-worker` en modo dev con Vite 8 y rompía el
+// arranque del SW (y, en cascada, la hidratación en `npm run dev`).
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const CACHE = `senderos-cv-${version}`;
 const PRECACHE = [...build, ...files.filter((f) => !f.startsWith(`${base}/gpx/`)), `${base}/`];
