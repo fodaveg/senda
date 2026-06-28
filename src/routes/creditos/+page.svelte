@@ -20,6 +20,16 @@
 
 <section class="credits">
 	<article>
+		<h2>Desarrollo</h2>
+		<p>
+			Diseño y desarrollo principal: <strong>fodaveg</strong>.
+		</p>
+		<p class="src">
+			<a href="https://fodaveg.net" target="_blank" rel="noopener noreferrer">fodaveg.net</a>
+		</p>
+	</article>
+
+	<article>
 		<h2>Senderos homologados</h2>
 		<p>
 			Recorridos, homologación y datos técnicos: <strong
