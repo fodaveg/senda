@@ -1,0 +1,394 @@
+{
+  "generado": "2026-06-28T00:57:45.489Z",
+  "federacion": {
+    "id": "FNDME",
+    "label": "FNDME",
+    "comunidad": "Comunidad Foral de Navarra",
+    "capabilities": {
+      "estado": true,
+      "mide": false,
+      "agua": false,
+      "etapas": true,
+      "descripcion": false,
+      "fauna": false,
+      "escapes": false
+    }
+  },
+  "total_catalogo": 79,
+  "validadas": 6,
+  "errores": [],
+  "rutas": [
+    {
+      "id": "na-gr-11-etapa-1",
+      "name": "GR 11. Etapa 1 - San Antón - Bera",
+      "type": "GR",
+      "status": "homologado",
+      "status_detail": null,
+      "municipality": null,
+      "zone": null,
+      "aemet_municipio": null,
+      "start": {
+        "lat": 43.392673,
+        "lon": -1.789663,
+        "name": null
+      },
+      "end": {
+        "lat": 43.2806251,
+        "lon": -1.682207
+      },
+      "distance_km": 31.4536,
+      "ascent_m": 1384,
+      "descent_m": 1343,
+      "circular": false,
+      "difficulty_mide": null,
+      "est_duration_min": 175,
+      "water_points": [],
+      "water_points_geo": [],
+      "pois": [],
+      "escape_routes": [],
+      "highlights": [],
+      "best_season": [],
+      "best_start_time": null,
+      "shade_ratio": null,
+      "gpx": "115300.gpx",
+      "links": {
+        "femecv": null,
+        "wikiloc": null
+      },
+      "alternatives": [],
+      "notes_rain": null,
+      "bbox": [
+        -1.8018599,
+        43.2639994,
+        -1.682207,
+        43.392673
+      ],
+      "sources": [
+        "Existencia y ficha: MiSendaFEDME (FNDME) https://misendafedme.es/buscador-de-senderos/etapa/gr-11-etapa-1-san-anton-bera (consulta 2026-06-28)",
+        "Geometría: GPX MiSendaFEDME https://misendafedme.es/adminsenderos/uploads/etapas/115300/gr-011-etapa-01a.gpx (licencia a confirmar; en producción CNIG/IDENA CC-BY)",
+        "Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+      ],
+      "federacion": "FNDME",
+      "comunidad": "Comunidad Foral de Navarra",
+      "capabilities": {
+        "estado": true,
+        "mide": false,
+        "agua": false,
+        "etapas": true,
+        "descripcion": false,
+        "fauna": false,
+        "escapes": false
+      }
+    },
+    {
+      "id": "na-gr-11-etapa-2",
+      "name": "GR 11. Etapa 2 - Bera - Elizondo",
+      "type": "GR",
+      "status": "homologado",
+      "status_detail": null,
+      "municipality": null,
+      "zone": null,
+      "aemet_municipio": null,
+      "start": {
+        "lat": 43.2806251,
+        "lon": -1.682207,
+        "name": null
+      },
+      "end": {
+        "lat": 43.14584,
+        "lon": -1.5172859
+      },
+      "distance_km": 30.1002,
+      "ascent_m": 1537,
+      "descent_m": 1379,
+      "circular": false,
+      "difficulty_mide": null,
+      "est_duration_min": 565,
+      "water_points": [],
+      "water_points_geo": [],
+      "pois": [],
+      "escape_routes": [],
+      "highlights": [],
+      "best_season": [],
+      "best_start_time": null,
+      "shade_ratio": null,
+      "gpx": "115301.gpx",
+      "links": {
+        "femecv": null,
+        "wikiloc": null
+      },
+      "alternatives": [],
+      "notes_rain": null,
+      "bbox": [
+        -1.683502,
+        43.143361,
+        -1.5172859,
+        43.2806251
+      ],
+      "sources": [
+        "Existencia y ficha: MiSendaFEDME (FNDME) https://misendafedme.es/buscador-de-senderos/etapa/gr-11-etapa-2-bera-elizondo (consulta 2026-06-28)",
+        "Geometría: GPX MiSendaFEDME https://misendafedme.es/adminsenderos/uploads/etapas/115301/gr-011-etapa-02.gpx (licencia a confirmar; en producción CNIG/IDENA CC-BY)",
+        "Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+      ],
+      "federacion": "FNDME",
+      "comunidad": "Comunidad Foral de Navarra",
+      "capabilities": {
+        "estado": true,
+        "mide": false,
+        "agua": false,
+        "etapas": true,
+        "descripcion": false,
+        "fauna": false,
+        "escapes": false
+      }
+    },
+    {
+      "id": "na-pr-na-121",
+      "name": "PR-NA 121 - Kornieta",
+      "type": "PR",
+      "status": "homologado",
+      "status_detail": null,
+      "municipality": null,
+      "zone": null,
+      "aemet_municipio": null,
+      "start": {
+        "lat": 43.06583996862173,
+        "lon": -1.875024531036615,
+        "name": null
+      },
+      "end": {
+        "lat": 43.07676116935909,
+        "lon": -1.897683748975396
+      },
+      "distance_km": 18.8,
+      "ascent_m": 1383,
+      "descent_m": 1669,
+      "circular": true,
+      "difficulty_mide": null,
+      "est_duration_min": 275,
+      "water_points": [],
+      "water_points_geo": [],
+      "pois": [],
+      "escape_routes": [],
+      "highlights": [],
+      "best_season": [],
+      "best_start_time": null,
+      "shade_ratio": null,
+      "gpx": "117210.gpx",
+      "links": {
+        "femecv": null,
+        "wikiloc": null
+      },
+      "alternatives": [],
+      "notes_rain": null,
+      "bbox": [
+        -1.91729161888361,
+        43.05619332008064,
+        -1.874939370900393,
+        43.08354187756777
+      ],
+      "sources": [
+        "Existencia y ficha: MiSendaFEDME (FNDME) https://misendafedme.es/buscador-de-senderos/etapa/pr-na-121-kornieta (consulta 2026-06-28)",
+        "Geometría: GPX MiSendaFEDME https://misendafedme.es/adminsenderos/uploads/etapas/117210/pr-na-121.gpx (licencia a confirmar; en producción CNIG/IDENA CC-BY)",
+        "Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+      ],
+      "federacion": "FNDME",
+      "comunidad": "Comunidad Foral de Navarra",
+      "capabilities": {
+        "estado": true,
+        "mide": false,
+        "agua": false,
+        "etapas": true,
+        "descripcion": false,
+        "fauna": false,
+        "escapes": false
+      }
+    },
+    {
+      "id": "na-pr-na-194",
+      "name": "PR-NA 194 - Iturrixikin  - Monte de Arriba",
+      "type": "PR",
+      "status": "homologado",
+      "status_detail": null,
+      "municipality": null,
+      "zone": null,
+      "aemet_municipio": null,
+      "start": {
+        "lat": 42.63891527429223,
+        "lon": -1.548031903803349,
+        "name": null
+      },
+      "end": {
+        "lat": 42.63778254389763,
+        "lon": -1.547593697905541
+      },
+      "distance_km": 9.5,
+      "ascent_m": 1234,
+      "descent_m": 1249,
+      "circular": true,
+      "difficulty_mide": null,
+      "est_duration_min": 195,
+      "water_points": [],
+      "water_points_geo": [],
+      "pois": [],
+      "escape_routes": [],
+      "highlights": [],
+      "best_season": [],
+      "best_start_time": null,
+      "shade_ratio": null,
+      "gpx": "117211.gpx",
+      "links": {
+        "femecv": null,
+        "wikiloc": null
+      },
+      "alternatives": [],
+      "notes_rain": null,
+      "bbox": [
+        -1.552349170669913,
+        42.63778254389763,
+        -1.535181775689125,
+        42.670913776382804
+      ],
+      "sources": [
+        "Existencia y ficha: MiSendaFEDME (FNDME) https://misendafedme.es/buscador-de-senderos/etapa/pr-na-194-iturrixikin-monte-de-arriba (consulta 2026-06-28)",
+        "Geometría: GPX MiSendaFEDME https://misendafedme.es/adminsenderos/uploads/etapas/117211/pr-na-194.gpx (licencia a confirmar; en producción CNIG/IDENA CC-BY)",
+        "Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+      ],
+      "federacion": "FNDME",
+      "comunidad": "Comunidad Foral de Navarra",
+      "capabilities": {
+        "estado": true,
+        "mide": false,
+        "agua": false,
+        "etapas": true,
+        "descripcion": false,
+        "fauna": false,
+        "escapes": false
+      }
+    },
+    {
+      "id": "na-sl-na-71",
+      "name": "SL-NA 71 - Rincones de Uztarroz",
+      "type": "SL",
+      "status": "homologado",
+      "status_detail": null,
+      "municipality": null,
+      "zone": null,
+      "aemet_municipio": null,
+      "start": {
+        "lat": 42.89090998470783,
+        "lon": -0.939600029960275,
+        "name": null
+      },
+      "end": {
+        "lat": 42.89090998470783,
+        "lon": -0.939579997211695
+      },
+      "distance_km": 4,
+      "ascent_m": 190,
+      "descent_m": 190,
+      "circular": true,
+      "difficulty_mide": null,
+      "est_duration_min": 77,
+      "water_points": [],
+      "water_points_geo": [],
+      "pois": [],
+      "escape_routes": [],
+      "highlights": [],
+      "best_season": [],
+      "best_start_time": null,
+      "shade_ratio": null,
+      "gpx": "117215.gpx",
+      "links": {
+        "femecv": null,
+        "wikiloc": null
+      },
+      "alternatives": [],
+      "notes_rain": null,
+      "bbox": [
+        -0.953409969806671,
+        42.88965999148786,
+        -0.938220033422112,
+        42.8972199652344
+      ],
+      "sources": [
+        "Existencia y ficha: MiSendaFEDME (FNDME) https://misendafedme.es/buscador-de-senderos/etapa/sl-na-71-rincones-de-uztarroz (consulta 2026-06-28)",
+        "Geometría: GPX MiSendaFEDME https://misendafedme.es/adminsenderos/uploads/etapas/117215/sl-na-71.gpx (licencia a confirmar; en producción CNIG/IDENA CC-BY)",
+        "Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+      ],
+      "federacion": "FNDME",
+      "comunidad": "Comunidad Foral de Navarra",
+      "capabilities": {
+        "estado": true,
+        "mide": false,
+        "agua": false,
+        "etapas": true,
+        "descripcion": false,
+        "fauna": false,
+        "escapes": false
+      }
+    },
+    {
+      "id": "na-sl-na-70",
+      "name": "SL-NA 70 - Ermita de Idoia",
+      "type": "SL",
+      "status": "homologado",
+      "status_detail": null,
+      "municipality": null,
+      "zone": null,
+      "aemet_municipio": null,
+      "start": {
+        "lat": 42.85908498801291,
+        "lon": -0.927567975595593,
+        "name": null
+      },
+      "end": {
+        "lat": 42.862276984378695,
+        "lon": -0.922833038493991
+      },
+      "distance_km": 2.1,
+      "ascent_m": 110,
+      "descent_m": 84,
+      "circular": true,
+      "difficulty_mide": null,
+      "est_duration_min": 42,
+      "water_points": [],
+      "water_points_geo": [],
+      "pois": [],
+      "escape_routes": [],
+      "highlights": [],
+      "best_season": [],
+      "best_start_time": null,
+      "shade_ratio": null,
+      "gpx": "117216.gpx",
+      "links": {
+        "femecv": null,
+        "wikiloc": null
+      },
+      "alternatives": [],
+      "notes_rain": null,
+      "bbox": [
+        -0.928979991003871,
+        42.85908498801291,
+        -0.922110015526414,
+        42.868358977138996
+      ],
+      "sources": [
+        "Existencia y ficha: MiSendaFEDME (FNDME) https://misendafedme.es/buscador-de-senderos/etapa/sl-na-70-ermita-de-idoia (consulta 2026-06-28)",
+        "Geometría: GPX MiSendaFEDME https://misendafedme.es/adminsenderos/uploads/etapas/117216/sl-na-70.gpx (licencia a confirmar; en producción CNIG/IDENA CC-BY)",
+        "Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+      ],
+      "federacion": "FNDME",
+      "comunidad": "Comunidad Foral de Navarra",
+      "capabilities": {
+        "estado": true,
+        "mide": false,
+        "agua": false,
+        "etapas": true,
+        "descripcion": false,
+        "fauna": false,
+        "escapes": false
+      }
+    }
+  ]
+}
