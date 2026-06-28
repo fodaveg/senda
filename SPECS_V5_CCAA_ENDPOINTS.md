@@ -8,8 +8,11 @@
 > capa de senderos por confirmar vía `GetCapabilities` · 🔴 sin open-data
 > accesible (solo Wikiloc/login) → depender de CNIG/MiSendaFEDME.
 >
-> **Wikiloc nunca como fuente de datos** (regla permanente). Los GPX que aquí se
-> citan son de IDE/CNIG/MiSendaFEDME, no de Wikiloc.
+> **Wikiloc** (revisión 2026-06-28): permitido **solo** desde la **cuenta oficial
+> verificada de la federación** (allowlist), como **geometría/existencia + enlace**,
+> nunca como estado; respetando el ToS de Wikiloc (preferir CNIG/IDE o petición
+> directa de los GPX). Cualquier track de usuario no oficial sigue prohibido. Los
+> GPX citados aquí son de IDE/CNIG/MiSendaFEDME.
 
 ## Las capas del modelo (prioridad: regional primero)
 

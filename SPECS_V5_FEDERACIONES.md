@@ -38,8 +38,19 @@ familia que ya usamos para los tiles.
    clara (CNIG CC-BY)** cuando el WFS regional no tenga licencia evidente, y
    cobertura mínima donde la fuente regional no sea accesible.
 4. **FEMECV** sigue siendo la fuente de **CV** (ya integrada).
-5. **Wikiloc NUNCA como dato** (regla permanente): varias federaciones (FAM
-   Aragón, FMM Madrid…) solo publican ahí; se ignoran como origen.
+5. **Wikiloc: excepción acotada (revisión 2026-06-28)**. Se levanta la prohibición
+   **solo** cuando el publicador es la **cuenta oficial verificada de la
+   federación** (allowlist de cuentas), y **solo** como fuente de
+   **geometría/existencia + enlace canónico**, **nunca de estado**. Sigue
+   prohibido cualquier track de usuario no oficial (la regla original era no
+   llenar la app de rutas no verificadas/repetidas/irrelevantes).
+   - ⚠️ **ToS de Wikiloc**: que el contenido sea oficial resuelve autoría, pero el
+     ToS restringe el **scraping/descarga automatizada**. Camino limpio: usar la
+     cuenta oficial como **señal de confianza + enlace**, tomar la **geometría de
+     CNIG/IDE** y, donde solo esté en Wikiloc, **pedir los GPX a la federación**.
+   - Cuentas oficiales conocidas (a verificar/ampliar en la allowlist): FAM Aragón,
+     FMM Madrid, FDMESCYL Castilla y León, FEEC (canal oficial).
+   - Desbloquea sobre todo Aragón/Madrid/CyL/Cataluña donde no haya capa regional.
 
 Coste: reintroduce **adaptadores por CCAA** (más trabajo que "una sola API"), pero
 evita el sesgo. La ventaja: para casi todas la fuente regional es un **WFS/open-data
