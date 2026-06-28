@@ -13,6 +13,7 @@ export { default as Card } from './Card.svelte';
 export { default as Checkbox } from './Checkbox.svelte';
 export { default as Chip } from './Chip.svelte';
 export { default as EmptyState } from './EmptyState.svelte';
+export { default as FeatureGuard } from './FeatureGuard.svelte';
 export { default as Field } from './Field.svelte';
 export { default as Section } from './Section.svelte';
 export { default as Select } from './Select.svelte';

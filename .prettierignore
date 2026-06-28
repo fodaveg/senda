@@ -18,6 +18,8 @@ bun.lockb
 /data/routes/*.json
 /data/routes/_enriched/
 /data/routes/_crawled/
+# Salida generada por los scripts PoC de ingesta (V5)
+/scripts/ingest/poc/*.json
 
 # Handoff de diseño de Claude Design (referencia visual, no código del producto):
 # se conserva en git pero no se formatea ni entra en el build.

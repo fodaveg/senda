@@ -3,7 +3,8 @@
 	import { resolve } from '$app/paths';
 	import { isTauri } from '@tauri-apps/api/core';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
-	import { Banner, Skeleton } from '$lib/components/ui';
+	import { Banner, FeatureGuard, Skeleton } from '$lib/components/ui';
+	import { federationInfo, routeCapabilities } from '$lib/data/federation';
 	import StagesList from '$lib/components/StagesList.svelte';
 	import { routes } from '$lib/data/routes';
 	import { parentOf, stagesOf } from '$lib/data/stages';
@@ -62,6 +63,10 @@
 	const repo = getUserRepository();
 	let route = $derived(data.route);
 	let wildlife = $derived(wildlifeForZone(route.zone));
+	// Multi-federación (V5-1): qué publica la fuente oficial de esta ruta, para
+	// pintar guardas en los bloques que no expone. FEMECV/CV las tiene todas.
+	let caps = $derived(routeCapabilities(route));
+	let fedLabel = $derived(federationInfo(route.federacion).label);
 
 	let geojson = $state<FeatureCollection | null>(null);
 	let profile = $state<ProfilePoint[]>([]);
@@ -612,7 +617,10 @@
 				</p>
 			</div>
 
-			{#if route.difficulty_mide}
+			{#if !caps.mide}
+				<h3>MIDE</h3>
+				<FeatureGuard federacion={fedLabel} feature="la valoración MIDE" />
+			{:else if route.difficulty_mide}
 				<h3>MIDE</h3>
 				<ul class="mide">
 					{#each Object.entries(route.difficulty_mide) as [key, value] (key)}
@@ -768,7 +776,10 @@
 				{energy}
 			/>
 
-			{#if route.water_points.length > 0}
+			{#if !caps.agua}
+				<h3>Fuentes de agua</h3>
+				<FeatureGuard federacion={fedLabel} feature="los puntos de agua" />
+			{:else if route.water_points.length > 0}
 				<h3>Fuentes de agua</h3>
 				<ul>
 					{#each route.water_points as point (point)}<li>{point}</li>{/each}
@@ -812,7 +823,10 @@
 				dayLabel={dateLabel(selectedDate)}
 			/>
 
-			{#if wildlife}
+			{#if !caps.fauna}
+				<h3>Fauna y seguridad</h3>
+				<FeatureGuard federacion={fedLabel} feature="datos de fauna y riesgos" />
+			{:else if wildlife}
 				<h3>Fauna y seguridad ({wildlife.name})</h3>
 				<ul>
 					{#each wildlife.wildlife as w (w.species)}
@@ -824,7 +838,10 @@
 				{/if}
 			{/if}
 
-			{#if route.escape_routes.length > 0}
+			{#if !caps.escapes}
+				<h3>Escapes</h3>
+				<FeatureGuard federacion={fedLabel} feature="rutas de escape" />
+			{:else if route.escape_routes.length > 0}
 				<h3>Escapes</h3>
 				<ul>
 					{#each route.escape_routes as escape (escape)}<li>{escape}</li>{/each}
