@@ -72,6 +72,30 @@ export interface Poi {
 	dist_m: number;
 }
 
+/**
+ * Qué categorías de datos publica la fuente oficial de una ruta (multi-federación
+ * V5-1). Distingue "la fuente no expone este dato" (capability `false` → la UI
+ * muestra una guarda "(Federación X) no publica este dato") de "dato desconocido"
+ * (campo a `null` con la fuente publicándolo). FEMECV (CV) las tiene todas a
+ * `true`; otras federaciones, solo las que exponen públicamente.
+ */
+export interface RouteCapabilities {
+	/** Estado de homologación oficial (en vigor / baja…). */
+	estado: boolean;
+	/** Valoración MIDE / dificultad estructurada. */
+	mide: boolean;
+	/** Puntos de agua oficiales. */
+	agua: boolean;
+	/** Relación de etapas / ruta padre. */
+	etapas: boolean;
+	/** Descripción, puntos destacados y notas (p. ej. "si llueve"). */
+	descripcion: boolean;
+	/** Fauna y riesgos de la zona. */
+	fauna: boolean;
+	/** Rutas de escape / puntos de salida. */
+	escapes: boolean;
+}
+
 export interface Route {
 	id: string;
 	name: string;
@@ -115,6 +139,15 @@ export interface Route {
 	/** [minLon, minLat, maxLon, maxLat] derivado del GPX en la ingesta. */
 	bbox: [number, number, number, number] | null;
 	sources: string[];
+	/**
+	 * Federación/fuente oficial de la ruta (multi-federación V5-1). Opcional: el
+	 * catálogo FEMECV existente no lo trae y el esquema lo rellena con "FEMECV".
+	 */
+	federacion?: string;
+	/** Comunidad autónoma de la ruta (multi-federación V5-1). */
+	comunidad?: string;
+	/** Qué publica la fuente, para las guardas de la ficha (ver RouteCapabilities). */
+	capabilities?: RouteCapabilities;
 }
 
 // ─── Meteo (SPEC §4) ────────────────────────────────────────────────────────

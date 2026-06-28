@@ -46,6 +46,16 @@ export const waterPointGeoSchema = z.strictObject({
 	dist_m: z.number().min(0)
 });
 
+export const capabilitiesSchema = z.strictObject({
+	estado: z.boolean(),
+	mide: z.boolean(),
+	agua: z.boolean(),
+	etapas: z.boolean(),
+	descripcion: z.boolean(),
+	fauna: z.boolean(),
+	escapes: z.boolean()
+});
+
 export const poiSchema = z.strictObject({
 	name: z.string().min(1),
 	type: z.enum(['mirador', 'cumbre', 'patrimonio', 'refugio', 'otro']),
@@ -101,5 +111,19 @@ export const routeSchema = z.strictObject({
 	alternatives: z.array(z.string()),
 	notes_rain: z.string().min(1).nullable(),
 	bbox: z.tuple([z.number(), z.number(), z.number(), z.number()]).nullable(),
-	sources: z.array(z.string().min(1)).min(1)
+	sources: z.array(z.string().min(1)).min(1),
+	// Multi-federación (V5-1). .default(...) para que el catálogo FEMECV ya
+	// publicado (sin estos campos) siga validando: por defecto es CV/FEMECV con
+	// todas las capacidades.
+	federacion: z.string().min(1).default('FEMECV'),
+	comunidad: z.string().min(1).default('Comunitat Valenciana'),
+	capabilities: capabilitiesSchema.default({
+		estado: true,
+		mide: true,
+		agua: true,
+		etapas: true,
+		descripcion: true,
+		fauna: true,
+		escapes: true
+	})
 }) satisfies z.ZodType<Route>;
