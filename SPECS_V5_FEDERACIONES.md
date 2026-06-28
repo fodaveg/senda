@@ -19,20 +19,31 @@ agrega TODAS las federaciones: el Centro de Descargas del CNIG (IGN), serie
 comunidad autónoma / provincia / municipio. Licencia **IGN (CC-BY)** — la misma
 familia que ya usamos para los tiles.
 
-Por tanto, el plan de ingesta multi-federación **no necesita raspar 17 webs**
-(muchas solo publican sus tracks en **Wikiloc**, que nuestra regla prohíbe como
-fuente de datos). La arquitectura recomendada:
+> ⚠️ **Revisión (2026-06-28): el nacional NO es la fuente principal.** La medición
+> de cobertura (Fase A) demostró que MiSendaFEDME/CNIG está **sesgado por subida**:
+> La Rioja 0, Madrid 13, Canarias 24, Galicia 35… e incluso CV 274 vs ~585 por
+> FEMECV. Usar el nacional como autoridad de existencia daría un catálogo
+> **incompleto y sesgado**. Por eso la prioridad se invierte (ver "Modelo de
+> ingesta ACORDADO").
 
-1. **Columna vertebral = CNIG/FEDME** → geometría (GPX) + cobertura nacional +
-   `federacion`/CCAA derivada del código del sendero y del área administrativa.
-   Metadatos pobres (ID, nombre de etapa, longitud, fecha de edición).
-2. **Enriquecimiento por portal propio** donde sea **accesible y con licencia
-   clara**: FEMECV (ya integrado), **Open Data Euskadi** (open data real), y los
-   buscadores de CyL / CLM / Navarra / Extremadura / Canarias para dificultad,
-   agua, descripción, etc. — igual que hoy enriquecemos con OSM.
-3. **Wikiloc NUNCA como dato** (regla permanente): es enlace saliente. Varias
-   federaciones (FAM Aragón, FMM Madrid, CyL…) publican ahí; se ignoran como
-   origen de datos.
+**Arquitectura (prioridad invertida):**
+
+1. **Fuente principal por CCAA = la fuente oficial regional** (la **IDE/open-data
+   de la comunidad**, a veces co-publicada con la federación; o el portal de la
+   federación si expone datos accesibles). Es la **autoridad de existencia y la
+   más completa**. La "federación" en sentido literal (web fedXXX.es) suele ser
+   mala fuente técnica → lo bueno es la IDE regional (WFS/open-data estándar).
+2. **Estado de homologación** = lista oficial de la federación/administración.
+3. **CNIG/MiSendaFEDME = SOLO respaldo**: cross-check, **geometría con licencia
+   clara (CNIG CC-BY)** cuando el WFS regional no tenga licencia evidente, y
+   cobertura mínima donde la fuente regional no sea accesible.
+4. **FEMECV** sigue siendo la fuente de **CV** (ya integrada).
+5. **Wikiloc NUNCA como dato** (regla permanente): varias federaciones (FAM
+   Aragón, FMM Madrid…) solo publican ahí; se ignoran como origen.
+
+Coste: reintroduce **adaptadores por CCAA** (más trabajo que "una sola API"), pero
+evita el sesgo. La ventaja: para casi todas la fuente regional es un **WFS/open-data
+estándar** (no scraping frágil) — ver `SPECS_V5_CCAA_ENDPOINTS.md`.
 
 Esto encaja con el pipeline actual `crawl → build → enrich` (`scripts/ingest/`):
 el CNIG sustituiría/ampliaría la fase `crawl` (descarga de GPX + índice), y los
@@ -44,14 +55,17 @@ Refinamiento del modelo híbrido tras la investigación:
 
 - **Comunitat Valenciana**: se mantiene **FEMECV tal cual** (geometría + metadatos
   ricos + estado). No se toca; es la fuente de CV.
-- **Resto de CCAA**:
-  1. **Geometría + cobertura + matrícula (GR/PR/SL) + CCAA → CNIG** (columna
-     vertebral).
+- **Resto de CCAA** (prioridad invertida tras la Fase A):
+  1. **Existencia + cobertura + matrícula + geometría → fuente OFICIAL REGIONAL**
+     (IDE/open-data de la comunidad, o portal de la federación si es accesible).
+     Es la autoridad y la más completa. **CNIG/MiSendaFEDME solo como respaldo**
+     (cross-check, geometría licenciada CC-BY, o cobertura donde la región no
+     exponga datos accesibles).
   2. **El estado de la ruta (`status`/`status_detail`) viene SIEMPRE de la
-     federación**, nunca de CNIG.
-  3. **Gate de existencia**: una ruta solo se publica si aparece en **CNIG _y_** se
-     localiza en la **fuente pública de su federación**. Una ruta que está en CNIG
-     pero no se encuentra en la federación **no se muestra**.
+     federación/administración** (su lista oficial), nunca del agregador nacional.
+  3. **Gate de existencia**: una ruta se publica si está en la **fuente oficial de
+     su CCAA**. El nacional no decide existencia (está sesgado por subida); solo
+     rellena huecos cuando la región no tiene fuente accesible.
   4. **Por bloque/funcionalidad de la ficha** (la v6 ya es modular):
      - dato **expuesto** por la federación → se muestra;
      - la federación **no expone** ese dato públicamente → **no se muestra el

@@ -11,19 +11,24 @@
 > **Wikiloc nunca como fuente de datos** (regla permanente). Los GPX que aquí se
 > citan son de IDE/CNIG/MiSendaFEDME, no de Wikiloc.
 
-## Las 3 capas del modelo (recordatorio)
+## Las capas del modelo (prioridad: regional primero)
 
-1. **Existencia + estado** → capa federación. Por defecto **MiSendaFEDME**
-   (buscador nacional FEDME), endpoint único cambiando `ccaa=`:
-   `POST https://misendafedme.es/buscador-de-senderos/inc/buscar_etapas_mapa.php`
-   Devuelve JSON `{matricula, codi_matricula, titulo, permalink, id, arxiu(gpx),
-gr_parent_*}`. **Solo lista senderos en vigor** ⇒ presencia ≈ homologado.
-2. **Geometría (con licencia)** → **CNIG** serie FEDME (CC-BY) o el **WFS de la
-   IDE regional** (cada uno con su licencia). MiSendaFEDME da GPX como respaldo
-   (licencia a confirmar).
-3. **Enriquecimiento** (estado oficial detallado, MIDE, agua, municipio…) →
-   **IDE regional / open-data / portal de la federación**. Lo que ninguna fuente
-   exponga → bloque oculto o capa "_(Federación X) no expone públicamente datos…_".
+> El agregador nacional está **sesgado por subida** (ver cobertura abajo), así que
+> **NO** es la fuente principal. La autoridad es la fuente oficial de cada CCAA.
+
+1. **Existencia + cobertura + geometría + matrícula (PRINCIPAL)** → **fuente
+   oficial regional**: la **IDE/open-data de la comunidad** (WFS/GPX/SHP estándar)
+   o el portal de la federación si expone datos accesibles. Es la más completa.
+2. **Estado de homologación** → **lista oficial de la federación/administración**.
+3. **Respaldo nacional (solo)** → **MiSendaFEDME** (índice/cross-check) y **CNIG**
+   serie FEDME (geometría CC-BY donde la región no tenga licencia clara, o
+   cobertura donde la región no exponga datos). MiSendaFEDME, un endpoint cambiando
+   `ccaa=`: `POST .../inc/buscar_etapas_mapa.php` → JSON
+   `{matricula, codi_matricula, titulo, permalink, id, arxiu(gpx), gr_parent_*}`
+   (solo senderos en vigor).
+4. **Enriquecimiento** (MIDE, agua, municipio, descripción…) → IDE regional /
+   open-data. Lo no expuesto → bloque oculto o capa "_(Federación X) no expone
+   públicamente datos…_".
 
 ## Cobertura de la capa federación (MiSendaFEDME, Fase A, 2026-06-28)
 
@@ -179,17 +184,19 @@ Total nacional **3.359 etapas**. Recuento por CCAA (código `ccaa`):
 
 ## Cómo se ataca en el ingest (resumen operativo)
 
-1. **Capa federación / existencia / estado**: 1 llamada por CCAA a MiSendaFEDME
-   (`ccaa=<código>`). Donde la cobertura sea baja (ib, cn, cb, ga, ri, md),
-   **complementar con la IDE regional** (y para Navarra, la lista de
-   deportenavarra.es para estado).
-2. **Geometría**: CNIG serie FEDME (CC-BY) o WFS de la IDE regional; unir por
-   **matrícula + nombre + proximidad**.
-3. **Enriquecimiento**: WFS/open-data de cada IDE (atributos: nombre, dificultad,
-   distancia, duración, inicio…; ricos en Andalucía REDIAM). Lo no expuesto →
-   overlay "(Federación X) no expone públicamente datos…".
-4. **Actualizaciones**: las IDE/WFS y MiSendaFEDME son consultables periódicamente;
-   guardar `fetched_at`/fecha de edición por fuente en `sources` (no inventar).
+1. **Existencia + cobertura + geometría (PRINCIPAL)**: la **fuente oficial
+   regional** de cada CCAA (IDE/open-data, normalmente WFS). Es la autoridad de
+   existencia; el nacional NO decide cobertura (sesgado).
+2. **Estado**: lista oficial de la federación/administración (p. ej. Navarra =
+   `deportenavarra.es`).
+3. **Respaldo nacional**: MiSendaFEDME (`ccaa=<código>`, cross-check/índice) y
+   CNIG serie FEDME (geometría CC-BY) solo donde la región no exponga datos
+   accesibles. Unir por **matrícula + nombre + proximidad**.
+4. **Enriquecimiento**: WFS/open-data de cada IDE (nombre, dificultad, distancia,
+   duración, inicio…; ricos en Andalucía REDIAM). Lo no expuesto → overlay
+   "(Federación X) no expone públicamente datos…".
+5. **Actualizaciones**: WFS/IDE consultables periódicamente; guardar
+   `fetched_at`/fecha de edición por fuente en `sources` (no inventar).
 
 > **Pendiente al implementar V5-1**: confirmar el `typeName` exacto de la capa de
 > senderos en cada IDE vía `GetCapabilities` (verificado solo en Navarra/IDENA y
