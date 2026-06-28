@@ -33,6 +33,56 @@ Esto encaja con el pipeline actual `crawl → build → enrich` (`scripts/ingest
 el CNIG sustituiría/ampliaría la fase `crawl` (descarga de GPX + índice), y los
 portales propios entrarían como fuentes de `enrich` (como `enrich/osm.ts`).
 
+## Modelo de ingesta ACORDADO (decisiones del usuario, 2026-06-28)
+
+Refinamiento del modelo híbrido tras la investigación:
+
+- **Comunitat Valenciana**: se mantiene **FEMECV tal cual** (geometría + metadatos
+  ricos + estado). No se toca; es la fuente de CV.
+- **Resto de CCAA**:
+  1. **Geometría + cobertura + matrícula (GR/PR/SL) + CCAA → CNIG** (columna
+     vertebral).
+  2. **El estado de la ruta (`status`/`status_detail`) viene SIEMPRE de la
+     federación**, nunca de CNIG.
+  3. **Gate de existencia**: una ruta solo se publica si aparece en **CNIG _y_** se
+     localiza en la **fuente pública de su federación**. Una ruta que está en CNIG
+     pero no se encuentra en la federación **no se muestra**.
+  4. **Por bloque/funcionalidad de la ficha** (la v6 ya es modular):
+     - dato **expuesto** por la federación → se muestra;
+     - la federación **no expone** ese dato públicamente → **no se muestra el
+       bloque**, o se pone una **capa encima**: «_(Federación X) no expone
+       públicamente datos para esta funcionalidad_»;
+     - dato **desconocido** (la fuente lo expone pero esta ruta no lo trae) →
+       regla actual: `null` + entrada en `sources` (no inventar).
+  5. Enriquecimiento adicional con **OSM** (agua/POIs) como hoy.
+
+> Para verificar estado/metadatos **no hace falta el GPX de la federación** (ya lo
+> da CNIG): basta su **ficha/visor/open-data PÚBLICO** (NO Wikiloc, NO login). Eso
+> amplía las federaciones usables (muchas tienen el track gated pero el estado
+> visible públicamente).
+
+### Implicaciones técnicas
+
+- **Matriz de capacidades por federación**: qué funcionalidades publica cada una
+  (estado, MIDE, agua, descripción, etapas…), para decidir por bloque entre
+  _mostrar_ / _overlay «no expone»_ / _sin dato_. Más procedencia por campo.
+- **Adaptador por federación**: lee el catálogo PÚBLICO (web/visor/open-data) para
+  confirmar **existencia + estado + metadatos expuestos**. No usa Wikiloc ni
+  fuentes tras login como dato.
+- **Emparejado CNIG ↔ federación** por **matrícula GR/PR-XX + nombre + proximidad
+  de extremos**. Es el grueso del trabajo. Mitigación de falsos negativos
+  (ocultarían rutas reales): matching tolerante + **informe de no-emparejadas** +
+  lista de **overrides** manuales.
+
+### Riesgo / decisión abierta (por federación, al implementar)
+
+Federaciones **sin ningún metadato público por ruta** (solo Wikiloc o todo tras
+login): bajo el gate de existencia, su CCAA **no mostraría nada**. Decisión por
+federación: **(a)** usar su **visor público** si al menos da el estado
+(probable en FAM Aragón / FEEC Cataluña), o **(b)** dejar esa CCAA **fuera** hasta
+que publique datos. Preferencia: (a) cuando haya estado público; (b) como último
+recurso. Es configuración del adaptador, no condiciona el diseño.
+
 ## Aviso legal / homologación (no inventar)
 
 - La **«homologación» FEDME** (marcas registradas GR®/PR®/SL®) la gestionan las
