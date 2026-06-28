@@ -6,6 +6,11 @@
 > de conocimiento + verificación web; las URLs marcadas «verificar» no se han
 > confirmado a nivel de fichero descargable).
 
+> **Endpoints concretos por comunidad** (a qué atacar en ingest/actualizaciones):
+> ver **[SPECS_V5_CCAA_ENDPOINTS.md](SPECS_V5_CCAA_ENDPOINTS.md)** (dosier de las
+> 17 CCAA + cobertura nacional medida). Sondeo reproducible:
+> `node scripts/ingest/poc/federaciones-cobertura.mjs`.
+
 ## Conclusión / recomendación estratégica
 
 **Hay una fuente nacional, oficial, descargable y con licencia compatible que
