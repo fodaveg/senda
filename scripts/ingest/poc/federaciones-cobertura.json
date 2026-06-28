@@ -1,0 +1,225 @@
+{
+	"generado": "2026-06-28T00:26:09.342Z",
+	"fuente": "https://misendafedme.es/buscador-de-senderos/inc/buscar_etapas_mapa.php",
+	"ccaa": {
+		"an": {
+			"nombre": "Andalucía",
+			"etapas": 459,
+			"por_tipo": {
+				"GR": 257,
+				"PR": 190,
+				"SL": 12
+			},
+			"senderos": 27,
+			"prefijos_matricula": ["GR", "PR-A", "SL-A"]
+		},
+		"ar": {
+			"nombre": "Aragón",
+			"etapas": 770,
+			"por_tipo": {
+				"GR": 245,
+				"PR": 453,
+				"SL": 72
+			},
+			"senderos": 48,
+			"prefijos_matricula": ["GR", "PR-HU", "PR-TE", "PR-Z", "SL-TE", "SL-Z"]
+		},
+		"as": {
+			"nombre": "Asturias",
+			"etapas": 184,
+			"por_tipo": {
+				"PR": 76,
+				"GR": 108
+			},
+			"senderos": 19,
+			"prefijos_matricula": ["GR", "PR-AS"]
+		},
+		"ib": {
+			"nombre": "Illes Balears",
+			"etapas": 23,
+			"por_tipo": {
+				"GR": 23
+			},
+			"senderos": 2,
+			"prefijos_matricula": ["GR"]
+		},
+		"cn": {
+			"nombre": "Canarias",
+			"etapas": 24,
+			"por_tipo": {
+				"GR": 24
+			},
+			"senderos": 1,
+			"prefijos_matricula": ["GR"]
+		},
+		"cb": {
+			"nombre": "Cantabria",
+			"etapas": 9,
+			"por_tipo": {
+				"SL": 2,
+				"PR": 7
+			},
+			"senderos": 1,
+			"prefijos_matricula": ["PR-S", "SL-S"]
+		},
+		"cm": {
+			"nombre": "Castilla-La Mancha",
+			"etapas": 226,
+			"por_tipo": {
+				"PR": 167,
+				"SL": 17,
+				"GR": 42
+			},
+			"senderos": 6,
+			"prefijos_matricula": [
+				"GR",
+				"PR-AB",
+				"PR-CR",
+				"PR-CU",
+				"PR-GU",
+				"PR-TO",
+				"SL-AB",
+				"SL-CU",
+				"SL-GU",
+				"SL-TO"
+			]
+		},
+		"cl": {
+			"nombre": "Castilla y León",
+			"etapas": 152,
+			"por_tipo": {
+				"PR": 113,
+				"GR": 20,
+				"SL": 19
+			},
+			"senderos": 4,
+			"prefijos_matricula": [
+				"GR",
+				"PR-AV",
+				"PR-BU",
+				"PR-LE",
+				"PR-P",
+				"PR-SA",
+				"PR-SG",
+				"PR-SO",
+				"PR-VA",
+				"SL-AV",
+				"SL-LE",
+				"SL-P",
+				"SL-VA",
+				"SL-ZA"
+			]
+		},
+		"ct": {
+			"nombre": "Cataluña",
+			"etapas": 586,
+			"por_tipo": {
+				"GR": 362,
+				"PR": 143,
+				"SL": 81
+			},
+			"senderos": 70,
+			"prefijos_matricula": ["GR", "PR-C", "SL-C"]
+		},
+		"ex": {
+			"nombre": "Extremadura",
+			"etapas": 148,
+			"por_tipo": {
+				"PR": 46,
+				"SL": 39,
+				"GR": 63
+			},
+			"senderos": 8,
+			"prefijos_matricula": ["GR", "PR-BA", "PR-CC", "SL-BA", "SL-CC"]
+		},
+		"ga": {
+			"nombre": "Galicia",
+			"etapas": 35,
+			"por_tipo": {
+				"PR": 24,
+				"GR": 11
+			},
+			"senderos": 5,
+			"prefijos_matricula": ["GR", "PR-G"]
+		},
+		"ri": {
+			"nombre": "La Rioja",
+			"etapas": 0,
+			"por_tipo": {},
+			"senderos": 0,
+			"prefijos_matricula": []
+		},
+		"md": {
+			"nombre": "Madrid",
+			"etapas": 13,
+			"por_tipo": {
+				"GR": 7,
+				"PR": 6
+			},
+			"senderos": 2,
+			"prefijos_matricula": ["GR", "PR-M"]
+		},
+		"mc": {
+			"nombre": "Murcia",
+			"etapas": 86,
+			"por_tipo": {
+				"PR": 48,
+				"SL": 12,
+				"GR": 26
+			},
+			"senderos": 6,
+			"prefijos_matricula": ["GR", "PR-MU", "SL-MU"]
+		},
+		"nc": {
+			"nombre": "Navarra",
+			"etapas": 79,
+			"por_tipo": {
+				"GR": 57,
+				"PR": 7,
+				"SL": 15
+			},
+			"senderos": 21,
+			"prefijos_matricula": ["GR", "PR-NA", "SL-NA"]
+		},
+		"pv": {
+			"nombre": "País Vasco",
+			"etapas": 284,
+			"por_tipo": {
+				"GR": 106,
+				"PR": 138,
+				"SL": 40
+			},
+			"senderos": 21,
+			"prefijos_matricula": ["GR", "PR-BI", "PR-GI", "SL-GI"]
+		},
+		"vc": {
+			"nombre": "Comunitat Valenciana",
+			"etapas": 274,
+			"por_tipo": {
+				"PR": 195,
+				"SL": 9,
+				"GR": 70
+			},
+			"senderos": 11,
+			"prefijos_matricula": ["GR", "PR-CV", "SL-CV"]
+		},
+		"ce": {
+			"nombre": "Ceuta",
+			"etapas": 7,
+			"por_tipo": {
+				"SL": 5,
+				"PR": 2
+			},
+			"senderos": 1,
+			"prefijos_matricula": ["PR-CE", "SL-CE"]
+		},
+		"ml": {
+			"nombre": "Melilla",
+			"etapas": 0,
+			"por_tipo": {},
+			"senderos": 0,
+			"prefijos_matricula": []
+		}
+	},
+	"total_etapas": 3359
+}
