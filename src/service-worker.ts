@@ -31,54 +31,81 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const CACHE = `senderos-cv-${version}`;
 const PRECACHE = [...build, ...files.filter((f) => !f.startsWith(`${base}/gpx/`)), `${base}/`];
 
-sw.addEventListener('install', (event) => {
-	event.waitUntil(
-		caches
-			.open(CACHE)
-			.then((cache) => cache.addAll(PRECACHE))
-			.then(() => sw.skipWaiting())
-	);
-});
+// En `npm run dev` Vite sirve los módulos sin hashes inmutables y re-optimiza
+// dependencias sobre la marcha; un SW interceptando esas peticiones devuelve
+// chunks obsoletos y rompe la importación dinámica de los nodos del router
+// ("Failed to fetch dynamically imported module …/nodes/0.js") y, en cascada,
+// la hidratación: la página se ve pero nada es interactivo. Por eso en dev el SW
+// no precachea ni intercepta nada y, al activarse, **borra las cachés** y se
+// desregistra para curar a un cliente que arrastrase un SW roto de una sesión
+// previa. En build `import.meta.env.DEV` es `false` y este bloque se elimina,
+// dejando intacta la PWA de producción.
+if (import.meta.env.DEV) {
+	sw.addEventListener('install', () => sw.skipWaiting());
+	sw.addEventListener('activate', (event) => {
+		event.waitUntil(
+			caches
+				.keys()
+				.then((keys) => Promise.all(keys.map((k) => caches.delete(k))))
+				.then(() => sw.clients.claim())
+				.then(() => sw.registration.unregister())
+		);
+	});
+} else {
+	registerProductionWorker();
+}
 
-sw.addEventListener('activate', (event) => {
-	event.waitUntil(
-		caches
-			.keys()
-			.then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
-			.then(() => sw.clients.claim())
-	);
-});
+/** Lógica PWA real (cache-first del shell + network-first del resto). Solo en build. */
+function registerProductionWorker(): void {
+	sw.addEventListener('install', (event) => {
+		event.waitUntil(
+			caches
+				.open(CACHE)
+				.then((cache) => cache.addAll(PRECACHE))
+				.then(() => sw.skipWaiting())
+		);
+	});
 
-sw.addEventListener('fetch', (event) => {
-	const { request } = event;
-	if (request.method !== 'GET') return;
+	sw.addEventListener('activate', (event) => {
+		event.waitUntil(
+			caches
+				.keys()
+				.then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+				.then(() => sw.clients.claim())
+		);
+	});
 
-	const url = new URL(request.url);
-	if (url.origin !== sw.location.origin) return;
+	sw.addEventListener('fetch', (event) => {
+		const { request } = event;
+		if (request.method !== 'GET') return;
 
-	// Assets precacheados: cache-first.
-	if (PRECACHE.includes(url.pathname)) {
+		const url = new URL(request.url);
+		if (url.origin !== sw.location.origin) return;
+
+		// Assets precacheados: cache-first.
+		if (PRECACHE.includes(url.pathname)) {
+			event.respondWith(
+				caches.open(CACHE).then(async (cache) => {
+					const cached = await cache.match(url.pathname);
+					return cached ?? fetch(request);
+				})
+			);
+			return;
+		}
+
+		// Resto (navegaciones incluidas): network-first con caída a caché.
 		event.respondWith(
 			caches.open(CACHE).then(async (cache) => {
-				const cached = await cache.match(url.pathname);
-				return cached ?? fetch(request);
+				try {
+					const response = await fetch(request);
+					if (response.ok) cache.put(request, response.clone());
+					return response;
+				} catch (error) {
+					const cached = (await cache.match(request)) ?? (await cache.match(`${base}/`));
+					if (cached) return cached;
+					throw error;
+				}
 			})
 		);
-		return;
-	}
-
-	// Resto (navegaciones incluidas): network-first con caída a caché.
-	event.respondWith(
-		caches.open(CACHE).then(async (cache) => {
-			try {
-				const response = await fetch(request);
-				if (response.ok) cache.put(request, response.clone());
-				return response;
-			} catch (error) {
-				const cached = (await cache.match(request)) ?? (await cache.match(`${base}/`));
-				if (cached) return cached;
-				throw error;
-			}
-		})
-	);
-});
+	});
+}
