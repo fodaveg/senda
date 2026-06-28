@@ -83,6 +83,56 @@ federación: **(a)** usar su **visor público** si al menos da el estado
 que publique datos. Preferencia: (a) cuando haya estado público; (b) como último
 recurso. Es configuración del adaptador, no condiciona el diseño.
 
+## PoC Navarra (2026-06-28) — resultados ✅
+
+Script reproducible: `scripts/ingest/poc/navarra.mjs` (no toca runtime/catálogo).
+Informe: `scripts/ingest/poc/navarra-report.json`. Ejecutar:
+`node scripts/ingest/poc/navarra.mjs`.
+
+**Hallazgo principal**: la federación navarra (**FNDME**, `senderos.nafarmendi.org`)
+**delega su buscador en MiSendaFEDME**, que expone un **endpoint JSON limpio**:
+
+```
+POST https://misendafedme.es/buscador-de-senderos/inc/buscar_etapas_mapa.php
+body: ccaa=nc        (Comunidad Foral de Navarra)
+→ JSON [{ matricula, codi_matricula(GR/PR/SL), titulo, permalink, id,
+          arxiu(=ruta GPX), gr_parent_titulo, gr_parent_permalink }]
+```
+
+Resultado para Navarra: **79 etapas** (GR 57 · PR 7 · SL 15), **21 senderos**.
+Matrículas: GR 11/12/20/220/225/321/323, GR T 0x (transfronterizos), `PR-NA xxx`
+y `SL-NA xx`. El sufijo `-NA` identifica la federación; los GR son
+nacionales/transfronterizos.
+
+**Validación del modelo acordado:**
+
+- **Existencia + estado**: MiSendaFEDME solo lista senderos **en vigor**; no hay
+  campo de estado explícito ⇒ **presencia ≈ homologado**, y las rutas de baja
+  **no aparecen** (el gate "en CNIG pero no en la federación → no se muestra" se
+  cumple solo). ✔
+- **Geometría**: el GPX (`arxiu`) descarga y parsea bien (p. ej. GR 11 etapa 1 =
+  1701 puntos). **La longitud del track coincide con la declarada por la
+  federación** (31,5≈31,45 km; 30,1≈30,1; 9,5≈9,5; 4≈4; 2,1≈2,1) → valida el
+  emparejado. Excepción: **PR-NA 121** declara 18,8 km pero el track da 25,9 km →
+  _hallazgo de calidad de dato_ (marcar/avisar, no inventar). ⚠
+- **Matriz de capacidades (FNDME vía MiSendaFEDME)**:
+  - **Expone**: existencia, matrícula, tipo, sendero↔etapas, **GPX**, longitud,
+    desnivel ±, tiempo, recorrido (lineal/circular), CCAA.
+  - **NO expone públicamente** (⇒ ocultar bloque o capa "_(FNDME) no expone
+    públicamente datos para esta funcionalidad_"): **estado explícito**, **MIDE/
+    dificultad**, **agua/fuentes**, **POIs**, **descripción estructurada**,
+    **fauna/riesgos**. Distinto de "dato desconocido" (regla `null` + `sources`). ✔
+- **Identidad/emparejado**: la **matrícula base no es única por sendero** (p. ej.
+  "GR 11" aparece como 3 _parents_ distintos) ⇒ el join CNIG↔federación debe usar
+  **matrícula + nombre + proximidad de geometría**, como ya se previó. ✔
+
+**Conclusión PoC**: el modelo es **viable** para Navarra con una sola fuente
+pública (MiSendaFEDME) para existencia/estado/metadatos/GPX. En producción, la
+**geometría se tomaría del CNIG (CC-BY)** unida por matrícula+nombre (el GPX de
+MiSendaFEDME queda como respaldo, licencia a confirmar). Como MiSendaFEDME es el
+buscador **nacional**, este mismo endpoint sirve para **otras CCAA** cambiando
+`ccaa=` (verificar cuáles delegan en él).
+
 ## Aviso legal / homologación (no inventar)
 
 - La **«homologación» FEDME** (marcas registradas GR®/PR®/SL®) la gestionan las
