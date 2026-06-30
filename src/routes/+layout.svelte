@@ -270,22 +270,35 @@
 		color: var(--ink);
 		background: var(--bg);
 	}
+	/* Cabecera flotante tipo "dock": pastilla centrada con holgura lateral,
+	   pegajosa al hacer scroll. Fondo verde de marca + texto blanco en ambos
+	   temas; sombra y borde sutil para despegarla del fondo. */
 	header {
+		position: sticky;
+		top: var(--space-3);
+		z-index: 50;
 		display: flex;
 		align-items: center;
-		gap: var(--space-3) var(--space-4);
+		gap: var(--space-2) var(--space-4);
 		flex-wrap: wrap;
-		padding: var(--space-3) var(--space-4);
+		padding: var(--space-2) var(--space-3);
 		background: var(--brand-strong, #1d3a2a);
 		color: #fff;
+		width: min(var(--container-wide), calc(100% - 2 * var(--space-4)));
+		margin: var(--space-3) auto 0;
+		border-radius: 18px;
+		box-shadow: var(--shadow-md);
+		border: 1px solid color-mix(in srgb, #fff 9%, transparent);
 	}
 	.brand {
-		color: #fff;
+		display: inline-flex;
+		align-items: center;
+		padding: var(--space-1);
+		border-radius: var(--radius-md);
 		text-decoration: none;
-		font-family: var(--font-head);
-		font-weight: 800;
-		font-size: var(--text-lg);
-		letter-spacing: 0.01em;
+	}
+	.brand:hover {
+		background: color-mix(in srgb, #fff 10%, transparent);
 	}
 	.tagline {
 		font-size: var(--text-sm);
