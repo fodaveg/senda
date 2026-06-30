@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { isoTimeToMinutes, minutesToHhMm, startWindow } from './startWindow';
+import {
+	isoTimeToMinutes,
+	minutesToHhMm,
+	startWindow,
+	startWindowTimeline,
+	type StartWindow
+} from './startWindow';
 import type { Route, WeatherDay } from '$lib/types';
 import type { HourlyPoint } from '$lib/weather/hourly';
 
@@ -121,6 +127,65 @@ describe('startWindow', () => {
 			w!.reasons.some((r) => r.includes('no se puede') || r.includes('lo antes posible'))
 		).toBe(true);
 		expect(w!.endMin).toBeGreaterThanOrEqual(w!.startMin);
+	});
+});
+
+describe('startWindowTimeline', () => {
+	// Ventana base: día con amanecer 06:35 (395) y anochecer 21:25 (1285) →
+	// eje redondeado a la hora = [06:00=360, 22:00=1320], span 960.
+	function win(overrides: Partial<StartWindow>): StartWindow {
+		return {
+			startMin: 395,
+			endMin: 1015,
+			lightLimitMin: 1015,
+			lightAlert: false,
+			hotSpan: null,
+			reasons: [],
+			...overrides
+		};
+	}
+
+	it('null si la ventana es de alerta de luz (no hay franja que dibujar)', () => {
+		expect(startWindowTimeline(win({ lightAlert: true }), day({}))).toBeNull();
+	});
+
+	it('null si el día no aporta amanecer/anochecer utilizables', () => {
+		expect(startWindowTimeline(win({}), day({ sunrise: 'sin hora' }))).toBeNull();
+		expect(startWindowTimeline(win({}), day({ sunset: '2026-06-14T05:00' }))).toBeNull();
+	});
+
+	it('eje redondeado a la hora desde el amanecer hasta el anochecer', () => {
+		const t = startWindowTimeline(win({}), day({}))!;
+		expect(t.axisStartMin).toBe(360);
+		expect(t.axisEndMin).toBe(1320);
+	});
+
+	it('franja ideal posicionada en % sobre el eje', () => {
+		const t = startWindowTimeline(win({}), day({}))!;
+		// left = (395−360)/960 = 3,65%; width = (1015−395)/960 = 64,58%
+		expect(t.ideal.leftPct).toBeCloseTo(3.65, 1);
+		expect(t.ideal.widthPct).toBeCloseTo(64.58, 1);
+		expect(t.avoid).toBeNull();
+	});
+
+	it('franja de calor (avoid) cuando hay hotSpan', () => {
+		const t = startWindowTimeline(win({ hotSpan: [720, 1020] }), day({}))!;
+		// 720→37,5% · 1020→68,75% · ancho 31,25%
+		expect(t.avoid!.leftPct).toBeCloseTo(37.5, 2);
+		expect(t.avoid!.widthPct).toBeCloseTo(31.25, 2);
+	});
+
+	it('recorta al eje las franjas que se salen (clamp 0–100)', () => {
+		const t = startWindowTimeline(win({ hotSpan: [1200, 1500] }), day({}))!;
+		// 1200→87,5%; 1500 se sale (118,75%) → 100%; ancho 12,5%
+		expect(t.avoid!.leftPct).toBeCloseTo(87.5, 2);
+		expect(t.avoid!.widthPct).toBeCloseTo(12.5, 2);
+	});
+
+	it('marcas horarias repartidas, alineadas con el eje', () => {
+		const t = startWindowTimeline(win({}), day({}))!;
+		expect(t.ticks.map((x) => x.hour)).toEqual([6, 10, 14, 18, 22]);
+		expect(t.ticks.map((x) => x.leftPct)).toEqual([0, 25, 50, 75, 100]);
 	});
 });
 

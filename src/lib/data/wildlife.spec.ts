@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { wildlifeForZone, wildlifeZones } from './wildlife';
+import { wildlifeForZone, wildlifeEmoji, wildlifeZones } from './wildlife';
 import { routes } from './routes';
 
 describe('zones.json', () => {
@@ -34,5 +34,36 @@ describe('zones.json', () => {
 	it('wildlifeForZone devuelve null para zonas desconocidas o null', () => {
 		expect(wildlifeForZone(null)).toBeNull();
 		expect(wildlifeForZone('pirineos')).toBeNull();
+	});
+});
+
+describe('wildlifeEmoji', () => {
+	it('mapea por palabra clave, sin distinguir mayúsculas ni acentos del patrón', () => {
+		expect(wildlifeEmoji('Cabra montés')).toBe('🐐');
+		expect(wildlifeEmoji('Muflón')).toBe('🐐');
+		expect(wildlifeEmoji('Jabalí')).toBe('🐗');
+		expect(wildlifeEmoji('Víbora hocicuda')).toBe('🐍');
+		expect(wildlifeEmoji('Culebra bastarda')).toBe('🐍');
+		expect(wildlifeEmoji('Águila real')).toBe('🦅');
+		expect(wildlifeEmoji('Perro de ganado (mastín)')).toBe('🐕');
+	});
+
+	it('respaldo de huella cuando no hay patrón que case', () => {
+		expect(wildlifeEmoji('Lince ibérico')).toBe('🐾');
+		expect(wildlifeEmoji('')).toBe('🐾');
+	});
+
+	it('el primer patrón que casa gana (ganado mastín → perro, no cabra)', () => {
+		// "ganado" casa con la regla del perro; ninguna especie real debería
+		// devolver dos iconos, pero fijamos el determinismo.
+		expect(wildlifeEmoji('perro')).toBe('🐕');
+	});
+
+	it('cada especie real del catálogo recibe un emoji no vacío', () => {
+		for (const zone of Object.values(wildlifeZones)) {
+			for (const w of zone.wildlife) {
+				expect(wildlifeEmoji(w.species), w.species).toBeTruthy();
+			}
+		}
 	});
 });

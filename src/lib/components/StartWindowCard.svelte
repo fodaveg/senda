@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { isoTimeToMinutes, minutesToHhMm, type StartWindow } from '$lib/engine/startWindow';
+	import { minutesToHhMm, startWindowTimeline, type StartWindow } from '$lib/engine/startWindow';
 	import type { WeatherDay } from '$lib/types';
 
 	let {
@@ -14,34 +14,14 @@
 		manualHint?: string | null;
 	} = $props();
 
-	// Eje temporal del widget = horas de luz del día (amanecer→anochecer),
-	// redondeadas a la hora, para situar las franjas sobre una escala real (y no
-	// sobre un 06–18 fijo como el mockup, que no encaja en verano).
-	let axis = $derived.by(() => {
-		const sr = day ? isoTimeToMinutes(day.sunrise) : null;
-		const ss = day ? isoTimeToMinutes(day.sunset) : null;
-		if (sr === null || ss === null || ss <= sr) return null;
-		const start = Math.floor(sr / 60) * 60;
-		const end = Math.ceil(ss / 60) * 60;
-		return { start, end, span: end - start };
-	});
+	// Geometría del widget (eje de luz + franjas + marcas), calculada por la
+	// función pura del engine; null si no hay luz utilizable o es alerta.
+	let timeline = $derived(win && day ? startWindowTimeline(win, day) : null);
 
-	/** Posición (0–100%) de un minuto del día sobre el eje. */
-	function pct(min: number): number {
-		if (!axis) return 0;
-		return Math.min(100, Math.max(0, ((min - axis.start) / axis.span) * 100));
-	}
-
-	// Marcas horarias repartidas por el eje (~5), alineadas con las franjas.
-	let ticks = $derived.by(() => {
-		if (!axis) return [];
-		const startH = axis.start / 60;
-		const endH = axis.end / 60;
-		const step = Math.max(1, Math.round((endH - startH) / 4));
-		const out: number[] = [];
-		for (let h = startH; h <= endH; h += step) out.push(h);
-		return out;
-	});
+	/** Pad de hora a "06h". */
+	const tickLabel = (hour: number) => `${String(hour).padStart(2, '0')}h`;
+	/** Ancho visible mínimo para que una franja estrecha no desaparezca. */
+	const visibleWidth = (widthPct: number) => Math.max(2, widthPct);
 </script>
 
 <div class="start-window">
@@ -56,26 +36,24 @@
 			<span class="sw-caption">para terminar con margen de luz</span>
 		</div>
 
-		{#if axis}
+		{#if timeline}
 			<div class="sw-bar" aria-hidden="true">
 				<span
 					class="sw-ideal"
-					style:left={`${pct(win.startMin)}%`}
-					style:width={`${Math.max(2, pct(win.endMin) - pct(win.startMin))}%`}
+					style:left={`${timeline.ideal.leftPct}%`}
+					style:width={`${visibleWidth(timeline.ideal.widthPct)}%`}
 				></span>
-				{#if win.hotSpan}
+				{#if timeline.avoid}
 					<span
 						class="sw-avoid"
-						style:left={`${pct(win.hotSpan[0])}%`}
-						style:width={`${Math.max(2, pct(win.hotSpan[1]) - pct(win.hotSpan[0]))}%`}
+						style:left={`${timeline.avoid.leftPct}%`}
+						style:width={`${visibleWidth(timeline.avoid.widthPct)}%`}
 					></span>
 				{/if}
 			</div>
 			<div class="sw-axis" aria-hidden="true">
-				{#each ticks as h (h)}
-					<span class="sw-tick" style:left={`${pct(h * 60)}%`}
-						>{String(h % 24).padStart(2, '0')}h</span
-					>
+				{#each timeline.ticks as t (t.hour)}
+					<span class="sw-tick" style:left={`${t.leftPct}%`}>{tickLabel(t.hour)}</span>
 				{/each}
 			</div>
 		{/if}

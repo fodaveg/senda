@@ -70,9 +70,14 @@ nuevas tandas y se lleva a `main` por fast-forward.
    Pages (configure/upload/deploy-pages) ya están en su última major; el aviso
    de Node 20 restante es de ellas (GitHub), no accionable por ahora.
 
+9. **Fiabilidad (tanda 1)**: la lógica del widget de ventana se extrajo a una
+   función pura testeada `startWindowTimeline` (eje de luz + franjas + marcas, en
+   `engine/startWindow.ts`), y `wildlifeEmoji` se movió a `data/wildlife.ts`
+   (puro). Ambas con tests (332 unit). El componente solo presenta.
+
 **Fase 3 COMPLETA y desplegada.** Pendiente v6: subir fidelidad de las pestañas
-restantes (Mapa, Preparación, Meteo, Acciones) al `.dc.html` + tanda de
-fiabilidad (p. ej. tests de la lógica del widget, robustez de degradación).
+restantes (Mapa, Preparación, Meteo, Acciones) al `.dc.html`; más fiabilidad si
+surge (degradación, bordes).
 
 **Deuda e2e (RESUELTA)**: el switch de pestañas ocultaba las secciones
 inactivas con `display:none`, así que las aserciones sobre contenido fuera de

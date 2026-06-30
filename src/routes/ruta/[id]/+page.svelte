@@ -25,7 +25,7 @@
 	import WeatherCard from '$lib/components/WeatherCard.svelte';
 	import { gearItems, gearRules } from '$lib/data/gear';
 	import { loadTrackXml } from '$lib/data/tracks';
-	import { wildlifeForZone } from '$lib/data/wildlife';
+	import { wildlifeForZone, wildlifeEmoji } from '$lib/data/wildlife';
 	import {
 		evaluateGear,
 		evaluateCustomGear,
@@ -497,23 +497,6 @@
 	let glance = $derived(selectedDay ? glanceCondition(selectedDay) : null);
 	// Primeros 3 días para la mini-tarjeta de meteo en Condiciones.
 	let conditionDays = $derived((forecast ?? []).slice(0, 3));
-
-	// Emoji decorativo por especie para la tarjeta de fauna (handoff v6). Solo
-	// decora el nombre (que es el dato real); no añade información ni fuente. Mapeo
-	// por palabra clave con respaldo genérico de huella.
-	const WILDLIFE_EMOJI: [RegExp, string][] = [
-		[/cabra|mufl[oó]n|rebeco|sarrio/i, '🐐'],
-		[/jabal[ií]|cerdo/i, '🐗'],
-		[/v[ií]bora|culebra|serpiente|ofidio/i, '🐍'],
-		[/[aá]guila|buitre|halc[oó]n|rapaz|ave/i, '🦅'],
-		[/zorro/i, '🦊'],
-		[/ciervo|corzo|gamo|venado/i, '🦌'],
-		[/perro|mast[ií]n|ganado/i, '🐕'],
-		[/abeja|avispa|insecto/i, '🐝']
-	];
-	function wildlifeEmoji(species: string): string {
-		return WILDLIFE_EMOJI.find(([re]) => re.test(species))?.[1] ?? '🐾';
-	}
 
 	// Progreso de la mochila para la tarjeta-resumen "Mochila X/Y": ítems
 	// recomendados ("Llevar") y cuántos lleva ya marcados el usuario.

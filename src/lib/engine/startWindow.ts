@@ -129,3 +129,56 @@ export function startWindow(
 		reasons
 	};
 }
+
+/** Franja posicionada sobre el eje (porcentajes 0–100). */
+export interface TimelineBand {
+	leftPct: number;
+	widthPct: number;
+}
+
+/** Geometría del widget de ventana de inicio: eje + franjas + marcas horarias. */
+export interface StartWindowTimeline {
+	/** Eje en minutos: horas de luz redondeadas a la hora. */
+	axisStartMin: number;
+	axisEndMin: number;
+	/** Franja recomendada (verde). */
+	ideal: TimelineBand;
+	/** Franja a evitar por calor/UV (ámbar), si la hay. */
+	avoid: TimelineBand | null;
+	/** Marcas horarias a etiquetar (hora 0–23 + posición). */
+	ticks: { hour: number; leftPct: number }[];
+}
+
+/**
+ * Traduce una `StartWindow` + el amanecer/anochecer del día a la geometría del
+ * widget visual (eje de horas de luz, franjas ideal/calor en %, marcas
+ * horarias). Pura y determinista; null si el día no aporta luz utilizable o la
+ * ventana es de alerta (no hay franja que dibujar). Los anchos son crudos: el
+ * mínimo visible se aplica en la presentación.
+ */
+export function startWindowTimeline(win: StartWindow, day: WeatherDay): StartWindowTimeline | null {
+	if (win.lightAlert) return null;
+	const sunrise = isoTimeToMinutes(day.sunrise);
+	const sunset = isoTimeToMinutes(day.sunset);
+	if (sunrise === null || sunset === null || sunset <= sunrise) return null;
+
+	const axisStartMin = Math.floor(sunrise / 60) * 60;
+	const axisEndMin = Math.ceil(sunset / 60) * 60;
+	const span = axisEndMin - axisStartMin;
+	const pct = (min: number) => Math.min(100, Math.max(0, ((min - axisStartMin) / span) * 100));
+
+	const idealLeft = pct(win.startMin);
+	const ideal: TimelineBand = { leftPct: idealLeft, widthPct: pct(win.endMin) - idealLeft };
+	const avoid: TimelineBand | null = win.hotSpan
+		? { leftPct: pct(win.hotSpan[0]), widthPct: pct(win.hotSpan[1]) - pct(win.hotSpan[0]) }
+		: null;
+
+	const startHour = axisStartMin / 60;
+	const endHour = axisEndMin / 60;
+	const step = Math.max(1, Math.round((endHour - startHour) / 4));
+	const ticks: { hour: number; leftPct: number }[] = [];
+	for (let h = startHour; h <= endHour; h += step)
+		ticks.push({ hour: h % 24, leftPct: pct(h * 60) });
+
+	return { axisStartMin, axisEndMin, ideal, avoid, ticks };
+}
