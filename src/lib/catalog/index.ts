@@ -5,6 +5,7 @@
  */
 
 import { routes as seedRoutes, routeById as seedRouteById } from '$lib/data/routes';
+import { isRouteVisible } from '$lib/data/federation';
 import type { Route } from '$lib/types';
 import { toRouteSummary, type RouteSummary } from '$lib/data/summary';
 import { getStoredManifest, getStoredRoutesJson, type StoredManifest } from './store';
@@ -19,7 +20,9 @@ async function storedRoutes(): Promise<Route[] | null> {
 	if (!json) return null;
 	try {
 		// Validado con zod al descargar (update.ts); aquí solo se deserializa.
-		const routes = JSON.parse(json) as Route[];
+		// Se filtran las federaciones deshabilitadas igual que el seed, porque el
+		// catálogo publicado todavía incluye sus ficheros (ver HIDDEN_FEDERATIONS).
+		const routes = (JSON.parse(json) as Route[]).filter(isRouteVisible);
 		cachedStored = { version: manifest.version, routes };
 		return routes;
 	} catch {

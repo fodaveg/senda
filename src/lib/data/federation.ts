@@ -70,6 +70,25 @@ export function federationInfo(id: string | undefined): FederationInfo {
 }
 
 /**
+ * Federaciones **deshabilitadas temporalmente**: sus rutas no se muestran en la
+ * app (ni listado, ni mapa, ni ficha, ni prerender) aunque sus datos sigan
+ * intactos en `data/routes` y en el catálogo publicado. Pensado para
+ * integraciones parciales cuya UX multiprovincia aún no está resuelta
+ * (caso FNDME/Navarra, 2026-06). **Vaciar este conjunto para reactivarlas.**
+ */
+export const HIDDEN_FEDERATIONS: ReadonlySet<string> = new Set(['FNDME']);
+
+/**
+ * ¿Debe mostrarse esta ruta en la app? Falsa solo si su federación está en
+ * `HIDDEN_FEDERATIONS`. Las rutas sin federación (catálogo FEMECV antiguo)
+ * siempre son visibles. Se aplica en los dos puntos de carga del catálogo
+ * (seed empaquetado y catálogo descargado en runtime).
+ */
+export function isRouteVisible(route: { federacion?: string }): boolean {
+	return !route.federacion || !HIDDEN_FEDERATIONS.has(route.federacion);
+}
+
+/**
  * Capacidades efectivas de una ruta: las explícitas si las trae; si no, las del
  * preset de su federación; si no, FULL (FEMECV/catálogo antiguo).
  */

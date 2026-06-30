@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { FEDERATIONS, FULL_CAPABILITIES, federationInfo, routeCapabilities } from './federation';
+import {
+	FEDERATIONS,
+	FULL_CAPABILITIES,
+	HIDDEN_FEDERATIONS,
+	federationInfo,
+	isRouteVisible,
+	routeCapabilities
+} from './federation';
 
 describe('federación / capacidades', () => {
 	it('FEMECV publica todas las capacidades', () => {
@@ -30,5 +37,14 @@ describe('federación / capacidades', () => {
 		expect(routeCapabilities({ federacion: 'FNDME' }).mide).toBe(false);
 		// Sin federación → FEMECV (FULL).
 		expect(routeCapabilities({})).toEqual(FULL_CAPABILITIES);
+	});
+
+	it('isRouteVisible oculta las federaciones de HIDDEN_FEDERATIONS', () => {
+		// FNDME (Navarra) está deshabilitada temporalmente.
+		expect(HIDDEN_FEDERATIONS.has('FNDME')).toBe(true);
+		expect(isRouteVisible({ federacion: 'FNDME' })).toBe(false);
+		// FEMECV y rutas sin federación siempre visibles.
+		expect(isRouteVisible({ federacion: 'FEMECV' })).toBe(true);
+		expect(isRouteVisible({})).toBe(true);
 	});
 });

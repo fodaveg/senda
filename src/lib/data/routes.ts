@@ -4,15 +4,18 @@
  */
 
 import type { Route } from '$lib/types';
+import { isRouteVisible } from './federation';
 
 const modules = import.meta.glob('../../../data/routes/*.json', {
 	eager: true,
 	import: 'default'
 });
 
-export const routes: Route[] = (Object.values(modules) as Route[]).sort((a, b) =>
-	a.id.localeCompare(b.id)
-);
+// Se filtran las federaciones deshabilitadas (HIDDEN_FEDERATIONS): sus JSON
+// siguen en data/routes pero no entran al catálogo de la app ni al prerender.
+export const routes: Route[] = (Object.values(modules) as Route[])
+	.filter(isRouteVisible)
+	.sort((a, b) => a.id.localeCompare(b.id));
 
 export function routeById(id: string): Route | undefined {
 	return routes.find((r) => r.id === id);
