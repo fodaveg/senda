@@ -4,15 +4,52 @@ Fotografía **breve y actual** del proyecto. Mantener compacto: al cerrar una
 tarea, actualizar el estado, no acumular histórico (el detalle vive en
 `SPECS_V3_PROGRESS.md` y en el historial de git).
 
-_Actualizado: 2026-06-22._
+_Actualizado: 2026-06-30._
 
 ## Estado actual
 
-- **v1** (M1–M7) y **v2** (V2-M1…M8) completas y en uso local.
-- **v3**: sus **7 milestones están implementados y ya mergeados a `main`**
-  (la rama `v3` queda como histórico). v3.5 también integrada en `main`.
-- `main` = web desplegada en GitHub Pages (proyecto `fodaveg/senda`, servida
-  bajo `/senda`); el trabajo actual va **directo sobre `main`**.
+- **v1–v5** completas y mergeadas a `main`; v5 desplegada (POC). v3/v3.5 históricos.
+- **Migración GitLab → GitHub (2026-06-30, corte total).** `origin` =
+  `git@github-fodaveg:fodaveg/senda.git` (¡usar el alias SSH `github-fodaveg`,
+  no `github.com`; ver memoria del proyecto!). CI en **GitHub Actions**
+  (`.github/workflows/ci.yml`), deploy a **GitHub Pages** bajo `/senda`.
+- **Backend Supabase ACTIVO en producción** (proyecto `senda`,
+  `vxqbcqhoisvotybfsstn`, región EU). Claves `PUBLIC_SUPABASE_*` como secrets del
+  repo → el build de prod ya trae cuentas/sync/login. `delete_account` aplicado;
+  Site URL/Redirect URLs fijadas a Pages; confirmación de email activa.
+- `main` = web en GitHub Pages; el trabajo de producto va por ramas (ver abajo).
+
+## v6 — rediseño de la ficha (rama `v6-ficha-rediseno`, EN CURSO)
+
+Rediseño según el **handoff** en `design_handoff_senda_v6/`. ⚠️ **La fuente de
+verdad VISUAL es `Senda v6.dc.html`** (Design Component renderizado por
+`support.js`; léelo, no solo el `README.md` en prosa — leer solo la prosa ya
+causó un layout incorrecto que hubo que rehacer).
+
+**Hecho y commiteado en la rama (verde: lint/check/316 unit):**
+1. Logo + wordmark «Senda» (Spectral 700 auto-alojada) en la cabecera global.
+2. Barra superior como **dock flotante** (sticky, redondeada) + fix del enlace
+   "Entrar" (era azul: estilos `.nav-link` scoped no llegaban a `AccountNav`).
+3. **Switch Pestañas ⇄ Tablero modular** en la ficha (persistido en
+   `$lib/ficha/layoutPref`; default Pestañas).
+4. **Cabecera-tarjeta "banco de preparación"**: badge tipo + estado + fuente,
+   nombre, métricas, acciones a la derecha (♡/✓/⌖ como iconos vía `RouteMarks`
+   modo `compact`, Emergencia secundaria, Informe primaria), "Iniciar ruta"
+   como nota reservada.
+
+**Pendiente (Fase 3 — Resumen y Condiciones), ya especificado del `.dc.html`:**
+- Resumen en **rejilla 2 col (1.3fr/1fr)**: izq. *Meteo de un vistazo* (nuevo) +
+  Ventana + Cómo llegar; der. Avisos + Riesgo incendio + Datos clave + tarjeta
+  **Mochila 8/11 + "Ir a Preparación"** (nuevo); abajo tira **Comunidad**.
+  Recomendación como tarjeta con chips de estado.
+- **Regla de datos**: el `.dc.html` muestra cielo "Despejado" y un reporte de
+  comunidad de muestra que **NO tienen dato real** → omitir el estado de cielo
+  (`WeatherDay` no lo tiene) y dejar Comunidad como placeholder "función futura".
+- Dar fidelidad a Condiciones (fauna/escape/112 ya tienen datos).
+
+**Gotcha de dev**: en `npm run dev`, Vite re-optimiza deps a media sesión y
+rompe la hidratación con "Failed to fetch dynamically imported module …/nodes/0.js"
+→ recarga dura / pestaña nueva (o reiniciar el server). No es bug de la app.
 
 ## v3 — qué incluye (referencia: SPECS_V3.md)
 
@@ -44,7 +81,10 @@ material custom y aviso `warn` · M7 apariencia (toggle de tema + paletas).
 
 - El **cron cloud no puede hacer push al repo privado** (desactivado). Para
   trabajo nocturno autónomo: script wrapper local.
-- **v4** a la espera de la decisión de backend.
+- Backend v4: **resuelto** — Supabase activo en prod (ver Estado actual).
+- Tareas Supabase manuales restantes (Todoist): validar el flujo de correo real
+  (alta/reset/OTP) — bloqueadas por los **rate limits del email integrado** de
+  Supabase (free); para producción real, configurar SMTP propio.
 
 ## Áreas activas
 
