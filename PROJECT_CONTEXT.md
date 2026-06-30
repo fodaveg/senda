@@ -133,9 +133,11 @@ táctil) en vez del flex-wrap irregular. _Nota: el estado pasó a la línea supe
 también en escritorio (junto al badge), es la consecuencia de mover el badge
 fuera de la columna lateral._
 
-**➡️ PRÓXIMO RECOMENDADO:** en backlog mayor, **Supabase real (SMTP) + ingesta
-Navarra** (ver memoria [[v5-punto-inflexion]]). Backlog completo en `SPECS_V6.md`
-(§milestones) y `SPECS_V5.md` (parte PRE = deuda v4/legal/pulido).
+**➡️ PRÓXIMO RECOMENDADO:** en backlog mayor, **SMTP propio para los correos de
+Supabase** (Supabase ya está activo en prod; lo que falta es sustituir el email
+integrado —con rate limits del plan free— para validar alta/reset/OTP reales, ver
+§Bloqueos) **+ ingesta Navarra**. Backlog completo en `SPECS_V6.md` (§milestones)
+y `SPECS_V5.md` (parte PRE = deuda v4/legal/pulido).
 
 **Deuda e2e (RESUELTA)**: el switch de pestañas ocultaba las secciones
 inactivas con `display:none`, así que las aserciones sobre contenido fuera de
