@@ -30,8 +30,10 @@ test('registrar una salida alimenta el diario y sus estadísticas', async ({ pag
 
 	await page.goto('/diario');
 	await page.locator('body[data-hydrated]').waitFor();
-	await expect(page.getByText('1 salidas (1 rutas)')).toBeVisible();
-	await expect(page.getByText('5.5 km acumulados')).toBeVisible();
+	// Rediseño v6: las cifras viven en tarjetas de estadística.
+	await expect(page.getByText('Rutas hechas')).toBeVisible();
+	await expect(page.getByText('Días en monte')).toBeVisible();
+	await expect(page.getByText('5,5 km')).toBeVisible();
 	await expect(page.getByText('mañana fresquita')).toBeVisible();
 	// V3.5-M4: logros y progreso por comarca.
 	await expect(page.getByRole('heading', { name: 'Logros' })).toBeVisible();

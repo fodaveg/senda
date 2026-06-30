@@ -20,6 +20,8 @@ export interface DiaryStats {
 	/** Suma de km de rutas con dato; las salidas sin ruta conocida no suman. */
 	totalKm: number;
 	totalAscentM: number;
+	/** Días distintos con al menos una salida ("días en monte", handoff v6). */
+	distinctDays: number;
 	byYear: Array<{ year: string; outings: number }>;
 	byZone: Array<{ zone: string; outings: number }>;
 	byType: Array<{ type: string; outings: number }>;
@@ -40,6 +42,7 @@ export function diaryStats(data: UserData, routes: Route[]): DiaryStats {
 	const byType = new Map<string, number>();
 	const outings: OutingEntry[] = [];
 	const distinct = new Set<string>();
+	const distinctDates = new Set<string>();
 	let totalKm = 0;
 	let totalAscentM = 0;
 
@@ -53,6 +56,7 @@ export function diaryStats(data: UserData, routes: Route[]): DiaryStats {
 				date: outing.date,
 				notes: outing.notes ?? null
 			});
+			distinctDates.add(outing.date);
 			const year = outing.date.slice(0, 4);
 			byYear.set(year, (byYear.get(year) ?? 0) + 1);
 			if (route) {
@@ -70,6 +74,7 @@ export function diaryStats(data: UserData, routes: Route[]): DiaryStats {
 		distinctRoutes: distinct.size,
 		totalKm: Math.round(totalKm * 10) / 10,
 		totalAscentM,
+		distinctDays: distinctDates.size,
 		byYear: sortedCounts(byYear).map(({ key, count }) => ({ year: key, outings: count })),
 		byZone: sortedCounts(byZone).map(({ key, count }) => ({ zone: key, outings: count })),
 		byType: sortedCounts(byType).map(({ key, count }) => ({ type: key, outings: count })),
