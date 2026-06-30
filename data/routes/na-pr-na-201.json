@@ -1,0 +1,62 @@
+{
+	"id": "na-pr-na-201",
+	"name": "PR-NA 201",
+	"type": "PR",
+	"status": "homologado",
+	"status_detail": null,
+	"municipality": null,
+	"zone": null,
+	"aemet_municipio": null,
+	"start": {
+		"lat": 42.913952255626505,
+		"lon": -1.9719493389126892,
+		"name": null
+	},
+	"end": {
+		"lat": 42.913952255626505,
+		"lon": -1.9719493389126892
+	},
+	"distance_km": 9.5,
+	"ascent_m": null,
+	"descent_m": null,
+	"circular": null,
+	"difficulty_mide": null,
+	"est_duration_min": null,
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "na-pr-na-201.gpx",
+	"links": {
+		"femecv": null,
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.980687221511932,
+		42.885337611665285,
+		-1.965403240173878,
+		42.913952255626505
+	],
+	"sources": [
+		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) (consulta 2026-06-30)",
+		"Geometría oficial: IDENA WFS capa DOTACI_Lin_PRNA201 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+	],
+	"federacion": "FNDME",
+	"comunidad": "Comunidad Foral de Navarra",
+	"capabilities": {
+		"estado": true,
+		"mide": false,
+		"agua": false,
+		"etapas": true,
+		"descripcion": false,
+		"fauna": false,
+		"escapes": false
+	}
+}

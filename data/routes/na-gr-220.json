@@ -1,0 +1,88 @@
+{
+	"id": "na-gr-220",
+	"name": "GR 220 - Vuelta a la Cuenca de Pamplona",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": null,
+	"municipality": null,
+	"zone": null,
+	"aemet_municipio": null,
+	"start": {
+		"lat": 42.85268389619884,
+		"lon": -1.5837242268026257,
+		"name": null
+	},
+	"end": {
+		"lat": 42.85272161476311,
+		"lon": -1.5837251488119124
+	},
+	"distance_km": 109.3,
+	"ascent_m": null,
+	"descent_m": null,
+	"circular": null,
+	"difficulty_mide": null,
+	"est_duration_min": null,
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "na-gr-220.gpx",
+	"links": {
+		"femecv": null,
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.8659905157983292,
+		42.7291959989816,
+		-1.5104997999999803,
+		42.88721130229531
+	],
+	"sources": [
+		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) https://misendafedme.es/buscador-de-senderos/gr/gr-220-vuelta-a-la-cuenca-de-pamplona (consulta 2026-06-30)",
+		"Geometría oficial: IDENA WFS capa DOTACI_Lin_GR220 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+	],
+	"federacion": "FNDME",
+	"comunidad": "Comunidad Foral de Navarra",
+	"capabilities": {
+		"estado": true,
+		"mide": false,
+		"agua": false,
+		"etapas": true,
+		"descripcion": false,
+		"fauna": false,
+		"escapes": false
+	},
+	"etapas_meta": [
+		{
+			"order": 1,
+			"name": "GR 220. Etapa 1 - Merendero de Zubialdea - Ardanaz/Ardanatz"
+		},
+		{
+			"order": 2,
+			"name": "GR 220. Etapa 2 - Ardanaz/Ardanatz - Noaín"
+		},
+		{
+			"order": 3,
+			"name": "GR 220. Etapa 3 - Noaín - Belascoain/Beraskoain"
+		},
+		{
+			"order": 4,
+			"name": "GR 220. Etapa 4 - Belascoain/Beraskoain - Eguillor/Egillor"
+		},
+		{
+			"order": 5,
+			"name": "GR 220. Etapa 5 - Eguillor/Egillor - Oteiza/Oteitza"
+		},
+		{
+			"order": 6,
+			"name": "GR 220. Etapa 6 - Oteiza/Oteitza - Merendero de Zubialdea (Zabaldika)"
+		}
+	]
+}

@@ -1,0 +1,62 @@
+{
+	"id": "na-sl-na-76",
+	"name": "SL-NA 76",
+	"type": "SL",
+	"status": "homologado",
+	"status_detail": null,
+	"municipality": null,
+	"zone": null,
+	"aemet_municipio": null,
+	"start": {
+		"lat": 42.83160701394084,
+		"lon": -0.9467969834805043,
+		"name": null
+	},
+	"end": {
+		"lat": 42.83160902559757,
+		"lon": -0.9467730112374274
+	},
+	"distance_km": 4.9,
+	"ascent_m": null,
+	"descent_m": null,
+	"circular": null,
+	"difficulty_mide": null,
+	"est_duration_min": null,
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "na-sl-na-76.gpx",
+	"links": {
+		"femecv": null,
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-0.9525400120765263,
+		42.83160701394084,
+		-0.9367889910936753,
+		42.84134100191291
+	],
+	"sources": [
+		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) (consulta 2026-06-30)",
+		"Geometría oficial: IDENA WFS capa DOTACI_Lin_SLNA76 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+	],
+	"federacion": "FNDME",
+	"comunidad": "Comunidad Foral de Navarra",
+	"capabilities": {
+		"estado": true,
+		"mide": false,
+		"agua": false,
+		"etapas": true,
+		"descripcion": false,
+		"fauna": false,
+		"escapes": false
+	}
+}

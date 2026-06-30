@@ -1,0 +1,80 @@
+{
+	"id": "na-gr-225",
+	"name": "GR 225 - La Fuga de Ezkaba 1938",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": null,
+	"municipality": null,
+	"zone": null,
+	"aemet_municipio": null,
+	"start": {
+		"lat": 42.85415248945844,
+		"lon": -1.6639900859438788,
+		"name": null
+	},
+	"end": {
+		"lat": 42.94412786141528,
+		"lon": -1.512792203574279
+	},
+	"distance_km": 59.3,
+	"ascent_m": null,
+	"descent_m": null,
+	"circular": null,
+	"difficulty_mide": null,
+	"est_duration_min": null,
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "na-gr-225.gpx",
+	"links": {
+		"femecv": null,
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.670766100286843,
+		42.85345117562005,
+		-1.3919812347724512,
+		43.07153387927024
+	],
+	"sources": [
+		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) https://misendafedme.es/buscador-de-senderos/gr/gr-225-la-fuga-de-ezkaba-1938 (consulta 2026-06-30)",
+		"Geometría oficial: IDENA WFS capa DOTACI_Lin_GR225 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+	],
+	"federacion": "FNDME",
+	"comunidad": "Comunidad Foral de Navarra",
+	"capabilities": {
+		"estado": true,
+		"mide": false,
+		"agua": false,
+		"etapas": true,
+		"descripcion": false,
+		"fauna": false,
+		"escapes": false
+	},
+	"etapas_meta": [
+		{
+			"order": 1,
+			"name": "GR 225. Etapa 1 - Fuerte Alfonso XII (Monte Ezkaba) - Olabe"
+		},
+		{
+			"order": 2,
+			"name": "GR 225. Etapa 2 - Olabe - Saigots"
+		},
+		{
+			"order": 3,
+			"name": "GR 225. Etapa 3 - Saigots- Sorogain"
+		},
+		{
+			"order": 4,
+			"name": "GR 225. Etapa 4 - Sorogain- Urepel (Francia)"
+		}
+	]
+}

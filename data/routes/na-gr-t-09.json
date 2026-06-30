@@ -1,0 +1,62 @@
+{
+	"id": "na-gr-t-09",
+	"name": "GR T 09 - Urbeltza - Paso de las Alforjas",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": null,
+	"municipality": null,
+	"zone": null,
+	"aemet_municipio": null,
+	"start": {
+		"lat": 42.957269763574,
+		"lon": -1.1022145673632668,
+		"name": null
+	},
+	"end": {
+		"lat": 43.01430182531473,
+		"lon": -1.083608251065029
+	},
+	"distance_km": 9.5,
+	"ascent_m": null,
+	"descent_m": null,
+	"circular": null,
+	"difficulty_mide": null,
+	"est_duration_min": null,
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "na-gr-t-09.gpx",
+	"links": {
+		"femecv": null,
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.1109662801027411,
+		42.957269763574,
+		-1.083608251065029,
+		43.01430182531473
+	],
+	"sources": [
+		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) https://misendafedme.es/buscador-de-senderos/gr/gr-t-09-urbeltza-paso-de-las-alforjas (consulta 2026-06-30)",
+		"Geometría oficial: IDENA WFS capa DOTACI_Lin_GRT9 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+	],
+	"federacion": "FNDME",
+	"comunidad": "Comunidad Foral de Navarra",
+	"capabilities": {
+		"estado": true,
+		"mide": false,
+		"agua": false,
+		"etapas": true,
+		"descripcion": false,
+		"fauna": false,
+		"escapes": false
+	}
+}

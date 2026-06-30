@@ -125,5 +125,10 @@ export const routeSchema = z.strictObject({
 		descripcion: true,
 		fauna: true,
 		escapes: true
-	})
+	}),
+	// Etapas como metadato para fuentes que publican el sendero entero (FNDME);
+	// FEMECV deja la relación en los ids y no usa este campo.
+	etapas_meta: z
+		.array(z.strictObject({ order: z.number().int().positive(), name: z.string().min(1) }))
+		.optional()
 }) satisfies z.ZodType<Route>;

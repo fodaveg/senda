@@ -1,0 +1,100 @@
+{
+	"id": "na-gr-12",
+	"name": "GR 12 - Sendero de Eukal Herría",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": null,
+	"municipality": null,
+	"zone": null,
+	"aemet_municipio": null,
+	"start": {
+		"lat": 42.946795900004965,
+		"lon": -2.225919399999962,
+		"name": null
+	},
+	"end": {
+		"lat": 43.008866161108,
+		"lon": -1.3193285744637844
+	},
+	"distance_km": 198.4,
+	"ascent_m": null,
+	"descent_m": null,
+	"circular": null,
+	"difficulty_mide": null,
+	"est_duration_min": null,
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "na-gr-12.gpx",
+	"links": {
+		"femecv": null,
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-2.225919399999962,
+		42.918377800004826,
+		-0.7346516999912747,
+		43.065772200005014
+	],
+	"sources": [
+		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) https://misendafedme.es/buscador-de-senderos/gr/gr-12-sendero-de-eukal-herria (consulta 2026-06-30)",
+		"Geometría oficial: IDENA WFS capa DOTACI_Lin_GR12 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+	],
+	"federacion": "FNDME",
+	"comunidad": "Comunidad Foral de Navarra",
+	"capabilities": {
+		"estado": true,
+		"mide": false,
+		"agua": false,
+		"etapas": true,
+		"descripcion": false,
+		"fauna": false,
+		"escapes": false
+	},
+	"etapas_meta": [
+		{
+			"order": 1,
+			"name": "GR 12. Etapa 1 - Etxegárate - Alto de Lizarrusti"
+		},
+		{
+			"order": 2,
+			"name": "GR 12. Etapa 2 - Alto de Lizarrusti - Lekunberri"
+		},
+		{
+			"order": 3,
+			"name": "GR 12. Etapa 3 - Lekunberri - Collado Gorostieta"
+		},
+		{
+			"order": 4,
+			"name": "GR 12. Etapa 4 - Collado Gorostieta - Alto de Belate"
+		},
+		{
+			"order": 5,
+			"name": "GR 12. Etapa 5 - Collado de Belate - Collado de Aztakarri"
+		},
+		{
+			"order": 6,
+			"name": "GR 12. Etapa 6 - Collado Aztakarri  - Collado Azpegi"
+		},
+		{
+			"order": 7,
+			"name": "GR 12. Etapa 7 - Collado Azpegi -  Puerto Iturzaeta"
+		},
+		{
+			"order": 8,
+			"name": "GR 12. Etapa 8 - Iturzaeta - Belagua"
+		},
+		{
+			"order": 9,
+			"name": "GR 12. Etapa 9 - Belagua - Belagua"
+		}
+	]
+}

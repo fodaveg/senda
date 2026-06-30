@@ -1,0 +1,72 @@
+{
+	"id": "na-gr-321",
+	"name": "GR 321 - Camino Real",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": null,
+	"municipality": null,
+	"zone": null,
+	"aemet_municipio": null,
+	"start": {
+		"lat": 42.718349983915665,
+		"lon": -1.004449976607633,
+		"name": null
+	},
+	"end": {
+		"lat": 42.93566800653932,
+		"lon": -0.8806149847805095
+	},
+	"distance_km": 98.6,
+	"ascent_m": null,
+	"descent_m": null,
+	"circular": null,
+	"difficulty_mide": null,
+	"est_duration_min": null,
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "na-gr-321.gpx",
+	"links": {
+		"femecv": null,
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-1.0148899722839573,
+		42.718349983915665,
+		-0.8287099655718113,
+		42.95178003609184
+	],
+	"sources": [
+		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) https://misendafedme.es/buscador-de-senderos/gr/gr-321-camino-real (consulta 2026-06-30)",
+		"Geometría oficial: IDENA WFS capa DOTACI_Lin_GR321 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+	],
+	"federacion": "FNDME",
+	"comunidad": "Comunidad Foral de Navarra",
+	"capabilities": {
+		"estado": true,
+		"mide": false,
+		"agua": false,
+		"etapas": true,
+		"descripcion": false,
+		"fauna": false,
+		"escapes": false
+	},
+	"etapas_meta": [
+		{
+			"order": 1,
+			"name": "GR 321. Etapa 1 - Burgui - Isaba"
+		},
+		{
+			"order": 2,
+			"name": "GR 321. Etapa 2 - Isaba - Arrakogoiti"
+		}
+	]
+}

@@ -1,0 +1,92 @@
+{
+	"id": "na-gr-323",
+	"name": "GR 323 - Bernoako Galtzada - Calzada de Bernoa",
+	"type": "GR",
+	"status": "homologado",
+	"status_detail": null,
+	"municipality": null,
+	"zone": null,
+	"aemet_municipio": null,
+	"start": {
+		"lat": 42.918013036255985,
+		"lon": -2.103993985801741,
+		"name": null
+	},
+	"end": {
+		"lat": 42.876724032690014,
+		"lon": -2.100319024175221
+	},
+	"distance_km": 106.3,
+	"ascent_m": null,
+	"descent_m": null,
+	"circular": null,
+	"difficulty_mide": null,
+	"est_duration_min": null,
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [],
+	"escape_routes": [],
+	"highlights": [],
+	"best_season": [],
+	"best_start_time": null,
+	"shade_ratio": null,
+	"gpx": "na-gr-323.gpx",
+	"links": {
+		"femecv": null,
+		"wikiloc": null
+	},
+	"alternatives": [],
+	"notes_rain": null,
+	"bbox": [
+		-2.159567009657529,
+		42.86854698323201,
+		-2.0508620236067574,
+		42.942151995380634
+	],
+	"sources": [
+		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) https://misendafedme.es/buscador-de-senderos/gr/gr-323-bernoako-galtzada-calzada-de-bernoa (consulta 2026-06-30)",
+		"Geometría oficial: IDENA WFS capa DOTACI_Lin_GR323 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+	],
+	"federacion": "FNDME",
+	"comunidad": "Comunidad Foral de Navarra",
+	"capabilities": {
+		"estado": true,
+		"mide": false,
+		"agua": false,
+		"etapas": true,
+		"descripcion": false,
+		"fauna": false,
+		"escapes": false
+	},
+	"etapas_meta": [
+		{
+			"order": 1,
+			"name": "GR 323. Etapa 1 - Etxarri Aranatz - Urdiain"
+		},
+		{
+			"order": 2,
+			"name": "GR 323. Etapa 2 - Urdiain - Etxarri Aranatz"
+		},
+		{
+			"order": 3,
+			"name": "GR 323. Etapa 3 - Recorrido circular desde Etxarri"
+		},
+		{
+			"order": 4,
+			"name": "GR 323. Etapa 4 - Recorrido circular desde Bakaiku"
+		},
+		{
+			"order": 5,
+			"name": "GR 323. Etapa 5 - Recorrido circular desde Iturmendi"
+		},
+		{
+			"order": 6,
+			"name": "GR 323. Etapa 6 - Recorrido circular desde Urdiain"
+		},
+		{
+			"order": 7,
+			"name": "GR 323. Etapa 7 - Recorrido circular desde Piscinas de Urdiain"
+		}
+	]
+}

@@ -21,7 +21,8 @@
 		"prebuild": "node scripts/sync-gpx.mjs",
 		"ingest:crawl": "tsx scripts/ingest/crawl-cli.ts",
 		"catalog:publish": "node scripts/publish/build-catalog.mjs",
-		"ingest:enrich": "tsx scripts/ingest/enrich/enrich-cli.ts"
+		"ingest:enrich": "tsx scripts/ingest/enrich/enrich-cli.ts",
+		"ingest:navarra": "tsx scripts/ingest/navarra/navarra-cli.ts"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
@@ -31,6 +32,7 @@
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
 		"@tauri-apps/cli": "^2.11.2",
 		"@types/node": "^22",
+		"@types/proj4": "^2.5.6",
 		"@xmldom/xmldom": "^0.9.10",
 		"eslint": "^10.4.1",
 		"eslint-config-prettier": "^10.1.8",
@@ -38,6 +40,7 @@
 		"globals": "^17.6.0",
 		"prettier": "^3.8.3",
 		"prettier-plugin-svelte": "^4.1.0",
+		"proj4": "^2.20.9",
 		"svelte": "^5.56.1",
 		"svelte-check": "^4.6.0",
 		"tsx": "^4.22.4",

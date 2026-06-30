@@ -148,6 +148,21 @@ export interface Route {
 	comunidad?: string;
 	/** Qué publica la fuente, para las guardas de la ficha (ver RouteCapabilities). */
 	capabilities?: RouteCapabilities;
+	/**
+	 * Etapas del sendero como metadato (multi-federación V5-1). FEMECV codifica la
+	 * relación etapa↔padre en los ids (`<padre>-e<NN>`) y se deriva en runtime; otras
+	 * fuentes (p. ej. FNDME/Navarra) publican el **sendero entero** y sus etapas por
+	 * separado, así que se guardan aquí. Vacío/ausente en rutas de una sola etapa.
+	 */
+	etapas_meta?: RouteStage[];
+}
+
+/** Etapa de un sendero multi-etapa cuya relación no está codificada en el id. */
+export interface RouteStage {
+	/** Número de etapa (orden). */
+	order: number;
+	/** Nombre de la etapa según la fuente oficial. */
+	name: string;
 }
 
 // ─── Meteo (SPEC §4) ────────────────────────────────────────────────────────
