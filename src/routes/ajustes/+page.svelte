@@ -574,9 +574,9 @@
 
 <style>
 	form {
-		max-width: 36rem;
+		max-width: 40rem;
 		display: grid;
-		gap: 1rem;
+		gap: var(--space-4);
 	}
 	.scheme-heading {
 		margin: 0.6rem 0 0.3rem;
@@ -672,7 +672,22 @@
 		gap: 0.3rem 0.8rem;
 		margin: 0.5rem 0;
 	}
+	/* Cada bloque de ajustes es una tarjeta v6 con su título (legend). */
+	legend {
+		font-family: var(--font-head);
+		font-weight: 700;
+		font-size: var(--text-md, 1.05rem);
+		color: var(--ink);
+		padding: 0 var(--space-2);
+	}
+	/* La sub-sección de atributos es ligera, no una tarjeta dentro de la tarjeta. */
+	.gear-attrs-pick {
+		background: transparent;
+		box-shadow: none;
+	}
 	.gear-attrs-pick legend {
+		font-family: inherit;
+		font-weight: 600;
 		font-size: 0.82rem;
 		padding: 0;
 	}
@@ -684,8 +699,10 @@
 	}
 	fieldset {
 		border: 1px solid var(--border);
-		border-radius: 6px;
-		padding: 0.75rem 1rem;
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		background: var(--surface);
+		box-shadow: var(--shadow-sm);
 	}
 	.help {
 		font-size: 0.85rem;
