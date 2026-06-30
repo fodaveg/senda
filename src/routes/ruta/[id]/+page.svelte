@@ -11,6 +11,7 @@
 	import { linkedRoutes } from '$lib/data/links';
 	import { PROVINCES, provinceOf } from '$lib/geo/province';
 	import { loadMapPrefs, saveMapPrefs } from '$lib/map/prefs';
+	import { loadFichaLayout, saveFichaLayout, type FichaLayout } from '$lib/ficha/layoutPref';
 	import { loadWaypoints, saveWaypoints, makeWaypoint, type Waypoint } from '$lib/user/waypoints';
 	import AvisosBanner from '$lib/components/AvisosBanner.svelte';
 	import FireRiskCard from '$lib/components/FireRiskCard.svelte';
@@ -276,6 +277,7 @@
 		const mapPrefs = loadMapPrefs();
 		showWater = mapPrefs.showWater;
 		showPois = mapPrefs.showPois;
+		fichaLayout = loadFichaLayout();
 		waypoints = loadWaypoints(r.id);
 		addWaypointMode = false;
 		debugMode = settings.debugMode;
@@ -432,6 +434,13 @@
 		{ id: 'comunidad', label: 'Comunidad', icon: '💬' }
 	];
 	let activeSection = $state('resumen');
+	// Disposición de la ficha (persistida): 'tabs' (defecto) o 'board' (tablero
+	// modular en escritorio). Ver $lib/ficha/layoutPref.
+	let fichaLayout = $state<FichaLayout>('tabs');
+	function setLayout(layout: FichaLayout) {
+		fichaLayout = layout;
+		saveFichaLayout(layout);
+	}
 	function goToSection(id: string) {
 		activeSection = id;
 		// En escritorio las secciones están apiladas → desplaza a su ancla; en
@@ -500,8 +509,26 @@
 	<RouteMarks routeId={route.id} />
 </header>
 
-<div class="ficha">
-	<!-- Índice modular (variante B): pegajoso en escritorio, pestañas en móvil. -->
+<div class="ficha-toolbar">
+	<div class="seg" role="group" aria-label="Disposición de la ficha">
+		<button
+			type="button"
+			class:active={fichaLayout === 'tabs'}
+			aria-pressed={fichaLayout === 'tabs'}
+			onclick={() => setLayout('tabs')}>Pestañas</button
+		>
+		<button
+			type="button"
+			class:active={fichaLayout === 'board'}
+			aria-pressed={fichaLayout === 'board'}
+			onclick={() => setLayout('board')}>Tablero</button
+		>
+	</div>
+</div>
+
+<div class="ficha" data-layout={fichaLayout}>
+	<!-- Índice de secciones: tira de pestañas (defecto) o, en 'board' y escritorio,
+	     índice lateral pegajoso con todas las secciones apiladas. -->
 	<nav class="ficha-index" aria-label="Secciones de la ruta">
 		{#each FICHA_SECTIONS as s (s.id)}
 			<button
@@ -1081,24 +1108,63 @@
 		font-size: var(--text-2xl);
 		margin: 0 0 var(--space-2);
 	}
-	/* Variante B: índice lateral pegajoso + secciones apiladas (escritorio). */
+	/* Conmutador de disposición (segmented control), alineado a la derecha. */
+	.ficha-toolbar {
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: var(--space-3);
+	}
+	.seg {
+		display: inline-flex;
+		gap: 2px;
+		padding: 3px;
+		background: var(--surface-alt);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-pill, 999px);
+	}
+	.seg button {
+		border: none;
+		background: transparent;
+		color: var(--muted-strong, var(--muted));
+		font: inherit;
+		font-size: var(--text-sm);
+		font-weight: 600;
+		padding: var(--space-1) var(--space-3);
+		border-radius: var(--radius-pill, 999px);
+		cursor: pointer;
+		min-height: 32px;
+	}
+	.seg button.active {
+		background: var(--surface);
+		color: var(--brand);
+		box-shadow: var(--shadow-sm, 0 1px 2px rgba(40, 38, 30, 0.12));
+	}
+
+	/* ── Disposición de la ficha ──────────────────────────────────────────────
+	   Base = 'tabs' (todos los anchos): tira de pestañas pegajosa + solo la
+	   sección activa visible. 'board' es una mejora de escritorio (más abajo). */
 	.ficha {
-		display: grid;
-		grid-template-columns: 232px minmax(0, 1fr);
-		gap: var(--space-5);
-		align-items: start;
+		display: block;
 	}
 	.ficha-index {
 		position: sticky;
-		top: var(--space-4);
+		top: calc(var(--space-3) + 52px); /* bajo el dock flotante de la cabecera */
+		z-index: 10;
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		overflow-x: auto;
 		gap: 2px;
+		background: var(--bg);
+		padding: var(--space-2) 0;
+		margin-bottom: var(--space-4);
+		border-bottom: 1px solid var(--border);
+		scrollbar-width: thin;
 	}
 	.fi-item {
 		display: flex;
 		align-items: center;
 		gap: var(--space-2);
+		white-space: nowrap;
 		text-align: left;
 		padding: var(--space-2) var(--space-3);
 		border: none;
@@ -1134,7 +1200,11 @@
 		border: 1px solid var(--border);
 		border-radius: var(--radius-lg);
 		padding: var(--space-4);
-		scroll-margin-top: var(--space-4);
+		scroll-margin-top: calc(var(--space-3) + 112px); /* dock + tira de pestañas */
+	}
+	/* Pestañas: solo se ve la sección activa (las demás siguen en el DOM). */
+	.fsec[data-active='false'] {
+		display: none;
 	}
 	.fsec-title {
 		font-size: var(--text-xl);
@@ -1162,33 +1232,39 @@
 		border: 1px solid var(--alert-border);
 		font-size: var(--text-sm);
 	}
-	/* En móvil el índice pasa a pestañas horizontales y solo se ve el panel
-	   activo (las secciones siguen en el DOM para no perder funcionalidad). */
+	/* En móvil las pestañas se compactan (icono sobre etiqueta) y se oculta el
+	   conmutador: ahí la ficha es siempre 'tabs' (un rail lateral no cabe). */
 	@media (max-width: 720px) {
-		.ficha {
-			grid-template-columns: 1fr;
-			gap: var(--space-3);
-		}
-		.ficha-index {
-			position: sticky;
-			top: 0;
-			z-index: 10;
-			flex-direction: row;
-			overflow-x: auto;
-			background: var(--bg);
-			padding: var(--space-2) 0;
-			border-bottom: 1px solid var(--border);
-			scrollbar-width: thin;
+		.ficha-toolbar {
+			display: none;
 		}
 		.fi-item {
 			flex-direction: column;
 			gap: 2px;
-			white-space: nowrap;
 			font-size: var(--text-xs);
 			text-align: center;
 		}
-		.fsec[data-active='false'] {
-			display: none;
+	}
+
+	/* 'board' (escritorio): índice lateral pegajoso + todas las secciones
+	   apiladas y visibles a la vez. */
+	@media (min-width: 721px) {
+		.ficha[data-layout='board'] {
+			display: grid;
+			grid-template-columns: 232px minmax(0, 1fr);
+			gap: var(--space-5);
+			align-items: start;
+		}
+		.ficha[data-layout='board'] .ficha-index {
+			flex-direction: column;
+			overflow: visible;
+			background: transparent;
+			border-bottom: none;
+			margin-bottom: 0;
+			padding: 0;
+		}
+		.ficha[data-layout='board'] .fsec[data-active='false'] {
+			display: block;
 		}
 	}
 	.map-wrap {
