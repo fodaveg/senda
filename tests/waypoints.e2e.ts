@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3.5-M3: el usuario marca puntos propios en el mapa de la ficha; persisten.
 test('añadir y quitar un waypoint propio en la ficha', async ({ page }) => {

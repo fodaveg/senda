@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3.5-M1: la mochila muestra agua y energía estimadas (etiquetadas como tal).
 test('la ficha muestra agua y energía estimadas', async ({ page }) => {

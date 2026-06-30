@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3.5-M6: la ficha ofrece el panel "En ruta" (grabación + 112). La grabación
 // GPS en sí depende del dispositivo; la lógica está cubierta por tracking.spec.

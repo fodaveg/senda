@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3-M7 (rediseño): toggle de modo en la barra + galería de esquemas por modo
 // en Ajustes, con previsualización y aplicación a toda la app.

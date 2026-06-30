@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3-M4: filtro por provincia (derivada de la comarca) en el listado.
 test('el filtro por provincia reduce el listado', async ({ page }) => {

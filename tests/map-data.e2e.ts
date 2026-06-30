@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3-M2: fuentes de agua y POIs se pintan en el mapa con toggles (visibles por
 // defecto). gr-10-e01 tiene fuentes y POIs derivados de OSM.

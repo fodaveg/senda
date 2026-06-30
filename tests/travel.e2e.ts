@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3-M4: el enlace de indicaciones a OpenStreetMap debe llevar el origen
 // (habitual o GPS) además del destino, para no tener que rellenarlo a mano.

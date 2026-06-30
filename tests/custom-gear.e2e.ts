@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3-M6 (rediseño): el material propio se gestiona en Ajustes y aparece
 // integrado en la lista de la mochila de cada ruta. La evaluación de avisos

@@ -26,7 +26,7 @@ verdad VISUAL es `Senda v6.dc.html`** (Design Component renderizado por
 `support.js`; léelo, no solo el `README.md` en prosa — leer solo la prosa ya
 causó un layout incorrecto que hubo que rehacer).
 
-**Hecho y commiteado en la rama (verde: lint/check/321 unit):**
+**Hecho y commiteado en la rama (verde: lint/check/321 unit/49 e2e):**
 
 1. Logo + wordmark «Senda» (Spectral 700 auto-alojada) en la cabecera global.
 2. Barra superior como **dock flotante** (sticky, redondeada) + fix del enlace
@@ -53,11 +53,16 @@ causó un layout incorrecto que hubo que rehacer).
 
 - Dar fidelidad a Condiciones (fauna/escape/112 ya tienen datos).
 
-**Deuda de la rama**: la suite **e2e está rota globalmente** desde el rediseño
-de pestañas (≈25 tests fallan, incl. `home`/`discover`, ajenos a la ficha;
-contenido oculto tras `display:none` de las pestañas inactivas, dock, etc.).
-La Fase 3 **no** añade regresión (delta neto 0, ±1 por flakiness en
-`discover.e2e`). Pendiente: pase dedicado de reparación e2e para la v6.
+**Deuda e2e (RESUELTA)**: el switch de pestañas ocultaba las secciones
+inactivas con `display:none`, así que las aserciones sobre contenido fuera de
+Resumen fallaban (≈25 tests). Arreglo: `tests/fixtures.ts` exporta `test/expect`
+con un `addInitScript` que fija la disposición **Tablero** (`senderoscv:ficha-layout`
+= `board`) → todas las secciones visibles a la vez en escritorio (viewport por
+defecto de Playwright, ≥721px). Todos los `*.e2e.ts` importan de `./fixtures`.
+Además se actualizaron selectores de la ficha al rediseño v6 (RouteMarks
+compacto sin "me gusta" y con `aria-label`; "Datos clave" es etiqueta, no `h3`;
+acciones Informe/Emergencia duplicadas cabecera↔Acciones → `.first()`; badge de
+estado fuera del `h1`). **49 e2e en verde.**
 
 **Gotcha de dev**: en `npm run dev`, Vite re-optimiza deps a media sesión y
 rompe la hidratación con "Failed to fetch dynamically imported module …/nodes/0.js"

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3-M3: una GR multi-día muestra sus etapas y "Ver Etapas" enlaza a ellas;
 // una etapa enlaza de vuelta a su ruta padre.

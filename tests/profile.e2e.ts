@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3-M5: el perfil de elevación muestra un tooltip legible (caja de contraste
 // fijo) al recorrerlo con el ratón, y sincroniza el marcador del mapa.

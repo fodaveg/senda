@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import { mockPayload } from './mocks';
 
 test('el informe se genera desde el detalle y permite descargar el .md', async ({ page }) => {
@@ -7,7 +7,8 @@ test('el informe se genera desde el detalle y permite descargar el .md', async (
 	);
 	await page.goto('/ruta/pr-cv-77');
 	await page.locator('body[data-hydrated]').waitFor();
-	await page.getByRole('link', { name: 'Generar informe' }).click();
+	// La acción está en la cabecera (primera) y, repetida, en la sección Acciones.
+	await page.getByRole('link', { name: 'Generar informe' }).first().click();
 
 	await expect(page).toHaveURL(/\/ruta\/pr-cv-77\/informe\?fecha=\d{4}-\d{2}-\d{2}/);
 	await expect(page.locator('article h1')).toContainText('PR-CV 77');

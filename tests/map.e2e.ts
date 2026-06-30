@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3-M1: el mapa ofrece un selector de capas base (IGN). La lógica pura del
 // catálogo y de los extremos del track está cubierta por los tests unitarios

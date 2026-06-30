@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3.5-M5: filtros "apto para" en el listado (exigen el dato conocido).
 test('el filtro "Con agua" reduce el listado', async ({ page }) => {

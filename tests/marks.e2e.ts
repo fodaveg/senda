@@ -1,10 +1,13 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('marcar favorita en la ficha y filtrar por favoritas en el listado', async ({ page }) => {
 	await page.goto('/ruta/pr-cv-77');
 	await page.locator('body[data-hydrated]').waitFor();
-	await page.getByRole('button', { name: /Favorita/ }).click();
-	await expect(page.getByRole('button', { name: '★ Favorita' })).toBeVisible();
+	// En la cabecera v6 la marca es un botón-icono: su nombre accesible es
+	// "Favorita" y el estado activo se refleja en aria-pressed.
+	const fav = page.getByRole('button', { name: 'Favorita' });
+	await fav.click();
+	await expect(fav).toHaveAttribute('aria-pressed', 'true');
 
 	await page.goto('/');
 	await page.locator('body[data-hydrated]').waitFor();
@@ -20,7 +23,8 @@ test('registrar una salida alimenta el diario y sus estadísticas', async ({ pag
 	await page.getByRole('textbox', { name: 'Fecha' }).fill('2026-06-01');
 	await page.getByLabel(/Notas/).fill('mañana fresquita');
 	await page.getByRole('button', { name: 'Guardar salida' }).click();
-	await expect(page.getByRole('button', { name: /Hecha ×1/ })).toBeVisible();
+	// En la cabecera v6 el botón-icono de salida pasa a "Salidas registradas: N".
+	await expect(page.getByRole('button', { name: /Salidas registradas: 1/ })).toBeVisible();
 
 	await page.goto('/diario');
 	await page.locator('body[data-hydrated]').waitFor();
@@ -35,7 +39,9 @@ test('registrar una salida alimenta el diario y sus estadísticas', async ({ pag
 test('la copia de seguridad exporta JSON válido del esquema', async ({ page }) => {
 	await page.goto('/ruta/pr-cv-77');
 	await page.locator('body[data-hydrated]').waitFor();
-	await page.getByRole('button', { name: /Me gusta/ }).click();
+	// La cabecera v6 ya no ofrece "Me gusta"; basta cualquier marca para generar
+	// datos de usuario que exportar.
+	await page.getByRole('button', { name: 'Favorita' }).click();
 
 	await page.goto('/diario');
 	await page.locator('body[data-hydrated]').waitFor();

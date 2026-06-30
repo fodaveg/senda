@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('la página de inicio lista el catálogo completo FEMECV', async ({ page }) => {
 	await page.goto('/');
@@ -26,7 +26,8 @@ test('el detalle de una ruta muestra los datos técnicos y el perfil', async ({ 
 	await page.getByRole('link', { name: /PR-CV 77/ }).click();
 	await expect(page).toHaveURL(/\/ruta\/pr-cv-77/);
 	await expect(page.locator('h1')).toContainText('PR-CV 77');
-	await expect(page.getByRole('heading', { name: 'Datos clave' })).toBeVisible();
+	// "Datos clave" es la etiqueta de la tarjeta del Resumen (rediseño v6).
+	await expect(page.getByText('Datos clave', { exact: true })).toBeVisible();
 	await expect(page.getByText('5,5 km').first()).toBeVisible();
-	await expect(page.getByRole('figure')).toBeVisible();
+	await expect(page.getByRole('figure').first()).toBeVisible();
 });

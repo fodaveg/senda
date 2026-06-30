@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import { aemetPayload, mockPayload } from './mocks';
 
 const DATOS_URL = 'https://aemet-datos.example/prediccion';

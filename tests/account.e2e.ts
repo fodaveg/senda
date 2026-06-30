@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V4-M3: flujo de cuentas con backend SIMULADO (SPECS_V4 §A7). Se interceptan
 // los endpoints de GoTrue (`/auth/v1/**`) con page.route para no tocar el

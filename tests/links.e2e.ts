@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // V3.5-M5: "rutas que enlazan" (por proximidad de extremos) en la ficha.
 test('la ficha muestra rutas que enlazan', async ({ page }) => {

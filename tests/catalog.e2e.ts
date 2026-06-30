@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // La app pide el catálogo en una ruta relativa al origen (`/catalog/…`).
 // Hay que bloquear el service worker de la PWA: si está activo intercepta

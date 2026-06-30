@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import { mockPayload } from './mocks';
 
 test('la ficha de emergencia se genera con plan horario, 112 y datos de ajustes', async ({
@@ -29,7 +29,8 @@ test('la ficha de emergencia se genera con plan horario, 112 y datos de ajustes'
 
 	await page.goto('/ruta/pr-cv-77');
 	await page.locator('body[data-hydrated]').waitFor();
-	await page.getByRole('link', { name: 'Ficha de emergencia' }).click();
+	// La acción está en la cabecera (primera) y, repetida, en la sección Acciones.
+	await page.getByRole('link', { name: 'Ficha de emergencia' }).first().click();
 	await expect(page).toHaveURL(/\/emergencia/);
 
 	await expect(page.getByText('HORA LÍMITE DE ALARMA')).toBeVisible();

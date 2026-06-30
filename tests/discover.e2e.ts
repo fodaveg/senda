@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('el buscador filtra por municipio sin acentos', async ({ page }) => {
 	await page.goto('/');
@@ -34,13 +34,16 @@ test('el dado abre una ruta del resultado filtrado', async ({ page }) => {
 	await page.locator('.route-list li').first().waitFor();
 	await page.getByRole('button', { name: 'Ruta al azar' }).click();
 	await expect(page).toHaveURL(/\/ruta\/[a-z0-9-]+/);
-	await expect(page.getByRole('heading', { name: 'Datos clave' })).toBeVisible();
+	// "Datos clave" es la etiqueta de la tarjeta del Resumen (rediseño v6).
+	await expect(page.getByText('Datos clave', { exact: true })).toBeVisible();
 });
 
 test('la ficha muestra el estado oficial y la nota de reservas', async ({ page }) => {
 	// pr-cv-77 está "Sin controles de calidad" → con_reservas.
 	await page.goto('/ruta/pr-cv-77');
-	await expect(page.locator('h1').getByText('Con reservas')).toBeVisible();
+	// El estado se muestra como badge en la cabecera-tarjeta (rediseño v6), ya no
+	// dentro del h1.
+	await expect(page.locator('.ficha-head').getByText('Con reservas')).toBeVisible();
 	await expect(page.getByText(/Sin control de calidad reciente/)).toBeVisible();
 	await expect(page.getByText('Sin controles de calidad', { exact: true }).first()).toBeVisible();
 });

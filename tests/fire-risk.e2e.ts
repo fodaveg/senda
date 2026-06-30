@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 // PNG 1x1 transparente para simular la imagen del mapa de AEMET.
 const PNG = Buffer.from(

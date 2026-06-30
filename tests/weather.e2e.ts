@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import { capXml, hourlyPayload, mockPayload, tarWith } from './mocks';
 
 test('con pronóstico de lluvia, el poncho se habilita con su razón', async ({ page }) => {
@@ -90,6 +90,8 @@ test('con api key, los avisos CAP vigentes se muestran como banner', async ({ pa
 
 	await page.goto('/ruta/pr-cv-77');
 	await expect(page.getByText('Avisos meteorológicos oficiales (AEMET)')).toBeVisible();
-	await expect(page.getByText('Tormentas')).toBeVisible();
-	await expect(page.getByText('naranja')).toBeVisible();
+	// El evento y nivel aparecen en el banner de Condiciones y, resumidos, en la
+	// tarjeta de avisos del Resumen (rediseño v6): basta con la primera.
+	await expect(page.getByText('Tormentas').first()).toBeVisible();
+	await expect(page.getByText('naranja').first()).toBeVisible();
 });
