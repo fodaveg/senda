@@ -93,7 +93,18 @@ nuevas tandas y se lleva a `main` por fast-forward.
     días/horas, export GPX/KML). 338 unit / 51 e2e.
 
 **v6 ficha COMPLETA y desplegada** (todas las pestañas + cabecera + 2 tandas de
-fiabilidad/pulido). Pendiente abierto: solo pulido fino adicional si se desea.
+fiabilidad/pulido).
+
+**➡️ PRÓXIMO RECOMENDADO: V6‑M4 — rediseño del descubrimiento (home).** Es la
+otra pantalla principal del handoff (`design_handoff_senda_v6/`, sección
+"Descubrimiento (home)"): relación mapa↔listado, **filtros como chips**
+quitables + panel colapsable, contador de resultados en vivo, **clustering** de
+marcadores + mini‑ficha al pulsar, conmutador **Lista↔Mapa** en móvil, estados
+vacíos/carga cuidados. Afecta sobre todo a `src/routes/+page.svelte` y
+`src/lib/components/Map*`. En paralelo y barato: extraer un componente base
+**`Card`** (V6‑M2) para dejar de duplicar CSS de tarjeta por página.
+Backlog completo más abajo y en `SPECS_V6.md` (§milestones) y `SPECS_V5.md`
+(parte PRE = deuda v4/legal/pulido).
 
 **Deuda e2e (RESUELTA)**: el switch de pestañas ocultaba las secciones
 inactivas con `display:none`, así que las aserciones sobre contenido fuera de
