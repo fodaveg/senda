@@ -495,6 +495,25 @@
 	// Condición meteo "de un vistazo" derivada de la probabilidad de lluvia del día
 	// elegido (el pronóstico no trae estado de cielo; ver $lib/weather/condition).
 	let glance = $derived(selectedDay ? glanceCondition(selectedDay) : null);
+	// Primeros 3 días para la mini-tarjeta de meteo en Condiciones.
+	let conditionDays = $derived((forecast ?? []).slice(0, 3));
+
+	// Emoji decorativo por especie para la tarjeta de fauna (handoff v6). Solo
+	// decora el nombre (que es el dato real); no añade información ni fuente. Mapeo
+	// por palabra clave con respaldo genérico de huella.
+	const WILDLIFE_EMOJI: [RegExp, string][] = [
+		[/cabra|mufl[oó]n|rebeco|sarrio/i, '🐐'],
+		[/jabal[ií]|cerdo/i, '🐗'],
+		[/v[ií]bora|culebra|serpiente|ofidio/i, '🐍'],
+		[/[aá]guila|buitre|halc[oó]n|rapaz|ave/i, '🦅'],
+		[/zorro/i, '🦊'],
+		[/ciervo|corzo|gamo|venado/i, '🦌'],
+		[/perro|mast[ií]n|ganado/i, '🐕'],
+		[/abeja|avispa|insecto/i, '🐝']
+	];
+	function wildlifeEmoji(species: string): string {
+		return WILDLIFE_EMOJI.find(([re]) => re.test(species))?.[1] ?? '🐾';
+	}
 
 	// Progreso de la mochila para la tarjeta-resumen "Mochila X/Y": ítems
 	// recomendados ("Llevar") y cuántos lleva ya marcados el usuario.
@@ -1084,49 +1103,142 @@
 		>
 			<h2 class="fsec-title">Condiciones y seguridad</h2>
 
-			<AvisosBanner avisos={avisosForDate} />
-			<FireRiskCard
-				imageUrl={fireRiskMapUrl}
-				loading={fireRiskLoading}
-				dayLabel={dateLabel(selectedDate)}
-			/>
+			<div class="cond-grid">
+				<!-- Izquierda: resumen meteo, avisos y riesgo de incendio. -->
+				<div class="rg-col">
+					{#if conditionDays.length > 0}
+						<div class="card">
+							<div class="card-head">
+								<h3 class="card-title">Meteo</h3>
+								<button type="button" class="card-link" onclick={() => goToSection('meteo')}
+									>Por días y horas →</button
+								>
+							</div>
+							<div class="mini-meteo">
+								{#each conditionDays as d (d.date)}
+									{@const g = glanceCondition(d)}
+									<div class="mm-day" class:rainy={d.precipitation_probability_max >= 60}>
+										<div class="mm-label">{dateLabel(d.date)}</div>
+										<div class="mm-ic" aria-hidden="true">{g.icon}</div>
+										<div class="mm-temp">
+											{Math.round(d.temperature_2m_max)}°
+											<span class="muted">/ {Math.round(d.temperature_2m_min)}°</span>
+										</div>
+										<div class="mm-rain">Lluvia {Math.round(d.precipitation_probability_max)}%</div>
+									</div>
+								{/each}
+							</div>
+							<p class="card-foot">
+								Pronóstico {conditionDays[0].source === 'aemet' ? 'AEMET' : 'Open-Meteo'}; el icono
+								se deriva de la probabilidad de lluvia.
+							</p>
+						</div>
+					{/if}
 
-			{#if !caps.fauna}
-				<h3>Fauna y seguridad</h3>
-				<FeatureGuard federacion={fedLabel} feature="datos de fauna y riesgos" />
-			{:else if wildlife}
-				<h3>Fauna y seguridad ({wildlife.name})</h3>
-				<ul>
-					{#each wildlife.wildlife as w (w.species)}
-						<li><strong>{w.species}</strong> (riesgo {w.risk}): {w.advice}</li>
-					{/each}
-				</ul>
-				{#if wildlife.other_risks.length > 0}
-					<p class="other-risks">Otros riesgos: {wildlife.other_risks.join('; ')}.</p>
-				{/if}
-			{/if}
+					{#if avisosForDate.length > 0}
+						<AvisosBanner avisos={avisosForDate} />
+					{:else}
+						<div class="card">
+							<div class="card-kicker">Avisos AEMET / CAP vigentes</div>
+							<p class="card-foot">
+								{#if avisos === null}
+									Configura la API key de AEMET en Ajustes para ver avisos oficiales.
+								{:else}
+									Sin avisos de lluvia, nieve, viento o tormenta vigentes para la fecha elegida.
+								{/if}
+							</p>
+						</div>
+					{/if}
 
-			{#if !caps.escapes}
-				<h3>Escapes</h3>
-				<FeatureGuard federacion={fedLabel} feature="rutas de escape" />
-			{:else if route.escape_routes.length > 0}
-				<h3>Escapes</h3>
-				<ul>
-					{#each route.escape_routes as escape (escape)}<li>{escape}</li>{/each}
-				</ul>
-			{/if}
+					<FireRiskCard
+						imageUrl={fireRiskMapUrl}
+						loading={fireRiskLoading}
+						dayLabel={dateLabel(selectedDate)}
+					/>
+				</div>
 
-			{#if route.notes_rain}
-				<h3>Si llueve</h3>
-				<p>{route.notes_rain}</p>
-			{/if}
+				<!-- Derecha: fauna, escapes y emergencias 112. -->
+				<div class="rg-col">
+					{#if !caps.fauna}
+						<div class="card">
+							<div class="card-kicker">Fauna de la zona</div>
+							<FeatureGuard federacion={fedLabel} feature="datos de fauna y riesgos" />
+						</div>
+					{:else if wildlife}
+						<div class="card">
+							<div class="fauna-head">
+								<h3 class="card-title">Fauna de la zona</h3>
+								<span class="tag-orient">Orientativo</span>
+							</div>
+							<ul class="fauna-list">
+								{#each wildlife.wildlife as w (w.species)}
+									<li>
+										<span class="fauna-ic" aria-hidden="true">{wildlifeEmoji(w.species)}</span>
+										<div>
+											<strong>{w.species}</strong>
+											<span class="muted">(riesgo {w.risk}) — {w.advice}</span>
+										</div>
+									</li>
+								{/each}
+							</ul>
+							{#if wildlife.other_risks.length > 0}
+								<p class="other-risks">Otros riesgos: {wildlife.other_risks.join('; ')}.</p>
+							{/if}
+							<p class="card-foot">
+								Lista no exhaustiva ({wildlife.name}). Fuente: {wildlife.sources.join(', ')}.
+							</p>
+						</div>
+					{/if}
 
-			<p class="emergency-reminder">
-				En emergencia llama al <strong>112</strong>. Genera la
-				<button type="button" class="link-btn" onclick={() => goToSection('acciones')}
-					>ficha de emergencia</button
-				> antes de salir.
-			</p>
+					{#if !caps.escapes}
+						<div class="card">
+							<div class="card-kicker">Rutas de escape</div>
+							<FeatureGuard federacion={fedLabel} feature="rutas de escape" />
+						</div>
+					{:else if route.escape_routes.length > 0}
+						<div class="card">
+							<h3 class="card-title">Rutas de escape</h3>
+							<ul class="escape-list">
+								{#each route.escape_routes as escape, i (escape)}
+									<li>
+										<span class="escape-badge" aria-hidden="true"
+											>{String.fromCharCode(65 + i)}</span
+										>
+										<span>{escape}</span>
+									</li>
+								{/each}
+							</ul>
+						</div>
+					{/if}
+
+					{#if route.notes_rain}
+						<div class="card">
+							<h3 class="card-title">Si llueve</h3>
+							<p class="rain-note">{route.notes_rain}</p>
+						</div>
+					{/if}
+
+					<!-- eslint-disable svelte/no-navigation-without-resolve -- base con resolve() + query string -->
+					<div class="emergency-card">
+						<div class="ec-head">
+							<span class="ec-ic" aria-hidden="true">🆘</span>
+							<div>
+								<div class="ec-title">Emergencias · 112</div>
+								<div class="ec-sub">
+									Lleva el móvil cargado: la cobertura puede ser irregular en montaña.
+								</div>
+							</div>
+						</div>
+						<a
+							class="ec-btn"
+							href={resolve('/ruta/[id]/emergencia', { id: route.id }) + `?fecha=${selectedDate}`}
+						>
+							Abrir ficha de emergencia
+						</a>
+					</div>
+					<!-- eslint-enable svelte/no-navigation-without-resolve -->
+				</div>
+			</div>
 		</section>
 
 		<!-- ── Meteo ───────────────────────────────────────────────────────── -->
@@ -1573,14 +1685,6 @@
 		gap: var(--space-2);
 		align-items: center;
 	}
-	.emergency-reminder {
-		margin: var(--space-4) 0 0;
-		padding: var(--space-3);
-		border-radius: var(--radius-md);
-		background: var(--alert-soft, var(--alert-bg));
-		border: 1px solid var(--alert-border);
-		font-size: var(--text-sm);
-	}
 	/* En móvil las pestañas se compactan (icono sobre etiqueta) y se oculta el
 	   conmutador: ahí la ficha es siempre 'tabs' (un rail lateral no cabe). */
 	@media (max-width: 720px) {
@@ -1999,9 +2103,162 @@
 		flex: 1 1 200px;
 		min-width: 0;
 	}
-	/* En pantallas estrechas la rejilla del resumen se apila. */
+	/* ── Condiciones y seguridad v6: rejilla 2 columnas ────────────────────── */
+	.cond-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--space-4);
+		align-items: start;
+	}
+	/* Mini-meteo de 3 días: el día lluvioso se tiñe de alerta. */
+	.mini-meteo {
+		margin-top: var(--space-3);
+		display: flex;
+		gap: var(--space-2);
+		flex-wrap: wrap;
+	}
+	.mm-day {
+		flex: 1 1 80px;
+		text-align: center;
+		padding: var(--space-2);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+	}
+	.mm-day.rainy {
+		background: var(--alert-soft);
+		border-color: color-mix(in srgb, var(--danger) 35%, var(--border));
+	}
+	.mm-label {
+		font-size: var(--text-xs);
+		font-weight: 700;
+		color: var(--muted);
+	}
+	.mm-ic {
+		font-size: 22px;
+		line-height: 1.2;
+		margin: 2px 0;
+	}
+	.mm-temp {
+		font-weight: 700;
+		font-size: var(--text-sm);
+	}
+	.mm-temp .muted {
+		color: var(--muted);
+		font-weight: 600;
+	}
+	.mm-rain {
+		margin-top: 4px;
+		font-size: var(--text-xs);
+		color: var(--muted);
+	}
+	/* Fauna: encabezado con badge "Orientativo" + lista con icono por especie. */
+	.fauna-head {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+	.tag-orient {
+		font-size: 10px;
+		font-weight: 700;
+		padding: 2px 8px;
+		border-radius: var(--radius-pill, 999px);
+		background: var(--warn-soft);
+		color: var(--warn);
+	}
+	.fauna-list {
+		list-style: none;
+		padding: 0;
+		margin: var(--space-3) 0 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+		font-size: var(--text-sm);
+	}
+	.fauna-list li {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-2);
+	}
+	.fauna-ic {
+		flex: none;
+	}
+	/* Escapes: lista con marcador circular A/B. */
+	.escape-list {
+		list-style: none;
+		padding: 0;
+		margin: var(--space-3) 0 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+		font-size: var(--text-sm);
+	}
+	.escape-list li {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-2);
+	}
+	.escape-badge {
+		flex: none;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 800;
+		font-size: var(--text-xs);
+		background: var(--ok-soft);
+		color: var(--ok);
+	}
+	.rain-note {
+		margin: var(--space-2) 0 0;
+		font-size: var(--text-sm);
+		line-height: 1.5;
+	}
+	/* Tarjeta de emergencias 112: roja, prominente, con botón a la ficha. */
+	.emergency-card {
+		background: var(--danger);
+		color: #fff;
+		border-radius: var(--radius-md);
+		padding: var(--space-4);
+	}
+	.ec-head {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+	.ec-ic {
+		font-size: var(--text-lg);
+	}
+	.ec-title {
+		font-family: var(--font-head);
+		font-weight: 800;
+		font-size: var(--text-base, 1rem);
+	}
+	.ec-sub {
+		font-size: var(--text-xs);
+		opacity: 0.9;
+	}
+	.ec-btn {
+		display: block;
+		text-align: center;
+		margin-top: var(--space-3);
+		padding: var(--space-2);
+		border-radius: var(--radius-md);
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		background: rgba(255, 255, 255, 0.14);
+		color: #fff;
+		font-weight: 700;
+		font-size: var(--text-sm);
+		text-decoration: none;
+	}
+	.ec-btn:hover {
+		background: rgba(255, 255, 255, 0.24);
+	}
+	/* En pantallas estrechas las rejillas de la ficha se apilan. */
 	@media (max-width: 720px) {
-		.resumen-grid {
+		.resumen-grid,
+		.cond-grid {
 			grid-template-columns: 1fr;
 		}
 	}

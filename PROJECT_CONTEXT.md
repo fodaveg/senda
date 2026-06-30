@@ -49,9 +49,16 @@ causó un layout incorrecto que hubo que rehacer).
      "Despejado": etiquetas en términos de lluvia (Sin lluvia / poco probable /
      posible / probable).
 
-**Pendiente (Fase 3 — Condiciones):**
+6. **Fase 3 — Condiciones rediseñado** en rejilla 2 col (1fr/1fr): izq. mini-meteo
+   de 3 días (iconos derivados de la prob. de lluvia, día lluvioso teñido) +
+   Avisos + Riesgo de incendio; der. **Fauna** (badge "Orientativo", emoji por
+   especie con respaldo, riesgo+consejo, **fuente real citada** —no "comunitaria
+   sin verificar") + **Escapes** (lista A/B; campo de metadatos manual, vacío en
+   el dataset FEMECV actual) + tarjeta **112** roja con botón a la ficha de
+   emergencia. "Si llueve" (`notes_rain`) como tarjeta si existe.
 
-- Dar fidelidad a Condiciones (fauna/escape/112 ya tienen datos).
+**Fase 3 COMPLETA.** Pendiente v6: repaso de las pestañas restantes (Mapa,
+Preparación, Meteo, Acciones) si se quiere subir su fidelidad al `.dc.html`.
 
 **Deuda e2e (RESUELTA)**: el switch de pestañas ocultaba las secciones
 inactivas con `display:none`, así que las aserciones sobre contenido fuera de
