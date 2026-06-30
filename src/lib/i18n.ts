@@ -19,6 +19,7 @@ export const ui = {
 		settings: 'Ajustes',
 		account: 'Cuenta',
 		credits: 'Créditos y licencias',
+		privacy: 'Privacidad',
 		more: 'Más',
 		skipToContent: 'Saltar al contenido'
 	},

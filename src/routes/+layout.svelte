@@ -132,6 +132,7 @@
 <footer>
 	<span>{ui.footer.data}</span>
 	<a href={resolve('/creditos')}>{ui.nav.credits}</a>
+	<a href={resolve('/privacidad')}>{ui.nav.privacy}</a>
 </footer>
 
 <!-- Barra de navegación inferior (solo móvil): acceso a las tres áreas
@@ -164,6 +165,7 @@
 				<a href={resolve('/cuenta')} onclick={() => (moreOpen = false)}>{ui.nav.account}</a>
 			{/if}
 			<a href={resolve('/creditos')} onclick={() => (moreOpen = false)}>{ui.nav.credits}</a>
+			<a href={resolve('/privacidad')} onclick={() => (moreOpen = false)}>{ui.nav.privacy}</a>
 		</div>
 	</details>
 </nav>
