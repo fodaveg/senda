@@ -15,7 +15,8 @@
 	import { getAnalytics } from '$lib/analytics/context';
 	import { routeEvent } from '$lib/analytics/events';
 
-	let { routeId }: { routeId: string } = $props();
+	// `compact`: variante de cabecera de ficha (handoff v6) → botones-icono.
+	let { routeId, compact = false }: { routeId: string; compact?: boolean } = $props();
 
 	const repo = getUserRepository();
 	const analytics = getAnalytics();
@@ -25,6 +26,13 @@
 		me_gusta: { off: '♡ Me gusta', on: '♥ Me gusta' },
 		quiero_hacer: { off: '+ Quiero hacerla', on: '✓ Quiero hacerla' }
 	};
+
+	// En modo compacto se muestran solo las acciones de la cabecera del diseño:
+	// favorita, quiero hacer y registrar salida (sin "me gusta"), como iconos.
+	const COMPACT_MARKS: { mark: ToggleMark; off: string; on: string; label: string }[] = [
+		{ mark: 'favorita', off: '♡', on: '♥', label: 'Favorita' },
+		{ mark: 'quiero_hacer', off: '✓', on: '✓', label: 'Quiero hacerla' }
+	];
 
 	let userData = $state<UserData>(emptyUserData());
 	let showOutingForm = $state(false);
@@ -69,57 +77,89 @@
 	}
 </script>
 
-<div class="marks">
-	{#each TOGGLE_MARKS as mark (mark)}
-		<button
-			type="button"
-			class:active={marks[mark]}
-			aria-pressed={!!marks[mark]}
-			onclick={() => toggle(mark)}
-		>
-			{marks[mark] ? MARK_LABELS[mark].on : MARK_LABELS[mark].off}
-		</button>
-	{/each}
-	<button
-		type="button"
-		class:active={isDone(marks)}
-		onclick={() => (showOutingForm = !showOutingForm)}
-	>
-		{isDone(marks) ? `Hecha ×${outings.length}` : 'Registrar salida'}
-	</button>
-</div>
-
-{#if showOutingForm}
-	<form
-		class="outing-form"
-		onsubmit={(e) => {
-			e.preventDefault();
-			registerOuting();
-		}}
-	>
-		<label>
-			Fecha
-			<input type="date" bind:value={outingDate} required />
-		</label>
-		<label class="grow">
-			Notas (opcional)
-			<input type="text" bind:value={outingNotes} placeholder="Con quién, cómo fue…" />
-		</label>
-		<button type="submit">Guardar salida</button>
-	</form>
-	{#if outings.length > 0}
-		<ul class="outings">
-			{#each outings as outing (outing.id)}
-				<li>
-					{outing.date}{outing.notes ? ` — ${outing.notes}` : ''}
-					<button type="button" class="remove" onclick={() => removeOuting(outing.id)}>
-						Borrar
-					</button>
-				</li>
+<div class="route-marks" class:compact>
+	{#if compact}
+		<div class="marks compact">
+			{#each COMPACT_MARKS as m (m.mark)}
+				<button
+					type="button"
+					class="ic-btn"
+					class:active={marks[m.mark]}
+					aria-pressed={!!marks[m.mark]}
+					aria-label={m.label}
+					title={m.label}
+					onclick={() => toggle(m.mark)}
+				>
+					<span aria-hidden="true">{marks[m.mark] ? m.on : m.off}</span>
+				</button>
 			{/each}
-		</ul>
+			<button
+				type="button"
+				class="ic-btn"
+				class:active={isDone(marks)}
+				aria-pressed={showOutingForm}
+				aria-label={isDone(marks) ? `Salidas registradas: ${outings.length}` : 'Registrar salida'}
+				title="Registrar salida"
+				onclick={() => (showOutingForm = !showOutingForm)}
+			>
+				<span aria-hidden="true">⌖</span>
+			</button>
+		</div>
+	{:else}
+		<div class="marks">
+			{#each TOGGLE_MARKS as mark (mark)}
+				<button
+					type="button"
+					class:active={marks[mark]}
+					aria-pressed={!!marks[mark]}
+					onclick={() => toggle(mark)}
+				>
+					{marks[mark] ? MARK_LABELS[mark].on : MARK_LABELS[mark].off}
+				</button>
+			{/each}
+			<button
+				type="button"
+				class:active={isDone(marks)}
+				onclick={() => (showOutingForm = !showOutingForm)}
+			>
+				{isDone(marks) ? `Hecha ×${outings.length}` : 'Registrar salida'}
+			</button>
+		</div>
 	{/if}
-{/if}
+
+	{#if showOutingForm}
+		<form
+			class="outing-form"
+			class:compact
+			onsubmit={(e) => {
+				e.preventDefault();
+				registerOuting();
+			}}
+		>
+			<label>
+				Fecha
+				<input type="date" bind:value={outingDate} required />
+			</label>
+			<label class="grow">
+				Notas (opcional)
+				<input type="text" bind:value={outingNotes} placeholder="Con quién, cómo fue…" />
+			</label>
+			<button type="submit">Guardar salida</button>
+		</form>
+		{#if outings.length > 0}
+			<ul class="outings">
+				{#each outings as outing (outing.id)}
+					<li>
+						{outing.date}{outing.notes ? ` — ${outing.notes}` : ''}
+						<button type="button" class="remove" onclick={() => removeOuting(outing.id)}>
+							Borrar
+						</button>
+					</li>
+				{/each}
+			</ul>
+		{/if}
+	{/if}
+</div>
 
 <style>
 	.marks {
@@ -142,6 +182,47 @@
 		background: var(--surface-alt);
 		color: var(--brand);
 		font-weight: 600;
+	}
+	/* Variante compacta (cabecera de ficha v6): botones-icono + formulario en
+	   menú flotante anclado al grupo. */
+	.route-marks.compact {
+		position: relative;
+	}
+	.marks.compact {
+		gap: var(--space-1);
+		margin: 0;
+	}
+	.ic-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		font-size: var(--text-md);
+		border-radius: var(--radius-md);
+		border: 1px solid var(--border);
+		background: var(--surface);
+		color: var(--ink);
+		cursor: pointer;
+		line-height: 1;
+	}
+	.ic-btn:hover {
+		background: var(--surface-alt);
+	}
+	.ic-btn.active {
+		border-color: var(--brand);
+		background: var(--brand-soft, var(--surface-alt));
+		color: var(--brand);
+	}
+	.outing-form.compact {
+		position: absolute;
+		top: calc(100% + var(--space-1));
+		left: 0;
+		z-index: 20;
+		width: min(340px, 90vw);
+		background: var(--surface);
+		box-shadow: var(--shadow-lg);
+		margin: 0;
 	}
 	.outing-form {
 		display: flex;

@@ -495,38 +495,66 @@
      primaria futura "Iniciar ruta" (navegación en vivo, móvil) queda reservada
      y deshabilitada. -->
 <header class="ficha-head">
-	<div class="fh-tags">
-		<TypeBadge type={route.type} />
-		<StatusBadge status={route.status} detail={route.status_detail} />
-		<span class="fh-source">{fedLabel}</span>
+	<div class="fh-row">
+		<div class="fh-main">
+			<div class="fh-tags">
+				<TypeBadge type={route.type} />
+				<StatusBadge status={route.status} detail={route.status_detail} />
+				<span class="fh-source">{fedLabel}</span>
+			</div>
+
+			<h1>{route.name}</h1>
+
+			<dl class="fh-metrics">
+				<div>
+					<dt>Distancia</dt>
+					<dd>{formatKm(route.distance_km)}</dd>
+				</div>
+				<div>
+					<dt>Desnivel</dt>
+					<dd>
+						{route.ascent_m !== null ? `+${formatMeters(route.ascent_m)}` : 'sin dato'}
+						{#if route.descent_m !== null}<span class="fh-desc"
+								>−{formatMeters(route.descent_m)}</span
+							>{/if}
+					</dd>
+				</div>
+				<div>
+					<dt>Duración</dt>
+					<dd>
+						{route.est_duration_min !== null ? formatDuration(route.est_duration_min) : 'sin dato'}
+					</dd>
+				</div>
+				<div>
+					<dt>Forma</dt>
+					<dd>{route.circular === null ? 'sin dato' : route.circular ? 'Circular' : 'Lineal'}</dd>
+				</div>
+			</dl>
+		</div>
+
+		<div class="fh-aside">
+			<div class="fh-actions">
+				<RouteMarks routeId={route.id} compact />
+				<!-- eslint-disable svelte/no-navigation-without-resolve -- base construida con resolve(); la regla no contempla añadir query string -->
+				<a
+					class="fh-btn"
+					href={resolve('/ruta/[id]/emergencia', { id: route.id }) + `?fecha=${selectedDate}`}
+				>
+					🆘 Ficha de emergencia
+				</a>
+				<a
+					class="fh-btn fh-primary"
+					href={resolve('/ruta/[id]/informe', { id: route.id }) + `?fecha=${selectedDate}`}
+				>
+					📄 Generar informe
+				</a>
+				<!-- eslint-enable svelte/no-navigation-without-resolve -->
+			</div>
+			<p class="fh-reserved-hint" title="Navegación en vivo — próximamente (móvil)">
+				⚠ «Iniciar ruta» — reservado para móvil (futuro)
+			</p>
+		</div>
 	</div>
-
-	<h1>{route.name}</h1>
-
-	<dl class="fh-metrics">
-		<div>
-			<dt>Distancia</dt>
-			<dd>{formatKm(route.distance_km)}</dd>
-		</div>
-		<div>
-			<dt>Desnivel</dt>
-			<dd>
-				{route.ascent_m !== null ? `+${formatMeters(route.ascent_m)}` : 'sin dato'}
-				{#if route.descent_m !== null}<span class="fh-desc">−{formatMeters(route.descent_m)}</span
-					>{/if}
-			</dd>
-		</div>
-		<div>
-			<dt>Duración</dt>
-			<dd>
-				{route.est_duration_min !== null ? formatDuration(route.est_duration_min) : 'sin dato'}
-			</dd>
-		</div>
-		<div>
-			<dt>Forma</dt>
-			<dd>{route.circular === null ? 'sin dato' : route.circular ? 'Circular' : 'Lineal'}</dd>
-		</div>
-	</dl>
 
 	{#if route.status === 'deshabilitado'}
 		<div class="status-banner" role="alert">
@@ -540,33 +568,6 @@
 				: 'Sin control de calidad reciente: la señalización y el mantenimiento pueden haber variado desde la homologación.'}
 		</p>
 	{/if}
-
-	<RouteMarks routeId={route.id} />
-
-	<div class="fh-actions">
-		<!-- eslint-disable svelte/no-navigation-without-resolve -- base construida con resolve(); la regla no contempla añadir query string -->
-		<a
-			class="fh-btn"
-			href={resolve('/ruta/[id]/informe', { id: route.id }) + `?fecha=${selectedDate}`}
-		>
-			📄 Generar informe
-		</a>
-		<a
-			class="fh-btn"
-			href={resolve('/ruta/[id]/emergencia', { id: route.id }) + `?fecha=${selectedDate}`}
-		>
-			🆘 Ficha de emergencia
-		</a>
-		<!-- eslint-enable svelte/no-navigation-without-resolve -->
-		<button
-			class="fh-btn fh-reserved"
-			type="button"
-			disabled
-			title="Navegación en vivo — próximamente (móvil)"
-		>
-			▶ Iniciar ruta
-		</button>
-	</div>
 </header>
 
 <div class="ficha-toolbar">
@@ -1161,10 +1162,26 @@
 	.breadcrumb {
 		margin: 0.5rem 0;
 	}
+	/* Cabecera-tarjeta "banco de preparación": info a la izquierda, acciones a la
+	   derecha en escritorio; apila en una columna al envolver. */
 	.ficha-head {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4);
+		box-shadow: var(--shadow-sm, 0 1px 2px rgba(40, 38, 30, 0.08));
 		margin-bottom: var(--space-4);
-		padding-bottom: var(--space-4);
-		border-bottom: 1px solid var(--border);
+	}
+	.fh-row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: var(--space-3) var(--space-4);
+	}
+	.fh-main {
+		flex: 1 1 320px;
+		min-width: 0;
 	}
 	.ficha-head h1 {
 		font-size: var(--text-2xl);
@@ -1185,7 +1202,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-2) var(--space-5);
-		margin: 0 0 var(--space-3);
+		margin: 0;
 	}
 	.fh-metrics > div {
 		display: flex;
@@ -1210,11 +1227,18 @@
 		font-size: var(--text-md);
 		margin-left: var(--space-1);
 	}
+	.fh-aside {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: var(--space-2);
+	}
 	.fh-actions {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: flex-end;
+		align-items: center;
 		gap: var(--space-2);
-		margin-top: var(--space-1);
 	}
 	.fh-btn {
 		display: inline-flex;
@@ -1234,10 +1258,24 @@
 	.fh-btn:hover {
 		background: var(--surface-alt);
 	}
-	/* "Iniciar ruta": acción primaria futura, reservada visualmente. */
-	.fh-reserved {
-		opacity: 0.5;
-		cursor: not-allowed;
+	/* "Generar informe": acción primaria del diseño (verde de marca). */
+	.fh-primary {
+		background: var(--brand);
+		border-color: var(--brand);
+		color: var(--on-brand);
+	}
+	.fh-primary:hover {
+		background: var(--brand);
+		opacity: 0.92;
+	}
+	/* "Iniciar ruta": acción primaria futura, reservada como nota discreta. */
+	.fh-reserved-hint {
+		margin: 0;
+		font-size: var(--text-xs);
+		color: var(--muted);
+		border: 1px dashed var(--border);
+		border-radius: var(--radius-pill, 999px);
+		padding: var(--space-1) var(--space-3);
 	}
 	/* Conmutador de disposición (segmented control), alineado a la derecha. */
 	.ficha-toolbar {
