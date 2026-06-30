@@ -112,6 +112,7 @@ corazón en rutas con "PROVINCIAL".)
 barril `ui/index.ts`.
 
 **Diario & Ajustes rediseñados (handoff §3).**
+
 - **Diario** (`/diario`): 4 tarjetas de estadística (rutas hechas, distancia,
   desnivel, **días en monte** — `distinctDays` nuevo en `DiaryStats`, puro +
   test), **logros como medallas** (conseguido relleno / bloqueado punteado, icono
@@ -122,8 +123,17 @@ barril `ui/index.ts`.
 
 Verificado en navegador. **342 unit / 52 e2e** en verde.
 
-**➡️ PRÓXIMO RECOMENDADO:** pulido/responsive móvil del rediseño v6 (revisar las
-3 pantallas a 390px) y, en backlog mayor, **Supabase real (SMTP) + ingesta
+**Pasada de responsive móvil (390px) del rediseño v6.** Revisadas las 4
+pantallas a 390px (Playwright). Ficha, diario y ajustes ya iban bien; arreglos en
+el **home**: (1) la **fila de ruta** se reordenó —estado a la línea superior
+junto al badge y **corazón táctil** arriba a la derecha (hijo directo de la fila,
+ya no en columna lateral que estrechaba el nombre); miniatura 46px en móvil; (2)
+el **panel de filtros** se **apila** en móvil (cada control a fila completa,
+táctil) en vez del flex-wrap irregular. _Nota: el estado pasó a la línea superior
+también en escritorio (junto al badge), es la consecuencia de mover el badge
+fuera de la columna lateral._
+
+**➡️ PRÓXIMO RECOMENDADO:** en backlog mayor, **Supabase real (SMTP) + ingesta
 Navarra** (ver memoria [[v5-punto-inflexion]]). Backlog completo en `SPECS_V6.md`
 (§milestones) y `SPECS_V5.md` (parte PRE = deuda v4/legal/pulido).
 

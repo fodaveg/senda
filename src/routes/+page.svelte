@@ -372,8 +372,9 @@
 							<span class="row-body">
 								<span class="row-top">
 									<TypeBadge type={route.type} />
-									<strong class="row-name">{route.name}</strong>
+									<StatusBadge status={route.status} detail={route.status_detail} />
 								</span>
+								<strong class="row-name">{route.name}</strong>
 								<span class="meta">
 									<span><strong>{formatKm(route.distance_km)}</strong></span>
 									{#if route.ascent_m !== null}<span>+{formatMeters(route.ascent_m)}</span>{/if}
@@ -387,21 +388,18 @@
 								<span class="source">Fuente: {routeSourceLabel(route)}</span>
 							</span>
 						</a>
-						<div class="row-aside">
-							<StatusBadge status={route.status} detail={route.status_detail} />
-							<button
-								type="button"
-								class="fav"
-								class:on={fav}
-								aria-pressed={fav}
-								aria-label={fav
-									? `Quitar ${route.name} de favoritas`
-									: `Marcar ${route.name} como favorita`}
-								onclick={() => toggleFavorite(route.id)}
-							>
-								{fav ? '♥' : '♡'}
-							</button>
-						</div>
+						<button
+							type="button"
+							class="fav"
+							class:on={fav}
+							aria-pressed={fav}
+							aria-label={fav
+								? `Quitar ${route.name} de favoritas`
+								: `Marcar ${route.name} como favorita`}
+							onclick={() => toggleFavorite(route.id)}
+						>
+							{fav ? '♥' : '♡'}
+						</button>
 					</li>
 				{/each}
 			</ul>
@@ -676,15 +674,34 @@
 		.discover[data-view='mapa'] .results-col {
 			display: none;
 		}
-		/* Densidad táctil de los filtros en móvil. */
+		/* Filtros apilados en móvil: cada control a fila completa y táctil, en vez
+		   del flex-wrap que reparte etiquetas y selects de forma irregular. */
+		.filters {
+			flex-direction: column;
+			align-items: stretch;
+			gap: var(--space-3);
+		}
+		.filters > label:not(.check) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: var(--space-3);
+			min-height: var(--touch-min);
+		}
 		.filters select {
 			min-height: var(--touch-min);
+			flex: 1;
+			max-width: 60%;
+		}
+		.filter-group {
+			justify-content: space-between;
 		}
 		.filters .check,
 		.filter-group label {
 			min-height: var(--touch-min);
 			display: inline-flex;
 			align-items: center;
+			align-self: flex-start;
 		}
 	}
 
@@ -825,6 +842,7 @@
 	.row-name {
 		font-family: var(--font-head);
 		font-size: var(--text-md, 1.05rem);
+		line-height: 1.25;
 	}
 	.meta {
 		display: flex;
@@ -840,27 +858,40 @@
 		font-size: var(--text-xs);
 		color: var(--muted);
 	}
-	.row-aside {
-		flex: none;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		gap: var(--space-2);
-	}
 	.fav {
+		flex: none;
+		align-self: flex-start;
 		border: none;
 		background: none;
 		color: var(--brand);
-		font-size: 1.35rem;
+		font-size: 1.4rem;
 		line-height: 1;
 		cursor: pointer;
 		padding: var(--space-1);
 		border-radius: var(--radius-sm);
+		min-width: var(--touch-min);
+		min-height: var(--touch-min);
 	}
 	.fav:hover {
 		background: var(--brand-soft);
 	}
 	.fav.on {
 		color: var(--danger, var(--brand));
+	}
+
+	@media (max-width: 720px) {
+		/* Fila más compacta en móvil: miniatura menor y corazón táctil arriba. */
+		.route-row {
+			gap: var(--space-2);
+			align-items: stretch;
+		}
+		.row-link {
+			gap: var(--space-2);
+			align-items: flex-start;
+		}
+		.row-thumb {
+			width: 46px;
+			height: 46px;
+		}
 	}
 </style>
