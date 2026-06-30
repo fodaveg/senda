@@ -97,3 +97,21 @@ test('con api key, los avisos CAP vigentes se muestran como banner', async ({ pa
 	await expect(page.getByText('Tormentas').first()).toBeVisible();
 	await expect(page.getByText('naranja').first()).toBeVisible();
 });
+
+test('la pestaña meteo alterna entre días y horas', async ({ page }) => {
+	await page.route('https://api.open-meteo.com/**', (route) => {
+		const url = route.request().url();
+		if (url.includes('hourly=')) return route.fulfill({ json: hourlyPayload() });
+		return route.fulfill({ json: mockPayload() });
+	});
+	await page.goto('/ruta/pr-cv-77');
+	await page.locator('body[data-hydrated]').waitFor();
+
+	// Por días: tarjetas por día.
+	await expect(page.locator('.md-card').first()).toBeVisible();
+
+	// Cambia a por horas: aparece la tira horaria y desaparecen las de día.
+	await page.getByRole('button', { name: /Por horas/ }).click();
+	await expect(page.locator('.mh-card').first()).toBeVisible();
+	await expect(page.locator('.md-card')).toHaveCount(0);
+});

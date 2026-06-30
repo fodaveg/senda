@@ -86,8 +86,14 @@ nuevas tandas y se lleva a `main` por fast-forward.
     - **Preparación**: mochila en tarjeta con total X/Y + agua/etapas/enlaza
       enmarcados. 338 unit / 49 e2e.
 
-**v6 ficha COMPLETA y desplegada** (todas las pestañas + cabecera + fiabilidad
-tanda 1). Pendiente abierto: más fiabilidad si surge; pulido fino.
+11. **Pulido + fiabilidad (tanda 2)**: la lectura por voz se **cancela** al
+    cambiar de ruta y al salir de la ficha (antes seguía locutando); descarga de
+    ficheros más robusta (ancla en el DOM + revocado diferido del blob URL);
+    radio del mapa unificado con las tarjetas. **+2 e2e** (toggle Meteo
+    días/horas, export GPX/KML). 338 unit / 51 e2e.
+
+**v6 ficha COMPLETA y desplegada** (todas las pestañas + cabecera + 2 tandas de
+fiabilidad/pulido). Pendiente abierto: solo pulido fino adicional si se desea.
 
 **Deuda e2e (RESUELTA)**: el switch de pestañas ocultaba las secciones
 inactivas con `display:none`, así que las aserciones sobre contenido fuera de

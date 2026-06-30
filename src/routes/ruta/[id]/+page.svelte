@@ -246,6 +246,14 @@
 		void loadRouteData(route, ++loadToken);
 	});
 
+	// Detener la lectura por voz al salir de la ficha (el cambio de ruta ya la
+	// cancela en loadRouteData): si no, el navegador seguiría locutando.
+	$effect(() => {
+		return () => {
+			if (typeof speechSynthesis !== 'undefined') speechSynthesis.cancel();
+		};
+	});
+
 	// Mapa de riesgo de incendio (AEMET) para la fecha elegida; se recarga al
 	// cambiar de fecha. Requiere api key; degrada en silencio si falla. El
 	// offset de día se obtiene de la ventana de fechas (dates[0] = hoy), sin
@@ -285,6 +293,9 @@
 		waypoints = loadWaypoints(r.id);
 		addWaypointMode = false;
 		debugMode = settings.debugMode;
+		// Corta la lectura por voz de la ruta anterior, si la había.
+		if (typeof speechSynthesis !== 'undefined') speechSynthesis.cancel();
+		ttsState = 'idle';
 		geojson = null;
 		trackXml = null;
 		profile = [];
@@ -399,8 +410,13 @@
 		const a = document.createElement('a');
 		a.href = url;
 		a.download = filename;
+		a.style.display = 'none';
+		// Algunos navegadores exigen el ancla en el DOM y cancelan la descarga si
+		// el blob URL se revoca de forma síncrona: adjuntar, clicar y revocar tarde.
+		document.body.appendChild(a);
 		a.click();
-		URL.revokeObjectURL(url);
+		a.remove();
+		setTimeout(() => URL.revokeObjectURL(url), 1000);
 	}
 
 	/** Exporta el GPX oficial tal cual (la traza ya cargada). */
@@ -2118,7 +2134,7 @@
 	.map-wrap {
 		height: 420px;
 		border: 1px solid var(--border);
-		border-radius: 6px;
+		border-radius: var(--radius-md);
 		overflow: hidden;
 	}
 	dl {
