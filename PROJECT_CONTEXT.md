@@ -161,15 +161,22 @@ material custom. Las specs (SPECS_V5/V6) están **desfasadas** respecto al códi
   campo opcional en `Route`/schema). Geometría en tramos sin ordenar → segmentos
   separados (distancia = suma real, sin inflar); 2D sin altitud → `ascent_m`/
   `circular` = `null`. **35/42 senderos** ingeridos (7 variantes sin capa IDENA,
-  omitidas). _Pendiente opcional: `npm run ingest:enrich` para agua/POIs OSM de
-  esos senderos._
+  omitidas). **Enriquecidos con OSM 30/35** (agua/POIs/sombra; merge con
+  `npm run ingest:navarra -- --merge-enriched`, ya que las `na-*` no pasan por la
+  build normal); 5 quedaron sin overlay por 504/429 de Overpass (degradan; se
+  pueden reintentar). proj4 como dep dev.
 - **Features de comunidad: descartadas por ahora** (el handoff ya reserva el
   bloque "Comunidad — sin verificar"; añadirían backend + moderación).
+
+**TODO LO ANTERIOR MERGEADO A `main` (FF) Y PUSHEADO** (2026-06-30) → CI + deploy
+a Pages. Incluye: rediseño v6 completo (ficha/home/diario/ajustes + responsive
+móvil), privacidad/RGPD, dedup POIs + catálogo regenerado, y multi-federación
+Navarra (FNDME) con enriquecimiento OSM.
 
 **➡️ PRÓXIMO (único pendiente real):** **SMTP propio** para los correos de
 Supabase (alta/reset/OTP fiables; hoy email integrado con rate limits). Backlog
 mayor en `SPECS_V6.md` y `SPECS_V5.md`. Revisar el texto legal de `/privacidad`
-antes de publicar.
+antes de publicar; reintentar enrich OSM de los 5 senderos de Navarra que dieron 504.
 
 **Deuda e2e (RESUELTA)**: el switch de pestañas ocultaba las secciones
 inactivas con `display:none`, así que las aserciones sobre contenido fuera de
