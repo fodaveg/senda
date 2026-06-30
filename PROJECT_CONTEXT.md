@@ -19,14 +19,18 @@ _Actualizado: 2026-06-30._
   Site URL/Redirect URLs fijadas a Pages; confirmación de email activa.
 - `main` = web en GitHub Pages; el trabajo de producto va por ramas (ver abajo).
 
-## v6 — rediseño de la ficha (rama `v6-ficha-rediseno`, EN CURSO)
+## v6 — rediseño de la ficha (EN `main` y DESPLEGADA)
 
 Rediseño según el **handoff** en `design_handoff_senda_v6/`. ⚠️ **La fuente de
 verdad VISUAL es `Senda v6.dc.html`** (Design Component renderizado por
 `support.js`; léelo, no solo el `README.md` en prosa — leer solo la prosa ya
 causó un layout incorrecto que hubo que rehacer).
 
-**Hecho y commiteado en la rama (verde: lint/check/321 unit/49 e2e):**
+**El trabajo v6 está mergeado a `main` (FF) y publicado en Pages** (CI verde:
+lint/check/321 unit/49 e2e + deploy). La rama `v6-ficha-rediseno` sigue las
+nuevas tandas y se lleva a `main` por fast-forward.
+
+**Hecho y desplegado (verde: lint/check/321 unit/49 e2e):**
 
 1. Logo + wordmark «Senda» (Spectral 700 auto-alojada) en la cabecera global.
 2. Barra superior como **dock flotante** (sticky, redondeada) + fix del enlace
@@ -57,8 +61,18 @@ causó un layout incorrecto que hubo que rehacer).
    el dataset FEMECV actual) + tarjeta **112** roja con botón a la ficha de
    emergencia. "Si llueve" (`notes_rain`) como tarjeta si existe.
 
-**Fase 3 COMPLETA.** Pendiente v6: repaso de las pestañas restantes (Mapa,
-Preparación, Meteo, Acciones) si se quiere subir su fidelidad al `.dc.html`.
+7. **Widget "Mejor momento para empezar"**: `StartWindowCard` rediseñado como el
+   widget del handoff (rango horario + barra con franja ideal en verde y franja
+   de calor/UV a evitar en ámbar, sobre eje de horas de luz real del día; eje y
+   franjas calculados de los datos de `startWindow`). MIDE movido a una caja de
+   widget y subido; **Comunidad** queda como último bloque del Resumen.
+8. **CI a Node 24**: `actions/checkout@v5` + `setup-node@v5`. Las acciones de
+   Pages (configure/upload/deploy-pages) ya están en su última major; el aviso
+   de Node 20 restante es de ellas (GitHub), no accionable por ahora.
+
+**Fase 3 COMPLETA y desplegada.** Pendiente v6: subir fidelidad de las pestañas
+restantes (Mapa, Preparación, Meteo, Acciones) al `.dc.html` + tanda de
+fiabilidad (p. ej. tests de la lógica del widget, robustez de degradación).
 
 **Deuda e2e (RESUELTA)**: el switch de pestañas ocultaba las secciones
 inactivas con `display:none`, así que las aserciones sobre contenido fuera de
