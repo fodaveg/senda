@@ -9,6 +9,7 @@
 import { z } from 'zod';
 import type { Route } from '../../src/lib/types';
 import type { GpxSummary } from './gpx';
+import { dedupePois } from './enrich/osm';
 import {
 	crawledSchema,
 	enrichedSchema,
@@ -157,7 +158,7 @@ export function buildRoute(
 		est_duration_min: m.est_duration_min ?? c.est_duration_min ?? null,
 		water_points: m.water_points ?? enriched?.water_points ?? [],
 		water_points_geo: enriched?.water_points_geo ?? [],
-		pois: enriched?.pois ?? [],
+		pois: dedupePois(enriched?.pois ?? []),
 		escape_routes: m.escape_routes ?? [],
 		highlights: m.highlights ?? [],
 		best_season: m.best_season ?? [],

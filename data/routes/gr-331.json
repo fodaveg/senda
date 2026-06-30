@@ -585,14 +585,6 @@
 			"dist_m": 117
 		},
 		{
-			"name": "Torre del Panto",
-			"type": "patrimonio",
-			"lat": 40.6210263,
-			"lon": -0.100653,
-			"km": 85.8,
-			"dist_m": 120
-		},
-		{
 			"name": "Nevera de Morella",
 			"type": "patrimonio",
 			"lat": 40.6218541,
@@ -607,6 +599,14 @@
 			"lon": -0.0999303,
 			"km": 85.8,
 			"dist_m": 53
+		},
+		{
+			"name": "Torre del Panto",
+			"type": "patrimonio",
+			"lat": 40.6210263,
+			"lon": -0.100653,
+			"km": 85.8,
+			"dist_m": 120
 		},
 		{
 			"name": "Portal de Sant Miquel",
@@ -689,14 +689,6 @@
 			"dist_m": 6
 		},
 		{
-			"name": "Mirador de la Placeta",
-			"type": "mirador",
-			"lat": 40.6028629,
-			"lon": 0.04626,
-			"km": 118.3,
-			"dist_m": 54
-		},
-		{
 			"name": "el Portal",
 			"type": "patrimonio",
 			"lat": 40.60302,
@@ -705,12 +697,12 @@
 			"dist_m": 29
 		},
 		{
-			"name": "el Peironet",
-			"type": "patrimonio",
-			"lat": 40.6026328,
-			"lon": 0.0492212,
-			"km": 118.7,
-			"dist_m": 73
+			"name": "Mirador de la Placeta",
+			"type": "mirador",
+			"lat": 40.6028629,
+			"lon": 0.04626,
+			"km": 118.3,
+			"dist_m": 54
 		},
 		{
 			"name": "Mirador del Peironet",
@@ -721,20 +713,20 @@
 			"dist_m": 70
 		},
 		{
+			"name": "el Peironet",
+			"type": "patrimonio",
+			"lat": 40.6026328,
+			"lon": 0.0492212,
+			"km": 118.7,
+			"dist_m": 73
+		},
+		{
 			"name": "Peiró de Baix",
 			"type": "patrimonio",
 			"lat": 40.5392699,
 			"lon": 0.056148,
 			"km": 130.1,
 			"dist_m": 51
-		},
-		{
-			"name": "Mirador Ares del Maestrat",
-			"type": "mirador",
-			"lat": 40.4552747,
-			"lon": -0.1317411,
-			"km": 156.5,
-			"dist_m": 134
 		},
 		{
 			"name": "En record de les víctimes dels bombardejos de la Legió Cóndor",
@@ -751,6 +743,14 @@
 			"lon": -0.1310445,
 			"km": 156.5,
 			"dist_m": 76
+		},
+		{
+			"name": "Mirador Ares del Maestrat",
+			"type": "mirador",
+			"lat": 40.4552747,
+			"lon": -0.1317411,
+			"km": 156.5,
+			"dist_m": 134
 		},
 		{
 			"name": "Peiró de Sant Isidre",
@@ -787,5 +787,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-331.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

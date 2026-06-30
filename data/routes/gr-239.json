@@ -578,6 +578,14 @@
 			"dist_m": 124
 		},
 		{
+			"name": "Retaule de la mort de Jaume I",
+			"type": "patrimonio",
+			"lat": 39.1516851,
+			"lon": -0.440262,
+			"km": 46.7,
+			"dist_m": 2
+		},
+		{
 			"name": "Centre Històric de la Vila",
 			"type": "patrimonio",
 			"lat": 39.152018,
@@ -594,12 +602,12 @@
 			"dist_m": 4
 		},
 		{
-			"name": "Retaule de la mort de Jaume I",
+			"name": "En memòria de la primera falla d´Alzira",
 			"type": "patrimonio",
-			"lat": 39.1516851,
-			"lon": -0.440262,
+			"lat": 39.1522905,
+			"lon": -0.4406049,
 			"km": 46.7,
-			"dist_m": 2
+			"dist_m": 36
 		},
 		{
 			"name": "Placa de la Constitució de1837",
@@ -608,14 +616,6 @@
 			"lon": -0.4406989,
 			"km": 46.7,
 			"dist_m": 40
-		},
-		{
-			"name": "En memòria de la primera falla d´Alzira",
-			"type": "patrimonio",
-			"lat": 39.1522905,
-			"lon": -0.4406049,
-			"km": 46.7,
-			"dist_m": 36
 		},
 		{
 			"name": "Panel cerámico San Isidro Labrador",
@@ -692,5 +692,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-239 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-239.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

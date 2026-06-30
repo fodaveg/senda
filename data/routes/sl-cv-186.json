@@ -58,20 +58,20 @@
 			"dist_m": 120
 		},
 		{
-			"name": "Pueblo Ibero de la Rochina",
-			"type": "patrimonio",
-			"lat": 39.7929493,
-			"lon": -0.3951854,
-			"km": 3.5,
-			"dist_m": 40
-		},
-		{
 			"name": "Alto de los Moros",
 			"type": "cumbre",
 			"lat": 39.7928546,
 			"lon": -0.3950256,
 			"km": 3.5,
 			"dist_m": 24
+		},
+		{
+			"name": "Pueblo Ibero de la Rochina",
+			"type": "patrimonio",
+			"lat": 39.7929493,
+			"lon": -0.3951854,
+			"km": 3.5,
+			"dist_m": 40
 		}
 	],
 	"escape_routes": [],
@@ -100,5 +100,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-186 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-186.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

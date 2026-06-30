@@ -143,5 +143,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-37 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-37.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

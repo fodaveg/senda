@@ -69,20 +69,20 @@
 	],
 	"pois": [
 		{
-			"name": "el Castellar",
-			"type": "cumbre",
-			"lat": 40.1192365,
-			"lon": -0.2239979,
-			"km": 1.3,
-			"dist_m": 33
-		},
-		{
 			"name": "Poblat Ibèric del Castellar",
 			"type": "patrimonio",
 			"lat": 40.1196261,
 			"lon": -0.2236386,
 			"km": 1.3,
 			"dist_m": 3
+		},
+		{
+			"name": "el Castellar",
+			"type": "cumbre",
+			"lat": 40.1192365,
+			"lon": -0.2239979,
+			"km": 1.3,
+			"dist_m": 33
 		},
 		{
 			"name": "La Teuleria",
@@ -119,5 +119,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-341 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-341.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

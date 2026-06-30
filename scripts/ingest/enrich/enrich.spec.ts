@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+	dedupePois,
 	nearestAlternatives,
 	parseOverpass,
 	pointInRing,
@@ -104,6 +105,38 @@ describe('poisAlongTrack', () => {
 		expect(found).toHaveLength(1);
 		expect(found[0].name).toBe('Mirador');
 		expect(found[0].dist_m).toBeLessThanOrEqual(150);
+	});
+});
+
+describe('dedupePois', () => {
+	it('colapsa POIs del mismo nombre/tipo cercanos y deja el más próximo al track', () => {
+		const pois = [
+			{ name: 'Penyagolosa', type: 'cumbre' as const, lat: 40.2, lon: -0.3, km: 5, dist_m: 80 },
+			// Mismo nombre/tipo a ~25 m (nodo + vía de OSM) → duplicado.
+			{
+				name: 'penyagolosa',
+				type: 'cumbre' as const,
+				lat: 40.20022,
+				lon: -0.3,
+				km: 5.1,
+				dist_m: 20
+			},
+			{ name: 'Mirador', type: 'mirador' as const, lat: 40.25, lon: -0.31, km: 8, dist_m: 40 }
+		];
+		const out = dedupePois(pois);
+		expect(out).toHaveLength(2);
+		const cumbre = out.find((p) => p.type === 'cumbre');
+		// Se conserva el más cercano al track (dist_m 20).
+		expect(cumbre?.dist_m).toBe(20);
+	});
+
+	it('no colapsa mismo nombre lejos (>60 m) ni distinto tipo', () => {
+		const pois = [
+			{ name: 'Font', type: 'patrimonio' as const, lat: 40.2, lon: -0.3, km: 1, dist_m: 10 },
+			{ name: 'Font', type: 'patrimonio' as const, lat: 40.203, lon: -0.3, km: 2, dist_m: 12 }, // ~330 m
+			{ name: 'Font', type: 'refugio' as const, lat: 40.2, lon: -0.3, km: 1, dist_m: 10 } // distinto tipo
+		];
+		expect(dedupePois(pois)).toHaveLength(3);
 	});
 });
 

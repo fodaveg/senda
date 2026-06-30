@@ -206,7 +206,40 @@ export function poisAlongTrack(pois: OsmPoi[], track: Position[]): PoiGeo[] {
 		if (meters > POI_BUFFER_M) continue;
 		found.push({ ...poi, km: Math.round(km * 10) / 10, dist_m: Math.round(meters) });
 	}
-	return found.sort((a, b) => a.km - b.km);
+	return dedupePois(found);
+}
+
+/** Distancia (m) a la que dos POIs del mismo nombre/tipo se consideran el mismo
+ * elemento (p. ej. un nodo y una vía de OSM para la misma cumbre). */
+const POI_DEDUP_M = 60;
+
+/** Nombre normalizado para comparar: minúsculas, sin acentos ni espacios extra. */
+function normName(name: string): string {
+	return name.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim().replace(/\s+/g, ' ');
+}
+
+/**
+ * Colapsa POIs duplicados de OSM (PRE-C): mismo tipo y nombre normalizado a
+ * ≤`POI_DEDUP_M` entre sí se consideran el mismo punto; se conserva el más
+ * cercano al track (menor `dist_m`). Puro y testeable; el resultado queda
+ * ordenado por km como `poisAlongTrack`.
+ */
+export function dedupePois(pois: PoiGeo[]): PoiGeo[] {
+	// Orden por cercanía al track para que el "representante" de cada grupo sea el
+	// más próximo (más relevante para el senderista).
+	const byDist = [...pois].sort((a, b) => a.dist_m - b.dist_m);
+	const kept: PoiGeo[] = [];
+	for (const poi of byDist) {
+		const key = normName(poi.name);
+		const dup = kept.some(
+			(k) =>
+				k.type === poi.type &&
+				normName(k.name) === key &&
+				haversineMeters([k.lon, k.lat], [poi.lon, poi.lat]) <= POI_DEDUP_M
+		);
+		if (!dup) kept.push(poi);
+	}
+	return kept.sort((a, b) => a.km - b.km);
 }
 
 /** Ray casting punto-en-polígono sobre [lon, lat]. */

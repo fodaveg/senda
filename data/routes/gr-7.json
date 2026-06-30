@@ -1170,20 +1170,20 @@
 			"dist_m": 28
 		},
 		{
-			"name": "Mirador de la Placeta",
-			"type": "mirador",
-			"lat": 40.6028629,
-			"lon": 0.04626,
-			"km": 24.9,
-			"dist_m": 55
-		},
-		{
 			"name": "el Portal",
 			"type": "patrimonio",
 			"lat": 40.60302,
 			"lon": 0.0460313,
 			"km": 24.9,
 			"dist_m": 30
+		},
+		{
+			"name": "Mirador de la Placeta",
+			"type": "mirador",
+			"lat": 40.6028629,
+			"lon": 0.04626,
+			"km": 24.9,
+			"dist_m": 55
 		},
 		{
 			"name": "el Prigó",
@@ -1210,20 +1210,20 @@
 			"dist_m": 18
 		},
 		{
-			"name": "Torre del Forcall",
-			"type": "patrimonio",
-			"lat": 40.6172122,
-			"lon": -0.1017322,
-			"km": 41.7,
-			"dist_m": 136
-		},
-		{
 			"name": "Torre de Fredes",
 			"type": "patrimonio",
 			"lat": 40.6172783,
 			"lon": -0.1006305,
 			"km": 41.7,
 			"dist_m": 62
+		},
+		{
+			"name": "Torre del Forcall",
+			"type": "patrimonio",
+			"lat": 40.6172122,
+			"lon": -0.1017322,
+			"km": 41.7,
+			"dist_m": 136
 		},
 		{
 			"name": "Portal del Forcall",
@@ -1290,52 +1290,28 @@
 			"dist_m": 7
 		},
 		{
-			"name": "Església Parroquial de la Mare de Déu de l'Assumpció",
-			"type": "patrimonio",
-			"lat": 40.3799041,
-			"lon": -0.1423671,
-			"km": 77.3,
-			"dist_m": 47
-		},
-		{
-			"name": "Capella de la Puríssima",
-			"type": "patrimonio",
-			"lat": 40.3797715,
-			"lon": -0.1434138,
-			"km": 77.3,
-			"dist_m": 123
-		},
-		{
-			"name": "Arc de la Mola",
-			"type": "patrimonio",
-			"lat": 40.3805066,
-			"lon": -0.1423721,
-			"km": 77.3,
-			"dist_m": 104
-		},
-		{
-			"name": "Experiments de la Legió Còndorba l'Alt Maestrat",
-			"type": "patrimonio",
-			"lat": 40.3796455,
-			"lon": -0.1431431,
-			"km": 77.3,
-			"dist_m": 98
-		},
-		{
-			"name": "Experiments de la Legió Còndorba l'Alt Maestrat",
-			"type": "patrimonio",
-			"lat": 40.3798143,
-			"lon": -0.1416642,
-			"km": 77.3,
-			"dist_m": 18
-		},
-		{
 			"name": "Experiments de la Legió Còndorba l'Alt Maestrat",
 			"type": "patrimonio",
 			"lat": 40.3795819,
 			"lon": -0.1421134,
 			"km": 77.3,
 			"dist_m": 11
+		},
+		{
+			"name": "Monument a Carles Salvador",
+			"type": "patrimonio",
+			"lat": 40.3797349,
+			"lon": -0.1423,
+			"km": 77.3,
+			"dist_m": 32
+		},
+		{
+			"name": "Església Parroquial de la Mare de Déu de l'Assumpció",
+			"type": "patrimonio",
+			"lat": 40.3799041,
+			"lon": -0.1423671,
+			"km": 77.3,
+			"dist_m": 47
 		},
 		{
 			"name": "Experiments de la Legió Còndorba l'Alt Maestrat",
@@ -1346,12 +1322,20 @@
 			"dist_m": 77
 		},
 		{
-			"name": "Monument a Carles Salvador",
+			"name": "Arc de la Mola",
 			"type": "patrimonio",
-			"lat": 40.3797349,
-			"lon": -0.1423,
+			"lat": 40.3805066,
+			"lon": -0.1423721,
 			"km": 77.3,
-			"dist_m": 32
+			"dist_m": 104
+		},
+		{
+			"name": "Capella de la Puríssima",
+			"type": "patrimonio",
+			"lat": 40.3797715,
+			"lon": -0.1434138,
+			"km": 77.3,
+			"dist_m": 123
 		},
 		{
 			"name": "Castell d'Àsens",
@@ -1402,12 +1386,12 @@
 			"dist_m": 108
 		},
 		{
-			"name": "Castell de Culla",
-			"type": "cumbre",
-			"lat": 40.3375902,
-			"lon": -0.166706,
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.3364081,
+			"lon": -0.1665003,
 			"km": 83.8,
-			"dist_m": 129
+			"dist_m": 2
 		},
 		{
 			"name": "Mirador del Cinglet",
@@ -1418,12 +1402,12 @@
 			"dist_m": 88
 		},
 		{
-			"name": "el Peiró",
-			"type": "patrimonio",
-			"lat": 40.3364081,
-			"lon": -0.1665003,
+			"name": "Castell de Culla",
+			"type": "cumbre",
+			"lat": 40.3375902,
+			"lon": -0.166706,
 			"km": 83.8,
-			"dist_m": 2
+			"dist_m": 129
 		},
 		{
 			"name": "Mirador del Castell",
@@ -1450,14 +1434,6 @@
 			"dist_m": 124
 		},
 		{
-			"name": "Mirador del Raval de Sant Joan",
-			"type": "mirador",
-			"lat": 40.2924326,
-			"lon": -0.2921518,
-			"km": 102.4,
-			"dist_m": 149
-		},
-		{
 			"name": "el Pedrís",
 			"type": "patrimonio",
 			"lat": 40.2938339,
@@ -1466,12 +1442,12 @@
 			"dist_m": 4
 		},
 		{
-			"name": "Mirador del Castell",
+			"name": "Mirador del Raval de Sant Joan",
 			"type": "mirador",
-			"lat": 40.2945905,
-			"lon": -0.2928516,
-			"km": 102.5,
-			"dist_m": 95
+			"lat": 40.2924326,
+			"lon": -0.2921518,
+			"km": 102.4,
+			"dist_m": 149
 		},
 		{
 			"name": "Portal del Forn",
@@ -1480,6 +1456,14 @@
 			"lon": -0.2926508,
 			"km": 102.5,
 			"dist_m": 44
+		},
+		{
+			"name": "Mirador del Castell",
+			"type": "mirador",
+			"lat": 40.2945905,
+			"lon": -0.2928516,
+			"km": 102.5,
+			"dist_m": 95
 		},
 		{
 			"name": "Portal de Sant Roc",
@@ -1852,5 +1836,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7 (crawl 2026-06-11): nombre, estado \"Ver Etapas\", distancia, desniveles, horario teórico, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

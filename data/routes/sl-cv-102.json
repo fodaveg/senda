@@ -119,20 +119,20 @@
 			"dist_m": 10
 		},
 		{
-			"name": "Arc de la Mola",
-			"type": "patrimonio",
-			"lat": 40.3805066,
-			"lon": -0.1423721,
-			"km": 9,
-			"dist_m": 148
-		},
-		{
 			"name": "Experiments de la Legió Còndorba l'Alt Maestrat",
 			"type": "patrimonio",
 			"lat": 40.3798143,
 			"lon": -0.1416642,
 			"km": 9,
 			"dist_m": 105
+		},
+		{
+			"name": "Arc de la Mola",
+			"type": "patrimonio",
+			"lat": 40.3805066,
+			"lon": -0.1423721,
+			"km": 9,
+			"dist_m": 148
 		}
 	],
 	"escape_routes": [],
@@ -161,5 +161,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-102 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-102.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

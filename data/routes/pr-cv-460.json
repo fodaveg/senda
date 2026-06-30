@@ -50,20 +50,20 @@
 			"dist_m": 78
 		},
 		{
-			"name": "Tossal de Mollet",
-			"type": "cumbre",
-			"lat": 40.080865,
-			"lon": -0.0850793,
-			"km": 3.9,
-			"dist_m": 122
-		},
-		{
 			"name": "Jaciment de Mollet",
 			"type": "patrimonio",
 			"lat": 40.0807362,
 			"lon": -0.0852215,
 			"km": 3.9,
 			"dist_m": 117
+		},
+		{
+			"name": "Tossal de Mollet",
+			"type": "cumbre",
+			"lat": 40.080865,
+			"lon": -0.0850793,
+			"km": 3.9,
+			"dist_m": 122
 		},
 		{
 			"name": "Jaciment de Mollet",
@@ -100,5 +100,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-460 (crawl 2026-06-11): nombre, estado \"En vigor\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-460.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

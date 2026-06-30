@@ -60,22 +60,6 @@
 	],
 	"pois": [
 		{
-			"name": "Portal de Sant Miquel",
-			"type": "patrimonio",
-			"lat": 40.6217327,
-			"lon": -0.0991148,
-			"km": 0,
-			"dist_m": 81
-		},
-		{
-			"name": "Torre del Panto",
-			"type": "patrimonio",
-			"lat": 40.6210263,
-			"lon": -0.100653,
-			"km": 0,
-			"dist_m": 136
-		},
-		{
 			"name": "Nevera de Morella",
 			"type": "patrimonio",
 			"lat": 40.6218541,
@@ -90,6 +74,22 @@
 			"lon": -0.0999303,
 			"km": 0,
 			"dist_m": 77
+		},
+		{
+			"name": "Portal de Sant Miquel",
+			"type": "patrimonio",
+			"lat": 40.6217327,
+			"lon": -0.0991148,
+			"km": 0,
+			"dist_m": 81
+		},
+		{
+			"name": "Torre del Panto",
+			"type": "patrimonio",
+			"lat": 40.6210263,
+			"lon": -0.100653,
+			"km": 0,
+			"dist_m": 136
 		},
 		{
 			"name": "Conxa Dolz",
@@ -158,5 +158,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-215 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-215.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

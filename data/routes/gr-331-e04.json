@@ -85,20 +85,20 @@
 			"dist_m": 7
 		},
 		{
-			"name": "Nevera Medieval",
-			"type": "patrimonio",
-			"lat": 40.6378105,
-			"lon": -0.3397369,
-			"km": 8.3,
-			"dist_m": 15
-		},
-		{
 			"name": "Cárcel Pública",
 			"type": "patrimonio",
 			"lat": 40.6377609,
 			"lon": -0.3395724,
 			"km": 8.3,
 			"dist_m": 9
+		},
+		{
+			"name": "Nevera Medieval",
+			"type": "patrimonio",
+			"lat": 40.6378105,
+			"lon": -0.3397369,
+			"km": 8.3,
+			"dist_m": 15
 		}
 	],
 	"escape_routes": [],
@@ -127,5 +127,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e04 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-331-e04.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

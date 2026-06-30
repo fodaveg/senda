@@ -69,20 +69,20 @@
 	],
 	"pois": [
 		{
-			"name": "Torre Grossa",
-			"type": "patrimonio",
-			"lat": 38.5390266,
-			"lon": -0.5091931,
-			"km": 0.4,
-			"dist_m": 147
-		},
-		{
 			"name": "Església Vella",
 			"type": "patrimonio",
 			"lat": 38.5390467,
 			"lon": -0.5082236,
 			"km": 0.4,
 			"dist_m": 66
+		},
+		{
+			"name": "Torre Grossa",
+			"type": "patrimonio",
+			"lat": 38.5390266,
+			"lon": -0.5091931,
+			"km": 0.4,
+			"dist_m": 147
 		}
 	],
 	"escape_routes": [],
@@ -111,5 +111,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-270 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-270.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

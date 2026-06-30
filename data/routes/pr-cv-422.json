@@ -78,14 +78,6 @@
 	],
 	"pois": [
 		{
-			"name": "Mojón Caragol de Panxa",
-			"type": "patrimonio",
-			"lat": 40.076014,
-			"lon": 0.0139409,
-			"km": 4.5,
-			"dist_m": 7
-		},
-		{
 			"name": "el Cantal Gros",
 			"type": "cumbre",
 			"lat": 40.0759172,
@@ -94,12 +86,12 @@
 			"dist_m": 5
 		},
 		{
-			"name": "Mojón de l'Ondí",
+			"name": "Mojón Caragol de Panxa",
 			"type": "patrimonio",
-			"lat": 40.0790358,
-			"lon": 0.0199631,
-			"km": 5.2,
-			"dist_m": 9
+			"lat": 40.076014,
+			"lon": 0.0139409,
+			"km": 4.5,
+			"dist_m": 7
 		},
 		{
 			"name": "el Caragol de Panxa",
@@ -108,6 +100,14 @@
 			"lon": 0.0200283,
 			"km": 5.2,
 			"dist_m": 3
+		},
+		{
+			"name": "Mojón de l'Ondí",
+			"type": "patrimonio",
+			"lat": 40.0790358,
+			"lon": 0.0199631,
+			"km": 5.2,
+			"dist_m": 9
 		},
 		{
 			"name": "Creu del Bartolo",
@@ -152,5 +152,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/pr-cv-422 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX pr-cv-422.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

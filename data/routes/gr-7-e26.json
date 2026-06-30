@@ -96,20 +96,20 @@
 	],
 	"pois": [
 		{
-			"name": "Mirador de la Placeta",
-			"type": "mirador",
-			"lat": 40.6028629,
-			"lon": 0.04626,
-			"km": 0,
-			"dist_m": 55
-		},
-		{
 			"name": "el Portal",
 			"type": "patrimonio",
 			"lat": 40.60302,
 			"lon": 0.0460313,
 			"km": 0,
 			"dist_m": 30
+		},
+		{
+			"name": "Mirador de la Placeta",
+			"type": "mirador",
+			"lat": 40.6028629,
+			"lon": 0.04626,
+			"km": 0,
+			"dist_m": 55
 		},
 		{
 			"name": "el Prigó",
@@ -128,14 +128,6 @@
 			"dist_m": 11
 		},
 		{
-			"name": "Torre del Panto",
-			"type": "patrimonio",
-			"lat": 40.6210263,
-			"lon": -0.100653,
-			"km": 18,
-			"dist_m": 126
-		},
-		{
 			"name": "Nevera de Morella",
 			"type": "patrimonio",
 			"lat": 40.6218541,
@@ -150,6 +142,14 @@
 			"lon": -0.0999303,
 			"km": 18,
 			"dist_m": 60
+		},
+		{
+			"name": "Torre del Panto",
+			"type": "patrimonio",
+			"lat": 40.6210263,
+			"lon": -0.100653,
+			"km": 18,
+			"dist_m": 126
 		},
 		{
 			"name": "Portal de Sant Miquel",
@@ -242,5 +242,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e26 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e26.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

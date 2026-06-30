@@ -77,20 +77,20 @@
 			"dist_m": 113
 		},
 		{
-			"name": "Torres del Carraixet",
-			"type": "patrimonio",
-			"lat": 40.6173309,
-			"lon": -0.1027233,
-			"km": 1.9,
-			"dist_m": 19
-		},
-		{
 			"name": "Portal del Forcall",
 			"type": "patrimonio",
 			"lat": 40.6172792,
 			"lon": -0.1017613,
 			"km": 1.9,
 			"dist_m": 2
+		},
+		{
+			"name": "Torres del Carraixet",
+			"type": "patrimonio",
+			"lat": 40.6173309,
+			"lon": -0.1027233,
+			"km": 1.9,
+			"dist_m": 19
 		},
 		{
 			"name": "Torre del Forcall",
@@ -165,20 +165,20 @@
 			"dist_m": 20
 		},
 		{
-			"name": "Torre del Panto",
-			"type": "patrimonio",
-			"lat": 40.6210263,
-			"lon": -0.100653,
-			"km": 3.4,
-			"dist_m": 138
-		},
-		{
 			"name": "Portal de la Nevera",
 			"type": "patrimonio",
 			"lat": 40.6214335,
 			"lon": -0.0999303,
 			"km": 3.4,
 			"dist_m": 71
+		},
+		{
+			"name": "Torre del Panto",
+			"type": "patrimonio",
+			"lat": 40.6210263,
+			"lon": -0.100653,
+			"km": 3.4,
+			"dist_m": 138
 		},
 		{
 			"name": "Nevera de Morella",
@@ -215,5 +215,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/sl-cv-89 (crawl 2026-06-11): nombre, estado \"Sin controles de calidad\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX sl-cv-89.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

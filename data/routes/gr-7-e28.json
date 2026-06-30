@@ -157,10 +157,18 @@
 		{
 			"name": "Experiments de la Legió Còndorba l'Alt Maestrat",
 			"type": "patrimonio",
-			"lat": 40.3798143,
-			"lon": -0.1416642,
-			"km": 11.6,
-			"dist_m": 18
+			"lat": 40.3795819,
+			"lon": -0.1421134,
+			"km": 11.7,
+			"dist_m": 11
+		},
+		{
+			"name": "Monument a Carles Salvador",
+			"type": "patrimonio",
+			"lat": 40.3797349,
+			"lon": -0.1423,
+			"km": 11.7,
+			"dist_m": 32
 		},
 		{
 			"name": "Església Parroquial de la Mare de Déu de l'Assumpció",
@@ -171,30 +179,6 @@
 			"dist_m": 47
 		},
 		{
-			"name": "Capella de la Puríssima",
-			"type": "patrimonio",
-			"lat": 40.3797715,
-			"lon": -0.1434138,
-			"km": 11.7,
-			"dist_m": 123
-		},
-		{
-			"name": "Experiments de la Legió Còndorba l'Alt Maestrat",
-			"type": "patrimonio",
-			"lat": 40.3796455,
-			"lon": -0.1431431,
-			"km": 11.7,
-			"dist_m": 98
-		},
-		{
-			"name": "Experiments de la Legió Còndorba l'Alt Maestrat",
-			"type": "patrimonio",
-			"lat": 40.3795819,
-			"lon": -0.1421134,
-			"km": 11.7,
-			"dist_m": 11
-		},
-		{
 			"name": "Experiments de la Legió Còndorba l'Alt Maestrat",
 			"type": "patrimonio",
 			"lat": 40.3795995,
@@ -203,12 +187,12 @@
 			"dist_m": 77
 		},
 		{
-			"name": "Monument a Carles Salvador",
+			"name": "Capella de la Puríssima",
 			"type": "patrimonio",
-			"lat": 40.3797349,
-			"lon": -0.1423,
+			"lat": 40.3797715,
+			"lon": -0.1434138,
 			"km": 11.7,
-			"dist_m": 32
+			"dist_m": 123
 		},
 		{
 			"name": "Castell d'Àsens",
@@ -277,5 +261,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e28 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e28.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

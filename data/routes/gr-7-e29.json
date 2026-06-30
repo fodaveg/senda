@@ -128,12 +128,12 @@
 			"dist_m": 96
 		},
 		{
-			"name": "Castell de Culla",
-			"type": "cumbre",
-			"lat": 40.3375902,
-			"lon": -0.166706,
+			"name": "el Peiró",
+			"type": "patrimonio",
+			"lat": 40.3364081,
+			"lon": -0.1665003,
 			"km": 0.2,
-			"dist_m": 129
+			"dist_m": 2
 		},
 		{
 			"name": "Mirador del Cinglet",
@@ -152,12 +152,12 @@
 			"dist_m": 108
 		},
 		{
-			"name": "el Peiró",
-			"type": "patrimonio",
-			"lat": 40.3364081,
-			"lon": -0.1665003,
+			"name": "Castell de Culla",
+			"type": "cumbre",
+			"lat": 40.3375902,
+			"lon": -0.166706,
 			"km": 0.2,
-			"dist_m": 2
+			"dist_m": 129
 		},
 		{
 			"name": "Mirador del Castell",
@@ -184,12 +184,12 @@
 			"dist_m": 124
 		},
 		{
-			"name": "Mirador del Castell",
-			"type": "mirador",
-			"lat": 40.2945905,
-			"lon": -0.2928516,
+			"name": "el Pedrís",
+			"type": "patrimonio",
+			"lat": 40.2938339,
+			"lon": -0.2920735,
 			"km": 18.8,
-			"dist_m": 133
+			"dist_m": 51
 		},
 		{
 			"name": "Portal del Forn",
@@ -200,12 +200,12 @@
 			"dist_m": 120
 		},
 		{
-			"name": "el Pedrís",
-			"type": "patrimonio",
-			"lat": 40.2938339,
-			"lon": -0.2920735,
+			"name": "Mirador del Castell",
+			"type": "mirador",
+			"lat": 40.2945905,
+			"lon": -0.2928516,
 			"km": 18.8,
-			"dist_m": 51
+			"dist_m": 133
 		}
 	],
 	"escape_routes": [],
@@ -234,5 +234,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-7-e29 (crawl 2026-06-11): nombre, estado \"Control de calidad positivo\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-7-e29.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }

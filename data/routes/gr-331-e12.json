@@ -121,20 +121,20 @@
 			"dist_m": 11
 		},
 		{
-			"name": "el Peironet",
-			"type": "patrimonio",
-			"lat": 40.6026328,
-			"lon": 0.0492212,
-			"km": 0.5,
-			"dist_m": 76
-		},
-		{
 			"name": "Mirador del Peironet",
 			"type": "mirador",
 			"lat": 40.6026132,
 			"lon": 0.0492705,
 			"km": 0.5,
 			"dist_m": 74
+		},
+		{
+			"name": "el Peironet",
+			"type": "patrimonio",
+			"lat": 40.6026328,
+			"lon": 0.0492212,
+			"km": 0.5,
+			"dist_m": 76
 		},
 		{
 			"name": "Peiró de Baix",
@@ -171,5 +171,16 @@
 		"Ficha FEMECV https://senders.femecv.com/es/sendero/ver/gr-331-e12 (crawl 2026-06-11): nombre, estado \"Control de calidad condicionado\", distancia, desniveles, horario teórico, MIDE, modalidad, municipio, comarca",
 		"OSM Overpass (enrich 2026-06-20): fuentes de agua, sombra estimada y alternativas por proximidad — no verificado en campo",
 		"GPX gr-331-e12.gpx (derivados: inicio, bbox)"
-	]
+	],
+	"federacion": "FEMECV",
+	"comunidad": "Comunitat Valenciana",
+	"capabilities": {
+		"estado": true,
+		"mide": true,
+		"agua": true,
+		"etapas": true,
+		"descripcion": true,
+		"fauna": true,
+		"escapes": true
+	}
 }
