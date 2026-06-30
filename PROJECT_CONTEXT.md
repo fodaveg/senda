@@ -153,21 +153,23 @@ material custom. Las specs (SPECS_V5/V6) están **desfasadas** respecto al códi
   propósito: ya está codificado en los ids (`<padre>-e<NN>`) y se deriva puro en
   runtime; persistirlo sería duplicar._
 
-**Bloqueado por decisión (pendiente de respuesta del usuario):**
+- **Ingesta Navarra (FNDME) — HECHA (multi-federación V5-1).** Primera federación
+  además de FEMECV. `scripts/ingest/navarra/` (núcleo puro testeado + CLI
+  `npm run ingest:navarra`): lista/estado/nombre/etapas desde MiSenda `ccaa=nc`;
+  **geometría oficial CC-BY desde IDENA WFS** (capa por sendero, EPSG:25830→WGS84
+  con `proj4`). Enfoque **sendero + etapas como metadato** (`etapas_meta`, nuevo
+  campo opcional en `Route`/schema). Geometría en tramos sin ordenar → segmentos
+  separados (distancia = suma real, sin inflar); 2D sin altitud → `ascent_m`/
+  `circular` = `null`. **35/42 senderos** ingeridos (7 variantes sin capa IDENA,
+  omitidas). _Pendiente opcional: `npm run ingest:enrich` para agua/POIs OSM de
+  esos senderos._
+- **Features de comunidad: descartadas por ahora** (el handoff ya reserva el
+  bloque "Comunidad — sin verificar"; añadirían backend + moderación).
 
-- **Ingesta Navarra (multi-federación).** Fuentes alcanzables (MiSenda `ccaa=nc`
-  200, IDENA WFS 200; deportenavarra 403 anti-bot). **IDENA sirve GeoJSON pero en
-  EPSG:25830 (reproyectar) y por SENDERO completo, no por etapa**; MiSenda lista
-  Navarra **por etapas** (79 etapas / 21 senderos). Desajuste etapa↔sendero +
-  decisión de licencia (IDENA CC-BY vs GPX de MiSenda "licencia a confirmar") →
-  hay que decidir el enfoque antes de ingerir. PoC en `scripts/ingest/poc/`.
-- **Features de comunidad** (partes/valoraciones/planificador): añaden datos y
-  backend (tablas Supabase + moderación/privacidad EXIF); falta elegir cuál y
-  alcance.
-
-**➡️ PRÓXIMO:** resolver las dos decisiones de arriba; y **SMTP propio** para los
-correos de Supabase (lo dejamos para el final por petición del usuario). Backlog
-en `SPECS_V6.md` y `SPECS_V5.md`.
+**➡️ PRÓXIMO (único pendiente real):** **SMTP propio** para los correos de
+Supabase (alta/reset/OTP fiables; hoy email integrado con rate limits). Backlog
+mayor en `SPECS_V6.md` y `SPECS_V5.md`. Revisar el texto legal de `/privacidad`
+antes de publicar.
 
 **Deuda e2e (RESUELTA)**: el switch de pestañas ocultaba las secciones
 inactivas con `display:none`, así que las aserciones sobre contenido fuera de
