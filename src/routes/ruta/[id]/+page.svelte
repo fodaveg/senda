@@ -37,6 +37,7 @@
 	import { liveCustomItems } from '$lib/user/customGear';
 	import { startWindow } from '$lib/engine/startWindow';
 	import { gpxToGeoJSON, trackPositions } from '$lib/geo/gpx';
+	import { geojsonToKml } from '$lib/geo/kml';
 	import { elevationProfile, type ProfilePoint } from '$lib/geo/profile';
 	import { fetchDrivingEstimateCached, type DrivingEstimate } from '$lib/geo/routing';
 	import { formatDuration, formatKm, formatMeters } from '$lib/format';
@@ -57,7 +58,7 @@
 	import { avisosForRoute, fetchAvisosCapCached, type Aviso } from '$lib/weather/avisos';
 	import { fetchOpenMeteoHourly, type HourlyPoint } from '$lib/weather/hourly';
 	import { fetchOpenMeteoForecast } from '$lib/weather/openmeteo';
-	import { glanceCondition } from '$lib/weather/condition';
+	import { glanceCondition, precipIcon } from '$lib/weather/condition';
 	import type { FeatureCollection } from 'geojson';
 	import type { WeatherDay } from '$lib/types';
 
@@ -71,6 +72,8 @@
 	let fedLabel = $derived(federationInfo(route.federacion).label);
 
 	let geojson = $state<FeatureCollection | null>(null);
+	// GPX crudo de la traza (para exportar tal cual; el KML se deriva del geojson).
+	let trackXml = $state<string | null>(null);
 	let profile = $state<ProfilePoint[]>([]);
 	let trackError = $state<string | null>(null);
 
@@ -283,6 +286,7 @@
 		addWaypointMode = false;
 		debugMode = settings.debugMode;
 		geojson = null;
+		trackXml = null;
 		profile = [];
 		trackError = null;
 		forecast = null;
@@ -304,6 +308,7 @@
 			const collection = gpxToGeoJSON(xml);
 			if (token !== loadToken) return;
 			geojson = collection;
+			trackXml = xml;
 			profile = elevationProfile(trackPositions(collection));
 		} catch (e) {
 			if (token !== loadToken) return;
@@ -383,6 +388,74 @@
 		} catch {
 			shareMessage = url;
 		}
+	}
+
+	// ── Exportar la traza (GPX/KML) y leer el resumen por voz (handoff v6) ────
+	let exportMessage = $state<string | null>(null);
+
+	/** Descarga un texto como fichero (blob efímero, sin servidor). */
+	function downloadText(content: string, filename: string, mime: string) {
+		const url = URL.createObjectURL(new Blob([content], { type: mime }));
+		const a = document.createElement('a');
+		a.href = url;
+		a.download = filename;
+		a.click();
+		URL.revokeObjectURL(url);
+	}
+
+	/** Exporta el GPX oficial tal cual (la traza ya cargada). */
+	function downloadGpx() {
+		if (!trackXml) return;
+		downloadText(trackXml, `${route.id}.gpx`, 'application/gpx+xml');
+		exportMessage = `Descargado ${route.id}.gpx (traza FEMECV).`;
+	}
+
+	/** Exporta la traza como KML (derivado del GeoJSON). */
+	function downloadKml() {
+		if (!geojson) return;
+		downloadText(
+			geojsonToKml(geojson, route.name),
+			`${route.id}.kml`,
+			'application/vnd.google-earth.kml+xml'
+		);
+		exportMessage = `Descargado ${route.id}.kml.`;
+	}
+
+	// Lectura por voz del resumen (Web Speech API). Degrada si el entorno no la
+	// soporta; nunca lee datos inventados (solo lo que ya se muestra).
+	let ttsState = $state<'idle' | 'speaking' | 'unsupported'>('idle');
+
+	/** Resumen hablado: ruta + recomendación + meteo del día + avisos. */
+	function readAloud() {
+		if (typeof speechSynthesis === 'undefined' || typeof SpeechSynthesisUtterance === 'undefined') {
+			ttsState = 'unsupported';
+			return;
+		}
+		if (ttsState === 'speaking') {
+			speechSynthesis.cancel();
+			ttsState = 'idle';
+			return;
+		}
+		const parts: string[] = [route.name];
+		if (recommendation)
+			parts.push(`Recomendación: ${recommendation.label}. ${recommendation.reason}`);
+		if (selectedDay && glance)
+			parts.push(
+				`Meteo para ${dateLabel(selectedDate)}: ${glance.label}. Máxima ${Math.round(selectedDay.temperature_2m_max)} grados, ` +
+					`probabilidad de lluvia ${Math.round(selectedDay.precipitation_probability_max)} por ciento.`
+			);
+		parts.push(
+			avisosForDate.length > 0
+				? `Avisos vigentes: ${avisosForDate.map((a) => a.event).join(', ')}.`
+				: 'Sin avisos meteorológicos vigentes.'
+		);
+		const utterance = new SpeechSynthesisUtterance(parts.join(' '));
+		utterance.lang = 'es-ES';
+		utterance.onend = () => (ttsState = 'idle');
+		utterance.onerror = () => (ttsState = 'idle');
+		speechSynthesis.cancel();
+		speechSynthesis.speak(utterance);
+		ttsState = 'speaking';
 	}
 
 	/** GPS solo bajo gesto del usuario (SPECS_V2 §15). */
@@ -497,6 +570,21 @@
 	let glance = $derived(selectedDay ? glanceCondition(selectedDay) : null);
 	// Primeros 3 días para la mini-tarjeta de meteo en Condiciones.
 	let conditionDays = $derived((forecast ?? []).slice(0, 3));
+	// Vista de la pestaña Meteo: por días o tira horaria del día elegido.
+	let meteoView = $state<'dias' | 'horas'>('dias');
+	let hourlyForSelected = $derived(hourlyByDate[selectedDate] ?? []);
+
+	// Rango de altitud del perfil (mín→máx, m) para la cabecera de la tarjeta.
+	let eleRange = $derived.by(() => {
+		if (profile.length === 0) return null;
+		let min = Infinity;
+		let max = -Infinity;
+		for (const p of profile) {
+			if (p.ele < min) min = p.ele;
+			if (p.ele > max) max = p.ele;
+		}
+		return { min: Math.round(min), max: Math.round(max) };
+	});
 
 	// Progreso de la mochila para la tarjeta-resumen "Mochila X/Y": ítems
 	// recomendados ("Llevar") y cuántos lleva ya marcados el usuario.
@@ -1024,17 +1112,24 @@
 				<LiveTracking {trackPos} sunsetIso={selectedDay?.sunset ?? null} routeName={route.name} />
 			{/if}
 
-			<h3>Perfil de elevación</h3>
-			{#if profile.length > 0 || trackError}
-				<ElevationProfile
-					points={profile}
-					onHover={(index) => {
-						profileHover = index === null ? null : [profile[index].lon, profile[index].lat];
-					}}
-				/>
-			{:else}
-				<Skeleton shape="block" height="120px" />
-			{/if}
+			<div class="card profile-card">
+				<div class="card-head">
+					<h3 class="card-title">Perfil de elevación</h3>
+					{#if eleRange}
+						<span class="profile-range">{eleRange.min} m → {eleRange.max} m</span>
+					{/if}
+				</div>
+				{#if profile.length > 0 || trackError}
+					<ElevationProfile
+						points={profile}
+						onHover={(index) => {
+							profileHover = index === null ? null : [profile[index].lon, profile[index].lat];
+						}}
+					/>
+				{:else}
+					<Skeleton shape="block" height="120px" />
+				{/if}
+			</div>
 		</section>
 
 		<!-- ── Preparación ─────────────────────────────────────────────────── -->
@@ -1046,45 +1141,60 @@
 		>
 			<h2 class="fsec-title">Preparación</h2>
 
-			<h3>Mochila recomendada</h3>
-			<BackpackPanel
-				{decisions}
-				checked={checkedItems}
-				onToggle={toggleChecklistItem}
-				{customDecisions}
-				{hydration}
-				{energy}
-			/>
+			<div class="prep-stack">
+				<div class="card">
+					<div class="card-head">
+						<h3 class="card-title">Mochila recomendada</h3>
+						{#if packItems.length > 0}
+							<span class="pack-count">{packChecked} / {packItems.length}</span>
+						{/if}
+					</div>
+					<BackpackPanel
+						{decisions}
+						checked={checkedItems}
+						onToggle={toggleChecklistItem}
+						{customDecisions}
+						{hydration}
+						{energy}
+					/>
+				</div>
 
-			{#if !caps.agua}
-				<h3>Fuentes de agua</h3>
-				<FeatureGuard federacion={fedLabel} feature="los puntos de agua" />
-			{:else if route.water_points.length > 0}
-				<h3>Fuentes de agua</h3>
-				<ul>
-					{#each route.water_points as point (point)}<li>{point}</li>{/each}
-				</ul>
-			{/if}
+				{#if !caps.agua}
+					<div class="card">
+						<h3 class="card-title">Fuentes de agua</h3>
+						<FeatureGuard federacion={fedLabel} feature="los puntos de agua" />
+					</div>
+				{:else if route.water_points.length > 0}
+					<div class="card">
+						<h3 class="card-title">Fuentes de agua</h3>
+						<ul>
+							{#each route.water_points as point (point)}<li>{point}</li>{/each}
+						</ul>
+					</div>
+				{/if}
 
-			{#if stages.length > 0}
-				<section id="etapas" class="stages-section">
-					<h3>Etapas <span class="count">({stages.length})</span></h3>
-					<p class="stages-hint">Ruta por etapas; cada una es navegable por separado.</p>
-					<StagesList {stages} />
-				</section>
-			{/if}
+				{#if stages.length > 0}
+					<section id="etapas" class="card">
+						<h3 class="card-title">Etapas <span class="count">({stages.length})</span></h3>
+						<p class="stages-hint">Ruta por etapas; cada una es navegable por separado.</p>
+						<StagesList {stages} />
+					</section>
+				{/if}
 
-			{#if links.length > 0}
-				<section class="stages-section">
-					<h3>Enlaza con <span class="count">({links.length})</span></h3>
-					<p class="stages-hint">Rutas cuyo inicio o fin está cerca del de esta (encadenables).</p>
-					<ul class="links-list">
-						{#each links as l (l.id)}
-							<li><a href={resolve('/ruta/[id]', { id: l.id })}>{l.name}</a></li>
-						{/each}
-					</ul>
-				</section>
-			{/if}
+				{#if links.length > 0}
+					<section class="card">
+						<h3 class="card-title">Enlaza con <span class="count">({links.length})</span></h3>
+						<p class="stages-hint">
+							Rutas cuyo inicio o fin está cerca del de esta (encadenables).
+						</p>
+						<ul class="links-list">
+							{#each links as l (l.id)}
+								<li><a href={resolve('/ruta/[id]', { id: l.id })}>{l.name}</a></li>
+							{/each}
+						</ul>
+					</section>
+				{/if}
+			</div>
 		</section>
 
 		<!-- ── Condiciones y seguridad ─────────────────────────────────────── -->
@@ -1258,7 +1368,74 @@
 					</p>
 				{/if}
 				<p class="date-note">Pronóstico disponible solo hasta 7 días vista.</p>
+
+				<!-- Vista por días (tarjetas) ⇄ por horas (tira del día elegido). -->
+				<div class="seg meteo-seg" role="group" aria-label="Vista de la meteo">
+					<button
+						type="button"
+						class:active={meteoView === 'dias'}
+						aria-pressed={meteoView === 'dias'}
+						onclick={() => (meteoView = 'dias')}>Por días</button
+					>
+					<button
+						type="button"
+						class:active={meteoView === 'horas'}
+						aria-pressed={meteoView === 'horas'}
+						onclick={() => (meteoView = 'horas')}>Por horas · {dateLabel(selectedDate)}</button
+					>
+				</div>
+
+				{#if meteoView === 'dias'}
+					{#if forecast && forecast.length > 0}
+						<div class="meteo-days">
+							{#each forecast as d (d.date)}
+								<button
+									type="button"
+									class="md-card"
+									class:selected={d.date === selectedDate}
+									aria-pressed={d.date === selectedDate}
+									onclick={() => (selectedDate = d.date)}
+								>
+									<span class="md-day">{dateLabel(d.date)}</span>
+									<span class="md-ic" aria-hidden="true"
+										>{precipIcon(d.precipitation_probability_max)}</span
+									>
+									<span class="md-temp">
+										{Math.round(d.temperature_2m_max)}°
+										<span class="muted">/ {Math.round(d.temperature_2m_min)}°</span>
+									</span>
+									<span class="md-sub">
+										Viento {Math.round(d.wind_speed_10m_max)} · Lluvia {Math.round(
+											d.precipitation_probability_max
+										)}%
+									</span>
+								</button>
+							{/each}
+						</div>
+					{:else if !weatherLoading}
+						<p class="date-note">Sin pronóstico disponible (sin conexión o API caída).</p>
+					{/if}
+				{:else if hourlyForSelected.length > 0}
+					<div class="meteo-hours">
+						{#each hourlyForSelected as h (h.time)}
+							<div class="mh-card">
+								<span class="mh-hour">{h.time.slice(11, 16)}</span>
+								<span class="mh-ic" aria-hidden="true"
+									>{precipIcon(h.precipitation_probability)}</span
+								>
+								<span class="mh-temp">{Math.round(h.temperature_2m)}°</span>
+								<span class="mh-sub">Lluvia {Math.round(h.precipitation_probability)}%</span>
+								<span class="mh-uv">UV {Math.round(h.uv_index)}</span>
+							</div>
+						{/each}
+					</div>
+				{:else}
+					<p class="date-note">
+						Sin pronóstico horario para esta fecha (sin conexión o no disponible).
+					</p>
+				{/if}
 			{/if}
+
 			<WeatherCard
 				day={selectedDay}
 				loading={weatherLoading}
@@ -1278,28 +1455,83 @@
 		>
 			<h2 class="fsec-title">Acciones</h2>
 
-			{#if selectedDate}
-				<div class="actions-row">
-					<!-- eslint-disable svelte/no-navigation-without-resolve -- base construida con resolve(); la regla no contempla añadir query string -->
-					<a
-						class="report-btn"
-						href={resolve('/ruta/[id]/informe', { id: route.id }) + `?fecha=${selectedDate}`}
-					>
-						Generar informe
-					</a>
-					<a
-						class="report-btn emergency-btn"
-						href={resolve('/ruta/[id]/emergencia', { id: route.id }) + `?fecha=${selectedDate}`}
-					>
-						Ficha de emergencia
-					</a>
-					<button type="button" class="report-btn emergency-btn share-btn" onclick={shareRoute}>
-						Compartir
-					</button>
-					<!-- eslint-enable svelte/no-navigation-without-resolve -->
+			<div class="acc-grid">
+				<!-- eslint-disable svelte/no-navigation-without-resolve -- base con resolve() + query string -->
+				<a
+					class="acc-card"
+					href={resolve('/ruta/[id]/informe', { id: route.id }) + `?fecha=${selectedDate}`}
+				>
+					<span class="acc-ic" aria-hidden="true">📄</span>
+					<span class="acc-title">Generar informe</span>
+					<span class="acc-desc">Resumen con mapa, perfil, etapas y mochila para imprimir.</span>
+				</a>
+				<a
+					class="acc-card"
+					href={resolve('/ruta/[id]/emergencia', { id: route.id }) + `?fecha=${selectedDate}`}
+				>
+					<span class="acc-ic" aria-hidden="true">🆘</span>
+					<span class="acc-title">Ficha de emergencia</span>
+					<span class="acc-desc">Coordenadas de inicio/fin, escapes y teléfono 112.</span>
+				</a>
+				<!-- eslint-enable svelte/no-navigation-without-resolve -->
+
+				<div class="acc-card acc-static">
+					<span class="acc-ic" aria-hidden="true">⬇️</span>
+					<span class="acc-title">Exportar traza</span>
+					<span class="acc-desc">Traza FEMECV oficial para tu GPS o visor de mapas.</span>
+					<span class="acc-buttons">
+						<button type="button" class="acc-btn" onclick={downloadGpx} disabled={!trackXml}
+							>GPX</button
+						>
+						<button type="button" class="acc-btn" onclick={downloadKml} disabled={!geojson}
+							>KML</button
+						>
+					</span>
 				</div>
-				{#if shareMessage}<p class="travel-hint" role="status">{shareMessage}</p>{/if}
-			{/if}
+
+				{#if route.bbox}
+					<button type="button" class="acc-card acc-action" onclick={downloadOfflineMap}>
+						<span class="acc-ic" aria-hidden="true">🗺️</span>
+						<span class="acc-title"
+							>{offlineTiles ? 'Actualizar mapa offline' : 'Descargar mapa offline'}</span
+						>
+						<span class="acc-desc">Tiles IGN + traza para usar la ficha sin cobertura.</span>
+					</button>
+				{/if}
+
+				<button
+					type="button"
+					class="acc-card acc-action"
+					onclick={readAloud}
+					disabled={ttsState === 'unsupported'}
+				>
+					<span class="acc-ic" aria-hidden="true">🔊</span>
+					<span class="acc-title"
+						>{ttsState === 'speaking' ? 'Detener lectura' : 'Leer por voz'}</span
+					>
+					<span class="acc-desc">
+						{ttsState === 'unsupported'
+							? 'Tu navegador no permite la lectura por voz.'
+							: 'Resumen, meteo y avisos en audio antes de salir.'}
+					</span>
+				</button>
+
+				<button type="button" class="acc-card acc-action" onclick={shareRoute}>
+					<span class="acc-ic" aria-hidden="true">📤</span>
+					<span class="acc-title">Compartir</span>
+					<span class="acc-desc">Enlace a esta ruta con la fecha elegida.</span>
+				</button>
+
+				<div class="acc-card acc-future" aria-disabled="true">
+					<span class="acc-ic" aria-hidden="true">⛰️</span>
+					<span class="acc-title">Iniciar ruta</span>
+					<span class="acc-desc">Navegación en vivo (móvil) — acción primaria futura.</span>
+				</div>
+			</div>
+
+			{#if shareMessage}<p class="travel-hint" role="status">{shareMessage}</p>{/if}
+			{#if exportMessage}<p class="travel-hint" role="status">{exportMessage}</p>{/if}
+			{#if downloadProgress}<p class="travel-hint" role="status">{downloadProgress}</p>{/if}
 
 			<h3>Enlaces</h3>
 			<ul>
@@ -1382,8 +1614,15 @@
 		gap: 0.3rem;
 		cursor: pointer;
 	}
-	.stages-section {
-		margin-top: 1rem;
+	/* Preparación v6: tarjetas apiladas (mochila + agua + etapas + enlaza). */
+	.prep-stack {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+	}
+	.profile-range {
+		font-size: var(--text-xs);
+		color: var(--muted);
 	}
 	.links-list {
 		list-style: none;
@@ -1392,7 +1631,7 @@
 		display: grid;
 		gap: 0.25rem;
 	}
-	.stages-section .count {
+	.card-title .count {
 		font-weight: 400;
 		color: var(--muted);
 		font-size: 0.85rem;
@@ -1672,11 +1911,174 @@
 	.fsec h3:first-of-type {
 		margin-top: var(--space-2);
 	}
-	.actions-row {
+	/* Acciones v6: rejilla de tarjetas-acción (auto-fit). */
+	.acc-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: var(--space-3);
+		align-items: stretch;
+	}
+	.acc-card {
 		display: flex;
-		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 4px;
+		text-align: left;
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+		padding: var(--space-4);
+		box-shadow: var(--shadow-sm, 0 1px 2px rgba(40, 38, 30, 0.06));
+		text-decoration: none;
+		color: var(--ink);
+		font: inherit;
+		cursor: pointer;
+	}
+	a.acc-card:hover,
+	button.acc-card:not(:disabled):hover {
+		background: var(--surface-alt);
+	}
+	.acc-ic {
+		font-size: var(--text-lg);
+		line-height: 1;
+	}
+	.acc-title {
+		font-family: var(--font-head);
+		font-weight: 700;
+		font-size: var(--text-base, 1rem);
+	}
+	.acc-desc {
+		font-size: var(--text-xs);
+		color: var(--muted);
+		line-height: 1.45;
+	}
+	.acc-buttons {
+		margin-top: var(--space-2);
+		display: flex;
 		gap: var(--space-2);
+	}
+	.acc-btn {
+		font: inherit;
+		font-weight: 700;
+		font-size: var(--text-sm);
+		padding: var(--space-1) var(--space-3);
+		border-radius: var(--radius-md);
+		border: 1px solid var(--brand);
+		background: var(--surface);
+		color: var(--brand);
+		cursor: pointer;
+	}
+	.acc-btn:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		border-color: var(--border);
+		color: var(--muted);
+	}
+	.acc-static {
+		cursor: default;
+	}
+	.acc-card:disabled {
+		opacity: 0.55;
+		cursor: not-allowed;
+	}
+	/* "Iniciar ruta": acción primaria futura, reservada (caja punteada de marca). */
+	.acc-future {
+		background: var(--brand-soft);
+		border-style: dashed;
+		border-color: var(--brand-line);
+		cursor: default;
+	}
+	.acc-future .acc-ic {
+		color: var(--brand);
+	}
+	/* Meteo v6: toggle + tarjetas por día + tira horaria. */
+	.meteo-seg {
+		margin: var(--space-3) 0;
+	}
+	.meteo-days {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+		gap: var(--space-2);
+	}
+	.md-card {
+		display: flex;
+		flex-direction: column;
 		align-items: center;
+		gap: 2px;
+		text-align: center;
+		padding: var(--space-3) var(--space-2);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+		background: var(--surface);
+		color: var(--ink);
+		font: inherit;
+		cursor: pointer;
+	}
+	.md-card:hover {
+		background: var(--surface-alt);
+	}
+	.md-card.selected {
+		border-color: var(--brand);
+		background: var(--brand-soft);
+	}
+	.md-day {
+		font-size: var(--text-xs);
+		font-weight: 700;
+		color: var(--muted);
+	}
+	.md-ic {
+		font-size: 26px;
+		line-height: 1.2;
+	}
+	.md-temp {
+		font-family: var(--font-head);
+		font-weight: 700;
+		font-size: var(--text-base, 1rem);
+	}
+	.md-temp .muted {
+		color: var(--muted);
+		font-weight: 600;
+	}
+	.md-sub {
+		font-size: var(--text-xs);
+		color: var(--muted);
+	}
+	.meteo-hours {
+		display: flex;
+		gap: var(--space-2);
+		overflow-x: auto;
+		padding-bottom: 4px;
+	}
+	.mh-card {
+		flex: none;
+		width: 84px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2px;
+		padding: var(--space-3) var(--space-2);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+		background: var(--surface);
+	}
+	.mh-hour {
+		font-size: var(--text-xs);
+		font-weight: 700;
+		color: var(--muted);
+	}
+	.mh-ic {
+		font-size: 20px;
+		line-height: 1.2;
+	}
+	.mh-temp {
+		font-family: var(--font-head);
+		font-weight: 700;
+		font-size: var(--text-md);
+	}
+	.mh-sub,
+	.mh-uv {
+		font-size: 10px;
+		color: var(--muted);
 	}
 	/* En móvil las pestañas se compactan (icono sobre etiqueta) y se oculta el
 	   conmutador: ahí la ficha es siempre 'tabs' (un rail lateral no cabe). */
@@ -1756,26 +2158,6 @@
 	.other-risks {
 		font-size: 0.9rem;
 		color: var(--muted);
-	}
-	.report-btn {
-		display: inline-block;
-		padding: 0.5rem 1rem;
-		border-radius: 6px;
-		border: 1px solid var(--brand);
-		background: var(--brand);
-		color: var(--on-brand);
-		text-decoration: none;
-	}
-	.share-btn {
-		cursor: pointer;
-		font: inherit;
-	}
-	.emergency-btn {
-		background: var(--surface);
-		color: var(--brand);
-	}
-	.report-btn:hover {
-		opacity: 0.9;
 	}
 	.error {
 		padding: 1rem;

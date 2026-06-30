@@ -73,11 +73,21 @@ nuevas tandas y se lleva a `main` por fast-forward.
 9. **Fiabilidad (tanda 1)**: la lógica del widget de ventana se extrajo a una
    función pura testeada `startWindowTimeline` (eje de luz + franjas + marcas, en
    `engine/startWindow.ts`), y `wildlifeEmoji` se movió a `data/wildlife.ts`
-   (puro). Ambas con tests (332 unit). El componente solo presenta.
+   (puro). Ambas con tests. El componente solo presenta.
+10. **Pestañas restantes (Acciones, Meteo, Mapa, Preparación)** al `.dc.html`:
+    - **Acciones**: rejilla de 6 tarjetas-acción (informe, emergencia, exportar
+      GPX/KML, mapa offline, leer por voz, compartir) + "Iniciar ruta" futura;
+      enlaces/fuentes debajo. Nuevos: `geo/kml.ts` (`geojsonToKml`, puro + tests)
+      y lectura por voz (Web Speech API, degrada si no hay soporte).
+    - **Meteo**: toggle Por días ⇄ Por horas (día-tarjetas + tira horaria con
+      icono derivado vía `precipIcon`, extraído de `condition.ts`) + WeatherCard
+      como detalle. Los chips de fecha se mantienen (8, e2e).
+    - **Mapa**: perfil de elevación en tarjeta con rango de altitud (mín→máx).
+    - **Preparación**: mochila en tarjeta con total X/Y + agua/etapas/enlaza
+      enmarcados. 338 unit / 49 e2e.
 
-**Fase 3 COMPLETA y desplegada.** Pendiente v6: subir fidelidad de las pestañas
-restantes (Mapa, Preparación, Meteo, Acciones) al `.dc.html`; más fiabilidad si
-surge (degradación, bordes).
+**v6 ficha COMPLETA y desplegada** (todas las pestañas + cabecera + fiabilidad
+tanda 1). Pendiente abierto: más fiabilidad si surge; pulido fino.
 
 **Deuda e2e (RESUELTA)**: el switch de pestañas ocultaba las secciones
 inactivas con `display:none`, así que las aserciones sobre contenido fuera de
