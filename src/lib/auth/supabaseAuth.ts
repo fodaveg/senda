@@ -22,6 +22,16 @@ import {
 	type AuthEvent,
 	type Session
 } from './types';
+import { base } from '$app/paths';
+
+/** URL de retorno para los enlaces de correo (confirmación de alta y reset de
+ *  contraseña): vuelve a /cuenta en el MISMO origen y base path desde el que se
+ *  hizo la petición (en producción, bajo /senda; en desarrollo, localhost), no
+ *  al Site URL del dashboard. Debe figurar en las "Redirect URLs" del proyecto
+ *  Supabase. */
+function accountRedirectUrl(): string | undefined {
+	return typeof location !== 'undefined' ? `${location.origin}${base}/cuenta` : undefined;
+}
 
 /** Traduce el nombre de evento del SDK a nuestro tipo estable (o null si no nos interesa). */
 function mapAuthEvent(event: string): AuthEvent | null {
@@ -89,7 +99,16 @@ export function createSupabaseAuthClient(config: BackendConfig): AuthClient {
 	return {
 		async signUp(email, password) {
 			const sb = await client();
-			const { data, error } = await net(() => sb.auth.signUp({ email, password }));
+			// emailRedirectTo: tras confirmar el correo, Supabase vuelve a ESTE origen
+			// (no al Site URL del dashboard), así el enlace lleva a donde te registraste.
+			const emailRedirectTo = accountRedirectUrl();
+			const { data, error } = await net(() =>
+				sb.auth.signUp({
+					email,
+					password,
+					options: emailRedirectTo ? { emailRedirectTo } : undefined
+				})
+			);
 			if (error) throw toAuthError(error);
 			// session === null cuando el proyecto exige confirmación por correo.
 			return mapSession(data.session);
@@ -117,7 +136,7 @@ export function createSupabaseAuthClient(config: BackendConfig): AuthClient {
 			const sb = await client();
 			// El enlace del correo vuelve a /cuenta, donde la app pide la nueva clave.
 			// (Hay que tener ese origen en las "Redirect URLs" del proyecto Supabase.)
-			const redirectTo = typeof location !== 'undefined' ? `${location.origin}/cuenta` : undefined;
+			const redirectTo = accountRedirectUrl();
 			const { error } = await net(() =>
 				sb.auth.resetPasswordForEmail(email, redirectTo ? { redirectTo } : undefined)
 			);
