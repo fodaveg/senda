@@ -133,11 +133,41 @@ táctil) en vez del flex-wrap irregular. _Nota: el estado pasó a la línea supe
 también en escritorio (junto al badge), es la consecuencia de mover el badge
 fuera de la columna lateral._
 
-**➡️ PRÓXIMO RECOMENDADO:** en backlog mayor, **SMTP propio para los correos de
-Supabase** (Supabase ya está activo en prod; lo que falta es sustituir el email
-integrado —con rate limits del plan free— para validar alta/reset/OTP reales, ver
-§Bloqueos) **+ ingesta Navarra**. Backlog completo en `SPECS_V6.md` (§milestones)
-y `SPECS_V5.md` (parte PRE = deuda v4/legal/pulido).
+**Auditoría del backlog (2026-06-30): casi todo estaba ya hecho.** Verificado en
+código: a11y/perf (skip-link, focus-ring global, reduce-motion, skeletons),
+**analítica opt-in + `/tendencias`**, **sincronización** (`SyncedRepository` +
+cola offline + `merge.ts` + `SyncIndicator`), escala (índice ligero,
+virtualización, búsqueda precomputada, clustering), i18n del **shell**, editar
+material custom. Las specs (SPECS_V5/V6) están **desfasadas** respecto al código.
+
+**Hecho en esta tanda:**
+
+- **Página de privacidad/RGPD** (`/privacidad`) + enlace en pie/menú "Más"
+  (i18n `nav.privacy`), fiel al comportamiento real (local-first; cuenta/analítica
+  opt-in; terceros IGN/Open-Meteo/AEMET/OSRM/Supabase). _Revisar texto legal y
+  datos del responsable antes de publicar._
+- **Pulido de datos (ingesta)**: `dedupePois` (puro + tests) colapsa POIs OSM
+  duplicados (mismo tipo/nombre ≤60 m). **Regenerados los 585 `data/routes`**:
+  además del dedup, ahora persisten `federacion`/`comunidad`/`capabilities`
+  (multi-federación V5-1). _Persistir `stages`/`parent_id` se DESCARTÓ a
+  propósito: ya está codificado en los ids (`<padre>-e<NN>`) y se deriva puro en
+  runtime; persistirlo sería duplicar._
+
+**Bloqueado por decisión (pendiente de respuesta del usuario):**
+
+- **Ingesta Navarra (multi-federación).** Fuentes alcanzables (MiSenda `ccaa=nc`
+  200, IDENA WFS 200; deportenavarra 403 anti-bot). **IDENA sirve GeoJSON pero en
+  EPSG:25830 (reproyectar) y por SENDERO completo, no por etapa**; MiSenda lista
+  Navarra **por etapas** (79 etapas / 21 senderos). Desajuste etapa↔sendero +
+  decisión de licencia (IDENA CC-BY vs GPX de MiSenda "licencia a confirmar") →
+  hay que decidir el enfoque antes de ingerir. PoC en `scripts/ingest/poc/`.
+- **Features de comunidad** (partes/valoraciones/planificador): añaden datos y
+  backend (tablas Supabase + moderación/privacidad EXIF); falta elegir cuál y
+  alcance.
+
+**➡️ PRÓXIMO:** resolver las dos decisiones de arriba; y **SMTP propio** para los
+correos de Supabase (lo dejamos para el final por petición del usuario). Backlog
+en `SPECS_V6.md` y `SPECS_V5.md`.
 
 **Deuda e2e (RESUELTA)**: el switch de pestañas ocultaba las secciones
 inactivas con `display:none`, así que las aserciones sobre contenido fuera de
