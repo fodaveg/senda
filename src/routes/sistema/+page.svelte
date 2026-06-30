@@ -59,7 +59,7 @@
 			<Button loading>Cargando</Button>
 			<Button disabled>Deshabilitado</Button>
 			<Button size="sm">Pequeño</Button>
-			<Button href="/">Enlace</Button>
+			<Button href={resolve('/')}>Enlace</Button>
 		</div>
 	</Section>
 
