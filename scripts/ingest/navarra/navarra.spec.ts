@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+	applyEnrichment,
 	buildRoute,
 	etapaOrder,
 	geojsonToSegments,
@@ -148,5 +149,48 @@ describe('geometría → resumen → GPX → Route', () => {
 
 	it('trackSummary devuelve null con menos de 2 puntos', () => {
 		expect(trackSummary([])).toBeNull();
+	});
+});
+
+describe('applyEnrichment', () => {
+	const base = buildRoute(
+		{
+			matricula: 'SL-NA 70',
+			name: 'SL-NA 70',
+			type: 'SL',
+			idenaLayer: 'DOTACI_Lin_SLNA70',
+			id: 'na-sl-na-70',
+			permalink: null,
+			etapas: []
+		},
+		{
+			start: { lat: 43, lon: -1.6 },
+			end: { lat: 43.01, lon: -1.61 },
+			bbox: [-1.62, 42.99, -1.59, 43.02],
+			distance_km: 4
+		},
+		'2026-06-30'
+	);
+	const enriched = {
+		water_points: ['Fuente (km 1)'],
+		water_points_geo: [
+			{ name: 'Fuente', kind: 'fuente' as const, lat: 43, lon: -1.6, km: 1, dist_m: 5 }
+		],
+		pois: [{ name: 'Mirador', type: 'mirador' as const, lat: 43, lon: -1.6, km: 2, dist_m: 8 }],
+		shade_ratio: 0.4,
+		alternatives: ['na-sl-na-71'],
+		enriched_at: '2026-06-30T00:00:00Z',
+		method: 'OSM Overpass (test)'
+	};
+
+	it('fusiona agua/POIs/sombra y cita OSM sin duplicar', () => {
+		const once = applyEnrichment(base, enriched);
+		expect(once.water_points_geo).toHaveLength(1);
+		expect(once.pois).toHaveLength(1);
+		expect(once.shade_ratio).toBe(0.4);
+		expect(once.sources.filter((s) => s.startsWith('OSM Overpass'))).toHaveLength(1);
+		// Idempotente: re-aplicar no duplica la fuente OSM.
+		const twice = applyEnrichment(once, enriched);
+		expect(twice.sources.filter((s) => s.startsWith('OSM Overpass'))).toHaveLength(1);
 	});
 });

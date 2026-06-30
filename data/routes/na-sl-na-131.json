@@ -22,20 +22,69 @@
 	"circular": null,
 	"difficulty_mide": null,
 	"est_duration_min": null,
-	"water_points": [],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points": [
+		"Manantial \"Azerien iturria\" (km 3.0, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente Vieja\" (km 3.6, a 9 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Azerien iturria",
+			"kind": "manantial",
+			"lat": 42.9252596,
+			"lon": -1.8354917,
+			"km": 3,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente Vieja",
+			"kind": "fuente",
+			"lat": 42.9231263,
+			"lon": -1.8418893,
+			"km": 3.6,
+			"dist_m": 9
+		}
+	],
+	"pois": [
+		{
+			"name": "Arrantzaleen balkoia",
+			"type": "mirador",
+			"lat": 42.9304337,
+			"lon": -1.828834,
+			"km": 1.9,
+			"dist_m": 6
+		},
+		{
+			"name": "Ahizpa Haundia",
+			"type": "cumbre",
+			"lat": 42.9293928,
+			"lon": -1.830017,
+			"km": 1.9,
+			"dist_m": 105
+		},
+		{
+			"name": "Ahizpa Txikia",
+			"type": "cumbre",
+			"lat": 42.9288144,
+			"lon": -1.8263026,
+			"km": 2.1,
+			"dist_m": 117
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.83,
 	"gpx": "na-sl-na-131.gpx",
 	"links": {
 		"femecv": null,
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"na-sl-na-140",
+		"na-gr-20",
+		"na-pr-na-201"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-1.8418187834322464,
@@ -46,7 +95,8 @@
 	"sources": [
 		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) (consulta 2026-06-30)",
 		"Geometría oficial: IDENA WFS capa DOTACI_Lin_SLNA131 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
-		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor",
+		"OSM Overpass (enrich 2026-06-30): fuentes de agua, POIs y sombra estimada — no verificado en campo"
 	],
 	"federacion": "FNDME",
 	"comunidad": "Comunidad Foral de Navarra",

@@ -1,0 +1,22 @@
+{
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Puente románico de Isaba",
+			"type": "patrimonio",
+			"lat": 42.8716581,
+			"lon": -0.9085495,
+			"km": 4.6,
+			"dist_m": 4
+		}
+	],
+	"shade_ratio": 0.96,
+	"alternatives": [
+		"na-sl-na-70",
+		"na-sl-na-71",
+		"na-sl-na-76"
+	],
+	"enriched_at": "2026-06-30T14:57:01.751Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

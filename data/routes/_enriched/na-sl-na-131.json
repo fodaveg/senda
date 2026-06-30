@@ -1,0 +1,58 @@
+{
+	"water_points": [
+		"Manantial \"Azerien iturria\" (km 3.0, a 5 m del track; OSM, no verificado en campo)",
+		"Fuente \"Fuente Vieja\" (km 3.6, a 9 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Azerien iturria",
+			"kind": "manantial",
+			"lat": 42.9252596,
+			"lon": -1.8354917,
+			"km": 3,
+			"dist_m": 5
+		},
+		{
+			"name": "Fuente Vieja",
+			"kind": "fuente",
+			"lat": 42.9231263,
+			"lon": -1.8418893,
+			"km": 3.6,
+			"dist_m": 9
+		}
+	],
+	"pois": [
+		{
+			"name": "Arrantzaleen balkoia",
+			"type": "mirador",
+			"lat": 42.9304337,
+			"lon": -1.828834,
+			"km": 1.9,
+			"dist_m": 6
+		},
+		{
+			"name": "Ahizpa Haundia",
+			"type": "cumbre",
+			"lat": 42.9293928,
+			"lon": -1.830017,
+			"km": 1.9,
+			"dist_m": 105
+		},
+		{
+			"name": "Ahizpa Txikia",
+			"type": "cumbre",
+			"lat": 42.9288144,
+			"lon": -1.8263026,
+			"km": 2.1,
+			"dist_m": 117
+		}
+	],
+	"shade_ratio": 0.83,
+	"alternatives": [
+		"na-sl-na-140",
+		"na-gr-20",
+		"na-pr-na-201"
+	],
+	"enriched_at": "2026-06-30T14:52:48.763Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

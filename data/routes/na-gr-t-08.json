@@ -22,20 +22,60 @@
 	"circular": null,
 	"difficulty_mide": null,
 	"est_duration_min": null,
-	"water_points": [],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points": [
+		"Fuente (km 4.3, a 74 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 43.0093261,
+			"lon": -1.227204,
+			"km": 4.3,
+			"dist_m": 74
+		}
+	],
+	"pois": [
+		{
+			"name": "Arlagain",
+			"type": "cumbre",
+			"lat": 43.0074083,
+			"lon": -1.2440944,
+			"km": 2.7,
+			"dist_m": 90
+		},
+		{
+			"name": "Azpegi 2",
+			"type": "patrimonio",
+			"lat": 43.0343315,
+			"lon": -1.2256405,
+			"km": 8.1,
+			"dist_m": 98
+		},
+		{
+			"name": "Azpegi 1",
+			"type": "patrimonio",
+			"lat": 43.0346417,
+			"lon": -1.226081,
+			"km": 8.1,
+			"dist_m": 147
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.25,
 	"gpx": "na-gr-t-08.gpx",
 	"links": {
 		"femecv": null,
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"na-gr-t-07",
+		"na-gr-t-09",
+		"na-gr-t-10"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-1.2669709324836769,
@@ -46,7 +86,8 @@
 	"sources": [
 		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) https://misendafedme.es/buscador-de-senderos/gr/gr-t-08-txutxurieta-azpegi (consulta 2026-06-30)",
 		"Geometría oficial: IDENA WFS capa DOTACI_Lin_GRT8 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
-		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor",
+		"OSM Overpass (enrich 2026-06-30): fuentes de agua, POIs y sombra estimada — no verificado en campo"
 	],
 	"federacion": "FNDME",
 	"comunidad": "Comunidad Foral de Navarra",

@@ -1,0 +1,49 @@
+{
+	"water_points": [
+		"Fuente (km 4.3, a 74 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 43.0093261,
+			"lon": -1.227204,
+			"km": 4.3,
+			"dist_m": 74
+		}
+	],
+	"pois": [
+		{
+			"name": "Arlagain",
+			"type": "cumbre",
+			"lat": 43.0074083,
+			"lon": -1.2440944,
+			"km": 2.7,
+			"dist_m": 90
+		},
+		{
+			"name": "Azpegi 2",
+			"type": "patrimonio",
+			"lat": 43.0343315,
+			"lon": -1.2256405,
+			"km": 8.1,
+			"dist_m": 98
+		},
+		{
+			"name": "Azpegi 1",
+			"type": "patrimonio",
+			"lat": 43.0346417,
+			"lon": -1.226081,
+			"km": 8.1,
+			"dist_m": 147
+		}
+	],
+	"shade_ratio": 0.25,
+	"alternatives": [
+		"na-gr-t-07",
+		"na-gr-t-09",
+		"na-gr-t-10"
+	],
+	"enriched_at": "2026-06-30T14:48:38.871Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

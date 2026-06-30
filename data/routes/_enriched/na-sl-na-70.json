@@ -1,0 +1,60 @@
+{
+	"water_points": [
+		"Fuente \"Fuente de San Pedro\" (km 0.1, a 14 m del track; OSM, no verificado en campo)",
+		"Manantial (km 0.2, a 9 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.2, a 14 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.6, a 10 m del track; OSM, no verificado en campo)",
+		"Fuente (km 2.1, a 7 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de San Pedro",
+			"kind": "fuente",
+			"lat": 42.85982,
+			"lon": -0.9277566,
+			"km": 0.1,
+			"dist_m": 14
+		},
+		{
+			"name": null,
+			"kind": "manantial",
+			"lat": 42.8608386,
+			"lon": -0.928051,
+			"km": 0.2,
+			"dist_m": 9
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 42.8609397,
+			"lon": -0.9279647,
+			"km": 0.2,
+			"dist_m": 14
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 42.8641777,
+			"lon": -0.9284419,
+			"km": 0.6,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 42.8622196,
+			"lon": -0.9227987,
+			"km": 2.1,
+			"dist_m": 7
+		}
+	],
+	"pois": [],
+	"shade_ratio": 1,
+	"alternatives": [
+		"na-sl-na-79",
+		"na-sl-na-76",
+		"na-sl-na-71"
+	],
+	"enriched_at": "2026-06-30T14:37:20.928Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

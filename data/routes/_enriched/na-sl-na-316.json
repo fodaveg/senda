@@ -1,0 +1,81 @@
+{
+	"water_points": [
+		"Fuente (km 0.0, a 8 m del track; OSM, no verificado en campo)",
+		"Fuente (km 0.1, a 10 m del track; OSM, no verificado en campo)",
+		"Fuente (km 7.2, a 14 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 42.6714793,
+			"lon": -1.8180494,
+			"km": 0,
+			"dist_m": 8
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 42.6705733,
+			"lon": -1.8172294,
+			"km": 0.1,
+			"dist_m": 10
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 42.6754862,
+			"lon": -1.821135,
+			"km": 7.2,
+			"dist_m": 14
+		}
+	],
+	"pois": [
+		{
+			"name": "Casa del Vínculo",
+			"type": "patrimonio",
+			"lat": 42.6714081,
+			"lon": -1.8180952,
+			"km": 0,
+			"dist_m": 12
+		},
+		{
+			"name": "Puente Románico",
+			"type": "mirador",
+			"lat": 42.6710812,
+			"lon": -1.8188847,
+			"km": 0,
+			"dist_m": 84
+		},
+		{
+			"name": "Fuerte Carlista Infanta Isabel",
+			"type": "patrimonio",
+			"lat": 42.6658093,
+			"lon": -1.7997133,
+			"km": 3.6,
+			"dist_m": 17
+		},
+		{
+			"name": "Argurutz",
+			"type": "cumbre",
+			"lat": 42.6657423,
+			"lon": -1.8000123,
+			"km": 3.6,
+			"dist_m": 36
+		},
+		{
+			"name": "Arnotegi",
+			"type": "cumbre",
+			"lat": 42.6681817,
+			"lon": -1.7959421,
+			"km": 3.9,
+			"dist_m": 131
+		}
+	],
+	"shade_ratio": 0.19,
+	"alternatives": [
+		"na-pr-na-205"
+	],
+	"enriched_at": "2026-06-30T14:53:50.981Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

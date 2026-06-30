@@ -1,0 +1,22 @@
+{
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Monumento a la Almadia",
+			"type": "patrimonio",
+			"lat": 42.7180925,
+			"lon": -1.0048569,
+			"km": 0,
+			"dist_m": 7
+		}
+	],
+	"shade_ratio": 0.8,
+	"alternatives": [
+		"na-gr-321",
+		"na-sl-na-72",
+		"na-sl-na-73"
+	],
+	"enriched_at": "2026-06-30T14:56:19.032Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

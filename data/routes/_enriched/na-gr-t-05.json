@@ -1,27 +1,4 @@
 {
-	"id": "na-gr-t-05",
-	"name": "GR T 05 - Kulunka Bidea",
-	"type": "GR",
-	"status": "homologado",
-	"status_detail": null,
-	"municipality": null,
-	"zone": null,
-	"aemet_municipio": null,
-	"start": {
-		"lat": 43.144866600005095,
-		"lon": -1.5161660999989657,
-		"name": null
-	},
-	"end": {
-		"lat": 43.14486857504159,
-		"lon": -1.5161774028082633
-	},
-	"distance_km": 68.2,
-	"ascent_m": null,
-	"descent_m": null,
-	"circular": null,
-	"difficulty_mide": null,
-	"est_duration_min": null,
 	"water_points": [
 		"Fuente (km 0.4, a 2 m del track; OSM, no verificado en campo)",
 		"Manantial \"Urruskako  iturria\" (km 8.7, a 23 m del track; OSM, no verificado en campo)",
@@ -771,59 +748,10 @@
 			"dist_m": 20
 		}
 	],
-	"escape_routes": [],
-	"highlights": [],
-	"best_season": [],
-	"best_start_time": null,
 	"shade_ratio": 0.06,
-	"gpx": "na-gr-t-05.gpx",
-	"links": {
-		"femecv": null,
-		"wikiloc": null
-	},
 	"alternatives": [
 		"na-gr-11"
 	],
-	"notes_rain": null,
-	"bbox": [
-		-1.5161774028082633,
-		43.090898254891286,
-		-1.340168699998211,
-		43.265386200005175
-	],
-	"sources": [
-		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) https://misendafedme.es/buscador-de-senderos/gr/gr-t-05-kulunka-bidea (consulta 2026-06-30)",
-		"Geometría oficial: IDENA WFS capa DOTACI_Lin_GRT5 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
-		"Estado: presencia en la fuente oficial de la federación ≈ en vigor",
-		"OSM Overpass (enrich 2026-06-30): fuentes de agua, POIs y sombra estimada — no verificado en campo"
-	],
-	"federacion": "FNDME",
-	"comunidad": "Comunidad Foral de Navarra",
-	"capabilities": {
-		"estado": true,
-		"mide": false,
-		"agua": false,
-		"etapas": true,
-		"descripcion": false,
-		"fauna": false,
-		"escapes": false
-	},
-	"etapas_meta": [
-		{
-			"order": 1,
-			"name": "GR T 05. Etapa 1 - Elizondo - Elizondo"
-		},
-		{
-			"order": 2,
-			"name": "GR T 05. Etapa 2 - Elizondo - Buztanzelaiko Lepoa"
-		},
-		{
-			"order": 3,
-			"name": "GR T 05. Etapa 3 - Izpegi- Bidarraya"
-		},
-		{
-			"order": 4,
-			"name": "GR T 05. Etapa 4 - Izpegi - Bidarray"
-		}
-	]
+	"enriched_at": "2026-06-30T14:47:38.434Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

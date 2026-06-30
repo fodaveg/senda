@@ -12,13 +12,16 @@
  * Uso: `npm run ingest:navarra [-- --limit N]`
  */
 
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync, readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { z } from 'zod';
 import type { FeatureCollection } from 'geojson';
 import { routeSchema } from '../../../src/lib/data/schema';
+import { enrichedSchema } from '../schema';
+import type { Route } from '../../../src/lib/types';
 import {
+	applyEnrichment,
 	buildRoute,
 	geojsonToSegments,
 	groupSenderos,
@@ -33,10 +36,41 @@ const MISENDA = 'https://misendafedme.es/buscador-de-senderos';
 const IDENA = 'https://idena.navarra.es/ogc/wfs';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const ROUTES_DIR = join(ROOT, 'data/routes');
+const ENRICHED_DIR = join(ROOT, 'data/routes/_enriched');
 const GPX_DIR = join(ROOT, 'data/gpx');
 const REPORT = join(ROOT, 'scripts/ingest/navarra/navarra-report.json');
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Fusiona `_enriched/na-*.json` (escrito por `ingest:enrich`) en las rutas de
+ * Navarra ya existentes. Las `na-*` no pasan por la build normal (no tienen
+ * `_crawled`), así que este paso hace el merge equivalente, idempotente.
+ */
+function mergeEnriched(): void {
+	const ids = readdirSync(ROUTES_DIR)
+		.filter((f) => f.startsWith('na-') && f.endsWith('.json'))
+		.map((f) => f.replace(/\.json$/, ''));
+	let merged = 0;
+	for (const id of ids) {
+		const enrPath = join(ENRICHED_DIR, `${id}.json`);
+		if (!existsSync(enrPath)) continue;
+		const enriched = enrichedSchema.parse(JSON.parse(readFileSync(enrPath, 'utf8')));
+		const route = JSON.parse(readFileSync(join(ROUTES_DIR, `${id}.json`), 'utf8')) as Route;
+		const next = applyEnrichment(route, enriched);
+		const parsed = routeSchema.safeParse(next);
+		if (!parsed.success) {
+			console.log(`✗ ${id}: enriquecido no valida: ${z.prettifyError(parsed.error)}`);
+			continue;
+		}
+		writeFileSync(join(ROUTES_DIR, `${id}.json`), JSON.stringify(next, null, '\t') + '\n');
+		const w = next.water_points_geo.length;
+		const p = next.pois.length;
+		console.log(`✓ ${id}: ${w} fuentes, ${p} POIs`);
+		merged++;
+	}
+	console.log(`\nMerge enriquecido: ${merged}/${ids.length} rutas de Navarra.`);
+}
 
 async function fetchCatalog(): Promise<MapaEtapa[]> {
 	const res = await fetch(`${MISENDA}/inc/buscar_etapas_mapa.php`, {
@@ -87,6 +121,12 @@ async function ingestSendero(
 }
 
 async function main() {
+	// Modo merge: integra el enriquecimiento OSM ya generado, sin tocar la red.
+	if (process.argv.includes('--merge-enriched')) {
+		mergeEnriched();
+		return;
+	}
+
 	const limitArg = process.argv.indexOf('--limit');
 	const limit = limitArg >= 0 ? Number(process.argv[limitArg + 1]) : Infinity;
 	const date = new Date().toISOString().slice(0, 10);

@@ -1,0 +1,45 @@
+{
+	"water_points": [
+		"Fuente (km 0.2, a 46 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 43.2818217,
+			"lon": -1.6808812,
+			"km": 0.2,
+			"dist_m": 46
+		}
+	],
+	"pois": [
+		{
+			"name": "Bera 1 Bunkerra",
+			"type": "patrimonio",
+			"lat": 43.292246,
+			"lon": -1.6937238,
+			"km": 2.4,
+			"dist_m": 32
+		},
+		{
+			"name": "Posta",
+			"type": "cumbre",
+			"lat": 43.2920545,
+			"lon": -1.6931438,
+			"km": 2.4,
+			"dist_m": 73
+		},
+		{
+			"name": "Bera 2 Bunkerra",
+			"type": "patrimonio",
+			"lat": 43.2949985,
+			"lon": -1.694381,
+			"km": 2.7,
+			"dist_m": 25
+		}
+	],
+	"shade_ratio": 0.09,
+	"alternatives": [],
+	"enriched_at": "2026-06-30T14:59:04.733Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

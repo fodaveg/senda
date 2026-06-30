@@ -22,14 +22,50 @@
 	"circular": null,
 	"difficulty_mide": null,
 	"est_duration_min": null,
-	"water_points": [],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points": [
+		"Manantial \"Fuente de la Teja\" (km 8.7, a 21 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Teja",
+			"kind": "manantial",
+			"lat": 42.6618581,
+			"lon": -1.5432074,
+			"km": 8.7,
+			"dist_m": 21
+		}
+	],
+	"pois": [
+		{
+			"name": "Alto de las Saleras",
+			"type": "cumbre",
+			"lat": 42.6544626,
+			"lon": -1.539461,
+			"km": 5.4,
+			"dist_m": 32
+		},
+		{
+			"name": "panel tematico",
+			"type": "mirador",
+			"lat": 42.6642805,
+			"lon": -1.5488469,
+			"km": 9.4,
+			"dist_m": 5
+		},
+		{
+			"name": "Monte de Arriba",
+			"type": "cumbre",
+			"lat": 42.663752,
+			"lon": -1.549458,
+			"km": 9.5,
+			"dist_m": 4
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.14,
 	"gpx": "na-pr-na-194.gpx",
 	"links": {
 		"femecv": null,
@@ -46,7 +82,8 @@
 	"sources": [
 		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) (consulta 2026-06-30)",
 		"Geometría oficial: IDENA WFS capa DOTACI_Lin_PRNA194 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
-		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor",
+		"OSM Overpass (enrich 2026-06-30): fuentes de agua, POIs y sombra estimada — no verificado en campo"
 	],
 	"federacion": "FNDME",
 	"comunidad": "Comunidad Foral de Navarra",

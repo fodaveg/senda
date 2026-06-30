@@ -1,27 +1,4 @@
 {
-	"id": "na-gr-t-10",
-	"name": "GR T 10 - Larrau /Tunel del Ori - Paso de las Alforjas",
-	"type": "GR",
-	"status": "homologado",
-	"status_detail": null,
-	"municipality": null,
-	"zone": null,
-	"aemet_municipio": null,
-	"start": {
-		"lat": 42.95725610107186,
-		"lon": -1.1022155731916463,
-		"name": null
-	},
-	"end": {
-		"lat": 42.971736760809975,
-		"lon": -1.0034954454750262
-	},
-	"distance_km": 10.4,
-	"ascent_m": null,
-	"descent_m": null,
-	"circular": null,
-	"difficulty_mide": null,
-	"est_duration_min": null,
 	"water_points": [],
 	"water_points_geo": [],
 	"pois": [
@@ -114,42 +91,11 @@
 			"dist_m": 79
 		}
 	],
-	"escape_routes": [],
-	"highlights": [],
-	"best_season": [],
-	"best_start_time": null,
 	"shade_ratio": 0,
-	"gpx": "na-gr-t-10.gpx",
-	"links": {
-		"femecv": null,
-		"wikiloc": null
-	},
 	"alternatives": [
 		"na-gr-t-09",
 		"na-gr-t-08"
 	],
-	"notes_rain": null,
-	"bbox": [
-		-1.1022155731916463,
-		42.95130008831618,
-		-1.0034954454750262,
-		42.971736760809975
-	],
-	"sources": [
-		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) https://misendafedme.es/buscador-de-senderos/gr/gr-t-10-larrau-tunel-del-ori-paso-de-las-alforjas (consulta 2026-06-30)",
-		"Geometría oficial: IDENA WFS capa DOTACI_Lin_GRT10 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
-		"Estado: presencia en la fuente oficial de la federación ≈ en vigor",
-		"OSM Overpass (enrich 2026-06-30): fuentes de agua, POIs y sombra estimada — no verificado en campo"
-	],
-	"federacion": "FNDME",
-	"comunidad": "Comunidad Foral de Navarra",
-	"capabilities": {
-		"estado": true,
-		"mide": false,
-		"agua": false,
-		"etapas": true,
-		"descripcion": false,
-		"fauna": false,
-		"escapes": false
-	}
+	"enriched_at": "2026-06-30T14:49:24.981Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

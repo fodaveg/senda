@@ -1,27 +1,4 @@
 {
-	"id": "na-gr-321",
-	"name": "GR 321 - Camino Real",
-	"type": "GR",
-	"status": "homologado",
-	"status_detail": null,
-	"municipality": null,
-	"zone": null,
-	"aemet_municipio": null,
-	"start": {
-		"lat": 42.718349983915665,
-		"lon": -1.004449976607633,
-		"name": null
-	},
-	"end": {
-		"lat": 42.93566800653932,
-		"lon": -0.8806149847805095
-	},
-	"distance_km": 98.6,
-	"ascent_m": null,
-	"descent_m": null,
-	"circular": null,
-	"difficulty_mide": null,
-	"est_duration_min": null,
 	"water_points": [
 		"Fuente (km 0.5, a 11 m del track; OSM, no verificado en campo)",
 		"Fuente (km 12.9, a 69 m del track; OSM, no verificado en campo)",
@@ -331,53 +308,12 @@
 			"dist_m": 48
 		}
 	],
-	"escape_routes": [],
-	"highlights": [],
-	"best_season": [],
-	"best_start_time": null,
 	"shade_ratio": 0.48,
-	"gpx": "na-gr-321.gpx",
-	"links": {
-		"femecv": null,
-		"wikiloc": null
-	},
 	"alternatives": [
 		"na-sl-na-78",
 		"na-sl-na-72",
 		"na-sl-na-73"
 	],
-	"notes_rain": null,
-	"bbox": [
-		-1.0148899722839573,
-		42.718349983915665,
-		-0.8287099655718113,
-		42.95178003609184
-	],
-	"sources": [
-		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) https://misendafedme.es/buscador-de-senderos/gr/gr-321-camino-real (consulta 2026-06-30)",
-		"Geometría oficial: IDENA WFS capa DOTACI_Lin_GR321 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
-		"Estado: presencia en la fuente oficial de la federación ≈ en vigor",
-		"OSM Overpass (enrich 2026-06-30): fuentes de agua, POIs y sombra estimada — no verificado en campo"
-	],
-	"federacion": "FNDME",
-	"comunidad": "Comunidad Foral de Navarra",
-	"capabilities": {
-		"estado": true,
-		"mide": false,
-		"agua": false,
-		"etapas": true,
-		"descripcion": false,
-		"fauna": false,
-		"escapes": false
-	},
-	"etapas_meta": [
-		{
-			"order": 1,
-			"name": "GR 321. Etapa 1 - Burgui - Isaba"
-		},
-		{
-			"order": 2,
-			"name": "GR 321. Etapa 2 - Isaba - Arrakogoiti"
-		}
-	]
+	"enriched_at": "2026-06-30T14:46:37.221Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
 }

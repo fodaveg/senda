@@ -1,0 +1,22 @@
+{
+	"water_points": [],
+	"water_points_geo": [],
+	"pois": [
+		{
+			"name": "Mausoleo de Julián Gayarre",
+			"type": "patrimonio",
+			"lat": 42.8020534,
+			"lon": -0.9600839,
+			"km": 3.4,
+			"dist_m": 18
+		}
+	],
+	"shade_ratio": 0.1,
+	"alternatives": [
+		"na-sl-na-76",
+		"na-sl-na-74",
+		"na-sl-na-72"
+	],
+	"enriched_at": "2026-06-30T14:54:35.442Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

@@ -1,0 +1,45 @@
+{
+	"water_points": [
+		"Manantial \"Fuente de la Teja\" (km 8.7, a 21 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": "Fuente de la Teja",
+			"kind": "manantial",
+			"lat": 42.6618581,
+			"lon": -1.5432074,
+			"km": 8.7,
+			"dist_m": 21
+		}
+	],
+	"pois": [
+		{
+			"name": "Alto de las Saleras",
+			"type": "cumbre",
+			"lat": 42.6544626,
+			"lon": -1.539461,
+			"km": 5.4,
+			"dist_m": 32
+		},
+		{
+			"name": "panel tematico",
+			"type": "mirador",
+			"lat": 42.6642805,
+			"lon": -1.5488469,
+			"km": 9.4,
+			"dist_m": 5
+		},
+		{
+			"name": "Monte de Arriba",
+			"type": "cumbre",
+			"lat": 42.663752,
+			"lon": -1.549458,
+			"km": 9.5,
+			"dist_m": 4
+		}
+	],
+	"shade_ratio": 0.14,
+	"alternatives": [],
+	"enriched_at": "2026-06-30T14:50:15.716Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

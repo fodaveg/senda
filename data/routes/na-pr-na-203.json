@@ -24,18 +24,39 @@
 	"est_duration_min": null,
 	"water_points": [],
 	"water_points_geo": [],
-	"pois": [],
+	"pois": [
+		{
+			"name": "Zemeto",
+			"type": "cumbre",
+			"lat": 42.9408499,
+			"lon": -0.8311975,
+			"km": 9,
+			"dist_m": 66
+		},
+		{
+			"name": "Mirador de Zemeto",
+			"type": "mirador",
+			"lat": 42.9392951,
+			"lon": -0.8345282,
+			"km": 9.5,
+			"dist_m": 73
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.78,
 	"gpx": "na-pr-na-203.gpx",
 	"links": {
 		"femecv": null,
 		"wikiloc": null
 	},
-	"alternatives": [],
+	"alternatives": [
+		"na-sl-na-81",
+		"na-sl-na-82",
+		"na-sl-na-80"
+	],
 	"notes_rain": null,
 	"bbox": [
 		-0.8427449595183074,
@@ -46,7 +67,8 @@
 	"sources": [
 		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) (consulta 2026-06-30)",
 		"Geometría oficial: IDENA WFS capa DOTACI_Lin_PRNA203 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
-		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor",
+		"OSM Overpass (enrich 2026-06-30): fuentes de agua, POIs y sombra estimada — no verificado en campo"
 	],
 	"federacion": "FNDME",
 	"comunidad": "Comunidad Foral de Navarra",

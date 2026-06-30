@@ -1,0 +1,56 @@
+{
+	"water_points": [
+		"Fuente (km 0.1, a 11 m del track; OSM, no verificado en campo)",
+		"Fuente (km 11.1, a 4 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 42.6705733,
+			"lon": -1.8172294,
+			"km": 0.1,
+			"dist_m": 11
+		},
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 42.6714793,
+			"lon": -1.8180494,
+			"km": 11.1,
+			"dist_m": 4
+		}
+	],
+	"pois": [
+		{
+			"name": "Portal de Suso",
+			"type": "patrimonio",
+			"lat": 42.6724408,
+			"lon": -1.8128773,
+			"km": 10.7,
+			"dist_m": 10
+		},
+		{
+			"name": "Casa del Vínculo",
+			"type": "patrimonio",
+			"lat": 42.6714081,
+			"lon": -1.8180952,
+			"km": 11.1,
+			"dist_m": 8
+		},
+		{
+			"name": "Puente Románico",
+			"type": "mirador",
+			"lat": 42.6710812,
+			"lon": -1.8188847,
+			"km": 11.1,
+			"dist_m": 82
+		}
+	],
+	"shade_ratio": 0.33,
+	"alternatives": [
+		"na-sl-na-316"
+	],
+	"enriched_at": "2026-06-30T14:51:52.160Z",
+	"method": "OSM Overpass: fuentes/manantiales a ≤100 m del track (con coordenadas); POIs (mirador/cumbre/patrimonio/refugio) a ≤150 m; sombra = % de puntos del track bajo polígonos natural=wood/landuse=forest (estimación a la baja, multipolígonos omitidos)"
+}

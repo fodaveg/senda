@@ -22,14 +22,50 @@
 	"circular": null,
 	"difficulty_mide": null,
 	"est_duration_min": null,
-	"water_points": [],
-	"water_points_geo": [],
-	"pois": [],
+	"water_points": [
+		"Fuente (km 0.2, a 46 m del track; OSM, no verificado en campo)"
+	],
+	"water_points_geo": [
+		{
+			"name": null,
+			"kind": "fuente",
+			"lat": 43.2818217,
+			"lon": -1.6808812,
+			"km": 0.2,
+			"dist_m": 46
+		}
+	],
+	"pois": [
+		{
+			"name": "Bera 1 Bunkerra",
+			"type": "patrimonio",
+			"lat": 43.292246,
+			"lon": -1.6937238,
+			"km": 2.4,
+			"dist_m": 32
+		},
+		{
+			"name": "Posta",
+			"type": "cumbre",
+			"lat": 43.2920545,
+			"lon": -1.6931438,
+			"km": 2.4,
+			"dist_m": 73
+		},
+		{
+			"name": "Bera 2 Bunkerra",
+			"type": "patrimonio",
+			"lat": 43.2949985,
+			"lon": -1.694381,
+			"km": 2.7,
+			"dist_m": 25
+		}
+	],
 	"escape_routes": [],
 	"highlights": [],
 	"best_season": [],
 	"best_start_time": null,
-	"shade_ratio": null,
+	"shade_ratio": 0.09,
 	"gpx": "na-gr-t-03.gpx",
 	"links": {
 		"femecv": null,
@@ -46,7 +82,8 @@
 	"sources": [
 		"Existencia, estado, nombre y etapas: MiSendaFEDME (FNDME, ccaa=nc) https://misendafedme.es/buscador-de-senderos/gr/gr-t-03-bera-gr-11-ibardin-gr-10 (consulta 2026-06-30)",
 		"Geometría oficial: IDENA WFS capa DOTACI_Lin_GRT3 (Gobierno de Navarra, CC-BY 4.0; reproyectada EPSG:25830→WGS84)",
-		"Estado: presencia en la fuente oficial de la federación ≈ en vigor"
+		"Estado: presencia en la fuente oficial de la federación ≈ en vigor",
+		"OSM Overpass (enrich 2026-06-30): fuentes de agua, POIs y sombra estimada — no verificado en campo"
 	],
 	"federacion": "FNDME",
 	"comunidad": "Comunidad Foral de Navarra",

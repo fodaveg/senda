@@ -18,6 +18,7 @@
 import proj4 from 'proj4';
 import type { FeatureCollection } from 'geojson';
 import type { Route, RouteStage, RouteType } from '../../../src/lib/types';
+import type { EnrichedData } from '../schema';
 import { FEDERATIONS } from '../../../src/lib/data/federation';
 import { haversineMeters } from '../../../src/lib/geo/distance';
 
@@ -258,5 +259,28 @@ export function buildRoute(sendero: Sendero, summary: TrackSummary, consultaDate
 		comunidad: FNDME.comunidad,
 		capabilities: FNDME.capabilities,
 		etapas_meta: sendero.etapas.length > 1 ? sendero.etapas : undefined
+	};
+}
+
+/**
+ * Fusiona el enriquecimiento de OSM (agua/POIs/sombra/alternativas) en una ruta
+ * de Navarra ya construida. Puro e idempotente: no duplica la línea de fuente OSM
+ * si ya está. Los POIs/agua de OSM son un overlay (no son dato oficial FNDME):
+ * se citan como "OSM, no verificado en campo".
+ */
+export function applyEnrichment(route: Route, enriched: EnrichedData): Route {
+	const osmDate = enriched.enriched_at.slice(0, 10);
+	const osmSource = `OSM Overpass (enrich ${osmDate}): fuentes de agua, POIs y sombra estimada — no verificado en campo`;
+	const sources = route.sources.some((s) => s.startsWith('OSM Overpass'))
+		? route.sources
+		: [...route.sources, osmSource];
+	return {
+		...route,
+		water_points: enriched.water_points,
+		water_points_geo: enriched.water_points_geo,
+		pois: enriched.pois,
+		shade_ratio: enriched.shade_ratio,
+		alternatives: enriched.alternatives,
+		sources
 	};
 }
