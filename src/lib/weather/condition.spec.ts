@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { glanceCondition } from './condition';
+import { glanceCondition, precipIcon } from './condition';
 import type { WeatherDay } from '$lib/types';
 
 /** Día mínimo: glanceCondition solo lee precipitation_probability_max. */
@@ -45,5 +45,22 @@ describe('glanceCondition', () => {
 		expect(glanceCondition(dayWithRain(30)).icon).toBe('🌤️');
 		expect(glanceCondition(dayWithRain(50)).icon).toBe('🌦️');
 		expect(glanceCondition(dayWithRain(80)).icon).toBe('🌧️');
+	});
+});
+
+describe('precipIcon', () => {
+	it('mapea la probabilidad de lluvia a icono por tramos', () => {
+		expect(precipIcon(0)).toBe('☀️');
+		expect(precipIcon(19)).toBe('☀️');
+		expect(precipIcon(20)).toBe('🌤️');
+		expect(precipIcon(44)).toBe('🌤️');
+		expect(precipIcon(45)).toBe('🌦️');
+		expect(precipIcon(69)).toBe('🌦️');
+		expect(precipIcon(70)).toBe('🌧️');
+		expect(precipIcon(100)).toBe('🌧️');
+	});
+
+	it('coincide con el icono de glanceCondition', () => {
+		expect(glanceCondition(dayWithRain(55)).icon).toBe(precipIcon(55));
 	});
 });
