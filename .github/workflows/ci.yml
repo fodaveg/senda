@@ -6,6 +6,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch: # permite relanzar el deploy a mano desde la pestaña Actions
 
 # Por defecto solo lectura; el job de deploy eleva sus propios permisos.
 permissions:
