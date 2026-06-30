@@ -63,7 +63,9 @@ test('la ventana ideal de inicio aparece con el pronóstico del día', async ({ 
 	await page.goto('/ruta/pr-cv-77');
 
 	// pr-cv-77: 2 h 10 min (MIDE) → cabe de sobra; la franja viene de la luz.
-	await expect(page.getByText(/Sal entre las/)).toBeVisible();
+	// El widget v6 muestra la franja como rango horario + barra; la razón de luz
+	// se mantiene en el detalle.
+	await expect(page.getByText('para terminar con margen de luz')).toBeVisible();
 	await expect(page.getByText(/terminas antes del anochecer/)).toBeVisible();
 });
 

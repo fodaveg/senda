@@ -738,7 +738,7 @@
 
 					<div class="card">
 						<h3 class="card-title">Mejor momento para empezar</h3>
-						<StartWindowCard {window} manualHint={route.best_start_time} />
+						<StartWindowCard {window} day={selectedDay} manualHint={route.best_start_time} />
 					</div>
 
 					<div class="card">
@@ -886,42 +886,52 @@
 				</div>
 			</div>
 
-			<!-- Comunidad: función futura, sin dato real (no proviene de FEMECV). -->
-			<div class="community-strip">
-				<span class="cs-tag">Comunidad — sin verificar</span>
-				<span class="cs-text">
-					Partes de estado de otros senderistas —
-					<button type="button" class="link-btn" onclick={() => goToSection('comunidad')}
-						>función futura</button
-					>, aún sin reportes reales.
-				</span>
+			<div class="resumen-extra">
+				{#if parent}
+					<p class="parent-of">
+						Esta ruta es una etapa de
+						<a href={resolve('/ruta/[id]', { id: parent.id })}>{parent.name}</a>.
+					</p>
+				{/if}
+
+				<!-- MIDE en caja de widget (handoff: cuatro valores Medio/Itinerario/
+				     Desplazamiento/Esfuerzo). -->
+				{#if !caps.mide}
+					<div class="card">
+						<h3 class="card-title">MIDE</h3>
+						<FeatureGuard federacion={fedLabel} feature="la valoración MIDE" />
+					</div>
+				{:else if route.difficulty_mide}
+					<div class="card">
+						<h3 class="card-title">MIDE</h3>
+						<ul class="mide">
+							{#each Object.entries(route.difficulty_mide) as [key, value] (key)}
+								<li><span>{MIDE_LABELS[key] ?? key}</span><strong>{value}</strong></li>
+							{/each}
+						</ul>
+					</div>
+				{/if}
+
+				{#if route.highlights.length > 0}
+					<div class="card">
+						<h3 class="card-title">Puntos destacados</h3>
+						<ul class="highlights">
+							{#each route.highlights as highlight (highlight)}<li>{highlight}</li>{/each}
+						</ul>
+					</div>
+				{/if}
+
+				<!-- Comunidad al final: función futura, sin dato real (no FEMECV). -->
+				<div class="community-strip">
+					<span class="cs-tag">Comunidad — sin verificar</span>
+					<span class="cs-text">
+						Partes de estado de otros senderistas —
+						<button type="button" class="link-btn" onclick={() => goToSection('comunidad')}
+							>función futura</button
+						>, aún sin reportes reales.
+					</span>
+				</div>
 			</div>
-
-			{#if parent}
-				<p class="parent-of">
-					Esta ruta es una etapa de
-					<a href={resolve('/ruta/[id]', { id: parent.id })}>{parent.name}</a>.
-				</p>
-			{/if}
-
-			{#if !caps.mide}
-				<h3>MIDE</h3>
-				<FeatureGuard federacion={fedLabel} feature="la valoración MIDE" />
-			{:else if route.difficulty_mide}
-				<h3>MIDE</h3>
-				<ul class="mide">
-					{#each Object.entries(route.difficulty_mide) as [key, value] (key)}
-						<li><span>{MIDE_LABELS[key] ?? key}</span><strong>{value}</strong></li>
-					{/each}
-				</ul>
-			{/if}
-
-			{#if route.highlights.length > 0}
-				<h3>Puntos destacados</h3>
-				<ul>
-					{#each route.highlights as highlight (highlight)}<li>{highlight}</li>{/each}
-				</ul>
-			{/if}
 		</section>
 
 		<!-- ── Mapa y perfil ───────────────────────────────────────────────── -->
@@ -2079,8 +2089,21 @@
 		cursor: pointer;
 	}
 	/* Tira de comunidad (función futura, sin dato real). */
-	.community-strip {
+	/* Cola del Resumen (parent, MIDE en caja, destacados, comunidad al final). */
+	.resumen-extra {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
 		margin-top: var(--space-4);
+	}
+	.resumen-extra .parent-of {
+		margin: 0;
+	}
+	.highlights {
+		margin: var(--space-2) 0 0;
+		padding-left: 1.2rem;
+	}
+	.community-strip {
 		display: flex;
 		gap: var(--space-3);
 		align-items: center;
