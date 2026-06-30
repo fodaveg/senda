@@ -31,6 +31,7 @@ export type RouteSummary = Pick<
 	| 'shade_ratio'
 	| 'highlights'
 	| 'bbox'
+	| 'federacion'
 >;
 
 /** Deriva el resumen ligero de una ruta completa (puro). */
@@ -52,6 +53,9 @@ export function toRouteSummary(route: Route): RouteSummary {
 		water_points_geo: route.water_points_geo,
 		shade_ratio: route.shade_ratio,
 		highlights: route.highlights,
-		bbox: route.bbox
+		bbox: route.bbox,
+		// Fuente/federación para la atribución por fila (handoff v6). Cadena mínima;
+		// el catálogo CV actual no la trae y se etiqueta como FEMECV al presentar.
+		federacion: route.federacion
 	};
 }

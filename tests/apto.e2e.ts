@@ -5,6 +5,8 @@ test('el filtro "Con agua" reduce el listado', async ({ page }) => {
 	await page.goto('/');
 	await page.locator('body[data-hydrated]').waitFor();
 	const total = await page.locator('.route-list li').count();
+	// El panel "Más filtros" arranca colapsado (variante A del handoff v6).
+	await page.getByRole('button', { name: /Más filtros/ }).click();
 	await page.getByText('Con agua', { exact: true }).click();
 	await expect(page.getByText(/de \d+ rutas/)).toBeVisible();
 	const filtered = await page.locator('.route-list li').count();

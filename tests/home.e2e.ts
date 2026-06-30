@@ -14,6 +14,8 @@ test('los filtros reducen el listado', async ({ page }) => {
 	await page.goto('/');
 	await page.locator('body[data-hydrated]').waitFor();
 	const total = await page.locator('.route-list li').count();
+	// El panel "Más filtros" arranca colapsado (variante A del handoff v6).
+	await page.getByRole('button', { name: /Más filtros/ }).click();
 	await page.getByLabel('Distancia máx.').selectOption('10');
 	await expect(page.getByText(/de \d+ rutas/)).toBeVisible();
 	const filtered = await page.locator('.route-list li').count();

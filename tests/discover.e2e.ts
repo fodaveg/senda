@@ -20,6 +20,8 @@ test('el filtro de estado muestra solo homologadas y el badge se ve', async ({ p
 		return Number(text.match(/^(\d+)/)?.[1] ?? '0');
 	};
 	const total = await countOf();
+	// El panel "Más filtros" arranca colapsado (variante A del handoff v6).
+	await page.getByRole('button', { name: /Más filtros/ }).click();
 	await page.getByLabel('Estado').selectOption('homologado');
 	const filtered = await countOf();
 	expect(filtered).toBeGreaterThan(0);
@@ -36,6 +38,23 @@ test('el dado abre una ruta del resultado filtrado', async ({ page }) => {
 	await expect(page).toHaveURL(/\/ruta\/[a-z0-9-]+/);
 	// "Datos clave" es la etiqueta de la tarjeta del Resumen (rediseño v6).
 	await expect(page.getByText('Datos clave', { exact: true })).toBeVisible();
+});
+
+test('el corazón de la fila marca la ruta como favorita (handoff v6)', async ({ page }) => {
+	await page.goto('/');
+	await page.locator('body[data-hydrated]').waitFor();
+	await page.getByLabel('Buscar rutas').fill('pr-cv 77 chulilla');
+	const fav = page
+		.locator('.route-list li')
+		.first()
+		.getByRole('button', { name: /favorita/i });
+	await fav.click();
+	await expect(fav).toHaveAttribute('aria-pressed', 'true');
+	// Persiste y el filtro de favoritas la encuentra.
+	await page.getByRole('button', { name: /Más filtros/ }).click();
+	await page.getByLabel('Marcas').selectOption('favorita');
+	await expect(page.locator('.route-list li')).toHaveCount(1);
+	await expect(page.getByText(/PR-CV 77/)).toBeVisible();
 });
 
 test('la ficha muestra el estado oficial y la nota de reservas', async ({ page }) => {

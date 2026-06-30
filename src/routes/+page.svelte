@@ -5,8 +5,15 @@
 	import Map from '$lib/components/LazyMap.svelte';
 	import StatusBadge from '$lib/components/StatusBadge.svelte';
 	import { Chip, TypeBadge } from '$lib/components/ui';
-	import { emptyUserData, isDone, type ToggleMark, type UserData } from '$lib/user/marks';
+	import {
+		emptyUserData,
+		isDone,
+		withToggledMark,
+		type ToggleMark,
+		type UserData
+	} from '$lib/user/marks';
 	import { getUserRepository } from '$lib/user/context';
+	import { routeSourceLabel } from '$lib/source';
 	import { applyFilters, EMPTY_FILTERS, type RouteFilters } from '$lib/filters';
 	import { loadDiscoverPrefs, saveDiscoverPrefs } from '$lib/discoverPrefs';
 	import { PROVINCES } from '$lib/geo/province';
@@ -30,9 +37,9 @@
 
 	let filters = $state<RouteFilters>({ ...EMPTY_FILTERS, types: [] });
 	let query = $state('');
-	// El panel "Más filtros" arranca abierto (variante A): los chips resumen lo
-	// activo y este panel da el control fino. Plegable para reducir ruido.
-	let showMoreFilters = $state(true);
+	// El panel "Más filtros" arranca colapsado (variante A del handoff): los chips
+	// resumen lo activo y el botón "Más filtros" despliega el control fino.
+	let showMoreFilters = $state(false);
 
 	// Marcas de usuario como filtro (SPECS_V2 §6/§8).
 	const repo = getUserRepository();
@@ -55,7 +62,13 @@
 		const prefs = { province: filters.province, zone: filters.zone };
 		if (prefsLoaded) saveDiscoverPrefs(prefs);
 	});
-	let sortBy = $state<'nombre' | 'cercania'>('nombre');
+	let sortBy = $state<'nombre' | 'cercania' | 'desnivel'>('nombre');
+
+	/** Alterna la marca "favorita" de una ruta desde el corazón de la fila. */
+	function toggleFavorite(id: string) {
+		userData = withToggledMark(userData, id, 'favorita');
+		repo.saveMarks(userData);
+	}
 	// Conmutador Lista ↔ Mapa (solo móvil): en escritorio se ven las dos columnas.
 	let mobileView = $state<'lista' | 'mapa'>('lista');
 
@@ -86,6 +99,10 @@
 					haversineMeters(o, [a.start.lon, a.start.lat]) -
 					haversineMeters(o, [b.start.lon, b.start.lat])
 			);
+		}
+		// Desnivel: mayor primero; las rutas sin dato de desnivel quedan al final.
+		if (sortBy === 'desnivel') {
+			return [...result].sort((a, b) => (b.ascent_m ?? -1) - (a.ascent_m ?? -1));
 		}
 		return result;
 	});
@@ -189,42 +206,58 @@
 
 <h1>Rutas</h1>
 
-<div class="search-row">
+<div class="controls">
 	<input
 		type="search"
 		class="search"
-		placeholder="Buscar por nombre, municipio o comarca…"
+		placeholder="Buscar ruta, cima, paraje o municipio…"
 		aria-label="Buscar rutas"
 		bind:value={query}
 	/>
+	<label class="sort">
+		<span class="sort-label">Ordenar</span>
+		<select bind:value={sortBy}>
+			<option value="nombre">Orden: nombre</option>
+			<option value="cercania" disabled={origin === null}>
+				Orden: cercanía{origin === null ? ' (configura origen)' : ''}
+			</option>
+			<option value="desnivel">Orden: desnivel</option>
+		</select>
+	</label>
+	<button
+		type="button"
+		class="random"
+		title="Abrir una ruta al azar del resultado actual"
+		aria-label="Ruta al azar"
+		disabled={filtered.length === 0}
+		onclick={openRandom}
+	>
+		⚄ Ruta al azar
+	</button>
+</div>
+
+<div class="summary-bar">
+	<p class="count">{filtered.length} de {routes.length} rutas</p>
+	<span class="bar-divider" aria-hidden="true"></span>
+	{#if activeChips.length > 0}
+		<div class="chips" aria-label="Filtros activos">
+			{#each activeChips as chip (chip.key)}
+				<Chip label={chip.label} onRemove={chip.remove}>{chip.label}</Chip>
+			{/each}
+		</div>
+	{/if}
 	<button
 		type="button"
 		class="more-toggle"
 		aria-expanded={showMoreFilters}
 		onclick={() => (showMoreFilters = !showMoreFilters)}
 	>
-		{showMoreFilters ? 'Menos filtros' : 'Más filtros'}
+		{showMoreFilters ? '− Menos filtros' : '＋ Más filtros'}
 	</button>
-	<button
-		type="button"
-		class="dice"
-		title="Abrir una ruta al azar del resultado actual"
-		aria-label="Ruta al azar"
-		disabled={filtered.length === 0}
-		onclick={openRandom}
-	>
-		🎲
-	</button>
+	{#if activeChips.length > 0}
+		<button type="button" class="clear-all" onclick={clearAllFilters}>Limpiar</button>
+	{/if}
 </div>
-
-{#if activeChips.length > 0}
-	<div class="chips" aria-label="Filtros activos">
-		{#each activeChips as chip (chip.key)}
-			<Chip label={chip.label} onRemove={chip.remove}>{chip.label}</Chip>
-		{/each}
-		<button type="button" class="clear-all" onclick={clearAllFilters}>Limpiar todo</button>
-	</div>
-{/if}
 
 {#if showMoreFilters}
 	<fieldset class="filters">
@@ -278,15 +311,6 @@
 			</select>
 		</label>
 		<label>
-			Ordenar
-			<select bind:value={sortBy}>
-				<option value="nombre">por nombre</option>
-				<option value="cercania" disabled={origin === null}>
-					por cercanía{origin === null ? ' (configura origen)' : ' (línea recta)'}
-				</option>
-			</select>
-		</label>
-		<label>
 			Marcas
 			<select bind:value={markFilter}>
 				<option value={null}>—</option>
@@ -332,8 +356,6 @@
 
 <div class="discover" data-view={mobileView}>
 	<div class="results-col">
-		<p class="count">{filtered.length} de {routes.length} rutas</p>
-
 		{#if filtered.length === 0}
 			<div class="empty">
 				<p class="empty-title">Sin resultados</p>
@@ -343,22 +365,43 @@
 		{:else}
 			<ul class="route-list">
 				{#each filtered as route (route.id)}
-					<li>
-						<a href={resolve('/ruta/[id]', { id: route.id })}>
-							<span class="row-top">
-								<TypeBadge type={route.type} />
-								<strong class="row-name">{route.name}</strong>
-								<StatusBadge status={route.status} detail={route.status_detail} />
+					{@const fav = Boolean(userData.marks[route.id]?.favorita)}
+					<li class="route-row">
+						<a class="row-link" href={resolve('/ruta/[id]', { id: route.id })}>
+							<span class="row-thumb" aria-hidden="true"></span>
+							<span class="row-body">
+								<span class="row-top">
+									<TypeBadge type={route.type} />
+									<strong class="row-name">{route.name}</strong>
+								</span>
+								<span class="meta">
+									<span><strong>{formatKm(route.distance_km)}</strong></span>
+									{#if route.ascent_m !== null}<span>+{formatMeters(route.ascent_m)}</span>{/if}
+									{#if route.est_duration_min !== null}<span
+											>{formatDuration(route.est_duration_min)}</span
+										>{/if}
+									{#if route.circular !== null}<span>{route.circular ? 'circular' : 'lineal'}</span
+										>{/if}
+									{#if route.municipality}<span>{route.municipality}</span>{/if}
+								</span>
+								<span class="source">Fuente: {routeSourceLabel(route)}</span>
 							</span>
-							<span class="meta">
-								{formatKm(route.distance_km)}
-								{#if route.ascent_m !== null}· +{formatMeters(route.ascent_m)}{/if}
-								{#if route.est_duration_min !== null}· {formatDuration(route.est_duration_min)}{/if}
-								{#if route.circular !== null}· {route.circular ? 'circular' : 'lineal'}{/if}
-								{#if route.municipality}· {route.municipality}{/if}
-							</span>
-							<span class="source">FEMECV · oficial</span>
 						</a>
+						<div class="row-aside">
+							<StatusBadge status={route.status} detail={route.status_detail} />
+							<button
+								type="button"
+								class="fav"
+								class:on={fav}
+								aria-pressed={fav}
+								aria-label={fav
+									? `Quitar ${route.name} de favoritas`
+									: `Marcar ${route.name} como favorita`}
+								onclick={() => toggleFavorite(route.id)}
+							>
+								{fav ? '♥' : '♡'}
+							</button>
+						</div>
 					</li>
 				{/each}
 			</ul>
@@ -408,13 +451,16 @@
 </div>
 
 <style>
-	.search-row {
+	/* Barra de controles: buscador (flexible) + orden + "Ruta al azar". */
+	.controls {
 		display: flex;
 		gap: var(--space-2);
+		align-items: center;
 		margin-bottom: var(--space-3);
 	}
 	.search {
 		flex: 1;
+		min-width: 12rem;
 		font: inherit;
 		font-size: var(--text-base);
 		padding: 0 var(--space-3);
@@ -423,15 +469,77 @@
 		border-radius: var(--radius-md);
 		background: var(--surface);
 		color: var(--ink);
+		box-shadow: var(--shadow-sm);
 	}
-	.more-toggle {
+	.sort .sort-label {
+		/* Etiqueta accesible sin ocupar espacio (el propio <option> ya dice "Orden:…"). */
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+	.sort select {
 		font: inherit;
 		font-size: var(--text-sm);
 		font-weight: 600;
-		padding: 0 var(--space-3);
 		min-height: var(--touch-min);
+		padding: 0 var(--space-3);
 		border: 1px solid var(--border);
 		border-radius: var(--radius-md);
+		background: var(--surface);
+		color: var(--ink);
+		cursor: pointer;
+		box-shadow: var(--shadow-sm);
+	}
+	.random {
+		font: inherit;
+		font-size: var(--text-sm);
+		font-weight: 700;
+		white-space: nowrap;
+		padding: 0 var(--space-4);
+		min-height: var(--touch-min);
+		border: 1px solid transparent;
+		border-radius: var(--radius-md);
+		background: var(--brand);
+		color: var(--on-brand);
+		cursor: pointer;
+		box-shadow: var(--shadow-sm);
+	}
+	.random:hover:not(:disabled) {
+		box-shadow: var(--shadow-md);
+		transform: translateY(-1px);
+	}
+	.random:disabled {
+		opacity: 0.4;
+		cursor: default;
+	}
+
+	/* Barra-resumen: conteo + chips activos + "Más filtros" + "Limpiar". */
+	.summary-bar {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2);
+		margin-bottom: var(--space-3);
+	}
+	.bar-divider {
+		width: 1px;
+		height: 16px;
+		background: var(--border);
+	}
+	.more-toggle {
+		font: inherit;
+		font-size: var(--text-xs);
+		font-weight: 700;
+		padding: var(--space-1) var(--space-3);
+		min-height: 32px;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-pill);
 		background: var(--surface);
 		color: var(--ink);
 		cursor: pointer;
@@ -439,39 +547,25 @@
 	}
 	.more-toggle:hover {
 		border-color: var(--brand);
-	}
-	.dice {
-		font-size: 1.3rem;
-		padding: 0 var(--space-3);
-		min-height: var(--touch-min);
-		border: 1px solid var(--border);
-		border-radius: var(--radius-md);
-		background: var(--surface);
-		cursor: pointer;
-	}
-	.dice:disabled {
-		opacity: 0.4;
-		cursor: default;
-	}
-	.dice:hover:not(:disabled) {
-		border-color: var(--brand);
+		background: var(--brand-soft);
 	}
 	.chips {
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-2);
 		align-items: center;
-		margin-bottom: var(--space-3);
 	}
 	.clear-all {
 		font: inherit;
-		font-size: var(--text-sm);
+		font-size: var(--text-xs);
+		font-weight: 700;
 		background: none;
 		border: none;
-		color: var(--brand);
+		color: var(--muted);
 		text-decoration: underline;
 		cursor: pointer;
 		padding: var(--space-1) var(--space-2);
+		margin-left: auto;
 	}
 	.filters {
 		display: flex;
@@ -559,11 +653,11 @@
 			background: var(--brand);
 			color: var(--on-brand);
 		}
-		.search-row {
+		.controls {
 			flex-wrap: wrap;
 		}
-		.search {
-			min-width: 12rem;
+		.random {
+			flex: 1;
 		}
 		.discover {
 			grid-template-columns: 1fr;
@@ -644,9 +738,11 @@
 		color: var(--brand);
 	}
 	.count {
-		color: var(--muted);
+		color: var(--ink);
+		font-weight: 700;
 		font-size: var(--text-sm);
-		margin: 0 0 var(--space-3);
+		margin: 0;
+		white-space: nowrap;
 	}
 	.empty {
 		text-align: center;
@@ -671,43 +767,100 @@
 		display: grid;
 		gap: var(--space-2);
 	}
-	.route-list li {
+	/* Fila de ruta (handoff v6): miniatura + cuerpo + columna de estado/favorito. */
+	.route-row {
 		/* Virtualización por CSS (SPECS_V4 §B6): el navegador omite el render y el
 		   layout de las filas fuera de pantalla con ~600 rutas, pero el nodo sigue
 		   en el DOM (búsqueda, anclas y scroll funcionan igual). `contain-intrinsic-
 		   size` reserva la altura aproximada de cada fila para que la barra de
 		   scroll no salte. */
 		content-visibility: auto;
-		contain-intrinsic-size: auto 76px;
-	}
-	.route-list a {
-		display: grid;
-		gap: var(--space-1);
-		padding: var(--space-3) var(--space-4);
+		contain-intrinsic-size: auto 86px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		padding: var(--space-3);
 		border: 1px solid var(--border);
 		border-radius: var(--radius-md);
+		background: var(--surface);
+		transition:
+			border-color 0.14s,
+			box-shadow 0.14s;
+	}
+	.route-row:hover {
+		border-color: var(--brand);
+		box-shadow: var(--shadow-sm);
+	}
+	.row-link {
+		flex: 1;
+		min-width: 0;
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
 		text-decoration: none;
 		color: inherit;
-		background: var(--surface);
 	}
-	.route-list a:hover {
-		border-color: var(--brand);
+	.row-thumb {
+		width: 58px;
+		height: 58px;
+		flex: none;
+		border-radius: var(--radius-md);
+		/* Miniatura decorativa (no es dato): textura de mapa, como el handoff. La
+		   ficha no trae imagen de ruta, así que no se inventa ninguna. */
+		background: repeating-linear-gradient(135deg, var(--surface-alt) 0 8px, var(--border) 8px 9px);
+	}
+	.row-body {
+		flex: 1;
+		min-width: 0;
+		display: grid;
+		gap: var(--space-1);
 	}
 	.row-top {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: baseline;
+		align-items: center;
 		gap: var(--space-2);
 	}
 	.row-name {
 		font-family: var(--font-head);
+		font-size: var(--text-md, 1.05rem);
 	}
 	.meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-1) var(--space-3);
 		color: var(--muted);
 		font-size: var(--text-sm);
+	}
+	.meta strong {
+		color: var(--ink);
 	}
 	.source {
 		font-size: var(--text-xs);
 		color: var(--muted);
+	}
+	.row-aside {
+		flex: none;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: var(--space-2);
+	}
+	.fav {
+		border: none;
+		background: none;
+		color: var(--brand);
+		font-size: 1.35rem;
+		line-height: 1;
+		cursor: pointer;
+		padding: var(--space-1);
+		border-radius: var(--radius-sm);
+	}
+	.fav:hover {
+		background: var(--brand-soft);
+	}
+	.fav.on {
+		color: var(--danger, var(--brand));
 	}
 </style>

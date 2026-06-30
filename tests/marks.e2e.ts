@@ -11,6 +11,8 @@ test('marcar favorita en la ficha y filtrar por favoritas en el listado', async 
 
 	await page.goto('/');
 	await page.locator('body[data-hydrated]').waitFor();
+	// El panel "Más filtros" arranca colapsado (variante A del handoff v6).
+	await page.getByRole('button', { name: /Más filtros/ }).click();
 	await page.getByLabel('Marcas').selectOption('favorita');
 	await expect(page.locator('.route-list li')).toHaveCount(1);
 	await expect(page.getByText(/PR-CV 77/)).toBeVisible();
