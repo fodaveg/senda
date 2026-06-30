@@ -26,7 +26,8 @@ verdad VISUAL es `Senda v6.dc.html`** (Design Component renderizado por
 `support.js`; léelo, no solo el `README.md` en prosa — leer solo la prosa ya
 causó un layout incorrecto que hubo que rehacer).
 
-**Hecho y commiteado en la rama (verde: lint/check/316 unit):**
+**Hecho y commiteado en la rama (verde: lint/check/321 unit):**
+
 1. Logo + wordmark «Senda» (Spectral 700 auto-alojada) en la cabecera global.
 2. Barra superior como **dock flotante** (sticky, redondeada) + fix del enlace
    "Entrar" (era azul: estilos `.nav-link` scoped no llegaban a `AccountNav`).
@@ -36,16 +37,27 @@ causó un layout incorrecto que hubo que rehacer).
    nombre, métricas, acciones a la derecha (♡/✓/⌖ como iconos vía `RouteMarks`
    modo `compact`, Emergencia secundaria, Informe primaria), "Iniciar ruta"
    como nota reservada.
+5. **Fase 3 — Resumen rediseñado** en rejilla 2 col (1.3fr/1fr): tarjeta de
+   **recomendación con chips** de estado (Adelante/Precaución/No recomendado);
+   izq. _Meteo de un vistazo_ (nuevo) + Ventana + Cómo llegar; der. Avisos +
+   Riesgo incendio (resúmenes compactos que enlazan a Condiciones, **no** se
+   duplican los componentes completos) + Datos clave + tarjeta **Mochila X/Y +
+   "Ir a Preparación"**; abajo tira **Comunidad** (placeholder función futura).
+   - **Estado de cielo**: `WeatherDay` no trae nubosidad → la condición "de un
+     vistazo" (icono + etiqueta) se **deriva de la probabilidad de lluvia** en
+     `$lib/weather/condition.ts` (`glanceCondition`, con tests). No se inventa
+     "Despejado": etiquetas en términos de lluvia (Sin lluvia / poco probable /
+     posible / probable).
 
-**Pendiente (Fase 3 — Resumen y Condiciones), ya especificado del `.dc.html`:**
-- Resumen en **rejilla 2 col (1.3fr/1fr)**: izq. *Meteo de un vistazo* (nuevo) +
-  Ventana + Cómo llegar; der. Avisos + Riesgo incendio + Datos clave + tarjeta
-  **Mochila 8/11 + "Ir a Preparación"** (nuevo); abajo tira **Comunidad**.
-  Recomendación como tarjeta con chips de estado.
-- **Regla de datos**: el `.dc.html` muestra cielo "Despejado" y un reporte de
-  comunidad de muestra que **NO tienen dato real** → omitir el estado de cielo
-  (`WeatherDay` no lo tiene) y dejar Comunidad como placeholder "función futura".
+**Pendiente (Fase 3 — Condiciones):**
+
 - Dar fidelidad a Condiciones (fauna/escape/112 ya tienen datos).
+
+**Deuda de la rama**: la suite **e2e está rota globalmente** desde el rediseño
+de pestañas (≈25 tests fallan, incl. `home`/`discover`, ajenos a la ficha;
+contenido oculto tras `display:none` de las pestañas inactivas, dock, etc.).
+La Fase 3 **no** añade regresión (delta neto 0, ±1 por flakiness en
+`discover.e2e`). Pendiente: pase dedicado de reparación e2e para la v6.
 
 **Gotcha de dev**: en `npm run dev`, Vite re-optimiza deps a media sesión y
 rompe la hidratación con "Failed to fetch dynamically imported module …/nodes/0.js"

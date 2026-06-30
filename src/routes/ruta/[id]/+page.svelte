@@ -57,6 +57,7 @@
 	import { avisosForRoute, fetchAvisosCapCached, type Aviso } from '$lib/weather/avisos';
 	import { fetchOpenMeteoHourly, type HourlyPoint } from '$lib/weather/hourly';
 	import { fetchOpenMeteoForecast } from '$lib/weather/openmeteo';
+	import { glanceCondition } from '$lib/weather/condition';
 	import type { FeatureCollection } from 'geojson';
 	import type { WeatherDay } from '$lib/types';
 
@@ -482,6 +483,26 @@
 			};
 		return null;
 	});
+
+	// Estados posibles de la recomendación, en orden de severidad, para pintar la
+	// "escala" de chips bajo la tarjeta (el activo es el de `recommendation.tone`).
+	const RECO_STATES = [
+		{ tone: 'ok' as const, label: 'Adelante' },
+		{ tone: 'warn' as const, label: 'Precaución' },
+		{ tone: 'alert' as const, label: 'No recomendado' }
+	];
+
+	// Condición meteo "de un vistazo" derivada de la probabilidad de lluvia del día
+	// elegido (el pronóstico no trae estado de cielo; ver $lib/weather/condition).
+	let glance = $derived(selectedDay ? glanceCondition(selectedDay) : null);
+
+	// Progreso de la mochila para la tarjeta-resumen "Mochila X/Y": ítems
+	// recomendados ("Llevar") y cuántos lleva ya marcados el usuario.
+	let packItems = $derived(decisions.filter((d) => d.status === 'enabled'));
+	let packChecked = $derived(packItems.filter((d) => checkedItems.has(d.item.id)).length);
+	let packPct = $derived(
+		packItems.length > 0 ? Math.round((packChecked / packItems.length) * 100) : 0
+	);
 </script>
 
 <svelte:head>
@@ -615,58 +636,247 @@
 		>
 			<h2 class="fsec-title">Resumen</h2>
 
+			<!-- Recomendación del día como tarjeta con escala de chips de estado
+			     (Adelante · Precaución · No recomendado). Solo presenta datos ya
+			     existentes (estado FEMECV, avisos, pronóstico); no inventa nada. -->
 			{#if recommendation}
-				<Banner
-					tone={recommendation.tone}
+				<div
+					class="reco"
+					data-tone={recommendation.tone}
 					role={recommendation.tone === 'alert' ? 'alert' : 'status'}
-					icon={recommendation.tone === 'alert'
-						? '🔴'
-						: recommendation.tone === 'warn'
-							? '⚠️'
-							: '✅'}
-					title={recommendation.label}
 				>
-					{recommendation.reason}
-				</Banner>
+					<span class="reco-ic" aria-hidden="true">
+						{recommendation.tone === 'alert' ? '🔴' : recommendation.tone === 'warn' ? '⚠️' : '✅'}
+					</span>
+					<div class="reco-body">
+						<div class="reco-top">
+							<span class="reco-badge">{recommendation.label}</span>
+							<span class="reco-kicker">Recomendación de hoy</span>
+						</div>
+						<p class="reco-reason">{recommendation.reason}</p>
+						<div class="reco-chips">
+							{#each RECO_STATES as st (st.tone)}
+								<span class="reco-chip" class:active={st.tone === recommendation.tone}
+									>{st.label}</span
+								>
+							{/each}
+						</div>
+					</div>
+				</div>
 			{/if}
 
-			<h3>Datos clave</h3>
-			<dl>
-				{#if route.municipality}
-					<dt>Municipio</dt>
-					<dd>{route.municipality}</dd>
-				{/if}
-				{#if provinceLabel}
-					<dt>Provincia</dt>
-					<dd>{provinceLabel}</dd>
-				{/if}
-				<dt>Distancia</dt>
-				<dd>{formatKm(route.distance_km)}</dd>
-				<dt>Desnivel</dt>
-				<dd>
-					{route.ascent_m !== null ? `+${formatMeters(route.ascent_m)}` : 'sin dato'}
-					/
-					{route.descent_m !== null ? `−${formatMeters(route.descent_m)}` : 'sin dato'}
-				</dd>
-				<dt>Tiempo estimado</dt>
-				<dd>
-					{route.est_duration_min !== null ? formatDuration(route.est_duration_min) : 'sin dato'}
-				</dd>
-				<dt>Recorrido</dt>
-				<dd>{route.circular === null ? 'sin dato' : route.circular ? 'Circular' : 'Lineal'}</dd>
-				<dt>Estado</dt>
-				<dd>
-					{#if stages.length > 0}
-						<a href="#etapas">{route.status_detail ?? route.status}</a>
-					{:else}
-						{route.status_detail ?? route.status}
+			<div class="resumen-grid">
+				<!-- Columna ancha: meteo de un vistazo, ventana ideal y acceso. -->
+				<div class="rg-col">
+					<div class="card glance-card">
+						<div class="card-head">
+							<h3 class="card-title">
+								Meteo de un vistazo · {selectedDate === dates[0] ? 'Hoy' : dateLabel(selectedDate)}
+							</h3>
+							<button type="button" class="card-link" onclick={() => goToSection('meteo')}
+								>Ver completa →</button
+							>
+						</div>
+						{#if selectedDay && glance}
+							<div class="glance-grid">
+								<div class="glance-item">
+									<div class="glance-ic" aria-hidden="true">{glance.icon}</div>
+									<div class="glance-cap">{glance.label}</div>
+								</div>
+								<div class="glance-item">
+									<div class="glance-val">
+										{Math.round(selectedDay.temperature_2m_max)}°
+										<span class="muted">/ {Math.round(selectedDay.temperature_2m_min)}°</span>
+									</div>
+									<div class="glance-cap">Máx / mín</div>
+								</div>
+								<div class="glance-item">
+									<div class="glance-val">
+										{Math.round(selectedDay.precipitation_probability_max)}%
+									</div>
+									<div class="glance-cap">Prob. lluvia</div>
+								</div>
+								<div class="glance-item">
+									<div class="glance-val">
+										{Math.round(selectedDay.wind_speed_10m_max)} <span class="unit">km/h</span>
+									</div>
+									<div class="glance-cap">Viento</div>
+								</div>
+							</div>
+							<p class="card-foot">
+								Pronóstico {selectedDay.source === 'aemet' ? 'AEMET' : 'Open-Meteo'} para {dateLabel(
+									selectedDate
+								)}.
+							</p>
+						{:else if weatherLoading}
+							<Skeleton shape="block" height="64px" />
+						{:else}
+							<p class="card-foot">
+								Sin pronóstico disponible ahora mismo (sin conexión o API caída).
+							</p>
+						{/if}
+					</div>
+
+					<div class="card">
+						<h3 class="card-title">Mejor momento para empezar</h3>
+						<StartWindowCard {window} manualHint={route.best_start_time} />
+					</div>
+
+					<div class="card">
+						<h3 class="card-title">Cómo llegar al inicio</h3>
+						<div class="travel">
+							{#if travel}
+								<p>
+									En coche desde {travel.from}:
+									<strong>{formatDuration(travel.estimate.durationMin)}</strong>
+									({formatKm(travel.estimate.distanceKm)}) — estimación OSRM.
+								</p>
+							{:else}
+								<p class="travel-hint">
+									Configura tu origen habitual en Ajustes o usa tu posición para estimar el viaje.
+								</p>
+							{/if}
+							<button type="button" class="travel-btn" onclick={travelFromHere}>
+								Desde mi posición actual
+							</button>
+							{#if travelStatus}<p class="travel-hint" role="status">{travelStatus}</p>{/if}
+							<p class="travel-hint">
+								<a
+									href={travelOrigin
+										? `https://www.openstreetmap.org/directions?from=${travelOrigin.lat}%2C${travelOrigin.lon}&to=${route.start.lat}%2C${route.start.lon}`
+										: `https://www.openstreetmap.org/directions?to=${route.start.lat}%2C${route.start.lon}`}
+									rel="external">Indicaciones en OpenStreetMap</a
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Columna estrecha: avisos, incendio, datos clave y mochila. Avisos y
+				     riesgo de incendio son RESÚMENES compactos que enlazan al detalle
+				     completo en "Condiciones y seguridad" (no se duplican aquí). -->
+				<div class="rg-col">
+					<div class="card" data-alert={avisosForDate.length > 0 ? 'on' : undefined}>
+						<div class="card-kicker">Avisos AEMET / CAP</div>
+						{#if avisosForDate.length > 0}
+							<p class="aviso-line">
+								<strong
+									>{avisosForDate.length}
+									{avisosForDate.length > 1 ? 'avisos vigentes' : 'aviso vigente'}</strong
+								>
+								— {avisosForDate[0].event} (aviso {avisosForDate[0].level}).
+							</p>
+							<button type="button" class="card-link" onclick={() => goToSection('seguridad')}
+								>Ver detalle →</button
+							>
+						{:else}
+							<p class="card-foot">
+								{#if avisos === null}
+									Configura la API key de AEMET en Ajustes para ver avisos oficiales.
+								{:else}
+									Sin avisos de lluvia, nieve, viento o tormenta vigentes para la fecha elegida.
+								{/if}
+							</p>
+						{/if}
+					</div>
+
+					<div class="card">
+						<div class="card-kicker">Riesgo de incendio forestal</div>
+						{#if fireRiskLoading}
+							<p class="card-foot">Consultando el mapa de riesgo de AEMET…</p>
+						{:else if fireRiskMapUrl}
+							<p class="card-foot">
+								Mapa oficial de AEMET disponible para {dateLabel(selectedDate)}.
+							</p>
+							<button type="button" class="card-link" onclick={() => goToSection('seguridad')}
+								>Ver mapa →</button
+							>
+						{:else}
+							<p class="card-foot">
+								El mapa oficial de AEMET aparece en Condiciones (requiere API key en Ajustes).
+							</p>
+						{/if}
+					</div>
+
+					<div class="card">
+						<div class="card-kicker">Datos clave</div>
+						<dl class="key-data">
+							{#if route.municipality}
+								<dt>Municipio</dt>
+								<dd>{route.municipality}</dd>
+							{/if}
+							{#if provinceLabel}
+								<dt>Provincia</dt>
+								<dd>{provinceLabel}</dd>
+							{/if}
+							<dt>Distancia</dt>
+							<dd>{formatKm(route.distance_km)}</dd>
+							<dt>Desnivel</dt>
+							<dd>
+								{route.ascent_m !== null ? `+${formatMeters(route.ascent_m)}` : 'sin dato'}
+								/
+								{route.descent_m !== null ? `−${formatMeters(route.descent_m)}` : 'sin dato'}
+							</dd>
+							<dt>Duración</dt>
+							<dd>
+								{route.est_duration_min !== null
+									? formatDuration(route.est_duration_min)
+									: 'sin dato'}
+							</dd>
+							<dt>Recorrido</dt>
+							<dd>
+								{route.circular === null ? 'sin dato' : route.circular ? 'Circular' : 'Lineal'}
+							</dd>
+							<dt>Estado</dt>
+							<dd>
+								{#if stages.length > 0}
+									<a href="#etapas">{route.status_detail ?? route.status}</a>
+								{:else}
+									{route.status_detail ?? route.status}
+								{/if}
+							</dd>
+							{#if route.best_start_time}
+								<dt>Mejor hora</dt>
+								<dd>{route.best_start_time}</dd>
+							{/if}
+							<dt>Fuente</dt>
+							<dd>{fedLabel}</dd>
+						</dl>
+					</div>
+
+					{#if packItems.length > 0}
+						<div class="pack-card">
+							<div class="pack-head">
+								<span class="pack-title">Mochila</span>
+								<span class="pack-count">{packChecked} / {packItems.length}</span>
+							</div>
+							<div
+								class="pack-bar"
+								role="progressbar"
+								aria-valuenow={packChecked}
+								aria-valuemin="0"
+								aria-valuemax={packItems.length}
+							>
+								<div class="pack-fill" style:width={`${packPct}%`}></div>
+							</div>
+							<button type="button" class="pack-btn" onclick={() => goToSection('preparacion')}
+								>Ir a Preparación →</button
+							>
+						</div>
 					{/if}
-				</dd>
-				{#if route.best_start_time}
-					<dt>Mejor hora de inicio</dt>
-					<dd>{route.best_start_time}</dd>
-				{/if}
-			</dl>
+				</div>
+			</div>
+
+			<!-- Comunidad: función futura, sin dato real (no proviene de FEMECV). -->
+			<div class="community-strip">
+				<span class="cs-tag">Comunidad — sin verificar</span>
+				<span class="cs-text">
+					Partes de estado de otros senderistas —
+					<button type="button" class="link-btn" onclick={() => goToSection('comunidad')}
+						>función futura</button
+					>, aún sin reportes reales.
+				</span>
+			</div>
 
 			{#if parent}
 				<p class="parent-of">
@@ -674,36 +884,6 @@
 					<a href={resolve('/ruta/[id]', { id: parent.id })}>{parent.name}</a>.
 				</p>
 			{/if}
-
-			<h3>Mejor momento para empezar</h3>
-			<StartWindowCard {window} manualHint={route.best_start_time} />
-
-			<h3>Cómo llegar</h3>
-			<div class="travel">
-				{#if travel}
-					<p>
-						En coche desde {travel.from}:
-						<strong>{formatDuration(travel.estimate.durationMin)}</strong>
-						({formatKm(travel.estimate.distanceKm)}) — estimación OSRM.
-					</p>
-				{:else}
-					<p class="travel-hint">
-						Configura tu origen habitual en Ajustes o usa tu posición para estimar el viaje.
-					</p>
-				{/if}
-				<button type="button" class="travel-btn" onclick={travelFromHere}>
-					Desde mi posición actual
-				</button>
-				{#if travelStatus}<p class="travel-hint" role="status">{travelStatus}</p>{/if}
-				<p class="travel-hint">
-					<a
-						href={travelOrigin
-							? `https://www.openstreetmap.org/directions?from=${travelOrigin.lat}%2C${travelOrigin.lon}&to=${route.start.lat}%2C${route.start.lon}`
-							: `https://www.openstreetmap.org/directions?to=${route.start.lat}%2C${route.start.lon}`}
-						rel="external">Indicaciones en OpenStreetMap</a
-					>
-				</p>
-			</div>
 
 			{#if !caps.mide}
 				<h3>MIDE</h3>
@@ -1541,5 +1721,288 @@
 		font-size: 0.78rem;
 		color: var(--muted);
 		margin: 0.3rem 0 0.6rem;
+	}
+
+	/* ── Resumen v6: tarjeta de recomendación + rejilla 2 columnas ──────────── */
+	.reco {
+		--reco-color: var(--ok);
+		--reco-soft: var(--ok-soft);
+		display: flex;
+		gap: var(--space-3);
+		align-items: flex-start;
+		flex-wrap: wrap;
+		border: 1px solid color-mix(in srgb, var(--reco-color) 45%, transparent);
+		background: var(--reco-soft);
+		border-radius: var(--radius-lg);
+		padding: var(--space-3) var(--space-4);
+		margin-bottom: var(--space-4);
+	}
+	.reco[data-tone='warn'] {
+		--reco-color: var(--warn);
+		--reco-soft: var(--warn-soft);
+	}
+	.reco[data-tone='alert'] {
+		--reco-color: var(--danger);
+		--reco-soft: var(--danger-soft);
+	}
+	.reco-ic {
+		font-size: var(--text-xl);
+		line-height: 1;
+		flex: none;
+	}
+	.reco-body {
+		flex: 1 1 240px;
+		min-width: 0;
+	}
+	.reco-top {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		flex-wrap: wrap;
+	}
+	.reco-badge {
+		font-size: var(--text-xs);
+		font-weight: 800;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: var(--on-brand);
+		background: var(--reco-color);
+		padding: 2px 10px;
+		border-radius: var(--radius-pill, 999px);
+	}
+	.reco-kicker {
+		font-size: var(--text-xs);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--muted);
+	}
+	.reco-reason {
+		margin: var(--space-2) 0 0;
+		font-size: var(--text-sm);
+		line-height: 1.5;
+	}
+	.reco-chips {
+		margin-top: var(--space-3);
+		display: flex;
+		gap: var(--space-2);
+		flex-wrap: wrap;
+	}
+	.reco-chip {
+		font-size: var(--text-xs);
+		font-weight: 700;
+		padding: 3px 10px;
+		border-radius: var(--radius-pill, 999px);
+		background: var(--surface);
+		color: var(--muted);
+		opacity: 0.6;
+	}
+	.reco-chip.active {
+		opacity: 1;
+		font-weight: 800;
+		background: var(--reco-color);
+		color: var(--on-brand);
+	}
+
+	.resumen-grid {
+		display: grid;
+		grid-template-columns: 1.3fr 1fr;
+		gap: var(--space-4);
+		align-items: start;
+	}
+	.rg-col {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		min-width: 0;
+	}
+	/* Tarjeta genérica del resumen (las que no traen marco propio). */
+	.card {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+		padding: var(--space-4);
+		box-shadow: var(--shadow-sm, 0 1px 2px rgba(40, 38, 30, 0.06));
+	}
+	.card-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-2);
+	}
+	.fsec .card-title {
+		font-size: var(--text-base, 1rem);
+		font-weight: 700;
+		margin: 0 0 var(--space-2);
+	}
+	.fsec .card-head .card-title {
+		margin: 0;
+	}
+	.card-link {
+		border: none;
+		background: transparent;
+		color: var(--brand);
+		font: inherit;
+		font-size: var(--text-xs);
+		font-weight: 700;
+		cursor: pointer;
+		white-space: nowrap;
+	}
+	.card-kicker {
+		font-size: var(--text-xs);
+		font-weight: 800;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: var(--muted);
+		margin-bottom: var(--space-2);
+	}
+	.card-foot {
+		margin: var(--space-3) 0 0;
+		font-size: var(--text-xs);
+		color: var(--muted);
+		line-height: 1.5;
+	}
+	/* Resumen de avisos con tinte de alerta cuando hay alguno vigente. */
+	.card[data-alert='on'] {
+		background: var(--alert-soft);
+		border-color: color-mix(in srgb, var(--danger) 40%, transparent);
+	}
+	.aviso-line {
+		margin: var(--space-2) 0 0;
+		font-size: var(--text-sm);
+		line-height: 1.45;
+	}
+	.aviso-line + .card-link,
+	.card-foot + .card-link {
+		margin-top: var(--space-2);
+		display: inline-block;
+	}
+	/* Meteo de un vistazo: 4 métricas en fila que envuelven. */
+	.glance-grid {
+		margin-top: var(--space-3);
+		display: flex;
+		gap: var(--space-3);
+		flex-wrap: wrap;
+	}
+	.glance-item {
+		flex: 1 1 80px;
+	}
+	.glance-ic {
+		font-size: 28px;
+		line-height: 1;
+	}
+	.glance-val {
+		font-family: var(--font-head);
+		font-weight: 700;
+		font-size: var(--text-lg);
+	}
+	.glance-val .muted,
+	.glance-item .muted {
+		color: var(--muted);
+		font-weight: 600;
+	}
+	.glance-val .unit {
+		font-size: var(--text-sm);
+		color: var(--muted);
+		font-weight: 600;
+	}
+	.glance-cap {
+		margin-top: 4px;
+		font-size: var(--text-xs);
+		color: var(--muted);
+		font-weight: 600;
+	}
+	/* Datos clave: filas etiqueta ↔ valor (valor alineado a la derecha). */
+	.key-data {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: var(--space-2) var(--space-3);
+		align-items: baseline;
+		font-size: var(--text-sm);
+	}
+	.key-data dt {
+		color: var(--muted);
+		font-weight: 400;
+	}
+	.key-data dd {
+		font-weight: 700;
+		text-align: right;
+	}
+	/* Tarjeta Mochila X/Y con barra de progreso y atajo a Preparación. */
+	.pack-card {
+		background: var(--brand-soft);
+		border: 1px solid var(--brand-line);
+		border-radius: var(--radius-md);
+		padding: var(--space-4);
+	}
+	.pack-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.pack-title {
+		font-family: var(--font-head);
+		font-weight: 700;
+		font-size: var(--text-base, 1rem);
+	}
+	.pack-count {
+		font-weight: 700;
+		font-size: var(--text-sm);
+		color: var(--brand);
+	}
+	.pack-bar {
+		margin-top: var(--space-2);
+		height: 8px;
+		border-radius: var(--radius-pill, 999px);
+		background: var(--surface);
+		overflow: hidden;
+	}
+	.pack-fill {
+		height: 100%;
+		background: var(--brand);
+	}
+	.pack-btn {
+		margin-top: var(--space-3);
+		width: 100%;
+		padding: var(--space-2);
+		border: none;
+		border-radius: var(--radius-md);
+		background: var(--brand);
+		color: var(--on-brand);
+		font: inherit;
+		font-weight: 700;
+		font-size: var(--text-sm);
+		cursor: pointer;
+	}
+	/* Tira de comunidad (función futura, sin dato real). */
+	.community-strip {
+		margin-top: var(--space-4);
+		display: flex;
+		gap: var(--space-3);
+		align-items: center;
+		flex-wrap: wrap;
+		background: var(--warn-soft);
+		border: 1px dashed color-mix(in srgb, var(--warn) 50%, transparent);
+		border-radius: var(--radius-md);
+		padding: var(--space-3) var(--space-4);
+	}
+	.cs-tag {
+		font-size: var(--text-xs);
+		font-weight: 800;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--warn);
+		flex: none;
+	}
+	.cs-text {
+		font-size: var(--text-sm);
+		flex: 1 1 200px;
+		min-width: 0;
+	}
+	/* En pantallas estrechas la rejilla del resumen se apila. */
+	@media (max-width: 720px) {
+		.resumen-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
