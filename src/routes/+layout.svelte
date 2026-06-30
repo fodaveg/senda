@@ -17,6 +17,7 @@
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import AccountNav from '$lib/components/AccountNav.svelte';
 	import SyncIndicator from '$lib/components/SyncIndicator.svelte';
+	import Logo from '$lib/components/Logo.svelte';
 
 	let { children } = $props();
 
@@ -89,7 +90,9 @@
 <a href="#contenido" class="skip-link">{ui.nav.skipToContent}</a>
 
 <header>
-	<a href={resolve('/')} class="brand">{ui.nav.brand}</a>
+	<a href={resolve('/')} class="brand" aria-label={ui.nav.brand}
+		><Logo variant="on-brand" size={30} /></a
+	>
 	<span class="tagline">{ui.nav.tagline}</span>
 	<nav class="primary-nav" aria-label="Principal">
 		<a href={resolve('/')} class="nav-link" aria-current={isActive('/') ? 'page' : undefined}

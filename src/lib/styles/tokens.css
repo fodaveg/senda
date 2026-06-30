@@ -16,6 +16,8 @@
 	--font-head: 'Libre Franklin', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 	--font-body: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 	--font-mono: ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Consolas, monospace;
+	/* Wordmark de marca «Senda» (serif). Fallback de sistema si no carga Spectral. */
+	--font-brand: 'Spectral', Georgia, 'Times New Roman', serif;
 
 	/* Escala de texto del usuario (0.8–1.6); la fija applyTextScale. */
 	--scale: 1;

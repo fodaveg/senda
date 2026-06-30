@@ -212,6 +212,24 @@ Sin imágenes externas: miniaturas y mapas son placeholders CSS (tramas/relieve)
 imágenes y tiles reales. Iconos: glifos/emoji de sistema en el prototipo — sustituir por el set de
 iconos del codebase destino. No se usan marcas de terceros.
 
+## Marca / Logo
+El isotipo de **Senda** es una **senda en zigzag** (trazado de revueltas que asciende a un punto de
+cumbre), centrada y llenando un contenedor redondeado. El **wordmark** es **«Senda» en Spectral
+700** (serif, interletraje −2%). En la app aparece en la cabecera (barra superior) como lockup
+horizontal: badge de marca + wordmark.
+- Sobre fondo claro: badge verde bosque (`#1d3a2a`) + senda en blanco; el punto de cumbre usa el
+  verde claro de acento (`#8fd3ae`).
+- Sobre fondo oscuro: badge verde claro (`#8fd3ae`) + senda en el color sobre-marca oscuro.
+- En el lockup de la app, badge `background: var(--brand)` + trazo `var(--on-brand)` resuelve el
+  contraste automáticamente en ambos temas (no se usa el acento en el mark a tamaño pequeño).
+- SVG del mark (viewBox `0 0 92 92`): `polyline points="20 78 70 68 24 57 68 46 26 35 64 25 46 13"`
+  con `stroke-width:9`, extremos redondeados, + `circle cx=46 cy=13 r=8.5` (punto de cumbre).
+- Hoja de marca completa (lockups, vertical/compacto, claro/oscuro/sobre-marca, escalado
+  96→16 px, icono de app, monocromo, espacio de respeto y paleta) en **`Senda Logo.dc.html`**.
+- Sin tagline. No reescalar de forma no uniforme, no recolorear el wordmark fuera de la paleta,
+  no cambiar la tipografía del wordmark.
+
 ## Files
 - `Senda v6.dc.html` — diseño completo (sistema + 3 pantallas, claro/oscuro, escritorio/móvil).
-- `support.js` — runtime necesario para renderizar el `.dc.html` (no es parte del producto).
+- `Senda Logo.dc.html` — hoja de marca (logo + wordmark, variantes y normas de uso).
+- `support.js` — runtime necesario para renderizar los `.dc.html` (no es parte del producto).

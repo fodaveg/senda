@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&family=Spectral:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#fbfaf7;color:#1a1a1a;font-family:'Source Sans 3',system-ui,sans-serif">
+
+  <header style="max-width:1180px;margin:0 auto;padding:46px 32px 10px">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1d3a2a">Identidad de marca · 3 + d</div>
+    <h1 style="margin:8px 0 0;font-family:'Spectral',serif;font-weight:700;font-size:42px;letter-spacing:-.015em;line-height:1.04">Senda — logo &amp; wordmark</h1>
+    <p style="margin:10px 0 0;max-width:62ch;color:#555;font-size:16px;line-height:1.55">El isotipo es la senda: un trazado de revueltas que asciende, centrado y a gran tamaño dentro del contenedor. Wordmark en Spectral, un serif sereno y muy legible.</p>
+  </header>
+
+  <main style="max-width:1180px;margin:0 auto;padding:28px 32px 120px;display:flex;flex-direction:column;gap:22px">
+
+    <section style="background:#ffffff;border:1px solid #d8d4c8;border-radius:20px;padding:60px;box-shadow:0 4px 16px rgba(40,38,30,.08);display:flex;align-items:center;justify-content:center;min-height:280px">
+      <div style="display:flex;align-items:center;gap:28px">
+        <div style="{{ markLg }}">{{ iconLg }}</div>
+        <div style="font-family:'Spectral',serif;font-weight:700;font-size:84px;letter-spacing:-.02em;color:#1d3a2a;line-height:1">Senda</div>
+      </div>
+    </section>
+
+    <section style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
+      <div style="background:#ffffff;border:1px solid #d8d4c8;border-radius:20px;padding:44px;box-shadow:0 4px 16px rgba(40,38,30,.08);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;min-height:240px">
+        <div style="align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999">Vertical</div>
+        <div style="{{ markMd }}">{{ iconMd }}</div>
+        <div style="font-family:'Spectral',serif;font-weight:700;font-size:46px;letter-spacing:-.02em;color:#1d3a2a;line-height:1">Senda</div>
+      </div>
+      <div style="background:#ffffff;border:1px solid #d8d4c8;border-radius:20px;padding:44px;box-shadow:0 4px 16px rgba(40,38,30,.08);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;min-height:240px">
+        <div style="align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999">Horizontal compacto</div>
+        <div style="display:flex;align-items:center;gap:15px">
+          <div style="{{ markSm }}">{{ iconSm }}</div>
+          <div style="font-family:'Spectral',serif;font-weight:700;font-size:40px;letter-spacing:-.02em;color:#1d3a2a;line-height:1">Senda</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="{{ markXs }}">{{ iconXs }}</div>
+          <div style="font-family:'Spectral',serif;font-weight:700;font-size:23px;letter-spacing:-.015em;color:#1d3a2a;line-height:1">Senda</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
+      <div style="background:#141815;border:1px solid #3a423b;border-radius:20px;padding:54px;display:flex;align-items:center;justify-content:center;min-height:240px">
+        <div style="display:flex;align-items:center;gap:22px">
+          <div style="{{ markMdDark }}">{{ iconDark }}</div>
+          <div style="font-family:'Spectral',serif;font-weight:700;font-size:58px;letter-spacing:-.02em;color:#e8e6df;line-height:1">Senda</div>
+        </div>
+      </div>
+      <div style="background:#1d3a2a;border-radius:20px;padding:54px;display:flex;align-items:center;justify-content:center;min-height:240px">
+        <div style="display:flex;align-items:center;gap:22px">
+          <div style="{{ markMdOn }}">{{ iconOn }}</div>
+          <div style="font-family:'Spectral',serif;font-weight:700;font-size:58px;letter-spacing:-.02em;color:#ffffff;line-height:1">Senda</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#ffffff;border:1px solid #d8d4c8;border-radius:20px;padding:40px;box-shadow:0 4px 16px rgba(40,38,30,.08)">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999;margin-bottom:28px">El isotipo · escalado</div>
+      <div style="display:flex;align-items:flex-end;gap:40px;flex-wrap:wrap;justify-content:center">
+        <div style="text-align:center"><div style="{{ markLg }}">{{ iconLg }}</div><div style="margin-top:12px;font-size:12px;color:#555;font-family:ui-monospace,monospace">96 px</div></div>
+        <div style="text-align:center"><div style="{{ markMd }}">{{ iconMd }}</div><div style="margin-top:12px;font-size:12px;color:#555;font-family:ui-monospace,monospace">64 px</div></div>
+        <div style="text-align:center"><div style="{{ markSm }}">{{ iconSm }}</div><div style="margin-top:12px;font-size:12px;color:#555;font-family:ui-monospace,monospace">44 px</div></div>
+        <div style="text-align:center"><div style="{{ markXs }}">{{ iconXs }}</div><div style="margin-top:12px;font-size:12px;color:#555;font-family:ui-monospace,monospace">28 px</div></div>
+        <div style="text-align:center"><div style="{{ markFav }}">{{ iconFav }}</div><div style="margin-top:12px;font-size:12px;color:#555;font-family:ui-monospace,monospace">16 px · favicon</div></div>
+      </div>
+    </section>
+
+    <section style="display:grid;grid-template-columns:1.1fr 1fr;gap:22px">
+      <div style="background:#ffffff;border:1px solid #d8d4c8;border-radius:20px;padding:40px;box-shadow:0 4px 16px rgba(40,38,30,.08)">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999;margin-bottom:26px">Icono de app</div>
+        <div style="display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap">
+          <div style="text-align:center"><div style="{{ appLight }}">{{ iconApp }}</div><div style="margin-top:11px;font-size:12px;color:#555">Claro</div></div>
+          <div style="text-align:center"><div style="{{ appBrand }}">{{ iconAppOn }}</div><div style="margin-top:11px;font-size:12px;color:#555">Marca</div></div>
+          <div style="text-align:center"><div style="{{ appDark }}">{{ iconAppDark }}</div><div style="margin-top:11px;font-size:12px;color:#555">Oscuro</div></div>
+        </div>
+      </div>
+      <div style="background:#ffffff;border:1px solid #d8d4c8;border-radius:20px;padding:40px;box-shadow:0 4px 16px rgba(40,38,30,.08)">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999;margin-bottom:26px">Monocromo</div>
+        <div style="display:flex;gap:24px;align-items:center;justify-content:center;flex-wrap:wrap">
+          <div style="text-align:center"><div style="width:96px;height:96px;border-radius:24px;background:#f4f2ec;display:flex;align-items:center;justify-content:center">{{ iconMonoDark }}</div><div style="margin-top:11px;font-size:12px;color:#555">Tinta</div></div>
+          <div style="text-align:center"><div style="width:96px;height:96px;border-radius:24px;background:#1a1a1a;display:flex;align-items:center;justify-content:center">{{ iconMonoLight }}</div><div style="margin-top:11px;font-size:12px;color:#555">Negativo</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
+      <div style="background:#ffffff;border:1px solid #d8d4c8;border-radius:20px;padding:40px;box-shadow:0 4px 16px rgba(40,38,30,.08)">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999;margin-bottom:24px">Espacio de respeto</div>
+        <div style="display:flex;justify-content:center">
+          <div style="position:relative;padding:36px;border:1.5px dashed #d8d4c8;border-radius:14px">
+            <div style="display:flex;align-items:center;gap:18px">
+              <div style="{{ markMd }}">{{ iconMd }}</div>
+              <div style="font-family:'Spectral',serif;font-weight:700;font-size:44px;letter-spacing:-.02em;color:#1d3a2a;line-height:1">Senda</div>
+            </div>
+            <span style="position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:11px;color:#999;font-family:ui-monospace,monospace">x</span>
+            <span style="position:absolute;top:12px;left:50%;transform:translateX(-50%);font-size:11px;color:#999;font-family:ui-monospace,monospace">x</span>
+          </div>
+        </div>
+        <p style="margin:22px 0 0;text-align:center;font-size:13px;color:#555;line-height:1.5">Margen libre = alto del badge del isotipo (<span style="font-family:ui-monospace,monospace">x</span>) por los cuatro lados.</p>
+      </div>
+      <div style="background:#ffffff;border:1px solid #d8d4c8;border-radius:20px;padding:40px;box-shadow:0 4px 16px rgba(40,38,30,.08)">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999;margin-bottom:24px">Paleta de marca</div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px">
+          <div><div style="height:60px;border-radius:12px;background:#1d3a2a"></div><div style="margin-top:8px;font-size:13px;font-weight:700">Verde bosque</div><div style="font-size:12px;color:#555;font-family:ui-monospace,monospace">#1d3a2a</div></div>
+          <div><div style="height:60px;border-radius:12px;background:#8fd3ae"></div><div style="margin-top:8px;font-size:13px;font-weight:700">Verde claro</div><div style="font-size:12px;color:#555;font-family:ui-monospace,monospace">#8fd3ae</div></div>
+          <div><div style="height:60px;border-radius:12px;background:#fbfaf7;border:1px solid #d8d4c8"></div><div style="margin-top:8px;font-size:13px;font-weight:700">Hueso</div><div style="font-size:12px;color:#555;font-family:ui-monospace,monospace">#fbfaf7</div></div>
+          <div><div style="height:60px;border-radius:12px;background:#1a1a1a"></div><div style="margin-top:8px;font-size:13px;font-weight:700">Tinta</div><div style="font-size:12px;color:#555;font-family:ui-monospace,monospace">#1a1a1a</div></div>
+        </div>
+        <div style="margin-top:22px;font-size:13px;color:#555;line-height:1.55">Wordmark: <strong style="color:#1a1a1a">Spectral 700</strong>, interletraje −2%. La senda asciende en verde claro de acento sobre el verde bosque.</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  // The mark: an ascending switchback trail, centred and filling the frame, ending at a summit dot.
+  trail(size, stroke, dot, sw){
+    const R = React.createElement;
+    return R('svg',{width:size,height:size,viewBox:'0 0 92 92',fill:'none',role:'img','aria-label':'Senda'},[
+      R('polyline',{key:'t',points:'20 78 70 68 24 57 68 46 26 35 64 25 46 13',fill:'none',stroke:stroke,strokeWidth:(sw||9),strokeLinecap:'round',strokeLinejoin:'round'}),
+      R('circle',{key:'d',cx:46,cy:13,r:(sw?sw*0.95:8.5),fill:dot}),
+    ]);
+  }
+  badge(size, radius, bg, border){
+    return {width:size+'px',height:size+'px',borderRadius:radius+'px',background:bg,border:border||'none',display:'flex',alignItems:'center',justifyContent:'center',flex:'none',boxShadow:'0 1px 2px rgba(40,38,30,.1)'};
+  }
+  renderVals(){
+    const green='#1d3a2a', light='#8fd3ae', cream='#fbfaf7', ink='#1a1a1a', white='#ffffff', surfDark='#1e2420';
+    return {
+      // primary: green badge, white trail, accent summit dot — mark fills the badge, centred
+      markLg:this.badge(116,30,green), iconLg:this.trail(96,white,light,9),
+      markMd:this.badge(80,21,green),  iconMd:this.trail(66,white,light,9),
+      markSm:this.badge(58,15,green),  iconSm:this.trail(48,white,light,9),
+      markXs:this.badge(38,10,green),  iconXs:this.trail(32,white,light,9),
+      markFav:this.badge(26,7,green),  iconFav:this.trail(22,white,light,9.5),
+      // dark + on-brand
+      markMdDark:this.badge(80,21,surfDark,'1px solid #3a423b'), iconDark:this.trail(66,light,white,9),
+      markMdOn:this.badge(80,21,'rgba(255,255,255,.12)'),        iconOn:this.trail(66,white,light,9),
+      // app icons (rounded-square)
+      appLight:this.badge(96,22,cream,'1px solid #d8d4c8'), iconApp:this.trail(80,green,green,9),
+      appBrand:this.badge(96,22,green),                     iconAppOn:this.trail(80,white,light,9),
+      appDark:this.badge(96,22,surfDark,'1px solid #3a423b'),iconAppDark:this.trail(80,light,white,9),
+      // mono
+      iconMonoDark:this.trail(80,ink,ink,9),
+      iconMonoLight:this.trail(80,white,white,9),
+    };
+  }
+}
+</script>
+</body>
+</html>
