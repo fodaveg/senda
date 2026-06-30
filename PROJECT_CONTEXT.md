@@ -111,9 +111,20 @@ corazón en rutas con "PROVINCIAL".)
 **Base `Card`** (V6‑M2): ya existe `src/lib/components/ui/Card.svelte` y el
 barril `ui/index.ts`.
 
-**➡️ PRÓXIMO RECOMENDADO:** pendiente repaso de diseño de **Diario & Ajustes**
-(handoff §3) y, en backlog mayor, **Supabase real (SMTP) + ingesta Navarra**
-(ver memoria [[v5-punto-inflexion]]). Backlog completo en `SPECS_V6.md`
+**Diario & Ajustes rediseñados (handoff §3).**
+- **Diario** (`/diario`): 4 tarjetas de estadística (rutas hechas, distancia,
+  desnivel, **días en monte** — `distinctDays` nuevo en `DiaryStats`, puro +
+  test), **logros como medallas** (conseguido relleno / bloqueado punteado, icono
+  por logro), **progreso por comarca** en barras dentro de tarjeta, desgloses
+  año/tipo y salidas en tarjetas. Export/import intactos.
+- **Ajustes** (`/ajustes`): cada `fieldset` pasa a **tarjeta v6** (superficie +
+  sombra + radio) con `legend` como título; sin cambios de lógica.
+
+Verificado en navegador. **342 unit / 52 e2e** en verde.
+
+**➡️ PRÓXIMO RECOMENDADO:** pulido/responsive móvil del rediseño v6 (revisar las
+3 pantallas a 390px) y, en backlog mayor, **Supabase real (SMTP) + ingesta
+Navarra** (ver memoria [[v5-punto-inflexion]]). Backlog completo en `SPECS_V6.md`
 (§milestones) y `SPECS_V5.md` (parte PRE = deuda v4/legal/pulido).
 
 **Deuda e2e (RESUELTA)**: el switch de pestañas ocultaba las secciones
