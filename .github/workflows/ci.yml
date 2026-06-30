@@ -1,0 +1,91 @@
+# CI de Senda en GitHub Actions (migrada desde .gitlab-ci.yml).
+# Calidad + tests en cada push/PR; despliegue a GitHub Pages solo en `main`.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Por defecto solo lectura; el job de deploy eleva sus propios permisos.
+permissions:
+  contents: read
+
+# Un push nuevo cancela la ejecución en curso de la misma ref.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run check
+
+  test-unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:unit -- --run
+
+  test-e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test
+
+  # Publica la web + el catálogo versionado (/catalog) en GitHub Pages.
+  # Requiere, una sola vez: Settings → Pages → Source = "GitHub Actions".
+  deploy:
+    needs: [quality, test-unit, test-e2e]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # GitHub Pages de proyecto sirve bajo /senda; si algún día se usa un
+      # dominio propio servido en la raíz, poner BASE_PATH a "".
+      # Las claves Supabase salen de los secrets del repo: mientras no estén,
+      # el build sale en modo local-only (cuentas/sync/tendencias ocultas).
+      - name: Build (web)
+        run: npm run build
+        env:
+          BASE_PATH: /senda
+          PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
+          PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
+      - name: Construir catálogo junto a la web (/catalog)
+        run: node scripts/publish/build-catalog.mjs build/catalog
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+      - id: deployment
+        uses: actions/deploy-pages@v4

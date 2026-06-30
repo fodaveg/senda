@@ -73,7 +73,7 @@ El crawler escribe `data/routes/_crawled/<id>.json` (ficha oficial: nombre, esta
 
 Para corregir o ampliar una ruta a mano, crea `data/routes/_manual/<id>.json` (obligatorios: `name`, `type`, `sources`; toda afirmación con origen). Prioridad del merge: **manual > crawleado > derivado del GPX**.
 
-La CI publica el dataset versionado en GitLab Pages (`manifest.json` + datos); la app lo consume desde Ajustes → "Buscar actualizaciones de rutas" sin necesidad de reinstalar.
+La CI publica el dataset versionado en GitHub Pages (`manifest.json` + datos); la app lo consume desde Ajustes → "Buscar actualizaciones de rutas" sin necesidad de reinstalar.
 
 ## Ajustes (en la app)
 

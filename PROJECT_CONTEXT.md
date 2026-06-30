@@ -11,8 +11,8 @@ _Actualizado: 2026-06-22._
 - **v1** (M1–M7) y **v2** (V2-M1…M8) completas y en uso local.
 - **v3**: sus **7 milestones están implementados y ya mergeados a `main`**
   (la rama `v3` queda como histórico). v3.5 también integrada en `main`.
-- `main` = web desplegada en GitLab Pages (dominio único, servida en la raíz);
-  el trabajo actual va **directo sobre `main`**.
+- `main` = web desplegada en GitHub Pages (proyecto `fodaveg/senda`, servida
+  bajo `/senda`); el trabajo actual va **directo sobre `main`**.
 
 ## v3 — qué incluye (referencia: SPECS_V3.md)
 
@@ -42,8 +42,8 @@ material custom y aviso `warn` · M7 apariencia (toggle de tema + paletas).
 
 ## Bloqueos
 
-- El **cron cloud no puede hacer push al GitLab privado** (desactivado). Para
-  trabajo nocturno autónomo: espejo en GitHub o script wrapper local.
+- El **cron cloud no puede hacer push al repo privado** (desactivado). Para
+  trabajo nocturno autónomo: script wrapper local.
 - **v4** a la espera de la decisión de backend.
 
 ## Áreas activas

@@ -103,5 +103,5 @@ Si trabajas en su forma, lee **un único fichero de muestra**, no el directorio.
 
 - **`v3` ya está mergeada en `main`** (la rama `v3` queda como histórico); v3.5
   también integrada. El trabajo actual va **directo sobre `main`** = web
-  desplegada en GitLab Pages, así que cada push publica. Estado vivo y
+  desplegada en GitHub Pages, así que cada push publica. Estado vivo y
   prioridades en PROJECT_CONTEXT.md.
