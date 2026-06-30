@@ -3,7 +3,7 @@
 	import { resolve } from '$app/paths';
 	import { isTauri } from '@tauri-apps/api/core';
 	import BackpackPanel from '$lib/components/BackpackPanel.svelte';
-	import { Banner, FeatureGuard, Skeleton } from '$lib/components/ui';
+	import { Banner, FeatureGuard, Skeleton, TypeBadge } from '$lib/components/ui';
 	import { federationInfo, routeCapabilities } from '$lib/data/federation';
 	import StagesList from '$lib/components/StagesList.svelte';
 	import { routes } from '$lib/data/routes';
@@ -490,8 +490,43 @@
 
 <nav class="breadcrumb"><a href={resolve('/')}>← Todas las rutas</a></nav>
 
+<!-- Cabecera "banco de preparación" (handoff v6): resumen + acciones de la ruta.
+     Badge de tipo + estado + fuente, nombre, métricas clave y acciones. La
+     primaria futura "Iniciar ruta" (navegación en vivo, móvil) queda reservada
+     y deshabilitada. -->
 <header class="ficha-head">
-	<h1>{route.name} <StatusBadge status={route.status} detail={route.status_detail} /></h1>
+	<div class="fh-tags">
+		<TypeBadge type={route.type} />
+		<StatusBadge status={route.status} detail={route.status_detail} />
+		<span class="fh-source">{fedLabel}</span>
+	</div>
+
+	<h1>{route.name}</h1>
+
+	<dl class="fh-metrics">
+		<div>
+			<dt>Distancia</dt>
+			<dd>{formatKm(route.distance_km)}</dd>
+		</div>
+		<div>
+			<dt>Desnivel</dt>
+			<dd>
+				{route.ascent_m !== null ? `+${formatMeters(route.ascent_m)}` : 'sin dato'}
+				{#if route.descent_m !== null}<span class="fh-desc">−{formatMeters(route.descent_m)}</span
+					>{/if}
+			</dd>
+		</div>
+		<div>
+			<dt>Duración</dt>
+			<dd>
+				{route.est_duration_min !== null ? formatDuration(route.est_duration_min) : 'sin dato'}
+			</dd>
+		</div>
+		<div>
+			<dt>Forma</dt>
+			<dd>{route.circular === null ? 'sin dato' : route.circular ? 'Circular' : 'Lineal'}</dd>
+		</div>
+	</dl>
 
 	{#if route.status === 'deshabilitado'}
 		<div class="status-banner" role="alert">
@@ -507,6 +542,31 @@
 	{/if}
 
 	<RouteMarks routeId={route.id} />
+
+	<div class="fh-actions">
+		<!-- eslint-disable svelte/no-navigation-without-resolve -- base construida con resolve(); la regla no contempla añadir query string -->
+		<a
+			class="fh-btn"
+			href={resolve('/ruta/[id]/informe', { id: route.id }) + `?fecha=${selectedDate}`}
+		>
+			📄 Generar informe
+		</a>
+		<a
+			class="fh-btn"
+			href={resolve('/ruta/[id]/emergencia', { id: route.id }) + `?fecha=${selectedDate}`}
+		>
+			🆘 Ficha de emergencia
+		</a>
+		<!-- eslint-enable svelte/no-navigation-without-resolve -->
+		<button
+			class="fh-btn fh-reserved"
+			type="button"
+			disabled
+			title="Navegación en vivo — próximamente (móvil)"
+		>
+			▶ Iniciar ruta
+		</button>
+	</div>
 </header>
 
 <div class="ficha-toolbar">
@@ -1103,10 +1163,81 @@
 	}
 	.ficha-head {
 		margin-bottom: var(--space-4);
+		padding-bottom: var(--space-4);
+		border-bottom: 1px solid var(--border);
 	}
 	.ficha-head h1 {
 		font-size: var(--text-2xl);
-		margin: 0 0 var(--space-2);
+		margin: var(--space-1) 0 var(--space-3);
+	}
+	.fh-tags {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+	}
+	.fh-source {
+		font-size: var(--text-sm);
+		color: var(--muted);
+	}
+	/* Métricas clave en fila (envuelven en pantallas estrechas / escala 1.6×). */
+	.fh-metrics {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2) var(--space-5);
+		margin: 0 0 var(--space-3);
+	}
+	.fh-metrics > div {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+	}
+	.fh-metrics dt {
+		font-size: var(--text-xs);
+		color: var(--muted);
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+	.fh-metrics dd {
+		margin: 0;
+		font-size: var(--text-lg);
+		font-weight: 700;
+		font-family: var(--font-head);
+	}
+	.fh-desc {
+		color: var(--muted);
+		font-weight: 600;
+		font-size: var(--text-md);
+		margin-left: var(--space-1);
+	}
+	.fh-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin-top: var(--space-1);
+	}
+	.fh-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		padding: var(--space-2) var(--space-3);
+		border-radius: var(--radius-md);
+		border: 1px solid var(--border);
+		background: var(--surface);
+		color: var(--ink);
+		text-decoration: none;
+		cursor: pointer;
+		min-height: 40px;
+	}
+	.fh-btn:hover {
+		background: var(--surface-alt);
+	}
+	/* "Iniciar ruta": acción primaria futura, reservada visualmente. */
+	.fh-reserved {
+		opacity: 0.5;
+		cursor: not-allowed;
 	}
 	/* Conmutador de disposición (segmented control), alineado a la derecha. */
 	.ficha-toolbar {
