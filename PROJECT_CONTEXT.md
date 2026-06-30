@@ -39,6 +39,7 @@ es `Senda v6.dc.html`** (Design Component; léelo, no solo el README en prosa �
 leer solo la prosa causó un layout incorrecto que hubo que rehacer).
 
 Rediseñadas las 4 pantallas + sistema de diseño:
+
 - **Ficha** (`/ruta/[id]`): cabecera-tarjeta "banco de preparación" + pestañas ⇄
   tablero; Resumen como panel de decisión (recomendación, meteo de un vistazo,
   ventana de inicio, avisos, incendio, cómo llegar, mochila); Condiciones,
